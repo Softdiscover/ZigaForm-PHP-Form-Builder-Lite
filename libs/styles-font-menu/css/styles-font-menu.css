@@ -1,0 +1,46 @@
+/* Admin Readme */
+#styles-font-menu-readme > ul {
+	list-style-type: disc;
+	margin-left: 30px;
+}
+
+/* Menu height */
+.sfm .chosen-results {
+	max-height: 400px !important;
+}
+
+/* Standard Font */
+.sfm .sf {
+	font-size: 36px;
+	height:52px;
+	line-height: 52px !important;
+	white-space: nowrap;
+}
+.sfm .sf:hover {
+	color: #21759B;
+}
+
+/* Google Font */
+.sfm .gf {
+	 height:64px;
+	 text-indent: -9999px;
+	 overflow:hidden;
+	 background-repeat: no-repeat;
+}
+
+img.sfm-preview {
+	margin: 0;
+	padding:0;
+	border: 0;
+}
+
+.sfm-preview, .sfm .gf {
+	background-color: #000;
+}
+
+.sfm-preview:hover, .sfm .gf:hover {
+	background-color: #21759B;
+}
+.sfm .chosen-results li {
+	padding:0 !important;
+}

@@ -1,0 +1,50 @@
+    #rockfm_uijyl2ic2g6 .rockfm-txtbox-inp-val{
+                            font-size:14px;
+                            font-weight: bold;
+                            font-style:italic;
+                            text-decoration:underline;
+                            color:#fd0311;
+                            
+            font-family:'Comic Sans MS', Arial, sans-serif;
+                                          text-align:center;
+                                             -webkit-border-radius: 0;
+                -moz-border-radius: 0;
+                border-radius: 0px;    
+                                         border: dotted #d934c0 2px;
+                }
+                    #rockfm_uijyl2ic2g6 .rockfm-txtbox-inp-val:focus{
+                   border: dotted #e2ff03 2px;
+                }
+                 #rockfm_uijyl2ic2g6 .rockfm-label{
+                   font-size:14px;
+                            font-weight: bold;
+                            font-style:italic;
+                            text-decoration:underline;
+                            color:#50c27e;
+                            
+            font-family:'Comic Sans MS', Arial, sans-serif;
+            
+                                text-shadow: 10px 5px 6px #f024f0;
+                
+   }
+   
+   #rockfm_uijyl2ic2g6 .rockfm-sublabel{
+                   font-size:14px;
+                            font-weight: bold;
+                                                    
+            font-family:'Comic Sans MS', Arial, sans-serif;
+            
+                                text-shadow: 1px 1px 3px #f024f0;
+                
+   }
+   #rockfm_uijyl2ic2g6 .rockfm-control-label{
+                                text-align: left;
+                                       }
+   #rockfm_uijyl2ic2g6 .rockfm-wrap-label{
+           }
+   #rockfm_uijyl2ic2g6 .rockfm-help-block{
+               
+            font-family:'Comic Sans MS', Arial, sans-serif;
+            
+           }
+   

@@ -1,0 +1,118 @@
+.zgpb-fl-gs-block-style{
+   margin: 0;
+}
+.zgpb-field-template .zgpb-fl-gs-block-inner{
+    border: 1px dashed #7f7f7f;
+    margin: 15px 0;
+    padding: 10px;
+    min-height: 50px;
+}
+ 
+ 
+
+
+/*mopt hover*/
+.zgpb-fl-gridsystem{
+    position:relative;
+}
+
+.zgpb-field-template .zgpb-fl-gs-block-style,
+.zgpb-field-template .zgpb-fl-gs-block-inner{
+    position:relative;
+}
+
+ 
+.zgpb-field-template .zgpb-fl-gs-block-inner{
+    
+}
+
+ .zgpb-fl-gridsystem-opt{
+    background: transparent none repeat scroll 0 0;
+    bottom: 15px;
+    cursor: pointer;
+    display: block;
+    height: 100%;
+   /* left: 13px;*/
+    position: absolute;
+    right: 13px;
+    top: 0;
+    z-index:999;
+    /*z-index: 9;*/
+}
+
+.zgpb-fl-gd-opt-icon-handler{
+  
+    border: 1px solid #61d2d6;
+    color: #61d2d6;
+    content: "....";
+    cursor: ew-resize;
+    display: inline-block;
+    font-size: 12px;
+    height: 30px;
+    letter-spacing: 2px;
+    line-height: 5px;
+    position: absolute;
+    right: 2px;
+    text-shadow: 1px 0 1px black;
+    top: 33%;
+    vertical-align: middle;
+    width: 12px;
+}
+.zgpb-fl-gd-opt-icon-handler::after{
+    content: '.. .. .. ..';
+}
+
+.zgpb-fl-gd-drag-line{
+    bottom: 0;
+    position: absolute;
+    top: 0;
+    width: 14px;
+}
+
+.zgpb-fl-gd-highlight{
+    border: 1px dashed #61d2d6;
+    bottom: 0;
+    display: block;
+    left: 15px;
+    position: absolute;
+    right: 15px;
+    top: 0;
+    z-index: 1;
+}
+
+.zgpb-fl-gd-drag-line-right {
+    
+    cursor: ew-resize;
+    left: auto;
+    right: -16px;
+}
+
+.zgpb-fl-gd-drag-line-right-bg {
+    background: #CEFBF8;
+}
+
+
+.zgpb-fl-gd-drag-line-left{
+    cursor: ew-resize;
+    left: -6px;
+    right: auto;
+}
+
+.zgpb-fl-gridsystem .zgpb-fl-gs-block-style:last-child .zgpb-fl-gd-drag-line-right {
+    display:none;
+}
+
+ /*grid - hover */
+.zgpb-fl-gs-block-style-hover .zgpb-fl-gs-block-inner{
+   display:block;
+    border: 1px solid #61d2d6;
+    
+}
+
+.zgpb-fl-gs-block-style-hover   .zgpb-fl-gs-block-inner{
+    /*background: #CEFBF8;*/
+    /*opacity:0.5;*/
+}
+
+ 
+

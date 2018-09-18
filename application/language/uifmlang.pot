@@ -1,0 +1,1505 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: php form builder\n"
+"POT-Creation-Date: 2016-02-10 13:59-0500\n"
+"PO-Revision-Date: 2016-02-10 14:00-0500\n"
+"Last-Translator: \n"
+"Language-Team: softdiscover <info@softdiscover.com>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __\n"
+"X-Poedit-SearchPath-0: C:\\wamp\\www\\uiform2official\\php-form-builder\\demo"
+"\\standalone\\application\n"
+
+msgid "Change password"
+msgstr ""
+
+msgid "Confirm Password"
+msgstr ""
+
+msgid "Update password"
+msgstr ""
+
+msgid "Enter your username and password"
+msgstr ""
+
+msgid "Forgot Password"
+msgstr ""
+
+msgid "Sign in"
+msgstr ""
+
+msgid "Settings"
+msgstr ""
+
+msgid "Site title"
+msgstr ""
+
+msgid "Admin mail"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Select here ..."
+msgstr ""
+
+msgid "Mailer default"
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Sendmail path"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "paypal success message"
+msgstr ""
+
+msgid "error found while submitting"
+msgstr ""
+
+msgid "Offline success"
+msgstr ""
+
+msgid "Success! your form was submitted"
+msgstr ""
+
+msgid "warning! Form was not submitted"
+msgstr ""
+
+msgid "Error! The file exceeds the allowed size of"
+msgstr ""
+
+msgid "Error! Type of file is not allowed to upload"
+msgstr ""
+
+msgid "New form request"
+msgstr ""
+
+msgid "Entry information"
+msgstr ""
+
+msgid "Submitted form data"
+msgstr ""
+
+msgid "Additional info"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "IP"
+msgstr ""
+
+msgid "Client PC info"
+msgstr ""
+
+msgid "Form URL"
+msgstr ""
+
+msgid "Form name"
+msgstr ""
+
+msgid "Select language"
+msgstr ""
+
+msgid "english"
+msgstr ""
+
+msgid "spanish"
+msgstr ""
+
+msgid "french"
+msgstr ""
+
+msgid "german"
+msgstr ""
+
+msgid "italian"
+msgstr ""
+
+msgid "portuguese"
+msgstr ""
+
+msgid "russian"
+msgstr ""
+
+msgid "chinese"
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Required only letters"
+msgstr ""
+
+msgid "Required only Letters and Numbers"
+msgstr ""
+
+msgid "Required only numbers"
+msgstr ""
+
+msgid "Required a valid mail"
+msgstr ""
+
+msgid "this is required"
+msgstr ""
+
+msgid "CAPTCHA Code"
+msgstr ""
+
+msgid "Select file"
+msgstr ""
+
+msgid "Change"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Select image"
+msgstr ""
+
+msgid "Sending"
+msgstr ""
+
+msgid "Textbox label"
+msgstr ""
+
+msgid "Textbox sublabel"
+msgstr ""
+
+msgid "Help block text"
+msgstr ""
+
+msgid "option"
+msgstr ""
+
+msgid "Type your heading H1 here"
+msgstr ""
+
+msgid "Type your heading H2 here"
+msgstr ""
+
+msgid "Type your heading H3 here"
+msgstr ""
+
+msgid "Type your heading H4 here"
+msgstr ""
+
+msgid "Type your heading H5 here"
+msgstr ""
+
+msgid "Type your heading H6 here"
+msgstr ""
+
+msgid "Multiple select"
+msgstr ""
+
+msgid "Move field block"
+msgstr ""
+
+msgid "Block"
+msgstr ""
+
+msgid "Edit"
+msgstr ""
+
+msgid "Duplicate"
+msgstr ""
+
+msgid "Textarea label"
+msgstr ""
+
+msgid "Textarea sublabel"
+msgstr ""
+
+msgid "Prev"
+msgstr ""
+
+msgid "Next"
+msgstr ""
+
+msgid "Form editor"
+msgstr ""
+
+msgid "email section. you can set mail options. e.g. the recipient mail"
+msgstr ""
+
+msgid "Email Settings"
+msgstr ""
+
+msgid ""
+"submission section. you can modify the success message and other messages"
+msgstr ""
+
+msgid "On Submission"
+msgstr ""
+
+msgid "main settings"
+msgstr ""
+
+msgid "Main settings"
+msgstr ""
+
+msgid "test"
+msgstr ""
+
+msgid "Show data"
+msgstr ""
+
+msgid "preview"
+msgstr ""
+
+msgid "Save form"
+msgstr ""
+
+msgid ""
+"Fields section. Drag and Drop or just click to add to the preview section"
+msgstr ""
+
+msgid ""
+"preview section. you can view how the fields will look like and you can "
+"change the settings on live mode  "
+msgstr ""
+
+msgid "Tab title"
+msgstr ""
+
+msgid "Form"
+msgstr ""
+
+msgid "Selected Field"
+msgstr ""
+
+msgid "Form settings. you can set all options related to the form"
+msgstr ""
+
+msgid "setting section. you can change the submit mode between ajax and post"
+msgstr ""
+
+msgid "skin section. you can change skin options of your form"
+msgstr ""
+
+msgid "Skin"
+msgstr ""
+
+msgid "wizard section. you can enable the wizard form and add many forms"
+msgstr ""
+
+msgid "Wizard"
+msgstr ""
+
+msgid "Email"
+msgstr ""
+
+msgid "Field name"
+msgstr ""
+
+msgid ""
+"This is important to identify the field on reports and conditional logic"
+msgstr ""
+
+msgid "Type field name"
+msgstr ""
+
+msgid "Options"
+msgstr ""
+
+msgid "Label"
+msgstr ""
+
+msgid "Input"
+msgstr ""
+
+msgid "Help Block"
+msgstr ""
+
+msgid "Validators"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "C.Logic"
+msgstr ""
+
+msgid "Misc"
+msgstr ""
+
+msgid "You need to save the form before seeing the preview"
+msgstr ""
+
+msgid "Preview for desktops"
+msgstr ""
+
+msgid "Preview for tablets"
+msgstr ""
+
+msgid "Preview for smartphone"
+msgstr ""
+
+msgid "Import form"
+msgstr ""
+
+msgid "The import has failed. press the accept button"
+msgstr ""
+
+msgid "Desktop"
+msgstr ""
+
+msgid "Tablet"
+msgstr ""
+
+msgid "Smartphone"
+msgstr ""
+
+msgid "Load form"
+msgstr ""
+
+msgid "Accept"
+msgstr ""
+
+msgid "Set Form name"
+msgstr ""
+
+msgid "e.g. My custom form"
+msgstr ""
+
+msgid "Drag and Drop the fields to this area "
+msgstr ""
+
+msgid "or just click the button fields to add it here "
+msgstr ""
+
+msgid "Code to export"
+msgstr ""
+
+msgid "the exporting code is used for backuping your custom form"
+msgstr ""
+
+msgid "Main fields"
+msgstr ""
+
+msgid "More fields"
+msgstr ""
+
+msgid "Standard Fields"
+msgstr ""
+
+msgid "Text Box"
+msgstr ""
+
+msgid "Text Area"
+msgstr ""
+
+msgid "Radio Button"
+msgstr ""
+
+msgid "Check Box"
+msgstr ""
+
+msgid "Select List"
+msgstr ""
+
+msgid "Select Multiple "
+msgstr ""
+
+msgid "Submit Button"
+msgstr ""
+
+msgid "Spinner"
+msgstr ""
+
+msgid "Slider"
+msgstr ""
+
+msgid "Range"
+msgstr ""
+
+msgid "Grid System"
+msgstr ""
+
+msgid "1 Col"
+msgstr ""
+
+msgid "2 Cols"
+msgstr ""
+
+msgid "3 Cols"
+msgstr ""
+
+msgid "4 Cols"
+msgstr ""
+
+msgid "6 Cols"
+msgstr ""
+
+msgid "Additional Fields"
+msgstr ""
+
+msgid "Star rating"
+msgstr ""
+
+msgid "ReCaptcha"
+msgstr ""
+
+msgid "Custom Html"
+msgstr ""
+
+msgid "Hidden Input"
+msgstr ""
+
+msgid "Password"
+msgstr ""
+
+msgid "Captcha"
+msgstr ""
+
+msgid "Date Picker"
+msgstr ""
+
+msgid "Prepend"
+msgstr ""
+
+msgid "Layout Elements"
+msgstr ""
+
+msgid "Divider"
+msgstr ""
+
+msgid "Heading H1"
+msgstr ""
+
+msgid "Upload Fields"
+msgstr ""
+
+msgid "File Upload"
+msgstr ""
+
+msgid "Image Upload"
+msgstr ""
+
+msgid "Picker Fields"
+msgstr ""
+
+msgid "Color Picker"
+msgstr ""
+
+msgid "Time Picker"
+msgstr ""
+
+msgid "Date and Time"
+msgstr ""
+
+msgid "Prepend/Append Fields - Text Box"
+msgstr ""
+
+msgid "Append"
+msgstr ""
+
+msgid "Prepend/Append"
+msgstr ""
+
+msgid "Headings"
+msgstr ""
+
+msgid "Heading H2"
+msgstr ""
+
+msgid "Heading H3"
+msgstr ""
+
+msgid "Heading H4"
+msgstr ""
+
+msgid "Heading H5"
+msgstr ""
+
+msgid "Heading H6"
+msgstr ""
+
+msgid "Wizard elements"
+msgstr ""
+
+msgid "Wizard buttons"
+msgstr ""
+
+msgid "Others"
+msgstr ""
+
+msgid "Switch"
+msgstr ""
+
+msgid "Dyn Checkbox"
+msgstr ""
+
+msgid "Dyn RadioBtn"
+msgstr ""
+
+msgid ""
+"Success! The form was created. Go to url to see your changes or copy & paste "
+"widget code to your page"
+msgstr ""
+
+msgid "Widget code"
+msgstr ""
+
+msgid "iframe"
+msgstr ""
+
+msgid "Url"
+msgstr ""
+
+msgid "Previous"
+msgstr ""
+
+msgid "Your Form code"
+msgstr ""
+
+msgid "List forms."
+msgstr ""
+
+msgid "Add new form"
+msgstr ""
+
+msgid "Disable"
+msgstr ""
+
+msgid "Enable"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Name Form"
+msgstr ""
+
+msgid "Copy and paste the shortcode to your desired page"
+msgstr ""
+
+msgid "Code"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Get widget code"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Inactive"
+msgstr ""
+
+msgid "Edit and load your custom form"
+msgstr ""
+
+msgid "Delete form"
+msgstr ""
+
+msgid "there is not forms. Add new one"
+msgstr ""
+
+msgid "List form information"
+msgstr ""
+
+msgid "there is no forms selected. select one at least"
+msgstr ""
+
+msgid "Show help block"
+msgstr ""
+
+msgid "Text Font"
+msgstr ""
+
+msgid "Help block position"
+msgstr ""
+
+msgid "At bottom"
+msgstr ""
+
+msgid "At Top"
+msgstr ""
+
+msgid "Tooltip"
+msgstr ""
+
+msgid "Pop up"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Clean"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Place holder"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+msgid "Font family"
+msgstr ""
+
+msgid "Input value alignment"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Button alignment"
+msgstr ""
+
+msgid "Background"
+msgstr ""
+
+msgid "Background color"
+msgstr ""
+
+msgid "Solid"
+msgstr ""
+
+msgid "Gradient"
+msgstr ""
+
+msgid "Pick the color"
+msgstr ""
+
+msgid "Start color"
+msgstr ""
+
+msgid "End color"
+msgstr ""
+
+msgid "Border"
+msgstr ""
+
+msgid "Border radius"
+msgstr ""
+
+msgid "Color (focus)"
+msgstr ""
+
+msgid "border style"
+msgstr ""
+
+msgid "Dotted"
+msgstr ""
+
+msgid "Border width"
+msgstr ""
+
+msgid "Divider bar Color"
+msgstr ""
+
+msgid "Next Button"
+msgstr ""
+
+msgid "Text for last button"
+msgstr ""
+
+msgid "you can check this on frontend page or preview"
+msgstr ""
+
+msgid "Prev Button"
+msgstr ""
+
+msgid "Buttons alignment"
+msgstr ""
+
+msgid "label Yes"
+msgstr ""
+
+msgid "label no"
+msgstr ""
+
+msgid "allowed extensions"
+msgstr ""
+
+msgid "Put the extensions between commas"
+msgstr ""
+
+msgid "Maximum size"
+msgstr ""
+
+msgid "Attach files to mail notification"
+msgstr ""
+
+msgid ""
+"if you enable attachment option, make sure your web server (hosting) and "
+"mail server support your maximum size file"
+msgstr ""
+
+msgid "Image Height"
+msgstr ""
+
+msgid "Image width"
+msgstr ""
+
+msgid "Add new option"
+msgstr ""
+
+msgid "Remove all options"
+msgstr ""
+
+msgid "Add new"
+msgstr ""
+
+msgid "Settings label option"
+msgstr ""
+
+msgid "Selected"
+msgstr ""
+
+msgid "Block alignment"
+msgstr ""
+
+msgid "Inline"
+msgstr ""
+
+msgid "Type label"
+msgstr ""
+
+msgid "Custom html content"
+msgstr ""
+
+msgid "Minimum"
+msgstr ""
+
+msgid "Maximum"
+msgstr ""
+
+msgid "Default value"
+msgstr ""
+
+msgid "Step"
+msgstr ""
+
+msgid "Range 1"
+msgstr ""
+
+msgid "Range 2"
+msgstr ""
+
+msgid "Public key"
+msgstr ""
+
+msgid "Secret key"
+msgstr ""
+
+msgid "Theme"
+msgstr ""
+
+msgid "Light"
+msgstr ""
+
+msgid "Dark"
+msgstr ""
+
+msgid "Custom text color"
+msgstr ""
+
+msgid "Custom Background color"
+msgstr ""
+
+msgid "Custom Behind lines"
+msgstr ""
+
+msgid "Lines"
+msgstr ""
+
+msgid "Custom front lines"
+msgstr ""
+
+msgid "Distortion"
+msgstr ""
+
+msgid "English"
+msgstr ""
+
+msgid "Spanish"
+msgstr ""
+
+msgid "French"
+msgstr ""
+
+msgid "Italian"
+msgstr ""
+
+msgid "Japanese"
+msgstr ""
+
+msgid "Portuguese"
+msgstr ""
+
+msgid "Russian"
+msgstr ""
+
+msgid "Chinese"
+msgstr ""
+
+msgid "Format"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+msgid "Text star 1"
+msgstr ""
+
+msgid "Text star 2"
+msgstr ""
+
+msgid "Text star 3"
+msgstr ""
+
+msgid "Text star 4"
+msgstr ""
+
+msgid "Text star 5"
+msgstr ""
+
+msgid "Not rated text"
+msgstr ""
+
+msgid "Label text"
+msgstr ""
+
+msgid "Text Color"
+msgstr ""
+
+msgid "Text Shadow"
+msgstr ""
+
+msgid "horizontal"
+msgstr ""
+
+msgid "vertical"
+msgstr ""
+
+msgid "blur"
+msgstr ""
+
+msgid "Sub label"
+msgstr ""
+
+msgid "Sublabel text"
+msgstr ""
+
+msgid "Text font"
+msgstr ""
+
+msgid "Text shadow"
+msgstr ""
+
+msgid "x"
+msgstr ""
+
+msgid "y"
+msgstr ""
+
+msgid "Text Block"
+msgstr ""
+
+msgid "Block position"
+msgstr ""
+
+msgid "Top"
+msgstr ""
+
+msgid "Bottom"
+msgstr ""
+
+msgid "Show Block"
+msgstr ""
+
+msgid "Help block"
+msgstr ""
+
+msgid "Help block alignment (temp - delete)"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Allow whitespace"
+msgstr ""
+
+msgid "Add validator"
+msgstr ""
+
+msgid "Validator configuration: "
+msgstr ""
+
+msgid "Less than"
+msgstr ""
+
+msgid "Default Message"
+msgstr ""
+
+msgid "Custom Error Message"
+msgstr ""
+
+msgid "Alert position"
+msgstr ""
+
+msgid "Set required icon"
+msgstr ""
+
+msgid "Choose required icon"
+msgstr ""
+
+msgid "Required icon position"
+msgstr ""
+
+msgid "Before label"
+msgstr ""
+
+msgid "After label"
+msgstr ""
+
+msgid "Letters"
+msgstr ""
+
+msgid "Letter & Numbers"
+msgstr ""
+
+msgid "Only numbers"
+msgstr ""
+
+msgid "Greater than"
+msgstr ""
+
+msgid "Identical"
+msgstr ""
+
+msgid "Length"
+msgstr ""
+
+msgid "Validator: "
+msgstr ""
+
+msgid "Translate error message "
+msgstr ""
+
+msgid "Letters and Numbers"
+msgstr ""
+
+msgid "Background Color"
+msgstr ""
+
+msgid "Required icon"
+msgstr ""
+
+msgid "Enable Conditional logic"
+msgstr ""
+
+msgid "Show"
+msgstr ""
+
+msgid "Hide"
+msgstr ""
+
+msgid "this field if"
+msgstr ""
+
+msgid "All"
+msgstr ""
+
+msgid "Any"
+msgstr ""
+
+msgid "of the following rule match"
+msgstr ""
+
+msgid "Add new conditional Logic"
+msgstr ""
+
+msgid "Remove all"
+msgstr ""
+
+msgid "is"
+msgstr ""
+
+msgid "is not"
+msgstr ""
+
+msgid "greater than"
+msgstr ""
+
+msgid "less than"
+msgstr ""
+
+msgid "You are receiving a new form request"
+msgstr ""
+
+msgid "Form information"
+msgstr ""
+
+msgid "URL"
+msgstr ""
+
+msgid "Subject mail"
+msgstr ""
+
+msgid "it is the title of the message. do not leave blank"
+msgstr ""
+
+msgid "Here goes your subject mail"
+msgstr ""
+
+msgid "Type subject"
+msgstr ""
+
+msgid "Recipient mail"
+msgstr ""
+
+msgid ""
+"This is the recipient mail. if you leave it blank, admin mail will be taken"
+msgstr ""
+
+msgid "Type email address"
+msgstr ""
+
+msgid "this mail will receive a copy of the email"
+msgstr ""
+
+msgid "Type CC mail"
+msgstr ""
+
+msgid ""
+"this mail will receive a copy of the email without letting the others notice "
+"it"
+msgstr ""
+
+msgid "Type BCC mail"
+msgstr ""
+
+msgid "Email Template"
+msgstr ""
+
+msgid "Codes to use"
+msgstr ""
+
+msgid "Submit mode"
+msgstr ""
+
+msgid "Ajax mode when submitting form"
+msgstr ""
+
+msgid "You can switch the submit mode between POST and AJAX"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Import the backuped form"
+msgstr ""
+
+msgid "Custom css"
+msgstr ""
+
+msgid "Additional css"
+msgstr ""
+
+msgid ""
+"This is not required. You can add extra css to your form. this will be added "
+"to css file "
+msgstr ""
+
+msgid "Just put the selectors. e.g. #id_form .control-label {color:red} "
+msgstr ""
+
+msgid "Additional javascript"
+msgstr ""
+
+msgid ""
+"This is not required. You can add extra javascript code or some script to "
+"your form."
+msgstr ""
+
+msgid ""
+"proceed with caution. if you put a wrong javascript code, the form will not "
+"work properly e.g. "
+msgstr ""
+
+msgid "More options"
+msgstr ""
+
+msgid "Refresh preview editor panel"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid ""
+"this is used in order to fix if something is not showing fine on the preview "
+"editor panel"
+msgstr ""
+
+msgid "Text font size"
+msgstr ""
+
+msgid "Select font size"
+msgstr ""
+
+msgid "Custom width"
+msgstr ""
+
+msgid "Max width"
+msgstr ""
+
+msgid "Custom padding"
+msgstr ""
+
+msgid "Padding top"
+msgstr ""
+
+msgid "Padding right"
+msgstr ""
+
+msgid "Padding bottom"
+msgstr ""
+
+msgid "Padding left"
+msgstr ""
+
+msgid "Background image"
+msgstr ""
+
+msgid "Update Image"
+msgstr ""
+
+msgid "Box Shadow"
+msgstr ""
+
+msgid "Success! Form was sent successfully."
+msgstr ""
+
+msgid "Success Message"
+msgstr ""
+
+msgid "Enable wizard forms"
+msgstr ""
+
+msgid "Tabs management"
+msgstr ""
+
+msgid "Clean Tabs"
+msgstr ""
+
+msgid "Tab"
+msgstr ""
+
+msgid "Type tab title"
+msgstr ""
+
+msgid "Skin tab"
+msgstr ""
+
+msgid "Theme 1"
+msgstr ""
+
+msgid "Theme 2"
+msgstr ""
+
+msgid "Inactive mode"
+msgstr ""
+
+msgid "Text color"
+msgstr ""
+
+msgid "Number text color"
+msgstr ""
+
+msgid "Active Mode"
+msgstr ""
+
+msgid "Title color"
+msgstr ""
+
+msgid "Background for number container"
+msgstr ""
+
+msgid "Done mode"
+msgstr ""
+
+msgid "this when the tab is completed. this will be shown on frontend"
+msgstr ""
+
+msgid "Tab container "
+msgstr ""
+
+msgid "Custom report"
+msgstr ""
+
+msgid "Select your custom fields to be shown on list report"
+msgstr ""
+
+msgid "Save Changes"
+msgstr ""
+
+msgid "URL page"
+msgstr ""
+
+msgid "Export to PDF"
+msgstr ""
+
+msgid "List Records."
+msgstr ""
+
+msgid "Export to csv"
+msgstr ""
+
+msgid "Show detail"
+msgstr ""
+
+msgid "View chart"
+msgstr ""
+
+msgid "Backup"
+msgstr ""
+
+msgid "Name backup"
+msgstr ""
+
+msgid ""
+"Enter a backup name or leave blank, current date will be assigned to backup "
+"name"
+msgstr ""
+
+msgid "Create backup"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Download"
+msgstr ""
+
+msgid "Restore Backup"
+msgstr ""
+
+msgid "there is not backup stored. Create new one"
+msgstr ""
+
+msgid "Upload Backup"
+msgstr ""
+
+msgid "Save changes"
+msgstr ""
+
+msgid "Database backup success"
+msgstr ""
+
+msgid "Delete File selected"
+msgstr ""
+
+msgid "Global Settings"
+msgstr ""
+
+msgid "User Information"
+msgstr ""
+
+msgid "Username"
+msgstr ""
+
+msgid "Type username"
+msgstr ""
+
+msgid "Type email"
+msgstr ""
+
+msgid "Type password"
+msgstr ""
+
+msgid "Confirm password"
+msgstr ""
+
+msgid "Enabled"
+msgstr ""
+
+msgid "Disabled"
+msgstr ""
+
+msgid "Users"
+msgstr ""
+
+msgid "User"
+msgstr ""
+
+msgid "active"
+msgstr ""
+
+msgid "Action"
+msgstr ""
+
+msgid "Edit User"
+msgstr ""
+
+msgid "Removing"
+msgstr ""
+
+msgid "Processing"
+msgstr ""
+
+msgid "Loading"
+msgstr ""
+
+msgid "Saving"
+msgstr ""
+
+msgid "Regenerate"
+msgstr ""
+
+msgid "Tour guide info"
+msgstr ""
+
+msgid "there is not tour guide for this page. press the accept button"
+msgstr ""
+
+msgid "Success! Updated successfully"
+msgstr ""
+
+msgid "Form was created"
+msgstr ""
+
+msgid ""
+"Success! The form was created. Now just copy and paste the shortcode to your "
+"content"
+msgstr ""
+
+msgid ""
+"the form did not loaded properly. Press regenerate button in order to "
+"recover the form"
+msgstr ""
+
+msgid "Regenerate Form"
+msgstr ""
+
+msgid "Delete field selected"
+msgstr ""
+
+msgid "Are you sure?"
+msgstr ""
+
+msgid "Yes"
+msgstr ""
+
+msgid "Toggle navigation"
+msgstr ""
+
+msgid "Forms"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "List forms"
+msgstr ""
+
+msgid "Templates"
+msgstr ""
+
+msgid "Contact us"
+msgstr ""
+
+msgid "Newsletter"
+msgstr ""
+
+msgid "Survey Questionnaire"
+msgstr ""
+
+msgid "Online event registration"
+msgstr ""
+
+msgid "Reservation Request"
+msgstr ""
+
+msgid "Purchase Order - Point Of Sale"
+msgstr ""
+
+msgid "Website Design Request"
+msgstr ""
+
+msgid "Job Application"
+msgstr ""
+
+msgid "CV Submission"
+msgstr ""
+
+msgid "Order form"
+msgstr ""
+
+msgid "wizard form"
+msgstr ""
+
+msgid "All fields"
+msgstr ""
+
+msgid "Conditional Logic"
+msgstr ""
+
+msgid "Custom skin"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+msgid "desktop"
+msgstr ""
+
+msgid "smartphone"
+msgstr ""
+
+msgid "Records"
+msgstr ""
+
+msgid "List all Forms"
+msgstr ""
+
+msgid "List by Form"
+msgstr ""
+
+msgid "Custom Report"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Charts"
+msgstr ""
+
+msgid "Guided tour"
+msgstr ""
+
+msgid "Log out"
+msgstr ""

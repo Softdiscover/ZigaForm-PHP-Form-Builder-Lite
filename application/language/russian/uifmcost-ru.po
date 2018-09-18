@@ -1,0 +1,1972 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-02-10 13:59-0500\n"
+"PO-Revision-Date: 2016-02-10 14:54-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+msgid "Change password"
+msgstr "Изменить пароль"
+
+msgid "Confirm Password"
+msgstr "пароль"
+
+msgid "Update password"
+msgstr "Пожалуйста обновите."
+
+msgid "Enter your username and password"
+msgstr "Введите свои имя пользователя и пароль."
+
+msgid "Forgot Password"
+msgstr "пароль"
+
+msgid "Sign in"
+msgstr "Войти"
+
+#, fuzzy
+msgid "Settings"
+msgstr "Настройки"
+
+msgid "Site title"
+msgstr "Название цвета"
+
+msgid "Admin mail"
+msgstr ""
+"Это почта получателя. если вы оставите это поле пустым, администратор почты "
+"будут приняты"
+
+#, fuzzy
+msgid "Language"
+msgstr "Язык"
+
+msgid "Select here ..."
+msgstr "Выберите язык"
+
+msgid "Mailer default"
+msgstr "По умолчанию"
+
+msgid "Type"
+msgstr "Тип"
+
+msgid "Sendmail path"
+msgstr "Путь Sendmail"
+
+#, fuzzy
+msgid "Save"
+msgstr "Сохранить"
+
+#, fuzzy
+msgid "Cancel"
+msgstr "Отмена"
+
+msgid "paypal success message"
+msgstr "Успех Сообщение"
+
+msgid "error found while submitting"
+msgstr "ошибки, обнаруженные во время представления"
+
+msgid "Offline success"
+msgstr "Успех Сообщение"
+
+#, fuzzy
+msgid "Success! your form was submitted"
+msgstr "Удачи! Ваша форма была представлена"
+
+#, fuzzy
+msgid "warning! Form was not submitted"
+msgstr "предупреждение! Форма не была представлена"
+
+#, fuzzy
+msgid "Error! The file exceeds the allowed size of"
+msgstr "Ошибка! Файл превышает допустимый размер"
+
+#, fuzzy
+msgid "Error! Type of file is not allowed to upload"
+msgstr "Ошибка! Тип файла не разрешено загружать"
+
+#, fuzzy
+msgid "New form request"
+msgstr "Новый запрос форма"
+
+#, fuzzy
+msgid "Entry information"
+msgstr "Информация Ред"
+
+#, fuzzy
+msgid "Submitted form data"
+msgstr "Передано данных формы"
+
+#, fuzzy
+msgid "Additional info"
+msgstr "Дополнительная информация"
+
+#, fuzzy
+msgid "Date"
+msgstr "Дата"
+
+#, fuzzy
+msgid "IP"
+msgstr "IP"
+
+#, fuzzy
+msgid "Client PC info"
+msgstr "Информация клиента ПК"
+
+#, fuzzy
+msgid "Form URL"
+msgstr "Форма URL"
+
+#, fuzzy
+msgid "Form name"
+msgstr "Имя формы"
+
+#, fuzzy
+msgid "Select language"
+msgstr "Выберите язык"
+
+#, fuzzy
+msgid "english"
+msgstr "английский"
+
+#, fuzzy
+msgid "spanish"
+msgstr "испанский"
+
+#, fuzzy
+msgid "french"
+msgstr "Французский"
+
+#, fuzzy
+msgid "german"
+msgstr "Немецкий"
+
+#, fuzzy
+msgid "italian"
+msgstr "итальянский язык"
+
+#, fuzzy
+msgid "portuguese"
+msgstr "португальский"
+
+#, fuzzy
+msgid "russian"
+msgstr "Русский"
+
+#, fuzzy
+msgid "chinese"
+msgstr "Китайский"
+
+#, fuzzy
+msgid "Close"
+msgstr "Закрыть"
+
+#, fuzzy
+msgid "Required only letters"
+msgstr "Обязательные только буквы"
+
+#, fuzzy
+msgid "Required only Letters and Numbers"
+msgstr "Требуется только буквы и цифры"
+
+#, fuzzy
+msgid "Required only numbers"
+msgstr "Обязательные только цифры"
+
+#, fuzzy
+msgid "Required a valid mail"
+msgstr "Требуется действительный почту"
+
+#, fuzzy
+msgid "this is required"
+msgstr "это требуется"
+
+#, fuzzy
+msgid "CAPTCHA Code"
+msgstr "CAPTCHA код"
+
+#, fuzzy
+msgid "Select file"
+msgstr "Выберите файл"
+
+#, fuzzy
+msgid "Change"
+msgstr "Изменение"
+
+#, fuzzy
+msgid "Remove"
+msgstr "Удалить"
+
+#, fuzzy
+msgid "Select image"
+msgstr "Выберите изображение"
+
+#, fuzzy
+msgid "Sending"
+msgstr "Отправка"
+
+#, fuzzy
+msgid "Textbox label"
+msgstr "Текстовое этикетки"
+
+#, fuzzy
+msgid "Textbox sublabel"
+msgstr "Текстовое сублейбла"
+
+#, fuzzy
+msgid "Help block text"
+msgstr "Помощь текстового блока"
+
+#, fuzzy
+msgid "option"
+msgstr "вариант"
+
+#, fuzzy
+msgid "Type your heading H1 here"
+msgstr "Введите заголовок H1 здесь"
+
+#, fuzzy
+msgid "Type your heading H2 here"
+msgstr "Введите заголовок h2 здесь"
+
+#, fuzzy
+msgid "Type your heading H3 here"
+msgstr "Введите заголовок H3 здесь"
+
+#, fuzzy
+msgid "Type your heading H4 here"
+msgstr "Введите заголовок H4 здесь"
+
+#, fuzzy
+msgid "Type your heading H5 here"
+msgstr "Введите заголовок H5 здесь"
+
+#, fuzzy
+msgid "Type your heading H6 here"
+msgstr "Введите заголовок H6 здесь"
+
+#, fuzzy
+msgid "Multiple select"
+msgstr "Несколько выберите"
+
+#, fuzzy
+msgid "Move field block"
+msgstr "Переместить поле блок"
+
+#, fuzzy
+msgid "Block"
+msgstr "Блок"
+
+#, fuzzy
+msgid "Edit"
+msgstr "редактировать"
+
+#, fuzzy
+msgid "Duplicate"
+msgstr "Дублировать"
+
+#, fuzzy
+msgid "Textarea label"
+msgstr "Textarea этикетки"
+
+#, fuzzy
+msgid "Textarea sublabel"
+msgstr "Textarea сублейбла"
+
+#, fuzzy
+msgid "Prev"
+msgstr "Предыдущая"
+
+#, fuzzy
+msgid "Next"
+msgstr "Следующий"
+
+#, fuzzy
+msgid "Form editor"
+msgstr "Форма редактор"
+
+#, fuzzy
+msgid "email section. you can set mail options. e.g. the recipient mail"
+msgstr ""
+"E-mail раздел. Вы можете задать параметры почты. например почта получателя"
+
+#, fuzzy
+msgid "Email Settings"
+msgstr "Настройки электронной почты"
+
+#, fuzzy
+msgid ""
+"submission section. you can modify the success message and other messages"
+msgstr ""
+"раздел представления. Вы можете изменить сообщение об успешном и другие "
+"сообщения"
+
+#, fuzzy
+msgid "On Submission"
+msgstr "На Представление"
+
+#, fuzzy
+msgid "main settings"
+msgstr "Основные настройки"
+
+msgid "Main settings"
+msgstr "Основные настройки"
+
+#, fuzzy
+msgid "test"
+msgstr "контрольная работа"
+
+#, fuzzy
+msgid "Show data"
+msgstr "Показать данные"
+
+#, fuzzy
+msgid "preview"
+msgstr "предварительный просмотр"
+
+#, fuzzy
+msgid "Save form"
+msgstr "Сохранить форма"
+
+#, fuzzy
+msgid ""
+"Fields section. Drag and Drop or just click to add to the preview section"
+msgstr ""
+"Раздел Поля. Перетаскивание или просто нажмите, чтобы добавить в раздел "
+"просмотра"
+
+#, fuzzy
+msgid ""
+"preview section. you can view how the fields will look like and you can "
+"change the settings on live mode  "
+msgstr ""
+"раздел предварительного просмотра. Вы можете увидеть, как поля будут "
+"выглядеть, и вы можете изменить настройки на живом режиме"
+
+#, fuzzy
+msgid "Tab title"
+msgstr "Вкладка название"
+
+#, fuzzy
+msgid "Form"
+msgstr "Форма"
+
+#, fuzzy
+msgid "Selected Field"
+msgstr "Выбранные поле"
+
+#, fuzzy
+msgid "Form settings. you can set all options related to the form"
+msgstr ""
+"Настройки форму. Вы можете установить все параметры, относящиеся к форме"
+
+#, fuzzy
+msgid "setting section. you can change the submit mode between ajax and post"
+msgstr ""
+"раздел настроек. Вы можете изменить режим представить между AJAX и должность"
+
+#, fuzzy
+msgid "skin section. you can change skin options of your form"
+msgstr "раздел кожей. Вы можете изменить параметры кожи вашего форме"
+
+#, fuzzy
+msgid "Skin"
+msgstr "Кожа"
+
+#, fuzzy
+msgid "wizard section. you can enable the wizard form and add many forms"
+msgstr "Мастер секция. Вы можете включить форму мастера и добавить много форм"
+
+#, fuzzy
+msgid "Wizard"
+msgstr "Волшебник"
+
+#, fuzzy
+msgid "Email"
+msgstr "Эл. адрес"
+
+#, fuzzy
+msgid "Field name"
+msgstr "Имя поля"
+
+#, fuzzy
+msgid ""
+"This is important to identify the field on reports and conditional logic"
+msgstr "Это важно для идентификации поля в отчетах и ​​условной логики"
+
+#, fuzzy
+msgid "Type field name"
+msgstr "Введите имя поля"
+
+#, fuzzy
+msgid "Options"
+msgstr "Опции"
+
+#, fuzzy
+msgid "Label"
+msgstr "метка"
+
+#, fuzzy
+msgid "Input"
+msgstr "Вклад"
+
+#, fuzzy
+msgid "Help Block"
+msgstr "Помощь Блок"
+
+#, fuzzy
+msgid "Validators"
+msgstr "Валидаторы"
+
+#, fuzzy
+msgid "Images"
+msgstr "Изображений"
+
+#, fuzzy
+msgid "C.Logic"
+msgstr "C.Logic"
+
+#, fuzzy
+msgid "Misc"
+msgstr "Разное"
+
+#, fuzzy
+msgid "You need to save the form before seeing the preview"
+msgstr "Вы должны сохранить форму прежде, чем видеть предварительный просмотр"
+
+#, fuzzy
+msgid "Preview for desktops"
+msgstr "Превью для настольных ПК"
+
+#, fuzzy
+msgid "Preview for tablets"
+msgstr "Превью для таблеток"
+
+#, fuzzy
+msgid "Preview for smartphone"
+msgstr "Превью для смартфона"
+
+#, fuzzy
+msgid "Import form"
+msgstr "Форма Импорт"
+
+#, fuzzy
+msgid "The import has failed. press the accept button"
+msgstr "Импорт не удалось. нажмите кнопку принять"
+
+#, fuzzy
+msgid "Desktop"
+msgstr "Рабочий стол"
+
+#, fuzzy
+msgid "Tablet"
+msgstr "Таблетка"
+
+msgid "Smartphone"
+msgstr "Смартфон"
+
+#, fuzzy
+msgid "Load form"
+msgstr "Форма нагрузки"
+
+#, fuzzy
+msgid "Accept"
+msgstr "Принимать"
+
+#, fuzzy
+msgid "Set Form name"
+msgstr "Установите имя Форма"
+
+#, fuzzy
+msgid "e.g. My custom form"
+msgstr "например Мой заказ форма"
+
+#, fuzzy
+msgid "Drag and Drop the fields to this area "
+msgstr "Перетащите и падение поля этой области"
+
+#, fuzzy
+msgid "or just click the button fields to add it here "
+msgstr "или просто нажмите кнопку поля на, чтобы добавить его здесь"
+
+#, fuzzy
+msgid "Code to export"
+msgstr "Код для экспорта"
+
+#, fuzzy
+msgid "the exporting code is used for backuping your custom form"
+msgstr "экспортер код используется для backuping пользовательскую форму"
+
+#, fuzzy
+msgid "Main fields"
+msgstr "Основные направления"
+
+#, fuzzy
+msgid "More fields"
+msgstr "Еще поля"
+
+#, fuzzy
+msgid "Standard Fields"
+msgstr "Стандартные поля"
+
+#, fuzzy
+msgid "Text Box"
+msgstr "Текстовое окно"
+
+#, fuzzy
+msgid "Text Area"
+msgstr "Текстовая область"
+
+#, fuzzy
+msgid "Radio Button"
+msgstr "Переключатель"
+
+#, fuzzy
+msgid "Check Box"
+msgstr "Флажок"
+
+#, fuzzy
+msgid "Select List"
+msgstr "Выберите Список"
+
+#, fuzzy
+msgid "Select Multiple "
+msgstr "Выбрать несколько"
+
+#, fuzzy
+msgid "Submit Button"
+msgstr "Разместить кнопку"
+
+#, fuzzy
+msgid "Spinner"
+msgstr "Обтекатель втулки"
+
+#, fuzzy
+msgid "Slider"
+msgstr "Ползунок"
+
+#, fuzzy
+msgid "Range"
+msgstr "Ассортимент"
+
+#, fuzzy
+msgid "Grid System"
+msgstr "Grid System"
+
+#, fuzzy
+msgid "1 Col"
+msgstr "1 Кол"
+
+#, fuzzy
+msgid "2 Cols"
+msgstr "2 Cols"
+
+#, fuzzy
+msgid "3 Cols"
+msgstr "3 Cols"
+
+#, fuzzy
+msgid "4 Cols"
+msgstr "4 Cols"
+
+#, fuzzy
+msgid "6 Cols"
+msgstr "6 Cols"
+
+#, fuzzy
+msgid "Additional Fields"
+msgstr "Дополнительные поля"
+
+#, fuzzy
+msgid "Star rating"
+msgstr "Звездный рейтинг"
+
+#, fuzzy
+msgid "ReCaptcha"
+msgstr "ReCaptcha"
+
+#, fuzzy
+msgid "Custom Html"
+msgstr "Создание пользовательских HTML"
+
+#, fuzzy
+msgid "Hidden Input"
+msgstr "Скрытая Вход"
+
+#, fuzzy
+msgid "Password"
+msgstr "пароль"
+
+#, fuzzy
+msgid "Captcha"
+msgstr "Защитный код"
+
+#, fuzzy
+msgid "Date Picker"
+msgstr "Выбор даты"
+
+#, fuzzy
+msgid "Prepend"
+msgstr "Prepend"
+
+#, fuzzy
+msgid "Layout Elements"
+msgstr "Элементы макета"
+
+#, fuzzy
+msgid "Divider"
+msgstr "Делитель"
+
+#, fuzzy
+msgid "Heading H1"
+msgstr "Заголовок H1"
+
+#, fuzzy
+msgid "Upload Fields"
+msgstr "Загрузить Поля"
+
+#, fuzzy
+msgid "File Upload"
+msgstr "Файл загружен"
+
+#, fuzzy
+msgid "Image Upload"
+msgstr "Изображение Загрузить"
+
+#, fuzzy
+msgid "Picker Fields"
+msgstr "Выбор поля"
+
+#, fuzzy
+msgid "Color Picker"
+msgstr "Выбор цвета"
+
+#, fuzzy
+msgid "Time Picker"
+msgstr "Время Выбор"
+
+#, fuzzy
+msgid "Date and Time"
+msgstr "Дата и время"
+
+#, fuzzy
+msgid "Prepend/Append Fields - Text Box"
+msgstr "Prepend / Append Поля - Text Box"
+
+#, fuzzy
+msgid "Append"
+msgstr "Добавлять"
+
+#, fuzzy
+msgid "Prepend/Append"
+msgstr "Prepend / Append"
+
+#, fuzzy
+msgid "Headings"
+msgstr "Заголовки"
+
+#, fuzzy
+msgid "Heading H2"
+msgstr "Заголовок H2"
+
+#, fuzzy
+msgid "Heading H3"
+msgstr "Заголовок H3"
+
+#, fuzzy
+msgid "Heading H4"
+msgstr "Заголовок H4"
+
+#, fuzzy
+msgid "Heading H5"
+msgstr "Заголовок H5"
+
+#, fuzzy
+msgid "Heading H6"
+msgstr "Заголовок H6"
+
+#, fuzzy
+msgid "Wizard elements"
+msgstr "Мастер элементов"
+
+#, fuzzy
+msgid "Wizard buttons"
+msgstr "Мастер кнопок"
+
+#, fuzzy
+msgid "Others"
+msgstr "Прочее"
+
+#, fuzzy
+msgid "Switch"
+msgstr "Переключатель"
+
+#, fuzzy
+msgid "Dyn Checkbox"
+msgstr "Дин Флажок"
+
+#, fuzzy
+msgid "Dyn RadioBtn"
+msgstr "Дин RadioBtn"
+
+msgid ""
+"Success! The form was created. Go to url to see your changes or copy & paste "
+"widget code to your page"
+msgstr ""
+"Успех! Форма была создана. Перейти к url, чтобы увидеть ваши изменения или "
+"копирования & вставить виджет код на вашей странице"
+
+msgid "Widget code"
+msgstr "Код виджета"
+
+msgid "iframe"
+msgstr "Iframe"
+
+msgid "Url"
+msgstr "Url"
+
+#, fuzzy
+msgid "Previous"
+msgstr "Предыдущий"
+
+msgid "Your Form code"
+msgstr "Код формы"
+
+#, fuzzy
+msgid "List forms."
+msgstr "Список форм."
+
+#, fuzzy
+msgid "Add new form"
+msgstr "Добавить новую форму"
+
+#, fuzzy
+msgid "Disable"
+msgstr "Отключить"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Включить"
+
+#, fuzzy
+msgid "Delete"
+msgstr "Удалить"
+
+#, fuzzy
+msgid "Name Form"
+msgstr "Имя форма"
+
+#, fuzzy
+msgid "Copy and paste the shortcode to your desired page"
+msgstr "Скопируйте и вставьте шорткод номер нужной страницы"
+
+msgid "Code"
+msgstr "Код"
+
+#, fuzzy
+msgid "Created"
+msgstr "Созданный"
+
+#, fuzzy
+msgid "Status"
+msgstr "Положение дел"
+
+msgid "Get widget code"
+msgstr "Код для экспорта"
+
+#, fuzzy
+msgid "Active"
+msgstr "Активный"
+
+#, fuzzy
+msgid "Inactive"
+msgstr "Неактивный"
+
+#, fuzzy
+msgid "Edit and load your custom form"
+msgstr "Редактировать и загрузить пользовательские формы"
+
+#, fuzzy
+msgid "Delete form"
+msgstr "Удалить форму"
+
+#, fuzzy
+msgid "there is not forms. Add new one"
+msgstr "нет формы. Добавить новый"
+
+#, fuzzy
+msgid "List form information"
+msgstr "Форма Список информация"
+
+#, fuzzy
+msgid "there is no forms selected. select one at least"
+msgstr "нет формы выбраны. выбрать один, по крайней мере"
+
+#, fuzzy
+msgid "Show help block"
+msgstr "Показать помощь блок"
+
+#, fuzzy
+msgid "Text Font"
+msgstr "Шрифт"
+
+#, fuzzy
+msgid "Help block position"
+msgstr "Помощь положение блока"
+
+#, fuzzy
+msgid "At bottom"
+msgstr "На дне"
+
+#, fuzzy
+msgid "At Top"
+msgstr "На вершине"
+
+#, fuzzy
+msgid "Tooltip"
+msgstr "Подсказка"
+
+#, fuzzy
+msgid "Pop up"
+msgstr "Неожиданно возникнуть"
+
+#, fuzzy
+msgid "Add"
+msgstr "Добавить"
+
+#, fuzzy
+msgid "Clean"
+msgstr "Чистый"
+
+#, fuzzy
+msgid "Text"
+msgstr "Текст"
+
+#, fuzzy
+msgid "Place holder"
+msgstr "Место держатель"
+
+#, fuzzy
+msgid "Color"
+msgstr "цвет"
+
+#, fuzzy
+msgid "Font family"
+msgstr "Семейство шрифтов"
+
+#, fuzzy
+msgid "Input value alignment"
+msgstr "Выравнивание входное значение"
+
+#, fuzzy
+msgid "Left"
+msgstr "Оставил"
+
+#, fuzzy
+msgid "Center"
+msgstr "Центр"
+
+#, fuzzy
+msgid "Right"
+msgstr "Правильно"
+
+#, fuzzy
+msgid "Button alignment"
+msgstr "Выравнивание Кнопка"
+
+#, fuzzy
+msgid "Background"
+msgstr "Задний план"
+
+#, fuzzy
+msgid "Background color"
+msgstr "Фоновый цвет"
+
+#, fuzzy
+msgid "Solid"
+msgstr "Твердый"
+
+#, fuzzy
+msgid "Gradient"
+msgstr "Градиент"
+
+#, fuzzy
+msgid "Pick the color"
+msgstr "Выберите цвет"
+
+#, fuzzy
+msgid "Start color"
+msgstr "Начните цвет"
+
+#, fuzzy
+msgid "End color"
+msgstr "Конец цвет"
+
+#, fuzzy
+msgid "Border"
+msgstr "Граница"
+
+#, fuzzy
+msgid "Border radius"
+msgstr "Радиус границы"
+
+#, fuzzy
+msgid "Color (focus)"
+msgstr "Цвет (фокус)"
+
+#, fuzzy
+msgid "border style"
+msgstr "стиль границы"
+
+#, fuzzy
+msgid "Dotted"
+msgstr "Пунктирный"
+
+#, fuzzy
+msgid "Border width"
+msgstr "Ширина рамки"
+
+#, fuzzy
+msgid "Divider bar Color"
+msgstr "Делитель бар Цвет"
+
+#, fuzzy
+msgid "Next Button"
+msgstr "Следующая кнопка"
+
+#, fuzzy
+msgid "Text for last button"
+msgstr "Текст для последней кнопки"
+
+#, fuzzy
+msgid "you can check this on frontend page or preview"
+msgstr "Вы можете проверить это на внешнем интерфейсе страницу или просмотра"
+
+#, fuzzy
+msgid "Prev Button"
+msgstr "Предыдущая Кнопка"
+
+#, fuzzy
+msgid "Buttons alignment"
+msgstr "Выравнивание кнопки"
+
+#, fuzzy
+msgid "label Yes"
+msgstr "Да этикетки"
+
+#, fuzzy
+msgid "label no"
+msgstr "маркировать нет"
+
+#, fuzzy
+msgid "allowed extensions"
+msgstr "Допустимые расширения"
+
+#, fuzzy
+msgid "Put the extensions between commas"
+msgstr "Положите расширения между запятыми"
+
+#, fuzzy
+msgid "Maximum size"
+msgstr "Максимальный размер"
+
+#, fuzzy
+msgid "Attach files to mail notification"
+msgstr "Прикрепить файлы к почтовым уведомления"
+
+#, fuzzy
+msgid ""
+"if you enable attachment option, make sure your web server (hosting) and "
+"mail server support your maximum size file"
+msgstr ""
+"если вы включите опцию крепления, убедитесь, что ваш веб-сервер (хостинг) и "
+"почтовый сервер поддержки максимальной размер файла"
+
+msgid "Image Height"
+msgstr "Высота изображения"
+
+msgid "Image width"
+msgstr "Ширина изображения"
+
+#, fuzzy
+msgid "Add new option"
+msgstr "Добавить новый вариант"
+
+#, fuzzy
+msgid "Remove all options"
+msgstr "Удалить все варианты"
+
+#, fuzzy
+msgid "Add new"
+msgstr "Добавить новое"
+
+#, fuzzy
+msgid "Settings label option"
+msgstr "Опция этикетки Настройки"
+
+#, fuzzy
+msgid "Selected"
+msgstr "Выбранный"
+
+#, fuzzy
+msgid "Block alignment"
+msgstr "Выравнивание блока"
+
+#, fuzzy
+msgid "Inline"
+msgstr "В очереди"
+
+#, fuzzy
+msgid "Type label"
+msgstr "Тип метки"
+
+#, fuzzy
+msgid "Custom html content"
+msgstr "Пользовательские содержание HTML"
+
+#, fuzzy
+msgid "Minimum"
+msgstr "Минимальный"
+
+#, fuzzy
+msgid "Maximum"
+msgstr "Максимальная"
+
+#, fuzzy
+msgid "Default value"
+msgstr "Значение по умолчанию"
+
+#, fuzzy
+msgid "Step"
+msgstr "Шаг"
+
+#, fuzzy
+msgid "Range 1"
+msgstr "Диапазон 1"
+
+#, fuzzy
+msgid "Range 2"
+msgstr "Диапазон 2"
+
+#, fuzzy
+msgid "Public key"
+msgstr "Открытый ключ"
+
+#, fuzzy
+msgid "Secret key"
+msgstr "Секретный ключ"
+
+#, fuzzy
+msgid "Theme"
+msgstr "Тема"
+
+#, fuzzy
+msgid "Light"
+msgstr "Легкий"
+
+#, fuzzy
+msgid "Dark"
+msgstr "Темно"
+
+#, fuzzy
+msgid "Custom text color"
+msgstr "Цвет Таможня текст"
+
+#, fuzzy
+msgid "Custom Background color"
+msgstr "Цвет фона"
+
+#, fuzzy
+msgid "Custom Behind lines"
+msgstr "Пользовательские За линий"
+
+#, fuzzy
+msgid "Lines"
+msgstr "Линии"
+
+#, fuzzy
+msgid "Custom front lines"
+msgstr "Пользовательские линии фронта"
+
+#, fuzzy
+msgid "Distortion"
+msgstr "Искажение"
+
+#, fuzzy
+msgid "English"
+msgstr "Английский"
+
+#, fuzzy
+msgid "Spanish"
+msgstr "Испанский"
+
+msgid "French"
+msgstr "французский"
+
+#, fuzzy
+msgid "Italian"
+msgstr "Итальянский"
+
+#, fuzzy
+msgid "Japanese"
+msgstr "Японский"
+
+#, fuzzy
+msgid "Portuguese"
+msgstr "Португальский"
+
+msgid "Russian"
+msgstr "Русский"
+
+msgid "Chinese"
+msgstr "Китайский"
+
+#, fuzzy
+msgid "Format"
+msgstr "Формат"
+
+#, fuzzy
+msgid "Default"
+msgstr "По умолчанию"
+
+#, fuzzy
+msgid "Text star 1"
+msgstr "Текст звезд 1"
+
+#, fuzzy
+msgid "Text star 2"
+msgstr "Текст звезда 2"
+
+#, fuzzy
+msgid "Text star 3"
+msgstr "Текст звезды 3"
+
+#, fuzzy
+msgid "Text star 4"
+msgstr "Текст звезды 4"
+
+#, fuzzy
+msgid "Text star 5"
+msgstr "Текст звезд 5"
+
+#, fuzzy
+msgid "Not rated text"
+msgstr "Нет рейтинга текст"
+
+#, fuzzy
+msgid "Label text"
+msgstr "Текст метки"
+
+#, fuzzy
+msgid "Text Color"
+msgstr "Цвет текста"
+
+#, fuzzy
+msgid "Text Shadow"
+msgstr "Текст Тень"
+
+#, fuzzy
+msgid "horizontal"
+msgstr "горизонтальный"
+
+#, fuzzy
+msgid "vertical"
+msgstr "вертикальный"
+
+#, fuzzy
+msgid "blur"
+msgstr "пятно"
+
+#, fuzzy
+msgid "Sub label"
+msgstr "Sub этикетка"
+
+#, fuzzy
+msgid "Sublabel text"
+msgstr "Сублейбла текст"
+
+msgid "Text font"
+msgstr "Шрифт текста"
+
+#, fuzzy
+msgid "Text shadow"
+msgstr "Текст тень"
+
+#, fuzzy
+msgid "x"
+msgstr "Икс"
+
+#, fuzzy
+msgid "y"
+msgstr "Y"
+
+#, fuzzy
+msgid "Text Block"
+msgstr "Текстовый блок"
+
+#, fuzzy
+msgid "Block position"
+msgstr "Положение блока"
+
+#, fuzzy
+msgid "Top"
+msgstr "верхний"
+
+#, fuzzy
+msgid "Bottom"
+msgstr "Дно"
+
+#, fuzzy
+msgid "Show Block"
+msgstr "Показать Блок"
+
+#, fuzzy
+msgid "Help block"
+msgstr "Помощь блок"
+
+#, fuzzy
+msgid "Help block alignment (temp - delete)"
+msgstr "Выравнивание Помощь блок (температура - удаление)"
+
+#, fuzzy
+msgid "Required"
+msgstr "необходимые"
+
+#, fuzzy
+msgid "Allow whitespace"
+msgstr "Разрешить пробелы"
+
+#, fuzzy
+msgid "Add validator"
+msgstr "Добавить валидатор"
+
+#, fuzzy
+msgid "Validator configuration: "
+msgstr "Валидатор конфигурации:"
+
+#, fuzzy
+msgid "Less than"
+msgstr "Менее, чем"
+
+#, fuzzy
+msgid "Default Message"
+msgstr "По умолчанию сообщение"
+
+#, fuzzy
+msgid "Custom Error Message"
+msgstr "Пользовательские сообщения об ошибке"
+
+#, fuzzy
+msgid "Alert position"
+msgstr "Предупреждение позиция"
+
+#, fuzzy
+msgid "Set required icon"
+msgstr "Задать необходимую значок"
+
+#, fuzzy
+msgid "Choose required icon"
+msgstr "Выберите требуемый значок"
+
+#, fuzzy
+msgid "Required icon position"
+msgstr "Требуемая должность значок"
+
+#, fuzzy
+msgid "Before label"
+msgstr "Перед этикетке"
+
+#, fuzzy
+msgid "After label"
+msgstr "После этикетке"
+
+#, fuzzy
+msgid "Letters"
+msgstr "Буквы"
+
+#, fuzzy
+msgid "Letter & Numbers"
+msgstr "Письмо и номера"
+
+#, fuzzy
+msgid "Only numbers"
+msgstr "Только цифры"
+
+#, fuzzy
+msgid "Greater than"
+msgstr "Больше чем"
+
+#, fuzzy
+msgid "Identical"
+msgstr "Идентичный"
+
+#, fuzzy
+msgid "Length"
+msgstr "Длина"
+
+#, fuzzy
+msgid "Validator: "
+msgstr "Валидатор:"
+
+#, fuzzy
+msgid "Translate error message "
+msgstr "Перевести сообщение об ошибке"
+
+#, fuzzy
+msgid "Letters and Numbers"
+msgstr "Буквы и цифры"
+
+#, fuzzy
+msgid "Background Color"
+msgstr "Цвет фона"
+
+#, fuzzy
+msgid "Required icon"
+msgstr "Значок 'Обязательно"
+
+#, fuzzy
+msgid "Enable Conditional logic"
+msgstr "Включить условной логики"
+
+#, fuzzy
+msgid "Show"
+msgstr "Показать"
+
+#, fuzzy
+msgid "Hide"
+msgstr "Скрывать"
+
+#, fuzzy
+msgid "this field if"
+msgstr "это поле, если"
+
+#, fuzzy
+msgid "All"
+msgstr "Все"
+
+#, fuzzy
+msgid "Any"
+msgstr "Любые"
+
+#, fuzzy
+msgid "of the following rule match"
+msgstr "следующего правила матча"
+
+#, fuzzy
+msgid "Add new conditional Logic"
+msgstr "Добавить условной логики"
+
+#, fuzzy
+msgid "Remove all"
+msgstr "Убрать все"
+
+msgid "is"
+msgstr "является"
+
+msgid "is not"
+msgstr "не является"
+
+#, fuzzy
+msgid "greater than"
+msgstr "больше чем"
+
+#, fuzzy
+msgid "less than"
+msgstr "менее, чем"
+
+#, fuzzy
+msgid "You are receiving a new form request"
+msgstr "Вы получаете новую форму для запроса"
+
+#, fuzzy
+msgid "Form information"
+msgstr "Данные Форма"
+
+#, fuzzy
+msgid "URL"
+msgstr "Ссылка"
+
+#, fuzzy
+msgid "Subject mail"
+msgstr "Тема почта"
+
+#, fuzzy
+msgid "it is the title of the message. do not leave blank"
+msgstr "это название сообщения. не оставьте пустым"
+
+#, fuzzy
+msgid "Here goes your subject mail"
+msgstr "Здесь идет ваш объект почту"
+
+#, fuzzy
+msgid "Type subject"
+msgstr "Тип предметом"
+
+#, fuzzy
+msgid "Recipient mail"
+msgstr "Получатель почты"
+
+#, fuzzy
+msgid ""
+"This is the recipient mail. if you leave it blank, admin mail will be taken"
+msgstr ""
+"Это почта получателя. если вы оставите это поле пустым, администратор почты "
+"будут приняты"
+
+#, fuzzy
+msgid "Type email address"
+msgstr "Тип адрес электронной почты"
+
+#, fuzzy
+msgid "this mail will receive a copy of the email"
+msgstr "это письмо будет получить копию по электронной почте"
+
+#, fuzzy
+msgid "Type CC mail"
+msgstr "Тип CC почты"
+
+#, fuzzy
+msgid ""
+"this mail will receive a copy of the email without letting the others notice "
+"it"
+msgstr ""
+"это письмо будет получить копию по электронной почте, не давая другие "
+"заметили"
+
+#, fuzzy
+msgid "Type BCC mail"
+msgstr "Введите BCC почту"
+
+#, fuzzy
+msgid "Email Template"
+msgstr "E-mail шаблона"
+
+msgid "Codes to use"
+msgstr ""
+
+#, fuzzy
+msgid "Submit mode"
+msgstr "Разместить режим"
+
+#, fuzzy
+msgid "Ajax mode when submitting form"
+msgstr "Режим Аякс при подаче форму"
+
+#, fuzzy
+msgid "You can switch the submit mode between POST and AJAX"
+msgstr "Вы можете переключить режим представить между POST и AJAX"
+
+#, fuzzy
+msgid "Import"
+msgstr "Импортировать"
+
+#, fuzzy
+msgid "Import the backuped form"
+msgstr "Импорт Резервном форму"
+
+#, fuzzy
+msgid "Custom css"
+msgstr "Пользовательские CSS"
+
+#, fuzzy
+msgid "Additional css"
+msgstr "Дополнительная CSS"
+
+#, fuzzy
+msgid ""
+"This is not required. You can add extra css to your form. this will be added "
+"to css file "
+msgstr ""
+"Это не требуется. Вы можете добавить дополнительную CSS в форму. это будет "
+"добавлено к файлу CSS"
+
+#, fuzzy
+msgid "Just put the selectors. e.g. #id_form .control-label {color:red} "
+msgstr ""
+"Просто поместите селекторы. например #id_form .control метки {цвет: красный}"
+
+#, fuzzy
+msgid "Additional javascript"
+msgstr "Дополнительная Javascript"
+
+#, fuzzy
+msgid ""
+"This is not required. You can add extra javascript code or some script to "
+"your form."
+msgstr ""
+"Это не требуется. Вы можете добавить дополнительную яваскрипта код или "
+"некоторые сценарий к вашей форме."
+
+#, fuzzy
+msgid ""
+"proceed with caution. if you put a wrong javascript code, the form will not "
+"work properly e.g. "
+msgstr ""
+"действовать с осторожностью. если поставить неправильно яваскрипта код, "
+"форма не будет работать должным образом, например,"
+
+#, fuzzy
+msgid "More options"
+msgstr "Больше вариантов"
+
+#, fuzzy
+msgid "Refresh preview editor panel"
+msgstr "Обновить просмотр панели редактора"
+
+#, fuzzy
+msgid "Refresh"
+msgstr "Обновление"
+
+#, fuzzy
+msgid ""
+"this is used in order to fix if something is not showing fine on the preview "
+"editor panel"
+msgstr ""
+"это используется для того, чтобы исправить если что-то не показывает штрафа "
+"на панели предварительного просмотра редактора"
+
+#, fuzzy
+msgid "Text font size"
+msgstr "Размер шрифта текста"
+
+#, fuzzy
+msgid "Select font size"
+msgstr "Выберите размер шрифта"
+
+#, fuzzy
+msgid "Custom width"
+msgstr "Пользовательские ширина"
+
+#, fuzzy
+msgid "Max width"
+msgstr "Максимальная ширина"
+
+#, fuzzy
+msgid "Custom padding"
+msgstr "Пользовательские обивка"
+
+#, fuzzy
+msgid "Padding top"
+msgstr "Заполнение сверху"
+
+#, fuzzy
+msgid "Padding right"
+msgstr "Заполнение право"
+
+#, fuzzy
+msgid "Padding bottom"
+msgstr "Заполнение снизу"
+
+#, fuzzy
+msgid "Padding left"
+msgstr "Заполнение слева"
+
+#, fuzzy
+msgid "Background image"
+msgstr "Изображение на заднем плане"
+
+#, fuzzy
+msgid "Update Image"
+msgstr "Обновление изображения"
+
+#, fuzzy
+msgid "Box Shadow"
+msgstr "Коробка Тень"
+
+#, fuzzy
+msgid "Success! Form was sent successfully."
+msgstr "Удачи! Форма было успешно отправлено."
+
+#, fuzzy
+msgid "Success Message"
+msgstr "Успех Сообщение"
+
+#, fuzzy
+msgid "Enable wizard forms"
+msgstr "Включить мастера форм"
+
+#, fuzzy
+msgid "Tabs management"
+msgstr "Управление Вкладки"
+
+#, fuzzy
+msgid "Clean Tabs"
+msgstr "Чистые Вкладки"
+
+#, fuzzy
+msgid "Tab"
+msgstr "Счет"
+
+#, fuzzy
+msgid "Type tab title"
+msgstr "Тип вкладка название"
+
+#, fuzzy
+msgid "Skin tab"
+msgstr "Вкладка кожи"
+
+#, fuzzy
+msgid "Theme 1"
+msgstr "Тема 1"
+
+#, fuzzy
+msgid "Theme 2"
+msgstr "Тема 2"
+
+#, fuzzy
+msgid "Inactive mode"
+msgstr "Неактивном режиме"
+
+msgid "Text color"
+msgstr "Цвет текста"
+
+#, fuzzy
+msgid "Number text color"
+msgstr "Цвет текста Количество"
+
+#, fuzzy
+msgid "Active Mode"
+msgstr "Активный режим"
+
+#, fuzzy
+msgid "Title color"
+msgstr "Название цвета"
+
+#, fuzzy
+msgid "Background for number container"
+msgstr "Фон для контейнера количество"
+
+#, fuzzy
+msgid "Done mode"
+msgstr "Совершено режим"
+
+#, fuzzy
+msgid "this when the tab is completed. this will be shown on frontend"
+msgstr "это когда язычок завершена. это будет показано на интерфейсе"
+
+#, fuzzy
+msgid "Tab container "
+msgstr "Вкладка контейнер"
+
+#, fuzzy
+msgid "Custom report"
+msgstr "Пользовательский отчет"
+
+#, fuzzy
+msgid "Select your custom fields to be shown on list report"
+msgstr "Выберите пользовательские поля будут показаны в отчете список"
+
+#, fuzzy
+msgid "Save Changes"
+msgstr "Сохранить изменения"
+
+#, fuzzy
+msgid "URL page"
+msgstr "Ссылка на страницу"
+
+#, fuzzy
+msgid "Export to PDF"
+msgstr "Экспорт в PDF"
+
+#, fuzzy
+msgid "List Records."
+msgstr "Список записей."
+
+#, fuzzy
+msgid "Export to csv"
+msgstr "Экспорт в CSV"
+
+#, fuzzy
+msgid "Show detail"
+msgstr "Показать детали"
+
+#, fuzzy
+msgid "View chart"
+msgstr "Посмотреть график"
+
+#, fuzzy
+msgid "Backup"
+msgstr "Резервное копирование"
+
+#, fuzzy
+msgid "Name backup"
+msgstr "Имя резервного копирования"
+
+#, fuzzy
+msgid ""
+"Enter a backup name or leave blank, current date will be assigned to backup "
+"name"
+msgstr ""
+"Введите имя резервной копии или оставьте поле пустым, текущая дата будет "
+"назначена для резервного копирования имя"
+
+#, fuzzy
+msgid "Create backup"
+msgstr "Создать копию"
+
+#, fuzzy
+msgid "Name"
+msgstr "имя"
+
+#, fuzzy
+msgid "Download"
+msgstr "Скачать"
+
+#, fuzzy
+msgid "Restore Backup"
+msgstr "Восстановление резервной копии"
+
+#, fuzzy
+msgid "there is not backup stored. Create new one"
+msgstr "нет резервного копирования сохраняются. Создать новый"
+
+#, fuzzy
+msgid "Upload Backup"
+msgstr "Загрузить резервного копирования"
+
+#, fuzzy
+msgid "Save changes"
+msgstr "Сохранить"
+
+#, fuzzy
+msgid "Database backup success"
+msgstr "Успех Резервное копирование базы данных"
+
+#, fuzzy
+msgid "Delete File selected"
+msgstr "Удалить выбранный файл"
+
+#, fuzzy
+msgid "Global Settings"
+msgstr "Глобальные настройки"
+
+msgid "User Information"
+msgstr "Данные Форма"
+
+msgid "Username"
+msgstr "Имя пользователя"
+
+msgid "Type username"
+msgstr "Тип метки"
+
+msgid "Type email"
+msgstr "Тип адрес электронной почты"
+
+msgid "Type password"
+msgstr "пароль"
+
+msgid "Confirm password"
+msgstr "пароль"
+
+#, fuzzy
+msgid "Enabled"
+msgstr "Включено"
+
+#, fuzzy
+msgid "Disabled"
+msgstr "Отключено"
+
+msgid "Users"
+msgstr "Посетители"
+
+msgid "User"
+msgstr "Пользователь"
+
+msgid "active"
+msgstr "Активный"
+
+msgid "Action"
+msgstr "Действие"
+
+msgid "Edit User"
+msgstr "редактировать"
+
+#, fuzzy
+msgid "Removing"
+msgstr "Снятие"
+
+#, fuzzy
+msgid "Processing"
+msgstr "Обработка"
+
+#, fuzzy
+msgid "Loading"
+msgstr "Загрузка"
+
+#, fuzzy
+msgid "Saving"
+msgstr "Экономия"
+
+msgid "Regenerate"
+msgstr "Регенерация"
+
+#, fuzzy
+msgid "Tour guide info"
+msgstr "Гид Информация"
+
+#, fuzzy
+msgid "there is not tour guide for this page. press the accept button"
+msgstr "нет гид для этой страницы. нажмите кнопку принять"
+
+#, fuzzy
+msgid "Success! Updated successfully"
+msgstr "Удачи! Успешно Обновлено"
+
+#, fuzzy
+msgid "Form was created"
+msgstr "Форма была создана"
+
+#, fuzzy
+msgid ""
+"Success! The form was created. Now just copy and paste the shortcode to your "
+"content"
+msgstr ""
+"Удачи! Форма была создана. Теперь просто скопируйте и вставьте шорткод на "
+"содержание вашего сайта"
+
+msgid ""
+"the form did not loaded properly. Press regenerate button in order to "
+"recover the form"
+msgstr ""
+"форма не не загружен должным образом. Нажмите кнопку восстановить для "
+"восстановления формы"
+
+msgid "Regenerate Form"
+msgstr "Восстановление формы"
+
+#, fuzzy
+msgid "Delete field selected"
+msgstr "Удалить поле выбрано"
+
+#, fuzzy
+msgid "Are you sure?"
+msgstr "Вы уверены?"
+
+#, fuzzy
+msgid "Yes"
+msgstr "Да"
+
+#, fuzzy
+msgid "Toggle navigation"
+msgstr "Переключить навигации"
+
+#, fuzzy
+msgid "Forms"
+msgstr "Формы"
+
+#, fuzzy
+msgid "New"
+msgstr "Новый"
+
+#, fuzzy
+msgid "List forms"
+msgstr "Список форм"
+
+#, fuzzy
+msgid "Templates"
+msgstr "Шаблоны"
+
+#, fuzzy
+msgid "Contact us"
+msgstr "Обратная связь"
+
+#, fuzzy
+msgid "Newsletter"
+msgstr "Новостная рассылка"
+
+#, fuzzy
+msgid "Survey Questionnaire"
+msgstr "Анкета обследования"
+
+#, fuzzy
+msgid "Online event registration"
+msgstr "Интернет регистрация событий"
+
+#, fuzzy
+msgid "Reservation Request"
+msgstr "Запрос бронирования"
+
+#, fuzzy
+msgid "Purchase Order - Point Of Sale"
+msgstr "Заказ на - Point Of Продажа"
+
+#, fuzzy
+msgid "Website Design Request"
+msgstr "Дизайн веб-сайта Запрос"
+
+#, fuzzy
+msgid "Job Application"
+msgstr "Заявка на вакансию"
+
+#, fuzzy
+msgid "CV Submission"
+msgstr "Представление резюме"
+
+#, fuzzy
+msgid "Order form"
+msgstr "Форма заказа"
+
+#, fuzzy
+msgid "wizard form"
+msgstr "Форма мастера"
+
+#, fuzzy
+msgid "All fields"
+msgstr "Все поля"
+
+#, fuzzy
+msgid "Conditional Logic"
+msgstr "Условной логики"
+
+#, fuzzy
+msgid "Custom skin"
+msgstr "Скина"
+
+#, fuzzy
+msgid "Preview"
+msgstr "Предварительный просмотр"
+
+#, fuzzy
+msgid "desktop"
+msgstr "рабочий стол"
+
+#, fuzzy
+msgid "smartphone"
+msgstr "смартфон"
+
+#, fuzzy
+msgid "Records"
+msgstr "Документация"
+
+#, fuzzy
+msgid "List all Forms"
+msgstr "Перечислите все формы"
+
+msgid "List by Form"
+msgstr "Форма Список информация"
+
+msgid "Custom Report"
+msgstr "Пользовательский отчет"
+
+#, fuzzy
+msgid "Export"
+msgstr "Экспорт"
+
+#, fuzzy
+msgid "Charts"
+msgstr "Диаграммы"
+
+#, fuzzy
+msgid "Guided tour"
+msgstr "Экскурсия"
+
+msgid "Log out"
+msgstr "Высшего уровня"

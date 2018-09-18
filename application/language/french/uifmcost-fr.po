@@ -1,0 +1,1982 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-02-10 13:59-0500\n"
+"PO-Revision-Date: 2016-02-10 14:48-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
+msgid "Change password"
+msgstr "Changer le mot de passe"
+
+msgid "Confirm Password"
+msgstr "Mot de passe"
+
+msgid "Update password"
+msgstr "Mot de passe"
+
+msgid "Enter your username and password"
+msgstr "Entrez votre email et mot de passe"
+
+msgid "Forgot Password"
+msgstr "Mot de passe"
+
+msgid "Sign in"
+msgstr "Connexion"
+
+#, fuzzy
+msgid "Settings"
+msgstr "Réglages"
+
+msgid "Site title"
+msgstr "Titre du site"
+
+msgid "Admin mail"
+msgstr "Courrier de l'admin"
+
+#, fuzzy
+msgid "Language"
+msgstr "Langue"
+
+msgid "Select here ..."
+msgstr "Sélectionner"
+
+msgid "Mailer default"
+msgstr "Défaut de Mailer"
+
+#, fuzzy
+msgid "Type"
+msgstr "Type"
+
+msgid "Sendmail path"
+msgstr "Chemin d'accès de sendmail"
+
+#, fuzzy
+msgid "Save"
+msgstr "Sauvegarder"
+
+#, fuzzy
+msgid "Cancel"
+msgstr "Annuler"
+
+msgid "paypal success message"
+msgstr "message de réussite de PayPal"
+
+msgid "error found while submitting"
+msgstr "erreur détectée lors de l'envoi"
+
+msgid "Offline success"
+msgstr "Message de réussite"
+
+#, fuzzy
+msgid "Success! your form was submitted"
+msgstr "Le Succès! votre formulaire a été envoyé"
+
+#, fuzzy
+msgid "warning! Form was not submitted"
+msgstr "Attention! Formulaire n&#39;a pas été soumis"
+
+#, fuzzy
+msgid "Error! The file exceeds the allowed size of"
+msgstr "Erreur! Le fichier dépasse la taille autorisée de"
+
+#, fuzzy
+msgid "Error! Type of file is not allowed to upload"
+msgstr "Erreur! Type de fichier est pas autorisé à télécharger"
+
+#, fuzzy
+msgid "New form request"
+msgstr "Nouvelle demande de formulaire"
+
+#, fuzzy
+msgid "Entry information"
+msgstr "informations d&#39;entrée"
+
+#, fuzzy
+msgid "Submitted form data"
+msgstr "Données de formulaire Soumis"
+
+#, fuzzy
+msgid "Additional info"
+msgstr "Infos complémentaires"
+
+#, fuzzy
+msgid "Date"
+msgstr "Date"
+
+#, fuzzy
+msgid "IP"
+msgstr "IP"
+
+#, fuzzy
+msgid "Client PC info"
+msgstr "Info PC client"
+
+#, fuzzy
+msgid "Form URL"
+msgstr "URL de la forme"
+
+#, fuzzy
+msgid "Form name"
+msgstr "Nom du formulaire"
+
+#, fuzzy
+msgid "Select language"
+msgstr "Langue"
+
+#, fuzzy
+msgid "english"
+msgstr "Français"
+
+#, fuzzy
+msgid "spanish"
+msgstr "Espagnol :"
+
+#, fuzzy
+msgid "french"
+msgstr "Français"
+
+#, fuzzy
+msgid "german"
+msgstr "Allemand"
+
+#, fuzzy
+msgid "italian"
+msgstr "doublure vénitienne"
+
+#, fuzzy
+msgid "portuguese"
+msgstr "Portugais"
+
+#, fuzzy
+msgid "russian"
+msgstr "Russe"
+
+#, fuzzy
+msgid "chinese"
+msgstr "Brahmi"
+
+#, fuzzy
+msgid "Close"
+msgstr "Fermer"
+
+#, fuzzy
+msgid "Required only letters"
+msgstr "Seulement des lettres obligatoires"
+
+#, fuzzy
+msgid "Required only Letters and Numbers"
+msgstr "Requis uniquement des lettres et des chiffres"
+
+#, fuzzy
+msgid "Required only numbers"
+msgstr "Requis uniquement des nombres"
+
+#, fuzzy
+msgid "Required a valid mail"
+msgstr "Nécessaire un message valide"
+
+#, fuzzy
+msgid "this is required"
+msgstr "Obligatoire"
+
+#, fuzzy
+msgid "CAPTCHA Code"
+msgstr "Code Captcha"
+
+#, fuzzy
+msgid "Select file"
+msgstr "Sélectionnez un fichier"
+
+#, fuzzy
+msgid "Change"
+msgstr "Modifier"
+
+#, fuzzy
+msgid "Remove"
+msgstr "Supprimer"
+
+#, fuzzy
+msgid "Select image"
+msgstr "Sélectionner l'image"
+
+#, fuzzy
+msgid "Sending"
+msgstr "Envoi en cours"
+
+#, fuzzy
+msgid "Textbox label"
+msgstr "Étiquette de la zone de texte"
+
+#, fuzzy
+msgid "Textbox sublabel"
+msgstr "TextBox sous-label"
+
+#, fuzzy
+msgid "Help block text"
+msgstr "Bloc de texte d'aide"
+
+#, fuzzy
+msgid "option"
+msgstr "option"
+
+#, fuzzy
+msgid "Type your heading H1 here"
+msgstr "Entrez votre titre H1 ici"
+
+#, fuzzy
+msgid "Type your heading H2 here"
+msgstr "Taper votre en-tête H2 ici"
+
+#, fuzzy
+msgid "Type your heading H3 here"
+msgstr "Entrez votre titre H3 ici"
+
+#, fuzzy
+msgid "Type your heading H4 here"
+msgstr "Entrez votre titre H4 ici"
+
+#, fuzzy
+msgid "Type your heading H5 here"
+msgstr "Entrez votre titre H5 ici"
+
+#, fuzzy
+msgid "Type your heading H6 here"
+msgstr "Entrez votre titre H6 ici"
+
+#, fuzzy
+msgid "Multiple select"
+msgstr "Sélectionner plusieurs"
+
+#, fuzzy
+msgid "Move field block"
+msgstr "Bloquer"
+
+#, fuzzy
+msgid "Block"
+msgstr "Bloquer"
+
+#, fuzzy
+msgid "Edit"
+msgstr "Modifier"
+
+#, fuzzy
+msgid "Duplicate"
+msgstr "Dupliquer"
+
+#, fuzzy
+msgid "Textarea label"
+msgstr "Étiquette de textarea"
+
+#, fuzzy
+msgid "Textarea sublabel"
+msgstr "Textarea sous-label"
+
+#, fuzzy
+msgid "Prev"
+msgstr "Préc"
+
+#, fuzzy
+msgid "Next"
+msgstr "Suivant"
+
+#, fuzzy
+msgid "Form editor"
+msgstr "Liste par forme"
+
+#, fuzzy
+msgid "email section. you can set mail options. e.g. the recipient mail"
+msgstr ""
+"section email. vous pouvez définir les options de messagerie. par exemple "
+"l&#39;e-mail du destinataire"
+
+#, fuzzy
+msgid "Email Settings"
+msgstr "Email"
+
+#, fuzzy
+msgid ""
+"submission section. you can modify the success message and other messages"
+msgstr ""
+"section de présentation. vous pouvez modifier le message de réussite et "
+"d'autres messages"
+
+#, fuzzy
+msgid "On Submission"
+msgstr "Présentation de CV"
+
+#, fuzzy
+msgid "main settings"
+msgstr "Principaux domaines"
+
+msgid "Main settings"
+msgstr "Principaux domaines"
+
+#, fuzzy
+msgid "test"
+msgstr "Essai"
+
+#, fuzzy
+msgid "Show data"
+msgstr "Attention! Données non soumises"
+
+#, fuzzy
+msgid "preview"
+msgstr "Voir"
+
+#, fuzzy
+msgid "Save form"
+msgstr "Enregistrer le formulaire"
+
+#, fuzzy
+msgid ""
+"Fields section. Drag and Drop or just click to add to the preview section"
+msgstr ""
+"Section de champs. Drag et Drop ou il suffit de cliquer pour ajouter à la "
+"section Aperçu"
+
+#, fuzzy
+msgid ""
+"preview section. you can view how the fields will look like and you can "
+"change the settings on live mode  "
+msgstr ""
+"section Aperçu. vous pouvez voir comment les champs vont ressembler et vous "
+"pouvez modifier les paramètres sur le mode direct"
+
+#, fuzzy
+msgid "Tab title"
+msgstr "ID de l'onglet."
+
+#, fuzzy
+msgid "Form"
+msgstr "Formulaire"
+
+#, fuzzy
+msgid "Selected Field"
+msgstr "Champ sélectionné"
+
+#, fuzzy
+msgid "Form settings. you can set all options related to the form"
+msgstr ""
+"Paramètres de formulaire. vous pouvez définir toutes les options relies à la "
+"forme"
+
+#, fuzzy
+msgid "setting section. you can change the submit mode between ajax and post"
+msgstr ""
+"section de réglage. vous pouvez modifier le mode d'envoi entre ajax et post"
+
+#, fuzzy
+msgid "skin section. you can change skin options of your form"
+msgstr ""
+"section de la peau. vous pouvez modifier les options de la peau de votre "
+"formulaire"
+
+#, fuzzy
+msgid "Skin"
+msgstr "Peau"
+
+#, fuzzy
+msgid "wizard section. you can enable the wizard form and add many forms"
+msgstr ""
+"section de l'Assistant. vous pouvez activer le formulaire de l'Assistant et "
+"ajouter de nombreuses formes"
+
+#, fuzzy
+msgid "Wizard"
+msgstr "Assistant"
+
+#, fuzzy
+msgid "Email"
+msgstr "Courriel"
+
+#, fuzzy
+msgid "Field name"
+msgstr "Nom du champs"
+
+#, fuzzy
+msgid ""
+"This is important to identify the field on reports and conditional logic"
+msgstr ""
+"C'est important d'identifier le champ des rapports et de la logique "
+"conditionnelle"
+
+#, fuzzy
+msgid "Type field name"
+msgstr "Nom de domaine de type"
+
+#, fuzzy
+msgid "Options"
+msgstr "Options"
+
+#, fuzzy
+msgid "Label"
+msgstr "Libellé"
+
+#, fuzzy
+msgid "Input"
+msgstr "Entrée"
+
+#, fuzzy
+msgid "Help Block"
+msgstr "Help Block"
+
+#, fuzzy
+msgid "Validators"
+msgstr "Validateurs"
+
+#, fuzzy
+msgid "Images"
+msgstr "Images"
+
+#, fuzzy
+msgid "C.Logic"
+msgstr "C.Logic"
+
+#, fuzzy
+msgid "Misc"
+msgstr "Divers"
+
+#, fuzzy
+msgid "You need to save the form before seeing the preview"
+msgstr "Vous devez enregistrer le formulaire avant de voir l'aperçu"
+
+#, fuzzy
+msgid "Preview for desktops"
+msgstr "Aperçu des postes de travail"
+
+#, fuzzy
+msgid "Preview for tablets"
+msgstr "Aperçu pour tablettes"
+
+#, fuzzy
+msgid "Preview for smartphone"
+msgstr "Aperçu pour smartphone"
+
+#, fuzzy
+msgid "Import form"
+msgstr "Formulaire d&#39;importation"
+
+#, fuzzy
+msgid "The import has failed. press the accept button"
+msgstr "L'importation a échoué. Appuyez sur le bouton accepter"
+
+#, fuzzy
+msgid "Desktop"
+msgstr "Bureau"
+
+#, fuzzy
+msgid "Tablet"
+msgstr "Tablette"
+
+msgid "Smartphone"
+msgstr "smartphone"
+
+#, fuzzy
+msgid "Load form"
+msgstr "Charger le formulaire"
+
+#, fuzzy
+msgid "Accept"
+msgstr "Accepter"
+
+#, fuzzy
+msgid "Set Form name"
+msgstr "Définir le nom de la forme"
+
+#, fuzzy
+msgid "e.g. My custom form"
+msgstr "par exemple mon formulaire personnalisé"
+
+#, fuzzy
+msgid "Drag and Drop the fields to this area "
+msgstr "Faites glisser et déposez les champs à cette zone"
+
+#, fuzzy
+msgid "or just click the button fields to add it here "
+msgstr "ou cliquez simplement sur les champs de bouton pour l'ajouter ici"
+
+#, fuzzy
+msgid "Code to export"
+msgstr "Code pour exporter"
+
+#, fuzzy
+msgid "the exporting code is used for backuping your custom form"
+msgstr ""
+"le code d'exportation est utilisé pour sauvegarder votre formulaire "
+"personnalisé"
+
+#, fuzzy
+msgid "Main fields"
+msgstr "Principaux domaines"
+
+#, fuzzy
+msgid "More fields"
+msgstr "Plus de champs"
+
+#, fuzzy
+msgid "Standard Fields"
+msgstr "Les champs standard"
+
+#, fuzzy
+msgid "Text Box"
+msgstr "Zone de texte"
+
+#, fuzzy
+msgid "Text Area"
+msgstr "Zone de texte"
+
+#, fuzzy
+msgid "Radio Button"
+msgstr "Bouton radio"
+
+#, fuzzy
+msgid "Check Box"
+msgstr "Cliquez sur"
+
+#, fuzzy
+msgid "Select List"
+msgstr "Liste de Sélection"
+
+#, fuzzy
+msgid "Select Multiple "
+msgstr "Sélectionner plusieurs"
+
+#, fuzzy
+msgid "Submit Button"
+msgstr "Cliquez sur Soumettre"
+
+#, fuzzy
+msgid "Spinner"
+msgstr "Spinner"
+
+#, fuzzy
+msgid "Slider"
+msgstr "Slider"
+
+#, fuzzy
+msgid "Range"
+msgstr "Gamme"
+
+#, fuzzy
+msgid "Grid System"
+msgstr "réseau maillé"
+
+#, fuzzy
+msgid "1 Col"
+msgstr "1 Col"
+
+#, fuzzy
+msgid "2 Cols"
+msgstr "2 cols"
+
+#, fuzzy
+msgid "3 Cols"
+msgstr "3 cols"
+
+#, fuzzy
+msgid "4 Cols"
+msgstr "4 cols"
+
+#, fuzzy
+msgid "6 Cols"
+msgstr "6 cols"
+
+#, fuzzy
+msgid "Additional Fields"
+msgstr "Les champs supplémentaires"
+
+#, fuzzy
+msgid "Star rating"
+msgstr "Étoile"
+
+#, fuzzy
+msgid "ReCaptcha"
+msgstr "ReCaptcha"
+
+#, fuzzy
+msgid "Custom Html"
+msgstr "Html personnalisé"
+
+#, fuzzy
+msgid "Hidden Input"
+msgstr "Entrée Invisible"
+
+#, fuzzy
+msgid "Password"
+msgstr "Mot de passe"
+
+#, fuzzy
+msgid "Captcha"
+msgstr "Captcha"
+
+#, fuzzy
+msgid "Date Picker"
+msgstr "Sélectionneur de date"
+
+#, fuzzy
+msgid "Prepend"
+msgstr "Prepend"
+
+#, fuzzy
+msgid "Layout Elements"
+msgstr "Éléments de mise en page"
+
+#, fuzzy
+msgid "Divider"
+msgstr "Separateur"
+
+#, fuzzy
+msgid "Heading H1"
+msgstr "Titre H1"
+
+#, fuzzy
+msgid "Upload Fields"
+msgstr "Upload Fields"
+
+#, fuzzy
+msgid "File Upload"
+msgstr "Télécharger un fichier"
+
+#, fuzzy
+msgid "Image Upload"
+msgstr "Télécharger une image"
+
+#, fuzzy
+msgid "Picker Fields"
+msgstr "Picker champs"
+
+#, fuzzy
+msgid "Color Picker"
+msgstr "Sélecteur de couleur"
+
+#, fuzzy
+msgid "Time Picker"
+msgstr "Sélecteur d'heure"
+
+#, fuzzy
+msgid "Date and Time"
+msgstr "Date et heure"
+
+#, fuzzy
+msgid "Prepend/Append Fields - Text Box"
+msgstr "Préfixe/ajout des champs - zone de texte"
+
+#, fuzzy
+msgid "Append"
+msgstr "Ajout"
+
+#, fuzzy
+msgid "Prepend/Append"
+msgstr "Ajouter/Ajouter"
+
+#, fuzzy
+msgid "Headings"
+msgstr "Titres"
+
+#, fuzzy
+msgid "Heading H2"
+msgstr "Rubrique H2"
+
+#, fuzzy
+msgid "Heading H3"
+msgstr "Rubrique H3"
+
+#, fuzzy
+msgid "Heading H4"
+msgstr "Rubrique H4"
+
+#, fuzzy
+msgid "Heading H5"
+msgstr "Rubrique H5"
+
+#, fuzzy
+msgid "Heading H6"
+msgstr "Rubrique H6"
+
+#, fuzzy
+msgid "Wizard elements"
+msgstr "Éléments de mise en page"
+
+#, fuzzy
+msgid "Wizard buttons"
+msgstr "Assistant"
+
+#, fuzzy
+msgid "Others"
+msgstr ""
+"ce courrier recevra une copie de l'e-mail sans laisser les autres le remarque"
+
+#, fuzzy
+msgid "Switch"
+msgstr "Switch"
+
+#, fuzzy
+msgid "Dyn Checkbox"
+msgstr "Dyn cocher"
+
+#, fuzzy
+msgid "Dyn RadioBtn"
+msgstr "Dyn RadioBtn"
+
+msgid ""
+"Success! The form was created. Go to url to see your changes or copy & paste "
+"widget code to your page"
+msgstr ""
+"Succès ! Le formulaire a été créé. Aller à l'url pour voir vos modifications "
+"ou copie & coller le code du widget à votre page"
+
+msgid "Widget code"
+msgstr "Code Captcha"
+
+msgid "iframe"
+msgstr "Iframe"
+
+msgid "Url"
+msgstr "Adresse"
+
+#, fuzzy
+msgid "Previous"
+msgstr "Précédent"
+
+msgid "Your Form code"
+msgstr "Code de votre formulaire"
+
+#, fuzzy
+msgid "List forms."
+msgstr "formes de liste."
+
+#, fuzzy
+msgid "Add new form"
+msgstr "Ajouter un nouveau formulaire"
+
+#, fuzzy
+msgid "Disable"
+msgstr "Désactiver"
+
+#, fuzzy
+msgid "Enable"
+msgstr "Activer"
+
+#, fuzzy
+msgid "Delete"
+msgstr "Supprimer"
+
+#, fuzzy
+msgid "Name Form"
+msgstr "Formulaire Nom :"
+
+#, fuzzy
+msgid "Copy and paste the shortcode to your desired page"
+msgstr "Copiez et collez le shortcode votre page souhaitée"
+
+msgid "Code"
+msgstr "﻿Code Promo"
+
+#, fuzzy
+msgid "Created"
+msgstr "﻿Créé"
+
+#, fuzzy
+msgid "Status"
+msgstr "Statut"
+
+msgid "Get widget code"
+msgstr "Code pour exporter"
+
+#, fuzzy
+msgid "Active"
+msgstr "Actif"
+
+#, fuzzy
+msgid "Inactive"
+msgstr "Inactif"
+
+#, fuzzy
+msgid "Edit and load your custom form"
+msgstr "Éditer et charger votre formulaire personnalisé"
+
+#, fuzzy
+msgid "Delete form"
+msgstr "Supprimer le formulaire"
+
+#, fuzzy
+msgid "there is not forms. Add new one"
+msgstr "Il y a pas de formes. Ajouter nouveau"
+
+#, fuzzy
+msgid "List form information"
+msgstr "Informations de formulaire de liste"
+
+#, fuzzy
+msgid "there is no forms selected. select one at least"
+msgstr "Il n'y a pas de formulaire sélectionnés. Sélectionnez l'une au moins"
+
+#, fuzzy
+msgid "Show help block"
+msgstr "Afficher aide bloc"
+
+#, fuzzy
+msgid "Text Font"
+msgstr "Police du texte"
+
+#, fuzzy
+msgid "Help block position"
+msgstr "Aider la position du bloc"
+
+#, fuzzy
+msgid "At bottom"
+msgstr "Au fond"
+
+#, fuzzy
+msgid "At Top"
+msgstr "En haut"
+
+#, fuzzy
+msgid "Tooltip"
+msgstr "Info-bulle"
+
+#, fuzzy
+msgid "Pop up"
+msgstr "Fenêtre contextuelle"
+
+#, fuzzy
+msgid "Add"
+msgstr "Ajouter"
+
+#, fuzzy
+msgid "Clean"
+msgstr "Simple"
+
+#, fuzzy
+msgid "Text"
+msgstr "Texte"
+
+#, fuzzy
+msgid "Place holder"
+msgstr "Espace réservé"
+
+#, fuzzy
+msgid "Color"
+msgstr "Couleur"
+
+#, fuzzy
+msgid "Font family"
+msgstr "Police"
+
+#, fuzzy
+msgid "Input value alignment"
+msgstr "Alignement de la valeur d'entrée"
+
+#, fuzzy
+msgid "Left"
+msgstr "Gauche"
+
+#, fuzzy
+msgid "Center"
+msgstr "Centrer"
+
+#, fuzzy
+msgid "Right"
+msgstr "Droite"
+
+#, fuzzy
+msgid "Button alignment"
+msgstr "﻿Alignement du bouton"
+
+#, fuzzy
+msgid "Background"
+msgstr "Arrière-Plan"
+
+#, fuzzy
+msgid "Background color"
+msgstr "Couleur d'arrière-plan"
+
+#, fuzzy
+msgid "Solid"
+msgstr "Solide"
+
+#, fuzzy
+msgid "Gradient"
+msgstr "Dégradé"
+
+#, fuzzy
+msgid "Pick the color"
+msgstr "Choisir la couleur"
+
+#, fuzzy
+msgid "Start color"
+msgstr "Couleur de départ"
+
+#, fuzzy
+msgid "End color"
+msgstr "Couleur de fin"
+
+#, fuzzy
+msgid "Border"
+msgstr "Bordure"
+
+#, fuzzy
+msgid "Border radius"
+msgstr "Coins arrondis"
+
+#, fuzzy
+msgid "Color (focus)"
+msgstr "Couleur (focus)"
+
+#, fuzzy
+msgid "border style"
+msgstr "Style de l'encadrement"
+
+#, fuzzy
+msgid "Dotted"
+msgstr "Pointillé"
+
+#, fuzzy
+msgid "Border width"
+msgstr "Taille de la bordure"
+
+#, fuzzy
+msgid "Divider bar Color"
+msgstr "Couleur de la barre de division"
+
+#, fuzzy
+msgid "Next Button"
+msgstr "Suivant"
+
+#, fuzzy
+msgid "Text for last button"
+msgstr "Texte"
+
+#, fuzzy
+msgid "you can check this on frontend page or preview"
+msgstr "Vous pouvez le vérifier sur la page ou aperçu frontend"
+
+#, fuzzy
+msgid "Prev Button"
+msgstr "Bouton radio"
+
+#, fuzzy
+msgid "Buttons alignment"
+msgstr "Alignement Boutons Onglet"
+
+#, fuzzy
+msgid "label Yes"
+msgstr "Oui"
+
+msgid "label no"
+msgstr "étiqueter pas"
+
+#, fuzzy
+msgid "allowed extensions"
+msgstr "Extensions autorisées"
+
+#, fuzzy
+msgid "Put the extensions between commas"
+msgstr "Mettez les extensions entre virgules"
+
+#, fuzzy
+msgid "Maximum size"
+msgstr "Valeurs maximales"
+
+#, fuzzy
+msgid "Attach files to mail notification"
+msgstr "Joindre des fichiers à la notification électronique"
+
+#, fuzzy
+msgid ""
+"if you enable attachment option, make sure your web server (hosting) and "
+"mail server support your maximum size file"
+msgstr ""
+"si vous activez l&#39;option de fixation, assurez-vous que votre serveur web "
+"(hébergement) et serveur de messagerie en charge votre fichier de taille "
+"maximale"
+
+msgid "Image Height"
+msgstr "Sélectionner l'image"
+
+msgid "Image width"
+msgstr "Sélectionner l'image"
+
+#, fuzzy
+msgid "Add new option"
+msgstr "Ajouter nouvelle option"
+
+#, fuzzy
+msgid "Remove all options"
+msgstr "Options"
+
+#, fuzzy
+msgid "Add new"
+msgstr "Ajouter"
+
+#, fuzzy
+msgid "Settings label option"
+msgstr "Option d'étiquette de paramètres"
+
+#, fuzzy
+msgid "Selected"
+msgstr "Sélectionner"
+
+#, fuzzy
+msgid "Block alignment"
+msgstr "Alignement de bloc"
+
+#, fuzzy
+msgid "Inline"
+msgstr "En Ligne"
+
+#, fuzzy
+msgid "Type label"
+msgstr "Libellé du type"
+
+#, fuzzy
+msgid "Custom html content"
+msgstr "Contenu personnalisé"
+
+#, fuzzy
+msgid "Minimum"
+msgstr "Minimum"
+
+#, fuzzy
+msgid "Maximum"
+msgstr "Valeurs maximales"
+
+#, fuzzy
+msgid "Default value"
+msgstr "Valeur par défaut"
+
+#, fuzzy
+msgid "Step"
+msgstr "Étape"
+
+#, fuzzy
+msgid "Range 1"
+msgstr "Gamme 1"
+
+#, fuzzy
+msgid "Range 2"
+msgstr "Gamme (2) :"
+
+#, fuzzy
+msgid "Public key"
+msgstr "Clée publique"
+
+#, fuzzy
+msgid "Secret key"
+msgstr "Clé secrète"
+
+#, fuzzy
+msgid "Theme"
+msgstr "Thème"
+
+#, fuzzy
+msgid "Light"
+msgstr "Léger"
+
+#, fuzzy
+msgid "Dark"
+msgstr "Sombre"
+
+#, fuzzy
+msgid "Custom text color"
+msgstr "Couleur de Texte Personnalisée"
+
+#, fuzzy
+msgid "Custom Background color"
+msgstr "Couleurs d'arrière-plan personnalisée"
+
+#, fuzzy
+msgid "Custom Behind lines"
+msgstr "Custom derrière les lignes"
+
+#, fuzzy
+msgid "Lines"
+msgstr "Lignes"
+
+#, fuzzy
+msgid "Custom front lines"
+msgstr "Lignes de front personnalisés"
+
+#, fuzzy
+msgid "Distortion"
+msgstr "Distorsion"
+
+msgid "English"
+msgstr "Français"
+
+#, fuzzy
+msgid "Spanish"
+msgstr "Espagnol"
+
+msgid "French"
+msgstr "Français"
+
+#, fuzzy
+msgid "Italian"
+msgstr "Italien"
+
+#, fuzzy
+msgid "Japanese"
+msgstr "Japonais"
+
+msgid "Portuguese"
+msgstr "Portugais"
+
+msgid "Russian"
+msgstr "Russe"
+
+#, fuzzy
+msgid "Chinese"
+msgstr "Chinese"
+
+#, fuzzy
+msgid "Format"
+msgstr "Type d'offre"
+
+#, fuzzy
+msgid "Default"
+msgstr "Défaut"
+
+#, fuzzy
+msgid "Text star 1"
+msgstr "Texte star 1"
+
+#, fuzzy
+msgid "Text star 2"
+msgstr "Texte star 2"
+
+#, fuzzy
+msgid "Text star 3"
+msgstr "étoiles du texte 3"
+
+#, fuzzy
+msgid "Text star 4"
+msgstr "Texte star 4"
+
+#, fuzzy
+msgid "Text star 5"
+msgstr "Texte star 5"
+
+#, fuzzy
+msgid "Not rated text"
+msgstr "Texte non classé"
+
+#, fuzzy
+msgid "Label text"
+msgstr "Inscription"
+
+#, fuzzy
+msgid "Text Color"
+msgstr "Couleur texte"
+
+#, fuzzy
+msgid "Text Shadow"
+msgstr "Ombre du texte"
+
+#, fuzzy
+msgid "horizontal"
+msgstr "horizontale"
+
+#, fuzzy
+msgid "vertical"
+msgstr "verticale"
+
+#, fuzzy
+msgid "blur"
+msgstr "flou"
+
+#, fuzzy
+msgid "Sub label"
+msgstr "Étiquette void"
+
+#, fuzzy
+msgid "Sublabel text"
+msgstr "Sous-label de texte"
+
+#, fuzzy
+msgid "Text font"
+msgstr "Police pour le texte..."
+
+msgid "Text shadow"
+msgstr "Ombre du texte"
+
+#, fuzzy
+msgid "x"
+msgstr "x"
+
+#, fuzzy
+msgid "y"
+msgstr "y"
+
+#, fuzzy
+msgid "Text Block"
+msgstr "Bloc de texte"
+
+#, fuzzy
+msgid "Block position"
+msgstr "Position du bloc"
+
+#, fuzzy
+msgid "Top"
+msgstr "Haut"
+
+#, fuzzy
+msgid "Bottom"
+msgstr "Bas"
+
+#, fuzzy
+msgid "Show Block"
+msgstr "Voir la bloc"
+
+msgid "Help block"
+msgstr "Help Block"
+
+#, fuzzy
+msgid "Help block alignment (temp - delete)"
+msgstr "Aider l'alignement de bloc (temp - supprimer)"
+
+#, fuzzy
+msgid "Required"
+msgstr "Champs obligatoires"
+
+#, fuzzy
+msgid "Allow whitespace"
+msgstr "Laissez un espace blanc"
+
+#, fuzzy
+msgid "Add validator"
+msgstr "Ajouter validator"
+
+#, fuzzy
+msgid "Validator configuration: "
+msgstr "Configuration du validateur :"
+
+#, fuzzy
+msgid "Less than"
+msgstr "Moins d'une"
+
+#, fuzzy
+msgid "Default Message"
+msgstr "Message par défaut"
+
+#, fuzzy
+msgid "Custom Error Message"
+msgstr "message d&#39;erreur personnalisé"
+
+#, fuzzy
+msgid "Alert position"
+msgstr "Position alerte"
+
+#, fuzzy
+msgid "Set required icon"
+msgstr "Définir une icône requise"
+
+#, fuzzy
+msgid "Choose required icon"
+msgstr "Choisissez l'icône requis"
+
+#, fuzzy
+msgid "Required icon position"
+msgstr "Position de l'icône requis"
+
+#, fuzzy
+msgid "Before label"
+msgstr "Avant le libellé"
+
+#, fuzzy
+msgid "After label"
+msgstr "Après le libellé"
+
+#, fuzzy
+msgid "Letters"
+msgstr "Lettres"
+
+#, fuzzy
+msgid "Letter & Numbers"
+msgstr "Lettre & nombres"
+
+#, fuzzy
+msgid "Only numbers"
+msgstr "Seuls les numéros"
+
+#, fuzzy
+msgid "Greater than"
+msgstr "Plus grand que"
+
+#, fuzzy
+msgid "Identical"
+msgstr "Identiques"
+
+#, fuzzy
+msgid "Length"
+msgstr "Longueur"
+
+#, fuzzy
+msgid "Validator: "
+msgstr "Valideur"
+
+#, fuzzy
+msgid "Translate error message "
+msgstr "Traduire le message d'erreur"
+
+#, fuzzy
+msgid "Letters and Numbers"
+msgstr "Lettres et chiffres"
+
+#, fuzzy
+msgid "Background Color"
+msgstr "Couleur d’arrière plan"
+
+#, fuzzy
+msgid "Required icon"
+msgstr "Icône requis"
+
+#, fuzzy
+msgid "Enable Conditional logic"
+msgstr "Activez la logique conditionnelle"
+
+#, fuzzy
+msgid "Show"
+msgstr "Montrer"
+
+#, fuzzy
+msgid "Hide"
+msgstr "Cacher"
+
+#, fuzzy
+msgid "this field if"
+msgstr "Champ sélectionné"
+
+#, fuzzy
+msgid "All"
+msgstr "Tous"
+
+#, fuzzy
+msgid "Any"
+msgstr "Aucun"
+
+#, fuzzy
+msgid "of the following rule match"
+msgstr "du match suivant règle"
+
+#, fuzzy
+msgid "Add new conditional Logic"
+msgstr "Ajouter une logique conditionnelle nouveau"
+
+#, fuzzy
+msgid "Remove all"
+msgstr "Supprimer tout"
+
+msgid "is"
+msgstr "est"
+
+msgid "is not"
+msgstr "n’est pas"
+
+#, fuzzy
+msgid "greater than"
+msgstr "est supérieur à"
+
+#, fuzzy
+msgid "less than"
+msgstr "est inférieur à"
+
+#, fuzzy
+msgid "You are receiving a new form request"
+msgstr "Vous recevez une nouvelle demande de formulaire"
+
+#, fuzzy
+msgid "Form information"
+msgstr "Informations de formulaire de liste"
+
+#, fuzzy
+msgid "URL"
+msgstr "URL"
+
+#, fuzzy
+msgid "Subject mail"
+msgstr "Objet mail"
+
+#, fuzzy
+msgid "it is the title of the message. do not leave blank"
+msgstr "C'est le titre du message. ne pas laisser vide"
+
+#, fuzzy
+msgid "Here goes your subject mail"
+msgstr "Ici va votre sujet courrier"
+
+#, fuzzy
+msgid "Type subject"
+msgstr "Sujet de type"
+
+#, fuzzy
+msgid "Recipient mail"
+msgstr "Mail destinataire"
+
+#, fuzzy
+msgid ""
+"This is the recipient mail. if you leave it blank, admin mail will be taken"
+msgstr ""
+"Il s'agit de l'e-mail du destinataire. Si vous laissez vide, admin courrier "
+"est prise"
+
+#, fuzzy
+msgid "Type email address"
+msgstr "Adresse eMail"
+
+#, fuzzy
+msgid "this mail will receive a copy of the email"
+msgstr "ce mail vous recevrez une copie de l'email"
+
+#, fuzzy
+msgid "Type CC mail"
+msgstr "Courrier type CC"
+
+#, fuzzy
+msgid ""
+"this mail will receive a copy of the email without letting the others notice "
+"it"
+msgstr ""
+"ce courrier recevra une copie de l'e-mail sans laisser les autres le remarque"
+
+#, fuzzy
+msgid "Type BCC mail"
+msgstr "Tapez mail BCC"
+
+#, fuzzy
+msgid "Email Template"
+msgstr "Modèle d'Email"
+
+msgid "Codes to use"
+msgstr "Codes à utiliser"
+
+#, fuzzy
+msgid "Submit mode"
+msgstr "Présenter la mode"
+
+#, fuzzy
+msgid "Ajax mode when submitting form"
+msgstr "Mode Ajax lors de la soumission de formulaire"
+
+#, fuzzy
+msgid "You can switch the submit mode between POST and AJAX"
+msgstr "Vous pouvez basculer le mode d'envoi entre POST et AJAX"
+
+#, fuzzy
+msgid "Import"
+msgstr "Importation"
+
+#, fuzzy
+msgid "Import the backuped form"
+msgstr "Importer le formulaire sauvegardé"
+
+#, fuzzy
+msgid "Custom css"
+msgstr "CSS personnalisé"
+
+#, fuzzy
+msgid "Additional css"
+msgstr "CSS additionnel"
+
+#, fuzzy
+msgid ""
+"This is not required. You can add extra css to your form. this will be added "
+"to css file "
+msgstr ""
+"Ce ne est pas requise. Vous pouvez ajouter css supplémentaire à votre forme. "
+"ce sera ajouté au fichier css"
+
+#, fuzzy
+msgid "Just put the selectors. e.g. #id_form .control-label {color:red} "
+msgstr ""
+"Il suffit de mettre les sélecteurs. par exemple #id_form .Control label "
+"{color: red}"
+
+#, fuzzy
+msgid "Additional javascript"
+msgstr "Javascript supplémentaire"
+
+#, fuzzy
+msgid ""
+"This is not required. You can add extra javascript code or some script to "
+"your form."
+msgstr ""
+"Ce n'est pas nécessaire. Vous pouvez ajouter le code javascript "
+"supplémentaire ou un script à votre formulaire."
+
+#, fuzzy
+msgid ""
+"proceed with caution. if you put a wrong javascript code, the form will not "
+"work properly e.g. "
+msgstr ""
+"procéder avec prudence. si vous mettez un mauvais code javascript, la forme "
+"ne fonctionnera pas correctement, par exemple"
+
+#, fuzzy
+msgid "More options"
+msgstr "Plus d’options"
+
+#, fuzzy
+msgid "Refresh preview editor panel"
+msgstr "Actualisez panneau de l&#39;éditeur de prévisualisation"
+
+#, fuzzy
+msgid "Refresh"
+msgstr "Actualiser"
+
+#, fuzzy
+msgid ""
+"this is used in order to fix if something is not showing fine on the preview "
+"editor panel"
+msgstr ""
+"ceci est utilisé pour fixer si quelque chose ne montre pas bien sur le "
+"panneau de l&#39;éditeur de prévisualisation"
+
+#, fuzzy
+msgid "Text font size"
+msgstr "Texte : taille de la police"
+
+#, fuzzy
+msgid "Select font size"
+msgstr "Taille de la police"
+
+#, fuzzy
+msgid "Custom width"
+msgstr "Épaisseur de ligne personnalisée"
+
+#, fuzzy
+msgid "Max width"
+msgstr "largeur max."
+
+#, fuzzy
+msgid "Custom padding"
+msgstr "Remplissage personnalisé"
+
+#, fuzzy
+msgid "Padding top"
+msgstr "Marge (padding) en haut"
+
+#, fuzzy
+msgid "Padding right"
+msgstr "Padding droite"
+
+#, fuzzy
+msgid "Padding bottom"
+msgstr "Marge (padding) en bas"
+
+#, fuzzy
+msgid "Padding left"
+msgstr "Padding gauche"
+
+#, fuzzy
+msgid "Background image"
+msgstr "Image de fond"
+
+#, fuzzy
+msgid "Update Image"
+msgstr "Mettre à jour l’image"
+
+#, fuzzy
+msgid "Box Shadow"
+msgstr "Ombre du cadre"
+
+#, fuzzy
+msgid "Success! Form was sent successfully."
+msgstr "Succès ! Formulaire a été envoyé avec succès."
+
+#, fuzzy
+msgid "Success Message"
+msgstr "Message de réussite"
+
+#, fuzzy
+msgid "Enable wizard forms"
+msgstr "Activez les formes Assistant"
+
+#, fuzzy
+msgid "Tabs management"
+msgstr "Gestion des onglets"
+
+#, fuzzy
+msgid "Clean Tabs"
+msgstr "Tabs propres"
+
+#, fuzzy
+msgid "Tab"
+msgstr "Onglet"
+
+#, fuzzy
+msgid "Type tab title"
+msgstr "Titre d'étiquette de type"
+
+#, fuzzy
+msgid "Skin tab"
+msgstr "onglet de la peau"
+
+#, fuzzy
+msgid "Theme 1"
+msgstr "Combinaison 1"
+
+#, fuzzy
+msgid "Theme 2"
+msgstr "Sujet 2 :"
+
+#, fuzzy
+msgid "Inactive mode"
+msgstr "mode inactif"
+
+#, fuzzy
+msgid "Text color"
+msgstr "Couleur du texte"
+
+#, fuzzy
+msgid "Number text color"
+msgstr "Couleur du texte numéro"
+
+#, fuzzy
+msgid "Active Mode"
+msgstr "mode actif"
+
+#, fuzzy
+msgid "Title color"
+msgstr "Couleur du titre"
+
+#, fuzzy
+msgid "Background for number container"
+msgstr "Contexte pour le récipient de numéro"
+
+#, fuzzy
+msgid "Done mode"
+msgstr "Mode Fait"
+
+#, fuzzy
+msgid "this when the tab is completed. this will be shown on frontend"
+msgstr "quand l&#39;onglet est terminée. ce sera montré sur frontend"
+
+#, fuzzy
+msgid "Tab container "
+msgstr "Conteneur de l'onglet"
+
+#, fuzzy
+msgid "Custom report"
+msgstr "Rapport personnalisé"
+
+#, fuzzy
+msgid "Select your custom fields to be shown on list report"
+msgstr ""
+"Sélectionnez vos champs personnalisés pour figurer sur la liste des rapport"
+
+#, fuzzy
+msgid "Save Changes"
+msgstr "Sauvegarder"
+
+#, fuzzy
+msgid "URL page"
+msgstr "URL de la page"
+
+#, fuzzy
+msgid "Export to PDF"
+msgstr "Exportation au format PDF"
+
+#, fuzzy
+msgid "List Records."
+msgstr "Liste de documents."
+
+#, fuzzy
+msgid "Export to csv"
+msgstr "Exporter les temps..."
+
+#, fuzzy
+msgid "Show detail"
+msgstr "Afficher le détail"
+
+#, fuzzy
+msgid "View chart"
+msgstr "Voir tableau"
+
+#, fuzzy
+msgid "Backup"
+msgstr "Backup"
+
+#, fuzzy
+msgid "Name backup"
+msgstr "Nom de sauvegarde"
+
+#, fuzzy
+msgid ""
+"Enter a backup name or leave blank, current date will be assigned to backup "
+"name"
+msgstr ""
+"Entrez un nom de sauvegarde ou de laisser en blanc, la date actuelle sera "
+"assignée à nom de la sauvegarde"
+
+#, fuzzy
+msgid "Create backup"
+msgstr "Créez la sauvegarde."
+
+#, fuzzy
+msgid "Name"
+msgstr "Nom"
+
+#, fuzzy
+msgid "Download"
+msgstr "Télécharger"
+
+#, fuzzy
+msgid "Restore Backup"
+msgstr "Restaurer une copie de sauvegarde"
+
+#, fuzzy
+msgid "there is not backup stored. Create new one"
+msgstr "il n&#39;y a pas de sauvegarde stockée. Créer nouveau"
+
+#, fuzzy
+msgid "Upload Backup"
+msgstr "Envoi sauvegarde"
+
+#, fuzzy
+msgid "Save changes"
+msgstr "Sauvegarder les modifications"
+
+#, fuzzy
+msgid "Database backup success"
+msgstr "Le succès de sauvegarde de base de données"
+
+#, fuzzy
+msgid "Delete File selected"
+msgstr "Supprimer le fichier sélectionné"
+
+#, fuzzy
+msgid "Global Settings"
+msgstr "Réglages globaux"
+
+msgid "User Information"
+msgstr "Modifier l'utilisateur"
+
+msgid "Username"
+msgstr "Nom d’utilisateur"
+
+msgid "Type username"
+msgstr "Libellé du type"
+
+msgid "Type email"
+msgstr "Adresse eMail"
+
+msgid "Type password"
+msgstr "Mot de passe"
+
+msgid "Confirm password"
+msgstr "Mot de passe"
+
+#, fuzzy
+msgid "Enabled"
+msgstr "Activer"
+
+#, fuzzy
+msgid "Disabled"
+msgstr "Desactivé"
+
+msgid "Users"
+msgstr "Utilisateurs"
+
+msgid "User"
+msgstr "Utilisateur"
+
+msgid "active"
+msgstr "activé"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Edit User"
+msgstr "Modifier l'utilisateur"
+
+#, fuzzy
+msgid "Removing"
+msgstr "Suppression en cours..."
+
+#, fuzzy
+msgid "Processing"
+msgstr "En cours"
+
+#, fuzzy
+msgid "Loading"
+msgstr "En cours de chargement"
+
+#, fuzzy
+msgid "Saving"
+msgstr "Enregistrement en cours"
+
+msgid "Regenerate"
+msgstr "Regénérer"
+
+#, fuzzy
+msgid "Tour guide info"
+msgstr "Info guide de tour"
+
+#, fuzzy
+msgid "there is not tour guide for this page. press the accept button"
+msgstr ""
+"Il y a pas de guide touristique pour cette page. Appuyez sur le bouton "
+"accepter"
+
+#, fuzzy
+msgid "Success! Updated successfully"
+msgstr "Succès ! Mis à jour avec succès"
+
+#, fuzzy
+msgid "Form was created"
+msgstr "Formulaire a été créé"
+
+#, fuzzy
+msgid ""
+"Success! The form was created. Now just copy and paste the shortcode to your "
+"content"
+msgstr ""
+"Succès! Le formulaire a été créé. Maintenant, il suffit de copier et coller "
+"le shortcode à votre contenu"
+
+msgid ""
+"the form did not loaded properly. Press regenerate button in order to "
+"recover the form"
+msgstr ""
+"la forme n'a pas chargé correctement. Appuyez sur le bouton régénérer afin "
+"de récupérer le formulaire"
+
+msgid "Regenerate Form"
+msgstr "Informations de formulaire de liste"
+
+#, fuzzy
+msgid "Delete field selected"
+msgstr "Supprimer le champ sélectionné"
+
+#, fuzzy
+msgid "Are you sure?"
+msgstr "Êtes-vous sûr(e) ?"
+
+#, fuzzy
+msgid "Yes"
+msgstr "Oui"
+
+#, fuzzy
+msgid "Toggle navigation"
+msgstr "Afficher la navigation"
+
+#, fuzzy
+msgid "Forms"
+msgstr "Formulaires"
+
+#, fuzzy
+msgid "New"
+msgstr "Nouveau"
+
+msgid "List forms"
+msgstr "formes de liste."
+
+#, fuzzy
+msgid "Templates"
+msgstr "Modèles"
+
+#, fuzzy
+msgid "Contact us"
+msgstr "Contactez-nous"
+
+#, fuzzy
+msgid "Newsletter"
+msgstr "Newsletter"
+
+#, fuzzy
+msgid "Survey Questionnaire"
+msgstr "Questionnaire d'enquête"
+
+#, fuzzy
+msgid "Online event registration"
+msgstr "Inscription en ligne"
+
+#, fuzzy
+msgid "Reservation Request"
+msgstr "Demande de réservation"
+
+#, fuzzy
+msgid "Purchase Order - Point Of Sale"
+msgstr "Bon de commande - points de vente"
+
+#, fuzzy
+msgid "Website Design Request"
+msgstr "Demande de conception de site Web"
+
+#, fuzzy
+msgid "Job Application"
+msgstr "Candidature"
+
+#, fuzzy
+msgid "CV Submission"
+msgstr "Présentation de CV"
+
+#, fuzzy
+msgid "Order form"
+msgstr "Formulaire de commande"
+
+#, fuzzy
+msgid "wizard form"
+msgstr "forme assistant"
+
+#, fuzzy
+msgid "All fields"
+msgstr "Tous les champs"
+
+#, fuzzy
+msgid "Conditional Logic"
+msgstr "Logique conditionnelle"
+
+#, fuzzy
+msgid "Custom skin"
+msgstr "Habillage personnalisé"
+
+#, fuzzy
+msgid "Preview"
+msgstr "Preview"
+
+#, fuzzy
+msgid "desktop"
+msgstr "bureau"
+
+#, fuzzy
+msgid "smartphone"
+msgstr "smartphone"
+
+#, fuzzy
+msgid "Records"
+msgstr "Records"
+
+#, fuzzy
+msgid "List all Forms"
+msgstr "La liste de toutes les formes"
+
+msgid "List by Form"
+msgstr "Informations de formulaire de liste"
+
+msgid "Custom Report"
+msgstr "Rapport personnalisé"
+
+#, fuzzy
+msgid "Export"
+msgstr "Exporter"
+
+#, fuzzy
+msgid "Charts"
+msgstr "Graphiques"
+
+#, fuzzy
+msgid "Guided tour"
+msgstr "Visite guidée"
+
+msgid "Log out"
+msgstr "Sortie par le haut"

@@ -1,0 +1,90 @@
+body{
+    background: #EEEEEE;
+}
+.logo{
+    width: 137px;
+    height: 25px;
+    margin:20px auto 3px;
+}
+.box-install{
+    background: none repeat scroll 0 0 #FAFAFA;
+    border: 1px solid #CDCDCD;
+    border-radius: 6px 6px 6px 6px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    clear: both;
+    position: relative;
+    margin: 20px auto;
+    padding: 15px;
+    width: 900px;
+}
+
+#breadcrumb {
+    background-color: #E3E0ED;
+    border-bottom: 1px solid #D6D6D6;
+    border-top: 1px solid #D6D6D6;
+    box-shadow: 0 0 1px #FFFFFF;
+    margin-bottom: 20px;
+    padding-left: 10px;
+}
+#breadcrumb li {
+    color: #666666;
+    display: block;
+    font-size: 14px;
+    padding: 8px 20px 8px 10px;
+}
+#breadcrumb li i {
+    margin-right: 5px;
+    
+    vertical-align: middle;
+}
+#breadcrumb li:hover {
+    color: #333333;
+}
+#breadcrumb li:hover i {
+   
+}
+#breadcrumb li:last-child {
+    background-image: none;
+}
+#breadcrumb .current span {
+    color: #444444;
+    font-weight: bold;
+}
+.fa-thumbs-up{
+    color:green;
+}
+.fa-exclamation-triangle{
+    color:red;
+}
+.disabled {
+    color: #BBBBBB;
+}
+.disabled{
+    /*color:#AAAAAA !important;*/
+}
+.box-configuration{
+    background: none repeat scroll 0 0 #EEEEEE;
+    padding: 10px;
+    margin-top:10px;
+}
+.fa-check-square-o{
+    color:#18B301;
+}
+.fa-square-o{
+    color:#3D7CB8;
+}
+.fa-arrow-right{
+    color:red;
+}
+.help-inline{
+    color:red;
+}
+.box-choosing-method{
+    text-align: center;
+}
+.box-choosing-method small{
+    display: block;
+    font-size: 11px;
+    margin-top: 12px;
+    text-align: left;
+}

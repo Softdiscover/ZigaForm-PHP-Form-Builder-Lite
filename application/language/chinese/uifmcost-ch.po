@@ -1,0 +1,1929 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2016-02-10 13:59-0500\n"
+"PO-Revision-Date: 2016-02-10 14:59-0500\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.7.5\n"
+"X-Poedit-Basepath: .\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+msgid "Change password"
+msgstr "修改密码"
+
+msgid "Confirm Password"
+msgstr "确认密码"
+
+msgid "Update password"
+msgstr "请更新。"
+
+msgid "Enter your username and password"
+msgstr "为“%s”输入你的用户名和密码。"
+
+msgid "Forgot Password"
+msgstr "密码"
+
+msgid "Sign in"
+msgstr "登陆"
+
+#, fuzzy
+msgid "Settings"
+msgstr "设置"
+
+msgid "Site title"
+msgstr "标题颜色"
+
+msgid "Admin mail"
+msgstr "这是接收方邮件。如果你让它空白，管理员的邮件将采取"
+
+#, fuzzy
+msgid "Language"
+msgstr "语言"
+
+msgid "Select here ..."
+msgstr "选择付款方式"
+
+msgid "Mailer default"
+msgstr "默认"
+
+#, fuzzy
+msgid "Type"
+msgstr "类型"
+
+msgid "Sendmail path"
+msgstr ""
+
+#, fuzzy
+msgid "Save"
+msgstr "保存"
+
+#, fuzzy
+msgid "Cancel"
+msgstr "取消"
+
+msgid "paypal success message"
+msgstr "成功消息"
+
+msgid "error found while submitting"
+msgstr "提交时发现错误"
+
+msgid "Offline success"
+msgstr "成功 ！提交您的窗体"
+
+#, fuzzy
+msgid "Success! your form was submitted"
+msgstr "成功！表单提交"
+
+#, fuzzy
+msgid "warning! Form was not submitted"
+msgstr "警告！表没有提交"
+
+#, fuzzy
+msgid "Error! The file exceeds the allowed size of"
+msgstr "错误！该文件超出了允许的大小"
+
+#, fuzzy
+msgid "Error! Type of file is not allowed to upload"
+msgstr "错误！文件的类型是不允许载"
+
+#, fuzzy
+msgid "New form request"
+msgstr "新形式的要求"
+
+#, fuzzy
+msgid "Entry information"
+msgstr "条目信息"
+
+#, fuzzy
+msgid "Submitted form data"
+msgstr "提交的表单数据"
+
+#, fuzzy
+msgid "Additional info"
+msgstr "附加信息"
+
+#, fuzzy
+msgid "Date"
+msgstr "日期"
+
+#, fuzzy
+msgid "IP"
+msgstr "IP"
+
+#, fuzzy
+msgid "Client PC info"
+msgstr "客户端PC信息"
+
+#, fuzzy
+msgid "Form URL"
+msgstr "表格网址"
+
+#, fuzzy
+msgid "Form name"
+msgstr "表单名称"
+
+#, fuzzy
+msgid "Select language"
+msgstr "选择语言"
+
+#, fuzzy
+msgid "english"
+msgstr "英语"
+
+#, fuzzy
+msgid "spanish"
+msgstr "西班牙人"
+
+#, fuzzy
+msgid "french"
+msgstr "法国"
+
+#, fuzzy
+msgid "german"
+msgstr "德语"
+
+#, fuzzy
+msgid "italian"
+msgstr "意大利"
+
+#, fuzzy
+msgid "portuguese"
+msgstr "葡萄牙语"
+
+#, fuzzy
+msgid "russian"
+msgstr "俄语"
+
+#, fuzzy
+msgid "chinese"
+msgstr "中文"
+
+#, fuzzy
+msgid "Close"
+msgstr "关闭"
+
+#, fuzzy
+msgid "Required only letters"
+msgstr "只需要字母"
+
+#, fuzzy
+msgid "Required only Letters and Numbers"
+msgstr "所需的数字和字母"
+
+#, fuzzy
+msgid "Required only numbers"
+msgstr "只需要数"
+
+#, fuzzy
+msgid "Required a valid mail"
+msgstr "需要提供有效的邮件"
+
+#, fuzzy
+msgid "this is required"
+msgstr "这是需要"
+
+#, fuzzy
+msgid "CAPTCHA Code"
+msgstr "验证码验证码"
+
+#, fuzzy
+msgid "Select file"
+msgstr "选择文件"
+
+#, fuzzy
+msgid "Change"
+msgstr "更改"
+
+#, fuzzy
+msgid "Remove"
+msgstr "删除"
+
+#, fuzzy
+msgid "Select image"
+msgstr "选择图片"
+
+#, fuzzy
+msgid "Sending"
+msgstr "发出"
+
+#, fuzzy
+msgid "Textbox label"
+msgstr "文本框标签"
+
+#, fuzzy
+msgid "Textbox sublabel"
+msgstr "文本框下标的"
+
+#, fuzzy
+msgid "Help block text"
+msgstr "帮助文本块"
+
+#, fuzzy
+msgid "option"
+msgstr "选项"
+
+#, fuzzy
+msgid "Type your heading H1 here"
+msgstr "在这里输入您的标题H1"
+
+#, fuzzy
+msgid "Type your heading H2 here"
+msgstr "在这里输入您的标题H2"
+
+#, fuzzy
+msgid "Type your heading H3 here"
+msgstr "在这里输入您的标题H3"
+
+#, fuzzy
+msgid "Type your heading H4 here"
+msgstr "在这里输入您的标题H4"
+
+#, fuzzy
+msgid "Type your heading H5 here"
+msgstr "在这里输入您的标题H5"
+
+#, fuzzy
+msgid "Type your heading H6 here"
+msgstr "在这里输入您的标题H6"
+
+#, fuzzy
+msgid "Multiple select"
+msgstr "多重选择"
+
+#, fuzzy
+msgid "Move field block"
+msgstr "移动领域块"
+
+#, fuzzy
+msgid "Block"
+msgstr "块"
+
+#, fuzzy
+msgid "Edit"
+msgstr "编辑"
+
+#, fuzzy
+msgid "Duplicate"
+msgstr "重复"
+
+#, fuzzy
+msgid "Textarea label"
+msgstr "多行文本标签"
+
+#, fuzzy
+msgid "Textarea sublabel"
+msgstr "多行文本下标的"
+
+#, fuzzy
+msgid "Prev"
+msgstr "上一页"
+
+#, fuzzy
+msgid "Next"
+msgstr "下一个"
+
+#, fuzzy
+msgid "Form editor"
+msgstr "表格编辑器"
+
+#, fuzzy
+msgid "email section. you can set mail options. e.g. the recipient mail"
+msgstr "电子邮件部分。您可以设置邮件选项。例如接收者邮件"
+
+#, fuzzy
+msgid "Email Settings"
+msgstr "电子邮件设置"
+
+#, fuzzy
+msgid ""
+"submission section. you can modify the success message and other messages"
+msgstr "提交部分。您可以修改成功消息和其他消息"
+
+#, fuzzy
+msgid "On Submission"
+msgstr "在提交"
+
+#, fuzzy
+msgid "main settings"
+msgstr "主要设置"
+
+msgid "Main settings"
+msgstr "Main 设置"
+
+#, fuzzy
+msgid "test"
+msgstr "测试"
+
+#, fuzzy
+msgid "Show data"
+msgstr "显示数据"
+
+#, fuzzy
+msgid "preview"
+msgstr "预习"
+
+#, fuzzy
+msgid "Save form"
+msgstr "保存表单"
+
+#, fuzzy
+msgid ""
+"Fields section. Drag and Drop or just click to add to the preview section"
+msgstr "字段部分。拖放或点击添加到预览区域"
+
+#, fuzzy
+msgid ""
+"preview section. you can view how the fields will look like and you can "
+"change the settings on live mode  "
+msgstr "预览部分。您可以查看如何领域的样子，你可以改变生活模式的设置"
+
+#, fuzzy
+msgid "Tab title"
+msgstr "分页标题"
+
+#, fuzzy
+msgid "Form"
+msgstr "形成"
+
+#, fuzzy
+msgid "Selected Field"
+msgstr "所选字段"
+
+#, fuzzy
+msgid "Form settings. you can set all options related to the form"
+msgstr "表格设置。您可以设置相关的表单中的所有选项"
+
+#, fuzzy
+msgid "setting section. you can change the submit mode between ajax and post"
+msgstr "设置部分。你可以改变Ajax和岗位之间的提交方式"
+
+#, fuzzy
+msgid "skin section. you can change skin options of your form"
+msgstr "皮肤部分。你可以改变你的皮肤形式的选择"
+
+#, fuzzy
+msgid "Skin"
+msgstr "皮肤"
+
+#, fuzzy
+msgid "wizard section. you can enable the wizard form and add many forms"
+msgstr "向导部分。您可以启用该向导的形式，添加许多形式"
+
+#, fuzzy
+msgid "Wizard"
+msgstr "巫师"
+
+#, fuzzy
+msgid "Email"
+msgstr "电子邮件"
+
+#, fuzzy
+msgid "Field name"
+msgstr "字段名称"
+
+#, fuzzy
+msgid ""
+"This is important to identify the field on reports and conditional logic"
+msgstr "此，以确定在报表和条件逻辑字段是重要"
+
+#, fuzzy
+msgid "Type field name"
+msgstr "类型字段名"
+
+#, fuzzy
+msgid "Options"
+msgstr "选项"
+
+#, fuzzy
+msgid "Label"
+msgstr "标签"
+
+#, fuzzy
+msgid "Input"
+msgstr "输入"
+
+#, fuzzy
+msgid "Help Block"
+msgstr "帮助阻止"
+
+#, fuzzy
+msgid "Validators"
+msgstr "验证器"
+
+#, fuzzy
+msgid "Images"
+msgstr "图片"
+
+#, fuzzy
+msgid "C.Logic"
+msgstr "C.Logic"
+
+#, fuzzy
+msgid "Misc"
+msgstr "杂项"
+
+#, fuzzy
+msgid "You need to save the form before seeing the preview"
+msgstr "你需要的形式看到预览前保存"
+
+#, fuzzy
+msgid "Preview for desktops"
+msgstr "预览桌面"
+
+#, fuzzy
+msgid "Preview for tablets"
+msgstr "预览片"
+
+#, fuzzy
+msgid "Preview for smartphone"
+msgstr "预览智能手机"
+
+#, fuzzy
+msgid "Import form"
+msgstr "导入表单"
+
+#, fuzzy
+msgid "The import has failed. press the accept button"
+msgstr "导入失败。按接受按钮"
+
+#, fuzzy
+msgid "Desktop"
+msgstr "桌面"
+
+#, fuzzy
+msgid "Tablet"
+msgstr "片剂"
+
+#, fuzzy
+msgid "Smartphone"
+msgstr "智能手机"
+
+#, fuzzy
+msgid "Load form"
+msgstr "负载形式"
+
+#, fuzzy
+msgid "Accept"
+msgstr "接受"
+
+#, fuzzy
+msgid "Set Form name"
+msgstr "设置表单名称"
+
+#, fuzzy
+msgid "e.g. My custom form"
+msgstr "例如我的自定义窗体"
+
+#, fuzzy
+msgid "Drag and Drop the fields to this area "
+msgstr "拖放领域这一领域"
+
+#, fuzzy
+msgid "or just click the button fields to add it here "
+msgstr "或者只是按一下按钮字段在这里添加"
+
+#, fuzzy
+msgid "Code to export"
+msgstr "代码出口"
+
+#, fuzzy
+msgid "the exporting code is used for backuping your custom form"
+msgstr "出口代码用于backuping您的自定义窗体"
+
+#, fuzzy
+msgid "Main fields"
+msgstr "主要领域"
+
+#, fuzzy
+msgid "More fields"
+msgstr "更多的领域"
+
+#, fuzzy
+msgid "Standard Fields"
+msgstr "标准字段"
+
+#, fuzzy
+msgid "Text Box"
+msgstr "文字框"
+
+#, fuzzy
+msgid "Text Area"
+msgstr "文本区域"
+
+#, fuzzy
+msgid "Radio Button"
+msgstr "单选按钮"
+
+#, fuzzy
+msgid "Check Box"
+msgstr "复选框"
+
+#, fuzzy
+msgid "Select List"
+msgstr "选择列表"
+
+#, fuzzy
+msgid "Select Multiple "
+msgstr "选择多个"
+
+#, fuzzy
+msgid "Submit Button"
+msgstr "提交按钮"
+
+#, fuzzy
+msgid "Spinner"
+msgstr "微调"
+
+#, fuzzy
+msgid "Slider"
+msgstr "滑块"
+
+#, fuzzy
+msgid "Range"
+msgstr "范围"
+
+#, fuzzy
+msgid "Grid System"
+msgstr "网格系统"
+
+#, fuzzy
+msgid "1 Col"
+msgstr "1列"
+
+#, fuzzy
+msgid "2 Cols"
+msgstr "2列数"
+
+#, fuzzy
+msgid "3 Cols"
+msgstr "3列数"
+
+#, fuzzy
+msgid "4 Cols"
+msgstr "4列数"
+
+#, fuzzy
+msgid "6 Cols"
+msgstr "6列数"
+
+#, fuzzy
+msgid "Additional Fields"
+msgstr "附加字段"
+
+#, fuzzy
+msgid "Star rating"
+msgstr "星级评定"
+
+#, fuzzy
+msgid "ReCaptcha"
+msgstr "和ReCaptcha"
+
+#, fuzzy
+msgid "Custom Html"
+msgstr "自定义HTML"
+
+#, fuzzy
+msgid "Hidden Input"
+msgstr "隐藏的输入"
+
+#, fuzzy
+msgid "Password"
+msgstr "密码"
+
+#, fuzzy
+msgid "Captcha"
+msgstr "验证码"
+
+#, fuzzy
+msgid "Date Picker"
+msgstr "日期选取器"
+
+#, fuzzy
+msgid "Prepend"
+msgstr "前置"
+
+#, fuzzy
+msgid "Layout Elements"
+msgstr "布局元素"
+
+#, fuzzy
+msgid "Divider"
+msgstr "分频器"
+
+#, fuzzy
+msgid "Heading H1"
+msgstr "标题H1"
+
+#, fuzzy
+msgid "Upload Fields"
+msgstr "上传域"
+
+#, fuzzy
+msgid "File Upload"
+msgstr "上传文件"
+
+#, fuzzy
+msgid "Image Upload"
+msgstr "图片上传"
+
+#, fuzzy
+msgid "Picker Fields"
+msgstr "选择器字段"
+
+#, fuzzy
+msgid "Color Picker"
+msgstr "拾色器"
+
+#, fuzzy
+msgid "Time Picker"
+msgstr "时间选择器"
+
+#, fuzzy
+msgid "Date and Time"
+msgstr "日期和时间"
+
+#, fuzzy
+msgid "Prepend/Append Fields - Text Box"
+msgstr "前置/附加字段 ​​- 文本框"
+
+#, fuzzy
+msgid "Append"
+msgstr "附加"
+
+#, fuzzy
+msgid "Prepend/Append"
+msgstr "前置/追加"
+
+#, fuzzy
+msgid "Headings"
+msgstr "标题"
+
+#, fuzzy
+msgid "Heading H2"
+msgstr "标题H2"
+
+#, fuzzy
+msgid "Heading H3"
+msgstr "标题H3"
+
+#, fuzzy
+msgid "Heading H4"
+msgstr "标题H4"
+
+#, fuzzy
+msgid "Heading H5"
+msgstr "标题H5"
+
+#, fuzzy
+msgid "Heading H6"
+msgstr "标题H6"
+
+#, fuzzy
+msgid "Wizard elements"
+msgstr "精灵元素"
+
+#, fuzzy
+msgid "Wizard buttons"
+msgstr "向导按钮"
+
+#, fuzzy
+msgid "Others"
+msgstr "其他"
+
+#, fuzzy
+msgid "Switch"
+msgstr "开关"
+
+#, fuzzy
+msgid "Dyn Checkbox"
+msgstr "强啡肽复选框"
+
+#, fuzzy
+msgid "Dyn RadioBtn"
+msgstr "强啡肽RadioBtn"
+
+msgid ""
+"Success! The form was created. Go to url to see your changes or copy & paste "
+"widget code to your page"
+msgstr "成功!创建表单。去看看您的更改或副本 & 小部件将代码粘贴到您的页面的 url"
+
+msgid "Widget code"
+msgstr "小部件代码"
+
+msgid "iframe"
+msgstr "iFrame 嵌入"
+
+msgid "Url"
+msgstr "Url"
+
+#, fuzzy
+msgid "Previous"
+msgstr "以前"
+
+msgid "Your Form code"
+msgstr "窗体代码"
+
+#, fuzzy
+msgid "List forms."
+msgstr "列表的形式。"
+
+#, fuzzy
+msgid "Add new form"
+msgstr "添加新形式"
+
+#, fuzzy
+msgid "Disable"
+msgstr "关闭"
+
+#, fuzzy
+msgid "Enable"
+msgstr "启用"
+
+#, fuzzy
+msgid "Delete"
+msgstr "删除"
+
+#, fuzzy
+msgid "Name Form"
+msgstr "名称格式"
+
+#, fuzzy
+msgid "Copy and paste the shortcode to your desired page"
+msgstr "复制并粘贴简码到你想要的网页"
+
+msgid "Code"
+msgstr "代码"
+
+#, fuzzy
+msgid "Created"
+msgstr "创建"
+
+#, fuzzy
+msgid "Status"
+msgstr "状态"
+
+msgid "Get widget code"
+msgstr "获得小部件代码"
+
+#, fuzzy
+msgid "Active"
+msgstr "活性"
+
+#, fuzzy
+msgid "Inactive"
+msgstr "非活动"
+
+#, fuzzy
+msgid "Edit and load your custom form"
+msgstr "编辑和加载自定义窗体"
+
+#, fuzzy
+msgid "Delete form"
+msgstr "删除表格"
+
+#, fuzzy
+msgid "there is not forms. Add new one"
+msgstr "没有的形式。添加新的"
+
+#, fuzzy
+msgid "List form information"
+msgstr "列表形式的信息"
+
+#, fuzzy
+msgid "there is no forms selected. select one at least"
+msgstr "没有选择的形式。选择一个至少"
+
+#, fuzzy
+msgid "Show help block"
+msgstr "显示帮助块"
+
+#, fuzzy
+msgid "Text Font"
+msgstr "文字字体"
+
+#, fuzzy
+msgid "Help block position"
+msgstr "帮助块位置"
+
+#, fuzzy
+msgid "At bottom"
+msgstr "在底部"
+
+#, fuzzy
+msgid "At Top"
+msgstr "在顶部"
+
+#, fuzzy
+msgid "Tooltip"
+msgstr "工具提示"
+
+#, fuzzy
+msgid "Pop up"
+msgstr "弹出"
+
+#, fuzzy
+msgid "Add"
+msgstr "加"
+
+#, fuzzy
+msgid "Clean"
+msgstr "清洁"
+
+#, fuzzy
+msgid "Text"
+msgstr "文本"
+
+#, fuzzy
+msgid "Place holder"
+msgstr "占位"
+
+#, fuzzy
+msgid "Color"
+msgstr "颜色"
+
+#, fuzzy
+msgid "Font family"
+msgstr "字体系列"
+
+#, fuzzy
+msgid "Input value alignment"
+msgstr "输入值调整"
+
+#, fuzzy
+msgid "Left"
+msgstr "剩下"
+
+#, fuzzy
+msgid "Center"
+msgstr "中央"
+
+#, fuzzy
+msgid "Right"
+msgstr "对"
+
+#, fuzzy
+msgid "Button alignment"
+msgstr "按钮排列"
+
+#, fuzzy
+msgid "Background"
+msgstr "背景"
+
+#, fuzzy
+msgid "Background color"
+msgstr "背景颜色"
+
+#, fuzzy
+msgid "Solid"
+msgstr "固体"
+
+#, fuzzy
+msgid "Gradient"
+msgstr "梯度"
+
+#, fuzzy
+msgid "Pick the color"
+msgstr "选择颜色"
+
+#, fuzzy
+msgid "Start color"
+msgstr "启动颜色"
+
+#, fuzzy
+msgid "End color"
+msgstr "结束颜色"
+
+#, fuzzy
+msgid "Border"
+msgstr "边界"
+
+#, fuzzy
+msgid "Border radius"
+msgstr "边框半径"
+
+#, fuzzy
+msgid "Color (focus)"
+msgstr "颜色（聚焦）"
+
+#, fuzzy
+msgid "border style"
+msgstr "边框样式"
+
+#, fuzzy
+msgid "Dotted"
+msgstr "带点"
+
+#, fuzzy
+msgid "Border width"
+msgstr "边框宽度"
+
+#, fuzzy
+msgid "Divider bar Color"
+msgstr "分隔栏颜色"
+
+#, fuzzy
+msgid "Next Button"
+msgstr "下一个按钮"
+
+#, fuzzy
+msgid "Text for last button"
+msgstr "文本的最后一个按钮"
+
+#, fuzzy
+msgid "you can check this on frontend page or preview"
+msgstr "您可以检查此在前台页面或预览"
+
+#, fuzzy
+msgid "Prev Button"
+msgstr "上一个按钮"
+
+#, fuzzy
+msgid "Buttons alignment"
+msgstr "按键排列"
+
+#, fuzzy
+msgid "label Yes"
+msgstr "标签是"
+
+#, fuzzy
+msgid "label no"
+msgstr "标签不"
+
+#, fuzzy
+msgid "allowed extensions"
+msgstr "允许扩展"
+
+#, fuzzy
+msgid "Put the extensions between commas"
+msgstr "把逗号之间的扩展"
+
+#, fuzzy
+msgid "Maximum size"
+msgstr "最大尺寸"
+
+#, fuzzy
+msgid "Attach files to mail notification"
+msgstr "将文件附加到电子邮件通知"
+
+#, fuzzy
+msgid ""
+"if you enable attachment option, make sure your web server (hosting) and "
+"mail server support your maximum size file"
+msgstr ""
+"如果你启用附件选项，请确保您的Web服务器（主机）和邮件服务器支持的最大容量的文"
+"件"
+
+msgid "Image Height"
+msgstr "图像高度"
+
+msgid "Image width"
+msgstr "图像宽度"
+
+#, fuzzy
+msgid "Add new option"
+msgstr "添加新的选项"
+
+#, fuzzy
+msgid "Remove all options"
+msgstr "删除所有选项"
+
+#, fuzzy
+msgid "Add new"
+msgstr "添新"
+
+#, fuzzy
+msgid "Settings label option"
+msgstr "设置标签选项"
+
+#, fuzzy
+msgid "Selected"
+msgstr "选择"
+
+#, fuzzy
+msgid "Block alignment"
+msgstr "块对齐"
+
+#, fuzzy
+msgid "Inline"
+msgstr "一致"
+
+#, fuzzy
+msgid "Type label"
+msgstr "类型标签"
+
+#, fuzzy
+msgid "Custom html content"
+msgstr "自定义HTML内容"
+
+#, fuzzy
+msgid "Minimum"
+msgstr "起码"
+
+#, fuzzy
+msgid "Maximum"
+msgstr "最大"
+
+#, fuzzy
+msgid "Default value"
+msgstr "默认值"
+
+#, fuzzy
+msgid "Step"
+msgstr "步骤"
+
+#, fuzzy
+msgid "Range 1"
+msgstr "范围1"
+
+#, fuzzy
+msgid "Range 2"
+msgstr "范围2"
+
+#, fuzzy
+msgid "Public key"
+msgstr "公钥"
+
+#, fuzzy
+msgid "Secret key"
+msgstr "秘密钥匙"
+
+#, fuzzy
+msgid "Theme"
+msgstr "主题"
+
+#, fuzzy
+msgid "Light"
+msgstr "光"
+
+#, fuzzy
+msgid "Dark"
+msgstr "黑暗"
+
+#, fuzzy
+msgid "Custom text color"
+msgstr "自定义文本颜色"
+
+#, fuzzy
+msgid "Custom Background color"
+msgstr "自定义背景颜色"
+
+#, fuzzy
+msgid "Custom Behind lines"
+msgstr "自定义线条的背后"
+
+#, fuzzy
+msgid "Lines"
+msgstr "线"
+
+#, fuzzy
+msgid "Custom front lines"
+msgstr "自前线"
+
+#, fuzzy
+msgid "Distortion"
+msgstr "失真"
+
+msgid "English"
+msgstr "英语"
+
+msgid "Spanish"
+msgstr "西班牙语"
+
+msgid "French"
+msgstr "Français"
+
+msgid "Italian"
+msgstr "意大利语"
+
+#, fuzzy
+msgid "Japanese"
+msgstr "日本"
+
+msgid "Portuguese"
+msgstr "葡萄牙语"
+
+msgid "Russian"
+msgstr "俄语"
+
+msgid "Chinese"
+msgstr "华文"
+
+#, fuzzy
+msgid "Format"
+msgstr "格式"
+
+#, fuzzy
+msgid "Default"
+msgstr "默认"
+
+#, fuzzy
+msgid "Text star 1"
+msgstr "文星1"
+
+#, fuzzy
+msgid "Text star 2"
+msgstr "文星2"
+
+#, fuzzy
+msgid "Text star 3"
+msgstr "文字明星3"
+
+#, fuzzy
+msgid "Text star 4"
+msgstr "文星4"
+
+#, fuzzy
+msgid "Text star 5"
+msgstr "文字星级5"
+
+#, fuzzy
+msgid "Not rated text"
+msgstr "未评级文"
+
+#, fuzzy
+msgid "Label text"
+msgstr "标签文本"
+
+#, fuzzy
+msgid "Text Color"
+msgstr "文字颜色"
+
+#, fuzzy
+msgid "Text Shadow"
+msgstr "文字阴影"
+
+#, fuzzy
+msgid "horizontal"
+msgstr "横"
+
+#, fuzzy
+msgid "vertical"
+msgstr "垂直"
+
+#, fuzzy
+msgid "blur"
+msgstr "模糊"
+
+#, fuzzy
+msgid "Sub label"
+msgstr "子标签"
+
+#, fuzzy
+msgid "Sublabel text"
+msgstr "下标的文本"
+
+msgid "Text font"
+msgstr "文字字體"
+
+msgid "Text shadow"
+msgstr "文本阴影"
+
+#, fuzzy
+msgid "x"
+msgstr "x"
+
+#, fuzzy
+msgid "y"
+msgstr "ÿ"
+
+#, fuzzy
+msgid "Text Block"
+msgstr "文本块"
+
+#, fuzzy
+msgid "Block position"
+msgstr "块位置"
+
+#, fuzzy
+msgid "Top"
+msgstr "最佳"
+
+#, fuzzy
+msgid "Bottom"
+msgstr "底部"
+
+#, fuzzy
+msgid "Show Block"
+msgstr "显示程序"
+
+msgid "Help block"
+msgstr "帮助阻止"
+
+#, fuzzy
+msgid "Help block alignment (temp - delete)"
+msgstr "帮助块对齐（温度 - 删除）"
+
+#, fuzzy
+msgid "Required"
+msgstr "需要"
+
+#, fuzzy
+msgid "Allow whitespace"
+msgstr "允许空白"
+
+#, fuzzy
+msgid "Add validator"
+msgstr "添加验证"
+
+#, fuzzy
+msgid "Validator configuration: "
+msgstr "验证配置："
+
+#, fuzzy
+msgid "Less than"
+msgstr "少于"
+
+#, fuzzy
+msgid "Default Message"
+msgstr "默认消息"
+
+#, fuzzy
+msgid "Custom Error Message"
+msgstr "自定义错误消息"
+
+#, fuzzy
+msgid "Alert position"
+msgstr "警报位置"
+
+#, fuzzy
+msgid "Set required icon"
+msgstr "设置所需图标"
+
+#, fuzzy
+msgid "Choose required icon"
+msgstr "选择所需图标"
+
+#, fuzzy
+msgid "Required icon position"
+msgstr "需要的图标位置"
+
+#, fuzzy
+msgid "Before label"
+msgstr "标签前"
+
+#, fuzzy
+msgid "After label"
+msgstr "标签后"
+
+#, fuzzy
+msgid "Letters"
+msgstr "快报"
+
+#, fuzzy
+msgid "Letter & Numbers"
+msgstr "字母与数字"
+
+#, fuzzy
+msgid "Only numbers"
+msgstr "只有数"
+
+#, fuzzy
+msgid "Greater than"
+msgstr "比...更棒"
+
+#, fuzzy
+msgid "Identical"
+msgstr "相同"
+
+#, fuzzy
+msgid "Length"
+msgstr "长度"
+
+#, fuzzy
+msgid "Validator: "
+msgstr "验证："
+
+#, fuzzy
+msgid "Translate error message "
+msgstr "翻译错误信息"
+
+#, fuzzy
+msgid "Letters and Numbers"
+msgstr "字母和数字"
+
+msgid "Background Color"
+msgstr "背景色"
+
+#, fuzzy
+msgid "Required icon"
+msgstr "需要的图标"
+
+#, fuzzy
+msgid "Enable Conditional logic"
+msgstr "启用条件逻辑"
+
+#, fuzzy
+msgid "Show"
+msgstr "显示"
+
+#, fuzzy
+msgid "Hide"
+msgstr "隐藏"
+
+#, fuzzy
+msgid "this field if"
+msgstr "这个领域如果"
+
+#, fuzzy
+msgid "All"
+msgstr "所有"
+
+#, fuzzy
+msgid "Any"
+msgstr "任何"
+
+#, fuzzy
+msgid "of the following rule match"
+msgstr "下面的规则匹配"
+
+#, fuzzy
+msgid "Add new conditional Logic"
+msgstr "添加新的条件逻辑"
+
+#, fuzzy
+msgid "Remove all"
+msgstr "移除所有"
+
+msgid "is"
+msgstr "是"
+
+msgid "is not"
+msgstr "不是"
+
+#, fuzzy
+msgid "greater than"
+msgstr "大於"
+
+#, fuzzy
+msgid "less than"
+msgstr "小於"
+
+#, fuzzy
+msgid "You are receiving a new form request"
+msgstr "您正在接受一种新形式的要求"
+
+#, fuzzy
+msgid "Form information"
+msgstr "表信息"
+
+#, fuzzy
+msgid "URL"
+msgstr "网址"
+
+#, fuzzy
+msgid "Subject mail"
+msgstr "主题邮件"
+
+#, fuzzy
+msgid "it is the title of the message. do not leave blank"
+msgstr "这是消息的标题。不留空白"
+
+#, fuzzy
+msgid "Here goes your subject mail"
+msgstr "在这里，去你的主题邮件"
+
+#, fuzzy
+msgid "Type subject"
+msgstr "类型主题"
+
+#, fuzzy
+msgid "Recipient mail"
+msgstr "收件人邮件"
+
+#, fuzzy
+msgid ""
+"This is the recipient mail. if you leave it blank, admin mail will be taken"
+msgstr "这是接收方邮件。如果你让它空白，管理员的邮件将采取"
+
+#, fuzzy
+msgid "Type email address"
+msgstr "键入电子邮件地址"
+
+#, fuzzy
+msgid "this mail will receive a copy of the email"
+msgstr "该邮件将收到的电子邮件的副本"
+
+#, fuzzy
+msgid "Type CC mail"
+msgstr "CC型邮件"
+
+#, fuzzy
+msgid ""
+"this mail will receive a copy of the email without letting the others notice "
+"it"
+msgstr "该邮件将收到的电子邮件的副本，而不让其他人注意到它"
+
+#, fuzzy
+msgid "Type BCC mail"
+msgstr "键入BCC邮件"
+
+#, fuzzy
+msgid "Email Template"
+msgstr "电子邮件模板"
+
+msgid "Codes to use"
+msgstr ""
+
+#, fuzzy
+msgid "Submit mode"
+msgstr "提交方式"
+
+#, fuzzy
+msgid "Ajax mode when submitting form"
+msgstr "提交表单时的Ajax模式"
+
+#, fuzzy
+msgid "You can switch the submit mode between POST and AJAX"
+msgstr "您可以切换POST和AJAX的提交方式"
+
+#, fuzzy
+msgid "Import"
+msgstr "进口"
+
+#, fuzzy
+msgid "Import the backuped form"
+msgstr "导入已备份的形式"
+
+#, fuzzy
+msgid "Custom css"
+msgstr "自定义CSS"
+
+#, fuzzy
+msgid "Additional css"
+msgstr "额外的CSS"
+
+#, fuzzy
+msgid ""
+"This is not required. You can add extra css to your form. this will be added "
+"to css file "
+msgstr "这不是必需的。您可以添加额外的CSS到表单中。这将被添加到CSS文件"
+
+#, fuzzy
+msgid "Just put the selectors. e.g. #id_form .control-label {color:red} "
+msgstr "只要把选择。例如#id_form。控制标签{颜色：红}"
+
+#, fuzzy
+msgid "Additional javascript"
+msgstr "额外的JavaScript"
+
+#, fuzzy
+msgid ""
+"This is not required. You can add extra javascript code or some script to "
+"your form."
+msgstr "这不是必需的。您可以添加额外的JavaScript代码或一些脚本到表单中。"
+
+#, fuzzy
+msgid ""
+"proceed with caution. if you put a wrong javascript code, the form will not "
+"work properly e.g. "
+msgstr "小心的继续。如果你把一个错误的Ja​​vaScript代码，表单将无法正常工作，例如"
+
+#, fuzzy
+msgid "More options"
+msgstr "更多的选择"
+
+#, fuzzy
+msgid "Refresh preview editor panel"
+msgstr "刷新预览编辑器面板"
+
+#, fuzzy
+msgid "Refresh"
+msgstr "刷新"
+
+#, fuzzy
+msgid ""
+"this is used in order to fix if something is not showing fine on the preview "
+"editor panel"
+msgstr "这是用来为固定，如果事情没有显示精细的预览编辑器面板上"
+
+#, fuzzy
+msgid "Text font size"
+msgstr "文本字体大小"
+
+#, fuzzy
+msgid "Select font size"
+msgstr "选择字体大小"
+
+#, fuzzy
+msgid "Custom width"
+msgstr "自定义宽度"
+
+#, fuzzy
+msgid "Max width"
+msgstr "最大宽度"
+
+#, fuzzy
+msgid "Custom padding"
+msgstr "自定义填充"
+
+#, fuzzy
+msgid "Padding top"
+msgstr "填充顶部"
+
+#, fuzzy
+msgid "Padding right"
+msgstr "填充权"
+
+#, fuzzy
+msgid "Padding bottom"
+msgstr "填充底"
+
+#, fuzzy
+msgid "Padding left"
+msgstr "填充左"
+
+#, fuzzy
+msgid "Background image"
+msgstr "背景图"
+
+#, fuzzy
+msgid "Update Image"
+msgstr "更新图片"
+
+#, fuzzy
+msgid "Box Shadow"
+msgstr "盒阴影"
+
+#, fuzzy
+msgid "Success! Form was sent successfully."
+msgstr "成功！表格已成功发送。"
+
+#, fuzzy
+msgid "Success Message"
+msgstr "成功消息"
+
+#, fuzzy
+msgid "Enable wizard forms"
+msgstr "启用向导形式"
+
+#, fuzzy
+msgid "Tabs management"
+msgstr "标签管理"
+
+#, fuzzy
+msgid "Clean Tabs"
+msgstr "清洁标签"
+
+#, fuzzy
+msgid "Tab"
+msgstr "标签"
+
+#, fuzzy
+msgid "Type tab title"
+msgstr "类型分页标题"
+
+#, fuzzy
+msgid "Skin tab"
+msgstr "皮肤标签"
+
+#, fuzzy
+msgid "Theme 1"
+msgstr "主题1"
+
+#, fuzzy
+msgid "Theme 2"
+msgstr "主题2"
+
+#, fuzzy
+msgid "Inactive mode"
+msgstr "活动模式"
+
+msgid "Text color"
+msgstr "文本颜色"
+
+#, fuzzy
+msgid "Number text color"
+msgstr "数文本颜色"
+
+#, fuzzy
+msgid "Active Mode"
+msgstr "主动模式"
+
+#, fuzzy
+msgid "Title color"
+msgstr "标题颜色"
+
+#, fuzzy
+msgid "Background for number container"
+msgstr "背景号集装箱"
+
+#, fuzzy
+msgid "Done mode"
+msgstr "完成模式"
+
+#, fuzzy
+msgid "this when the tab is completed. this will be shown on frontend"
+msgstr "此时的标签完成。这将是在前端显示"
+
+#, fuzzy
+msgid "Tab container "
+msgstr "选项​​卡容器"
+
+#, fuzzy
+msgid "Custom report"
+msgstr "自定义报告"
+
+#, fuzzy
+msgid "Select your custom fields to be shown on list report"
+msgstr "选择您的自定义字段要在列表报告显示"
+
+#, fuzzy
+msgid "Save Changes"
+msgstr "保存更改"
+
+#, fuzzy
+msgid "URL page"
+msgstr "URL页面"
+
+#, fuzzy
+msgid "Export to PDF"
+msgstr "导出为PDF"
+
+#, fuzzy
+msgid "List Records."
+msgstr "列表记录。"
+
+#, fuzzy
+msgid "Export to csv"
+msgstr "导出为CSV"
+
+#, fuzzy
+msgid "Show detail"
+msgstr "查看详细"
+
+#, fuzzy
+msgid "View chart"
+msgstr "查看图"
+
+#, fuzzy
+msgid "Backup"
+msgstr "备份"
+
+#, fuzzy
+msgid "Name backup"
+msgstr "命名备份"
+
+#, fuzzy
+msgid ""
+"Enter a backup name or leave blank, current date will be assigned to backup "
+"name"
+msgstr "输入备份名称或留空，当前的日期将被分配到备份名称"
+
+#, fuzzy
+msgid "Create backup"
+msgstr "创建备份"
+
+#, fuzzy
+msgid "Name"
+msgstr "名称"
+
+#, fuzzy
+msgid "Download"
+msgstr "下载"
+
+#, fuzzy
+msgid "Restore Backup"
+msgstr "恢复备份"
+
+#, fuzzy
+msgid "there is not backup stored. Create new one"
+msgstr "没有备份存储。创建新的"
+
+#, fuzzy
+msgid "Upload Backup"
+msgstr "上传备份"
+
+msgid "Save changes"
+msgstr "保存更改"
+
+#, fuzzy
+msgid "Database backup success"
+msgstr "数据库备份成功"
+
+#, fuzzy
+msgid "Delete File selected"
+msgstr "删除文件选择"
+
+#, fuzzy
+msgid "Global Settings"
+msgstr "全局设置"
+
+msgid "User Information"
+msgstr "表信息"
+
+msgid "Username"
+msgstr "用户名"
+
+msgid "Type username"
+msgstr "类型"
+
+msgid "Type email"
+msgstr "键入电子邮件地址"
+
+msgid "Type password"
+msgstr "密码"
+
+msgid "Confirm password"
+msgstr "密码"
+
+#, fuzzy
+msgid "Enabled"
+msgstr "启用"
+
+#, fuzzy
+msgid "Disabled"
+msgstr "残疾人"
+
+msgid "Users"
+msgstr "用户"
+
+msgid "User"
+msgstr "用户"
+
+msgid "active"
+msgstr "活性"
+
+msgid "Action"
+msgstr "动作"
+
+msgid "Edit User"
+msgstr "编辑"
+
+#, fuzzy
+msgid "Removing"
+msgstr "删除"
+
+#, fuzzy
+msgid "Processing"
+msgstr "处理"
+
+#, fuzzy
+msgid "Loading"
+msgstr "载入中"
+
+#, fuzzy
+msgid "Saving"
+msgstr "保存"
+
+msgid "Regenerate"
+msgstr "重新生成"
+
+#, fuzzy
+msgid "Tour guide info"
+msgstr "导游信息"
+
+#, fuzzy
+msgid "there is not tour guide for this page. press the accept button"
+msgstr "没有导游的这一页。按接受按钮"
+
+#, fuzzy
+msgid "Success! Updated successfully"
+msgstr "成功！更新成功"
+
+#, fuzzy
+msgid "Form was created"
+msgstr "创建表"
+
+#, fuzzy
+msgid ""
+"Success! The form was created. Now just copy and paste the shortcode to your "
+"content"
+msgstr "成功！形式被创造。现在只需复制和简粘贴到您的内容"
+
+msgid ""
+"the form did not loaded properly. Press regenerate button in order to "
+"recover the form"
+msgstr "窗体没有不加载正确。按再生按钮以恢复窗体"
+
+msgid "Regenerate Form"
+msgstr "重新生成窗体"
+
+#, fuzzy
+msgid "Delete field selected"
+msgstr "删除字段选择"
+
+#, fuzzy
+msgid "Are you sure?"
+msgstr "你确定？"
+
+#, fuzzy
+msgid "Yes"
+msgstr "对"
+
+#, fuzzy
+msgid "Toggle navigation"
+msgstr "切换导航"
+
+#, fuzzy
+msgid "Forms"
+msgstr "形式"
+
+#, fuzzy
+msgid "New"
+msgstr "新"
+
+#, fuzzy
+msgid "List forms"
+msgstr "列表形式"
+
+#, fuzzy
+msgid "Templates"
+msgstr "模板"
+
+msgid "Contact us"
+msgstr "联系我们"
+
+#, fuzzy
+msgid "Newsletter"
+msgstr "新闻简报"
+
+#, fuzzy
+msgid "Survey Questionnaire"
+msgstr "调查问卷"
+
+#, fuzzy
+msgid "Online event registration"
+msgstr "网上活动报名"
+
+msgid "Reservation Request"
+msgstr "预约申请表"
+
+#, fuzzy
+msgid "Purchase Order - Point Of Sale"
+msgstr "采购订单 - 销售点"
+
+#, fuzzy
+msgid "Website Design Request"
+msgstr "网站设计要求"
+
+#, fuzzy
+msgid "Job Application"
+msgstr "求职申请"
+
+#, fuzzy
+msgid "CV Submission"
+msgstr "简历提交"
+
+#, fuzzy
+msgid "Order form"
+msgstr "订单"
+
+#, fuzzy
+msgid "wizard form"
+msgstr "向导窗体"
+
+#, fuzzy
+msgid "All fields"
+msgstr "所有领域"
+
+#, fuzzy
+msgid "Conditional Logic"
+msgstr "有条件的逻辑"
+
+#, fuzzy
+msgid "Custom skin"
+msgstr "自定义外观"
+
+#, fuzzy
+msgid "Preview"
+msgstr "预览"
+
+msgid "desktop"
+msgstr "桌面"
+
+msgid "smartphone"
+msgstr "智能手机"
+
+#, fuzzy
+msgid "Records"
+msgstr "记录"
+
+#, fuzzy
+msgid "List all Forms"
+msgstr "列出所有形式"
+
+msgid "List by Form"
+msgstr "列表形式的信息"
+
+msgid "Custom Report"
+msgstr "自定义报告"
+
+#, fuzzy
+msgid "Export"
+msgstr "出口"
+
+#, fuzzy
+msgid "Charts"
+msgstr "图表"
+
+#, fuzzy
+msgid "Guided tour"
+msgstr "导游"
+
+msgid "Log out"
+msgstr "登出"
