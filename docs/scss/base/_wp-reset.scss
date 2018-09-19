@@ -1,0 +1,279 @@
+$vertical-rhythm: 1.2em !default;
+$btn-background: #666 !default;
+$btn-color: #fff !default;
+
+/// #main { @extend %clearfix; }
+/// #content { float: left; width: 70%; }
+/// #sidebar { float: right; width: 25%; }
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+input[type='text'],
+input[type='tel'],
+input[type='email'],
+input[type='search'],
+input[type='password'],
+input[type='url'],
+input[type='date'],
+textarea {
+  .comment-form &,
+  .search-form &,
+  .post-password-form & {
+    -webkit-appearance: none;
+    -webkit-border-radius: 0;
+    border: 1px solid #999;
+    padding: .5em .7em;
+
+    // &:hover {
+      
+    // }
+
+    &:focus {
+      border-color: #333;
+    }
+
+    @include placeholder {
+      color: #ccc;
+    }
+  }
+  
+}
+
+.widget {
+  margin-bottom: 1.2em;
+  @extend %clearfix;
+  ul {
+    padding-left: 2em;
+  }
+  select {
+    min-width: 150px;
+  }
+}
+
+.comment-form {
+  label {
+    display: block;
+    padding-bottom: 4px;
+  }
+  textarea {
+    overflow: auto;
+    margin: 0;
+    height: 120px;
+    min-height: 120px;
+  }
+  textarea,
+  input[type='text'] {
+    margin: 0 4px 0 0;
+    width: 300px;
+  }
+  input[type='submit'] {
+    display: block;
+    float: none;
+  }
+}
+
+.post-password-form {
+  label {
+    display: block;
+  }
+  input[type='password'] {
+    margin: 0 4px 0 0;
+    width: 300px;
+  }
+}
+
+.search-form {
+  @extend %clearfix;
+  input {
+    float: left;
+    height: 2em;
+    &[type='search'] {
+      margin: 0 4px 0 0;
+      width: 150px;
+    }
+  }
+}
+
+.post-password-form {
+  p {
+    @extend %clearfix;
+  }
+  input {
+    float: left;
+    height: 2em;
+    &[type='password'] {
+      width: 150px;
+    }
+  }
+}
+
+.comment-form,
+.post-password-form,
+.search-form {
+  input[type='submit'] {
+    background: #333;
+    color: #fff;
+    height: 2em;
+    border: none;
+    padding: 0 .5em;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}
+
+.commentlist {
+  margin: 0 0 1.2em;
+  .edit-link {
+    margin: 0;
+  }
+  .avatar-holder {
+    float: left;
+    margin: 0 1.2em 4px 0;
+  }
+}
+
+.commentlist-item {
+  .commentlist-item {
+    padding: 0;
+    @include media(">=tablet") {
+      padding: 0 0 0 2em;
+      
+    }
+  }
+}
+
+.comment,
+.commentlist-holder {
+  overflow: hidden;
+}
+
+.commentlist-item .commentlist-item,
+.commentlist-item + .commentlist-item {
+  padding-top: 1.2em;
+}
+
+.widget_calendar {
+  #next {
+    text-align: right;
+  }
+}
+
+.gallery-item {
+  dt {
+    float: none;
+    padding: 0;
+  }
+}
+
+.navigation,
+.navigation-comments {
+  position: relative;
+  vertical-align: middle;
+  margin-bottom: $vertical-rhythm;
+
+  .screen-reader-text {
+    position: absolute;
+    left: -99999px;
+  }
+
+  .page-numbers {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0 .4em;
+    @include media('<tablet') {
+      padding:0;
+    }
+  }
+
+  .next,
+  .prev {
+    display: inline-block;
+    vertical-align: middle;
+    max-width: 50%;
+    background: $btn-background;
+    color: $btn-color;
+    padding: .4em;
+    text-decoration: none;
+    @include media('<tablet') {
+      padding:.2em;
+    }
+  }
+}
+
+.navigation-single{
+  @extend %clearfix;
+  margin-bottom: $vertical-rhythm;
+  .next,
+  .prev {
+    float: left;
+    vertical-align: middle;
+    max-width: 50%;
+    background: $btn-background;
+    color: $btn-color;
+    text-decoration: none;
+    a {
+      color: inherit;
+      text-decoration: none;
+      padding: .4em;
+      display: block;
+      @include media('<tablet') {
+        padding:.2em;
+      }
+    }
+  }
+  .next {
+    float: right;
+  }
+}
+
+.wp-caption {
+  max-width: 100%;
+  clear: both;
+  border: 1px solid #ccc;
+  padding: .4em;
+  margin-bottom: 1.2em;
+  img {
+    margin: 0;
+    vertical-align: top;
+  }
+  p {
+    margin: .4em 0 0;
+  }
+}
+
+div.aligncenter {
+  margin: 0 auto 1.2em;
+}
+
+img.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
+.alignleft {
+  float: left;
+  margin: 0 1.2em 4px 0; 
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 4px 1.2em; 
+}
+
+.mejs-container {
+  margin-bottom: 1.2em;
+}
+
+.wp-caption-text,
+.gallery,
+.alignnone,
+.gallery-caption,
+.sticky,
+.bypostauthor {
+  height: auto;
+}

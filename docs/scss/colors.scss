@@ -1,0 +1,178 @@
+@import "bootstrap-custom";
+@import 'base/mixins';
+
+
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover,
+.h a:hover,
+.text-bright,
+#footer a:hover,
+.read-more:hover,
+.info-block ul .fa,
+.mt-iconsbox a:hover,
+.tick-list li:before,
+.mt-slider1 .subtitle,
+.info-block ul a:hover,
+.blog-post time a:hover,
+.blog-post time a:focus,
+.aside .contact a:hover,
+.hero-area .text-bright,
+.mt-heading2 .main-color,
+.blog-post time a:active,
+#header .icon-menu:hover,
+#header .icon-menu:focus,
+#header .icon-menu:active,
+.mt-heading1 .heading .dot,
+#header .social-bar a:hover,
+#header .social-bar a:focus,
+.cta-aside .text-link:hover,
+.video-block .ico-play:hover,
+.video-block .ico-play:focus,
+.message-form textarea:focus,
+#header .search-opener:hover,
+#header .search-opener:focus,
+.video-block .ico-play:active,
+.heading-wrap h2 .text-bright,
+.team-block1 .text-box strong,
+.team-block1 .text-box a:hover,
+.widget.widget_meta li a:hover,
+.quote-box cite .descr a:hover,
+.quote-block blockquote:before,
+#style-changer .changer-opener,
+.quotes-blocks blockquote cite a,
+.get-offers .btn-subscribe:hover,
+.message-form .form-control:focus,
+.blog-post2 .post-heading a:hover,
+.quote-box cite .name-title a:hover,
+.quote-block blockquote .name a:hover,
+.quote-block blockquote .name a:focus,
+.quote-block blockquote .name a:active,
+.message-form textarea.form-control:focus,
+.features-list.features-list2 li:hover .icon,
+.features-list.features-list2 li.active .icon,
+.navbar-default.version-iv .navbar-nav > li > a:hover,
+.navbar-default.version-iv .navbar-nav > li > a:focus,
+.navbar-default.version-iii .navbar-nav > li > a:hover,
+.navbar-default.version-iii .navbar-nav > li > a:focus,
+.navbar-default.version-iv .navbar-nav > li > a:active,
+.navbar-default.version-iii .navbar-nav > li > a:active{
+	/*color: $color2;*/
+	color: #009bde;
+}
+
+.btn-info,
+.demo-block,
+.our-counts,
+.loyalty-box,
+.btn-secondary,
+.btn-info2:hover,
+.btn-info2:focus,
+.btn-info2:active,
+.price-col .title,
+.btn-default:hover,
+.mt-heading1:before,
+.mt-heading3 .lines,
+.features h3:before,
+.team-area .contact,
+.subscribe-form .btn,
+.price-col.over:hover,
+.price-col.over.active,
+.price-col .over:hover,
+.price-col .over.active,
+.info-block .btn-submit,
+.mt-iconsbox li:hover .fa,
+.promobox-sec .btn-submit,
+.mt-heading3 .lines:before,
+.get-offers .btn-subscribe,
+.mt-newsletter .btn-submit,
+.work-flow .col:hover .line,
+.info-block .btn-grey:hover,
+.info-block .btn-grey:focus,
+.info-block .btn-grey:active,
+.work-flow .col.active .line,
+.work-flow .line.line-active,
+.work-flow .col:hover:before,
+.work-flow .col.active:before,
+.counter-container.bg-img:before,
+.message-form .heading-head:before,
+.testimonials-gallery .btn-prev:hover,
+.testimonials-gallery .btn-next:hover,
+.testimonials-gallery .btn-prev:active,
+.testimonials-gallery .btn-next:active,
+.mt-slider1 .slick-dots li button:hover,
+.features-list.features-list2 .icon.fill,
+.screenshots-area .screen-prev:hover .icon,
+.screenshots-area .screen-prev:focus .icon,
+.screenshots-area .screen-next:hover .icon,
+.screenshots-area .screen-next:focus .icon,
+.screenshots-area .screen-prev:active .icon,
+.screenshots-area .screen-next:active .icon,
+.mt-slider1 .slick-dots .slick-active button,
+.testimonials-gallery .slick-prev.slick-arrow:hover,
+.testimonials-gallery .slick-next.slick-arrow:hover,
+.clients-testimonial .testimonials-slider .slick-dots li button:hover,
+.clients-testimonial .testimonials-slider .slick-dots .slick-active button{
+	/*background-color: $color2;*/
+	background-color: #009bde;
+}
+
+.btn-info,
+.btn-default:hover,
+.btn-secondary:hover,
+.btn-secondary:focus,
+.btn-secondary:active,
+#header.version-iv .btn,
+#header.version-iii .btn,
+.get-offers .btn-subscribe,
+.message-form textarea:focus,
+.price-col.over:hover:before,
+.price-col.over.active:before,
+.price-col .over:hover:before,
+.price-col .over.active:before,
+.message-form .form-control:focus,
+.mt-slider1 .slick-dots li button:hover,
+.message-form textarea.form-control:focus,
+.mt-slider1 .slick-dots .slick-active button,
+.features-list.features-list2 li:hover .icon,
+.features-list.features-list2 li.active .icon,
+.navbar-default.version-iii .navbar-nav > li > a:hover::after,
+.navbar-default.version-iii .navbar-nav > li > a:focus::after,
+.navbar-default.version-iv .navbar-nav > li > a:hover::after,
+.navbar-default.version-iv .navbar-nav > li > a:focus::after,
+.navbar-default.version-iv .navbar-nav > li > a:active::after,
+.navbar-default.version-iii .navbar-nav > li > a:active::after,
+.clients-testimonial .testimonials-slider .slick-dots li button:hover,
+.clients-testimonial .testimonials-slider .slick-dots .slick-active button{
+	/*border-color: $color2;*/
+	border-color: #009bde;
+}
+.heading-wrap .btn-info:before{
+	border-color: rgba(0, 155, 222, 0.3);
+}
+.price-col.over:hover .title,
+.price-col.over.active .title,
+.price-col .over:hover .title,
+.price-col .over.active .title,
+.price-col.over:hover ul li:nth-child(2n+1),
+.price-col.over.active ul li:nth-child(2n+1),
+.price-col .over:hover ul li:nth-child(2n+1),
+.price-col .over.active ul li:nth-child(2n+1){
+	background: #009bde;
+}
+.message-form{
+	.form-control,
+	textarea,
+	textarea.form-control{
+		&:focus{
+			@include placeholder{ color: #009bde; };
+		}
+	}
+}
+
+
+
+

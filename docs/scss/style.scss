@@ -1,0 +1,1078 @@
+/*
+Theme Name: App Landing Page
+Author: Markhorthemes
+Author http://www.themeforest.net/user/markhorthemes
+Version: 1
+Text Domain: base
+Tags: one-column, two-columns
+Theme URI: http://www.htmlbeans.com/html/app-landing
+*/
+
+/*------------------------------------------------------------------
+
+1. import files
+2. Body
+3. Wrapper / #wrapper
+4. Heading / Heading
+5. Btn / .btn
+6. Btn Default / .btn-default
+7. Btn Info / .btn-info
+8. Header / #header
+9. Logo / .logo
+10. Navbar Default / .navbar-default
+11. Main / #main
+12. Hero Area / .hero-area
+13. Social Networks / .social-networks
+14. Heading Wrap / .heading-wrap
+15. Features Area / .features-area
+16. Features List / .features-list
+17. Product Features / .product-features
+18. Facts List / .facts-list
+19. Demo Block / .demo-block
+20. Testimonials / .testimonials
+21. Testimonials Gallery / .testimonials-gallery
+22. Video Block / .video-block
+23. Price Offers / .price-offers
+24. Price Col / .price-col
+25. Trial Block / .trial-block
+26. Brands Area / .brands-area
+27. Logos List / .logos-list
+28. Aside / .aside
+29. Footer / #footer
+30. Back Top / #back-top
+31. Loader Holder / .loader-holder
+
+
+-------------------------------------------------------------------*/
+
+// devices viewport width starts at:
+$breakpoints: (
+	xs-phone: 480px,
+	phone: 640px,
+	tablet: 768px,
+	desktop: 992px,
+	widescreen: 1230px
+);
+ 
+// keywords
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 1.5), (min-resolution: 144dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 2.5), (min-resolution: 240dpi)'
+);
+
+// ligatured operators ≥ ≤
+
+
+/*------------------------------------------------------------------
+1. import files / import files
+-------------------------------------------------------------------*/
+
+@import 'vendors/include-media';
+
+@import "bootstrap-custom";
+@import "vendors/bootstrap/variables";
+@import "vendors/bootstrap/mixins";
+
+@import 'base/mixins';
+@import 'base/helpers';
+@import "base/wp-reset";
+@import "base/icomoon";
+
+
+
+.resize-active{
+	* {
+		transition: none !important;
+	}
+}
+/*------------------------------------------------------------------
+2. Body / body
+-------------------------------------------------------------------*/
+body{
+	font-weight: 300;
+	min-width: 320px;
+	-moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    &.pattern1{background-image: url(images/patterns/pattern1.png);}
+    &.pattern2{background-image: url(images/patterns/pattern2.png);}
+    &.pattern3{background-image: url(images/patterns/pattern3.png);}
+    &.pattern4{background-image: url(images/patterns/pattern4.png);}
+    &.pattern5{background-image: url(images/patterns/pattern5.png);}
+    &.pattern6{background-image: url(images/patterns/pattern6.png);}
+    &.pattern7{background-image: url(images/patterns/pattern7.png);}
+    &.pattern8{background-image: url(images/patterns/pattern8.png);}
+    &.pattern9{background-image: url(images/patterns/pattern9.png);}
+    &.pattern10{background-image: url(images/patterns/pattern10.png);}
+    &.pattern11{background-image: url(images/patterns/pattern11.png);}
+    &.pattern12{background-image: url(images/patterns/pattern12.png);}
+    &.pattern13{background-image: url(images/patterns/pattern13.png);}
+    &.pattern14{background-image: url(images/patterns/pattern14.png);}
+}
+body.boxed-v #wrapper {
+    max-width: 80%;
+    margin: 20px auto;
+    border-radius: 3px;
+    box-shadow: 0 0 10px 10px rgba(0, 0, 0, 0.1);
+}
+/*------------------------------------------------------------------
+3. Wrapper / #wrapper
+-------------------------------------------------------------------*/
+#wrapper {
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+/*------------------------------------------------------------------
+4. Heading / Heading
+-------------------------------------------------------------------*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h{
+	text-transform: uppercase;
+	a{
+		color: inherit;
+		transition: color 0.25s linear;
+	}
+}
+.overlay{
+	position: relative;
+	z-index: 1;
+	&:before{
+		position: absolute;
+		content: "";
+		left: 0;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		z-index: -1;
+		background: rgba(0, 0, 0, 0.8);
+	}
+}
+a{
+	&:hover,
+	&:focus,
+	&.active{
+		outline: none;
+	}
+}
+.round{border-radius: 100%;}
+.mar-top-xs{margin-top: 30px !important;}
+.mar-top-sm{margin-top: 60px !important;}
+.mar-top-md{margin-top: 90px !important;}
+.pad-top-xs{padding-top: 30px !important;}
+.pad-top-sm{padding-top: 60px !important;}
+.pad-top-md{padding-top: 90px !important;}
+.mar-top-lg{margin-top: 120px !important;}
+.pad-top-lg{padding-top: 120px !important;}
+.mar-bottom-xs{margin-bottom: 30px !important;}
+.mar-bottom-sm{margin-bottom: 60px !important;}
+.mar-bottom-md{margin-bottom: 90px !important;}
+.pad-bottom-sm{padding-bottom: 60px !important;}
+.pad-bottom-xs{padding-bottom: 30px !important;}
+.pad-bottom-md{padding-bottom: 90px !important;}
+.mar-bottom-lg{margin-bottom: 120px !important;}
+.pad-bottom-lg{padding-bottom: 120px !important;}
+/*------------------------------------------------------------------
+5. Btn / .btn
+-------------------------------------------------------------------*/
+.btn{
+	transition: all 0.25s linear;
+	border-radius: 0;
+	border-width: 2px;
+	text-transform: uppercase;
+	position: relative;
+}
+/*------------------------------------------------------------------
+6. Btn Default / .btn-default
+-------------------------------------------------------------------*/
+.btn-default{
+	font-size: 16px;
+	line-height: 20px;
+	padding: 14px;
+	&.icon-btn{
+		padding-left: 43px;
+		padding-right: 18px;
+	}
+	&.btn-white{
+		border-radius: 99px;
+		border-color: $white;
+		background: none;
+		color: $white;
+		.sticky-header.sticky &{
+			color: $gray-darker;
+			border-color: $gray-darker;
+			&:hover,
+			&:focus,
+			&:active{color: $white;}
+		}
+		&:hover,
+		&:focus,
+		&:active{
+			border-color: $gray-darker;
+			background: $gray-darker;
+		}
+	}
+	.icon{
+		position: absolute;
+		left: 9%;
+		top: 50%;
+		margin: 1px 0 0;
+		transform: translateY(-50%);
+	}
+}
+/*------------------------------------------------------------------
+7. Btn Info / .btn-info
+-------------------------------------------------------------------*/
+.btn-info{
+	font-weight: 400;
+	letter-spacing: 1px;
+	border-radius: 99px;
+	font-size: 13px;
+	line-height: 16px;
+	padding: 13px 15px;
+	&:hover,
+	&:focus,
+	&:active{
+		background: $gray-darker;
+		border-color: $gray-darker;
+	}
+}
+/*------------------------------------------------------------------
+8. Header / #header
+-------------------------------------------------------------------*/
+#header{
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 6;
+	position: absolute;
+	@extend %clearfix;
+	padding-top: 15px;
+	padding-bottom: 11px;
+	transition: all 0.25s linear;
+	-webkit-transition: all 0.25s linear;
+	.holder{
+		@extend %clearfix;
+		max-width: 1518px;
+	}
+	&.sticky{
+		position: fixed;
+		background: $white;
+		height: auto !important;
+		box-shadow: 0 0 11px 2px rgba(0, 0, 0, 0.1);
+		.logo{
+			.light{display: none;}
+			.dark{display: block;}
+		}
+		.btn-default,
+		.btn-white{
+			border-color: $gray-darker;
+			color: $gray-darker;
+		}
+	}
+}
+/*------------------------------------------------------------------
+9. Logo / .logo
+-------------------------------------------------------------------*/
+.logo{
+	float: left;
+	max-width: 100px;
+	.light{display: block;}
+	.dark{display: none;}
+}
+/*------------------------------------------------------------------
+10. Navbar Default / .navbar-default
+-------------------------------------------------------------------*/
+.navbar-default{
+	border: 0;
+	float: right;
+	width: calc(100% - 150px);
+	position: static;
+	margin: -4px 0 0;
+	padding: 0;
+	.navbar-header{
+		float: right;
+		margin: 0 0 0 10px;
+	}
+	.btn-default,
+	.btn,
+	.btn-white{
+		font-weight: 400;
+		letter-spacing: 1px;
+		float: right;
+		padding: 8px 10px;
+		font-size: 11px;
+		line-height: 14px;
+		transition: all 0.25s linear;
+	}
+	.navbar-collapse{
+		box-shadow: none;
+		border: 0;
+		background: $white;
+		position: absolute;
+		left: 0;
+		right: 0;
+		top: 100%;
+	}
+	.navbar-toggle{
+		background: $gray-base;
+		margin: 0;
+		&[aria-expanded="true"]{
+			background: $gray-darker;
+		}
+	}
+	.navbar-nav{
+		letter-spacing: 1px;
+		@include font(13px, 17px);
+		font-weight: 400;
+		text-transform: uppercase;
+		> li{
+			position: relative;
+			letter-spacing: 0.3px;
+			transition: all 0.25s linear;
+			-webkit-transition: all 0.25s linear;
+			&.active{
+				> a{
+					color: $gray-darker;
+					&:hover,
+					&:focus,
+					&:active{
+						color: $gray-darker;
+					}
+					&:after{
+						left: 0;
+						right: 0;
+					}
+				}
+			}
+			> a{
+				font: inherit;
+				color: $gray-darker;
+				text-align: center;
+				@include pseudo(after, auto, 0, 0, 0);
+				position: static;
+				&:after{
+					border-bottom: 1px solid $gray-darker;
+					z-index: 1;
+					pointer-events: none;
+					right: 50.1%;
+					left: 50%;
+					transition: all 0.3s ease-out;
+				}
+				&:hover,
+				&:focus,
+				&.anchor-active,
+				&:active{
+					color: $gray-darker;
+					&:after{
+						left: 0;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+	a{ transition: color 0.25s linear, background 0.25s linear; }
+}
+/*------------------------------------------------------------------
+11. Main / #main
+-------------------------------------------------------------------*/
+#main{
+	width: 100%;
+	overflow: hidden;
+	position: relative;
+}
+/*------------------------------------------------------------------
+12. Hero Area / .hero-area
+-------------------------------------------------------------------*/
+.hero-area{
+	overflow: visible;
+	color: $white;
+	@include font(14px, 26px);
+	font-weight: 300;
+	margin-bottom: 60px;
+	padding: 56px 0 0;
+	position: relative;
+	z-index: 1;
+	background-size: cover;
+	background-position: 50% 50%;
+	letter-spacing: 1px;
+	&.banner{
+		@include v-align(100vh, middle, after);
+		.container{ padding-top: 0; }
+	}
+	&.banner2{
+		height: 100vh;
+		overflow: hidden;
+		.heading-holder{
+			position: absolute;
+			left: 50%;
+			top: 50%;
+			width: 570px;
+			transform: translate(-50%, -50%);
+		}
+	}
+	.container{ position: relative; }
+	h1{
+		color: $white;
+		@include font(28px, 30px);
+		font-weight: 700;
+		margin: 0 0 8px;
+		text-shadow: 0 4px 4px rgba($gray-base, 0.09);
+		.text-small{
+			font: 300 17px/35px $font-family-sans-serif;
+			display: block;
+			margin: 0 0 16px;
+			text-transform: lowercase;
+		}
+		.clr{ color: $clr10; }
+	}
+	p{ margin: 0 0 25px; }
+	.heading-holder{ margin-bottom: 60px; }
+	.aligncenter{
+		text-align: center;
+		position: relative;
+		max-width: 447px;
+		margin-bottom: -11.2%;
+		img{ display: inline-block; }
+	}
+	.btn{
+		min-width: 150px;
+		margin: 0 15px 0 0;
+	}
+}
+#particles-js,
+#bgvid {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	min-width: 100%;
+	min-height: 100%;
+	width: auto;
+	-webkit-transform: translate(-50%, -50%);
+	-ms-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	-webkit-transition: 1s opacity;
+	transition: 1s opacity;
+}
+#bgvid{ z-index: -11; }
+#bgvid .vegas-slide{height: 100%;}
+.morphext > .animated {display: inline-block;}
+/*------------------------------------------------------------------
+13. Social Networks / .social-networks
+-------------------------------------------------------------------*/
+.social-networks{
+	@extend %listreset;
+	font-family: empty;
+	li{
+		@include vertical(inline-block, top);
+		margin: 0 2px 5px;
+	}
+	a{
+		display: block;
+		@include size(31px);
+		text-align: center;
+		color: $white;
+		font-size: 12px;
+		background: $clr1;
+		position: relative;
+		overflow: hidden;
+		border-radius: 100%;
+		transition: all 0.25s linear;
+		&:hover,
+		&:focus,
+		&:active{
+			background: $brand-info;
+		}
+	}
+	.icon{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%, -50%);
+	}
+}
+/*------------------------------------------------------------------
+14. Heading Wrap / .heading-wrap
+-------------------------------------------------------------------*/
+.heading-wrap{
+	h2{
+		margin: 0;
+		font: 20px/30px $font-family-sans-serif;
+		text-transform: none;
+	}
+	.btn-info{
+		@include pseudo(before, -5px, -5px, -5px, 0-5px);
+		&:before{
+			border: 5px solid $clr2;
+			border-radius: 99px;
+		}
+	}
+}
+/*------------------------------------------------------------------
+15. Features Area / .features-area
+-------------------------------------------------------------------*/
+.features-area{
+	padding-top: 15px;
+	color: $clr3;
+	.heading-wrap{ margin-bottom: 35px; }
+}
+/*------------------------------------------------------------------
+16. Features List / .features-list
+-------------------------------------------------------------------*/
+.features-list{
+	@extend %listreset;
+	font-size: 14px;
+	line-height: 24px;
+	font-family: empty;
+	li{
+		padding: 0 15px 0 82px;
+		font-family: $font-family-sans-serif;
+		position: relative;
+		margin: 0 0 30px;
+		overflow: hidden;
+		letter-spacing: 1px;
+	}
+	h3{
+		margin: 0 0 15px;
+		font: 600 16px/20px $font-family-sans-serif;
+	}
+	.icon-holder{
+		position: absolute;
+		left: 0;
+		top: 0;
+		text-align: center;
+		width: 64px;
+		text-align: center;
+	}
+	p{ margin: 0; }
+}
+/*------------------------------------------------------------------
+17. Product Features / .product-features
+-------------------------------------------------------------------*/
+.product-features{
+	color: $clr3;
+	position: relative;
+	line-height: 32px;
+	padding-bottom: 35px;
+	letter-spacing: 1px;
+	h2{
+		margin: 0 0 15px;
+		font: 600 20px/30px $font-family-sans-serif;
+		text-transform: none;
+	}
+	.img-holder{
+		margin: 0 auto;
+		max-width: 250px;
+		overflow: hidden;
+	}
+}
+/*------------------------------------------------------------------
+18. Facts List / .facts-list
+-------------------------------------------------------------------*/
+.facts-list{
+	@extend %listreset;
+	font-family: empty;
+	padding: 10px 2px;
+	text-align: center;
+	li{
+		margin: 0 0 10px;
+		font-family: $font-family-sans-serif;
+		@include pseudo(after, 50%, 0, auto, auto);
+		&:after{
+			border-right: 1px solid $clr4;
+			height: 30px;
+			display: none;
+			transform: translateY(-50%);
+		}
+		&:last-child{
+			padding-right: 0;
+			&:after{
+				opacity: 0;
+				visibility: hidden;
+			}
+		}
+		&:first-child{
+			margin-left: 0;
+		}
+	}
+	h3{
+		font: 600 22px/26px $font-family-sans-serif;
+		margin: 0;
+		text-transform: capitalize;
+	}
+	.text-block{
+		display: block;
+		padding: 0;
+		color: $clr5;
+		font-weight: 400;
+		font-size: 14px;
+		text-transform: uppercase;
+	}
+}
+/*------------------------------------------------------------------
+19. Demo Block / .demo-block
+-------------------------------------------------------------------*/
+.demo-block{
+	position: relative;
+	overflow: hidden;
+	color: $white;
+	line-height: 26px;
+	letter-spacing: 1px;
+	.container{
+		padding-top: 53px;
+		padding-bottom: 37px;
+	}
+	h2{
+		color: inherit;
+		margin: 0 0 15px;
+		font: 400 21px/25px $font-family-sans-serif;
+		text-transform: none;
+	}
+	ul{
+		@extend %listreset;
+		font-family: empty;
+		text-align: center;
+		font-size: 13px;
+		line-height: 16px;
+		font-weight: 400;
+		padding: 30px 0 0;
+		text-transform: uppercase;
+		li{
+			font-family: $font-family-sans-serif;
+			@include vertical(inline-block, middle);
+			margin: 0 15px 10px;
+		}
+		a{
+			display: block;
+			color: inherit;
+			transition: all 0.25s linear;
+			@include pseudo(after, auto, 0, 0, 0);
+			&:after{
+				border-bottom: 1px solid rgba($white, 0.5);
+				transition: all 0.25s linear;
+			}
+			&.btn{
+				&:after{
+					display: none;
+				}
+				&:hover{ color: $white;}
+			}
+			&:hover,
+			&:focus,
+			&:active{
+				color: $gray-darker;
+				&:after{
+					border-color: $gray-darker;
+				}
+			}
+		}
+	}
+	.btn{
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: inherit;
+		min-width: 167px;
+	}
+	p{
+		margin: 0;
+		font-weight: 100;
+	}
+}
+/*------------------------------------------------------------------
+20. Testimonials / .testimonials
+-------------------------------------------------------------------*/
+.testimonials{
+	padding-top: 35px;
+	overflow: hidden;
+	position: relative;
+	padding-bottom: 40px;
+	.heading-wrap{ margin-bottom: 35px; }
+	.btn-holder.heading-wrap,
+	.btn-holder{
+		margin-bottom: 0;
+		h2{ margin: 0 0 32px; }
+	}
+	.btn,
+	.btn-info{ min-width: 186px; }
+	blockquote{
+		border: 0;
+		padding: 0;
+		color: $clr6;
+		margin: 0 auto;
+		max-width: 800px;
+		letter-spacing: 1px;
+		font: italic 300 15px/30px $font-family-sans-serif;
+	}
+	q{
+		display: block;
+		margin: 0 0 27px;
+		&:before{ content: '“'; }
+		&:after{ content: '”'; }
+	}
+	cite{
+		display: block;
+		text-transform: capitalize;
+	}
+	.name{
+		color: inherit;
+		display: block;
+		margin: 0 0 10px;
+		font: 600 18px/21px $font-family-sans-serif;
+	}
+	.subtitle{
+		display: block;
+		color: $clr7;
+		font: 14px/18px $font-family-sans-serif;
+	}
+	.aligncenter{
+		text-align: center;
+		overflow: hidden;
+		margin-bottom: 35px;
+		float: none;
+		max-width: 500px;
+		img{ width: 100%; }
+	}
+}
+/*------------------------------------------------------------------
+21. Testimonials Gallery / .testimonials-gallery
+-------------------------------------------------------------------*/
+.testimonials-gallery {
+	position: relative;
+	margin-bottom: 35px;
+	.testimonials-mask {
+		position: relative;
+		overflow: visible !important;
+		margin: 0 auto;
+		opacity: 0.2;
+		transition: opacity 0.35s linear;
+		&.slick-active {
+			z-index: 1;
+			opacity: 1;
+		}
+	}
+	.slick-prev.slick-arrow,
+	.slick-next.slick-arrow{
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		@include size(37px);
+		border-radius: 100%;
+		background: $clr8;
+		opacity: 0.9;
+		z-index: 2;
+		border: none;
+		outline: none;
+		text-align: center;
+		transition: background 0.25s linear;
+		margin: -35px 0 0 -170px;
+		text-indent: -9999px;
+		transition: all 0.25s linear;
+		&:before{
+			position: absolute;
+			content: "\f104";
+			left: 15px;
+			top: 0;
+			font-family: "FontAwesome";
+			font-size: 15px;
+			line-height: 37px;
+			color: $white;
+			text-indent: 0;
+		}
+	}
+	.slick-next.slick-arrow{
+		left: auto;
+		right: 50%;
+		transform: translate(50%, -50%);
+		margin: -35px -169px 0 0;
+		&:before{ content: "\f105"; }
+	}
+}
+/*------------------------------------------------------------------
+22. Video Block / .video-block
+-------------------------------------------------------------------*/
+.video-block{
+	position: relative;
+	overflow: hidden;
+	background-size: cover;
+	min-height: 80px;
+	.ico-play{
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		font-size: 40px;
+		transform: translate(-50%, -50%);
+		z-index: 2;
+		color: $white;
+		@extend %transition;
+	}
+}
+/*------------------------------------------------------------------
+23. Price Offers / .price-offers
+-------------------------------------------------------------------*/
+.price-offers{
+	padding-top: 35px;
+	position: relative;
+	.heading-wrap{ margin-bottom: 35px; }
+	.cols-holder{
+		font-family: empty;
+		text-align: center;
+		margin: 0 -2px 0 0;
+	}
+}
+/*------------------------------------------------------------------
+24. Price Col / .price-col
+-------------------------------------------------------------------*/
+.price-col{
+	@extend %clearfix;
+	font-family: $font-family-sans-serif;
+	padding-bottom: 30px;
+	margin-bottom: 30px;
+	float: none;
+	z-index: 1;
+	@include vertical(inline-block, top);
+	@include pseudo(before, 0, 0, 0, 0);
+	&:before{
+		border: 1px solid $clr9;
+		z-index: -1;
+	}
+	+ .price-col{
+		margin-left: -1px;
+		&:before{ border-left-width: 0; }
+	}
+	&.over,
+	.over{
+		transition: all 0.25s ease;
+		&:hover,
+		&.active{
+			h3,
+			.fa,
+			.subtitle{
+				color: $white;
+			}
+			ul{
+				color: $white;
+				li:before{color: $white;}
+			}
+			.btn,
+			.btn-info{
+				background: $clr10;
+				border-color: $clr10;
+			}
+		}
+	}
+	.title{
+		text-transform: uppercase;
+		margin: 0 -15px;
+		padding: 8px 15px 7px;
+		display: block;
+		text-align: center;
+		font: 400 16px/20px $font-family-sans-serif;
+		color: $white;
+	}
+	.btn{
+		border-radius: 3px;
+		min-width: 170px;
+		&:hover,
+		&:focus,
+		&:active{
+			background: darken($color2, 30%);
+			border-color: darken($color2, 30%);
+		}
+	}
+	.offer-heading{
+		text-align: center;
+		padding: 16px 15px 27px;
+	}
+	h3{
+		margin: 0;
+		text-transform: lowercase;
+		color: $clr11;
+		font: 600 28px/30px $font-family-sans-serif;
+	}
+	.text-light{ font-weight: 300; }
+	.subtitle{
+		text-transform: none;
+		color: $clr12;
+		display: block;
+		padding: 8px 0 0;
+		font-weight: normal;
+		font: 300 14px/17px $font-family-sans-serif;
+	}
+	ul{
+		@extend %listreset;
+		color: $clr12;
+		margin: 0 -14px 27px;
+		text-align: left;
+		font: 300 14px/18px $font-family-sans-serif;
+		li{
+			padding: 13px 15px 11px 48px;
+			@include pseudo(before, 50%, auto, auto, 0);
+			&:before{
+				width: 11px;
+				text-align: center;
+				font-size: 14px;
+				transform: translateY(-50%);
+				font-family: 'icomoon' !important;
+				speak: none;
+				font-style: normal;
+				font-weight: normal !important;
+				font-variant: normal;
+				text-transform: none;
+				line-height: 1;
+				-webkit-font-smoothing: antialiased;
+				-moz-osx-font-smoothing: grayscale;
+				left: 17px;
+			}
+			&.check{
+				&:before{
+					color: $brand-success;
+					content: "\e913";
+				}
+			}
+			&.un-check{
+				&:before{
+					color: $brand-danger;
+					content: "\e914";
+					font-size: 17px;
+				}
+			}
+			&:nth-child(odd){
+				background: $clr13;
+			}
+		}
+		span{
+			display: block;
+			width: 100%;
+			text-overflow: ellipsis;
+			white-space: nowrap;
+			overflow: hidden;
+		}
+	}
+}
+/*------------------------------------------------------------------
+25. Trial Block / .trial-block
+-------------------------------------------------------------------*/
+.trial-block{
+	padding-top: 40px;
+	letter-spacing: 0.6px;
+	.alignleft{
+		margin: 0 auto 30px;
+		float: none;
+		width: 270px;
+		overflow: hidden;
+		border-radius: 1px;
+		box-shadow: 0 0 10px rgba($gray-base, 0.19);
+	}
+	h2{ margin: 0 0 15px; }
+	.btn,
+	.btn-info{
+		min-width: 186px;
+	}
+	p{ margin: 0 0 30px; }
+}
+/*------------------------------------------------------------------
+26. Brands Area / .brands-area
+-------------------------------------------------------------------*/
+.brands-area{
+	padding-top: 35px;
+	padding-bottom: 31px;
+	.heading-wrap{ margin-bottom: 32px; }
+}
+/*------------------------------------------------------------------
+27. Logos List / .logos-list
+-------------------------------------------------------------------*/
+.line-slider{
+	margin: 0;
+	font-family: empty;
+	text-align: center;
+	overflow: hidden;
+	li{
+		@include vertical(inline-block, middle);
+		max-width: 170px;
+		margin: 0 14px 28px;
+	}
+	a{
+		&:hover{ opacity: 0.8; }
+	}
+}
+/*------------------------------------------------------------------
+28. Aside / .aside
+-------------------------------------------------------------------*/
+.aside{
+	font: 300 12px/22px $font-family-sans-serif;
+	color: $clr14;
+	padding-bottom: 19px;
+	padding-top: 35px;
+	p{ margin: 0 0 26px; }
+	.logo{
+		float: none;
+		margin: 0 auto 28px;
+		max-width: 132px;
+	}
+}
+/*------------------------------------------------------------------
+29. Footer / #footer
+-------------------------------------------------------------------*/
+#footer{
+	@extend %clearfix;
+	color: $clr14;
+	text-align: center;
+	padding-bottom: 77px;
+	background-color: $clr8;
+}
+/*------------------------------------------------------------------
+30. Back Top / #back-top
+-------------------------------------------------------------------*/
+#back-top {
+	position: fixed;
+	right: 20px;
+	bottom: 20px;
+	font-size: 18px;
+	line-height: 20px;
+	color: $white;
+	text-align: center;
+    cursor: pointer;
+    float: right;
+    width: 50px;
+    height: 50px;
+    padding: 14px 0;
+    z-index: 9;
+    opacity: 0;
+    border-radius: 5px;
+    background: $gray-darker;
+    visibility: hidden;
+    transition: all 0.6s ease 0s;
+    &.active{
+    	opacity: 1;
+    	visibility: visible;
+    }
+}
+/*------------------------------------------------------------------
+31. Loader Holder / .loader-holder
+-------------------------------------------------------------------*/
+.loader-holder {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  position: fixed;
+  background-color: rgba($white, 0.9);
+  .block {
+	  top: 50%;
+	  left: 50%;
+	  position: absolute;
+	  transform: translate(-50%, -50%);
+	}
+}
