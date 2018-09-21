@@ -23,7 +23,7 @@ https://www.youtube.com/watch?v=qGuDnjnBa2w&w=532&rel=0
 
 ## Installation ## 
 
-The latest version of the Zigaform plugin ZIP file can be [**downloaded**](https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/dist/zigaform-php-form-builder.zip) from https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/
+The latest version of the Zigaform Software ZIP file can be [**downloaded**](https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/dist/zigaform-php-form-builder.zip) from https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/
 
 Follow the installation process here: 
 https://kb.softdiscover.com/docs/zigaform-php-form-builder/installation/via-wizard-installer/
