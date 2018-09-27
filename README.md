@@ -328,55 +328,6 @@ Zigaform is quickly becoming a popular choice among users and developers. It all
 
 Their support is immaculate and the zigaform is one of the best you’ll find for WordPress. Highly recommended for WP users of all backgrounds & experience levels.
 
- 
-** WHAT MAKES ZIGAFORM GREAT?
-------------------------------------------------------------
-
-* The unlimited number of forms, fields, emails, actions, or submissions. 	
-* A bulk of settings so that you can fine-tune every part of your form: from general settings to individual fields, submit actions and emails. 	
-* Really easy to use and can be easily used by beginners. 	
-* Comes with a drag-and-drop builder that allows you to build contact forms, donation forms, subscription forms, and surveys within minutes. 	
-* Offers tons of customization options including the ability to use custom CSS and HTML code. 	
-* More than just a contact form plugin. Helps improve website speed and security. 	
-* Allows you to create multi-page forms that can be used to divide long forms which improve user experience and usability. 	
-* Unlimited the amount of submissions/entries allowed for each form. 	
-* Allows you to customize everything you want including field labels, CSS, and the HTML code. 	
-* Offers support for Google reCaptcha to prevent spammers and spambots. 	
-* Allows you to create complex forms with conditional logic. 	
-* Over 42 field types to choose from. 	
-* Ajax-powered form submission allows your users to submit the form without a refresh or redirection. 	
-* Offers dozens of customization features. 	
-* No restrictions on the number of forms or submissions or fields. 	
-* Support for Google reCaptcha to prevent spam. 	
-* It is translation ready and can be easily translated to any language. 	
-* Comes with a JavaScript Datepicker input field. 	
-* Send a confirmation receipt email to the user. 	
-* Fully customize the forms by editing the CSS yourself. 	
-* Easily export entries and submissions to a CSV file. 	
-* Shortcodes can be used on any page, post or even widgets. 	
-* Allows you to set up data validation for the forms. 	
-* Send a copy of the submitted message to the user. 	
-* Allow users to attach files to their messages. 	
-* Customize the “Reply-To” email address. 	
-* Add additional data about the sender like IP address and Date/Time to the message. 	
-* Zigaform gives you an effortless WordPress integration. You can add a zigaform Forms to your site easily with a shortcode, widget, template function, or append it automatically to any content you choose. 	
-* It is translation-ready, for easy conversion to any language. 	
-* Style customizations: Its visual styler lets you change the look and feel of your form. You can change field colors and sizes, add backgrounds and borders, and more. 	
-* Enhanced features: The plugin is constantly being improved with more advanced features. With Zigaform, the possibilities for creating a powerful form are endless. 	
-* Developer friendly: If you’re a developer who needs to customize your form to any extent for clients, Zigaform might be the right solution. 	
-* 100% responsive forms: Your WordPress forms will always look great on any size device. 	
-* Optimized for speed: it is highly optimized for web and server performance. It doesn’t negatively impact the page speed of your site. 	
-* Ease of use: it comes with a drag and drop form builder that lets you create 100% mobile responsive forms without having you to touch a single line of code. It’s the easiest and most intuitive form builder 	
-* Enhanced functionalities: The plugin is continuously improved with enhanced functionalities. The team at Zigaform takes security very seriously. 	
-* Documentation is available: Best of all, you can find an extensive documentation on the zigaform website, which comes in handy if you need any assistance on using the form or troubleshooting the commonly found errors. 	
-* Zigaform lets you create unlimited forms with essential field types including single line text, email, URL, paragraph text, radio, checkbox, dropdown, and reCaptcha. 	
-* It saves your time and increases form completions by preloading data in your forms. 	
-* Build complex forms with conditional logic. You can automatically hide or show fields or entire pages in your form based on selections your users make. [PRO VERSION]
-
-
-== Tags ==
-ajax forms, responsive, form generator, form creator, form, forms, simple forms, professional forms, quick forms, form builder, form designs, contact form, validation, form builder, contact form builder, form manager, form creator, form generator, contact us, contact forms plugin, contact form plugin, bootstrap forms, jquery forms, ajax, confirmation mail, template,captcha,redirect,mailchimp,recaptcha,html,avada,bootstrap,builder,design,database,divi,email,embed,email template,elementor,conditional email,layout,marketing,validation,visual composer,bootstrap layout,magento,bootstrap with validation,bootstrap example,laravel,drupal,codeigniter,codecanyon,drag and drop,commerce,for word,in salesforce,oracle,salesforce,with conditional logic,builder form,news,maps
- 
 == Frequently Asked Questions ==
 
 = How do I create a form? =
