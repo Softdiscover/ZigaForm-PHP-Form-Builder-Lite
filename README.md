@@ -330,22 +330,5 @@ Their support is immaculate and the zigaform is one of the best you’ll find fo
 
 https://www.youtube.com/watch?v=qGuDnjnBa2w&w=532&rel=0
  
-== Screenshots ==
-
-1. Main form editor panel
-2. Form detailed entries report
-3. Saved forms in list
-4. graphic chart entry report by form
-5. CV submission example
-6. Wizard form example
-7. custom skin example
-8. Building Conditional logic on admin panel
-9. Building wizard form on admin panel
-10. smartphone preview of the form
-
-
-## Change Log ##
-
-### 3.9.4.2
-- first release of lite version
+ 
 
