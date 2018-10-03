@@ -1,31 +1,21 @@
 # Zigaform - PHP Form Builder
 
-Ultimate Wordpress Form Builder plugin . See more at https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/
-
-**Contributors:** softdiscover  
-**Donate link:** https://codecanyon.net/item/zigaform-php-form-builder-contact-survey/14889427?ref=softdiscover 
-**License:** GPLv3  
-**License URI:** http://www.gnu.org/licenses/gpl.html  
-**Tags:** form, forms, contact form, custom form, form builder, form creator, form manager, form creation, contact forms, custom forms, forms builder, forms creator, forms manager, forms creation, form administration  
-**Requires PHP:** 5.3  
-**Stable tag:** 3.9.4.2 
-
-Create forms with total control using this powerful drag and drop form builder which makes you to build contact forms or any form on few minutes. you can embed on any platform (wordpress, joomla, magento or any site)
-
-## Description ## 
-
 Zigaform – PHP form builder is a flexible and Ultimate PHP Form Builder Software which allows you to build responsive forms on few minutes using a simple yet powerful drag-and-drop form creator. Also it provides amazing form elements and skin live customizer that makes you to build professional forms. Also it provides an administration section where site admins manage tons of form options. It’s really easy to customize and you don’t need programming skills.
 
 Zigaform is a 100% mobile responsive contact form solution, so your contact forms will always look great on all devices (mobile, tablet, laptop, and desktop).
 
 https://www.youtube.com/watch?v=qGuDnjnBa2w&w=532&rel=0
 
+See more at https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/
 
 ## Installation ## 
 
-The latest version of the Zigaform Software ZIP file can be [**downloaded**](https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/dist/zigaform-php-form-builder.zip) from https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/
+The latest version of the Zigaform Software ZIP file can be [**downloaded**](https://github.com/Softdiscover/ZigaForm-PHP-Form-Builder-Lite/zipball/master) from https://softdiscover.github.io/ZigaForm-PHP-Form-Builder-Lite/
 
 Follow the installation process here: 
+
+1) uncompress the zip file and copy all files under the folder to your host via ftp.
+2) then follow the next: 
 https://kb.softdiscover.com/docs/zigaform-php-form-builder/installation/via-wizard-installer/
 
 
@@ -33,7 +23,7 @@ https://kb.softdiscover.com/docs/zigaform-php-form-builder/installation/via-wiza
 
 Please see https://php-form-builder.zigaform.com/#contact for more details.
 
-## Features (Lite version): ## 
+## Features : ## 
 * drag and drop or click to add fields to form
 * Drag-and-drop reordering
 * Full skin customizer with live preview
