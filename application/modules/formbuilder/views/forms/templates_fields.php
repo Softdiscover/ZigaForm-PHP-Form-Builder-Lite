@@ -1852,7 +1852,53 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                             </div>
                  
             </div>
-        </div>  
+        </div> 
+   
+    <!-- Date Time picker 2-->
+     <div id=""  data-typefield="43" class="uiform-datetime2 uiform-field uiform-field-childs zgpb-field-template">
+            <div class="uiform-field-wrap">
+                <div class="rkfm-row">
+                    <div class="rkfm-col-sm-2">
+                        <div class="uifm-control-label">
+                            <label class="sfdc-control-label">
+                                <span 
+                                   data-field-option="uifm-help-block"
+                                    class="uifm-label-helpblock uifm-f-option">
+                                    <span class="fa fa-question-circle"></span>
+                                </span> 
+                               <span  data-field-store="label-text"
+                                      data-field-option="uifm-label"
+                                      class="uifm-label uifm-f-option"><?php echo __('Textbox label','FRocket_admin'); ?></span>
+                               <span data-field-store="sublabel-text"
+                                      data-field-option="uifm-sublabel"
+                                      class="uifm-sublabel uifm-f-option"><?php echo __('Textbox sublabel','FRocket_admin'); ?></span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="rkfm-col-sm-10">
+                        <div class="uifm-input-container">
+                                <div class="uifm-input7-wrap">
+                                    <div class="sfdc-form-group">
+                                        <div class="uifm-input-flatpickr sfdc-input-group date">
+                                            <input type="text" class="sfdc-form-control" data-input>
+                                            <span class="sfdc-input-group-addon" data-toggle>
+                                                <span class="fa fa-calendar"></span>
+                                            </span>
+                                             <span class="sfdc-input-group-addon" data-clear>
+                                                <span class="fa fa-times"></span>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                        </div>
+                        <div data-field-option="uifm-help-block"  class="uifm-help-block uifm-f-option">
+                            <?php echo __('Help block text','FRocket_admin'); ?>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
    <!-- Modal -->
 <div class="sfdc-modal sfdc-fade" id="modaltemplate" tabindex="-1" role="dialog" 
    aria-labelledby="myModalLabel" aria-hidden="true">

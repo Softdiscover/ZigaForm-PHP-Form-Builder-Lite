@@ -175,8 +175,10 @@ var zgfm_back_fld_options = function(){
                                                     /*wizard buttons*/
                                                 case 41:
                                                     /*dyn checkbox*/
-                                                case 42:    
+                                                case 42:
                                                     
+                                                case 43:    
+                                                    /*date beta*/
                                                      rocketform.tinymceEvent_init();
                                                      
                                                         flag_tinymce_loaded=false;
@@ -327,6 +329,10 @@ var zgfm_back_fld_options = function(){
                                                                                     /*dyn radiobtn*/
                                                                                     tmp_field_inst= $('#'+id).data('uiform_dynradiobtn');  
                                                                                     break;
+                                                                                case 43:
+                                                                                    /*date beta*/
+                                                                                    tmp_field_inst= $('#'+id).data('uifm_datepickr_flat');  
+                                                                                    break;    
                                                                                 
                                                                             }
                                                                             

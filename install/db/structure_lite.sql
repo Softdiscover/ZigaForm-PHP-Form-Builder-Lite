@@ -10,7 +10,7 @@ CREATE TABLE `fbcf_uiform_fields` (
   `fmf_data` mediumtext,
   `fmf_fieldname` varchar(255) DEFAULT NULL,
   `flag_status` smallint(5) DEFAULT NULL,
-  `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(50) DEFAULT NULL,
   `updated_ip` varchar(50) DEFAULT NULL,
@@ -36,7 +36,7 @@ CREATE TABLE `fbcf_uiform_fields_type` (
   `fby_id` int(6) NOT NULL AUTO_INCREMENT,
   `fby_name` varchar(25) DEFAULT NULL,
   `flag_status` smallint(5) DEFAULT NULL,
-  `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(50) DEFAULT NULL,
   `updated_ip` varchar(50) DEFAULT NULL,
@@ -48,48 +48,49 @@ CREATE TABLE `fbcf_uiform_fields_type` (
 -- ----------------------------
 -- Records of fbcf_uiform_fields_type
 -- ----------------------------
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('1', '1 Col', '1', '0000-00-00 00:00:00', '2014-05-24 01:10:27', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('2', '2 Cols', '1', '0000-00-00 00:00:00', '2014-05-24 01:10:44', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('3', '3 Cols', '1', '0000-00-00 00:00:00', '2014-05-24 01:10:57', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('4', '4 Cols', '1', '0000-00-00 00:00:00', '2014-05-24 01:11:36', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('5', '6 Cols', '1', '0000-00-00 00:00:00', '2014-05-24 01:11:45', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('6', 'Textbox', '1', '0000-00-00 00:00:00', '2014-05-24 01:11:58', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('7', 'Textarea', '1', '0000-00-00 00:00:00', '2014-05-24 01:12:12', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('8', 'Radio Button', '1', '0000-00-00 00:00:00', '2014-05-24 01:13:21', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('9', 'Checkbox', '1', '0000-00-00 00:00:00', '2014-05-24 01:13:33', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('10', 'Select', '1', '0000-00-00 00:00:00', '2014-05-24 01:13:44', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('11', 'Multiple Select', '1', '0000-00-00 00:00:00', '2014-05-24 01:13:57', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('12', 'File Upload', '1', '0000-00-00 00:00:00', '2014-05-24 01:28:55', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('13', 'Image Upload', '1', '0000-00-00 00:00:00', '2014-05-24 01:29:06', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('14', 'Custom HTML', '1', '0000-00-00 00:00:00', '2014-05-24 01:29:31', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('15', 'Password', '1', '0000-00-00 00:00:00', '2014-05-24 01:30:39', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('16', 'Slider', '1', '0000-00-00 00:00:00', '2014-05-24 01:30:53', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('17', 'Range', '1', '0000-00-00 00:00:00', '2014-05-24 01:35:41', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('18', 'Spinner', '1', '0000-00-00 00:00:00', '2014-05-24 01:37:09', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('19', 'Captcha', '1', '0000-00-00 00:00:00', '2014-05-24 01:37:19', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('20', 'Submit button', '1', '0000-00-00 00:00:00', '2014-05-24 01:39:59', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('21', 'Hidden field', '1', '0000-00-00 00:00:00', '2014-05-24 01:40:13', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('22', 'Star rating', '1', '0000-00-00 00:00:00', '2014-05-24 01:40:24', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('23', 'Color Picker', '1', '0000-00-00 00:00:00', '2014-05-24 01:40:37', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('24', 'Date Picker', '1', '0000-00-00 00:00:00', '2014-05-24 01:41:19', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('25', 'Time Picker', '1', '0000-00-00 00:00:00', '2014-05-24 01:41:46', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('26', 'Date and Time', '1', '0000-00-00 00:00:00', '2014-05-24 01:50:36', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('27', 'ReCaptcha', '1', '0000-00-00 00:00:00', '2014-05-24 01:50:53', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('28', 'Prepended text\r\n', '1', '0000-00-00 00:00:00', '2014-05-24 01:51:16', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('29', 'Appended text\r\n', '1', '0000-00-00 00:00:00', '2014-05-24 01:51:38', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('30', 'Append and prepend\r\n', '1', '0000-00-00 00:00:00', '2014-05-24 01:51:55', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('31', 'Panel', '1', '0000-00-00 00:00:00', '2014-05-24 01:55:32', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('32', 'Divider', '1', '0000-00-00 00:00:00', '2014-05-24 01:58:58', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('33', 'Heading 1', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('34', 'Heading 2', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('35', 'Heading 3', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('36', 'Heading 4', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('37', 'Heading 5', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('38', 'Heading 6', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('39', 'Wizard buttons', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('40', 'Switch', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('41', 'Dinamic Checkbox', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
-INSERT INTO `fbcf_uiform_fields_type` VALUES ('42', 'Dinamic RadioButton', '1', '0000-00-00 00:00:00', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('1', '1 Col', '1', '1980-01-01 00:00:01', '2014-05-24 01:10:27', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('2', '2 Cols', '1', '1980-01-01 00:00:01', '2014-05-24 01:10:44', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('3', '3 Cols', '1', '1980-01-01 00:00:01', '2014-05-24 01:10:57', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('4', '4 Cols', '1', '1980-01-01 00:00:01', '2014-05-24 01:11:36', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('5', '6 Cols', '1', '1980-01-01 00:00:01', '2014-05-24 01:11:45', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('6', 'Textbox', '1', '1980-01-01 00:00:01', '2014-05-24 01:11:58', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('7', 'Textarea', '1', '1980-01-01 00:00:01', '2014-05-24 01:12:12', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('8', 'Radio Button', '1', '1980-01-01 00:00:01', '2014-05-24 01:13:21', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('9', 'Checkbox', '1', '1980-01-01 00:00:01', '2014-05-24 01:13:33', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('10', 'Select', '1', '1980-01-01 00:00:01', '2014-05-24 01:13:44', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('11', 'Multiple Select', '1', '1980-01-01 00:00:01', '2014-05-24 01:13:57', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('12', 'File Upload', '1', '1980-01-01 00:00:01', '2014-05-24 01:28:55', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('13', 'Image Upload', '1', '1980-01-01 00:00:01', '2014-05-24 01:29:06', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('14', 'Custom HTML', '1', '1980-01-01 00:00:01', '2014-05-24 01:29:31', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('15', 'Password', '1', '1980-01-01 00:00:01', '2014-05-24 01:30:39', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('16', 'Slider', '1', '1980-01-01 00:00:01', '2014-05-24 01:30:53', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('17', 'Range', '1', '1980-01-01 00:00:01', '2014-05-24 01:35:41', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('18', 'Spinner', '1', '1980-01-01 00:00:01', '2014-05-24 01:37:09', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('19', 'Captcha', '1', '1980-01-01 00:00:01', '2014-05-24 01:37:19', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('20', 'Submit button', '1', '1980-01-01 00:00:01', '2014-05-24 01:39:59', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('21', 'Hidden field', '1', '1980-01-01 00:00:01', '2014-05-24 01:40:13', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('22', 'Star rating', '1', '1980-01-01 00:00:01', '2014-05-24 01:40:24', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('23', 'Color Picker', '1', '1980-01-01 00:00:01', '2014-05-24 01:40:37', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('24', 'Date Picker', '1', '1980-01-01 00:00:01', '2014-05-24 01:41:19', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('25', 'Time Picker', '1', '1980-01-01 00:00:01', '2014-05-24 01:41:46', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('26', 'Date and Time', '1', '1980-01-01 00:00:01', '2014-05-24 01:50:36', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('27', 'ReCaptcha', '1', '1980-01-01 00:00:01', '2014-05-24 01:50:53', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('28', 'Prepended text\r\n', '1', '1980-01-01 00:00:01', '2014-05-24 01:51:16', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('29', 'Appended text\r\n', '1', '1980-01-01 00:00:01', '2014-05-24 01:51:38', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('30', 'Append and prepend\r\n', '1', '1980-01-01 00:00:01', '2014-05-24 01:51:55', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('31', 'Panel', '1', '1980-01-01 00:00:01', '2014-05-24 01:55:32', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('32', 'Divider', '1', '1980-01-01 00:00:01', '2014-05-24 01:58:58', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('33', 'Heading 1', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('34', 'Heading 2', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('35', 'Heading 3', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('36', 'Heading 4', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('37', 'Heading 5', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('38', 'Heading 6', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('39', 'Wizard buttons', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('40', 'Switch', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('41', 'Dinamic Checkbox', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('42', 'Dinamic RadioButton', '1', '1980-01-01 00:00:01', '2014-05-24 02:25:51', null, null, null, null);
+INSERT INTO `fbcf_uiform_fields_type` VALUES ('43', 'Date 2', '1', '1980-01-01 00:00:01', '2018-10-11 14:10:35', NULL, NULL, NULL, NULL);
 
 -- ----------------------------
 -- Table structure for `fbcf_uiform_form`
@@ -102,7 +103,7 @@ CREATE TABLE `fbcf_uiform_form` (
   `fmb_html` mediumtext,
   `fmb_html_backend` mediumtext,
   `flag_status` smallint(5) DEFAULT '1',
-  `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(50) DEFAULT NULL,
   `updated_ip` varchar(50) DEFAULT NULL,
@@ -165,14 +166,14 @@ CREATE TABLE `fbcf_uiform_settings` (
   `site_title` varchar(250) DEFAULT NULL,
   `admin_mail` varchar(250) DEFAULT NULL,
   `created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_date` timestamp NULL DEFAULT '0000-00-00 00:00:00',
+  `updated_date` timestamp NULL DEFAULT '1980-01-01 00:00:01',
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of fbcf_uiform_settings
 -- ----------------------------
-INSERT INTO `fbcf_uiform_settings` VALUES ('3.7.6.6', '1', '', '0', '', '', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '0000-00-00 00:00:00');
+INSERT INTO `fbcf_uiform_settings` VALUES ('3.7.6.6', '1', '', '0', '', '', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
 
 -- ----------------------------
 -- Table structure for `fbcf_uiform_user`
@@ -183,7 +184,7 @@ CREATE TABLE `fbcf_uiform_user` (
   `use_login` varchar(250) DEFAULT NULL,
   `use_password` varchar(32) DEFAULT NULL,
   `flag_status` smallint(5) DEFAULT NULL,
-  `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(50) DEFAULT NULL,
   `updated_ip` varchar(50) DEFAULT NULL,
@@ -230,7 +231,7 @@ CREATE TABLE `fbcf_uiform_form_log` (
   `log_frm_id` int(6) NOT NULL,
   `log_frm_hash` varchar(255) NOT NULL,
   `flag_status` smallint(5) DEFAULT '1',
-  `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+  `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(50) DEFAULT NULL,
   `updated_ip` varchar(50) DEFAULT NULL,
@@ -254,7 +255,7 @@ CREATE TABLE `fbcf_uiform_addon` (
     `add_log` text ,
     `addonscol` varchar(45) DEFAULT NULL,
     `flag_status` smallint(5)  DEFAULT 1,
-    `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+    `created_date` timestamp NULL,
     `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `created_ip` varchar(50)  DEFAULT NULL,
     `updated_ip` varchar(50)  DEFAULT NULL,
@@ -275,7 +276,7 @@ CREATE TABLE `fbcf_uiform_addon_details` (
     `fmb_id` int(5) NOT NULL,
     `adet_data` longtext ,
     `flag_status` smallint(5) DEFAULT 1,
-    `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+    `created_date` timestamp NULL,
     `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `created_ip` varchar(50) DEFAULT NULL,
     `updated_ip` varchar(50) DEFAULT NULL,
@@ -292,7 +293,7 @@ CREATE TABLE `fbcf_uiform_addon_details_log` (
     `fmb_id` int(5) NOT NULL,
     `adet_data` longtext  NULL,
     `flag_status` smallint(5) DEFAULT 1,
-    `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+    `created_date` timestamp NULL,
     `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `created_ip` varchar(50) DEFAULT NULL,
     `updated_ip` varchar(50) DEFAULT NULL,

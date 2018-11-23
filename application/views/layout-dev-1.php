@@ -46,6 +46,7 @@ if (!defined('BASEPATH')) {
  <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/uiform_captcha.js"></script>
  <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/uiform_recaptcha.js"></script>
  <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/uiform_datepicker.js"></script>
+ <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/uiform_datepicker2.js"></script>
  <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/uiform_timepicker.js"></script>
  <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/uiform_datetime.js"></script>
  <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/uiform_divider.js"></script>

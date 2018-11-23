@@ -557,6 +557,17 @@ class Fields extends MX_Controller {
     public function formhtml_datepicker_css($data) {
         return $this->formhtml_renderCssField($data);
     }
+                    
+    public function formhtml_date2($value, $num_tab) {
+        $data = array();
+        $data['tab_num'] = $num_tab;
+        $data = array_merge($data, $value);
+        return $this->formhtml_renderField($data);
+    }
+
+    public function formhtml_date2_css($data) {
+        return $this->formhtml_renderCssField($data);
+    }
 
     public function formhtml_timepicker($value, $num_tab) {
         $data = array();
@@ -699,7 +710,7 @@ class Fields extends MX_Controller {
                /*textbox*/
             case 7: case 8: case 9: case 10: case 11: case 12: case 13: case 14: case 15: case 16: case 17:
             case 18: case 19: case 20: case 21: case 22: case 23: case 24: case 25: case 26: case 27: case 28:case 29: case 30:
-             case 32: case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41: case 42:
+            case 32: case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41: case 42: case 43:
                 
                $data['render_common_css'] = $this->load->view('formbuilder/fields/render_css_front/common_css', $data, true);
                $data['render_common_css2'] = $this->load->view('formbuilder/fields/render_css_front/common_css2', $data, true);
@@ -830,6 +841,10 @@ class Fields extends MX_Controller {
                     /* dyn radio button */
                     $data['render_block_type'] =  $this->load->view('formbuilder/fields/render_css_front/type_dynradiobtn', $data, true);
                         break;
+                    case 43:
+                    /* date 2 */
+                    $data['render_block_type'] =  $this->load->view('formbuilder/fields/render_css_front/type_date2', $data, true);
+                        break;
                     
                }
                
@@ -855,7 +870,7 @@ class Fields extends MX_Controller {
                /*textbox*/
             case 7: case 8: case 9: case 10: case 11: case 12: case 13: case 14: case 15: case 16: case 17:
             case 18: case 19: case 20: case 21: case 22: case 23: case 24: case 25: case 26: case 27: case 28:case 29: case 30:
-              case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41: case 42:
+            case 33: case 34: case 35: case 36: case 37: case 38: case 39: case 40: case 41: case 42: case 43:
             
             
               
@@ -1014,6 +1029,11 @@ class Fields extends MX_Controller {
                     /*dyn radio button*/
                         $data['render_block_input'] =  $this->load->view('formbuilder/fields/render_front/type_dynradiobtn', $data, true);
                         $data['render_extraclass1'] = 'rockfm-dynradiobtn ';
+                        break;
+                    case 43:
+                    /*date 2*/
+                        $data['render_block_input'] =  $this->load->view('formbuilder/fields/render_front/type_date2', $data, true);
+                        $data['render_extraclass1'] = 'rockfm-date2 ';
                         break;
                }
                

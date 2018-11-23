@@ -173,7 +173,7 @@ class Auth
                                 `log_frm_id` int(6) NOT NULL,
                                 `log_frm_hash` varchar(255) NOT NULL,
                                 `flag_status` smallint(5) DEFAULT '1',
-                                `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                `created_date` timestamp NULL,
                                 `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                 `created_ip` varchar(50) DEFAULT NULL,
                                 `updated_ip` varchar(50) DEFAULT NULL,
@@ -209,7 +209,7 @@ class Auth
                                 `add_log` text ,
                                 `addonscol` varchar(45) DEFAULT NULL,
                                 `flag_status` smallint(5)  DEFAULT 1,
-                                `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                `created_date` timestamp NULL,
                                 `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                 `created_ip` varchar(50)  DEFAULT NULL,
                                 `updated_ip` varchar(50)  DEFAULT NULL,
@@ -224,7 +224,7 @@ class Auth
                         
                             $this->CI->db->query($sql);
                             
-                            $sql="INSERT INTO $tbname VALUES ('func_anim', 'Animation effect', 'Animation effects to fields', 1, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, '0000-00-00 00:00:00', '2018-01-31 10:35:14', NULL, NULL, NULL, NULL, NULL, 1, 1, 1);";
+                            $sql="INSERT INTO $tbname VALUES ('func_anim', 'Animation effect', 'Animation effects to fields', 1, 1, NULL, NULL, NULL, 1, NULL, NULL, NULL, 1, '1980-01-01 00:00:01', '2018-01-31 10:35:14', NULL, NULL, NULL, NULL, NULL, 1, 1, 1);";
                             $this->CI->db->query($sql);
                     }
                      
@@ -239,7 +239,7 @@ class Auth
                                 `fmb_id` int(5) NOT NULL,
                                 `adet_data` longtext ,
                                 `flag_status` smallint(5) DEFAULT 1,
-                                `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                `created_date` timestamp NULL,
                                 `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                 `created_ip` varchar(50) DEFAULT NULL,
                                 `updated_ip` varchar(50) DEFAULT NULL,
@@ -264,7 +264,7 @@ class Auth
                                 `fmb_id` int(5) NOT NULL,
                                 `adet_data` longtext  NULL,
                                 `flag_status` smallint(5) DEFAULT 1,
-                                `created_date` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
+                                `created_date` timestamp NULL,
                                 `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
                                 `created_ip` varchar(50) DEFAULT NULL,
                                 `updated_ip` varchar(50) DEFAULT NULL,
@@ -320,6 +320,21 @@ class Auth
                                 UNIQUE INDEX `option_name`(`option_name`) USING BTREE
                             ) " . $charset . ";";
                         
+                            $this->CI->db->query($sql);
+                          
+                    }
+                    
+                }
+                
+                //below 3.9.5
+                if (!$install_ver || version_compare($install_ver,"3.9.5", '<')) {
+                    
+                    $tbname = "fbcf_uiform_fields_type";
+                    $query2 = $this->CI->db->query("SHOW TABLES LIKE '$tbname'");
+                    $row = (Array)$query2->row();
+                    if ((string)reset($row) == $tbname) {
+                        $charset = '';
+                            $sql="INSERT INTO $tbname VALUES ('43', 'Date 2', '1', '1980-01-01 00:00:01', '2018-10-11 14:10:35', NULL, NULL, NULL, NULL) ON DUPLICATE KEY UPDATE flag_status = 1;";
                             $this->CI->db->query($sql);
                           
                     }

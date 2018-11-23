@@ -1058,6 +1058,13 @@ class Forms extends MX_Controller {
                 $str_output.=modules::run('formbuilder/fields/formhtml_dynradiobtn', $data, $child_field['num_tab']);
                 $str_output_3.=modules::run('formbuilder/fields/formhtml_dynradiobtn_css', $data);
                 break;
+            case 43:
+                //date 2
+                $data['main'] = $this->current_data_main;
+                $data['form_id'] = $this->saved_form_id;
+                $str_output.=modules::run('formbuilder/fields/formhtml_date2', $data, $child_field['num_tab']);
+                $str_output_3.=modules::run('formbuilder/fields/formhtml_date2_css', $data);
+                break;
             default:
                 break;
         }
@@ -1225,6 +1232,10 @@ class Forms extends MX_Controller {
             case 42:
                 //dyn radiobtn
                 $str_output.=$this->load->view('formbuilder/fields/templates/prevpanel_dynradiobtn', $data, true);
+                break;
+            case 43:
+                //date
+                $str_output.=$this->load->view('formbuilder/fields/templates/prevpanel_datetime_2', $data, true);
                 break;
             default:
                 break;

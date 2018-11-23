@@ -65,6 +65,9 @@ if (!defined('BASEPATH')) {
     <link href="<?php echo base_url(); ?>assets/backend/js/biconpicker/1.9.0/css/bootstrap-iconpicker.css" rel="stylesheet">
     <!-- bootstrap date time picker -->
     <link href="<?php echo base_url(); ?>assets/backend/js/bdatetime/bootstrap-datetimepicker.css" rel="stylesheet">
+    <!-- bootstrap date 2 -->
+    <link href="<?php echo base_url(); ?>assets/common/js/flatpickr/4.5.2/flatpickr.min.css" rel="stylesheet">
+    
     <!-- star rating -->
     <link href="<?php echo base_url(); ?>assets/backend/js/bratestar/star-rating.css" rel="stylesheet">
     <!-- data tables -->
@@ -129,6 +132,11 @@ if (!defined('BASEPATH')) {
     <!-- date time -->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/moment-with-locales.js"></script>
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/bootstrap-datetimepicker.js"></script>
+    
+    <!-- date time 2 -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/flatpickr/4.5.2/flatpickr.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/flatpickr/4.5.2/l10n/all-lang.js"></script>
+    
     <!-- auto grow -->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/jquery.autogrow-textarea.js"></script>
     <!-- bootstrap iconpicker -->

@@ -198,7 +198,7 @@ class model_record extends CI_Model
                 from %s f 
                 join %s t on f.type_fby_id=t.fby_id 
                 join %s fm on fm.fmb_id=f.form_fmb_id
-                where f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42) and';
+                where f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42,43) and';
             
             if($filter===true){
                 $tmp_qu.=' f.fmf_status_qu=1 and';
@@ -223,7 +223,7 @@ class model_record extends CI_Model
         from %s f 
         join %s t on f.type_fby_id=t.fby_id 
         join %s fm on fm.fmb_id=f.form_fmb_id
-        where f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42) and
+        where f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42,43) and
         fm.fmb_id=%s order by f.order_rec asc', $this->tbformfields, $this->tbformtype, $this->tbform, (int)$id_field);
 
         $query2 = $this->db->query($query);
@@ -248,7 +248,7 @@ class model_record extends CI_Model
         $query = sprintf('select f.fmf_status_qu,f.fmf_uniqueid, coalesce(NULLIF(f.fmf_fieldname,""),CONCAT(t.fby_name,f.fmf_id)) as fieldname , f.order_rec
             from %s f 
             join %s t on f.type_fby_id=t.fby_id 
-            where f.form_fmb_id=%s and f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42)', $this->tbformfields, $this->tbformtype, (int)$id_form);
+            where f.form_fmb_id=%s and f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42,43)', $this->tbformfields, $this->tbformtype, (int)$id_form);
         $query2 = $this->db->query($query);
         return $query2->result();
     }

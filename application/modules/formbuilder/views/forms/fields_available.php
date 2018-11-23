@@ -774,6 +774,21 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                                        
                                     </a>
                                 </li>
+                                <li>
+                                    <a class="uiform-draggable-field uiform-button3 uiform-panelfld" 
+                                       data-type="43" 
+                                       onclick="javascript:rocketform.mainfields_addFieldToForm(this,43);"
+                                       href="javascript:void(0);">
+                                        
+                                        <span class="sfdc-btn1-icon-left"> 
+                                                       <span class="sfdc-glyphicon sfdc-glyphicon-move"></span> 
+                                                   </span>
+                                                   <span class="sfdc-btn1-text"> <?php echo __('Date','FRocket_admin'); ?>   <span style="color:red;">beta</span>
+                                                   </span>
+                                        
+                                       
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                     </div>
