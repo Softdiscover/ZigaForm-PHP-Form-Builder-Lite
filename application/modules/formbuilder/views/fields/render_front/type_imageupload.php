@@ -20,10 +20,10 @@ ob_start();
     <div class="fileinput-preview sfdc-thumbnail" data-trigger="fileinput" style="width: 200px; height: 150px;"></div>
     <div>
         <span class="sfdc-btn sfdc-btn-default btn-file">
-            <span class="fileinput-new"><?php echo __('Select image','FRocket_admin'); ?></span>
-            <span class="fileinput-exists"><?php echo __('Change','FRocket_admin'); ?></span>
+            <span class="fileinput-new"><?php echo isset($input16['stl1']['txt_selimage'])?$input16['stl1']['txt_selimage']:__('Select file','FRocket_admin'); ?></span>
+            <span class="fileinput-exists"><?php echo isset($input16['stl1']['txt_change'])?$input16['stl1']['txt_change']:__('Change','FRocket_admin'); ?></span>
             <input name="uiform_fields[<?php echo $id;?>]" type="file" name="..."></span>
-        <a href="#" class="sfdc-btn sfdc-btn-default fileinput-exists" data-dismiss="fileinput"><?php echo __('Remove','FRocket_admin'); ?></a>
+        <a href="#" class="sfdc-btn sfdc-btn-default fileinput-exists" data-dismiss="fileinput"><?php echo isset($input16['stl1']['txt_remove'])?$input16['stl1']['txt_remove']:__('Remove','FRocket_admin'); ?></a>
     </div>
     </div>
        <input type="hidden" name="uiform_fields[<?php echo $id;?>]" value="uifm_fileinput">

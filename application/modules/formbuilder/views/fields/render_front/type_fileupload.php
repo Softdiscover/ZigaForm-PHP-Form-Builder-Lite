@@ -20,11 +20,11 @@ ob_start();
         <div class="sfdc-form-control" data-trigger="fileinput">
             <i class="sfdc-glyphicon sfdc-glyphicon-file fileinput-exists"></i> <span class="fileinput-filename"></span></div>
         <span class="sfdc-input-group-addon sfdc-btn sfdc-btn-default btn-file">
-            <span class="fileinput-new"><?php echo __('Select file','FRocket_admin'); ?></span>
-            <span class="fileinput-exists"><?php echo __('Change','FRocket_admin'); ?></span>
+            <span class="fileinput-new"><?php echo isset($input16['stl1']['txt_selimage'])?$input16['stl1']['txt_selimage']:__('Select file','FRocket_admin'); ?></span>
+            <span class="fileinput-exists"><?php echo isset($input16['stl1']['txt_change'])?$input16['stl1']['txt_change']:__('Change','FRocket_admin'); ?></span>
             <input name="uiform_fields[<?php echo $id;?>]" type="file" name="..."></span>
         <a href="#" class="sfdc-input-group-addon sfdc-btn sfdc-btn-default fileinput-exists" 
-            data-dismiss="fileinput"><?php echo __('Remove','FRocket_admin'); ?></a>
+            data-dismiss="fileinput"><?php echo isset($input16['stl1']['txt_remove'])?$input16['stl1']['txt_remove']:__('Remove','FRocket_admin'); ?></a>
     </div>
     <input type="hidden" name="uiform_fields[<?php echo $id;?>]" value="uifm_fileinput">
 </div>

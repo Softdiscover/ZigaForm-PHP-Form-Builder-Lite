@@ -82,4 +82,49 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
            <div class="sfdc-alert sfdc-alert-warning" role="alert"><?php echo __('if you enable attachment option, make sure your web server (hosting) and mail server support your maximum size file','FRocket_admin'); ?></div>
         </div>
     </div>
+      <fieldset>
+        <legend><?php echo __('Custom Translations','FRocket_admin'); ?> </legend>
+         <div class="sfdc-row">
+            <div class="sfdc-col-md-4">
+               <label ><?php echo __('Select image','FRocket_admin'); ?></label>
+            </div>
+            <div class="sfdc-col-sm-8">
+                    <div class="sfdc-form-group">
+                       <input type="text" class="sfdc-form-control uifm-f-setoption"
+                              placeholder="" 
+                              name="uifm_fld_input16_txtselimage"
+                              id="uifm_fld_input16_txtselimage" 
+                              data-field-store="input16-stl1-txt_selimage">
+                    </div>
+                </div>
+        </div>
+       <div class="sfdc-row">
+            <div class="sfdc-col-md-4">
+               <label ><?php echo __('Change','FRocket_admin'); ?></label>
+            </div>
+            <div class="sfdc-col-sm-8">
+                    <div class="sfdc-form-group">
+                       <input type="text" class="sfdc-form-control uifm-f-setoption"
+                              placeholder="" 
+                              name="uifm_fld_input16_txtchange"
+                              id="uifm_fld_input16_txtchange" 
+                              data-field-store="input16-stl1-txt_change">
+                    </div>
+                </div>
+        </div>
+        <div class="sfdc-row">
+            <div class="sfdc-col-md-4">
+               <label ><?php echo __('Remove','FRocket_admin'); ?></label>
+            </div>
+            <div class="sfdc-col-sm-8">
+                    <div class="sfdc-form-group">
+                       <input type="text" class="sfdc-form-control uifm-f-setoption"
+                              placeholder="" 
+                              name="uifm_fld_input16_txtremove"
+                              id="uifm_fld_input16_txtremove" 
+                              data-field-store="input16-stl1-txt_remove">
+                    </div>
+                </div>
+        </div>
+    </fieldset>
 </div>
