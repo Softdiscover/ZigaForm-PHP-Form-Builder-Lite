@@ -46,8 +46,8 @@ foreach ($input2['options'] as $key => $value) {
                    <?php echo $checked;?>
                    data-chk-icon="<?php echo (!empty($input2['stl1']['icon_mark']))?'fa '.$input2['stl1']['icon_mark']:'fa fa-check';?>"
                    value="<?php echo $key;?>"
-                   data-uifm-inp-val="<?php echo $value['label'];?>"
-                   data-uifm-inp-label="<?php echo $value['label'];?>"
+                   data-uifm-inp-val="<?php echo Uiform_Form_Helper::sanitizeInput($value['label']);?>"
+                   data-uifm-inp-label="<?php echo Uiform_Form_Helper::sanitizeInput($value['label']);?>"
                    
                    name="uiform_fields[<?php echo $id;?>][<?php echo $key;?>]"
                    class="<?php echo $defaul_class;?>"> 

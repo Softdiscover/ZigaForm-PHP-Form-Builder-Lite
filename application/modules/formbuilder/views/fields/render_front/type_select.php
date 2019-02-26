@@ -42,7 +42,7 @@ foreach ($input2['options'] as $key => $value) {
          echo $key;   
         }?>"
         data-uifm-inp-val="<?php if(!empty($value['value'])){
-         echo $value['value'];   
+         echo Uiform_Form_Helper::sanitizeInput($value['value']);   
         }?>"
         
         data-opt-index="<?php echo $key;?>" ><?php echo $value['label'];?></option>

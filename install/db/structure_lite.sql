@@ -211,7 +211,7 @@ CREATE TABLE `fbcf_uiform_visitor` (
   `vis_page` text,
   `vis_referer` text,
   `vis_ip` text,
-  `vis_last_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP,
+  `vis_last_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `vis_params` text,
   `vis_error` text,
   PRIMARY KEY (`vis_id`)
