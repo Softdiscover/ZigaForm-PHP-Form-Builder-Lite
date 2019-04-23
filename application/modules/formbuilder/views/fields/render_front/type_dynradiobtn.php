@@ -43,11 +43,16 @@ foreach ($input17['options'] as $key => $value) {
         data-opt-qtyst="<?php echo $value['qty_st'];?>"
         data-opt-qtymax="<?php echo $value['qty_max'];?>"
         data-inp17-opt-index="<?php echo $key;?>"
+        <?php if(isset($input17['thopt_showhvrtxt']) && intval($input17['thopt_showhvrtxt'])===1){?>
         data-toggle="tooltip" 
+        title="<?php echo $value['label'];?>"
+        <?php } ?>
         data-placement="bottom" 
         data-html="true"
-        title="<?php echo $value['label'];?>"
         class="uifm-dradiobtn-item">
+        <?php if(isset($input17['thopt_showhvrtxt']) && intval($input17['thopt_showhvrtxt'])===3){?>
+             <div class="uifm-dcheckbox-label uifm-dcheckbox-label-up" style="max-width: <?php echo $input17['thopt_height'];?>px;"><?php echo $value['label'];?></div>
+        <?php } ?>
         <div class="uifm-dcheckbox-item-wrap">
             <div class="uifm-dcheckbox-item-chkst sfdc-btn-default">
                 <i class="fa fa-square-o"></i>
@@ -164,6 +169,9 @@ foreach ($input17['options'] as $key => $value) {
                 data-uifm-nro="0"
                 width="100" height="100" class="uifm-dcheckbox-item-viewport"></canvas>
         </div>
+         <?php if(isset($input17['thopt_showhvrtxt']) && intval($input17['thopt_showhvrtxt'])===2){?>
+         <div class="uifm-dcheckbox-label uifm-dcheckbox-label-below" style="max-width: <?php echo $input17['thopt_height'];?>px;"><?php echo $value['label'];?></div>
+        <?php } ?>  
     </div>
 <?php
 }

@@ -49,6 +49,9 @@ foreach ($input17['options'] as $key => $value) {
         data-placement="bottom" 
         data-html="true"
         class="uifm-dcheckbox-item">
+        <?php if(isset($input17['thopt_showhvrtxt']) && intval($input17['thopt_showhvrtxt'])===3){?>
+             <div class="uifm-dcheckbox-label uifm-dcheckbox-label-up" style="max-width: <?php echo $input17['thopt_height'];?>px;"><?php echo $value['label'];?></div>
+        <?php } ?>
         <div class="uifm-dcheckbox-item-wrap">
             <div class="uifm-dcheckbox-item-chkst sfdc-btn-default">
                 <i class="fa fa-square-o"></i>
@@ -171,6 +174,9 @@ foreach ($input17['options'] as $key => $value) {
                 data-uifm-nro="0"
                 width="100" height="100" class="uifm-dcheckbox-item-viewport"></canvas>
         </div>
+             <?php if(isset($input17['thopt_showhvrtxt']) && intval($input17['thopt_showhvrtxt'])===2){?>
+             <div class="uifm-dcheckbox-label uifm-dcheckbox-label-below" style="max-width: <?php echo $input17['thopt_height'];?>px;"><?php echo $value['label'];?></div>
+        <?php } ?>    
     </div>
 <?php
 }

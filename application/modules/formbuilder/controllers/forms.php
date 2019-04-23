@@ -616,6 +616,11 @@ class Forms extends MX_Controller {
      */
     public function ajax_save_form() {
         try{
+            
+            if(!Uiform_Form_Helper::check_User_Access()){
+                throw new Exception(__('Error! User has no permission to edit this form','FRocket_admin'));
+            } 
+            
             ob_start();
         $data = array();
 

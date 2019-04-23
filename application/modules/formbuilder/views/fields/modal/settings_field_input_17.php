@@ -78,13 +78,18 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
     </div>
     <div class="sfdc-row" >
         <div class="space10"></div>
-            <div class="sfdc-col-md-6" id="uifm_fld_inp17_thopt_showhvrtxt_wrap" >
-           <label ><?php echo __('Show hover text','FRocket_admin'); ?></label>
-            <input class="switch-field"
-                   data-field-store="input17-thopt_showhvrtxt"
-                   id="uifm_fld_inp17_thopt_showhvrtxt"
-                   name="uifm_fld_inp17_thopt_showhvrtxt"
-                   type="checkbox"/>
+            <div class="sfdc-col-md-12" id="uifm_fld_inp17_thopt_showhvrtxt_wrap" >
+           <label ><?php echo __('Label','FRocket_admin'); ?></label>
+           
+           <select id="uifm_fld_inp17_thopt_showhvrtxt"  
+                                data-field-store="input17-thopt_showhvrtxt"
+                                class="sfdc-form-control uifm-f-setoption">
+                            <option value="0"><?php echo __('hide','FRocket_admin'); ?></option>
+                            <option value="1"><?php echo __('show on hover','FRocket_admin'); ?></option>
+                            <option value="2"><?php echo __('put below image','FRocket_admin'); ?></option>
+                            <option value="3"><?php echo __('put above image','FRocket_admin'); ?></option>
+                        </select>
+           
                                    
             </div>
         

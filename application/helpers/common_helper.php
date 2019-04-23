@@ -437,6 +437,16 @@ class Uiform_Form_Helper {
             
             return $objsfm;
         }
+        
+        public static function check_User_Access(){
+            $form_id = null;
+            
+            
+            //check form id
+            
+
+            return true;
+        }
 }
 
 
