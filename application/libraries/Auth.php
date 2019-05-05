@@ -164,21 +164,21 @@ class Auth
                             $charset = '';
                             //form log
                             $sql="CREATE  TABLE IF NOT EXISTS $tbname (
-                                `log_id` int(6) NOT NULL AUTO_INCREMENT,
+                                `log_id` bigint(20) NOT NULL AUTO_INCREMENT,
                                 `log_frm_data` longtext,
                                 `log_frm_name` varchar(255) DEFAULT NULL,
                                 `log_frm_html` longtext,
                                 `log_frm_html_backend` longtext,
                                 `log_frm_html_css` longtext,
-                                `log_frm_id` int(6) NOT NULL,
+                                `log_frm_id` int(10) NOT NULL,
                                 `log_frm_hash` varchar(255) NOT NULL,
                                 `flag_status` smallint(5) DEFAULT '1',
                                 `created_date` timestamp NULL,
                                 `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                                `created_ip` varchar(50) DEFAULT NULL,
-                                `updated_ip` varchar(50) DEFAULT NULL,
-                                `created_by` int(6) DEFAULT NULL,
-                                `updated_by` int(6) DEFAULT NULL,
+                                `created_ip` varchar(100) DEFAULT NULL,
+                                `updated_ip` varchar(100) DEFAULT NULL,
+                                `created_by` varchar(100) DEFAULT NULL,
+                                `updated_by` varchar(100) DEFAULT NULL,
                                 PRIMARY KEY (`log_id`)
                             ) " . $charset . ";";
                         
@@ -211,10 +211,10 @@ class Auth
                                 `flag_status` smallint(5)  DEFAULT 1,
                                 `created_date` timestamp NULL,
                                 `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                                `created_ip` varchar(50)  DEFAULT NULL,
-                                `updated_ip` varchar(50)  DEFAULT NULL,
-                                `created_by` int(6) DEFAULT NULL,
-                                `updated_by` int(6) DEFAULT NULL,
+                                `created_ip` varchar(100)  DEFAULT NULL,
+                                `updated_ip` varchar(100)  DEFAULT NULL,
+                                `created_by` varchar(100) DEFAULT NULL,
+                                `updated_by` varchar(100) DEFAULT NULL,
                                 `add_xml` text ,
                                 `add_load_back` smallint(5) DEFAULT NULL,
                                 `add_load_front` smallint(5) DEFAULT NULL,
@@ -236,15 +236,15 @@ class Auth
                             //form log
                             $sql="CREATE  TABLE IF NOT EXISTS $tbname (
                                 `add_name` varchar(45)  NOT NULL,
-                                `fmb_id` int(5) NOT NULL,
+                                `fmb_id` int(10) NOT NULL,
                                 `adet_data` longtext ,
                                 `flag_status` smallint(5) DEFAULT 1,
                                 `created_date` timestamp NULL,
                                 `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                                `created_ip` varchar(50) DEFAULT NULL,
-                                `updated_ip` varchar(50) DEFAULT NULL,
-                                `created_by` int(6) DEFAULT NULL,
-                                `updated_by` int(6) DEFAULT NULL,
+                                `created_ip` varchar(100) DEFAULT NULL,
+                                `updated_ip` varchar(100) DEFAULT NULL,
+                                `created_by` varchar(100) DEFAULT NULL,
+                                `updated_by` varchar(100) DEFAULT NULL,
                                 PRIMARY KEY (`add_name`, `fmb_id`) 
                             ) " . $charset . ";";
                         
@@ -259,17 +259,17 @@ class Auth
                         $charset = '';
                             //form log
                             $sql="CREATE  TABLE IF NOT EXISTS $tbname (
-                                `add_log_id` int(5) NOT NULL AUTO_INCREMENT,
+                                `add_log_id` bigint(20) NOT NULL AUTO_INCREMENT,
                                 `add_name` varchar(45)  NOT NULL,
-                                `fmb_id` int(5) NOT NULL,
+                                `fmb_id` int(10) NOT NULL,
                                 `adet_data` longtext  NULL,
                                 `flag_status` smallint(5) DEFAULT 1,
                                 `created_date` timestamp NULL,
                                 `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-                                `created_ip` varchar(50) DEFAULT NULL,
-                                `updated_ip` varchar(50) DEFAULT NULL,
-                                `created_by` int(6) DEFAULT NULL,
-                                `updated_by` int(6) DEFAULT NULL,
+                                `created_ip` varchar(100) DEFAULT NULL,
+                                `updated_ip` varchar(100) DEFAULT NULL,
+                                `created_by` varchar(100) DEFAULT NULL,
+                                `updated_by` varchar(100) DEFAULT NULL,
                                 `log_id` int(5) NOT NULL,
                                 PRIMARY KEY (`add_log_id`) 
                             ) " . $charset . ";";

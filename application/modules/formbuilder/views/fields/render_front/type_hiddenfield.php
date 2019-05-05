@@ -14,12 +14,11 @@
 if (!defined('BASEPATH')) {exit('No direct script access allowed');}
 ob_start();
 ?>
- <input 
+ <textarea 
        data-uifm-tabnum="<?php echo $tab_num;?>"
-       type="hidden" 
+        style="display:none;"
        name="uiform_fields[<?php echo $id;?>]"
-       value="<?php echo $input8['value'];?>"
-       class="rockfm-txtbox-inp8-val sfdc-form-control" >
+       class="rockfm-txtbox-inp8-val sfdc-form-control" ><?php echo $input8['value'];?></textarea>
 <?php
 $cntACmp = ob_get_contents();
 $cntACmp = Uiform_Form_Helper::sanitize_output($cntACmp);

@@ -194,6 +194,18 @@ ob_start();
                                         </tr>-->
                                                          <?php    
                                                         break;
+                                                    case 21:
+                                                        ?>
+                                        <tr>
+                                            <td><?php echo $value2['field_name'];?></td>
+                                            <td></td>
+                                            <td><textarea onclick="this.select();" class="uifm_txtarea_var">[uifm_recvar id="<?php echo $value2['id'];?>" atr1="input"]</textarea></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+                                                         <?php    
+                                                        break;
                                                     }
                                                 }
                                             }

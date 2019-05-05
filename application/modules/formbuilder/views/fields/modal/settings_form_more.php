@@ -188,7 +188,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
          </fieldset> 
           
           
-          <fieldset style="display:none;">
+          <fieldset >
                     <legend><?php echo __('Additional','FRocket_admin'); ?> </legend>
                     <div class="zgpb-modal-body-tab-inner">
                        
@@ -201,8 +201,9 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                                     </div>
                                     <div class="sfdc-col-md-6">
                                       <input type="text" 
-                                              data-field-store="skin-custom_css-ctm_id"
-                                             id="zgpb_fld_col_ctmid" name="zgpb_fld_col_ctmid" placeholder="" class="zgpb-field-col-event-txt sfdc-form-control">
+                                             id="zgpb_fld_col_ctmid"
+                                             readonly="readonly"
+                                             class="sfdc-form-control">
                                         
                                     </div>    
 
@@ -227,6 +228,8 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                                 </div>
                             </div>
                         </div>
+                        
+                        <div style="display:none;">
                         <div class="zgpb-opt-divider-stl1"></div>
                         <div class="sfdc-row ">
                             <div class="sfdc-col-md-12">
@@ -244,6 +247,8 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                                 </div>
                             </div>
                         </div>
+                        </div>
+                        
                        <div class="space5"></div>
                     </div>
          </fieldset>
@@ -253,4 +258,12 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
     <!--/ load modules -->
     
 </div>
+<script type="text/javascript">
  
+jQuery(function($) 
+	{     
+         /*add id to more tab*/
+         $('#zgpb_fld_col_ctmid').val('rockfm_'+$('#uifm-field-selected-id').val()); 
+        
+	});
+</script>
