@@ -42,7 +42,29 @@ class model_addon extends CI_Model {
 
       function getListAddonsByBack() {
         $query = sprintf('
-            select c.*
+            select c.add_name
+                    ,c.add_title
+                    ,c.add_info
+                    ,c.add_system
+                    ,c.add_hasconfig
+                    ,c.add_version
+                    ,c.add_icon
+                    ,c.add_installed
+                    ,c.add_order
+                    ,c.add_params
+                    ,c.add_log
+                    ,c.addonscol
+                    ,c.flag_status
+                    ,c.created_date
+                    ,c.updated_date
+                    ,c.created_ip
+                    ,c.updated_ip
+                    ,c.created_by
+                    ,c.updated_by
+                    ,c.add_xml
+                    ,c.add_load_back
+                    ,c.add_load_front
+                    ,c.is_field
             from %s c
             where c.flag_status=1 
             and c.add_load_back=1
@@ -55,7 +77,29 @@ class model_addon extends CI_Model {
     
     function getListAddonsByFront() {
         $query = sprintf('
-            select c.*
+            select c.add_name
+                    ,c.add_title
+                    ,c.add_info
+                    ,c.add_system
+                    ,c.add_hasconfig
+                    ,c.add_version
+                    ,c.add_icon
+                    ,c.add_installed
+                    ,c.add_order
+                    ,c.add_params
+                    ,c.add_log
+                    ,c.addonscol
+                    ,c.flag_status
+                    ,c.created_date
+                    ,c.updated_date
+                    ,c.created_ip
+                    ,c.updated_ip
+                    ,c.created_by
+                    ,c.updated_by
+                    ,c.add_xml
+                    ,c.add_load_back
+                    ,c.add_load_front
+                    ,c.is_field
             from %s c
             where c.flag_status=1 
             and c.add_load_front=1
@@ -113,7 +157,29 @@ class model_addon extends CI_Model {
     
     function getListAddonsBySection($section='') {
         $query = sprintf('
-            select c.*
+            select c.add_name
+                    ,c.add_title
+                    ,c.add_info
+                    ,c.add_system
+                    ,c.add_hasconfig
+                    ,c.add_version
+                    ,c.add_icon
+                    ,c.add_installed
+                    ,c.add_order
+                    ,c.add_params
+                    ,c.add_log
+                    ,c.addonscol
+                    ,c.flag_status
+                    ,c.created_date
+                    ,c.updated_date
+                    ,c.created_ip
+                    ,c.updated_ip
+                    ,c.created_by
+                    ,c.updated_by
+                    ,c.add_xml
+                    ,c.add_load_back
+                    ,c.add_load_front
+                    ,c.is_field
             from %s c
             where c.flag_status=1 
             and c.add_section="%s"

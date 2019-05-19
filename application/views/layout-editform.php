@@ -85,6 +85,12 @@ if (!defined('BASEPATH')) {
     
     
     <link href="<?php echo base_url(); ?>assets/backend/css/admin-css.css" rel="stylesheet">
+    
+      <!-- codemirror -->
+    <link href="<?php echo base_url(); ?>assets/common/js/codemirror/codemirror.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/common/js/codemirror/addon/fold/foldgutter.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/common/js/codemirror/theme/monokai.css" rel="stylesheet">
+    
     <link rel="Favicon Icon" href="favicon.ico">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -161,6 +167,20 @@ if (!defined('BASEPATH')) {
    
     <!-- checkradios-->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/checkradio/2.2.2/js/jquery.checkradios.js"></script>
+    
+    
+    <!-- codemirror-->
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/codemirror.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/fold/foldcode.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/fold/foldgutter.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/mode/javascript/javascript.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/mode/xml/xml.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/mode/css/css.js"></script>
+    
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/keymap/sublime.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/edit/closebrackets.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/edit/matchbrackets.js"></script>
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/display/autorefresh.js"></script>
     
     <script type='text/javascript'>
     var rockfm_vars={"ajaxurl":"",

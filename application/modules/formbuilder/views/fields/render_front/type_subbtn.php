@@ -19,7 +19,7 @@ ob_start();
             type="submit"
             data-val-btn="<?php echo $input['value'];?>"
             data-val-subm="<?php echo __('Sending','FRocket_admin'); ?>"
-            onclick="javascript:rocketfm.submitForm(this);return false;"
+            
              ><?php echo $input['value'];?></button>
 <?php
 $cntACmp = ob_get_contents();

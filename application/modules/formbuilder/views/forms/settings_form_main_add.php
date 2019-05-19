@@ -57,7 +57,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                            <textarea 
                                id="uifm_frm_main_addjs"
                                name="uifm_frm_main_addjs"
-                              
+                              rows="6"
                                style="width:100%;"
                                class="sfdc-form-control autogrow"></textarea>
                          <p class="help-block"><?php echo __('proceed with caution. if you put a wrong javascript code, the form will not work properly e.g. ','FRocket_admin'); ?>
@@ -68,7 +68,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                              (function ($) {
                                 document.body.style.backgroundColor = "red";
                                 alert("Added red to background");
-                            })();
+                            })(jQuery);
                        
                             <?php 
                             $cntACmp = ob_get_contents();
@@ -82,7 +82,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                             <code>
                              <?php ob_start();?>
                        
-                       $uifm( document ).ready(function($) {
+                       jQuery( document ).ready(function($) {
                           $('body').css('background','red');
                           alert('Added red to background');
                        });
