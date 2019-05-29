@@ -28,7 +28,7 @@ ob_start();
                s.parentNode.insertBefore(uiform, s);
            })();</script>
 <noscript>
-       Powered by <a href="http://zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder & Contact" >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
+       Powered by <a href="https://www.zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder & Contact" >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
 </noscript>
 <!-- end zigaform code -->
 <?php

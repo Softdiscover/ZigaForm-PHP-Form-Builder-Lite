@@ -179,6 +179,20 @@ class Intranet extends CI_Controller {
     }
     
     /**
+     * Intranet::settings()
+     * Print the global settings of the HTML page.
+     * 
+     * @return array
+     */
+    public function showfilemanager() {
+        $this->auth->authenticate(true);
+        $data = array();
+       
+
+        $this->template->loadPartial('layout-fmanager', 'intranet/showfilemanager', $data);
+    }
+    
+    /**
      * Intranet::help()
      * Print the global settings of the HTML page.
      * 

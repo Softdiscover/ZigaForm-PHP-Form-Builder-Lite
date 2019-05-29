@@ -190,8 +190,8 @@ if (!defined('BASEPATH')) {
         "imagesurl":"<?php echo base_url(); ?>assets/frontend/images"};
    <?php 
    
-   $file1 = base_url() . 'extensions/elfinder/elfinder.php?XSRFToken=' . getXSRFToken('elFinder');
-   $file2 = base_url() . 'extensions/elfinder/elfinder2.php?XSRFToken=' . getXSRFToken('elFinder');     
+   $file1 = base_url() . 'extensions/elfinder2/elfinder.php?XSRFToken=' . getXSRFToken('elFinder');
+   $file2 = base_url() . 'extensions/elfinder2/elfinder2.php?XSRFToken=' . getXSRFToken('elFinder');     
    ?> 
    var uiform_vars={};    
     uiform_vars['url_admin']="<?php echo site_url(); ?>admin";

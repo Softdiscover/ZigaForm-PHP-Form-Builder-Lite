@@ -632,7 +632,7 @@ function XSRFdefender($action) {
 
 function elFinder_tinymce() {
 
-	$file = base_url() . 'extensions/elfinder/elfinder.php?XSRFToken=' . getXSRFToken('elFinder');
+	$file = base_url() . 'extensions/elfinder2/elfinder.php?XSRFToken=' . getXSRFToken('elFinder');
         
 	?>
 	<script type="text/javascript">

@@ -22,7 +22,7 @@ if (!defined('BASEPATH')) {
            <?php echo __('All Rights Reserved.','FRocket_admin'); ?>  <?php echo model_settings::$db_config['site_title']; ?>
              .</div>
         <div class="zgfm-credit-log-wrapper">
-            <a href="http://zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>">
+            <a href="https://www.zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>">
                  <img src="<?php echo base_url(); ?>assets/frontend/images/zigaform-logo-credit.png" title="<?php echo __('Powered by ZigaForm','FRocket_admin'); ?>" alt="Zigaform"> 
             </a>    
         </div>

@@ -852,7 +852,7 @@ class Frontend extends MX_Controller {
                                     /*spinner*/    
                                    $tmp_fdata= json_decode($tmp_field_name->data,true);
                                     
-                                    $tmp_options = array();
+                                
                                     $tmp_field_label=(!empty($tmp_fdata['label']['text']))?$tmp_fdata['label']['text']:$tmp_field_name->fieldname;
                                     $form_f_tmp[$key]['type']=$tmp_field_name->type;
                                     $form_f_tmp[$key]['fieldname']=$tmp_field_name->fieldname;
@@ -868,18 +868,15 @@ class Frontend extends MX_Controller {
                                            $form_f_rec_tmp[$key] = $value;
                                            
                                 
-                                        
-                                        $tmp_options[] = $tmp_options_row;
                                    // }
                                     /*saving data to field array*/
-                                    $form_f_tmp[$key]['input'] = $tmp_options;
+                                    $form_f_tmp[$key]['input'] = $tmp_options_row;
                                 
                                    break;
                                case 40:
                                     /*switch*/
                                     $tmp_fdata= json_decode($tmp_field_name->data,true);
-                                    
-                                    $tmp_options = array();
+                                
                                     $tmp_field_label=(!empty($tmp_fdata['label']['text']))?$tmp_fdata['label']['text']:$tmp_field_name->fieldname;
                                     $form_f_tmp[$key]['type']=$tmp_field_name->type;
                                     $form_f_tmp[$key]['fieldname']=$tmp_field_name->fieldname;
@@ -896,10 +893,10 @@ class Frontend extends MX_Controller {
                                          $form_f_rec_tmp[$key] = 0; 
                                         }
                                 
-                                        $tmp_options[] = $tmp_options_row;
+                                
                                     //}
                                     /*saving data to field array*/
-                                    $form_f_tmp[$key]['input'] = $tmp_options;
+                                    $form_f_tmp[$key]['input'] = $tmp_options_row;
                                 
                                    break;    
                                 case 41;

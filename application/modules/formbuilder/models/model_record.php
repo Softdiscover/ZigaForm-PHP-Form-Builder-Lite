@@ -157,6 +157,34 @@ class model_record extends CI_Model
                     }
                     
                     
+                    break;
+                case 16:
+                case 17:
+                case 18:    
+                    /*cspinner*/
+                    $tmp_flag=$f_id."_".$f_atr1;
+                    if(!empty($f_atr2)){
+                        $tmp_flag.="_".$f_atr2;
+                    }
+                    
+                    
+                    $sql = "select extractvalue(fbh_data_rec_xml,'/params/child::".$tmp_flag."') AS uifmoptvalue,";
+                    $sql.='r.fbh_id,r.created_date';
+                    $sql.=' from %1$s r';
+                    $sql.=' join %2$s frm on frm.fmb_id=r.form_fmb_id
+                        where r.flag_status>0 and r.fbh_id=%3$s'; 
+                    $query = sprintf($sql,$this->table,$this->tbform,(int)$rec_id);
+                   
+                    $query2 = $this->db->query($query);
+
+                    $row = $query2->row();
+                    if (isset($row->uifmoptvalue)) {
+                        return $row->uifmoptvalue;
+                    } else {
+                        return '';
+                    }
+                    
+                    
                     break;    
                 default:
                    $option = $f_id.'_'.$f_atr1; 

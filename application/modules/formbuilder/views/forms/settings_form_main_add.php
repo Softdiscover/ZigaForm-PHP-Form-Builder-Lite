@@ -68,7 +68,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                              (function ($) {
                                 document.body.style.backgroundColor = "red";
                                 alert("Added red to background");
-                            })(jQuery);
+                            })($uifm);
                        
                             <?php 
                             $cntACmp = ob_get_contents();
@@ -82,7 +82,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                             <code>
                              <?php ob_start();?>
                        
-                       jQuery( document ).ready(function($) {
+                       $uifm( document ).ready(function($) {
                           $('body').css('background','red');
                           alert('Added red to background');
                        });
