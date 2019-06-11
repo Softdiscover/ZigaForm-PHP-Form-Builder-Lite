@@ -51,8 +51,8 @@ class model_record extends CI_Model
     
     function getListRecords($per_page = '', $segment = '') {
         $query = sprintf('
-            select c.fbh_id,c.fbh_data,c.fbh_data_rec,c.fbh_data2,c.fbh_data_rec2,c.fbh_data_rec2_xml,
-            c.fbh_total_amount,c.created_date,c.flag_status,c.fbh_data_user,c.form_fmb_id,c.fbh_data_rec_xml,c.fbh_user_agent,c.fbh_page,
+            select c.fbh_id,c.fbh_data,c.fbh_data_rec,
+            c.created_date,c.flag_status,c.fbh_data_user,c.form_fmb_id,c.fbh_data_rec_xml,c.fbh_user_agent,c.fbh_page,
             c.fbh_referer,c.fbh_params,f.fmb_name
             from %s c
             join %s f on c.form_fmb_id=f.fmb_id
@@ -310,11 +310,11 @@ class model_record extends CI_Model
     
     function getRecordById($id) {
         $query = sprintf('
-            select uf.fbh_id,uf.fbh_data,uf.fbh_data_rec,uf.fbh_data2,uf.fbh_data_rec2,uf.fbh_data_rec2_xml,
-            uf.fbh_total_amount,uf.created_date,uf.flag_status,uf.fbh_data_user,uf.form_fmb_id,uf.fbh_data_rec_xml,uf.fbh_user_agent,uf.fbh_page,
-            uf.fbh_referer,uf.fbh_params,uf.vis_uniqueid
-            from %s uf
-            where uf.fbh_id=%s
+            select c.fbh_id,c.fbh_data,c.fbh_data_rec,
+            c.created_date,c.flag_status,c.fbh_data_user,c.form_fmb_id,c.fbh_data_rec_xml,c.fbh_user_agent,c.fbh_page,c.created_ip,
+            c.fbh_referer,c.fbh_params
+            from %s c
+            where c.fbh_id=%s
             ', $this->table, (int)$id);
 
         $query2 = $this->db->query($query);

@@ -2,8 +2,8 @@
 define('BASEPATH', realpath(dirname(__FILE__) . '/../../'));
 session_start();
 
-require_once(BASEPATH. '/application/helpers/common_helper.php');
 require_once(BASEPATH. '/application/config/constants.php');
+require_once(BASEPATH. '/application/helpers/common_helper.php');
 XSRFdefender('elFinder');
 
 ?>
