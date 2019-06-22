@@ -89,8 +89,12 @@ class Settings extends MX_Controller {
      * @return 
      */
     public function ajax_backup_create() {
+        //memory limite undefined
+        set_time_limit(0);
+        ini_set('memory_limit', '-1');
+        
         $json = array();
-
+        
         $name_bkp = (isset($_POST['uifm_frm_namebackup']) && $_POST['uifm_frm_namebackup']) ? Uiform_Form_Helper::sanitizeInput($_POST['uifm_frm_namebackup']) : '';
 
         $tables = array();
@@ -102,41 +106,37 @@ class Settings extends MX_Controller {
             $tables[] ='fbcf_uiform_settings';
             $tables[] ='fbcf_uiform_user';
             $tables[] ='fbcf_uiform_visitor';
+            $tables[] ='fbcf_uiform_options';
         
            $name_bkp = (!empty($name_bkp))?$name_bkp:date('d-M-Y_H-i-s');
        
-        
-        require_once( APPPATH . 'helpers/uiform_backup.php');
-        $dbBackup = new Uiform_Backup();
+         
         
         $this->load->helper('file');
         
         $CI = & get_instance();
         $CI->load->database();
-                
+        
+        
+        $db_name = $name_bkp . '.sql';
+        $save = FCPATH . '/backups/' . $db_name;
+        
         if (extension_loaded('mysql') && (string)$CI->db->dbdriver==='mysql') {
             $this->load->dbutil();
-            $prefs = array(
-                'format' => 'sql',
-                'filename' => $name_bkp . '.sql'
-            );
+            require_once( APPPATH . 'helpers/uiform_backup.php');
+            
+            $dbBackup = new Uiform_Backup();
             $backup = $dbBackup->backup_database_mysql($CI->db->hostname,$CI->db->username,$CI->db->password, $CI->db->database,$tables);
-            $db_name = $name_bkp . '.sql';
-            $save = FCPATH . '/backups/' . $db_name;
+            
             
             write_file($save, $backup);
-            //$this->load->helper('download');
-            //force_download($db_name, $backup); 
+           
             
         }else{
             
-             
-             
-            $dir=FCPATH . 'backups';
-            
-            //mysqli
-            $dbBackup->backup_database( $dir, $name_bkp, $CI->db->hostname,$CI->db->username,$CI->db->password, $CI->db->database,$tables);
-            
+            require_once( APPPATH . '/../libs/backup/MySQLDump.php');  
+             $dump = new MySQLDump(new mysqli($CI->db->hostname,$CI->db->username,$CI->db->password,$CI->db->database),'utf8',$tables);
+            $dump->save($save);
         }
          
         header('Content-Type: application/json');

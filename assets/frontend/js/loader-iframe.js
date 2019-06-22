@@ -15,7 +15,8 @@ function(iFrameResize) {
 				log                     : false,
                                 autoResize: true,
                                 sizeWidth: true,
-                                scrollCallback: function (coords) {
+                                warningTimeout:0,
+                                onScroll: function (coords) {
                                     /*console.log("[OVERRIDE] overrode scrollCallback x: " + coords.x + " y: " + coords.y);*/
                                 }
 			},'#zgfm-iframe-'+_uifmvar.fm_ids[i]);

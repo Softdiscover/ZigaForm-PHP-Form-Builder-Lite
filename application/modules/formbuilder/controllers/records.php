@@ -42,7 +42,7 @@ class Records extends MX_Controller {
      *
      * @var string
      */
-    var $per_page = 5;
+    var $per_page = 10;
     protected $modules;
 
     /**
@@ -344,6 +344,7 @@ class Records extends MX_Controller {
         $this->auth->authenticate(true);
         //list all forms
         $data = $config = array();
+        $offset = (isset($_GET['offset'])) ? Uiform_Form_Helper::sanitizeInput($_GET['offset']) : 0;
         //create pagination
         $this->load->library('pagination');
         $config['base_url'] = site_url() . 'formbuilder/records/list_records';

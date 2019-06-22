@@ -312,12 +312,12 @@ class Uiform_Backup {
                             
 				$return2.= "\n\t(";
 				for($j=0; $j<$num_fields; $j++) {
-					$row[$j] = addslashes($row[$j]);
+					$row[$j] = $mysqli->escape_string($row[$j]);
 					//$row[$j] = preg_replace("\n","\\n",$row[$j]);
 					if (isset($row[$j])) {
-						$return2.= '"'.$row[$j].'"' ;
+						$return2.= "'".$row[$j]."'" ;
 					} else {
-						$return2.= '""';
+						$return2.= "''";
 					}
 					if ($j<($num_fields-1)) {
 						$return2.= ',';

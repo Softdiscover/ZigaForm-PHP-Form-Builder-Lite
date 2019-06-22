@@ -60,7 +60,11 @@ class model_record extends CI_Model
             ORDER BY c.created_date desc
             ', $this->table, $this->tbform);
 
-        $query.=sprintf(' limit %s,%s', (int)$segment, (int)$per_page);
+        if ($per_page != '' || $segment != '') {
+            $segment=(!empty($segment))?$segment:0;
+            $query.=sprintf(' limit %s,%s', (int)$segment,(int) $per_page);
+        }
+        
         $query2 = $this->db->query($query);
         return $query2->result();
     }
