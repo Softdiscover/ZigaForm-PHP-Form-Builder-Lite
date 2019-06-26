@@ -137,7 +137,12 @@ $opts = array(
 						'startPath'			 => BASEPATH . '/' ,
 						'path'					 => BASEPATH . '/' ,
 						'URL'						 => WEBPATH . '/',
-			
+			'mimeDetect'		 => 'internal',
+						'tmbPath'				 => BASEPATH . '/'. UPLOAD_FOLDER . '/'.'.tmb',
+                                                'tmbURL'				 => WEBPATH . '/'. UPLOAD_FOLDER . '/'.'.tmb',
+						'utf8fix'				 => true,
+						'tmbCrop'				 => false,
+						'tmbBgColor'		 => 'transparent',                       
 			'winHashFix'    => DIRECTORY_SEPARATOR !== '/', // to make hash same to Linux one on windows too
 			'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
 			'uploadAllow'   => array('all'), // Mimetype `image` and `text/plain` allowed to upload

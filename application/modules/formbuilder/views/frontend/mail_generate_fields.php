@@ -20,6 +20,7 @@ ob_start();
      
      <?php if(!empty($data)){
      foreach ($data as $key => $value) {
+         if(!empty($value['input'])){
          ?>
      
         <tr>
@@ -188,6 +189,9 @@ ob_start();
         </tr>
      
      <?php
+     
+     }
+     
      }
      }?>
      

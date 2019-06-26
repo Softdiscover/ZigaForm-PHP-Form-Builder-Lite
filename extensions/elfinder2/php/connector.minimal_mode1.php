@@ -137,6 +137,12 @@ $opts = array(
 						'startPath'			 => BASEPATH . '/' . UPLOAD_FOLDER . '/',
 						'path'					 => BASEPATH . '/' . UPLOAD_FOLDER . '/',
 						'URL'						 => WEBPATH . UPLOAD_FOLDER . '/',
+                        'mimeDetect'		 => 'internal',
+						'tmbPath'				 => BASEPATH . '/'. UPLOAD_FOLDER . '/'.'.tmb',
+                                                'tmbURL'				 => WEBPATH . '/'. UPLOAD_FOLDER . '/'.'.tmb',
+						'utf8fix'				 => true,
+						'tmbCrop'				 => false,
+						'tmbBgColor'		 => 'transparent',                       
 			'trashHash'     => 't1_Lw',                     // elFinder's hash of trash folder
 			'winHashFix'    => DIRECTORY_SEPARATOR !== '/', // to make hash same to Linux one on windows too
 			'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
