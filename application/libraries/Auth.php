@@ -341,6 +341,34 @@ class Auth
                     
                 }
                 
+                
+                 //below 3.9.9.6.1
+                 if (!$install_ver || version_compare($install_ver,"3.9.9.6.1", '<')) {
+                    $tbname = "fbcf_uiform_form";
+                   
+                    $query2 = $this->CI->db->query("SHOW TABLES LIKE '$tbname'");
+                    $row = (Array)$query2->row();
+                    
+                    if ((string)reset($row) === $tbname) {
+                        
+                        $query2 = $this->CI->db->query("SHOW COLUMNS FROM " . $tbname . " LIKE 'fmb_rec_tpl_html'");
+                        $row = (Array)$query2->row();
+                        if (empty($row)) {
+                            $sql = "ALTER TABLE " . $tbname . " ADD  fmb_rec_tpl_html longtext NULL;";
+                            $this->CI->db->query($sql);
+                        }
+ 
+                        $query2 = $this->CI->db->query("SHOW COLUMNS FROM " . $tbname . " LIKE 'fmb_rec_tpl_st'");
+                        $row = (Array)$query2->row();
+                        if (empty($row)) {
+                            $sql = "ALTER TABLE " . $tbname . " ADD  fmb_rec_tpl_st TINYINT(1) NULL DEFAULT 0;";
+                            $this->CI->db->query($sql);
+                        }
+                         
+                    }
+                     
+                }
+                
                 //update
                
                 $data = array(

@@ -15,6 +15,11 @@ var zgfm_back_tools = function(){
         
     }
     
+    
+    /**
+     * generate pdf for email pdf attachement
+     */
+    
     this.pdf_showsample = function(type){
         var editor,email_template_pdf_msg;
         var pdf_fullpage=($('#uifm_frm_main_pdf_htmlfullpage').bootstrapSwitchZgpb('state'))?1:0;
@@ -27,6 +32,26 @@ var zgfm_back_tools = function(){
                             email_template_pdf_msg = tinymce.get("uifm_frm_email_usr_tmpl_pdf").getContent();
                         }else{
                             email_template_pdf_msg=($('#uifm_frm_email_usr_tmpl_pdf').val())?$('#uifm_frm_email_usr_tmpl_pdf').val():'';
+                        }
+                    } 
+                break;
+            case 'pdf_invoice_gen':
+                if( typeof tinymce != "undefined" ) {
+                        editor = tinymce.get("uifm_frm_invoice_tpl_content");
+                        if( editor && editor instanceof tinymce.Editor ) {
+                            email_template_pdf_msg = tinymce.get("uifm_frm_invoice_tpl_content").getContent();
+                        }else{
+                            email_template_pdf_msg=($('#uifm_frm_invoice_tpl_content').val())?$('#uifm_frm_invoice_tpl_content').val():'';
+                        }
+                    } 
+                break;
+            case 'pdf_record_gen':
+                if( typeof tinymce != "undefined" ) {
+                        editor = tinymce.get("uifm_frm_record_tpl_content");
+                        if( editor && editor instanceof tinymce.Editor ) {
+                            email_template_pdf_msg = tinymce.get("uifm_frm_record_tpl_content").getContent();
+                        }else{
+                            email_template_pdf_msg=($('#uifm_frm_record_tpl_content').val())?$('#uifm_frm_record_tpl_content').val():'';
                         }
                     } 
                 break;

@@ -16,13 +16,12 @@ if (!defined('BASEPATH')) {
 }
 ob_start();
 
-if(intval($html_wholecont)===1){
+if(isset($html_wholecont) && intval($html_wholecont)===1){
     ?>
     <?php echo $content;?>
 <?php
-} else {
-
-?>
+}else{
+    ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
 <html> 
     <head> 
@@ -32,6 +31,7 @@ if(intval($html_wholecont)===1){
         <?php } ?>
         <style type="text/css">
             <?php 
+            if(isset($font))
             switch (intval($font)) {
                 case 2:
                     //dejavu sans mono
@@ -52,7 +52,7 @@ if(intval($html_wholecont)===1){
                             font-family: 'BMYEONSUNG';
                             font-style: normal;
                             font-weight: 400;
-                            src: url("<?php echo base_url();?>helpers/dompdf/lib/fonts/BMYEONSUNG_ttf.ttf") format('truetype');
+                            src: url("<?php echo base_url();?>/helpers/dompdf/lib/fonts/BMYEONSUNG_ttf.ttf") format('truetype');
                           }
                           * {
                             font-family: BMYEONSUNG,DejaVu Sans, sans-serif;
@@ -66,7 +66,7 @@ if(intval($html_wholecont)===1){
                             font-family: 'mushin';
                             font-style: normal;
                             font-weight: 400;
-                            src: url("<?php echo base_url();?>helpers/dompdf/lib/fonts/mushin.otf") format('truetype');
+                            src: url("<?php echo base_url();?>/helpers/dompdf/lib/fonts/mushin.otf") format('truetype');
                           }
                           * {
                             font-family: mushin,DejaVu Sans, sans-serif;
@@ -80,7 +80,7 @@ if(intval($html_wholecont)===1){
                             font-family: 'chinese';
                             font-style: normal;
                             font-weight: 400;
-                            src: url("<?php echo base_url();?>helpers/dompdf/lib/fonts/chinesefont.ttf") format('truetype');
+                            src: url("<?php echo base_url();?>/helpers/dompdf/lib/fonts/chinesefont.ttf") format('truetype');
                           }
                           * {
                             font-family: chinese,DejaVu Sans, sans-serif;
@@ -98,15 +98,21 @@ if(intval($html_wholecont)===1){
             ?>
           
         </style>
-        <?php echo $head_extra;?>
+         <?php echo $head_extra;?>
+        <?php if(isset($is_html) && intval($is_html)===1){?>       
+        <script type="text/javascript" src="<?php echo base_url(); ?>/assets/frontend/js/iframe/4.1.1/iframeResizer.contentWindow.min.js"></script>
+        <?php } ?>
+        
     </head> 
     <body>
         <?php echo $content;?>
     </body>
-</html>
+</html> 
 <?php
-    }
+}
+
 ?>
+
 <?php
 $cntACmp = ob_get_contents();
 ob_end_clean();

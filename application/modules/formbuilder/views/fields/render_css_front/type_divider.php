@@ -2,22 +2,17 @@
 if (!defined('BASEPATH')) {exit('No direct script access allowed');}
 ob_start();
 ?>
-  #rockfm_<?php echo $id;?> .rockfm-divider-bar{
-        <?php 
-        //input
-        ?>
-        
-        <?php if(!empty($input11['div_color']) && isset($input11['div_col_st']) && intval($input11['div_col_st'])===1){?>
-             border-bottom: 1px solid <?php echo $input11['div_color'];?>;
-        <?php } ?>
-        
-    }
-   
+ 
     #rockfm_<?php echo $id;?> .rockfm-divider-text{
-        <?php 
+    
+            display: flex;
+         flex-direction: row;
+         justify-content: center;
+         align-items: center;
+         <?php 
         //input
         ?>
-        <?php if($input11['text_size']){?>
+          <?php if($input11['text_size']){?>
             font-size:<?php echo $input11['text_size'];?>px;
         <?php } ?>
         <?php if(intval($input11['bold'])===1){?>
@@ -45,9 +40,9 @@ ob_start();
             ?>
             <?php } ?>
         <?php } ?> 
+         margin: 0 1em;
          
-            
-            <?php if(isset($form_skin['form_background']['show_st']) 
+                     <?php if(isset($form_skin['form_background']['show_st']) 
         && intval($form_skin['form_background']['show_st'])===1){?>
 
     <?php 
@@ -85,11 +80,38 @@ ob_start();
     
     padding:10px;
 <?php } ?> 
-            
-      
-            
+         
     }
     
+#rockfm_<?php echo $id;?> .rockfm-divider-text::before{
+  content: '';
+  height: .125em;
+ 
+  flex: 1;
+  margin: 0 .25em 0 0;
+  <?php if(!empty($input11['div_color']) && isset($input11['div_col_st']) && intval($input11['div_col_st'])===1){?>
+             background: <?php echo $input11['div_color'];?>;
+        <?php } ?>
+}
+#rockfm_<?php echo $id;?> .rockfm-divider-text::after{
+  content: '';
+  height: .125em;
+  <?php if(!empty($input11['div_color']) && isset($input11['div_col_st']) && intval($input11['div_col_st'])===1){?>
+             background: <?php echo $input11['div_color'];?>;
+        <?php } ?>
+  flex: 1;
+  margin: 0 0 0 .25em;
+}
+   
+#rockfm_<?php echo $id;?> .rockfm-divider-text.italic{
+  font-style: italic;
+}
+
+
+#rockfm_<?php echo $id;?> .rockfm-divider-text.italic::before,
+#rockfm_<?php echo $id;?> .rockfm-divider-text.italic::after{
+  transform: skew(-18deg)
+} 
 <?php
 $cntACmp = ob_get_contents();
  /* remove comments */

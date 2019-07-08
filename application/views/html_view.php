@@ -18,7 +18,10 @@ if (!defined('BASEPATH')) {
 ?>
 <?php
 $this->output->set_header('Content-Type: text/html; charset=UTF-8');
-    $this->output->set_header('X-Frame-Options: SAMEORIGIN');
+$this->output->set_header('X-Frame-Options: SAMEORIGIN');
+$this->output->set_header('Access-Control-Allow-Origin: *');  
+$this->output->set_header('Access-Control-Allow-Methods: PUT, GET, POST, OPTIONS');
+$this->output->set_header('Access-Control-Allow-Headers: Content-Type, Content-Length, Accept-Encoding');
    echo json_encode($json);
   
 ?>

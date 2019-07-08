@@ -88,6 +88,16 @@ class Forms extends MX_Controller {
         $data2['charset']='UTF-8';
         $data2['head_extra']='';
         $data2['content']=$message;
+        
+        $pos = strpos($message,'</body>');
+        $pos2 = strpos($message,'</html>');
+        
+        if($pos === false && $pos2 === false){
+            $full_page=0;
+        }else{
+            $full_page=1;
+        }
+        
         $data2['html_wholecont']=$full_page;
                                     
         $content=$this->load->view('formbuilder/frontend/pdf_global_template',$data2,true);
@@ -637,6 +647,9 @@ class Forms extends MX_Controller {
         $fmb_addon_data = (isset($_POST['addon_data']))?urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['addon_data'])):'';
         $fmb_addon_data = (isset($fmb_addon_data) && $fmb_addon_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_addon_data, true)) : array();
          
+        //more options
+        $data['fmb_rec_tpl_html'] = (isset($_POST['uifm_frm_rec_tpl_html']))?urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['uifm_frm_rec_tpl_html'])):'';
+        $data['fmb_rec_tpl_st'] = (isset($_POST['uifm_frm_rec_tpl_st']))?urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['uifm_frm_rec_tpl_st'])):'';
         
         $data['fmb_data'] = json_encode($fmb_data);
         $tmp_data2=array();
@@ -2454,6 +2467,15 @@ class Forms extends MX_Controller {
         $data['form_id'] = (isset($_GET['form_id']) && $_GET['form_id']) ? Uiform_Form_Helper::sanitizeInput(trim($_GET['form_id'])) : 0;
         $data['action'] = 'create_uiform';
         $data['obj_sfm'] = Uiform_Form_Helper::get_font_library();
+        
+        if(intval($data['form_id'])>0){
+
+            $formdata=$this->model_forms->getFormById($data['form_id']);
+
+            $data['uifm_frm_record_tpl_enable']=$formdata->fmb_rec_tpl_st;
+            $data['uifm_frm_record_tpl_content']=$formdata->fmb_rec_tpl_html;
+        }
+        
         $this->template->loadPartial('layout-editform', 'forms/create_form', $data);
     }
 

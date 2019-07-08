@@ -115,6 +115,8 @@ CREATE TABLE `fbcf_uiform_form` (
   `fmb_skin_data` text,
   `fmb_skin_type` smallint(5) DEFAULT '1',
   `fmb_data2` text,
+    `fmb_rec_tpl_html` longtext NULL ,
+    `fmb_rec_tpl_st` TINYINT(1) NULL DEFAULT 0 ,
   PRIMARY KEY (`fmb_id`)
 ) AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
 
@@ -173,7 +175,7 @@ CREATE TABLE `fbcf_uiform_settings` (
 -- ----------------------------
 -- Records of fbcf_uiform_settings
 -- ----------------------------
-INSERT INTO `fbcf_uiform_settings` VALUES ('3.7.6.6', '1', '', '0', '', '', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
+INSERT INTO `fbcf_uiform_settings` VALUES ('3.9.9.6.4', '1', '', '0', '', '', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
 
 -- ----------------------------
 -- Table structure for `fbcf_uiform_user`

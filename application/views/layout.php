@@ -147,6 +147,10 @@ if (!defined('BASEPATH')) {
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/lzstring/lz-string.min.js"></script>
     <!-- validation -->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/frontend/js/jquery-validation/1.13.1/jquery.validate.min.js"></script>
+    
+    <!-- iframe -->
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/frontend/js/iframe/4.1.1/iframeResizer.min.js"></script>
+    
     <script type='text/javascript'>
     var rockfm_vars={"ajaxurl":"",
         "uifm_baseurl":"<?php echo base_url(); ?>",

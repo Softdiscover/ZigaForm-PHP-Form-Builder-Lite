@@ -111,7 +111,7 @@ class model_forms extends CI_Model
     function getFormById($id) {
         $query = sprintf('
             select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date,
-                uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2
+                uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2,fmb_rec_tpl_html,fmb_rec_tpl_st
             from %s uf
             where uf.fmb_id=%s
             ', $this->table, (int)$id);
