@@ -1,0 +1,20 @@
+/* conflict file and image upload*/
+.uiform-main-form  .rockfm-fileupload .fileinput::after,
+.uiform-main-form  .rockfm-imageupload .fileinput::after{
+display:none;
+}
+
+.uiform-main-form  .rockfm-fileupload .fileinput input[type="file"],
+.uiform-main-form  .rockfm-imageupload .fileinput input[type="file"]{
+    position: absolute !important;
+}
+.uiform-main-form  .rockfm-fileupload .input-group-addon.btn-file {
+    line-height: 21px!important;
+}
+ 
+
+/*fix conflicts*/
+.rockfm-input2-wrap .filter-option{
+    margin:0!important;
+    font-size: inherit!important;
+}

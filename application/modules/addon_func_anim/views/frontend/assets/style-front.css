@@ -1,0 +1,17 @@
+.zgfm_addon_anim_prevtostart {
+    opacity: 0;
+}
+.zgfm_addon_anim_prevtostart:not(.zgfm_addon_anim_start) {
+    animation: 0s ease 0s normal none 1 running none;
+}
+
+.zgfm_addon_anim_start {
+    opacity: 1;
+}
+
+
+
+
+.sfdc-wrap .animated {
+    animation-fill-mode: backwards!important;
+}

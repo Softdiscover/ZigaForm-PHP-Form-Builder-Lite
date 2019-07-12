@@ -66,6 +66,12 @@ var zgfm_back_fld_options = function(){
                                         
                                     }
                                      
+                                    //autocomplete off - chrome issue
+                                    $('input,textarea').attr('autocomplete', 'off');
+                                       $('#zgfm_edit_panel').disableAutoFill({
+                                        passwordField: '.password'}
+                                    );
+                                     
                                     //refresh type and id
                                     $('#uifm-field-selected-id').val(id);
                                     $('#uifm-field-selected-type').val(type);
@@ -398,6 +404,7 @@ var zgfm_back_fld_options = function(){
                                             rocketform.previewfield_removeAllUndesiredObj(pickfield);
                                              //hide tooltip
                                             rocketform.previewfield_helpblock_hidetooltip();
+                                            
                                         }
                                         //show fields tabs
                                         //rocketform.enableSettingTabOption('uifm-label');

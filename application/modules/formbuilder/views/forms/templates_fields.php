@@ -859,7 +859,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                             <input data-field-store="input-value"
                                    data-field-option="uifm-txtbox-inp-val"
                                    class="uifm-txtbox-inp-val form-control uifm-f-option"
-                                   type="password" value="">
+                                   type="text" value="">
                         </div>
                         <div data-field-option="uifm-help-block"  class="uifm-help-block uifm-f-option">
                             <?php echo __('Help block text','FRocket_admin'); ?>

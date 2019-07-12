@@ -79,7 +79,7 @@ if (!defined('BASEPATH')) {
     <link href="<?php echo base_url(); ?>assets/common/js/bgallery/3.1.3/css/bootstrap-image-gallery.css" rel="stylesheet">
     
     
-    <link href="<?php echo base_url(); ?>assets/backend/css/admin-css.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/backend/css/admin-css.php" rel="stylesheet">
     <link rel="Favicon Icon" href="favicon.ico">
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -147,6 +147,10 @@ if (!defined('BASEPATH')) {
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/lzstring/lz-string.min.js"></script>
     <!-- validation -->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/frontend/js/jquery-validation/1.13.1/jquery.validate.min.js"></script>
+    
+    <!-- disable autofill-->
+    <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/disableautofill/jquery.disableAutoFill.js"></script>
+    
     <script type='text/javascript'>
     var rockfm_vars={"ajaxurl":"",
         "uifm_baseurl":"<?php echo base_url(); ?>",
@@ -165,7 +169,7 @@ if (!defined('BASEPATH')) {
         <?php include('layout-dev-1.php');?>
     <?php 
     }else{ ?>
-        <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin-js.js"></script>
+        <script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin-js.php"></script>
     <?php    
     }
     ?>
