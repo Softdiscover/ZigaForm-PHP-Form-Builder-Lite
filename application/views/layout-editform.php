@@ -265,7 +265,7 @@ if (!defined('BASEPATH')) {
    <body class="tundra ">
     
     <div id="wrapper">
-    <form id="zgfm_edit_panel" autocomplete="off">
+    <form id="zgfm_edit_panel" onsubmit="return false;" autocomplete="off">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <?php $this->load->view('header'); ?>   

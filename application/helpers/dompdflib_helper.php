@@ -30,13 +30,13 @@ if ($stream) {
     }
 }
 
-function generate_pdf($html, $filename, $stream = TRUE) {
+function generate_pdf($html, $filename,$papersize, $paperorien, $stream = TRUE) {
 
     require_once("dompdf/autoload.inc.php");
    
     $dompdf = new Dompdf();
     $dompdf->loadHtml($html);
-    $dompdf->setPaper('b4', 'portrait');
+    $dompdf->setPaper($papersize, $paperorien);
     $dompdf->set_option('isHtml5ParserEnabled', true);
     $dompdf->set_option('isFontSubsettingEnabled', true);
     $dompdf->set_option('isRemoteEnabled', true);

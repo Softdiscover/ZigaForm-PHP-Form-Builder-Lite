@@ -13,8 +13,17 @@ var zgfm_back_tools = function(){
     
     this.initialize = function() {
         
-    }
-    
+    };
+    this.setInnerVariable = function(name, value) {
+                zgfm_variable.innerVars[name] = value;
+            };
+    this.getInnerVariable = function(name) {
+                if (zgfm_variable.innerVars[name]) {
+                    return zgfm_variable.innerVars[name];
+                } else {
+                    return '';
+                }
+            };
     
     /**
      * generate pdf for email pdf attachement
@@ -23,7 +32,9 @@ var zgfm_back_tools = function(){
     this.pdf_showsample = function(type){
         var editor,email_template_pdf_msg;
         var pdf_fullpage=($('#uifm_frm_main_pdf_htmlfullpage').bootstrapSwitchZgpb('state'))?1:0;
+        var form_id=($('#uifm_frm_main_id').val())?$('#uifm_frm_main_id').val():0;
         
+        zgfm_back_tools.setInnerVariable('form_id',form_id);
         switch(String(type)){
             case 'pdf_email_attach':
                 if( typeof tinymce != "undefined" ) {
@@ -72,7 +83,8 @@ var zgfm_back_tools = function(){
                        'zgfm_security':uiform_vars.ajax_nonce,
                        'full_page':whole_control,
                        'message':encodeURIComponent(message),
-                       'csrf_field_name':uiform_vars.csrf_field_name
+                       'csrf_field_name':uiform_vars.csrf_field_name,
+                       'form_id':zgfm_back_tools.getInnerVariable('form_id')
                         },
                     success: function(msg) {
                          
