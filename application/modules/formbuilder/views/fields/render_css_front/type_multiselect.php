@@ -83,7 +83,7 @@ ob_start();
                  text-decoration:underline;
         <?php }  ?>           
         <?php if(!empty($input2['size'])){?>
-                 font-size:<?php echo $input2['size'];?>;
+                 font-size:<?php echo $input2['size'];?>!important;
         <?php }  ?>          
    }
    
@@ -94,7 +94,7 @@ ob_start();
             $font_temp=json_decode($input2['font'],true);
             if(isset($font_temp['family'])){
         ?>    
-            font-family:<?php echo $font_temp['family'];?>;
+            font-family:<?php echo $font_temp['family'];?>!important;
             <?php
            //storing to global fonts
             Uiform_Form_Helper::form_store_fonts($font_temp);
