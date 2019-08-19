@@ -11,9 +11,9 @@ ob_start();
         allowTransparency="true"></iframe>
 <script type="text/javascript">
    var UIFORM_SRC = "<?php echo $base_url;?>";
-   var _uifmvar = _uifmvar || {};
+   var _uifmvar = {};
     _uifmvar.fm_ids = _uifmvar.fm_ids || [];
-    _uifmvar.fm_ids.push(['<?php echo $form_id;?>']);
+    _uifmvar.fm_ids.push('<?php echo $form_id;?>');
      <?php if(!empty($addon)){?>
         _uifmvar['addon'] = JSON.parse('<?php echo $addon;?>');
     <?php }else{?>

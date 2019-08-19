@@ -100,7 +100,7 @@ class model_record extends CI_Model
         
     }
     
-    function getFieldOptRecord($rec_id,$f_type=null,$f_id=null,$f_atr1=null,$f_atr2=null) {
+    function getFieldOptRecord($rec_id,$f_type=null,$f_id=null,$f_atr1=null,$f_atr2=null,$f_atr3=null) {
         if(intval($rec_id)>0){
             $result='';
            
@@ -108,28 +108,52 @@ class model_record extends CI_Model
                 case 8:
                 case 10:
                     /*radio button, select*/
-                    $sql = "select extractvalue(fbh_data_rec_xml,'/params/child::".$f_id."_chosen') AS uifmoptvalue,";
-                    $sql.='r.fbh_id,r.created_date';
-                    $sql.=' from %1$s r';
-                    $sql.=' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                        where r.flag_status>0 and r.fbh_id=%3$s'; 
-                    $query = sprintf($sql,$this->table,$this->tbform,(int)$rec_id);
-                     $query2 = $this->db->query($query);
-
-                    $row = $query2->row();
+                     
+                    $tmp_str='';
+                    $tmp_str.=$f_id;
+                    if(!empty($f_atr1)){
+                        $tmp_str.="_".$f_atr1;
+                        if(!empty($f_atr2)){
+                            $tmp_str.="_".$f_atr2;
+                            if(!empty($f_atr3)){
+                                $tmp_str.="_".$f_atr3;
+                            }
+                        }
+                    }
+                
+                    $sql = "select extractvalue(fbh_data_rec_xml,'/params/child::".$tmp_str."') AS uifmoptvalue,";
+                        $sql.='r.fbh_id,r.created_date';
+                        $sql.=' from %1$s r';
+                        $sql.=' join %2$s frm on frm.fmb_id=r.form_fmb_id
+                            where r.flag_status>0 and r.fbh_id=%3$s'; 
+                        $query = sprintf($sql,$this->table,$this->tbform,(int)$rec_id);
                     
-                    $chosen = $row->uifmoptvalue;
-                    //get value or label
-                    $sql = 'select ';
-                    $temp = array();
-                    $temp[] = "extractvalue(fbh_data_rec_xml,'/params/child::" . $f_id."_input_".$chosen. "_".$f_atr1."') AS uifmoptvalue";
-                    $temp[] = "r.fbh_id";
-                    $temp[] = "r.created_date";
-                    $sql.=implode(',', $temp) . ' from %1$s r';
-                    $sql.=' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                        where r.flag_status>0 and r.fbh_id=%3$s'; 
-                    $query = sprintf($sql,$this->table,$this->tbform,(int)$rec_id); 
-                   
+                    if(false){
+                        //not tested yet
+                        $sql = "select extractvalue(fbh_data_rec_xml,'/params/child::".$f_id."_chosen') AS uifmoptvalue,";
+                        $sql.='r.fbh_id,r.created_date';
+                        $sql.=' from %1$s r';
+                        $sql.=' join %2$s frm on frm.fmb_id=r.form_fmb_id
+                            where r.flag_status>0 and r.fbh_id=%3$s'; 
+                        $query = sprintf($sql,$this->table,$this->tbform,(int)$rec_id);
+                         $query2 = $this->db->query($query);
+
+                        $row = $query2->row();
+
+                        $chosen = $row->uifmoptvalue;
+                        //get value or label
+                        $sql = 'select ';
+                        $temp = array();
+                        $temp[] = "extractvalue(fbh_data_rec_xml,'/params/child::" . $f_id."_input_".$chosen. "_".$f_atr1."') AS uifmoptvalue";
+                        $temp[] = "r.fbh_id";
+                        $temp[] = "r.created_date";
+                        $sql.=implode(',', $temp) . ' from %1$s r';
+                        $sql.=' join %2$s frm on frm.fmb_id=r.form_fmb_id
+                            where r.flag_status>0 and r.fbh_id=%3$s'; 
+                        $query = sprintf($sql,$this->table,$this->tbform,(int)$rec_id); 
+                    }
+                    
+                
                     $query2 = $this->db->query($query);
 
                     $row = $query2->row();
@@ -144,7 +168,19 @@ class model_record extends CI_Model
                 case 9:
                 case 11:
                     /*checkbox , Multiple select*/
-                    $sql = "select extractvalue(fbh_data_rec_xml,'/params/child::".$f_id."_input_".$f_atr1."') AS uifmoptvalue,";
+                    $tmp_str='';
+                    $tmp_str.=$f_id;
+                    if(!empty($f_atr1)){
+                        $tmp_str.="_".$f_atr1;
+                        if(!empty($f_atr2)){
+                            $tmp_str.="_".$f_atr2;
+                            if(!empty($f_atr3)){
+                                $tmp_str.="_".$f_atr3;
+                            }
+                        }
+                    }
+                    
+                    $sql = "select extractvalue(fbh_data_rec_xml,'/params/child::".$tmp_str."') AS uifmoptvalue,";
                     $sql.='r.fbh_id,r.created_date';
                     $sql.=' from %1$s r';
                     $sql.=' join %2$s frm on frm.fmb_id=r.form_fmb_id

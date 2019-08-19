@@ -1,3 +1,9 @@
+Version 3.9.9.7.8
+   [fixed] -  preview issue
+-----------------------------------------------------------------------------------------------------------------
+Version 3.9.9.7.7
+   [fixed] -  load variables by ajax
+-----------------------------------------------------------------------------------------------------------------
 Version 3.9.9.7.5
    [fixed] -  issue on updating custom invoice
    [fixed] -  export issue, custom invoice and record included 

@@ -290,7 +290,25 @@ class Forms extends MX_Controller {
         header('Content-Type: application/json');
         echo json_encode($json);
         die();
-    }   
+    }
+    
+    public function ajax_variables_emailpage() {
+                                    
+        $data=array();
+        $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $fmb_data = (isset($_POST['form_data'])) ? $_POST['form_data'] : '';
+        $fmb_data = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
+            $data['fmb_data'] = $fmb_data;
+                                    
+        $json = array();
+        $json['message'] = $this->load->view('formbuilder/forms/ajax_variables_emailpage', $data, true);
+        
+        //return data to ajax callback
+        header('Content-Type: application/json');
+        echo json_encode($json);
+        die();
+    }
+    
     /**
      * Forms::ajax_load_templateform()
      * 
