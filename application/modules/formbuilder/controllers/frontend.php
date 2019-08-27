@@ -1101,6 +1101,13 @@ class Frontend extends MX_Controller {
                         $data_mail['mail_usr_pdf_fn']=$mail_pdf_fn;
                         $data_mail['html_wholecont']=$mail_pdf_wholecont;
                         $data_mail['rec_id']=$idActivate;
+                        $data_mail['is_html']=0;
+                                
+                        $data_mail['charset'] = (isset($form_data_onsubm['main']['pdf_charset'])) ? $form_data_onsubm['main']['pdf_charset'] : '';
+                        $data_mail['font']= (isset($form_data_onsubm['main']['pdf_font'])) ? urldecode($form_data_onsubm['main']['pdf_font']) : '';
+                        $data_mail['pdf_paper_size'] = (isset($form_data_onsubm['main']['pdf_paper_size'])) ? $form_data_onsubm['main']['pdf_paper_size'] : 'a4';
+                        $data_mail['pdf_paper_orie'] = (isset($form_data_onsubm['main']['pdf_paper_orie'])) ? $form_data_onsubm['main']['pdf_paper_orie'] : 'landscape';
+                           
                         //$mail_pdf_font = (isset($form_data_onsubm['onsubm']['mail_usr_pdf_font'])) ? urldecode($form_data_onsubm['onsubm']['mail_usr_pdf_font']) : '';
                         //$data_mail['mail_usr_pdf_font']=$mail_pdf_font;
                         //$data_mail['mail_usr_pdf_charset']=(isset($form_data_onsubm['onsubm']['mail_usr_pdf_charset'])) ? $form_data_onsubm['onsubm']['mail_usr_pdf_charset'] : '';
@@ -1170,8 +1177,8 @@ class Frontend extends MX_Controller {
         $data2['rec_id']=$data['rec_id'];
         $data2['content']=$data['mail_usr_pdf_template_msg'];
         $data2['html_wholecont'] = $data['html_wholecont'];
-        $tmp_html = modules::run('formbuilder/frontend/pdf_global_template',$data2);
-        $output = generate_pdf($tmp_html, $data['mail_usr_pdf_fn'],$data['pdf_paper_size'],$data['pdf_paper_orie'], false);
+        //$tmp_html = modules::run('formbuilder/frontend/pdf_global_template',$data2);
+        $output = generate_pdf($data2['content'], $data['mail_usr_pdf_fn'],$data['pdf_paper_size'],$data['pdf_paper_orie'], false);
                                           
         return $output;
     }

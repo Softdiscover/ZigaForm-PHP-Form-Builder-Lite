@@ -135,9 +135,10 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
             href="javascript:void(0);"><i class="fa fa-table" aria-hidden="true"></i> <?php echo __('Variables','FRocket_admin');?></a></li>
             <?php if(ZIGAFORM_F_LITE===0){?>     
             <li><a onclick="javascript:rocketform.clogicgraph_popup();"
-            href="javascript:void(0);"><span class="fa fa fa-map"></span> <?php echo __('C.Logic Graph','FRocket_admin');?></a></li>
+            href="javascript:void(0);"><span class="fa fa-map"></span> <?php echo __('C.Logic Graph','FRocket_admin');?></a></li>
             <?php }?>
-            
+            <li><a onclick="javascript:rocketform.refreshPreviewSection();"
+            href="javascript:void(0);"><span class="fa fa-refresh"></span> <?php echo __('Refresh & Clean Form','FRocket_admin');?></a></li>
             </ul>
             </div>
     </div>

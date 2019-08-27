@@ -198,7 +198,14 @@ class Settings extends MX_Controller {
         $where = array(
             'id' => 1
         );
-
+        
+        $opt_fields_fastload = (isset($_POST['uifm_frm_fields_fastload']) && $_POST['uifm_frm_fields_fastload']) ? Uiform_Form_Helper::sanitizeInput($_POST['uifm_frm_fields_fastload']) : 0;
+        if((string)$opt_fields_fastload ==='on'){
+            update_option( 'zgfm_fields_fastload', 1);
+        }else{
+            update_option( 'zgfm_fields_fastload', 0);
+        }
+        
         $this->db->set($data);
         $this->db->where($where);
         $this->db->update($this->model_settings->table);
@@ -237,6 +244,8 @@ class Settings extends MX_Controller {
         $list_lang[] = array('val' => 'zh', 'label' => __('chinese', 'FRocket_admin'));
         $data['language'] = $query->language;
         $data['lang_list'] = $list_lang;
+        
+        $data['fields_fastload'] = get_option( 'zgfm_fields_fastload', 0 );
 
         $this->template->loadPartial('layout', 'settings/view_settings', $data);
     }

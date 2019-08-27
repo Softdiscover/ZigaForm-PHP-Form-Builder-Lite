@@ -196,6 +196,7 @@ if (!defined('BASEPATH')) {
    $file2 = base_url() . 'extensions/elfinder2/elfinder2.php?XSRFToken=' . getXSRFToken('elFinder');     
    ?> 
    var uiform_vars={};    
+    uiform_vars['fields_fastload']=<?php echo $fields_fastload;?>;
     uiform_vars['url_admin']="<?php echo site_url(); ?>admin";
     uiform_vars['url_plugin']="";
     uiform_vars['url_elfinder1']="<?php echo $file1;?>";

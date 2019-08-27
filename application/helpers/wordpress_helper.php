@@ -27,7 +27,7 @@
  * @param mixed  $default Optional. Default value to return if the option does not exist.
  * @return mixed Value set for the option.
  */
-function get_option( $option, $default = false ) {
+function get_option( $option, $default = '' ) {
 	
 	$option = trim( $option );
 	if ( empty( $option ) )
@@ -124,7 +124,7 @@ function get_option( $option, $default = false ) {
 			$value = $row->option_value;
                         return maybe_unserialize( $value );
                 }else{
-                    return '';
+                    return $default;
                 }
              
         

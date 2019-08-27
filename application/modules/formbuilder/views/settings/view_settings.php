@@ -37,11 +37,18 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                        name="frmform"
                        class="sfdc-form-horizontal">
                        <div id="uiform-settings-inner-body">
-                        <div class="sfdc-form-group">
-                            <label class=" col-sm-2 control-label"><?php echo __('Language','FRocket_admin');?></label>
-                            <div class="sfdc-col-sm-10">
-                                <div class="span4">
-                                    <select class="sfdc-form-control input-sm" name="language"  id="language" data-placeholder="Select here.." >
+                       <!--<div class="sfdc-col-md-12">
+                                <div class="sfdc-form-group">
+                                    
+                                    <div class="sfdc-col-sm-4">
+                                         <label for=""><?php echo __('LANGUAGE','FRocket_admin'); ?></label>  <a href="javascript:void(0);"
+                                           data-toggle="tooltip" data-placement="right" 
+                                           data-original-title="<?php echo __('it allows to change the language','FRocket_admin'); ?>"
+                                           ><span class="fa fa-question-circle"></span></a>
+                                     </div>
+                                    
+                                    <div class="sfdc-col-sm-8">
+                                       <select class="sfdc-form-control input-sm" name="language"  id="language" data-placeholder="Select here.." >
                                     <?php 
                                     foreach ($lang_list as $frow): 
                                         ?>
@@ -54,10 +61,36 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                                         ?>
                                     <?php unset($frow); ?>
                                     </select>
+                                        
+                                    </div>
                                 </div>
+                            </div> 
+                            <div class="space10 zgfm-opt-divider-stl1"></div> -->
+                            <div class="sfdc-col-md-12">
+                                <div class="sfdc-form-group">
+                                    
+                                    <div class="sfdc-col-sm-4">
+                                        <label for=""><?php echo __('FIELDS FAST LOAD','FRocket_admin'); ?><span style="color:red;">(beta)</span></label> <a href="javascript:void(0);"
+                                           data-toggle="tooltip" data-placement="right" 
+                                           data-original-title="<?php echo __('it allows to loads field options in a fast way.','FRocket_admin'); ?>"
+                                           ><span class="fa fa-question-circle"></span></a>
+                                           
+                                           
+                                     </div>
+                                    
+                                    <div class="sfdc-col-sm-8">
+                                        <input class="switch-field"
+                                                       id="uifm_frm_fields_fastload"
+                                                       name="uifm_frm_fields_fastload"
+                                                       type="checkbox"/>
+                                         
+                                    </div>
+                                    
+                                </div>
+                                <div class="sfdc-alert sfdc-alert-warning">
+                                        <strong><?php echo __('Info', 'FRocket_admin'); ?></strong> <?php echo __('This feature is in beta test, so you if you enable option, maybe you could face some weird issues when loading field options. In case of that, just disable that option and report this issue at info@softdiscover.com ', 'FRocket_admin'); ?> 
+                                    </div>
                             </div>
-                        </div>
-                           
                            
                         </div>
                    </form>
@@ -94,8 +127,9 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
 </div>
 <script type="text/javascript">
 //<![CDATA[
-jQuery(document).ready(function () {
-    
+$uifm(document).ready(function ($) {
+        set_modalmode=(parseInt(<?php echo $fields_fastload;?>)===1)?true:false;
+    $('#uifm_frm_fields_fastload').bootstrapSwitchZgpb('state',set_modalmode);
 });
 //]]>
 </script>
