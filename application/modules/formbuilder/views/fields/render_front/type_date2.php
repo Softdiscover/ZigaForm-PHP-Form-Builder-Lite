@@ -27,6 +27,7 @@ ob_start();
                    data-rkfm-mindate="<?php echo $input_date2['mindate'];?>"
                    data-rkfm-maxdate="<?php echo $input_date2['maxdate'];?>"
                    data-rkfm-defaultdate="<?php echo $input_date2['defaultdate'];?>"
+                   data-rkfm-isinline="<?php echo $input_date2['isinline'];?>"
                    data-uifm-tabnum="<?php echo $tab_num;?>"
              >
             <input type="text" 

@@ -114,6 +114,24 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                             <div class="sfdc-col-md-12">
                                 <div class="sfdc-form-group">
                                     <div class="sfdc-col-md-6">
+                                        <label for=""><?php echo __('Inline display','FRocket_admin'); ?></label> 
+                                        <a data-original-title="<?php echo __('Inline display','FRocket_admin'); ?>" data-placement="right" data-toggle="tooltip" href="javascript:void(0);"><span class="fa fa-question-circle"></span></a>
+                                    </div>
+                                    <div class="sfdc-col-md-6">
+                                       <input class="switch-field"
+                                            data-field-store="input_date2-isinline"
+                                            id="uifm_fld_inp19_isinline"
+                                            type="checkbox"/>
+                                        </div>    
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zgpb-opt-divider-stl1"></div>
+                        <div class="sfdc-row ">
+                            <div class="sfdc-col-md-12">
+                                <div class="sfdc-form-group">
+                                    <div class="sfdc-col-md-6">
                                         <label for=""><?php echo __('Date format','FRocket_admin'); ?></label> 
                                         <a data-original-title="<?php echo __('Date format','FRocket_admin'); ?>" data-placement="right" data-toggle="tooltip" href="javascript:void(0);"><span class="fa fa-question-circle"></span></a>
                                     </div>
