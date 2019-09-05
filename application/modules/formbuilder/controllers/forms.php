@@ -276,6 +276,7 @@ class Forms extends MX_Controller {
         $data=array();
         $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
         $fmb_data = (isset($_POST['form_data'])) ? $_POST['form_data'] : '';
+        $fmb_data = urldecode($fmb_data);
         $fmb_data = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
             $data['fmb_data'] = $fmb_data;
             
@@ -297,6 +298,7 @@ class Forms extends MX_Controller {
         $data=array();
         $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
         $fmb_data = (isset($_POST['form_data'])) ? $_POST['form_data'] : '';
+        $fmb_data = urldecode($fmb_data);
         $fmb_data = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
             $data['fmb_data'] = $fmb_data;
                                     
@@ -607,10 +609,12 @@ class Forms extends MX_Controller {
      * @return 
      */
     public function ajax_refresh_previewpanel() {
+                                    
         $data = array();
-        $fmb_data = (!empty($_POST['form_data'])) ? $_POST['form_data'] : '';
-        $fmb_data = (!empty($fmb_data)) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
-
+        $fmb_data = (isset($_POST['form_data'])) ? $_POST['form_data'] : '';
+        $fmb_data = urldecode($fmb_data);
+        $fmb_data = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
+                                    
         $data['fmb_data'] = $fmb_data;
         $data['fmb_name'] = (!empty($_POST['uifm_frm_main_title'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
         

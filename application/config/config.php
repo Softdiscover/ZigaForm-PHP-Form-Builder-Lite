@@ -292,7 +292,12 @@ $config['cookie_secure']	= FALSE;
 |
 */
 $config['global_xss_filtering'] = TRUE;
-$config['xss_exclude_uris'] = array('formbuilder/forms/ajax_email_sendsample','formbuilder/forms/ajax_pdf_showsample','formbuilder/forms/ajax_save_form');
+$config['xss_exclude_uris'] = array('formbuilder/forms/ajax_email_sendsample',
+    'formbuilder/forms/ajax_pdf_showsample',
+    'formbuilder/forms/ajax_save_form',
+    'formbuilder/forms/ajax_variables_emailpage',
+    'formbuilder/forms/ajax_variables_openmodal',
+    'formbuilder/forms/ajax_refresh_previewpanel');
 /*
 |--------------------------------------------------------------------------
 | Cross Site Request Forgery
