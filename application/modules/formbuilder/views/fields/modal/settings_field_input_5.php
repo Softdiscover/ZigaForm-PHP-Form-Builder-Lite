@@ -73,7 +73,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
     <div class="sfdc-row">
         <div class="sfdc-col-md-12">
             <div class="sfdc-alert sfdc-alert-info">
-           <?php echo __('Get private and publi key from Recaptcha site: ','FRocket_admin'); ?> <a href="https://www.google.com/recaptcha"  target="_blank"> <b><?php echo __('Go to Recaptcha site','FRocket_admin'); ?></b></a>
+           <?php echo __('Get private and publi key from Recaptcha site, and choose reCAPTCHA v2 type. only recaptcha v2 is supported. Get recaptcha keys here: ','FRocket_admin'); ?> <a href="https://www.google.com/recaptcha"  target="_blank"> <b><?php echo __('Go to Recaptcha site','FRocket_admin'); ?></b></a>
           </div>
             
         </div>

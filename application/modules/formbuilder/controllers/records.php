@@ -335,7 +335,7 @@ class Records extends MX_Controller {
         $data['fmb_rec_tpl_st'] = $form_rec_data->fmb_rec_tpl_st;
         $data['base_url']=base_url();
             $data['form_id']=$form_rec_data->form_fmb_id;
-            $data['url_form']=site_url().'/formbuilder/frontend/pdf_show_record/?uifm_mode=pdf&is_html=1&id='.$id_rec;
+            $data['url_form']=site_url().'formbuilder/frontend/pdf_show_record/?uifm_mode=pdf&is_html=1&id='.$id_rec;
             $data['custom_template'] = $this->load->view('formbuilder/frontend/form_summary_custom',$data,true);
         
         $this->template->loadPartial('layout', 'records/info_record', $data);

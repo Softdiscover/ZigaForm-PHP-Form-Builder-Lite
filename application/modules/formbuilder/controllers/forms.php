@@ -1132,8 +1132,19 @@ class Forms extends MX_Controller {
 
         $return = array();
         $return['output_html'] = $str_output;
-        $return['output_css'] = $str_output_3;
-
+            
+        //add css inside namespace of the form
+            require_once(FCPATH .'/libs/lesslib/lessc.inc.php');
+            $less = new lessc();
+            $css_store='';
+            try {
+                $css_store=$less->compile('#rockfm_form_'.$this->saved_form_id.' {'.$str_output_3.'}');
+              } catch (exception $e) {
+                $css_store=$str_output_3;
+              }    
+        
+        $return['output_css'] = $css_store;      
+              
         return $return;
     }
 
