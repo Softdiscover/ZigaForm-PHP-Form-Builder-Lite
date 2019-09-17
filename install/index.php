@@ -14,9 +14,9 @@
  */
 ?>
 <?php
-error_reporting(0);
+error_reporting(E_ALL);
 require_once "includes/functions.php";
-define('ZIGAFORM_F_LITE',1);
+define('ZIGAFORM_F_LITE',0);
 session_start();
 $step = 0;
 if ($_POST) {

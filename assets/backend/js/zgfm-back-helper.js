@@ -261,7 +261,15 @@ var zgfm_back_helper = function(){
     this.delData6 = function(mainarr,name,index,key,section,option,option2) {
                 delete mainarr[name][index][key][section][option][option2];
             }; 
-    
+    this.tooltip_removeall = function() {
+      /*hiding tooltip after loading form*/
+                                            if($('body').find('.sfdc-tooltip').length && 
+                                                    $('body').find('.sfdc-tooltip').data && 
+                                                    $('body').find('.sfdc-tooltip').data('bs.tooltip')){
+                                                
+                                                $('body').find('.sfdc-tooltip').tooltip("hide");
+                                            }
+    };
     
 };
 window.zgfm_back_helper = zgfm_back_helper = $.zgfm_back_helper = new zgfm_back_helper();

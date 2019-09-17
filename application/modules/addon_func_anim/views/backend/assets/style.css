@@ -1,0 +1,9 @@
+#zgfm_addon_anim_sample_obj{
+    display: block;
+    height: 50px;
+    width: 100px;
+    background: yellow;
+    -webkit-box-shadow: 3px 3px 5px 0px #eee;
+-moz-box-shadow:    3px 3px 5px 0px #eee;
+box-shadow:         3px 3px 5px 0px #eee;
+}
