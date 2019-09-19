@@ -1,3 +1,0 @@
-;var $uifm=jQuery.noConflict();
-
-
