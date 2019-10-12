@@ -17,9 +17,9 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
   <div class="space20"></div>
      
     <div class="sfdc-row">
-        <div class="sfdc-col-md-12">
+         <div class="sfdc-col-md-12">
             <div class="sfdc-col-sm-4">
-            <label for=""><?php echo __('REFRESH PREVIEW EDITOR PANEL','FRocket_admin'); ?></label>
+            <label for=""><?php echo __('REFRESH AND CLEAN FORM','FRocket_admin'); ?></label>
             </div>
             <div class="sfdc-col-sm-8">
                 <a href="javascript:void(0);"
@@ -35,6 +35,22 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
         <div class="space10 zgfm-opt-divider-stl1"></div>
         <div class="sfdc-col-md-12">
             <div class="sfdc-col-sm-4">
+            <label for=""><?php echo __('REFRESH FORM FROM DATA','FRocket_admin'); ?></label>
+            </div>
+            <div class="sfdc-col-sm-8">
+                <a href="javascript:void(0);"
+                   onclick="javascript:rocketform.refreshPreviewSectionFromData();"
+                   class="sfdc-btn sfdc-btn-success"
+                   ><?php echo __('Refresh From Data','FRocket_admin'); ?></a>
+                <a href="javascript:void(0);"
+                           data-toggle="tooltip" data-placement="top" 
+                           data-original-title="<?php echo __('this is used in order to fix if something is not showing fine on the preview editor panel','FRocket_admin'); ?>"
+                           ><span class="fa fa-question-circle"></span></a>
+            </div>
+        </div>
+        <!--<div class="space10 zgfm-opt-divider-stl1"></div>
+        <div class="sfdc-col-md-12">
+            <div class="sfdc-col-sm-4">
             <label for=""><?php echo __('REFRESH AND MIGRATE TO VERSION 3','FRocket_admin'); ?></label>
             <p class="help-block"><?php echo __('Use only if you upgraded from version 2.x to 3','FRocket_admin'); ?></p>
             </div>
@@ -48,7 +64,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                            data-original-title="<?php echo __('this is used in order to fix if something is not showing fine on the preview editor panel','FRocket_admin'); ?>"
                            ><span class="fa fa-question-circle"></span></a>
             </div>
-        </div>
+        </div>  -->
         <div class="space10 zgfm-opt-divider-stl1"></div>
         <div class="sfdc-col-md-12">
             <div class="sfdc-form-group">

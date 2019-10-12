@@ -508,9 +508,6 @@ class Frontend extends MX_Controller {
             $resp['success'] = 0;
             $resp['show_message'] = '<div class="rockfm-alert rockfm-alert-danger"><i class="fa fa-exclamation-triangle"></i> ' . __('warning! Form was not submitted', 'frocket_front') . '</div>';
         }
-        
-        $resp['sm_redirect_st'] = $resp['sm_redirect_st'];
-        $resp['sm_redirect_url'] = $resp['sm_redirect_url'];
                 
         $data = array();
         $data['json'] = $resp;
@@ -665,7 +662,12 @@ class Frontend extends MX_Controller {
                         $tmp_field_name = $this->model_fields->getFieldNameByUniqueId($key, $form_id);
                         
                         if(!isset($tmp_field_name->type)){
-                            throw new Exception('error $key:'.$key.' - $form_id:'.$form_id);
+                            $err_output='error $key:'.$key.' - $form_id:'.$form_id;
+                            if(UIFORM_DEBUG === 1 ){
+                                $err_output.=' - Last query: '.htmlentities($this->db->last_query(),ENT_NOQUOTES, "UTF-8");
+                            }
+                            
+                            throw new Exception($err_output);
                         }
                         
                         /*for validation only*/
@@ -1291,9 +1293,11 @@ class Frontend extends MX_Controller {
                             $temp_input=array();
                             $temp_cost=array();
                             $temp_qty=array();
-
+                            
+                            if(is_array($value2))
                             foreach ($value2 as $key3 => $value3) {
                                 //values
+                                if(is_array($value3))
                                 foreach ($value3 as $key4 => $value4) {
                                     switch ($key4) {
                                             case 'label':

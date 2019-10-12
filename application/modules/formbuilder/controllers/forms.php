@@ -1096,6 +1096,7 @@ class Forms extends MX_Controller {
             case 39:
                 //wizard buttons
                 $data['form_wizard'] = $this->current_data_wizard;
+                $data['tab_count'] = $this->current_data_steps;
                 $str_output.=modules::run('formbuilder/fields/formhtml_wizardbtn', $data, $child_field['num_tab']);
                 $str_output_3.=modules::run('formbuilder/fields/formhtml_wizardbtn_css', $data);
                 break;
@@ -1157,6 +1158,13 @@ class Forms extends MX_Controller {
         $str_output = '';
 
         $data = array();
+        
+        if(empty($this->current_data_form[intval($child_field['num_tab'])][$child_field['id']])){
+            $return = array();
+            $return['output_html'] = '';
+            return $return;
+        }
+        
         $data = $this->current_data_form[intval($child_field['num_tab'])][$child_field['id']];
         $data['quick_options'] = $this->load->view('formbuilder/fields/templates/prevpanel_quickopts', $data, true);
         switch (intval($child_field['type'])) {

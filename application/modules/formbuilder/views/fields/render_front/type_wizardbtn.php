@@ -18,7 +18,7 @@ ob_start();
     data-uifm-tabnum="<?php echo $tab_num;?>"
     disabled="disabled"
     data-val-btn="<?php echo $input13['value_lbl'];?>"
-    <?php if(isset($form_wizard['enable_st'])&& intval($form_wizard['enable_st'])===1&& count($form_wizard['tabs'])>1){?>
+    <?php if(isset($form_wizard['enable_st'])&& intval($form_wizard['enable_st'])===1&& count($tab_count['tab_title'])>1){?>
     onclick="javascript:rocketfm.wizard_prevButton(this);return false;"
     <?php }else{ ?>
     <?php }?>
@@ -30,7 +30,7 @@ ob_start();
     data-uifm-tabnum="<?php echo $tab_num;?>"
     data-value-last="<?php echo $input12['value_lbl_last'];?>"
     data-value-next="<?php echo $input12['value_lbl'];?>"
-    <?php if(isset($form_wizard['enable_st'])&& intval($form_wizard['enable_st'])===1 && count($form_wizard['tabs'])>1){?>
+    <?php if(isset($form_wizard['enable_st'])&& intval($form_wizard['enable_st'])===1 && count($tab_count['tab_title'])>1){?>
     onclick="javascript:rocketfm.wizard_nextButton(this);return false;"
     <?php }else{ ?>
     type="submit"
