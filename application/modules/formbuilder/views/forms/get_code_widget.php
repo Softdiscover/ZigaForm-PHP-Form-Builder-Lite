@@ -45,7 +45,7 @@ ob_start();
     (function(){var uiform = document.createElement('script');
         uiform.type = 'text/javascript';
         uiform.async = true;
-        uiform.src = ('https:' == document.location.protocol ? UIFORM_SRC : UIFORM_SRC) + 'assets/frontend/js/init.php';
+        uiform.src = ('https:' == document.location.protocol ? UIFORM_SRC : UIFORM_SRC) + 'assets/frontend/js/init.js';
         var s = document.getElementsByTagName('script')[0];
         s.parentNode.insertBefore(uiform, s);})();
 </script>
