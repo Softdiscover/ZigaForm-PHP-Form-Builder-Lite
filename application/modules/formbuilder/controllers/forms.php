@@ -1149,6 +1149,21 @@ class Forms extends MX_Controller {
         return $return;
     }
 
+    /*
+* Search field on core data if exists
+*/    
+    private function isField_OnCoreData($core_data,$field_search)
+    {
+
+       foreach($core_data as $key => $field)
+               {
+                  if ( isset($core_data[$key][$field_search]) && !empty($core_data[$key][$field_search])){
+                         return $core_data[$key][$field_search];
+                  }
+               }
+               
+       return false;
+    }
     /**
      * Forms::generate_previewpanel_getField()
      * 
@@ -1156,16 +1171,24 @@ class Forms extends MX_Controller {
      */
     protected function generate_previewpanel_getField($child_field) {
         $str_output = '';
-
+        
         $data = array();
-        
+
         if(empty($this->current_data_form[intval($child_field['num_tab'])][$child_field['id']])){
-            $return = array();
-            $return['output_html'] = '';
-            return $return;
+            $tmp_data=$this->isField_OnCoreData($this->current_data_form,$child_field['id']);
+            if($tmp_data){
+                $data=$tmp_data;
+            }else{
+               $return = array();
+                $return['output_html'] = '';
+                return $return; 
+            }
+        }else{
+
+           $data = $this->current_data_form[intval($child_field['num_tab'])][$child_field['id']];    
         }
+
         
-        $data = $this->current_data_form[intval($child_field['num_tab'])][$child_field['id']];
         $data['quick_options'] = $this->load->view('formbuilder/fields/templates/prevpanel_quickopts', $data, true);
         switch (intval($child_field['type'])) {
             case 6:

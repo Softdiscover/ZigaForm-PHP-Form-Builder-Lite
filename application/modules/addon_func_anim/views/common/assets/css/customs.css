@@ -1,0 +1,117 @@
+.zgfm-anim-top-to-bottom {
+    animation: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s normal none 1 running zgfm_ttb;
+}
+.zgfm-anim-bottom-to-top {
+    animation: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s normal none 1 running zgfm_btt;
+}
+.zgfm-anim-left-to-right {
+    animation: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s normal none 1 running zgfm_ltr;
+}
+.zgfm-anim-right-to-left {
+    animation: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s normal none 1 running zgfm_rtl;
+}
+.zgfm-anim-from-center {
+    animation: 0.7s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0s normal none 1 running zgfm_appear;
+    transform: scale(1);
+}
+
+@keyframes zgfm_ttb {
+    0% {
+        opacity: 0;
+        transform: translate(0px, -10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes zgfm_ttb {
+    0% {
+        opacity: 0;
+        transform: translate(0px, -10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes zgfm_btt {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes zgfm_btt {
+    0% {
+        opacity: 0;
+        transform: translate(0px, 10%);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes zgfm_ltr {
+    0% {
+        opacity: 0;
+        transform: translate(-10%, 0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes zgfm_ltr {
+    0% {
+        opacity: 0;
+        transform: translate(-10%, 0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes zgfm_rtl {
+    0% {
+        opacity: 0;
+        transform: translate(10%, 0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes zgfm_rtl {
+    0% {
+        opacity: 0;
+        transform: translate(10%, 0px);
+    }
+    100% {
+        opacity: 1;
+        transform: translate(0px, 0px);
+    }
+}
+@keyframes zgfm_appear {
+    0% {
+        opacity: 0.1;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+@keyframes zgfm_appear {
+    0% {
+        opacity: 0.1;
+        transform: scale(0.5);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}

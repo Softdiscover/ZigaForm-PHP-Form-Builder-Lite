@@ -1,0 +1,27 @@
+.uiform-frm-fld31-txthtml-circle{
+    background: radial-gradient(circle at center, brown 66.5%, white 68%);
+    border: 2px solid brown;
+    border-radius: 50%;
+    color: white;
+    float: left;
+    font-size: 2em;
+    height: 40px;
+    line-height: 33px;
+    margin-right: 12px;
+    text-align: center;
+    width: 40px;
+}
+
+/*panel field*/
+.uifm-inp31-txthtml-content h1,.uifm-input3-customhtml h1,.rockfm-input3-customhtml h1,
+.uifm-inp31-txthtml-content h2,.uifm-input3-customhtml h2,.rockfm-input3-customhtml h2,
+.uifm-inp31-txthtml-content h3,.uifm-input3-customhtml h3,.rockfm-input3-customhtml h3,
+.uifm-inp31-txthtml-content h4,.uifm-input3-customhtml h4,.rockfm-input3-customhtml h4,
+.uifm-inp31-txthtml-content h5,.uifm-input3-customhtml h5,.rockfm-input3-customhtml h5{
+    margin:0px;
+    clear:none!important;
+}
+
+.uifm-glb-color-red{
+    color:#A52A2A!important;
+}
