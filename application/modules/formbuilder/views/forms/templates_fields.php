@@ -1019,11 +1019,13 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                     <div class="rkfm-col-sm-10">
                         <div class="uifm-input-container">
                                 <div class="uifm-input4-wrap">
-                                    <div class="uifm-inp4-number"></div>
                                     <input class="uifm-inp4-fld" 
                                            type="text"
                                            data-check-hash=""
                                            />
+                                      <div class="uifm-inp4-output">
+                                        <div class="uifm-inp4-number"></div>
+                                    </div>
                                 </div>
                         </div>
                         <div data-field-option="uifm-help-block"  class="uifm-help-block uifm-f-option">

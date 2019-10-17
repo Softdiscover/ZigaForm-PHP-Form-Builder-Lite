@@ -56,7 +56,7 @@ if (!defined('BASEPATH')) {
     <!-- bootstrap switch -->
     <link href="<?php echo base_url(); ?>assets/backend/js/bswitch/bootstrap-switch.css" rel="stylesheet">
     <!-- bootstrap slider -->
-    <link href="<?php echo base_url(); ?>assets/backend/js/bslider/4.10.4/bootstrap-slider.min.css" rel="stylesheet">
+    <link href="<?php echo base_url(); ?>assets/backend/js/bslider/4.12.1/bootstrap-slider.css" rel="stylesheet">
     <!-- bootstrap touchspin -->
     <link href="<?php echo base_url(); ?>assets/backend/js/btouchspin/jquery.bootstrap-touchspin.css" rel="stylesheet">
     <!-- bootstrap icon picker -->
