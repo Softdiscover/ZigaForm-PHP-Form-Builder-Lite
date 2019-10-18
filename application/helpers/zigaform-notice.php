@@ -148,7 +148,7 @@ class Zigaform_b_notice {
                         $url  = 'https://wordpress.org/support/plugin/zigaform-form-builder-lite/reviews/?filter=5#new-post';
                         $text = sprintf( __( 'Please rate <strong>Zigaform</strong> <a href="%s" target="_blank" rel="noopener" >&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%s" target="_blank">WordPress.org</a> to help us spread the word. Thank you from the Zigaform team!', 'FRocket_admin' ), $url, $url );
                     }else{
-                        $url  = 'https://codecanyon.net/item/zigaform-wordpress-form-builder/11057544';
+                        $url  = 'https://1.envato.market/Ymxgq';
                         $text = sprintf( __( 'Please rate <strong>Zigaform</strong> <a href="%s" target="_blank" rel="noopener" >&#9733;&#9733;&#9733;&#9733;&#9733;</a> on <a href="%s" target="_blank">Codecanyon.net</a> to help us spread the word. Thank you from the Zigaform team!', 'FRocket_admin' ), $url, $url );
                     }
                 
