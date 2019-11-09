@@ -1075,7 +1075,11 @@ class Frontend extends MX_Controller {
                     $data_mail['mail_replyto']=$tmp_replyto;
                 }
                 
-                $mail_errors=$this->process_mail($data_mail);
+                    if(isset($form_data_onsubm['main']['email_dissubm']) && intval($form_data_onsubm['main']['email_dissubm'])===1){
+                      $mail_errors=false;
+                    }else{
+                      $mail_errors=$this->process_mail($data_mail);
+                    }
                 
                 //customer 
                 //mail template
@@ -1130,7 +1134,11 @@ class Frontend extends MX_Controller {
                     if(!empty($mail_usr_replyto)){
                         $data_mail['mail_replyto']=$mail_usr_replyto;
                     }
-                    $mail_errors=$this->process_mail($data_mail);
+                    if(isset($form_data_onsubm['main']['email_dissubm']) && intval($form_data_onsubm['main']['email_dissubm'])===1){
+                      $mail_errors=false;
+                    }else{
+                      $mail_errors=$this->process_mail($data_mail);
+                    }
                    
                     
                     

@@ -83,6 +83,26 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                 </div>
             </div>
         </div>
+<?php if(isset($_GET['extras']) && intval($_GET['extras'])===1){?>
+        <div class="space10 zgfm-opt-divider-stl1"></div>
+        <div class="sfdc-col-md-12">
+            <div class="sfdc-form-group">
+                 <div class="sfdc-col-sm-4">
+                     <label for=""><?php echo __('Disable email submission','FRocket_admin'); ?></label>
+                 </div>
+                <div class="sfdc-col-sm-8">
+                    <input class="switch-field"
+                                   id="uifm_frm_main_email_dissubm"
+                                   name="uifm_frm_main_email_dissubm"
+                                   type="checkbox"/>
+                     <a href="javascript:void(0);"
+                       data-toggle="tooltip" data-placement="right" 
+                       data-original-title="<?php echo __('Disable email submission','FRocket_admin'); ?>"
+                       ><span class="fa fa-question-circle"></span></a>
+                </div>
+            </div>
+        </div>
+<?php } ?>
     </div>
   <!--  <div class="space10 zgfm-opt-divider-stl1"></div>
     <div class="sfdc-row">
