@@ -1451,7 +1451,7 @@ class Frontend extends MX_Controller {
                             $mail->SMTPAuth = true;                               // Enable SMTP authentication
                             $mail->Username = model_settings::$db_config['smtp_user'];                 // SMTP username
                             $mail->Password = model_settings::$db_config['smtp_pass'];                           // SMTP password
-                             $mail->SMTPSecure = "ssl";                            // Enable TLS encryption, `ssl` also accepted
+                            $mail->SMTPSecure = model_settings::$db_config['smtp_conn'];                             // Enable TLS encryption, `ssl` also accepted
                             $mail->Port = model_settings::$db_config['smtp_port'];                                    // TCP port to connect to
                             break;
                         case 3:

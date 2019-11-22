@@ -170,6 +170,7 @@ class Intranet extends CI_Controller {
         $data['smtp_port'] = $rdata->smtp_port;
         $data['smtp_user'] = $rdata->smtp_user;
         $data['smtp_pass'] = $rdata->smtp_pass;
+        $data['smtp_conn'] = $rdata->smtp_conn;        
         $data['sendmail_path'] = $rdata->sendmail_path;
         $data['language'] = $rdata->language;
 
@@ -243,9 +244,10 @@ class Intranet extends CI_Controller {
         $data['admin_mail'] = ($this->input->post('admin_mail')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('admin_mail')) : '';
         $data['type_email'] = ($this->input->post('type_mail')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('type_mail')) : 1;
         $data['smtp_host'] = ($this->input->post('smtp_host')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('smtp_host')) : '';
-        $data['smtp_port'] = ($this->input->post('smtp_port')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('smtp_port')) : '';
+        $data['smtp_port'] = ($this->input->post('smtp_port')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('smtp_port')) : '0';
         $data['smtp_user'] = ($this->input->post('smtp_user')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('smtp_user')) : '';
         $data['smtp_pass'] = ($this->input->post('smtp_pass')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('smtp_pass')) : '';
+        $data['smtp_conn'] = ($this->input->post('smtp_conn')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('smtp_conn')) : '';
         $data['sendmail_path'] = ($this->input->post('sendmail_path')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('sendmail_path')) : '';
         $data['language'] = ($this->input->post('language')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('language')) : 'en';
 

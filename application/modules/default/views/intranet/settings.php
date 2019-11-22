@@ -10,7 +10,7 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   CVS: $Id: settings.php, v2.00 2013-11-30 02:52:40 Softdiscover $
- * @link      https://php-form-builder.zigaform.com/
+ * @link      https://php-cost-estimator.zigaform.com/
  */
 if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
@@ -21,15 +21,15 @@ if (!defined('BASEPATH')) {
 if ($this->session->flashdata('message')) {
     $resp = explode(':', $this->session->flashdata('message'))
     ?>
-    <div class="sfdc-alert sfdc-alert-<?php echo trim($resp[0]); ?>">
+    <div class="alert alert-<?php echo trim($resp[0]); ?>">
         <button data-dismiss="alert" class="close" type="button">×</button>
     <?php echo $resp[1]; ?>
     </div>
     <?php 
 }
 ?>
-<div class="row">
-<div class="col-lg-12">
+<div class="">
+<div class="sfdc-col-lg-12">
     <div class="widget widget-padding span12">
         <div class="widget-header">
             <i class="fa fa-list-alt"></i><h5><?php echo __('Settings','FRocket_admin'); ?>  </h5>
@@ -107,7 +107,7 @@ echo form_open(site_url().'default/intranet/savesettings', $attributes);
                     </div> 
                     <div class="showsmtp" >
                         <div class="sfdc-form-group">
-                            <label class=" col-sm-2 control-label">SMTP port (ssl)</label>
+                            <label class=" col-sm-2 control-label">SMTP host</label>
                             <div class="sfdc-col-sm-10">
                                 <input name="smtp_host" type="text" placeholder="<?php echo __('Type','FRocket_admin'); ?> smtp host" class="sfdc-form-control col-md-7" value="<?php echo (isset($smtp_host)) ? $smtp_host : ''; ?>">
                             </div>
@@ -130,6 +130,31 @@ echo form_open(site_url().'default/intranet/savesettings', $attributes);
                                 <input name="smtp_pass" type="password" placeholder="<?php echo __('Type','FRocket_admin'); ?> smtp password" class="sfdc-form-control col-md-7" value="<?php echo (isset($smtp_pass)) ? $smtp_pass : ''; ?>">
                             </div>
                         </div>
+                        
+                        <div class="sfdc-form-group">
+                            <label class=" col-sm-2 control-label">SMTP Connection Security</label>
+                            <div class="sfdc-col-sm-10">
+                                
+                                <select class="sfdc-form-control input-sm" name="smtp_conn" class="chzn-select" id="smtp_conn" data-placeholder="Select here.." >
+                                    <?php
+                                    $sel = " selected=\"selected\"";
+                                    ?>
+                                    <option value="ssl" <?php
+                                                      if (intval($smtp_conn) === 'ssl') {
+                                                          echo $sel;
+                                                      }
+                                    ?>>ssl</option>
+                                    <option value="tls" <?php
+                                                      if (intval($smtp_conn) === 'tls') {
+                                                          echo $sel;
+                                                      }
+                                    ?>>tls</option>
+                                   
+                                </select>
+
+
+                            </div>
+                        </div>
                     </div>  
                     <div class="showsmtp2" >
                         <div class="sfdc-form-group">
@@ -145,16 +170,13 @@ echo form_open(site_url().'default/intranet/savesettings', $attributes);
             </div>
         </div>
         <div class="widget-footer">
-            
              <?php if(UIFORM_DEMO===1){?> 
-                    <button class="sfdc-btn sfdc-btn-primary" onclick="alert('this feature disabled on this demo');"><?php echo __('Save','FRocket_admin'); ?></button>            
+                                        
+                <button  class="sfdc-btn sfdc-btn-primary" onclick="alert('this feature disabled on this demo');"  ><?php echo __('Save','FRocket_admin'); ?></button>
                 <?php }else{?> 
-                
-                 <button type="submit" class="sfdc-btn sfdc-btn-primary" onclick="javascript:uifmsetting.settings_saveFormSettings();"><?php echo __('Save','FRocket_admin'); ?></button>
+                    <button type="submit" class="sfdc-btn sfdc-btn-primary" onclick="javascript:uifmsetting.settings_saveFormSettings();"><?php echo __('Save','FRocket_admin'); ?></button>
+
                 <?php }?> 
-            
-            
-           
             <button type="button" class="sfdc-btn sfdc-btn-default"  onclick="javascript:uifmsetting.redirect('<?php echo site_url() . 'default/dashboard/index'; ?>');return false;" ><?php echo __('Cancel','FRocket_admin'); ?></button>
         </div>
     </div>

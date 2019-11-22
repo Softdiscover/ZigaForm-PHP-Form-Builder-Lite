@@ -369,6 +369,27 @@ class Auth
                      
                 }
                 
+                //below 4.3
+                 if (!$install_ver || version_compare($install_ver,"4.3", '<')) {
+                    $tbname = "fbcf_uiform_settings";
+                   
+                    $query2 = $this->CI->db->query("SHOW TABLES LIKE '$tbname'");
+                    $row = (Array)$query2->row();
+                    
+                    if ((string)reset($row) === $tbname) {
+                        
+                        $query2 = $this->CI->db->query("SHOW COLUMNS FROM " . $tbname . " LIKE 'smtp_conn'");
+                        $row = (Array)$query2->row();
+                        if (empty($row)) {
+                            $sql = "ALTER TABLE " . $tbname . " ADD  smtp_conn varchar(255) DEFAULT NULL;";
+                            $this->CI->db->query($sql);
+                        }
+
+                        
+                    }
+                     
+                }
+                
                 //update
                
                 $data = array(

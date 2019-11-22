@@ -137,7 +137,7 @@ class SFM_Group_Google extends SFM_Group {
 		}
 
 		$this->option_values[ 'import_template' ] = self::import_template;
-		$this->option_values[ 'admin_ajax' ] = admin_url( 'admin-ajax.php' );
+		$this->option_values[ 'admin_ajax' ] = "";
 
 		return $this->option_values;
 	}

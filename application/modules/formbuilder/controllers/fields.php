@@ -145,10 +145,14 @@ class Fields extends MX_Controller {
         ob_end_clean();
         
         $html_output.=html_entity_decode($html_output_head);
-        
+       
+        $search2=base_url();
+        $replace2="{{{data.site_url}}}";
         
         foreach ($data_render as $key => $value) {
             $html_output.='<script type="text/html" id="tmpl-zgfm-field-opt-type-'.$key.'">';
+            $value= str_replace($search2, $replace2, $value);
+            
             $html_output.= htmlentities($value);
             $html_output.='</script>';
             $html_output.='';

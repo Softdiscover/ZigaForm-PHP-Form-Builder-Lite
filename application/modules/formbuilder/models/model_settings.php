@@ -53,7 +53,7 @@ class model_settings extends CI_Model
     
      function getOptions() {
         $query = sprintf('
-            select uf.version,uf.type_email,uf.smtp_host,uf.smtp_port,uf.smtp_user,uf.smtp_pass,uf.sendmail_path,uf.language
+            select uf.version,uf.type_email,uf.smtp_host,uf.smtp_port,uf.smtp_user,uf.smtp_pass,uf.smtp_conn,uf.sendmail_path,uf.language
             from %s uf
             where uf.id=%s
             ', $this->table, 1);
@@ -98,7 +98,7 @@ class model_settings extends CI_Model
         $this->load->library('cache');
         $data = $this->cache->get('settings');
         if (empty($data)) {
-            $this->db->select('site_title, admin_mail, type_email,smtp_host,smtp_port,smtp_user,smtp_pass,sendmail_path,language,version');
+            $this->db->select('site_title, admin_mail, type_email,smtp_host,smtp_port,smtp_user,smtp_pass,smtp_conn,sendmail_path,language,version');
             $this->db->from('{PRE}uiform_settings');
             $this->db->where(array('id' => 1));
             $this->db->limit(1);
@@ -112,6 +112,7 @@ class model_settings extends CI_Model
                 self::$db_config['smtp_port']       = $row->smtp_port;
                 self::$db_config['smtp_user']       = $row->smtp_user;
                 self::$db_config['smtp_pass']       = $row->smtp_pass;
+                self::$db_config['smtp_conn']       = $row->smtp_conn;
                 self::$db_config['sendmail_path']   = $row->sendmail_path;
                 self::$db_config['language']   = $row->language;
                 self::$db_config['version']      = $row->version;
@@ -126,6 +127,7 @@ class model_settings extends CI_Model
             self::$db_config['smtp_port']       = $data['smtp_port'];
             self::$db_config['smtp_user']       = $data['smtp_user'];
             self::$db_config['smtp_pass']       = $data['smtp_pass'];
+            self::$db_config['smtp_conn']       = $data['smtp_conn'];
             self::$db_config['sendmail_path']   = $data['sendmail_path'];
             self::$db_config['language']   = $data['language'];
             self::$db_config['version']      = (isset($data['version']))?$data['version']:0;
