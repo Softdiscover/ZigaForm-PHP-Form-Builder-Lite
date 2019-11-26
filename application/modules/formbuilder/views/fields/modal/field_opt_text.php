@@ -91,8 +91,8 @@ ob_start();
                                                         </ul>
                                                         <div class="uifm-tab-navigation" style="display:none;">
                                                             <div>
-                                                                <a class="uifm-previous-tab" href="javascript:void(0);" onclick="javascript:rocketform.setScrollTab(1,this);" >Ã¢â€”â‚¬</a>
-                                                                <a class="uifm-next-tab" href="javascript:void(0);" onclick="javascript:rocketform.setScrollTab(-1,this);">Ã¢â€“Â¶</a>
+                                                                <a class="uifm-previous-tab" href="javascript:void(0);" onclick="javascript:rocketform.setScrollTab(1,this);" ><?php echo htmlentities('<');?></a>
+                                                                <a class="uifm-next-tab" href="javascript:void(0);" onclick="javascript:rocketform.setScrollTab(-1,this);"><?php echo htmlentities('>');?></a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -154,48 +154,7 @@ ob_start();
   </div>                                      
  
 <script type="text/javascript">
-jQuery(function($) 
-	{
-        $('#zgpb-field-opt-content').find('select.sfm').change( function(){
-            var font_sel=$(this).data('stylesFontMenu').uifm_preview_font_change();
-            var f_store=$( this ).data('field-store');
-            var f_val=JSON.stringify(font_sel);
-            zgpb_core.updateModalFieldCoreAndPreview(f_store,f_val);
-        });
-         
-        
-	}); 
-$uifm(function($) 
-	{
-           $("#zgpb-field-opt-content .sfdc-input-group-btn > .sfdc-btn").click(function(){
-         var element = $(this),
-             input=element.find('input');
-         if(parseInt(input.val())===0){
-            element.addClass('sfdc-active');
-            input.val(1);
-         }else{
-            element.removeClass('sfdc-active'); 
-            input.val(0);
-         }
-    }); 
-    
-     
-            /*radio buttons groups*/
-    $("#zgpb-field-opt-content .sfdc-btn-group > .sfdc-btn[data-settings-option='group-radiobutton']").click(function(){
-        var element = $(this),
-            parent = element.parent();
-            parent.children(".sfdc-btn[data-toggle-enable]").removeClass(function(){
-                return $(this).data("toggle-enable")
-            }).addClass(function(){
-                return $(this).data("toggle-disable")
-            }).children("input").prop('checked', false);
-            element.removeClass($(this).data("toggle-disable")).addClass(element.data("toggle-enable"));
-            element.children("input").prop('checked', true);
-           
-    });    
-        
-    
-	});
+ zgfm_back_fld_options.selfld_field_opt_text();
 </script>
 
 <?php

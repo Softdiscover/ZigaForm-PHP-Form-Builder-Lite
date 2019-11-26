@@ -140,12 +140,12 @@ echo form_open(site_url().'default/intranet/savesettings', $attributes);
                                     $sel = " selected=\"selected\"";
                                     ?>
                                     <option value="ssl" <?php
-                                                      if (intval($smtp_conn) === 'ssl') {
+                                                      if (strval($smtp_conn) === 'ssl') {
                                                           echo $sel;
                                                       }
                                     ?>>ssl</option>
                                     <option value="tls" <?php
-                                                      if (intval($smtp_conn) === 'tls') {
+                                                      if (strval($smtp_conn) === 'tls') {
                                                           echo $sel;
                                                       }
                                     ?>>tls</option>

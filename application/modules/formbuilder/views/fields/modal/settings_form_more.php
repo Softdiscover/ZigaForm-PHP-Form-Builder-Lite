@@ -258,12 +258,8 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
     <!--/ load modules -->
     
 </div>
-<script type="text/javascript">
- 
-jQuery(function($) 
-	{     
-         /*add id to more tab*/
-         $('#zgpb_fld_col_ctmid').val('rockfm_'+$('#uifm-field-selected-id').val()); 
-        
-	});
+ <script type="text/javascript">
+   
+ zgfm_back_fld_options.selfld_settings_form_more();
+
 </script>

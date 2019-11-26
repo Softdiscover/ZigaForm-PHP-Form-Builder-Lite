@@ -971,34 +971,8 @@ ob_start();
     </div>
 
 </div>
-
 <script type="text/javascript">
-$uifm(function($) 
-	{
-            $("#zgpb_fld_col_bg_type_1").on("click", function() {
-                
-               $('#zgpb_fld_col_bg_type_1_cont').show();
-               $('#zgpb_fld_col_bg_type_2_cont').hide();
-                
-            });
-            
-            $("#zgpb_fld_col_bg_type_2").on("click", function() {
-                
-               $('#zgpb_fld_col_bg_type_1_cont').hide();
-               $('#zgpb_fld_col_bg_type_2_cont').show();
-                
-            });
-            
-            $("#zgpb_fld_col_bg_sizetype").on("click", function () {
-                var sVal = $(this).val();
-                if(parseInt(sVal)===1 || parseInt(sVal)===2){
-                     $('#zgpb_fld_col_bg_sizetype_len_wrap').show();
-                 }else{
-                     $('#zgpb_fld_col_bg_sizetype_len_wrap').hide();
-                 }
-            });
-     
-	});
+zgfm_back_fld_options.selfld_field_opt_column();
 </script>
 <?php
 $cntACmp = ob_get_contents();

@@ -154,6 +154,16 @@ class Uiform_Form_Helper {
         $string= preg_replace('/[^\pL\pN]+/', '', $string);
         $string = preg_replace("/[^a-zA-Z0-9]+/", "", $string);
         $string= strtolower($string);
+        //reserved words
+        switch (trim($string)) {
+            case 'check':
+                $string=$string.'1';
+                break;
+            default:
+                # code...
+                break;
+        }
+
         return $string;
     }
     

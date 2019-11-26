@@ -362,6 +362,14 @@ var zgfm_back_fld_options = function(){
                                                 default: 
                                             } 
                                             
+                                   var tmp_fast_load=uiform_vars.fields_fastload;
+                                   if(parseInt(tmp_fast_load)===1){
+                                        //js scripts        
+                                        zgfm_back_fld_options.selfld_settings_form_more();    
+                                        zgfm_back_fld_options.selfld_field_opt_column();
+                                        zgfm_back_fld_options.selfld_field_opt_text();
+                                   }
+                                   
                                     /* reenable tooltip*/
                                         /*modal*/
                                     if(false){
@@ -410,6 +418,110 @@ var zgfm_back_fld_options = function(){
                                         //rocketform.enableSettingTabOption('uifm-label');
                                     }
     };
+
+
+/*
+* script for settings form more
+*/
+    
+    this.selfld_settings_form_more = function() {
+        $uifm(function($) 
+        {    
+             /*add id to more tab*/
+             $('#zgpb_fld_col_ctmid').val('rockfm_'+$('#uifm-field-selected-id').val()); 
+            
+        });
+    };
+
+/*
+* script for field opt column
+*/
+    
+    this.selfld_field_opt_column = function() {
+              $uifm(function($) 
+            {
+                    $("#zgpb_fld_col_bg_type_1").on("click", function() {
+                        
+                       $('#zgpb_fld_col_bg_type_1_cont').show();
+                       $('#zgpb_fld_col_bg_type_2_cont').hide();
+                        
+                    });
+                    
+                    $("#zgpb_fld_col_bg_type_2").on("click", function() {
+                        
+                       $('#zgpb_fld_col_bg_type_1_cont').hide();
+                       $('#zgpb_fld_col_bg_type_2_cont').show();
+                        
+                    });
+                    
+                    $("#zgpb_fld_col_bg_sizetype").on("click", function () {
+                        var sVal = $(this).val();
+                        if(parseInt(sVal)===1 || parseInt(sVal)===2){
+                             $('#zgpb_fld_col_bg_sizetype_len_wrap').show();
+                         }else{
+                             $('#zgpb_fld_col_bg_sizetype_len_wrap').hide();
+                         }
+                    });
+             
+            });
+         
+        jQuery(function($) 
+            {     
+                 /*add id to more tab*/
+                 $('#zgpb_fld_col_ctmid').val('rockfm_'+$('#uifm-field-selected-id').val()); 
+                
+            });
+    };    
+
+
+/*
+* script for field opt text
+*/
+    
+    this.selfld_field_opt_text = function() {
+        jQuery(function($) 
+            {
+                $('#zgpb-field-opt-content').find('select.sfm').change( function(){
+                    var font_sel=$(this).data('stylesFontMenu').uifm_preview_font_change();
+                    var f_store=$( this ).data('field-store');
+                    var f_val=JSON.stringify(font_sel);
+                    zgpb_core.updateModalFieldCoreAndPreview(f_store,f_val);
+                });
+                 
+                
+            }); 
+        $uifm(function($) 
+            {
+                   $("#zgpb-field-opt-content .sfdc-input-group-btn > .sfdc-btn").click(function(){
+                 var element = $(this),
+                     input=element.find('input');
+                 if(parseInt(input.val())===0){
+                    element.addClass('sfdc-active');
+                    input.val(1);
+                 }else{
+                    element.removeClass('sfdc-active'); 
+                    input.val(0);
+                 }
+            }); 
+            
+             
+                    /*radio buttons groups*/
+            $("#zgpb-field-opt-content .sfdc-btn-group > .sfdc-btn[data-settings-option='group-radiobutton']").click(function(){
+                var element = $(this),
+                    parent = element.parent();
+                    parent.children(".sfdc-btn[data-toggle-enable]").removeClass(function(){
+                        return $(this).data("toggle-enable")
+                    }).addClass(function(){
+                        return $(this).data("toggle-disable")
+                    }).children("input").prop('checked', false);
+                    element.removeClass($(this).data("toggle-disable")).addClass(element.data("toggle-enable"));
+                    element.children("input").prop('checked', true);
+                   
+            });    
+                
+            
+            });
+    }; 
     
 };
 window.zgfm_back_fld_options = zgfm_back_fld_options = $.zgfm_back_fld_options = new zgfm_back_fld_options();
