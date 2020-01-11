@@ -56,7 +56,7 @@ class Template
      * @return	array
      */
     function load($template = '', $view = '', $view_data = array(), $return = false) 
-    {
+    {   
         $this->CI = & get_instance();
         $this->set('content', $this->CI->load->view($view, $view_data, true));
         return $this->CI->load->view($template, $this->template_data, $return);
@@ -74,6 +74,7 @@ class Template
      */
     function loadPartial($template = '', $view = '', $view_data = array(), $return = false) 
     {
+       
         $this->set('content', $this->template_data['controller']->load->view2($view, $view_data, true));
         return $this->template_data['controller']->load->view2($template, $this->template_data, $return);
     }

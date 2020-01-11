@@ -28,7 +28,7 @@ if (!defined('BASEPATH')) {
  * @version   Release: 1.00
  * @link      http://php-form-builder.uiform.com/
  */
-class Recaptcha extends MX_Controller {
+class Recaptcha extends BackendController {
     /**
      * max number of forms in order show by pagination
      *

@@ -11,11 +11,9 @@ ob_start();
     _uifmvar.fm_ids = _uifmvar.fm_ids || [];
     _uifmvar.fm_ids.push(['<?php echo $id_form;?>']);
     
-    <?php if(!empty($addon)){?>
-        _uifmvar['addon'] = JSON.parse('<?php echo $addon;?>');
-    <?php }else{?>
-        _uifmvar['addon'] = {};
-    <?php }?>    
+    
+    var rockfm_vars=<?php echo json_encode($rockfm_vars_arr, JSON_PRETTY_PRINT); ?>; 
+     
     <?php 
     
        if(isset($lmode) && $lmode!=''){

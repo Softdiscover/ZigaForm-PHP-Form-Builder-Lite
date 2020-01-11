@@ -27,7 +27,7 @@ if (!defined('BASEPATH')) {
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class Forms extends MX_Controller {
+class Forms extends BackendController {
     /**
      * max number of forms in order show by pagination
      *
@@ -73,8 +73,11 @@ class Forms extends MX_Controller {
         $this->load->model('model_form_log');
         $this->load->model('addon/model_addon');
         $this->load->model('addon/model_addon_details');
+        
+        
         $this->load->library('cache');  
-        $this->auth->authenticate(true);
+        
+        
     }
     
     public function ajax_pdf_showsample() {
@@ -297,9 +300,10 @@ class Forms extends MX_Controller {
                                     
         $data=array();
         $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
-        $fmb_data = (isset($_POST['form_data'])) ? $_POST['form_data'] : '';
-        $fmb_data = urldecode($fmb_data);
-        $fmb_data = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
+        $fmb_data = (isset($_POST['form_data']))?urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['form_data'])):'';
+        if(!empty($fmb_data)){
+        $fmb_data = (isset($fmb_data) && is_array($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
+        }
             $data['fmb_data'] = $fmb_data;
                                     
         $json = array();
@@ -662,6 +666,32 @@ class Forms extends MX_Controller {
         die();
     }
 
+    public function ajax_save_newform() {
+            
+        $json = array();
+        try{
+            if(!Uiform_Form_Helper::check_User_Access()){
+                throw new Exception(__('Error! User has no permission to edit this form','FRocket_admin'));
+            }
+            $data=array();
+            $data['fmb_name'] = (!empty($_POST['uifm_frm_main_title'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
+            $this->db->set($data);
+            $this->db->insert($this->model_forms->table);
+
+            $idActivate = $this->db->insert_id();
+            
+            $json['status'] = 'created';
+            $json['id'] = $idActivate;
+                
+        } catch (Exception $e) {
+            
+        }
+        //return data to ajax callback
+        header('Content-Type: application/json');
+        echo json_encode($json);
+        die();
+    }
+    
     /**
      * Forms::ajax_save_form()
      * 
@@ -690,6 +720,11 @@ class Forms extends MX_Controller {
         $fmb_addon_data = (isset($_POST['addon_data']))?urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['addon_data'])):'';
         $fmb_addon_data = (isset($fmb_addon_data) && $fmb_addon_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_addon_data, true)) : array();
          
+            
+            //form_inputs
+        $fmb_data['fm_inputs'] = (isset($_POST['form_inputs']))?urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['form_inputs'])):'';
+            
+        
         //more options
         $data['fmb_rec_tpl_html'] = (isset($_POST['uifm_frm_rec_tpl_html']))?urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['uifm_frm_rec_tpl_html'])):'';
         $data['fmb_rec_tpl_st'] = (isset($_POST['uifm_frm_rec_tpl_st']))?urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['uifm_frm_rec_tpl_st'])):'';
@@ -730,10 +765,45 @@ class Forms extends MX_Controller {
         
         $data_form = $this->model_forms->getFormById($json['id']);
         $fmb_data = json_decode($data_form->fmb_data, true);
-        //all fields position
-        $tab_cont = $fmb_data['steps']['tab_cont'];
+                            
+                           
+            // all data fields
+            $fmb_data['addons'] = $fmb_addon_data;
+            
+            if (intval($json['id']) === 0) {
+                            throw new Exception('Form id error');
+            }
+                $where = array(
+                    'fmb_id' => $json['id']
+                );
+                
+                
+                 // process addons
+                    if(!empty(self::$_addons_actions)){
+                        foreach (self::$_addons_actions as $zkey => $zvalue) {
+                            
+                            if(strval($zkey)==='saveForm_store'){
+                                foreach ($zvalue as $zkey2 => $zvalue2) {
+                                    foreach ($zvalue2 as $zkey3 => $zvalue3) {
+                                       // call_user_func(array(self::$_addons[$zkey3][$zvalue3['controller']], $zvalue3['function']),$json['id'], $value['data'],$fmb_data);
+                                      
+                                        self::$_addons[$zkey3][$zvalue3['controller']]->saveData($json['id'],$fmb_data);
+                                    }
+                                }
+                            }
+                           /* 
+                           if(isset(self::$_addons[$key][$value['controller']])){
+                                //call_user_func(array(self::$_addons[$key][$value['controller']] , 'saveData'));
+                                self::$_addons[$key][$value['controller']]->saveData($json['id'], $value['data'],$fmb_data);
+                            
+                                
+                            }*/
+                        }
+                    }
+                
+                  
         // all data fields
-        $this->current_data_addon = $fmb_addon_data;
+        $this->current_data_addon = $fmb_data['addons'];    
         $this->current_data_form = $fmb_data['steps_src'];
         $this->current_data_num_tabs = $fmb_data['num_tabs'];
         $this->current_data_tab_cont = $fmb_data['steps']['tab_cont'];
@@ -744,33 +814,7 @@ class Forms extends MX_Controller {
         $this->current_data_main = ($fmb_data['main']) ? $fmb_data['main'] : array();
         
         
-        if (intval($json['id']) > 0) {
-            
-             // process addons
-            $data_addon_back = $this->cache->get('addon_back');
-            
-                    if(!empty($fmb_addon_data)){
-                        foreach ($fmb_addon_data as $key => $value) {
-                           if(isset($data_addon_back[$key][$value['controller']])){
-                                //call_user_func(array(self::$_addons[$key][$value['controller']] , 'saveData'));
-                              
-                               modules::run($key.'/'.$value['controller'].'/saveData',$json['id'], $value['data']);
-                               
-                               // self::$_addons[$key][$value['controller']]->saveData($json['id'], $value['data']);
-                                
-                                switch($key){
-                                    case 'addon_func_anim':
-                                    
-                                        $this->current_data_form = modules::run($key.'/'.$value['controller'].'/mergeData',$this->current_data_form,$value['data']);
-                                        
-                                       // self::$_addons[$key][$value['controller']]->mergeData($this->current_data_form,$value['data']);
-                                        
-                                        break;
-                                }
-                                
-                            }
-                        }
-                    }
+                            
             
             //save fields to table
             $this->saved_form_id = $json['id'];
@@ -853,21 +897,25 @@ class Forms extends MX_Controller {
             }
             
              // process addons
-            $data_addon_back = $this->cache->get('addon_back');
-            
-                    if(!empty($fmb_addon_data)){
-                        foreach ($fmb_addon_data as $key => $value) {
-                           if(isset($data_addon_back[$key][$value['controller']])){
-                                //call_user_func(array(self::$_addons[$key][$value['controller']] , 'saveData'));
-                                   
-                               modules::run($key.'/'.$value['controller'].'/saveLog',$json['id'],$save_log_st,$log_lastid, $value['data']);
-                               //self::$_addons[$key][$value['controller']]->saveLog($json['id'],$save_log_st,$log_lastid, $value['data']);     
-                                
+             if(!empty(self::$_addons_actions)){
+                        foreach (self::$_addons_actions as $zkey => $zvalue) {
+                            
+                            if(strval($zkey)==='OnSaveForm_saveLog'){
+                                foreach ($zvalue as $zkey2 => $zvalue2) {
+                                    foreach ($zvalue2 as $zkey3 => $zvalue3) {
+                                        
+                                        if(isset($this->current_data_addon[$zkey3]['data'])){
+                                            self::$_addons[$zkey3][$zvalue3['controller']]->saveLog($json['id'],$save_log_st,$log_lastid, $this->current_data_addon[$zkey3]['data']);
+                                        }
+                                        
+                                    }
+                                }
                             }
+                          
                         }
                     }
             
-        }
+        
         
          //checking errors
             $output_error = ob_get_contents();
@@ -904,31 +952,22 @@ class Forms extends MX_Controller {
         $data = $this->current_data_form[intval($child_field['num_tab'])][$child_field['id']];
         
         $data['addon_extraclass']='';
-         // process addons
         
-        $tmp_arr=array();
-        
-         $data_addon_back = $this->cache->get('addon_back');
-                                    
-             if(!empty($this->current_data_addon)){
-                foreach ($this->current_data_addon as $key => $value) {
-                   if(isset($data_addon_back[$key][$value['controller']])){
-                        
-                        switch($key){
-                            case 'addon_func_anim':
-                                if(isset($data['addon_func_anim'])){
-                                    
-                                    $data=modules::run($key.'/'.$value['controller'].'/getExtraDataField2', $data);
+        // process addons
+          if(!empty(self::$_addons_actions)){
+                        foreach (self::$_addons_actions as $zkey => $zvalue) {
                             
-                                    //$data = array_merge($data, $tmp_arr);
-                                   // self::$_addons[$key][$value['controller']]->getExtraDataField($data);
+                            if(strval($zkey)==='field_addon_extraclass'){
+                                foreach ($zvalue as $zkey2 => $zvalue2) {
+                                    foreach ($zvalue2 as $zkey3 => $zvalue3) {
+            
+                                        self::$_addons[$zkey3][$zvalue3['controller']]->getExtraDataField($data);
+                                    }
                                 }
-                                break;
+                            }
+                          
                         }
-
                     }
-                }
-            }
         
         switch (intval($child_field['type'])) {
             case 6:
@@ -2394,7 +2433,7 @@ class Forms extends MX_Controller {
         //generate cache
             //check if cache exist
             
-        $this->load->library('cache');
+        /*$this->load->library('cache');
             $data1 = $this->cache->get('addon_back');
             $data2 = $this->cache->get('addon_front');
             $data3 = $this->cache->get('addon_routes');
@@ -2420,7 +2459,7 @@ class Forms extends MX_Controller {
                             
                redirect(site_url() . 'formbuilder/forms/list_uiforms');
                
-            } 
+            } */
         
         
        $filter_data= get_option('zgfm_listform_searchfilter',true);
@@ -2563,7 +2602,8 @@ class Forms extends MX_Controller {
             $data['uifm_frm_record_tpl_enable']=$formdata->fmb_rec_tpl_st;
             $data['uifm_frm_record_tpl_content']=$formdata->fmb_rec_tpl_html;*/
         }
-       
+       $data['addons_actions']=self::$_addons_actions;
+                            
        $pdf_paper_size = array(
         "4a0" => array(0, 0, 4767.87, 6740.79),
         "2a0" => array(0, 0, 3370.39, 4767.87),
@@ -2624,8 +2664,13 @@ class Forms extends MX_Controller {
         "11x17" => array(0, 0, 792.00, 1224.00),
     );
         $data['pdf_paper_size']=$pdf_paper_size;
-        
+
         $data['fields_fastload'] = get_option( 'zgfm_fields_fastload', 0 );
+
+        //$data['modules_tab_extension']= self::$_modules['addon']['backend']->addons_doActions('back_exttab_block');
+        
+        $data['modules_tab_extension']= modules::run('addon/zfad_backend/addons_doActions','back_exttab_block' );
+        
         
         $this->template->loadPartial('layout-editform', 'forms/create_form', $data);
     }
@@ -2661,15 +2706,28 @@ class Forms extends MX_Controller {
             $onload_scroll = (isset($form_data_onsubm['main']['onload_scroll'])) ? $form_data_onsubm['main']['onload_scroll'] : '1';
                             
             $preload_noconflict = (isset($form_data_onsubm['main']['preload_noconflict'])) ? $form_data_onsubm['main']['preload_noconflict'] : '1';    
-                            
+            
+  //load form variables
+            $form_variables=array();
+            $form_variables['_uifmvar']['addon']=self::$_addons_jsactions;
+            $form_variables['_uifmvar']['is_demo']=0;
+            $form_variables['_uifmvar']['is_dev']=0;
+            $form_variables['enqueue_scripts']=do_filter('zgfm_front_enqueue_scripts', array());
+            $form_variables['ajaxurl']='';
+            $form_variables['uifm_baseurl']=base_url();
+            $form_variables['uifm_siteurl']=site_url();
+            $form_variables['uifm_sfm_baseurl']=base_url().'libs/styles-font-menu/styles-fonts/png/';
+            $form_variables['imagesurl']= base_url().'assets/frontend/images';
+            
+            
             $temp=array();
             $temp['id_form']=$id_form;
             $temp['site_url']=site_url();
             $temp['base_url']=base_url();
             $temp['onload_scroll']=$onload_scroll;
             $temp['preload_noconflict']=$preload_noconflict;
-            $data_addon_front = $this->cache->get('addon_front');
-            $temp['addon']= json_encode($data_addon_front);
+            //$data_addon_front = $this->cache->get('addon_front');
+            $temp['addon']= $form_variables;
             $data['script'] = escape_text($this->load->view('formbuilder/forms/get_code_widget', $temp, true));
 
             $content = '';
@@ -2680,8 +2738,8 @@ class Forms extends MX_Controller {
             $temp['url_form']=$data['url'].'&lmode=1';
             $temp['base_url']=base_url();
             $temp['form_id']=$id_form;
-            $data_addon_front = $this->cache->get('addon_front');
-            $temp['addon']= json_encode($data_addon_front);
+            //$data_addon_front = $this->cache->get('addon_front');
+            $temp['rockfm_vars_arr']= $form_variables;
             $data['iframe'] = escape_text($this->load->view('formbuilder/forms/get_code_iframe', $temp, true));
                             
             $json = array();
@@ -2716,15 +2774,27 @@ class Forms extends MX_Controller {
             $onload_scroll = (isset($form_data_onsubm['main']['onload_scroll'])) ? $form_data_onsubm['main']['onload_scroll'] : '1';
                             
             $preload_noconflict = (isset($form_data_onsubm['main']['preload_noconflict'])) ? $form_data_onsubm['main']['preload_noconflict'] : '1';    
-                            
+            
+  //load form variables
+            $form_variables=array();
+            $form_variables['_uifmvar']['addon']=self::$_addons_jsactions;
+            $form_variables['_uifmvar']['is_demo']=0;
+            $form_variables['_uifmvar']['is_dev']=0;
+            $form_variables['enqueue_scripts']=do_filter('zgfm_front_enqueue_scripts', array());
+            $form_variables['ajaxurl']='';
+            $form_variables['uifm_baseurl']=base_url();
+            $form_variables['uifm_siteurl']=site_url();
+            $form_variables['uifm_sfm_baseurl']=base_url().'libs/styles-font-menu/styles-fonts/png/';
+            $form_variables['imagesurl']= base_url().'assets/frontend/images';
+            
             $temp=array();
             $temp['id_form']=$id_form;
             $temp['site_url']=site_url();
             $temp['base_url']=base_url();
             $temp['onload_scroll']=$onload_scroll;
             $temp['preload_noconflict']=$preload_noconflict;
-            $data_addon_front = $this->cache->get('addon_front');
-            $temp['addon']= json_encode($data_addon_front);
+            //$data_addon_front = $this->cache->get('addon_front');
+            $temp['rockfm_vars_arr']= $form_variables;
             $data['script'] = escape_text($this->load->view('formbuilder/forms/get_code_widget', $temp, true));
             $data['id_form'] = $id_form;
             $content = '';
@@ -2736,7 +2806,7 @@ class Forms extends MX_Controller {
             $temp['base_url']=base_url();
             $temp['form_id']=$id_form;
             $data_addon_front = $this->cache->get('addon_front');
-            $temp['addon']= json_encode($data_addon_front);
+            $temp['rockfm_vars_arr']= $form_variables;
             $data['iframe'] = escape_text($this->load->view('formbuilder/forms/get_code_iframe', $temp, true));
 
           //  echo $this->load->view('formbuilder/forms/form_success', $data, true);

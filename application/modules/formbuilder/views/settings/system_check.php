@@ -138,7 +138,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                 <div class="clear"></div>
             </div>
             <div class="widget-footer">
-                
+             
         </div>
         </div> 
     </div>

@@ -40,6 +40,13 @@ class MX_Controller
 {
 	public $autoload = array();
 	
+            public static $_modules = array();
+    public static $_models = array();
+    
+    
+
+        
+        
 	public function __construct() 
 	{
 		$class = str_replace(CI::$APP->config->item('controller_suffix'), '', get_class($this));

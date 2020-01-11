@@ -28,7 +28,7 @@ if (!defined('BASEPATH')) {
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class uifmrecaptcha extends MX_Controller {
+class uifmrecaptcha extends FrontendController {
     /**
      * max number of forms in order show by pagination
      *

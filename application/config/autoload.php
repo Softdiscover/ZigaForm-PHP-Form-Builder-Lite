@@ -52,7 +52,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('database', 'session','template','auth','cache','locale','addon');
+$autoload['libraries'] = array('hooking','database', 'session','template','auth','cache','locale','addon');
 
 
 /*
@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'session','template','auth','cache','
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'form','shortcodes','common','email_configuration','dompdflib','zendjson','wordpress','wpfunctions');
+$autoload['helper'] = array('hooking','url', 'form','shortcodes','common','email_configuration','dompdflib','zendjson','wordpress','wpfunctions');
 
 
 /*

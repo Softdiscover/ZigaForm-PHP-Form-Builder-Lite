@@ -187,6 +187,11 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
              </li>
           </ul>
         </li>
+           <li class="divider-menu"></li>
+        <li ><a href="<?php echo site_url().'addon/zfad_backend/list_extensions';?>">
+            <span class="fa fa-plug"></span> <?php echo __('Extensions','FRocket_admin'); ?>
+            </a>
+        </li>
       </ul>
       <div id="uifm-loading-box" style="display:none;">
           <div class="uifm-alert"></div>

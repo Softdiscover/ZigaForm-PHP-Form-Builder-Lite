@@ -57,7 +57,7 @@ class Intranet extends CI_Controller
         $this->load->model('default/model_settings');
         $this->load->model('model_user');
         $this->table = $this->db->dbprefix . "uiform_user";
-        $this->auth->authenticate(true);
+        
     }
     
     /**

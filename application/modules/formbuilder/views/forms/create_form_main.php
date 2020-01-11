@@ -243,6 +243,7 @@ if(isset($form_id) && intval($form_id)>0){
 <?php
 }
 ?>   
+<input type="hidden" id="uifm_frm_main_isnewform" value="0" >
 <input type="hidden" id="uifm_frm_preview_msg_notsaved" value="<?php echo __('You need to save the form before seeing the preview','FRocket_admin'); ?>">
 <input type="hidden" id="uifm_frm_preview_msg_desktop_title" value="<?php echo __('Preview for desktops','FRocket_admin'); ?>">
 <input type="hidden" id="uifm_frm_preview_msg_tablet_title" value="<?php echo __('Preview for tablets','FRocket_admin'); ?>">

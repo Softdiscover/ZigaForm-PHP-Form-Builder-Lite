@@ -332,3 +332,4 @@ function update_option( $option, $value, $autoload = null ) {
 	//do_action( 'updated_option', $option, $old_value, $value );
 	return true;
 }
+

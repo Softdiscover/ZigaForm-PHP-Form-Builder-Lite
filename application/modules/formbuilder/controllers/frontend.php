@@ -28,7 +28,7 @@ if (!defined('BASEPATH')) {
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class Frontend extends MX_Controller {
+class Frontend extends FrontendController {
 
     const VERSION = '1.2';
 
@@ -136,7 +136,20 @@ class Frontend extends MX_Controller {
             $onload_scroll = (isset($form_data_onsubm['main']['onload_scroll'])) ? $form_data_onsubm['main']['onload_scroll'] : '1';
                             
             $preload_noconflict = (isset($form_data_onsubm['main']['preload_noconflict'])) ? $form_data_onsubm['main']['preload_noconflict'] : '1';    
-                            
+            
+              //load form variables
+            $form_variables=array();
+            $form_variables['_uifmvar']['addon']=self::$_addons_jsactions;
+            $form_variables['_uifmvar']['is_demo']=0;
+            $form_variables['_uifmvar']['is_dev']=0;
+            $form_variables['enqueue_scripts']=do_filter('zgfm_front_enqueue_scripts', array());
+            $form_variables['ajaxurl']='';
+            $form_variables['uifm_baseurl']=base_url();
+            $form_variables['uifm_siteurl']=site_url();
+            $form_variables['uifm_sfm_baseurl']=base_url().'libs/styles-font-menu/styles-fonts/png/';
+            $form_variables['imagesurl']= base_url().'assets/frontend/images';
+            
+            
             $temp=array();
             $temp['id_form']=$rdata->fmb_id;
             $temp['site_url']=site_url();
@@ -145,8 +158,8 @@ class Frontend extends MX_Controller {
             $temp['preload_noconflict']=$preload_noconflict;
             //addon
             
-            $data_addon_front = $this->cache->get('addon_front');
-            $temp['addon']= json_encode($data_addon_front);
+            //$data_addon_front = $this->cache->get('addon_front');
+            $temp['rockfm_vars_arr']= $form_variables;
             
             $data['script'] = $this->load->view('formbuilder/forms/get_code_widget', $temp, true);
 
@@ -1032,6 +1045,8 @@ class Frontend extends MX_Controller {
                 $json['id'] = $idActivate;
 
                 $this->flag_submitted = $idActivate;
+                self::$_form_data['form_id'] = $form_id;
+                self::$_form_data['record_id'] = $idActivate;
                  //preparing mail
                 
                 //$this->load->library('email', emailConfiguration(intval(model_settings::$db_config['type_email'])));
@@ -1166,6 +1181,10 @@ class Frontend extends MX_Controller {
                 $data['mail_error']=($mail_errors)?1:0;
                 $data['fbh_id']=$idActivate;
                 $this->form_response=$data;
+                
+                
+                modules::run('addon/zfad_frontend/addons_doActions','onSubmitForm_pos');
+                
                 return $data;
                 
         } catch (Exception $exception) {
@@ -1353,6 +1372,10 @@ class Frontend extends MX_Controller {
     public function process_mail($data) {
                                             
         $mail_errors=false;
+        //disable mail function
+         if (defined('ZF_DISABLE_EMAIL') && ZF_DISABLE_EMAIL===true) {
+            return $mail_errors;
+        }
         /* $this->email->clear(TRUE);
          $this->email->set_newline("\r\n");*/
                 /*getting admin mail*/
@@ -1544,7 +1567,18 @@ class Frontend extends MX_Controller {
             $onload_scroll = (isset($form_data_onsubm['main']['onload_scroll'])) ? $form_data_onsubm['main']['onload_scroll'] : '1';
                             
             $preload_noconflict = (isset($form_data_onsubm['main']['preload_noconflict'])) ? $form_data_onsubm['main']['preload_noconflict'] : '1';    
-                            
+  //load form variables
+            $form_variables=array();
+            $form_variables['_uifmvar']['addon']=self::$_addons_jsactions;
+            $form_variables['_uifmvar']['is_demo']=0;
+            $form_variables['_uifmvar']['is_dev']=0;
+            $form_variables['enqueue_scripts']=do_filter('zgfm_front_enqueue_scripts', array());
+            $form_variables['ajaxurl']='';
+            $form_variables['uifm_baseurl']=base_url();
+            $form_variables['uifm_siteurl']=site_url();
+            $form_variables['uifm_sfm_baseurl']=base_url().'libs/styles-font-menu/styles-fonts/png/';
+            $form_variables['imagesurl']= base_url().'assets/frontend/images';
+            
             $temp=array();
             $temp['id_form']=$rdata->fmb_id;
             $temp['site_url']=site_url();
@@ -1555,8 +1589,8 @@ class Frontend extends MX_Controller {
             
             //addon
             
-            $data_addon_front = $this->cache->get('addon_front');
-            $temp['addon']= json_encode($data_addon_front);
+            //$data_addon_front = $this->cache->get('addon_front');
+            $temp['rockfm_vars_arr']= $form_variables;
             
             $data['script'] = $this->load->view('formbuilder/forms/get_code_widget', $temp, true);
 

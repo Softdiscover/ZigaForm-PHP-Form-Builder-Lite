@@ -189,6 +189,46 @@ class model_addon extends CI_Model {
         $query2 = $this->db->query($query);
         return $query2->result();
     }
+    
+       /**
+     * addonmodel::getListAddon()
+     * List form estimator
+     * 
+     * @param int $per_page max number of form estimators
+     * @param int $segment  Number of pagination
+     * 
+     * @return array
+     */
+    function getListAddons($per_page = '', $segment = '') {
+        $query = sprintf('
+            select  c.add_name, c.add_title, c.add_info, c.flag_status
+            from %s c            
+            where c.flag_status>=0
+            ORDER BY c.created_date desc
+            ', $this->table);
+
+        if ($per_page != '' || $segment != '') {
+            $segment=(!empty($segment))?$segment:0;
+            $query.=sprintf(' limit %s,%s', (int)$segment, (int)$per_page);
+        }
+        $query2 = $this->db->query($query);
+        return $query2->result();
+    } 
+    
+       function existAddon($addon_name){
+        $query = sprintf('select 
+                COUNT(*) as count
+                from %s ad
+                where ad.add_name ="%s" ',$this->table, $addon_name);
+        $query2 = $this->db->query($query);
+        
+        $row = $query2->row();
+        if (intval($row->count) > 0) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
  
     
 }

@@ -17,13 +17,13 @@ ob_start();
  #rockfm_<?php echo $id;?> {
        <?php 
          //animation delay
-         if(isset($addon_func_anim['delay']) && floatval($addon_func_anim['delay'])>0){
+         if(isset($func_anim['delay']) && floatval($func_anim['delay'])>=0){
              ?>
-             animation-delay: <?php echo $addon_func_anim['delay'];?>s;
+             animation-delay: <?php echo $func_anim['delay'];?>s;
          <?php
          }
          ?>
-   }   
+   }  
     
 <?php
 $cntACmp = ob_get_contents();

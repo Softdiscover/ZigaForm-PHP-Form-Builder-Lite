@@ -28,7 +28,7 @@ if (!defined('BASEPATH')) {
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class Records extends MX_Controller {
+class Records extends BackendController {
     /**
      * max number of forms in order show by pagination
      *
@@ -57,7 +57,7 @@ class Records extends MX_Controller {
         $this->load->model('model_forms');
         $this->load->model('model_fields');
         $this->load->model('model_record');
-        //$this->auth->authenticate(true);
+        //
     }
 
     /**
@@ -67,7 +67,7 @@ class Records extends MX_Controller {
      */
     public function ajax_load_viewchart() {
         
-        $this->auth->authenticate(true);
+        
         
         $form_id = (isset($_POST['form_id']) && $_POST['form_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
 
@@ -87,7 +87,7 @@ class Records extends MX_Controller {
      */
     public function ajax_load_savereport() {
         
-        $this->auth->authenticate(true);
+        
         
         $form_id = (isset($_POST['form_id']) && $_POST['form_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
         $data_fields = (isset($_POST['data']) && !empty($_POST['data'])) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive'), $_POST['data']) : array();
@@ -133,7 +133,7 @@ class Records extends MX_Controller {
      * @return 
      */
     public function ajax_load_customreport() {
-        $this->auth->authenticate(true);
+        
         
         $form_id = (isset($_POST['form_id']) && $_POST['form_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
 
@@ -153,7 +153,7 @@ class Records extends MX_Controller {
      * @return 
      */
     public function view_charts() {
-        $this->auth->authenticate(true);
+        
         
         $data = array();
         $data['list_forms'] = $this->model_forms->getListForms();
@@ -166,7 +166,7 @@ class Records extends MX_Controller {
      * @return 
      */
     public function custom_report() {
-        $this->auth->authenticate(true);
+        
         
         $data = array();
         $data['list_forms'] = $this->model_forms->getListForms();
@@ -180,7 +180,7 @@ class Records extends MX_Controller {
      * @return 
      */
     public function ajax_load_record_byform() {
-        $this->auth->authenticate(true);
+        
         
         $form_id = (isset($_POST['form_id']) && $_POST['form_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
         //records to show
@@ -235,7 +235,7 @@ class Records extends MX_Controller {
      * @return 
      */
     public function ajax_delete_record() {
-        $this->auth->authenticate(true);
+        
         
         $form_id = (isset($_POST['rec_id']) && $_POST['rec_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['rec_id']) : 0;
         $where = array(
@@ -256,7 +256,7 @@ class Records extends MX_Controller {
      * @return 
      */
     public function info_records_byforms() {
-        $this->auth->authenticate(true);
+        
         
         $data = array();
         $data['list_forms'] = $this->model_forms->getListForms();
@@ -269,7 +269,7 @@ class Records extends MX_Controller {
      * @return 
      */
     public function info_record() {
-        $this->auth->authenticate(true);
+        
         
         $id_rec = (isset($_GET['id_rec']) && $_GET['id_rec']) ? Uiform_Form_Helper::sanitizeInput($_GET['id_rec']) : 0;
         $name_fields = $this->model_record->getNameField($id_rec);
@@ -347,7 +347,7 @@ class Records extends MX_Controller {
      * @return 
      */
     public function list_records($offset = 0) {
-        $this->auth->authenticate(true);
+        
         //list all forms
         $data = $config = array();
         $offset = (isset($_GET['offset'])) ? Uiform_Form_Helper::sanitizeInput($_GET['offset']) : 0;
@@ -390,7 +390,7 @@ class Records extends MX_Controller {
     }
     
     public function action_csv_show_allrecords() {
-        $this->auth->authenticate(true);
+        
         
          $form_id=isset($_GET['id']) ? Uiform_Form_Helper::sanitizeInput($_GET['id']) :'';
        
@@ -400,7 +400,7 @@ class Records extends MX_Controller {
     }
     
     public function csv_showAllForms($form_id){
-        $this->auth->authenticate(true);
+        
         
         require_once(APPPATH . '/helpers/exporttocsv.php');
          if(false){

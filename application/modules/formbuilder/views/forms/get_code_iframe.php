@@ -14,11 +14,9 @@ ob_start();
    var _uifmvar = {};
     _uifmvar.fm_ids = _uifmvar.fm_ids || [];
     _uifmvar.fm_ids.push('<?php echo $form_id;?>');
-     <?php if(!empty($addon)){?>
-        _uifmvar['addon'] = JSON.parse('<?php echo $addon;?>');
-    <?php }else{?>
-        _uifmvar['addon'] = {};
-    <?php }?>    
+    
+ var rockfm_vars=<?php echo json_encode($rockfm_vars_arr, JSON_PRETTY_PRINT); ?>;  
+        
   (function() {
         var uiform = document.createElement('script');
         uiform.type = 'text/javascript';

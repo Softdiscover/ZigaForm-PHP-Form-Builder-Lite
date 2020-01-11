@@ -388,16 +388,27 @@ var zgfm_back_fld_options = function(){
                                     $('#uifm-field-opt-content .uiform-tab-content').height(tmp_height);
                                     
                                     //load addons
-                                    for (var key in msg.addons) {
-                                            if (msg.addons.hasOwnProperty(key)) {
+                                      let tmp_addon_arr = uiform_vars.addon;
+        
+                                        var tmp_function;
+                                        var tmp_controller;
+                                        
+                                        for (var property1 in tmp_addon_arr) {
+                                             
+                                            if('getData_toFields'===String(property1)){
                                                 
-                                                switch(String(msg.addons[key])){
-                                                    case 'func_anim':
-                                                        zgfm_back_addon_anim.load_fieldsettings(step_pane,id);
-                                                    break;
+                                                for (var property2 in tmp_addon_arr[property1]){
+                                                    for( var property3 in tmp_addon_arr[property1][property2]){
+                                                        
+                                                        tmp_controller=tmp_addon_arr[property1][property2][property3]['controller'];
+                                                        tmp_function=tmp_addon_arr[property1][property2][property3]['function'];
+                                                          window[tmp_controller][tmp_function](step_pane,id);
+                                                    }
                                                 }
+                                                
                                             }
-                                        }
+                                            
+                                          };
                                     
                                     //showing tab container
                                     var pickfield=$('#'+id);

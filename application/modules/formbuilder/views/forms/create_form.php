@@ -33,6 +33,15 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                    class="uiform-settings-main"
                    data-intro="<?php echo __('main settings','FRocket_admin');?>"
                    href="#uiformc-menu-sec5"><?php echo __('Global settings','FRocket_admin'); ?></a></li> 
+                               
+            <?php if(isset($addons_actions['back_exttab_block'])){?>
+            
+            <li><a data-toggle="sfdc-tab"
+                   class="uiform-settings-extensions"
+                   data-intro="<?php echo __('Extensions','FRocket_admin');?>"
+                   href="#uiformc-menu-sec7"><?php echo __('Extensions','FRocket_admin'); ?></a>
+            </li> 
+            <?php } ?>
         </ul>
     </div>
     <div class="sfdc-tab-content">
@@ -100,6 +109,16 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
               
             </div>
         </div>
+               <?php if(isset($addons_actions['back_exttab_block'])){?>
+        <div id="uiformc-menu-sec7" class="sfdc-tab-pane ">
+            <div class="uiformc-tab-content-inner2">
+                    <!-- load modules -->
+              <?php echo $modules_tab_extension;?>
+    
+    <!--/ load modules -->
+            </div>
+        </div>
+        <?php }?>
     </div>
 <div id="uiform-editing-mbuttons">
         <?php if(UIFORM_DEBUG===1){?>
@@ -172,6 +191,8 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
 <!-- modals -->    
     <?php include('create_form_modals.php');?>
 <!--\ modals -->
+<?php if(intval($fields_fastload)===1){ ?>
 <!-- modals -->    
     <?php include('fieldoptions_data.php');?>
 <!--\ modals -->
+<?php } ?>

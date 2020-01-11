@@ -37,6 +37,10 @@ if (!defined('BASEPATH')) {
     <link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/modals-sfdc.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/popovers-sfdc.css" rel="stylesheet">
     <link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/tooltip-sfdc.css" rel="stylesheet">
+    
+    
+    <link href="<?php echo base_url(); ?>assets/common/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
+    
     <!-- font awesome -->
     <link href="<?php echo base_url(); ?>assets/common/css/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom fonts -->
@@ -194,18 +198,22 @@ if (!defined('BASEPATH')) {
    
    $file1 = base_url() . 'extensions/elfinder2/elfinder.php?XSRFToken=' . getXSRFToken('elFinder');
    $file2 = base_url() . 'extensions/elfinder2/elfinder2.php?XSRFToken=' . getXSRFToken('elFinder');     
+    
+   $tmp_uiform_vars=  do_filter('zgfm_back_filter_globalvars', 
+            array('fields_fastload' => $fields_fastload,
+                'url_admin'=>site_url().'admin',
+                'url_plugin' => '', 
+                'url_elfinder1' => $file1,
+                'url_elfinder2' => $file2,
+                'app_version' => '',
+                'app_is_lite' => ZIGAFORM_F_LITE,
+                'app_demo_st' => UIFORM_DEMO,
+                'url_assets' => base_url() . "/assets",
+                'csrf_field_name' => $this->security->get_csrf_hash()));
    ?> 
-   var uiform_vars={};    
-    uiform_vars['fields_fastload']=<?php echo $fields_fastload;?>;
-    uiform_vars['url_admin']="<?php echo site_url(); ?>admin";
-    uiform_vars['url_plugin']="";
-    uiform_vars['url_elfinder1']="<?php echo $file1;?>";
-    uiform_vars['url_elfinder2']="<?php echo $file2;?>";
-    uiform_vars['app_version']="";
-    uiform_vars['app_is_lite']="<?php echo ZIGAFORM_F_LITE;?>";
-    uiform_vars['app_demo_st']="<?php echo UIFORM_DEMO;?>";
-    uiform_vars['url_assets']="<?php echo base_url(); ?>assets";
-    uiform_vars['csrf_field_name']="<?php echo $this->security->get_csrf_hash(); ?>";
+     var uiform_vars = <?php echo json_encode($tmp_uiform_vars, JSON_PRETTY_PRINT); ?>;  
+       
+
     </script>
     
      <?php if(ENVIRONMENT === 'development'  && file_exists(BASEPATH.'../assets/backend/js/prev.js')){ ?>
@@ -259,14 +267,21 @@ if (!defined('BASEPATH')) {
                  
     
     </script>
-   <!-- addon -->
-    <script type="text/javascript" src="<?php echo base_url(); ?>application/modules/addon/views/backend/assets/back-addon.js"></script>   
-    <?php $this->addon->load_addons_Head(); ?>
+    
+    <?php do_action('admin_enqueue_scripts');?>
+    <?php //$this->addon->load_addons_Head(); ?>
   </head>
    <body class="tundra ">
     
     <div id="wrapper">
-    <form id="zgfm_edit_panel" onsubmit="return false;" autocomplete="off">
+        <form id="zgfm_edit_panel"
+          onsubmit="return false;"
+          enctype="multipart/form-data" 
+          action="" 
+          accept-charset="UTF-8" 
+          name="" 
+          method="post" 
+          autocomplete="off">
       <!-- Sidebar -->
       <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <?php $this->load->view('header'); ?>   
@@ -286,7 +301,7 @@ if (!defined('BASEPATH')) {
             </div>
         </div>
                 <?php echo $content;?>
-
+              
             </div>
             <div id="rocketform-bk-footer">
                 <?php include('footer.php');?>
