@@ -551,20 +551,32 @@ class Forms extends BackendController {
 
         $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
         header('Content-type: text/html');
-        ob_start();
+        
         
         $data=array();
         $content = '';
             $content = site_url() . 'formbuilder/frontend/viewform/?form=' . $form_id;
             $data['url'] = escape_text($content);
-
+              //load form variables
+            $form_variables=array();
+            $form_variables['_uifmvar']['addon']=self::$_addons_jsactions;
+            $form_variables['_uifmvar']['is_demo']=0;
+            $form_variables['_uifmvar']['is_dev']=0;
+            $form_variables['enqueue_scripts']=do_filter('zgfm_front_enqueue_scripts', array());
+            $form_variables['ajaxurl']='';
+            $form_variables['uifm_baseurl']=base_url();
+            $form_variables['uifm_siteurl']=site_url();
+            $form_variables['uifm_sfm_baseurl']=base_url().'libs/styles-font-menu/styles-fonts/png/';
+            $form_variables['imagesurl']= base_url().'assets/frontend/images';
+            
             $temp=array();
             $temp['url_form']=$data['url'].'&lmode=1';
             $temp['base_url']=base_url();
             $temp['form_id']=$form_id;
-            $data_addon_front = $this->cache->get('addon_front');
-            $temp['addon']= json_encode($data_addon_front);
+            /*$data_addon_front = $this->cache->get('addon_front');*/
+            $temp['rockfm_vars_arr']= $form_variables;
             $data['iframe'] = $this->load->view('formbuilder/forms/get_code_iframe', $temp, true);
+        ob_start();    
             echo $data['iframe'];
         ?>
              
@@ -572,6 +584,7 @@ class Forms extends BackendController {
         <?php
         $output = ob_get_clean();
         echo $output;
+       
         die();
     }
     
@@ -2727,7 +2740,7 @@ class Forms extends BackendController {
             $temp['onload_scroll']=$onload_scroll;
             $temp['preload_noconflict']=$preload_noconflict;
             //$data_addon_front = $this->cache->get('addon_front');
-            $temp['addon']= $form_variables;
+            $temp['rockfm_vars_arr']= $form_variables;
             $data['script'] = escape_text($this->load->view('formbuilder/forms/get_code_widget', $temp, true));
 
             $content = '';

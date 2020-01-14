@@ -28,7 +28,7 @@ if (!defined('BASEPATH')) {
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class Intranet extends CI_Controller
+class Intranet extends CommonController
 {
     /**
     * max number of user in order show by pagination
