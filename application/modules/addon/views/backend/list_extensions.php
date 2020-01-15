@@ -35,6 +35,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
 	                    			<div class="zgfm-ext-title"><?php echo $value->add_title;?></div>
 	                    			<div class="zgfm-ext-info"><?php echo $value->add_info;?></div>
 	                    			<div class="zgfm-ext-buttons">
+                                                    <?php if(UIFORM_DEMO===0){?>
                                                     <?php if(intval($value->flag_status)===0){?>
 	                    				<!-- Indicates a successful or positive action -->
             							<button data-status='1' onclick="javascript:zgfm_back_addon.listaddon_changeStatus(this);" type="button" class="btn btn-success"><?php echo __('Enable', 'FRocket_admin'); ?></button>
@@ -42,6 +43,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
             							<!-- Indicates caution should be taken with this action -->
             							<button data-status='0' onclick="javascript:zgfm_back_addon.listaddon_changeStatus(this);" type="button" class="btn btn-warning"><?php echo __('Disable', 'FRocket_admin'); ?></button>
                                                     <?php }?>       
+                                                    <?php }?>            
 	                    			</div>
 	                    		</div>
 

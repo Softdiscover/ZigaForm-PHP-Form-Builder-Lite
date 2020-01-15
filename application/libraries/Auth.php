@@ -445,17 +445,25 @@ class Auth
      */
     function authenticate($restrict_to = null, $redirect_to = null)
     {
-        $redirect_to = ($redirect_to == null) ? $this->CI->config->item('site_url') . 'default/intranet/login' : $redirect_to;
+       /*  $current_url =& get_instance(); //  get a reference to CodeIgniter
+         $tmp_class=$current_url->router->fetch_class(); // for Class name or controller
+         $tmp_method=$current_url->router->fetch_method(); // for method name
+          $tmp_module=$current_url->router->fetch_module(); // for method name
         
-        if ($restrict_to !== null) {
-            if ($this->loggedIn() == true) {
-                return true;
+*/
+             $redirect_to = ($redirect_to == null) ? $this->CI->config->item('site_url') . 'default/intranet/login' : $redirect_to;
+            
+            if ($restrict_to !== null) {
+                if ($this->loggedIn() == true) {
+                    return true;
+                } else {
+                    redirect($redirect_to);
+                }
             } else {
-                redirect($redirect_to);
-            }
-        } else {
-            show_error("area restricted");
-        }
+                show_error("area restricted");
+            } 
+        
+        
     }
     
 }

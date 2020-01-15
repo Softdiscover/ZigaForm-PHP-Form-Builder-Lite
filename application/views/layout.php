@@ -181,7 +181,7 @@ if (!defined('BASEPATH')) {
         
   </head>
    <body class="tundra">
-    
+     
     <div id="wrapper">
 
       <!-- Sidebar -->
@@ -214,5 +214,6 @@ if (!defined('BASEPATH')) {
       </div><!-- /#page-wrapper -->
 
     </div><!-- /#wrapper -->
+    
   </body>
 </html>

@@ -72,13 +72,14 @@ class FrontendController extends CommonController
 class BackendController extends CommonController
 {
   
-    
     public function __construct()
     {
         parent::__construct();
-        $this->auth->authenticate(true);
+ 
+       $this->auth->authenticate(true);
+         
         $this->init();
-       
+            
     }
     
     public function init(){

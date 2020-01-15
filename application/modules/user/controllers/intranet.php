@@ -28,7 +28,7 @@ if (!defined('BASEPATH')) {
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class Intranet extends CommonController
+class Intranet extends BackendController
 {
     /**
     * max number of user in order show by pagination
@@ -57,7 +57,7 @@ class Intranet extends CommonController
         $this->load->model('default/model_settings');
         $this->load->model('model_user');
         $this->table = $this->db->dbprefix . "uiform_user";
-        
+         
     }
     
     /**
@@ -70,6 +70,7 @@ class Intranet extends CommonController
      */
     public function index($offset = 0)
     {
+         
         //list all forms
         $data = $config = array();
         //create pagination
@@ -96,7 +97,7 @@ class Intranet extends CommonController
         $this->pagination->initialize($config);
         // If the pagination library doesn't recognize the current page add
         $this->pagination->cur_page = $offset;
-        
+       
         $data['query'] = $this->model_user->getList();
         $this->template->loadPartial('layout', 'intranet/index', $data);
     }
@@ -109,6 +110,7 @@ class Intranet extends CommonController
      */
     public function createuser()
     {
+ 
         $data                = array();
         $data['flag_status'] = 1;
         $this->template->loadPartial('layout', 'intranet/createuser', $data);
@@ -122,6 +124,7 @@ class Intranet extends CommonController
      */
     public function edituser()
     {
+ 
         $id_user = Uiform_Form_Helper::sanitizeInput($this->uri->segment(4, 0));
         $query   = $this->db->get_where($this->model_user->table, array('use_id' => $id_user), 1);
         if ($query->num_rows() === 1) {
@@ -149,6 +152,7 @@ class Intranet extends CommonController
      */
     function delete($id_user)
     {
+ 
         $this->db->where('use_id', $id_user)->delete($this->table);
         $this->session->set_flashdata('message', 'info: User was deleted');
         redirect(site_url() . 'user/intranet/index');
@@ -162,6 +166,7 @@ class Intranet extends CommonController
      */
     public function saveuser()
     {
+       
         $id_user              = Uiform_Form_Helper::sanitizeInput($this->uri->segment(4, 0));
         $flag_status          = ($this->input->post('flag_status')) ? Uiform_Form_Helper::sanitizeInput($this->input->post('flag_status')) : 0;
         $data                 = array();
@@ -173,11 +178,14 @@ class Intranet extends CommonController
         $data['updated_by']   = 1;
         $data['updated_date'] = date('Y-m-d h:i:s');
         $query                = $this->db->get_where($this->model_user->table, array('use_id' => $id_user), 1);
+
         if ($query->num_rows() === 1) {
             $this->db->set($data);
             $this->db->where('use_id', $id_user);
             $this->db->update($this->model_user->table);
+
             $this->session->set_flashdata('message', 'success: Form was updated');
+
         } else {
             $data['created_ip']   = $_SERVER['REMOTE_ADDR'];
             $data['created_by']   = 1;
@@ -186,6 +194,7 @@ class Intranet extends CommonController
             $this->db->insert($this->model_user->table);
             $this->session->set_flashdata('message', 'success: User was created');
         }
+
         redirect(site_url() . 'user/intranet/index');
     }
 }

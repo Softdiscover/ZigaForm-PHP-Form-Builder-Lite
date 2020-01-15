@@ -25,8 +25,12 @@ if (!defined('BASEPATH')) {
     </div>
     </li>
             <li><a href="<?php echo site_url(); ?>formbuilder/forms/list_uiforms"><i class="fa fa-th-list"></i> <?php echo __('Forms','FRocket_admin'); ?></a></li>
+ <?php if(UIFORM_DEMO === 0 ){ ?>
             <li><a href="<?php echo site_url(); ?>user/intranet/index"><i class="fa fa-user"></i> <?php echo __('Users','FRocket_admin'); ?></a></li>
              <li><a href="<?php echo site_url(); ?>default/intranet/settings"><i class="fa fa-wrench"></i> <?php echo __('More Settings','FRocket_admin'); ?></a></li>
+
+               <?php }?>     
+                
             <li><a href="<?php echo site_url(); ?>default/intranet/help"><i class="fa fa-question-circle"></i> <?php echo __('Help','FRocket_admin'); ?></a></li>
             <li><a href="<?php echo site_url(); ?>default/intranet/about"><i class="fa fa-info"></i> <?php echo __('About','FRocket_admin'); ?></a></li>
             <li><a href="<?php echo site_url(); ?>default/intranet/showfilemanager"><i class="fa fa-code"></i> <?php echo __('File manager','FRocket_admin'); ?></a></li>
