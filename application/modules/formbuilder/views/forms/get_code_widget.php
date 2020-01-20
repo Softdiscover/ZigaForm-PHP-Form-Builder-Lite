@@ -10,10 +10,8 @@ ob_start();
     var _uifmvar = _uifmvar || {};
     _uifmvar.fm_ids = _uifmvar.fm_ids || [];
     _uifmvar.fm_ids.push(['<?php echo $id_form;?>']);
-    
-    
-    var rockfm_vars=<?php echo json_encode($rockfm_vars_arr, JSON_PRETTY_PRINT); ?>; 
-     
+   
+var rockfm_vars;  
     <?php 
     
        if(isset($lmode) && $lmode!=''){
@@ -27,19 +25,12 @@ ob_start();
                     }
             }
     ?>
-    
-    
-    <?php 
-     if(intval($onload_scroll)===1){
-    ?>
-        _uifmvar.fm_onload_scroll = "1";
-     <?php } ?>   
+  
      <?php if(intval($preload_noconflict)===1){
              ?>
        _uifmvar.fm_preload_noconflict = "1";         
      <?php }?>
-         
-         
+      
     (function(){var uiform = document.createElement('script');
         uiform.type = 'text/javascript';
         uiform.async = true;
@@ -48,7 +39,7 @@ ob_start();
         s.parentNode.insertBefore(uiform, s);})();
 </script>
 <noscript>
-       Powered by <a href="https://www.zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder & Contact " >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
+       Powered by <a href="https://zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder & Contact " >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
 </noscript>
 <!-- end zigaform code -->
 <?php

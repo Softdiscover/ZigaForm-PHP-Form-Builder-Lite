@@ -557,24 +557,12 @@ class Forms extends BackendController {
         $content = '';
             $content = site_url() . 'formbuilder/frontend/viewform/?form=' . $form_id;
             $data['url'] = escape_text($content);
-              //load form variables
-            $form_variables=array();
-            $form_variables['_uifmvar']['addon']=self::$_addons_jsactions;
-            $form_variables['_uifmvar']['is_demo']=0;
-            $form_variables['_uifmvar']['is_dev']=0;
-            $form_variables['enqueue_scripts']=do_filter('zgfm_front_enqueue_scripts', array());
-            $form_variables['ajaxurl']='';
-            $form_variables['uifm_baseurl']=base_url();
-            $form_variables['uifm_siteurl']=site_url();
-            $form_variables['uifm_sfm_baseurl']=base_url().'libs/styles-font-menu/styles-fonts/png/';
-            $form_variables['imagesurl']= base_url().'assets/frontend/images';
             
             $temp=array();
             $temp['url_form']=$data['url'].'&lmode=1';
             $temp['base_url']=base_url();
             $temp['form_id']=$form_id;
-            /*$data_addon_front = $this->cache->get('addon_front');*/
-            $temp['rockfm_vars_arr']= $form_variables;
+            
             $data['iframe'] = $this->load->view('formbuilder/forms/get_code_iframe', $temp, true);
         ob_start();    
             echo $data['iframe'];
@@ -2704,14 +2692,13 @@ class Forms extends BackendController {
      * @return 
      */
     public function getcode() {
+        $data = array();
 
-                            
         $id_form = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
-                
         $query = $this->db->get_where($this->model_forms->table, array('fmb_id' => $id_form), 1);
         if ($query->num_rows() === 1) {
-                            
             $data = array();
+                            
             //get data from form
             $form_data = $this->model_forms->getFormById_2($id_form);
             $form_data_onsubm = json_decode($form_data->fmb_data2, true);
@@ -2720,27 +2707,13 @@ class Forms extends BackendController {
                             
             $preload_noconflict = (isset($form_data_onsubm['main']['preload_noconflict'])) ? $form_data_onsubm['main']['preload_noconflict'] : '1';    
             
-  //load form variables
-            $form_variables=array();
-            $form_variables['_uifmvar']['addon']=self::$_addons_jsactions;
-            $form_variables['_uifmvar']['is_demo']=0;
-            $form_variables['_uifmvar']['is_dev']=0;
-            $form_variables['enqueue_scripts']=do_filter('zgfm_front_enqueue_scripts', array());
-            $form_variables['ajaxurl']='';
-            $form_variables['uifm_baseurl']=base_url();
-            $form_variables['uifm_siteurl']=site_url();
-            $form_variables['uifm_sfm_baseurl']=base_url().'libs/styles-font-menu/styles-fonts/png/';
-            $form_variables['imagesurl']= base_url().'assets/frontend/images';
-            
-            
+                            
+                     
             $temp=array();
             $temp['id_form']=$id_form;
             $temp['site_url']=site_url();
             $temp['base_url']=base_url();
-            $temp['onload_scroll']=$onload_scroll;
-            $temp['preload_noconflict']=$preload_noconflict;
-            //$data_addon_front = $this->cache->get('addon_front');
-            $temp['rockfm_vars_arr']= $form_variables;
+                            
             $data['script'] = escape_text($this->load->view('formbuilder/forms/get_code_widget', $temp, true));
 
             $content = '';
@@ -2751,16 +2724,22 @@ class Forms extends BackendController {
             $temp['url_form']=$data['url'].'&lmode=1';
             $temp['base_url']=base_url();
             $temp['form_id']=$id_form;
-            //$data_addon_front = $this->cache->get('addon_front');
-            $temp['rockfm_vars_arr']= $form_variables;
+                            
             $data['iframe'] = escape_text($this->load->view('formbuilder/forms/get_code_iframe', $temp, true));
                             
             $json = array();
             $json['html_title'] = __('Shortcodes','FRocket_admin');
+            
+            
+            $cached_content=modules::run('formbuilder/frontend/generate_cache',$id_form);
+                            
+            $data['cached_scripts']=escape_text($cached_content['scripts']);
+            $data['cached_content']=escape_text($cached_content['html']);
+            
             $json['html'] = $this->load->view('formbuilder/forms/getcode', $data, true);
             //return data to ajax callback
             header('Content-type: text/html');
-            echo json_encode($json);                
+            echo json_encode($json); 
         } else {
 
         }
@@ -2775,39 +2754,27 @@ class Forms extends BackendController {
 
 
         $data = array();
-                $id_form = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $id_form = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
         
         $query = $this->db->get_where($this->model_forms->table, array('fmb_id' => $id_form), 1);
         if ($query->num_rows() === 1) {
             $data = array();
-             //get data from form
+            //get data from form
             $form_data = $this->model_forms->getFormById_2($id_form);
             $form_data_onsubm = json_decode($form_data->fmb_data2, true);
                 
             $onload_scroll = (isset($form_data_onsubm['main']['onload_scroll'])) ? $form_data_onsubm['main']['onload_scroll'] : '1';
                             
             $preload_noconflict = (isset($form_data_onsubm['main']['preload_noconflict'])) ? $form_data_onsubm['main']['preload_noconflict'] : '1';    
-            
-  //load form variables
-            $form_variables=array();
-            $form_variables['_uifmvar']['addon']=self::$_addons_jsactions;
-            $form_variables['_uifmvar']['is_demo']=0;
-            $form_variables['_uifmvar']['is_dev']=0;
-            $form_variables['enqueue_scripts']=do_filter('zgfm_front_enqueue_scripts', array());
-            $form_variables['ajaxurl']='';
-            $form_variables['uifm_baseurl']=base_url();
-            $form_variables['uifm_siteurl']=site_url();
-            $form_variables['uifm_sfm_baseurl']=base_url().'libs/styles-font-menu/styles-fonts/png/';
-            $form_variables['imagesurl']= base_url().'assets/frontend/images';
-            
+                            
+                        
             $temp=array();
             $temp['id_form']=$id_form;
             $temp['site_url']=site_url();
             $temp['base_url']=base_url();
             $temp['onload_scroll']=$onload_scroll;
             $temp['preload_noconflict']=$preload_noconflict;
-            //$data_addon_front = $this->cache->get('addon_front');
-            $temp['rockfm_vars_arr']= $form_variables;
+                            
             $data['script'] = escape_text($this->load->view('formbuilder/forms/get_code_widget', $temp, true));
             $data['id_form'] = $id_form;
             $content = '';
@@ -2818,11 +2785,10 @@ class Forms extends BackendController {
             $temp['url_form']=$data['url'].'&lmode=1';
             $temp['base_url']=base_url();
             $temp['form_id']=$id_form;
-            $data_addon_front = $this->cache->get('addon_front');
-            $temp['rockfm_vars_arr']= $form_variables;
+                            
             $data['iframe'] = escape_text($this->load->view('formbuilder/forms/get_code_iframe', $temp, true));
 
-          //  echo $this->load->view('formbuilder/forms/form_success', $data, true);
+             //  echo $this->load->view('formbuilder/forms/form_success', $data, true);
             
             
             $json = array();

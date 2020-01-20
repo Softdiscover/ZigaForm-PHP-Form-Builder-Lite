@@ -61,7 +61,7 @@ if (!defined('BASEPATH')) {
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/js/bootstrap.js"></script> 
    
   <noscript>
-       Powered by <a href="https://www.zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder" >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
+       Powered by <a href="https://zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder" >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
    </noscript>
   </head>
   <body class="sfdc-wrap" >

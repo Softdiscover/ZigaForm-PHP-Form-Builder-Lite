@@ -15,8 +15,8 @@ ob_start();
     _uifmvar.fm_ids = _uifmvar.fm_ids || [];
     _uifmvar.fm_ids.push('<?php echo $form_id;?>');
     
- var rockfm_vars=<?php echo json_encode($rockfm_vars_arr, JSON_PRETTY_PRINT); ?>;  
-        
+ var rockfm_vars;     
+ 
   (function() {
         var uiform = document.createElement('script');
         uiform.type = 'text/javascript';
@@ -26,7 +26,7 @@ ob_start();
                s.parentNode.insertBefore(uiform, s);
            })();</script>
 <noscript>
-       Powered by <a href="https://www.zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder & Contact" >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
+       Powered by <a href="https://zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder & Contact" >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
 </noscript>
 <!-- end zigaform code -->
 <?php
