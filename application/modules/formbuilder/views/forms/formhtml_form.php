@@ -21,6 +21,7 @@ ob_start();
       name="" 
       method="post" 
       data-zgfm-type="1"
+      data-zgfm-version="<?php echo UIFORM_VERSION;?>"
       enctype="multipart/form-data" 
       id="rockfm_form_<?php echo $form_id;?>">
  

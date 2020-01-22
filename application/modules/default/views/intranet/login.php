@@ -55,23 +55,18 @@ echo base_url();
                                                 echo form_open('default/intranet/authenticate/', 'name="login"');
                                                 ?>
                                                 <div class="sfdc-form-group  clearfix">
-                                                    <?php if(UIFORM_DEMO===1){?> 
-                                                            <input name="username" value="demo" class="sfdc-form-control col-md-12" type="text" id="inputEmail" placeholder="Username">
-                                                        <?php }else{?> 
+                                                   
                                                             <input name="username" class="sfdc-form-control col-md-12" type="text" id="inputEmail" placeholder="Username">
-                                                        <?php }?> 
                                                         
                                                    
                                                 </div>
                                                 <div class="sfdc-form-group  clearfix">
-                                                    <?php if(UIFORM_DEMO===1){?> 
-                                                            <input name="password" value="demo" class="sfdc-form-control col-md-12" type="password" id="inputPassword" placeholder="Password">
-                                                        <?php }else{?> 
+                                                   
                                                             <input name="password" class="sfdc-form-control col-md-12" type="password" id="inputPassword" placeholder="Password">
-                                                        <?php }?> 
+                                                       
                                                          
                                                          <?php if(UIFORM_DEMO===1){?> 
-                                                            <small class="login-page-forgot-pass"><a href="#" onclick="alert('this feature disabled on this demo');" ><?php echo __('Forgot Password','FRocket_admin'); ?></a></small>
+                                                            
                                                         <?php }else{?> 
                                                             <small class="login-page-forgot-pass"><a href="<?php echo site_url();?>default/intranet/recoverpass"><?php echo __('Forgot Password','FRocket_admin'); ?></a></small>
                                                         <?php }?> 
