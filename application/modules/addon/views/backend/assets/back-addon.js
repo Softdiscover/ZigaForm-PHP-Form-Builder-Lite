@@ -58,7 +58,6 @@ var zgfm_fn_addon = function(){
                                                         tmp_function=tmp_addon_arr[property1][property2][property3]['function'];
                                                         
                                                         addon_data=settings['data'][property3]||{};
-                                                       
                                                           window[tmp_controller][tmp_function](addon_data);
                                                     }
                                                 }
@@ -77,14 +76,20 @@ var zgfm_fn_addon = function(){
                
     };
     
-    
-    this.do_action =function(action){
+    /*
+     *  do actions
+     * @param string $action name of the action
+     * @param object $obj_data data of the object
+     * @returns {undefined}
+     */
+    this.do_action =function(action,obj_data){
         var tmp_data={};
         
         let tmp_addon_arr = uiform_vars.addon;
         
         var tmp_function;
         var tmp_controller;
+        var accepted_args;
         
         for (var property1 in tmp_addon_arr) {
              
@@ -95,8 +100,13 @@ var zgfm_fn_addon = function(){
                         
                         tmp_controller=tmp_addon_arr[property1][property2][property3]['controller'];
                         tmp_function=tmp_addon_arr[property1][property2][property3]['function'];
-                          
-                        tmp_data[property3]=window[tmp_controller][tmp_function]();
+                        accepted_args=tmp_addon_arr[property1][property2][property3]['accepted_args'];
+                        if(parseInt(accepted_args)===1){
+                            tmp_data[property3]=window[tmp_controller][tmp_function](obj_data);
+                        }else{
+                            tmp_data[property3]=window[tmp_controller][tmp_function]();
+                        }
+                        
                     }
                 }
                 

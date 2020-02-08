@@ -111,9 +111,58 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
         </div>
                <?php if(isset($addons_actions['back_exttab_block'])){?>
         <div id="uiformc-menu-sec7" class="sfdc-tab-pane ">
-            <div class="uiformc-tab-content-inner2">
+            <div class="uiformc-tab-content-inner2 clearfix">
                     <!-- load modules -->
-              <?php echo $modules_tab_extension;?>
+              <?php 
+              if(!empty($modules_tab_extension)){
+                  $count=1;
+                  ?>
+                  <div class="sfdc-col-xs-3">
+                      <ul class="sfdc-nav sfdc-nav-tabs tabs-left">
+              <?php
+                  foreach ($modules_tab_extension as $key => $value) {
+                      ?>
+                          <li class="<?php echo ($count===1)?'sfdc-active':'';?>">
+                              <a data-toggle="sfdc-tab" href="#zgfm-extaddn-tabcont-<?php echo $key;?>">
+                                  <?php echo $value['tab_link']['name']; ?>
+                              </a>    
+                          </li>
+                      <?php
+                      $count++; 
+                  }
+               ?>
+                      </ul>    
+                  </div> 
+                    
+                    <div class="sfdc-col-xs-9">
+                        <div class="sfdc-tab-content">
+                            
+                            <?php
+                            $count=1;
+                  foreach ($modules_tab_extension as $key => $value) {
+                      ?>
+                             <div id="zgfm-extaddn-tabcont-<?php echo $key;?>" class="sfdc-tab-pane <?php echo ($count===1)?'sfdc-active':'';?>">
+                                 <div class="zgfm-extaddn-tab-content-inner3">
+                                     <?php echo $value['tab_content']; ?>
+                                 </div>
+                            </div>
+                         <?php
+                         $count++; 
+                  }
+               ?>    
+                            
+                        </div>
+                       
+                    </div> 
+                    
+                    
+                    
+              <?php   
+                  
+              }
+                  
+              
+              ?>
     
     <!--/ load modules -->
             </div>

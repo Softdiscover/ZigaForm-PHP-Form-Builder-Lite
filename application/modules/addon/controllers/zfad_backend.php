@@ -107,6 +107,7 @@ class zfad_backend extends BackendController {
         ob_start();
         ?>
         <script type="text/javascript" src="<?php echo base_url(); ?>application/modules/addon/views/backend/assets/back-addon.js"></script>    
+        <link href="<?php echo base_url(); ?>application/modules/addon/views/backend/assets/back-addon.css" rel="stylesheet">
         <?php
          $str_output=ob_get_contents();
         ob_end_clean();
@@ -213,8 +214,8 @@ class zfad_backend extends BackendController {
     
      
     
-    public function addons_doActions($section=''){
-       
+    public function addons_doActions($section='',$return_array=false){
+        
         if(empty(self::$_addons_actions[$section])){
            return ''; 
         }
@@ -222,13 +223,22 @@ class zfad_backend extends BackendController {
         
         $tmp_addons=self::$_addons_actions[$section];
         
-        $tmp_str = '';
+        if($return_array){
+            $tmp_str = array();
+        }else{
+            $tmp_str = '';
+        }
+        
         
         if(!empty($tmp_addons)){
            foreach ($tmp_addons as $key => $value) {
                foreach ($value as $key2 => $value2) {
+                    if($return_array){
+                        $tmp_str[]=call_user_func( array( self::$_addons[$key2][$value2['controller']], $value2['function'] ) );
+                    }else{
+                        $tmp_str.=call_user_func( array( self::$_addons[$key2][$value2['controller']], $value2['function'] ) );
+                    }
                     
-                    $tmp_str.=call_user_func( array( self::$_addons[$key2][$value2['controller']], $value2['function'] ) );
                  
                    
                }
