@@ -20,9 +20,9 @@ if (class_exists('lessc')) {
  * The less compiler and parser.
  *
  * Converting LESS to CSS is a three stage process. The incoming file is parsed
- * by `lessc_parser` into a syntax tree, then it is compiled into another tree
+ * by `zglessc_parser` into a syntax tree, then it is compiled into another tree
  * representing the CSS structure by `lessc`. The CSS tree is fed into a
- * formatter, like `lessc_formatter` which then outputs CSS as a string.
+ * formatter, like `zglessc_formatter` which then outputs CSS as a string.
  *
  * During the first compile, all values are *reduced*, which means that their
  * types are brought to the lowest form before being dump as strings. This
@@ -37,9 +37,9 @@ if (class_exists('lessc')) {
  * evaluation context, such as all available mixins and variables at any given
  * time.
  *
- * The `lessc_parser` class is only concerned with parsing its input.
+ * The `zglessc_parser` class is only concerned with parsing its input.
  *
- * The `lessc_formatter` takes a CSS tree, and dumps it to a formatted string,
+ * The `zglessc_formatter` takes a CSS tree, and dumps it to a formatted string,
  * handling things like indentation.
  */
 class lessc {
@@ -1768,7 +1768,7 @@ class lessc {
 	// inject array of unparsed strings into environment as variables
 	protected function injectVariables($args) {
 		$this->pushEnv();
-		$parser = new lessc_parser($this, __METHOD__);
+		$parser = new zglessc_parser($this, __METHOD__);
 		foreach ($args as $name => $strValue) {
 			if ($name{0} != '@') $name = '@'.$name;
 			$parser->count = 0;
@@ -1944,7 +1944,7 @@ class lessc {
 	}
 
 	protected function makeParser($name) {
-		$parser = new lessc_parser($this, $name);
+		$parser = new zglessc_parser($this, $name);
 		$parser->writeComments = $this->preserveComments;
 
 		return $parser;
@@ -1955,11 +1955,11 @@ class lessc {
 	}
 
 	protected function newFormatter() {
-		$className = "lessc_formatter_lessjs";
+		$className = "zglessc_formatter_lessjs";
 		if (!empty($this->formatterName)) {
 			if (!is_string($this->formatterName))
 				return $this->formatterName;
-			$className = "lessc_formatter_$this->formatterName";
+			$className = "zglessc_formatter_$this->formatterName";
 		}
 
 		return new $className;
@@ -2182,7 +2182,7 @@ class lessc {
 
 // responsible for taking a string of LESS code and converting it into a
 // syntax tree
-class lessc_parser {
+class zglessc_parser {
 	static protected $nextBlockId = 0; // used to uniquely identify blocks
 
 	static protected $precedence = array(
@@ -3562,7 +3562,7 @@ class lessc_parser {
 
 }
 
-class lessc_formatter_classic {
+class zglessc_formatter_classic {
 	public $indentChar = "  ";
 
 	public $break = "\n";
@@ -3657,7 +3657,7 @@ class lessc_formatter_classic {
 	}
 }
 
-class lessc_formatter_compressed extends lessc_formatter_classic {
+class zglessc_formatter_compressed extends zglessc_formatter_classic {
 	public $disableSingle = true;
 	public $open = "{";
 	public $selectorSeparator = ",";
@@ -3670,7 +3670,7 @@ class lessc_formatter_compressed extends lessc_formatter_classic {
 	}
 }
 
-class lessc_formatter_lessjs extends lessc_formatter_classic {
+class zglessc_formatter_lessjs extends zglessc_formatter_classic {
 	public $disableSingle = true;
 	public $breakSelectors = true;
 	public $assignSeparator = ": ";
