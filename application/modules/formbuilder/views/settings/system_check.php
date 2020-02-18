@@ -132,7 +132,30 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                             </div>
                         </div>
                 </div>
-                
+                             <div class="space20"></div>
+                <h3><?php echo __('PHP Extensions','FRocket_admin');?></h3>
+                <div class="uiform-systemcheck-directive-container">
+                    <div class="sfdc-form-group">
+                            <label class="sfdc-col-sm-2 control-label"><?php echo __('Simple XML','FRocket_admin');?> </label>
+                            <div class="sfdc-col-sm-10">
+                                <div class="span4">
+                                     <?php if (extension_loaded('simplexml')) {
+                                                    ?>
+                                                        <i class="fa fa-thumbs-up"></i>
+                                                        <?php
+                                                }else{
+                                                    ?>
+                                                      <i class="fa fa-exclamation-triangle"></i>  <div class="sfdc-alert sfdc-alert-danger">
+  <?php echo __('simplexml extension is important for the software. ask your webhost if this extension is not installed','FRocket_admin');?>
+</div>
+                                                        <?php
+                                                }
+                                                
+                                                ?>
+                                </div>
+                            </div>
+                        </div>
+                </div>
                 
                 
                 <div class="clear"></div>

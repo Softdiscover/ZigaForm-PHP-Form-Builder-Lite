@@ -1481,7 +1481,7 @@ class Frontend extends FrontendController {
                // $headers[] = "From: \"{$data['from_name']}\" <{$data['from_mail']}>";
                 
                  
-                $to = $data['to'];
+                $to = trim($data['to']);
                
                 if (preg_match('/^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/',$to)){
                     
