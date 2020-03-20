@@ -423,7 +423,7 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
             </div>
         </div>
     </div>
-    <div class="sfdc-row">
+    <div class="sfdc-row" id="uifm_fld_lbl_blo_pos_opts">
         <div class="sfdc-col-md-12">
             <label ><?php echo __('Block position','FRocket_admin'); ?></label>
             <div class="sfdc-controls sfdc-form-group">
@@ -471,6 +471,137 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                            id="uifm_fld_lbl_blo_pos_4" 
                            name="uifm_fld_lbl_blo_pos"  
                            value="3"> <i class="fa fa-hand-o-down"></i><?php echo __('Bottom','FRocket_admin'); ?>
+                    </label>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+<div id="uifm_fld_lbl_glay_container" style="display:none"  class="sfdc-row">
+        <div class="sfdc-col-md-12">
+            <label ><?php echo __('Grid layout of label block when is on left or right position','FRocket_admin'); ?></label>
+            <div class="sfdc-controls sfdc-form-group">
+                <div class="sfdc-btn-group sfdc-btn-group-justified" data-toggle="buttons">
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_1" 
+                           name="uifm_fld_lbl_glay_pos"   
+                           value="1"> <?php echo __('1|11','FRocket_admin'); ?>
+                    </label>
+                    <label
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_2" 
+                           name="uifm_fld_lbl_glay_pos" 
+                           value="2">  <?php echo __('2|10','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_3" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="3">  <?php echo __('3|9','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_4" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="4">  <?php echo __('4|8','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_5" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="5">  <?php echo __('5|7','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_6" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="6">  <?php echo __('6|6','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_7" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="7">  <?php echo __('7|5','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_8" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="8">  <?php echo __('8|4','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_9" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="9">  <?php echo __('9|3','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_10" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="10">  <?php echo __('10|2','FRocket_admin'); ?>
+                    </label>
+                    <label 
+                        data-field-store="txt_block-grid_layout"
+                        data-toggle-enable="sfdc-btn-warning"
+                        data-toggle-disable="sfdc-btn-warning"
+                        data-settings-option="group-radiobutton"
+                        class="sfdc-btn sfdc-btn-warning uifm-f-setoption-btn" >
+                    <input type="radio"  
+                           id="uifm_fld_lbl_glay_pos_11" 
+                           name="uifm_fld_lbl_glay_pos"  
+                           value="11">  <?php echo __('11|1','FRocket_admin'); ?>
                     </label>
                 </div>
             </div>
@@ -526,3 +657,30 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
     </div>
     
 </div>
+ <script type="text/javascript">
+      jQuery(function($) 
+        {    
+           $("#uifm_fld_lbl_blo_pos_opts label").on("click", function(){
+                let tmp_val=$(this).find('input').attr('value');
+                $('#uifm_fld_lbl_glay_container').hide();
+                switch(parseInt(tmp_val)){
+                    case 1:
+
+                    break;
+                    case 2:
+                    $('#uifm_fld_lbl_glay_container').show();
+                    break;
+                    case 3:
+                    break;
+                    case 0:
+                    default:
+                    $('#uifm_fld_lbl_glay_container').show();
+                    break;
+
+                }
+          });
+            
+        });
+    
+    
+</script>  

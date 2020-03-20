@@ -472,6 +472,62 @@ class Uiform_Form_Helper {
             };
             return preg_replace_callback($pattern, $callback, json_encode($input, $flags));
         }
+        
+                /*
+         * get label block position of grid system
+         */
+        public static function field_label_blockpos_gridsys($pos){
+            $output=array();
+            switch (intval($pos)) {
+                case 1:
+                    $output['left']=1;
+                    $output['right']=11;
+                    break;
+                case 3:
+                    $output['left']=3;
+                    $output['right']=9;
+                    break;
+                case 4:
+                    $output['left']=4;
+                    $output['right']=8;
+                    break;
+                case 5:
+                    $output['left']=5;
+                    $output['right']=7;
+                    break;
+                case 6:
+                    $output['left']=6;
+                    $output['right']=6;
+                    break;
+                case 7:
+                    $output['left']=7;
+                    $output['right']=5;
+                    break;
+                case 8:
+                    $output['left']=8;
+                    $output['right']=4;
+                    break;
+                case 9:
+                    $output['left']=9;
+                    $output['right']=3;
+                    break;
+                case 10:
+                    $output['left']=10;
+                    $output['right']=2;
+                    break;
+                case 11:    
+                    $output['left']=11;
+                    $output['right']=1;
+                    break;
+                case 2:
+                default:
+                    $output['left']=2;
+                    $output['right']=10;
+                    break;
+            }
+            
+            return $output;
+        }
 }
 
 

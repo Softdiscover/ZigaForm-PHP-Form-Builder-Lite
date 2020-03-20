@@ -130,7 +130,7 @@ ob_start();
     ?>
                 
    #rockfm_<?php echo $id;?> textarea{
-        min-height: 50px!important;
+        min-height: 50px;
     }
        
 <?php
