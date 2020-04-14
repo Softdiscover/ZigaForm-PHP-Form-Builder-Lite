@@ -40,6 +40,7 @@ ob_start();
      <?php } ?>
      <?php if(isset($validate['typ_val']) && intval($validate['typ_val'])>0){?>
      data-val-type="<?php echo $validate['typ_val'];?>"
+     data-val-cval_regex="<?php echo (isset($validate['customval_regex']))?Uiform_Form_Helper::encodeURIComponent($validate['customval_regex']):'';?>"
      <?php
      $validate_custxt=$validate['typ_val_custxt'];
      if(empty($validate['typ_val_custxt'])){

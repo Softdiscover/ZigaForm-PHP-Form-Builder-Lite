@@ -39,7 +39,17 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                                      <?php echo __('Required','FRocket_admin'); ?>
                             </label>
                             <!--/ validetor button -->
-                          
+                            <label 
+                                id="uifm-custom-val-regex-btn"
+                                data-field-store="validate-typ_val"
+                                data-field-value="6"
+                                data-field-select-box="uifm-custom-val-req"
+                                data-toggle-enable="sfdc-btn-primary"
+                                data-toggle-disable="sfdc-btn-primary"
+                                data-settings-option="group-checkboxes"
+                                class="sfdc-btn sfdc-btn-primary tooltip-val-demo uifm-f-setoption-gchecks zgfm-set-section-custominput-box"  >
+                                     <?php echo __('Custom','FRocket_admin'); ?>
+                            </label>
                           </div>
                         <div class=" sfdc-btn-group sfdc-btn-group-justified" data-toggle="buttons">
                             <!-- validetor button -->
@@ -165,6 +175,25 @@ if (!defined('BASEPATH')) {exit('No direct script access allowed');}
                                               class="autogrow uifm-f-setoption uifm-custom-val-custxt"
                                               id="uifm-custom-val-req-custxt"></textarea>
                                     </div>
+                        </div>
+                    </div>
+                    <div id="zgfm-field-val-custominput-box" style="display:none;" class="sfdc-row zgfm-set-section-custominput-box">
+                        <div class="sfdc-col-md-12">
+                            <div class="sfdc-form-group">
+                                    <label ><?php echo __('Custom validation','FRocket_admin'); ?></label>
+                                    <div class="sfdc-alert sfdc-alert-warning">
+                                        <strong><?php echo __('Info!','FRocket_admin'); ?></strong> <?php echo __('Validation using a character pattern or regular expression','FRocket_admin'); ?>
+                                        e.g. <code>^[a-zA-Zа-яА-ЯёЁ'][a-zA-Z-а-яА-ЯёЁ' ]+[a-zA-Zа-яА-ЯёЁ']?$</code>
+                                    </div>
+                            </div>
+                            <div class="sfdc-form-group">
+                                <input id="uifm-custom-val-req-regexinput" 
+                                data-field-store="validate-customval_regex"
+                                        class="uifm-f-setoption sfdc-form-control"
+                                       placeholder="Add your character pattern here"
+                                       value="">
+                                
+                            </div>
                         </div>
                     </div>
                 </div>

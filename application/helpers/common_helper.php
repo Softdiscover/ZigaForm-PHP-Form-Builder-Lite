@@ -528,6 +528,22 @@ class Uiform_Form_Helper {
             
             return $output;
         }
+        
+        
+        /**
+         * php encodeURIComponent.
+         *
+         * @author	Unknown
+         * @since	v0.0.1
+         * @version	v1.0.0	Saturday, April 11th, 2020.
+         * @access	public static
+         * @param	mixed	$str	
+         * @return	mixed
+         */
+        public static function encodeURIComponent($str) {
+            $revert = array('%21'=>'!', '%2A'=>'*', '%27'=>"'", '%28'=>'(', '%29'=>')');
+            return strtr(rawurlencode($str), $revert);
+        }
 }
 
 
