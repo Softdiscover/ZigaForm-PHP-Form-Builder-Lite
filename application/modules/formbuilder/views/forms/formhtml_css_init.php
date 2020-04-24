@@ -13,21 +13,23 @@
  */
 ob_start();
 ?>
- <?php if(!empty($fonts)){
-     foreach ($fonts as $value) {
-         if(!empty($value)){
-         ?>
-@import url(//fonts.googleapis.com/css?family=<?php echo $value;?>);
-<?php
- }
-     }
- }?>
+ <?php
+	if ( ! empty( $fonts ) ) {
+		foreach ( $fonts as $value ) {
+			if ( ! empty( $value ) ) {
+				?>
+@import url(//fonts.googleapis.com/css?family=<?php echo $value; ?>);
+				<?php
+			}
+		}
+	}
+	?>
 <?php
 $cntACmp = ob_get_contents();
  /* remove comments */
-$cntACmp = preg_replace('!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $cntACmp);
+$cntACmp = preg_replace( '!/\*[^*]*\*+([^/][^*]*\*+)*/!', '', $cntACmp );
  /* remove tabs, spaces, newlines, etc. */
-$cntACmp = str_replace(array("\r\n", "\r", "\n", "\t", '  ', '    ', '    '), ' ', $cntACmp);
+$cntACmp = str_replace( array( "\r\n", "\r", "\n", "\t", '  ', '    ', '    ' ), ' ', $cntACmp );
 ob_end_clean();
 echo $cntACmp;
 ?>

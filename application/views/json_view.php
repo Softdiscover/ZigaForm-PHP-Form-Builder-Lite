@@ -12,11 +12,11 @@
  * @version   CVS: $Id: json_view.php, v2.00 2013-11-30 02:52:40 Softdiscover $
  * @link      https://php-form-builder.zigaform.com/
  */
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );
 }
 ?>
 <?php
-  $this->output->set_header('Content-Type: application/json; charset=utf-8');
-  echo json_encode($json);
-?>
+  $this->output->set_header( 'Content-Type: application/json; charset=utf-8' );
+  echo json_encode( $json );
+

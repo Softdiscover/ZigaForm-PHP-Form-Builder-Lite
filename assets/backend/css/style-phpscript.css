@@ -1,28 +1,29 @@
-.uiform-list-fields{
-    padding: 0px;
+.uiform-list-fields {
+	padding: 0px;
 }
-.sidebar-wrap{
-    position: relative;
+.sidebar-wrap {
+	position: relative;
 }
 #zgfm-sidebar-show-ver {
-    bottom: 6px;
-    color: #ccc;
-    display: block;
-    left: 18px;
-    position: fixed;
+	bottom: 6px;
+	color: #ccc;
+	display: block;
+	left: 18px;
+	position: fixed;
 }
-#wpfooter{
-    bottom: 0;
-    display: block;
-    left: 235px;
-    position: static;
+#wpfooter {
+	bottom: 0;
+	display: block;
+	left: 235px;
+	position: static;
 }
 
 /*wordpress core style*/
-#wpcontent, #wpfooter {
-   margin-left:0px!important;
+#wpcontent,
+#wpfooter {
+	margin-left: 0px !important;
 }
 
-#uiform-panel-loadingst{
-    position:fixed;
+#uiform-panel-loadingst {
+	position: fixed;
 }

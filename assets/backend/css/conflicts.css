@@ -1,7 +1,6 @@
- 
 /* global select*/
 .wp-core-ui select {
-       -webkit-appearance: menulist ;
-   -moz-appearance:    menulist ;
-   appearance:       menulist ;
+	-webkit-appearance: menulist;
+	-moz-appearance: menulist;
+	appearance: menulist;
 }

@@ -24,99 +24,93 @@
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class model_user extends CI_Model
-{
-    
-    public $table = "";
-    
-    /**
-     * model_user::__construct()
-     * 
-     * @return 
-     */
-    function __construct()
-    {
-        parent::__construct();
-        $this->table = $this->db->dbprefix . "uiform_user";
-    }
-    
-    /**
-     * model_user::getList()
-     * Get list user
-     * 
-     * @return array
-     */
-    function getList()
-    {
-        $this->db->select('c.*');
-        $this->db->from('{PRE}uiform_user c');
-        return $this->db->get()->result();
-    }
-    
-    /**
-     * model_user::getUserById()
-     * Get user by id
-     * 
-     * @param int $id_user id of user
-     * 
-     * @return array
-     */
-    function getUserById($id_user)
-    {
-        $this->db->select('c.*');
-        $this->db->from('{PRE}uiform_user c');
-        $this->db->order_by('c.use_id', 'desc');
-        $this->db->where(array('c.use_id' => $id_user), 1);
-        return $this->db->get()->row();
-    }
-    
-    /**
-     * model_user::getTotalForms()
-     * List total rows
-     * 
-     * @return array
-     */
-    function getTotalList()
-    {
-        $this->db->select('COUNT(*) as total');
-        $this->db->from('{PRE}uiform_user');
-        return $this->db->get()->row();
-    }
-    
-      /**
-     * model_user::getUserById()
-     * Get user by id
-     * 
-     * @param int $id_user id of user
-     * 
-     * @return array
-     */
-    function getFirstUser()
-    {
-        $this->db->select('c.*');
-        $this->db->from('{PRE}uiform_user c');
-        $this->db->order_by('c.use_id', 'desc');
-        $this->db->limit(1);
-        return $this->db->get()->row();
-    }
-    
-    /**
-     * model_user::getUserById()
-     * Get user by id
-     * 
-     * @param int $id_user id of user
-     * 
-     * @return array
-     */
-    function getPasswordToken($token)
-    {
-        $this->db->select('c.*');
-        $this->db->from('{PRE}uiform_user c');
-        $this->db->order_by('c.use_id', 'desc');
-        $this->db->where(array('c.use_password_token' => $token));
-        $this->db->limit(1);
-        return $this->db->get()->row();
-    }
-    
+class model_user extends CI_Model {
+
+
+	public $table = '';
+
+	/**
+	 * model_user::__construct()
+	 *
+	 * @return
+	 */
+	function __construct() {
+		parent::__construct();
+		$this->table = $this->db->dbprefix . 'uiform_user';
+	}
+
+	/**
+	 * model_user::getList()
+	 * Get list user
+	 *
+	 * @return array
+	 */
+	function getList() {
+		$this->db->select( 'c.*' );
+		$this->db->from( '{PRE}uiform_user c' );
+		return $this->db->get()->result();
+	}
+
+	/**
+	 * model_user::getUserById()
+	 * Get user by id
+	 *
+	 * @param int $id_user id of user
+	 *
+	 * @return array
+	 */
+	function getUserById( $id_user ) {
+		$this->db->select( 'c.*' );
+		$this->db->from( '{PRE}uiform_user c' );
+		$this->db->order_by( 'c.use_id', 'desc' );
+		$this->db->where( array( 'c.use_id' => $id_user ), 1 );
+		return $this->db->get()->row();
+	}
+
+	/**
+	 * model_user::getTotalForms()
+	 * List total rows
+	 *
+	 * @return array
+	 */
+	function getTotalList() {
+		$this->db->select( 'COUNT(*) as total' );
+		$this->db->from( '{PRE}uiform_user' );
+		return $this->db->get()->row();
+	}
+
+	  /**
+	 * model_user::getUserById()
+	 * Get user by id
+	 *
+	 * @param int $id_user id of user
+	 *
+	 * @return array
+	 */
+	function getFirstUser() {
+		$this->db->select( 'c.*' );
+		$this->db->from( '{PRE}uiform_user c' );
+		$this->db->order_by( 'c.use_id', 'desc' );
+		$this->db->limit( 1 );
+		return $this->db->get()->row();
+	}
+
+	/**
+	 * model_user::getUserById()
+	 * Get user by id
+	 *
+	 * @param int $id_user id of user
+	 *
+	 * @return array
+	 */
+	function getPasswordToken( $token ) {
+		$this->db->select( 'c.*' );
+		$this->db->from( '{PRE}uiform_user c' );
+		$this->db->order_by( 'c.use_id', 'desc' );
+		$this->db->where( array( 'c.use_password_token' => $token ) );
+		$this->db->limit( 1 );
+		return $this->db->get()->row();
+	}
+
 }
-?>
+

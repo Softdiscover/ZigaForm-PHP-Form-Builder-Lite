@@ -13,8 +13,8 @@
  * @link      https://php-form-builder.zigaform.com/
  */
 
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );
 }
 
 /**
@@ -28,32 +28,30 @@ if (!defined('BASEPATH')) {
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class Error extends MX_Controller
-{
-    
-    /**
-     * Error::__construct()
-     * 
-     * @return 
-     */
-    function __construct()
-    {
-        parent::__construct();
-    }
-    
-    /**
-     * Error::index()
-     * Show error page
-     * 
-     * @return array
-     */
-    public function index()
-    {
-        $this->output->set_status_header('404');
-        $data = array();
-        $data['heading']='404 Page Not Found';
-        $data['message']='<p>The page you requested was not found.</p>';
-        $this->load->view('error/error', $data);
-    }
-    
+class Error extends MX_Controller {
+
+
+	/**
+	 * Error::__construct()
+	 *
+	 * @return
+	 */
+	function __construct() {
+		parent::__construct();
+	}
+
+	/**
+	 * Error::index()
+	 * Show error page
+	 *
+	 * @return array
+	 */
+	public function index() {
+		$this->output->set_status_header( '404' );
+		$data            = array();
+		$data['heading'] = '404 Page Not Found';
+		$data['message'] = '<p>The page you requested was not found.</p>';
+		$this->load->view( 'error/error', $data );
+	}
+
 }

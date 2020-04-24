@@ -12,19 +12,19 @@
  * @version   CVS: $Id: header.php, v2.00 2013-11-30 02:52:40 Softdiscover $
  * @link      https://php-form-builder.zigaform.com/
  */
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );
 }
 ?>
 
 <!-- Brand and toggle get grouped for better mobile display -->
   
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-            
-         <?php $this->load->view('sidebar'); ?>
+		<!-- Collect the nav links, forms, and other content for toggling -->
+		<div class="collapse navbar-collapse navbar-ex1-collapse">
+			
+		 <?php $this->load->view( 'sidebar' ); ?>
  
-          
-            
-        </div><!-- /.navbar-collapse -->
+		   
+			
+		</div><!-- /.navbar-collapse -->
 

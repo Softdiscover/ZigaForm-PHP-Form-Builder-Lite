@@ -1,7 +1,7 @@
 /* global _wpUtilSettings */
 window.wp = window.wp || {};
 (function ($) {
-    /**
+	/**
 	 * wp.template( id )
 	 *
 	 * Fetch a JavaScript template for an id, and return a templating function for it.
@@ -10,7 +10,7 @@ window.wp = window.wp || {};
 	 *                       For example, "attachment" maps to "tmpl-attachment".
 	 * @return {function}    A function that lazily-compiles the template requested.
 	 */
-	wp.template = _.memoize(function ( id ) {
+	wp.template = _.memoize(function (id) {
 		var compiled,
 			/*
 			 * Underscore's default ERB-style templates are incompatible with PHP
@@ -19,15 +19,15 @@ window.wp = window.wp || {};
 			 * @see trac ticket #22344.
 			 */
 			options = {
-				evaluate:    /<#([\s\S]+?)#>/g,
+				evaluate: /<#([\s\S]+?)#>/g,
 				interpolate: /\{\{\{([\s\S]+?)\}\}\}/g,
-				escape:      /\{\{([^\}]+?)\}\}(?!\})/g,
-				variable:    'data'
+				escape: /\{\{([^\}]+?)\}\}(?!\})/g,
+				variable: 'data'
 			};
 
-		return function ( data ) {
-			compiled = compiled || _.template( $( '#tmpl-' + id ).html(),  options );
-			return compiled( data );
+		return function (data) {
+			compiled = compiled || _.template($('#tmpl-' + id).html(), options);
+			return compiled(data);
 		};
 	});
-}($uifm));
+})($uifm);

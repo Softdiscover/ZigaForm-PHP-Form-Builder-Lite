@@ -12,11 +12,11 @@
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @link      http://wordpress-cost-estimator.zigaform.com
  */
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );
 }
-if (class_exists('model_addon_details_log')) {
-    return;
+if ( class_exists( 'model_addon_details_log' ) ) {
+	return;
 }
 
 /**
@@ -32,18 +32,18 @@ if (class_exists('model_addon_details_log')) {
  */
 class model_addon_details_log extends CI_Model {
 
-     
-    public $table = "";
-    public $tbaddon_details = "";
 
-    function __construct() {
-         parent::__construct();
-        $this->table = $this->db->dbprefix . "uiform_addon_details_log";
-    }
+	public $table           = '';
+	public $tbaddon_details = '';
 
-      
- 
-    
+	function __construct() {
+		 parent::__construct();
+		$this->table = $this->db->dbprefix . 'uiform_addon_details_log';
+	}
+
+
+
+
 }
 
-?>
+

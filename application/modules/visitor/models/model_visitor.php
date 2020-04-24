@@ -24,39 +24,38 @@
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class model_visitor extends CI_Model
-{
-    
-    public $table = "";
-    /**
-    * register the global settings information
-    *
-    * @var array
-    */
-    public static $db_config = array();
-    
-    /**
-     * model_settings::__construct()
-     * 
-     * @return 
-     */
-    function __construct()
-    {
-        parent::__construct();
-        $this->table = $this->db->dbprefix . "uiform_visitor";
-    }
-    /**
-     * Visitormodel::getLastMonth()
-     * Get info last 
-     * 
-     * @param int $per_page max number of history forms
-     * @param int $segment  Number of pagination
-     * 
-     * @return array
-     */
-    function getLastMonth()
-    {
-        $query = $this->db->query("select a.d, a.requests,b.visits from (SELECT 
+class model_visitor extends CI_Model {
+
+
+	public $table = '';
+	/**
+	* register the global settings information
+	*
+	* @var array
+	*/
+	public static $db_config = array();
+
+	/**
+	 * model_settings::__construct()
+	 *
+	 * @return
+	 */
+	function __construct() {
+		parent::__construct();
+		$this->table = $this->db->dbprefix . 'uiform_visitor';
+	}
+	/**
+	 * Visitormodel::getLastMonth()
+	 * Get info last
+	 *
+	 * @param int $per_page max number of history forms
+	 * @param int $segment  Number of pagination
+	 *
+	 * @return array
+	 */
+	function getLastMonth() {
+		$query = $this->db->query(
+			"select a.d, a.requests,b.visits from (SELECT 
                                 DATE(created_date) as d, COUNT(ceh_id) as requests
                                 FROM cestimator_history
                                 WHERE DATE_FORMAT(created_date,'%e') BETWEEN 1 AND 31
@@ -70,8 +69,9 @@ class model_visitor extends CI_Model
                                 WHERE DATE_FORMAT(vis_last_date,'%e') BETWEEN 1 AND 31
                                 GROUP BY DATE_FORMAT(vis_last_date , '%Y-%m-%d')
                                 ORDER BY vis_last_date ASC
-                                limit 31) b on b.d=a.d");
-        return $query->result();
-    }
+                                limit 31) b on b.d=a.d"
+		);
+		return $query->result();
+	}
 }
-?>
+
