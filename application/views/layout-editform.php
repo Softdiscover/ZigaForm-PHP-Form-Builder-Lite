@@ -259,6 +259,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 				path: 'CodeMirror'
 				},
 				image_advtab: true,
+                                apply_source_formatting : false,                //added option
 				toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
 				toolbar2: "| image | media | link unlink anchor | forecolor backcolor | print preview code | youtube | qrcode | flickr | picasa ",
 				file_browser_callback : elFinderBrowser,
