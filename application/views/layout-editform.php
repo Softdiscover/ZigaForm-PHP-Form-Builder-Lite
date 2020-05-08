@@ -251,8 +251,8 @@ if ( ! defined( 'BASEPATH' ) ) {
 				],
 				relative_urls : false,
 				remove_script_host : false,
-				convert_urls : true,
-				browser_spellcheck : true ,
+				convert_urls : false,
+				browser_spellcheck : false ,
 				verify_html: false,
 				codemirror: {
 				indentOnInit: true, // Whether or not to indent code on init.
