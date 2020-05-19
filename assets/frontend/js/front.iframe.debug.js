@@ -32,13 +32,13 @@ zgfm_Loader.prototype = {
 	}
 };
 var zgfm_load_iframe = new zgfm_Loader();
-zgfm_load_iframe.require([UIFORM_SRC + 'assets/frontend/js/iframe/4.1.1/iframeResizer.min.js'], function () {
+zgfm_load_iframe.require([UIFORM_SRC + 'assets/frontend/js/iframe/4.2.10/iframeResizer.min.js'], function () {
 	for (var i in _uifmvar.fm_ids) {
 		document.getElementById('zgfm-iframe-' + _uifmvar.fm_ids[i]).onload = function () {
 			iFrameResize(
-				{
+				{ 
 					log: false,
-					autoResize: true,
+					autoResize: false,
 					sizeWidth: true,
 					warningTimeout: 0,
 					onScroll: function (coords) {}

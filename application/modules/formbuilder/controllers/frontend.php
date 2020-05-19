@@ -201,7 +201,7 @@ class Frontend extends FrontendController {
 			
 			$data_scripts=array();
 			$data_styles=array();
-			if(!empty($enqueue_scripts && is_array($enqueue_scripts))){
+			if(!empty($enqueue_scripts) && is_array($enqueue_scripts)){
 					
 				foreach ($enqueue_scripts as $key => $value) {
 					if(!empty($value) && is_array($value))

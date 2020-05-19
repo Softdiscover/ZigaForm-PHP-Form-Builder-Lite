@@ -294,7 +294,7 @@ class Forms extends BackendController {
 		$form_id  = ( isset( $_POST['form_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( trim( $_POST['form_id'] ) ) : '';
 		$fmb_data = ( isset( $_POST['form_data'] ) ) ? urldecode( Uiform_Form_Helper::sanitizeInput_html( $_POST['form_data'] ) ) : '';
 		if ( ! empty( $fmb_data ) ) {
-			$fmb_data = ( isset( $fmb_data ) && is_array( $fmb_data ) && $fmb_data ) ? array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode( $fmb_data, true ) ) : array();
+			$fmb_data = ( isset( $fmb_data ) && $fmb_data ) ? array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode( $fmb_data, true ) ) : array();
 		}
 			$data['fmb_data'] = $fmb_data;
 

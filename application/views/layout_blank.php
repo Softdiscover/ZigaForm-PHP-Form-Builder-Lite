@@ -79,7 +79,20 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/common/js/bgallery/3.1.3/css/bootstrap-image-gallery.css" rel="stylesheet">
 	
 	
-	<link href="<?php echo base_url(); ?>assets/backend/css/admin-css.css" rel="stylesheet">
+		<?php 
+	if(UIFORM_DEBUG===1){
+		?>
+
+		<link href="<?php echo base_url(); ?>assets/backend/css/admin.debug.css?v<?php echo date( 'YmdHis' );?>" rel="stylesheet">
+
+		<?php
+	}else{
+		?>
+		<link href="<?php echo base_url(); ?>assets/backend/css/admin.min.css" rel="stylesheet">
+		<?php
+	}
+
+	?>
 	<link rel="Favicon Icon" href="favicon.ico">
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
@@ -165,15 +178,19 @@ if ( ! defined( 'BASEPATH' ) ) {
 		"csrf_field_name":"<?php echo $this->security->get_csrf_hash(); ?>"
 		};
 	</script>
-	 <?php if ( ENVIRONMENT === 'development' && file_exists( BASEPATH . '../assets/backend/js/prev.js' ) ) { ?>
-			<?php include( 'layout-dev-1.php' ); ?>
-			<?php
-	 } else {
-			?>
-		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin-js.js"></script>
-		 <?php
-	 }
+		<?php 
+	if(UIFORM_DEBUG===1){
 		?>
+
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.debug.js?v=<?php echo date( 'YmdHis' );?>"></script>
+		<?php
+	}else{
+		?>
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.min.js"></script>
+		<?php
+	}
+
+	?>
   </head>
    <body class="tundra">
 	

@@ -203,11 +203,11 @@ Minified resources are loaded only when needed and are “enqueued” on the foo
 Our system can easily handle many form elements with conditional logic . 
 
 
- 
+ 
 ** OVERALL FEATURES
 ------------------------------------------------------------
 
- 
+ 
 ** DRAG AND DROP FORM BUILDER
 ------------------------------------------------------------
 
@@ -215,44 +215,44 @@ Zigaform comes with a drag and drop builder that allows you to easily build form
 
 With the simple and intuitive drag and drop form builder, you don’t need any coding experience. Just arrange form elements and customize the settings and you are good to go. Change themes or designs with just clicks of a few buttons.
 
- 
+ 
 ** SMART CONDITIONAL LOGIC [PRO VERSION]
 ------------------------------------------------------------
 
 Zigaform provides a visual editor for conditional logic. It allows you to create smart dynamic forms that help you collect the most relevant information. With conditional logic, your forms will dynamically change based on the selections the user makes while filling out your forms. You can choose to show or hide fields based on a selected item. The goal of our conditional logic is to allow you to create smart powerful and useful forms that give you the best results.
 
- 
+ 
 ** COST ESTIMATION & PAYMENT / MATH LOGIC
 ------------------------------------------------------------
 
 If you want to create easily beautiful and powerful cost estimation and payment forms on your website. Check my other item: Zigaform Estimation (https://codecanyon.net/item/zigaform-php-form-builder-contact-survey/14889427?ref=softdiscover)
 
- 
+ 
 ** AUTOMATED NOTIFICATION E-MAILS
 ------------------------------------------------------------
 
 Zigaform allows you to create custom email notifications to get notified when new entries are submitted. Personalize these emails by editing the subject, writing the message, and including options like entry details, carbon copy and tons of options.
 
- 
+ 
 ** ADVANCED GRID SYSTEM
 ------------------------------------------------------------
 
 Zigaform offers an advanced grid system to allows you to create unique form layouts in a fully customizable and responsive grid system. It supports unlimited grid nesting.
 
- 
+ 
 ** MULTI-PAGE FORMS (WIZARD FORM)  [PRO VERSION]
 ------------------------------------------------------------
 
 The page break field allows you to break up your form into multiple pages and even show a progress bar that let's your user know where they are in the process.
 
- 
+ 
 ** 42+ ADVANCED FIELDS
 ------------------------------------------------------------
 
 Zigaform has tons of field types to make a great form that will help your website succeed for you.
 	* Text input (single line) 	* Textarea (multiple lines) 	* Checkbox 	* Radio (multiple choice) 	* Select dropdown 	* HTML 	* File Upload 	* Columns 	* File Upload 	* Image Upload 	* Password 	* Slider 	* Range 	* Spinner 	* Captcha 	* Recaptcha 	* hidden field 	* star rating 	* color picker 	* date picker 	* Time picker 	* Date and Time 	* ReCaptcha 	* Prepended, Appended textbox 	* Panel 	* Divider 	* Heading 	* Wizard buttons 	* Switch 	* Dinamic Checkboxes 	* Dinamic Radiobutton
 
- 
+ 
 ** CAPTCHA SPAM PROTECTION
 ------------------------------------------------------------
 
@@ -260,7 +260,7 @@ Zigaform offers support for Google reCaptcha to prevent spammers and spambots. S
 
 To protect your site, you want to make it as easy as you can for your visitors to fill in your contact form, while making it as hard as possible for spambots to get through your security.
 
- 
+ 
 ** DETAILED SUBMITTED ENTRIES 
 ------------------------------------------------------------
 
@@ -268,7 +268,7 @@ This plugin allows you to view submitted entries within the WordPress admin area
 
 Some key features: 	* Bulk Export to CSV 	* Bulk Delete 	* Advanced Filtering 	* Search across all entries 	* Collect submitted data as well as date submitted and IP Address
 
- 
+ 
 ** FULLY RESPONSIVE DESIGN
 ------------------------------------------------------------
 
@@ -276,25 +276,25 @@ Zigaform designs are carefully crafted to fit all your devices. Be it mobile, iP
 
 All of the elements are designed using either CSS or font icons. Meaning, your forms will look simply stunning on retina and high resolution devices. Say goodbye to pixelations and glitches and enjoy an interface that scales.
 
- 
+ 
 ** CONTROL EVERY ELEMENT
 ------------------------------------------------------------
 
 An abundance of settings so you can fine tune every part of your form: from general settings down to individual fields, submit actions and emails.
 
- 
+ 
 ** EFFORTLESS WORDPRESS INTEGRATION
 ------------------------------------------------------------
 
 Add a Zigaform Form to your site easily with a widget, shortcode, or append it automatically to any content you choose.
 
- 
+ 
 ** TRANSLATION READY - MULTI LANGUAGE SUPPORT 
 ------------------------------------------------------------
 
 Translation-ready, for easy conversion to any language. it supports Spanish, Italian, French, Russian, German, Portuguese, and Chinese
 
- 
+ 
 ** HEAVY ON SECURITY
 ------------------------------------------------------------
 
@@ -302,7 +302,7 @@ Zigaform has built-in security for strictly fighting spams and bots. Built on to
 
 Still not satisfied? Go ahead and optionally use Google reCaptcha or simple Captcha on your form.
 
- 
+ 
 ** FAST & SCALABLE
 ------------------------------------------------------------
 
@@ -312,7 +312,7 @@ Our system can easily handle many form elements with conditional logic.
 
 Zigaform is quickly becoming a popular choice among users and developers. It allows you to quickly create beautiful contact forms and comes with all the goodies you would need from a premium form builder.
 
- 
+ 
 ** FREE SUPPORT AND UPGRADES. [PRO VERSION]
 ------------------------------------------------------------
 
@@ -331,4 +331,3 @@ Their support is immaculate and the zigaform is one of the best you’ll find fo
 https://www.youtube.com/watch?v=qGuDnjnBa2w&w=532&rel=0
  
  
-

@@ -35,7 +35,7 @@ ob_start();
 	<link href="<?php echo base_url(); ?>assets/common/js/blueimp/2.16.0/css/blueimp-gallery.min.css" rel="stylesheet">
 	
 	<link href="<?php echo base_url(); ?>assets/common/js/bgallery/3.1.3/css/bootstrap-image-gallery.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>assets/frontend/css/css.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/frontend/css/css.php" rel="stylesheet">
 	
 	<link href="<?php echo base_url(); ?>assets/frontend/css/rockfm_form<?php echo $id_form; ?>.css?<?php echo date( 'YmdHis' ); ?>" rel="stylesheet">
 	
@@ -82,7 +82,7 @@ ob_start();
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/accounting/accounting.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/blueimp/2.16.0/js/blueimp-gallery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/bgallery/3.1.3/js/bootstrap-image-gallery.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/frontend/js/js.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/frontend/js/js.php"></script>
 	
 	
 	

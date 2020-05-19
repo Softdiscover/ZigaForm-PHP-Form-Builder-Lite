@@ -77,7 +77,20 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/common/js/bgallery/3.1.3/css/bootstrap-image-gallery.css" rel="stylesheet">
 	
 	
-	<link href="<?php echo base_url(); ?>assets/backend/css/admin-css.css" rel="stylesheet">
+	<?php 
+	if(UIFORM_DEBUG===1){
+		?>
+
+		<link href="<?php echo base_url(); ?>assets/backend/css/admin.debug.css?v<?php echo date( 'YmdHis' );?>" rel="stylesheet">
+
+		<?php
+	}else{
+		?>
+		<link href="<?php echo base_url(); ?>assets/backend/css/admin.min.css" rel="stylesheet">
+		<?php
+	}
+
+	?>
 	<!-- filemanager-->
 	<link href="<?php echo base_url(); ?>extensions/elfinder2/codemirror/lib/codemirror.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>extensions/elfinder2/codemirror/theme/3024-day.css" rel="stylesheet">

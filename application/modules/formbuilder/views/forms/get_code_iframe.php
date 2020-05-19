@@ -22,7 +22,7 @@ ob_start();
 		var uiform = document.createElement('script');
 		uiform.type = 'text/javascript';
 		uiform.async = true;
-		uiform.src = ('https:' == document.location.protocol ? UIFORM_SRC : UIFORM_SRC) + 'assets/frontend/js/iframe.js';
+		uiform.src = ('https:' == document.location.protocol ? UIFORM_SRC : UIFORM_SRC) + '<?php echo ( UIFORM_DEBUG === 1 ) ? 'assets/frontend/js/front.iframe.min.js' : 'assets/frontend/js/front.iframe.min.js'; ?>';
 		var s = document.getElementsByTagName('script')[0];
 			   s.parentNode.insertBefore(uiform, s);
 		   })();</script>

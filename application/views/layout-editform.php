@@ -88,7 +88,20 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/common/js/checkradio/2.2.2/css/jquery.checkradios.css" rel="stylesheet">
 	
 	
-	<link href="<?php echo base_url(); ?>assets/backend/css/admin-css.css" rel="stylesheet">
+	<?php 
+	if(UIFORM_DEBUG===1){
+		?>
+
+		<link href="<?php echo base_url(); ?>assets/backend/css/admin.debug.css?v<?php echo date( 'YmdHis' );?>" rel="stylesheet">
+
+		<?php
+	}else{
+		?>
+		<link href="<?php echo base_url(); ?>assets/backend/css/admin.min.css" rel="stylesheet">
+		<?php
+	}
+
+	?>
 	
 	  <!-- codemirror -->
 	<link href="<?php echo base_url(); ?>assets/common/js/codemirror/codemirror.css" rel="stylesheet">
@@ -216,20 +229,24 @@ if ( ! defined( 'BASEPATH' ) ) {
 	);
 	?>
 	
-	 var uiform_vars = <?php echo json_encode( $tmp_uiform_vars, JSON_PRETTY_PRINT ); ?>;  
+	 var uiform_vars = <?php echo Uiform_Form_Helper::_format_json(json_encode( $tmp_uiform_vars)); ?>;  
 		
 
 	</script>
 	
-	 <?php if ( ENVIRONMENT === 'development' && file_exists( BASEPATH . '../assets/backend/js/prev.js' ) ) { ?>
-			<?php include( 'layout-dev-1.php' ); ?>
-			<?php
-	 } else {
-			?>
-		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin-js.js"></script>
-		 <?php
-	 }
+		<?php 
+	if(UIFORM_DEBUG===1){
 		?>
+
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.debug.js?v=<?php echo date( 'YmdHis' );?>"></script>
+		<?php
+	}else{
+		?>
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.min.js"></script>
+		<?php
+	}
+
+	?>
    
   <!--- frontend -->
   
