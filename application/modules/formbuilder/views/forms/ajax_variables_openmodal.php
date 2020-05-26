@@ -30,7 +30,7 @@ ob_start();
 					<div class="sfdc-tab-content">
 						<div id="zgfm-modal-calc-tab-1" class="sfdc-tab-pane sfdc-in sfdc-active">
 							<h3><?php echo __( 'Fields', 'FRocket_admin' ); ?></h3>
-							<?php include( 'ajax_variables_emailpage.php' ); ?>
+							<?php require 'ajax_variables_emailpage.php'; ?>
 							
 							 <h3><?php echo __( 'Others', 'FRocket_admin' ); ?></h3>
 							 <div class="zgfm-modal-calc-wrap-table">

@@ -40,16 +40,20 @@ foreach ( $input2['options'] as $key => $value ) {
 		}
 		?>
 	<option <?php echo $checked; ?>
-		value="<?php
+		value="
+		<?php
 		if ( ! empty( $value['value'] ) ) {
 			echo $key;
 		}
-		?>"
-		data-uifm-inp-val="<?php
+		?>
+		"
+		data-uifm-inp-val="
+		<?php
 		if ( isset( $value['value'] ) ) {
 			echo Uiform_Form_Helper::sanitizeInput( $value['value'] );
 		}
-		?>"
+		?>
+		"
 		
 		data-opt-index="<?php echo $key; ?>" ><?php echo $value['label']; ?></option>
 		<?php

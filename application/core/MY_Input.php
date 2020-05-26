@@ -1,29 +1,25 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );}
 
-class MY_Input extends CI_Input
-{
-    function _sanitize_globals()
-    {   
-        
-        $ignore_csrf = config_item('csrf_ignore');
+class MY_Input extends CI_Input {
 
-        if (is_array($ignore_csrf) && count($ignore_csrf))
-        {
-            global $URI,$RTR;
-            $haystack = $URI->uri_string();
+	function _sanitize_globals() {
+		$ignore_csrf = config_item( 'csrf_ignore' );
 
-            foreach($ignore_csrf as $needle)
-            {
-                if (strlen($haystack) >= strlen($needle) && substr($haystack, 0, strlen($needle)) == $needle)
-                {
-                    $this->_enable_csrf = FALSE;
-                    $RTR->config->set_item('csrf_protection', FALSE);
-                    break;
-                }
-            }           
-        }
+		if ( is_array( $ignore_csrf ) && count( $ignore_csrf ) ) {
+			global $URI,$RTR;
+			$haystack = $URI->uri_string();
 
-        parent::_sanitize_globals();
-    }
+			foreach ( $ignore_csrf as $needle ) {
+				if ( strlen( $haystack ) >= strlen( $needle ) && substr( $haystack, 0, strlen( $needle ) ) == $needle ) {
+					$this->_enable_csrf = false;
+					$RTR->config->set_item( 'csrf_protection', false );
+					break;
+				}
+			}
+		}
+
+		parent::_sanitize_globals();
+	}
 }
 /* EOF: MY_Input */

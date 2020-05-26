@@ -50,7 +50,7 @@ class zfad_backend extends BackendController {
 		$this->template->set( 'controller', $this );
 		$this->load->model( 'model_addon' );
 
-		 //admin resources
+		 // admin resources
 		add_action( 'admin_enqueue_scripts', array( &$this, 'loadStyle' ) );
 
 		add_filter( 'zgfm_back_filter_globalvars', array( &$this, 'filter_add_globalvariable' ) );
@@ -77,7 +77,7 @@ class zfad_backend extends BackendController {
 
 		$json['status'] = 'updated';
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -96,13 +96,13 @@ class zfad_backend extends BackendController {
 		$data          = array();
 		$data['query'] = $this->model_addon->getListAddons( 100, 0 );
 
-		//$this->template->loadPartial('layout', 'addon/zfad_backend/list_extensions', $data);
+		// $this->template->loadPartial('layout', 'addon/zfad_backend/list_extensions', $data);
 		$this->template->loadPartial( 'layout', 'backend/list_extensions', $data );
 	}
 
 
 	public function loadStyle() {
-		//load
+		// load
 
 		ob_start();
 		?>
@@ -116,28 +116,28 @@ class zfad_backend extends BackendController {
 
 	public function load_addonsbyBack() {
 
-		//get addons
+		// get addons
 		$tmp_addons = $this->model_addon->getListAddonsByBack();
 
-		//flag variables
+		// flag variables
 		$tmp_addons_arr  = array();
 		$tmp_modules_arr = self::$_addons;
 
-		//storing lib objects
+		// storing lib objects
 		foreach ( $tmp_addons as $key => $value ) {
 
-			//load addons
+			// load addons
 			// require_once( UIFORM_FORMS_DIR . '/modules/addon_'.$value->add_name.'/controllers/backend.php');
 
 			$tmp_add_new_contr = array();
 
-			//$tmp_add_new_contr['backend'] = 'zfad_'.$value->add_name.'_back';
+			// $tmp_add_new_contr['backend'] = 'zfad_'.$value->add_name.'_back';
 			$tmp_add_new_contr['backend'] = modules::run( 'addon_' . $value->add_name . '/zfad_' . $value->add_name . '_back/get_instance' );
 
 			$tmp_add_new_flag = array();
 
-			//$tmp_add_new_flag = call_user_func(array($tmp_add_new_contr['backend'], 'add_controllers'));
-			//$tmp_add_new_flag = modules::run('addon_'.$value->add_name.'/'.$tmp_add_new_contr['backend'].'/add_controllers');
+			// $tmp_add_new_flag = call_user_func(array($tmp_add_new_contr['backend'], 'add_controllers'));
+			// $tmp_add_new_flag = modules::run('addon_'.$value->add_name.'/'.$tmp_add_new_contr['backend'].'/add_controllers');
 			$tmp_add_new_flag = call_user_func( array( $tmp_add_new_contr['backend'], 'add_controllers' ) );
 
 			$tmp_add_new_contr = array_merge( $tmp_add_new_contr, $tmp_add_new_flag );
@@ -155,10 +155,11 @@ class zfad_backend extends BackendController {
 
 		$tmp_addons_actions = array();
 
-		/*pending to add cache*/
-		//loop addons
+		/*
+		pending to add cache*/
+		// loop addons
 		foreach ( $tmp_addons as $key => $value ) {
-			//loop controllers
+			// loop controllers
 			foreach ( $value as $key2 => $value2 ) {
 
 				$tmp_flag = array();
@@ -179,13 +180,14 @@ class zfad_backend extends BackendController {
 
 		self::$_addons_actions = $tmp_addons_actions;
 
-		//add js actions
+		// add js actions
 		$tmp_addons_actions = array();
 
-		/*pending to add cache*/
-		//loop addons
+		/*
+		pending to add cache*/
+		// loop addons
 		foreach ( $tmp_addons as $key => $value ) {
-			//loop controllers
+			// loop controllers
 			foreach ( $value as $key2 => $value2 ) {
 
 				$tmp_flag = array();
@@ -242,7 +244,7 @@ class zfad_backend extends BackendController {
 
 	public function get_addon_content( $addon_name ) {
 
-		//return 'here loading content of addon '.$addon_name;
+		// return 'here loading content of addon '.$addon_name;
 	}
 
 
@@ -263,8 +265,8 @@ class zfad_backend extends BackendController {
 	public function init() {
 
 		try {
-			//$instance_example = new WPPS_Instance_Class( 'Instance example', '42' );
-			//add_notice('ba');
+			// $instance_example = new WPPS_Instance_Class( 'Instance example', '42' );
+			// add_notice('ba');
 		} catch ( Exception $exception ) {
 			add_notice( __METHOD__ . ' error: ' . $exception->getMessage(), 'error' );
 		}

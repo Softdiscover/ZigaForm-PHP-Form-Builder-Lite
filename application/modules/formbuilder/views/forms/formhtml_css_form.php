@@ -21,11 +21,11 @@ if ( isset( $skin['form_background']['show_st'] )
 	?>
 
 	<?php
-		 //el_background
+		 // el_background
 
 	switch ( intval( $skin['form_background']['type'] ) ) {
 		case 1:
-			  //solid
+			  // solid
 			if ( ! empty( $skin['form_background']['solid_color'] ) ) {
 				?>
 								background:<?php echo $skin['form_background']['solid_color']; ?>;
@@ -33,7 +33,7 @@ if ( isset( $skin['form_background']['show_st'] )
 			}
 			break;
 		case 2:
-					 //gradient
+					 // gradient
 			if ( ! empty( $skin['form_background']['start_color'] ) && ! empty( $skin['form_background']['end_color'] ) ) {
 				?>
 								background: <?php echo $skin['form_background']['start_color']; ?>;
@@ -57,7 +57,7 @@ if ( isset( $skin['form_background']['show_st'] )
 <?php } ?>                    
 								
 		<?php
-		 //el_border_radius
+		 // el_border_radius
 		if ( isset( $skin['form_border_radius']['show_st'] ) && intval( $skin['form_border_radius']['show_st'] ) === 1 ) {
 			?>
 			 -webkit-border-radius: <?php echo $skin['form_border_radius']['size']; ?>px;
@@ -67,7 +67,7 @@ if ( isset( $skin['form_background']['show_st'] )
 		}
 		?>
 		<?php
-		 //el_border
+		 // el_border
 		if ( isset( $skin['form_border']['show_st'] )
 				 && intval( $skin['form_border']['show_st'] ) === 1
 				 && ! empty( $skin['form_border']['color'] )
@@ -86,7 +86,7 @@ if ( isset( $skin['form_background']['show_st'] )
 		}
 		?>
 		 <?php
-			//shadow
+			// shadow
 			if ( isset( $skin['form_shadow']['show_st'] )
 				 && intval( $skin['form_shadow']['show_st'] ) === 1
 				 && ! empty( $skin['form_shadow']['color'] )
@@ -103,7 +103,7 @@ if ( isset( $skin['form_background']['show_st'] )
 			?>
 		  
 		  <?php
-			//padding
+			// padding
 			if ( isset( $skin['form_padding']['show_st'] ) && intval( $skin['form_padding']['show_st'] ) === 1 ) {
 				?>
 			 padding: <?php echo $skin['form_padding']['pos_top']; ?>px <?php echo $skin['form_padding']['pos_right']; ?>px <?php echo $skin['form_padding']['pos_bottom']; ?>px <?php echo $skin['form_padding']['pos_left']; ?>px;
@@ -114,7 +114,7 @@ if ( isset( $skin['form_background']['show_st'] )
 			 padding:20px 20px 25px 20px;
 			<?php } ?>    
 		  <?php
-			//max width
+			// max width
 			if ( isset( $skin['form_width']['show_st'] )
 				 && intval( $skin['form_width']['max'] ) > 0
 				 && intval( $skin['form_width']['show_st'] ) === 1 ) {

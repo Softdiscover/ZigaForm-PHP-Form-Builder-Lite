@@ -299,7 +299,7 @@ ClientSniffer::engines(
 
 		'Trident'    => null,
 		'Tasman'     => null,
-		#   "iCab"              => NULL,
+		// "iCab"              => NULL,
 			'Presto' => null,
 	)
 );

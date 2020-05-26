@@ -30,7 +30,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 						'textarea_rows' => 5,
 						'wpautop'       => true,
 					);
-					//wp_editor('', 'uifm_fld_inp3_html',$settings );
+					// wp_editor('', 'uifm_fld_inp3_html',$settings );
 
 					?>
 					<textarea 

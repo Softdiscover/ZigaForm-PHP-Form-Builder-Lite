@@ -42,8 +42,8 @@ class SFM_Single_Google extends SFM_Single_Standard {
 	public function __construct( $args = array() ) {
 		parent::__construct( $args );
 
-		$this->variants = $args['variants'];
-		$this->files = $args['files'];
+		$this->variants      = $args['variants'];
+		$this->files         = $args['files'];
 		$this->import_family = $this->get_import_family();
 	}
 
@@ -69,22 +69,22 @@ class SFM_Single_Google extends SFM_Single_Standard {
 			// No variant requested. Give default.
 			if ( in_array( 'regular', (array) $this->variants ) ) {
 				$variant_name = 'regular';
-			}else {
+			} else {
 				$variant_name = $this->variants[0];
 			}
-		}else if ( in_array( $variant_request, (array) $this->variants ) ) {
+		} elseif ( in_array( $variant_request, (array) $this->variants ) ) {
 			// Variant requested and found
 			$variant_name = $variant;
 		}
 
-		if ( !$variant_name ) {
+		if ( ! $variant_name ) {
 			// Requested a variant, but none found
 			$variants = implode( '</li><li>', array_keys( (array) $this->variants ) );
 			wp_die( 'Variant not found. Variants: <ul><li>' . $variants . '</li></ul>' );
 		}
 
 		// Variant meta
-		$this->variant = array();
+		$this->variant             = array();
 		$this->variant['name']     = $variant_name;
 		$this->variant['filename'] = $this->get_nicename() . '-' . $variant_name;
 		$this->variant['png_path'] = $this->get_png_path();
@@ -99,14 +99,14 @@ class SFM_Single_Google extends SFM_Single_Standard {
 		if ( isset( $this->file_paths ) ) {
 			return $this->file_paths;
 		}
-		
+
 		$plugin = SFM_Plugin::get_instance();
 
-		$uploads = wp_upload_dir();
+		$uploads   = wp_upload_dir();
 		$fonts_dir = '/styles-fonts';
 
 		$this->file_paths = array(
-			'plugin' => array(
+			'plugin'  => array(
 				'path' => $plugin->get_plugin_directory() . $fonts_dir,
 				'url'  => $plugin->get_plugin_url() . $fonts_dir,
 			),
@@ -124,17 +124,17 @@ class SFM_Single_Google extends SFM_Single_Standard {
 	public function get_file( $path_or_url = 'path', $ext = 'png', $return_cache_path = false ) {
 		$variant = $this->get_variant();
 
-		$target = "/$ext/" . $variant['filename'] . ".$ext";
+		$target    = "/$ext/" . $variant['filename'] . ".$ext";
 		$locations = $this->get_file_paths();
 
 		foreach ( $locations as $location ) {
-			$path = $location[ 'path' ] . $target;
-			$url  = $location[ 'url' ]  . $target;
+			$path = $location['path'] . $target;
+			$url  = $location['url'] . $target;
 
 			if ( file_exists( $path ) ) {
 				if ( 'path' == $path_or_url ) {
 					return $path;
-				}else {
+				} else {
 					return $url;
 				}
 			}
@@ -158,7 +158,7 @@ class SFM_Single_Google extends SFM_Single_Standard {
 	 * @return string path of image preview PNG for the active variant
 	 */
 	public function get_png_path() {
-		return $this->get_file( 'path', 'png');
+		return $this->get_file( 'path', 'png' );
 	}
 
 	public function get_png_cache_path() {
@@ -180,7 +180,7 @@ class SFM_Single_Google extends SFM_Single_Standard {
 	 * @return string Remote (google) URL of TTF for the active variant
 	 */
 	public function get_ttf_url() {
-		$variant = $this->get_variant();
+		$variant      = $this->get_variant();
 		$variant_name = $variant['name'];
 
 		return $this->files->{$variant_name};
@@ -205,7 +205,7 @@ class SFM_Single_Google extends SFM_Single_Standard {
 
 		if ( file_exists( $ttf_path ) ) {
 			return $ttf_path;
-		}else {
+		} else {
 			return $this->get_remote_ttf();
 		}
 	}
@@ -215,13 +215,14 @@ class SFM_Single_Google extends SFM_Single_Standard {
 	 */
 	public function get_remote_ttf() {
 		// Load filesystem
-		if ( !function_exists('WP_Filesystem')) { require ABSPATH . 'wp-admin/includes/file.php'; }
+		if ( ! function_exists( 'WP_Filesystem' ) ) {
+			require ABSPATH . 'wp-admin/includes/file.php'; }
 		global $wp_filesystem;
 		WP_Filesystem();
 
 		// Create cache directory
 		$dir = dirname( $this->get_ttf_path() );
-		if ( !is_dir( $dir ) && !wp_mkdir_p( $dir ) ) { 
+		if ( ! is_dir( $dir ) && ! wp_mkdir_p( $dir ) ) {
 			wp_die( "Please check permissions. Could not create directory $dir" );
 		}
 
@@ -233,10 +234,10 @@ class SFM_Single_Google extends SFM_Single_Standard {
 		);
 
 		// Check file saved
-		if ( !$ttf_file_path ) {
+		if ( ! $ttf_file_path ) {
 			wp_die( "Please check permissions. Could not write font to $dir" );
 		}
-		
+
 		return $this->get_ttf_path();
 	}
 
@@ -249,14 +250,14 @@ class SFM_Single_Google extends SFM_Single_Standard {
 		if ( empty( $ttf_url ) ) {
 			wp_die( 'Font URL not set.' );
 		}
-		
+
 		$response = wp_remote_get( $ttf_url );
 
-		if ( is_a( $response, 'WP_Error') ) {
+		if ( is_a( $response, 'WP_Error' ) ) {
 			wp_die( "Attempt to get remote font returned an error.<br/>$ttf_url" );
 		}
 
 		return $response['body'];
 	}
-	
+
 }

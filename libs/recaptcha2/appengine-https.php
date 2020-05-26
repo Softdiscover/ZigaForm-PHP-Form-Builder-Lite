@@ -22,12 +22,12 @@
  * THE SOFTWARE.
  */
 // Redirect to HTTPS by default (for AppEngine)
-if (isset($_SERVER['HTTP_X_FORWARDED_PROTO'])) {
-    if ($_SERVER['HTTP_X_FORWARDED_PROTO'] === 'http') {
-        header('HTTP/1.1 301 Moved Permanently');
-        header('Location: https://'.$_SERVER['SERVER_NAME'].$_SERVER['REQUEST_URI']);
-        exit(0);
-    } else {
-        header('Strict-Transport-Security: max-age=63072000; includeSubDomains; preload');
-    }
+if ( isset( $_SERVER['HTTP_X_FORWARDED_PROTO'] ) ) {
+	if ( $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'http' ) {
+		header( 'HTTP/1.1 301 Moved Permanently' );
+		header( 'Location: https://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'] );
+		exit( 0 );
+	} else {
+		header( 'Strict-Transport-Security: max-age=63072000; includeSubDomains; preload' );
+	}
 }

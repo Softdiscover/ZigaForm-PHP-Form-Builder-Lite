@@ -15,23 +15,21 @@ class Zigaform_b_notice {
 	 * @mvc Controller
 	 */
 	public function __construct() {
-		//  global $wpdb;
+		// global $wpdb;
 		// $this->wpdb = $wpdb;
 
-		//admin notice
+		// admin notice
 		// add_action( 'admin_notices',                  array( $this, 'notice_add' ) );
-		//add_action( 'wp_ajax_zgfm_f_notice_dismiss', array( $this, 'notice_dismiss' ) );
+		// add_action( 'wp_ajax_zgfm_f_notice_dismiss', array( $this, 'notice_dismiss' ) );
 		// add_action( 'wp_ajax_zgfm_f_notice_rated', array( $this, 'notice_rated' ) );
 
-		//footer
-		//add_filter( 'admin_footer_text', array( $this, 'notice_footer' ), 1, 2 );
-
+		// footer
+		// add_filter( 'admin_footer_text', array( $this, 'notice_footer' ), 1, 2 );
 	}
 
 
 	/**
 	 * Adding admin notice
-	 *
 	 */
 	public function notice_rated() {
 
@@ -47,11 +45,10 @@ class Zigaform_b_notice {
 
 	/**
 	 * Adding admin notice
-	 *
 	 */
 	public function notice_add() {
 
-		//only for super admin
+		// only for super admin
 		if ( ! is_super_admin() ) {
 			return;
 		}
@@ -61,7 +58,7 @@ class Zigaform_b_notice {
 		$time = time();
 		$load = false;
 
-		//if rated, not load
+		// if rated, not load
 		if ( ( isset( $data['rated'] ) && $data['rated'] ) ) {
 				return;
 		}
@@ -110,14 +107,13 @@ class Zigaform_b_notice {
 		}
 
 		// after 7 days, add the message
-		include( dirname( __DIR__ ) . '/views/help/notice-1.php' );
+		include dirname( __DIR__ ) . '/views/help/notice-1.php';
 
 	}
 
 
 	/**
 	 * Dismiss notice
-	 *
 	 */
 	public function notice_dismiss() {
 
@@ -133,7 +129,6 @@ class Zigaform_b_notice {
 
 	/**
 	 * When user is on zigaform admin page, display footer text that asks them to rate us.
-	 *
 	 */
 	public function notice_footer( $text ) {
 

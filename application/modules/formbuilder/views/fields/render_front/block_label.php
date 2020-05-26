@@ -35,7 +35,7 @@ ob_start();
 				if ( isset( $help_block['show_st'] ) && intval( $help_block['show_st'] ) === 1 ) {
 					switch ( $help_block['pos'] ) {
 						case 2:
-							//tooltip
+							// tooltip
 							?>
 					<span 
 						data-toggle="tooltip"
@@ -54,7 +54,7 @@ ob_start();
 							<?php
 							break;
 						case 3:
-							//popup
+							// popup
 							?>
 					<a role="button"
 						data-toggle="sfdc-modal"

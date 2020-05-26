@@ -16,57 +16,57 @@ if ( ! defined( 'BASEPATH' ) ) {
 ?>
 <div class="uiform-set-field-wrap" id="uiform-set-field-input-panel">
 	 <!--container for text box, textarea ,.. -->    
-			<?php include( 'settings_field_input_1.php' ); ?>
+			<?php require 'settings_field_input_1.php'; ?>
 		<!--\end container -->
 		<!--container for options ,.. -->    
-			<?php include( 'settings_field_input_2.php' ); ?>
+			<?php require 'settings_field_input_2.php'; ?>
 		<!--\end container -->
 		<!--container for custom html ,.. -->    
-			<?php include( 'settings_field_input_3.php' ); ?>
+			<?php require 'settings_field_input_3.php'; ?>
 		<!--\end container -->
 		<!--container for custom html ,.. -->    
-			<?php include( 'settings_field_input_4.php' ); ?>
+			<?php require 'settings_field_input_4.php'; ?>
 		<!--\end container -->
 		<!--container ,.. -->    
-			<?php include( 'settings_field_input_5.php' ); ?>
+			<?php require 'settings_field_input_5.php'; ?>
 		<!--\end container -->
 		<!--container  ,.. -->    
-			<?php include( 'settings_field_input_6.php' ); ?>
+			<?php require 'settings_field_input_6.php'; ?>
 		<!--\end container -->
 		<!--container  ,.. -->    
-			<?php include( 'settings_field_input_7.php' ); ?>
+			<?php require 'settings_field_input_7.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_8.php' ); ?>
+			<?php require 'settings_field_input_8.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_9.php' ); ?>
+			<?php require 'settings_field_input_9.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_11.php' ); ?>
+			<?php require 'settings_field_input_11.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_14.php' ); ?>
+			<?php require 'settings_field_input_14.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_12.php' ); ?>
+			<?php require 'settings_field_input_12.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_13.php' ); ?>
+			<?php require 'settings_field_input_13.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_15.php' ); ?>
+			<?php require 'settings_field_input_15.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_16.php' ); ?>
+			<?php require 'settings_field_input_16.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_17.php' ); ?>
+			<?php require 'settings_field_input_17.php'; ?>
 		<!--\end container -->
 <!--container  -->    
-			<?php include( 'settings_field_input_18.php' ); ?>
+			<?php require 'settings_field_input_18.php'; ?>
 		<!--\end container -->
 		<!--container  -->    
-			<?php include( 'settings_field_input_19.php' ); ?>
+			<?php require 'settings_field_input_19.php'; ?>
 		<!--\end container -->
 </div>

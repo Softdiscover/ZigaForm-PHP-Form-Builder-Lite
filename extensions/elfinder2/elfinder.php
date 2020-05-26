@@ -1,38 +1,38 @@
 <?php
-define('BASEPATH', realpath(dirname(__FILE__) . '/../../'));
+define( 'BASEPATH', realpath( dirname( __FILE__ ) . '/../../' ) );
 session_start();
 
-require_once(BASEPATH. '/application/config/constants.php');
-require_once(BASEPATH. '/application/helpers/common_helper.php');
-XSRFdefender('elFinder');
+require_once BASEPATH . '/application/config/constants.php';
+require_once BASEPATH . '/application/helpers/common_helper.php';
+XSRFdefender( 'elFinder' );
 
 ?>
 <!DOCTYPE html>
 <html>
 	<head>
-                <meta name="googlebot" content="noindex">
-                <meta name="robots" content="noindex">
+				<meta name="googlebot" content="noindex">
+				<meta name="robots" content="noindex">
 		<meta charset="utf-8">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 		<title>File manager</title>
-                <?php if(UIFORM_DEMO===0){?>
+				<?php if ( UIFORM_DEMO === 0 ) { ?>
 		<!-- Require JS (REQUIRED) -->
 		<!-- Rename "main.default.js" to "main.js" and edit it if you need configure elFInder options or any things -->
 		<script data-main="./main.default.js" src="js/require.min.js"></script>
 		<script>
-                     var FileBrowserDialogue = {
-            init: function() {
-            // Here goes your code for setting your custom things onLoad.
-            },
-                    mySubmit: function(URL) {
-                    // pass selected file path to TinyMCE
-                    top.tinymce.activeEditor.windowManager.getParams().setUrl(URL);
-                    // close popup window
-                    top.tinymce.activeEditor.windowManager.close();
-                    }
-            }
-            
+					 var FileBrowserDialogue = {
+			init: function() {
+			// Here goes your code for setting your custom things onLoad.
+			},
+					mySubmit: function(URL) {
+					// pass selected file path to TinyMCE
+					top.tinymce.activeEditor.windowManager.getParams().setUrl(URL);
+					// close popup window
+					top.tinymce.activeEditor.windowManager.close();
+					}
+			}
+			
 			define('elFinderConfig', {
 				// elFinder options (REQUIRED)
 				// Documentation for client options:
@@ -81,9 +81,9 @@ XSRFdefender('elFinder');
 					},getFileCallback: function(file) { // editor callback
 							FileBrowserDialogue.mySubmit(file.url); // pass selected file path to TinyMCE
 							},
-                                        resizable: false,
-                                        customData: {
-							'XSRFToken':'<?php echo getXSRFToken('elFinder'); ?>',
+										resizable: false,
+										customData: {
+							'XSRFToken':'<?php echo getXSRFToken( 'elFinder' ); ?>',
 											'origin':'tinyMCE'
 							}
 				},
@@ -93,8 +93,8 @@ XSRFdefender('elFinder');
 				}
 			});
 		</script>
-                
-                <?php } ?>
+				
+				<?php } ?>
 	</head>
 	<body>
 

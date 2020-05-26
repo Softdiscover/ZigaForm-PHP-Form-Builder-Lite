@@ -17,19 +17,19 @@ abstract class SFM_Group {
 		$method = 'get_' . $target;
 		if ( method_exists( $this, $method ) ) {
 			return $this->$method();
-		}else if ( isset( $this->$target ) ){
+		} elseif ( isset( $this->$target ) ) {
 			return $this->$target;
-		}else {
+		} else {
 			return false;
 		}
 	}
 
 	public function get_menu_css() {
-		if ( !empty( $this->menu_css ) ) {
+		if ( ! empty( $this->menu_css ) ) {
 			return $this->menu_css;
 		}
 
-		foreach( $this->get_fonts() as $font ) {
+		foreach ( $this->get_fonts() as $font ) {
 			$this->menu_css .= $font->get_menu_css();
 		}
 

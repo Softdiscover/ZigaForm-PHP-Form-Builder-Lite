@@ -10,11 +10,11 @@ if ( isset( $input18['pane_background']['show_st'] )
 	?>
 
 	<?php
-		 //el_background
+		 // el_background
 
 	switch ( intval( $input18['pane_background']['type'] ) ) {
 		case 1:
-			  //solid
+			  // solid
 			if ( ! empty( $input18['pane_background']['solid_color'] ) ) {
 				?>
 								background:<?php echo $input18['pane_background']['solid_color']; ?>;
@@ -22,7 +22,7 @@ if ( isset( $input18['pane_background']['show_st'] )
 			}
 			break;
 		case 2:
-					 //gradient
+					 // gradient
 			if ( ! empty( $input18['pane_background']['start_color'] ) && ! empty( $input18['pane_background']['end_color'] ) ) {
 				?>
 								background: <?php echo $input18['pane_background']['start_color']; ?>;
@@ -46,7 +46,7 @@ if ( isset( $input18['pane_background']['show_st'] )
 <?php } ?>                    
 								
 		<?php
-		 //el_border_radius
+		 // el_border_radius
 		if ( isset( $input18['pane_border_radius']['show_st'] ) && intval( $input18['pane_border_radius']['show_st'] ) === 1 ) {
 			?>
 			 -webkit-border-radius: <?php echo $input18['pane_border_radius']['size']; ?>px;
@@ -56,7 +56,7 @@ if ( isset( $input18['pane_background']['show_st'] )
 		}
 		?>
 		<?php
-		 //el_border
+		 // el_border
 		if ( isset( $input18['pane_border']['show_st'] )
 				 && intval( $input18['pane_border']['show_st'] ) === 1
 				 && ! empty( $input18['pane_border']['color'] )
@@ -75,7 +75,7 @@ if ( isset( $input18['pane_background']['show_st'] )
 		}
 		?>
 		 <?php
-			//shadow
+			// shadow
 			if ( isset( $input18['pane_shadow']['show_st'] )
 				 && intval( $input18['pane_shadow']['show_st'] ) === 1
 				 && ! empty( $input18['pane_shadow']['color'] )
@@ -92,7 +92,7 @@ if ( isset( $input18['pane_background']['show_st'] )
 			?>
 		  
 		  <?php
-			//padding
+			// padding
 			if ( isset( $input18['pane_padding']['show_st'] ) && intval( $input18['pane_padding']['show_st'] ) === 1 ) {
 				?>
 			 padding: <?php echo $input18['pane_padding']['pos_top']; ?>px <?php echo $input18['pane_padding']['pos_right']; ?>px <?php echo $input18['pane_padding']['pos_bottom']; ?>px <?php echo $input18['pane_padding']['pos_left']; ?>px;
@@ -104,7 +104,7 @@ if ( isset( $input18['pane_background']['show_st'] )
 			<?php } ?>    
 			
 		 <?php
-			//margin
+			// margin
 			if ( isset( $input18['pane_margin']['show_st'] ) && intval( $input18['pane_margin']['show_st'] ) === 1 ) {
 				?>
 			 margin: <?php echo $input18['pane_margin']['pos_top']; ?>px <?php echo $input18['pane_margin']['pos_right']; ?>px <?php echo $input18['pane_margin']['pos_bottom']; ?>px <?php echo $input18['pane_margin']['pos_left']; ?>px;
@@ -117,8 +117,8 @@ if ( isset( $input18['pane_background']['show_st'] )
 }
 
 
-<?php //include('formhtml_common_css1.php'); ?>
-<?php //include('formhtml_addon_css.php'); ?>
+<?php // include('formhtml_common_css1.php'); ?>
+<?php // include('formhtml_addon_css.php'); ?>
 <?php
 $cntACmp = ob_get_contents();
 $cntACmp = Uiform_Form_Helper::sanitize_output( $cntACmp );

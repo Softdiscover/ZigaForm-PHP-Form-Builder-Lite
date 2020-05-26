@@ -88,14 +88,14 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/common/js/checkradio/2.2.2/css/jquery.checkradios.css" rel="stylesheet">
 	
 	
-	<?php 
-	if(UIFORM_DEBUG===1){
+	<?php
+	if ( UIFORM_DEBUG === 1 ) {
 		?>
 
-		<link href="<?php echo base_url(); ?>assets/backend/css/admin.debug.css?v<?php echo date( 'YmdHis' );?>" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>assets/backend/css/admin.debug.css?v<?php echo date( 'YmdHis' ); ?>" rel="stylesheet">
 
 		<?php
-	}else{
+	} else {
 		?>
 		<link href="<?php echo base_url(); ?>assets/backend/css/admin.min.css" rel="stylesheet">
 		<?php
@@ -229,24 +229,24 @@ if ( ! defined( 'BASEPATH' ) ) {
 	);
 	?>
 	
-	 var uiform_vars = <?php echo Uiform_Form_Helper::_format_json(json_encode( $tmp_uiform_vars)); ?>;  
+	 var uiform_vars = <?php echo Uiform_Form_Helper::_format_json( json_encode( $tmp_uiform_vars ) ); ?>;  
 		
 
 	</script>
 	
-		<?php 
-	if(UIFORM_DEBUG===1){
-		?>
-
-		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.debug.js?v=<?php echo date( 'YmdHis' );?>"></script>
 		<?php
-	}else{
-		?>
+		if ( UIFORM_DEBUG === 1 ) {
+			?>
+
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.debug.js?v=<?php echo date( 'YmdHis' ); ?>"></script>
+			<?php
+		} else {
+			?>
 		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.min.js"></script>
-		<?php
-	}
+			<?php
+		}
 
-	?>
+		?>
    
   <!--- frontend -->
   
@@ -276,7 +276,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 				path: 'CodeMirror'
 				},
 				image_advtab: true,
-                                apply_source_formatting : false,                //added option
+								apply_source_formatting : false,                //added option
 				toolbar1: "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
 				toolbar2: "| image | media | link unlink anchor | forecolor backcolor | print preview code | youtube | qrcode | flickr | picasa ",
 				file_browser_callback : elFinderBrowser,
@@ -293,7 +293,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	</script>
 	
 	<?php do_action( 'admin_enqueue_scripts' ); ?>
-	<?php //$this->addon->load_addons_Head(); ?>
+	<?php // $this->addon->load_addons_Head(); ?>
   </head>
    <body class="tundra ">
 	
@@ -315,7 +315,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 		 <div id="rocketform-bk-dashboard" class="sfdc-wrap" style="display:none;" >
 
 			<div id="rocketform-bk-header">
-				<?php include( 'header-uiform.php' ); ?>
+				<?php require 'header-uiform.php'; ?>
 			</div>
 			<div id="rocketform-bk-content">
 				<div id="uiform-panel-loadingst">
@@ -328,12 +328,12 @@ if ( ! defined( 'BASEPATH' ) ) {
 			   
 			</div>
 			<div id="rocketform-bk-footer">
-				<?php include( 'footer.php' ); ?>
+				<?php require 'footer.php'; ?>
 			</div>
-			 <?php include( 'notice_footer.php' ); ?>
+			 <?php require 'notice_footer.php'; ?>
 			  
 		</div>
-		<?php include( 'captions.php' ); ?> 
+		<?php require 'captions.php'; ?> 
 
 	  </div><!-- /#page-wrapper -->
 	  </form> 

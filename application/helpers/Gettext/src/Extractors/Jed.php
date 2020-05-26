@@ -7,43 +7,41 @@ use Gettext\Translations;
 /**
  * Class to get gettext strings from json files.
  */
-class Jed extends PhpArray implements ExtractorInterface
-{
-    /**
-     * {@inheritdoc}
-     */
-    public static function fromString($string, Translations $translations = null, $file = '')
-    {
-        if ($translations === null) {
-            $translations = new Translations();
-        }
+class Jed extends PhpArray implements ExtractorInterface {
 
-        $content = json_decode($string, true);
+	/**
+	 * {@inheritdoc}
+	 */
+	public static function fromString( $string, Translations $translations = null, $file = '' ) {
+		if ( $translations === null ) {
+			$translations = new Translations();
+		}
 
-        PhpArray::handleArray($content, $translations);
+		$content = json_decode( $string, true );
 
-        return $translations;
-    }
+		PhpArray::handleArray( $content, $translations );
 
-    /**
-     * Extract and insert a new translation.
-     * 
-     * @param Translations $translations
-     * @param string       $key
-     * @param string       $message
-     */
-    protected static function insertTranslation(Translations $translations, $key, $message)
-    {
-        $context_glue = '\u0004';
-        $key = explode($context_glue, $key);
+		return $translations;
+	}
 
-        $context = isset($key[1]) ? array_shift($key) : '';
-        $original = array_shift($key);
-        $translation = array_shift($message);
-        $plural_translation = array_shift($message);
+	/**
+	 * Extract and insert a new translation.
+	 *
+	 * @param Translations $translations
+	 * @param string       $key
+	 * @param string       $message
+	 */
+	protected static function insertTranslation( Translations $translations, $key, $message ) {
+		 $context_glue = '\u0004';
+		$key           = explode( $context_glue, $key );
 
-        $entry = $translations->insert($context, $original);
-        $entry->setTranslation($translation);
-        $entry->setPluralTranslation($plural_translation);
-    }
+		$context            = isset( $key[1] ) ? array_shift( $key ) : '';
+		$original           = array_shift( $key );
+		$translation        = array_shift( $message );
+		$plural_translation = array_shift( $message );
+
+		$entry = $translations->insert( $context, $original );
+		$entry->setTranslation( $translation );
+		$entry->setPluralTranslation( $plural_translation );
+	}
 }

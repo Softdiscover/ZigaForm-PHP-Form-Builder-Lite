@@ -61,10 +61,10 @@ class Fields extends BackendController {
 
 
 			/**
-	 * Forms::ajax_dev generation field options
-	 *
-	 * @return
-	 */
+			 * Forms::ajax_dev generation field options
+			 *
+			 * @return
+			 */
 	public function ajax_dev_genfieldopts() {
 
 		$data_render = array();
@@ -73,22 +73,22 @@ class Fields extends BackendController {
 		foreach ( $array as $type ) {
 			switch ( intval( $type ) ) {
 				case 1:
-					//1 col
+					// 1 col
 					$field_block          = 0;
 					$data_render[ $type ] = $this->load_field_options( $type, '', $field_block );
 					break;
 				case 2:
-					//2 cols
+					// 2 cols
 					$field_block          = 0;
 					$data_render[ $type ] = $this->load_field_options( $type, '', $field_block );
 					break;
 				case 3:
-					//3 cols
+					// 3 cols
 					$field_block          = 0;
 					$data_render[ $type ] = $this->load_field_options( $type, '', $field_block );
 					break;
 				case 4:
-					//4 cols
+					// 4 cols
 					$field_block          = 0;
 					$data_render[ $type ] = $this->load_field_options( $type, '', $field_block );
 					break;
@@ -98,24 +98,24 @@ class Fields extends BackendController {
 					$data_render[ $type ] = $this->load_field_options( $type, '', $field_block );
 					break;
 				case 6:
-					//textbox
+					// textbox
 					$data_render[ $type ] = $this->load_field_options( $type, '', null );
 					break;
 
 				case 8:
-					//radio button
+					// radio button
 					$data_render[ $type ] = $this->load_field_options( $type, '', null );
 					break;
 				case 9:
-					//checkbox
+					// checkbox
 					$data_render[ $type ] = $this->load_field_options( $type, '', null );
 					break;
 				case 10:
-					//select
+					// select
 					$data_render[ $type ] = $this->load_field_options( $type, '', null );
 					break;
 				case 11:
-					//multiple select
+					// multiple select
 					$data_render[ $type ] = $this->load_field_options( $type, '', null );
 					break;
 			}
@@ -158,7 +158,7 @@ class Fields extends BackendController {
 				$js_store .= $value2;
 			}
 
-			//$value = preg_replace('#<script(.*?)</script>#is', '', $value);
+			// $value = preg_replace('#<script(.*?)</script>#is', '', $value);
 
 			$value = str_replace( $search2, $replace2, $value );
 
@@ -198,15 +198,15 @@ class Fields extends BackendController {
 
 		$html_output .= html_entity_decode( $html_output_head );
 
-		 //scripts
+		 // scripts
 		$fscripts = APPPATH . '/modules/formbuilder/views/forms/fieldoptions_data_scripts.php';
-		//$html_output.=$js_store;
+		// $html_output.=$js_store;
 		$html_output .= htmlentities( $js_store );
 		$fhandle      = fopen( $fscripts, 'w' );
 		fwrite( $fhandle, $html_output );
 		fclose( $fhandle );
 
-		 //echo json_encode($data_render);
+		 // echo json_encode($data_render);
 		 die();
 	}
 
@@ -224,20 +224,20 @@ class Fields extends BackendController {
 		$json['modal_body']   = $this->load->view( 'formbuilder/fields/options/select/impbulkdata', $data, true );
 		$json['modal_footer'] = $this->load->view( 'formbuilder/fields/options/select/impbulkdata_footer', $data, true );
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
 	}
 
 	   /**
-	 * Get field option in order to customize the field
-	 *
-	 * @return json
-	 */
+		* Get field option in order to customize the field
+		*
+		* @return json
+		*/
 	public function ajax_field_option() {
 
-		//check_ajax_referer('zgfm_ajax_nonce', 'zgfm_security');
+		// check_ajax_referer('zgfm_ajax_nonce', 'zgfm_security');
 
 		$id          = ( isset( $_POST['field_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( trim( $_POST['field_id'] ) ) : '';
 		$type        = ( isset( $_POST['field_type'] ) ) ? Uiform_Form_Helper::sanitizeInput( trim( $_POST['field_type'] ) ) : '';
@@ -250,8 +250,8 @@ class Fields extends BackendController {
 		$json['field_id']    = $id;
 		$json['field_type']  = $type;
 		$json['field_block'] = $field_block;
-		//addons
-		//$json['addons'] = $this->model_addon->getActiveAddonsNamesOnBack();
+		// addons
+		// $json['addons'] = $this->model_addon->getActiveAddonsNamesOnBack();
 
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
@@ -292,21 +292,21 @@ class Fields extends BackendController {
 				break;
 
 			default:
-				//textbox
+				// textbox
 				$data               = array();
 				$data['field_id']   = $id;
 				$data['field_type'] = $type;
 				switch ( intval( $type ) ) {
 					case 8:
-						//radio button
+						// radio button
 					case 9:
-						//checkbox
+						// checkbox
 						$data['field_extra_src'] = $this->load->view( 'formbuilder/fields/modal/field_opt_checkbox_extra', $data, true );
 						break;
 					case 10:
-						//select
+						// select
 					case 11:
-						//Multiple select
+						// Multiple select
 						$data['field_extra_src'] = $this->load->view( 'formbuilder/fields/modal/field_opt_select_extra', $data, true );
 						break;
 					default:
@@ -354,7 +354,7 @@ class Fields extends BackendController {
 		$captcha_options = Uiform_Form_Helper::base64url_encode( json_encode( $resp ) );
 		$resp2           = array();
 		$resp2['rkver']  = $captcha_options;
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $resp2 );
 		die();
@@ -440,7 +440,7 @@ class Fields extends BackendController {
 	}
 
 	public function formhtml_multiselect_css( $data ) {
-		//using select css because it's the same
+		// using select css because it's the same
 		return $this->formhtml_renderCssField( $data );
 	}
 
@@ -1199,26 +1199,26 @@ class Fields extends BackendController {
 	}
 
 	  /**
-	 * Generate grid system css
-	 *
-	 * @return string
-	 */
+	   * Generate grid system css
+	   *
+	   * @return string
+	   */
 	public function posthtml_gridsystem_css( $data ) {
 
 		$str_output_2 = '';
 
 		foreach ( $data as $key => $value ) {
 
-			//$key -> main or blocks
+			// $key -> main or blocks
 			if ( ! empty( $value ) && is_array( $value ) ) {
 
 				if ( (string) $key === 'main' ) {
-					//send info of main
+					// send info of main
 					$str_output_2 .= $this->posthtml_gridsystem_css_block( $data['id'], 0, $value );
 				} else {
 
 					foreach ( $value as $key2 => $value2 ) {
-						//$key2 -> skin or index
+						// $key2 -> skin or index
 						if ( is_array( $value2 ) ) {
 							$str_output_2 .= $this->posthtml_gridsystem_css_block( $data['id'], $key2, $value2 );
 						}
@@ -1231,10 +1231,10 @@ class Fields extends BackendController {
 	}
 
 	 /**
-	 * Generate grid system blocks
-	 *
-	 * @return string
-	 */
+	  * Generate grid system blocks
+	  *
+	  * @return string
+	  */
 	public function posthtml_gridsystem_css_block( $id, $block, $data ) {
 
 		$data2 = array();

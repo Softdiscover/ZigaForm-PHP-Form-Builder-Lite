@@ -7,97 +7,97 @@
  * @author Gregwar <g.passault@gmail.com>
  * @author Jeremy Livingston <jeremy@quizzle.com>
  */
-class ImageFileHandler
-{
-    /**
-     * Name of folder for captcha images
-     * @var string
-     */
-    protected $imageFolder;
+class ImageFileHandler {
 
-    /**
-     * Absolute path to public web folder
-     * @var string
-     */
-    protected $webPath;
+	/**
+	 * Name of folder for captcha images
+	 *
+	 * @var string
+	 */
+	protected $imageFolder;
 
-    /**
-     * Frequency of garbage collection in fractions of 1
-     * @var int
-     */
-    protected $gcFreq;
+	/**
+	 * Absolute path to public web folder
+	 *
+	 * @var string
+	 */
+	protected $webPath;
 
-    /**
-     * Maximum age of images in minutes
-     * @var int
-     */
-    protected $expiration;
+	/**
+	 * Frequency of garbage collection in fractions of 1
+	 *
+	 * @var int
+	 */
+	protected $gcFreq;
 
-    /**
-     * @param $imageFolder
-     * @param $webPath
-     * @param $gcFreq
-     * @param $expiration
-     */
-    public function __construct($imageFolder, $webPath, $gcFreq, $expiration)
-    {
-        $this->imageFolder      = $imageFolder;
-        $this->webPath          = $webPath;
-        $this->gcFreq           = $gcFreq;
-        $this->expiration       = $expiration;
-    }
+	/**
+	 * Maximum age of images in minutes
+	 *
+	 * @var int
+	 */
+	protected $expiration;
 
-    /**
-     * Saves the provided image content as a file
-     *
-     * @param string $contents
-     *
-     * @return string
-     */
-    public function saveAsFile($contents)
-    {
-        $this->createFolderIfMissing();
+	/**
+	 * @param $imageFolder
+	 * @param $webPath
+	 * @param $gcFreq
+	 * @param $expiration
+	 */
+	public function __construct( $imageFolder, $webPath, $gcFreq, $expiration ) {
+		$this->imageFolder = $imageFolder;
+		$this->webPath     = $webPath;
+		$this->gcFreq      = $gcFreq;
+		$this->expiration  = $expiration;
+	}
 
-        $filename = md5(uniqid()) . '.jpg';
-        $filePath = $this->webPath . '/' . $this->imageFolder . '/' . $filename;
-        imagejpeg($contents, $filePath, 15);
+	/**
+	 * Saves the provided image content as a file
+	 *
+	 * @param string $contents
+	 *
+	 * @return string
+	 */
+	public function saveAsFile( $contents ) {
+		$this->createFolderIfMissing();
 
-        return '/' . $this->imageFolder . '/' . $filename;
-    }
+		$filename = md5( uniqid() ) . '.jpg';
+		$filePath = $this->webPath . '/' . $this->imageFolder . '/' . $filename;
+		imagejpeg( $contents, $filePath, 15 );
 
-    /**
-     * Randomly runs garbage collection on the image directory
-     *
-     * @return bool
-     */
-    public function collectGarbage()
-    {
-        if (!mt_rand(1, $this->gcFreq) == 1) {
-            return false;
-        }
+		return '/' . $this->imageFolder . '/' . $filename;
+	}
 
-        $this->createFolderIfMissing();
+	/**
+	 * Randomly runs garbage collection on the image directory
+	 *
+	 * @return bool
+	 */
+	public function collectGarbage() {
+		if ( ! mt_rand( 1, $this->gcFreq ) == 1 ) {
+			return false;
+		}
 
-        $finder = new Finder();
-        $criteria = sprintf('<= now - %s minutes', $this->expiration);
-        $finder->in($this->webPath . '/' . $this->imageFolder)
-            ->date($criteria);
+		$this->createFolderIfMissing();
 
-        foreach($finder->files() as $file) {
-            unlink($file->getPathname());
-        }
+		$finder   = new Finder();
+		$criteria = sprintf( '<= now - %s minutes', $this->expiration );
+		$finder->in( $this->webPath . '/' . $this->imageFolder )
+			->date( $criteria );
 
-        return true;
-    }
+		foreach ( $finder->files() as $file ) {
+			unlink( $file->getPathname() );
+		}
 
-    /**
-     * Creates the folder if it doesn't exist
-     */
-    protected function createFolderIfMissing()
-    {
-        if (!file_exists($this->webPath . '/' . $this->imageFolder)) {
-            mkdir($this->webPath . '/' . $this->imageFolder, 0755);
-        }
-    }
+		return true;
+	}
+
+	/**
+	 * Creates the folder if it doesn't exist
+	 */
+	protected function createFolderIfMissing() {
+		if ( ! file_exists( $this->webPath . '/' . $this->imageFolder ) ) {
+			mkdir( $this->webPath . '/' . $this->imageFolder, 0755 );
+		}
+	}
 }
 

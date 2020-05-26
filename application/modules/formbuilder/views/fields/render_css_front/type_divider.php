@@ -11,7 +11,7 @@ ob_start();
 		 justify-content: center;
 		 align-items: center;
 		 <?php
-			//input
+			// input
 			?>
 		  <?php if ( $input11['text_size'] ) { ?>
 			font-size:<?php echo $input11['text_size']; ?>px;
@@ -36,9 +36,9 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 				<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 				?>
 			<?php } ?>
 		<?php } ?> 
@@ -50,11 +50,11 @@ ob_start();
 							?>
 
 							<?php
-							//el_background
+							// el_background
 
 							switch ( intval( $form_skin['form_background']['type'] ) ) {
 								case 1:
-									//solid
+									// solid
 									if ( ! empty( $form_skin['form_background']['solid_color'] ) ) {
 										?>
 								background:<?php echo $form_skin['form_background']['solid_color']; ?>;
@@ -62,7 +62,7 @@ ob_start();
 									}
 									break;
 								case 2:
-									//gradient
+									// gradient
 									if ( ! empty( $form_skin['form_background']['start_color'] ) && ! empty( $form_skin['form_background']['end_color'] ) ) {
 										?>
 								background: <?php echo $form_skin['form_background']['start_color']; ?>;

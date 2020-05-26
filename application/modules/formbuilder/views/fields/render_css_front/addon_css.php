@@ -17,7 +17,7 @@ ob_start();
 ?>
  #rockfm_<?php echo $id; ?> {
 	   <?php
-		 //animation delay
+		 // animation delay
 		if ( isset( $func_anim['delay'] ) && floatval( $func_anim['delay'] ) >= 0 ) {
 			?>
 			 animation-delay: <?php echo $func_anim['delay']; ?>s;

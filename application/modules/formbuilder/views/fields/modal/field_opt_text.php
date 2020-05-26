@@ -102,7 +102,7 @@ ob_start();
 																<div class="uiform-tab-content scroll-pane-arrows">
 																	<div class="uiform-tab-content-inner">
 																		<!--\container -->
-																		 <?php include( 'settings_field_label.php' ); ?>
+																		 <?php require 'settings_field_label.php'; ?>
 																		<!--\end container -->
 																	</div>
 																</div>
@@ -111,7 +111,7 @@ ob_start();
 																<div class="uiform-tab-content  scroll-pane-arrows">
 																	<div class="uiform-tab-content-inner">
 																		  <!--container -->  
-																		<?php include( 'settings_field_input.php' ); ?>
+																		<?php require 'settings_field_input.php'; ?>
 																		<!--\end container -->
 																	</div>
 																</div>
@@ -119,28 +119,28 @@ ob_start();
 														<div class="sfdc-tab-pane uifm-tab-fld-helpblock" id="uiform-settings-tab-3">
 																<div class="uiform-tab-content  scroll-pane-arrows">
 																	<div class="uiform-tab-content-inner">
-																		 <?php include( 'settings_field_helpblock.php' ); ?>
+																		 <?php require 'settings_field_helpblock.php'; ?>
 																	</div>
 																</div>
 															</div>
 														<div class="sfdc-tab-pane uifm-tab-fld-validation" id="uiform-settings-tab-4">
 																<div class="uiform-tab-content  scroll-pane-arrows">
 																	<div class="uiform-tab-content-inner">
-																		<?php include( 'settings_field_validate.php' ); ?>
+																		<?php require 'settings_field_validate.php'; ?>
 																	</div>
 																</div>
 															</div>
 														<div class="sfdc-tab-pane uifm-tab-fld-logicrls" id="uiform-settings-tab-6">
 																<div class="uiform-tab-content  scroll-pane-arrows">
 																	<div class="uiform-tab-content-inner">
-																	   <?php include( 'settings_form_clogic.php' ); ?>
+																	   <?php require 'settings_form_clogic.php'; ?>
 																	</div>
 																</div>
 															</div>
 														<div class="sfdc-tab-pane uifm-tab-fld-more" id="uiform-settings-tab-7">
 																<div class="uiform-tab-content  scroll-pane-arrows">
 																	<div class="uiform-tab-content-inner">
-																	   <?php include( 'settings_form_more.php' ); ?>
+																	   <?php require 'settings_form_more.php'; ?>
 																	</div>
 																</div>
 															</div>

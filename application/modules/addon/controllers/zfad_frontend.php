@@ -44,7 +44,7 @@ class zfad_frontend extends FrontendController {
 	function __construct() {
 		parent::__construct();
 		$this->load->language_alt( model_settings::$db_config['language'] );
-		//$this->template->set('controller', $this);
+		// $this->template->set('controller', $this);
 		$this->load->model( 'model_addon' );
 
 	}
@@ -53,23 +53,23 @@ class zfad_frontend extends FrontendController {
 
 	public function load_addonsByFront() {
 
-		//get addons
+		// get addons
 		$tmp_addons = $this->model_addon->getListAddonsByFront();
 
-		//flag variables
+		// flag variables
 		$tmp_addons_arr  = array();
 		$tmp_modules_arr = self::$_addons;
 
 		foreach ( $tmp_addons as $key => $value ) {
-			//$tmp_addons_arr[$value->add_section][$value->add_name]=$tmp_addons[$key];
+			// $tmp_addons_arr[$value->add_section][$value->add_name]=$tmp_addons[$key];
 
-			//load addons
-			//require_once( UIFORM_FORMS_DIR . '/modules/addon_'.$value->add_name.'/controllers/frontend.php');
+			// load addons
+			// require_once( UIFORM_FORMS_DIR . '/modules/addon_'.$value->add_name.'/controllers/frontend.php');
 
-			 //$tmp_modules_arr['addon_'.$value->add_name]=array( 'back' => call_user_func( array( 'zfaddn_back_'.$value->add_name, 'get_instance' ) ));
+			 // $tmp_modules_arr['addon_'.$value->add_name]=array( 'back' => call_user_func( array( 'zfaddn_back_'.$value->add_name, 'get_instance' ) ));
 
 			$tmp_add_new_contr = array();
-			//$tmp_add_new_contr['frontend'] = call_user_func(array('zfaddn_'.$value->add_name.'_front', 'get_instance'));
+			// $tmp_add_new_contr['frontend'] = call_user_func(array('zfaddn_'.$value->add_name.'_front', 'get_instance'));
 			$tmp_add_new_contr['frontend'] = modules::run( 'addon_' . $value->add_name . '/zfad_' . $value->add_name . '_front/get_instance' );
 
 			$tmp_add_new_flag = array();
@@ -77,12 +77,11 @@ class zfad_frontend extends FrontendController {
 
 			$tmp_add_new_contr = array_merge( $tmp_add_new_contr, $tmp_add_new_flag );
 
-			//$tmp_modules_arr['addon_'.$value->add_name] = $tmp_add_new_contr;
+			// $tmp_modules_arr['addon_'.$value->add_name] = $tmp_add_new_contr;
 			self::$_addons[ $value->add_name ] = $tmp_add_new_contr;
 		}
 
-		//self::$_addons = $tmp_addons_arr;
-
+		// self::$_addons = $tmp_addons_arr;
 	}
 
 	public function load_addActions() {
@@ -91,10 +90,11 @@ class zfad_frontend extends FrontendController {
 
 		$tmp_addons_actions = array();
 
-		/*pending to add cache*/
-		//loop addons
+		/*
+		pending to add cache*/
+		// loop addons
 		foreach ( $tmp_addons as $key => $value ) {
-			//loop controllers
+			// loop controllers
 			foreach ( $value as $key2 => $value2 ) {
 
 				$tmp_flag = array();
@@ -115,13 +115,14 @@ class zfad_frontend extends FrontendController {
 
 		self::$_addons_actions = $tmp_addons_actions;
 
-		//add js actions
+		// add js actions
 		$tmp_addons_actions = array();
 
-		/*pending to add cache*/
-		//loop addons
+		/*
+		pending to add cache*/
+		// loop addons
 		foreach ( $tmp_addons as $key => $value ) {
-			//loop controllers
+			// loop controllers
 			foreach ( $value as $key2 => $value2 ) {
 
 				$tmp_flag = array();
@@ -186,8 +187,8 @@ class zfad_frontend extends FrontendController {
 	public function init() {
 
 		try {
-			//$instance_example = new WPPS_Instance_Class( 'Instance example', '42' );
-			//add_notice('ba');
+			// $instance_example = new WPPS_Instance_Class( 'Instance example', '42' );
+			// add_notice('ba');
 		} catch ( Exception $exception ) {
 			add_notice( __METHOD__ . ' error: ' . $exception->getMessage(), 'error' );
 		}

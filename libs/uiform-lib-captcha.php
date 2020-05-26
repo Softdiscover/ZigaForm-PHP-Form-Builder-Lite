@@ -4,11 +4,11 @@ if ( isset( $_GET['rkver'] ) ) {
 	if ( ! defined( 'BASEPATH' ) ) {
 		define( 'BASEPATH', dirname( __FILE__ ) . '/' );
 	}
-	require_once( BASEPATH . '../application/helpers/common_helper.php' );
-	require_once( BASEPATH . 'captcha/CaptchaBuilderInterface.php' );
-	require_once( BASEPATH . 'captcha/PhraseBuilderInterface.php' );
-	require_once( BASEPATH . 'captcha/CaptchaBuilder.php' );
-	require_once( BASEPATH . 'captcha/PhraseBuilder.php' );
+	require_once BASEPATH . '../application/helpers/common_helper.php';
+	require_once BASEPATH . 'captcha/CaptchaBuilderInterface.php';
+	require_once BASEPATH . 'captcha/PhraseBuilderInterface.php';
+	require_once BASEPATH . 'captcha/CaptchaBuilder.php';
+	require_once BASEPATH . 'captcha/PhraseBuilder.php';
 
 	if ( isset( $_GET['rkver'] ) ) {
 		$captcha_opts     = Uiform_Form_Helper::sanitizeInput_html( $_GET['rkver'] );

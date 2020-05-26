@@ -1,6 +1,7 @@
 <?php
 /**
  * Indonesian PHPMailer language file: refer to English translation for definitive list
+ *
  * @package PHPMailer
  * @author Cecep Prawiro <cecep.prawiro@gmail.com>
  */
@@ -23,4 +24,4 @@ $PHPMAILER_LANG['signing']              = 'Kesalahan dalam tanda tangan : ';
 $PHPMAILER_LANG['smtp_connect_failed']  = 'SMTP Connect() gagal.';
 $PHPMAILER_LANG['smtp_error']           = 'Kesalahan peladen SMTP : ';
 $PHPMAILER_LANG['variable_set']         = 'Tidak berhasil mengatur atau mengatur ulang variable : ';
-//$PHPMAILER_LANG['extension_missing']    = 'Extension missing: ';
+// $PHPMAILER_LANG['extension_missing']    = 'Extension missing: ';

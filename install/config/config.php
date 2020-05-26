@@ -1,4 +1,5 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );}
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +15,7 @@
 | path to your installation.
 |
 */
-$config['base_url']	= '';
+$config['base_url'] = '';
 /*
 |--------------------------------------------------------------------------
 | Index File
@@ -43,7 +44,7 @@ $config['index_page'] = 'index.php/';
 | 'ORIG_PATH_INFO'	Uses the ORIG_PATH_INFO
 |
 */
-$config['uri_protocol']	= 'AUTO';
+$config['uri_protocol'] = 'AUTO';
 
 /*
 |--------------------------------------------------------------------------
@@ -70,11 +71,20 @@ $config['url_suffix'] = '';
 */
 
 // default language
-$config['language'] = "english";
-$config['language_abbr'] = "en";
-$config['lang_uri_abbr'] = array("en" => "english","es" => "spanish","fr" => "french","de" => "german","it" => "italian","pt" => "portuguese","ru" => "russian","ch" => "chinese");
+$config['language']         = 'english';
+$config['language_abbr']    = 'en';
+$config['lang_uri_abbr']    = array(
+	'en' => 'english',
+	'es' => 'spanish',
+	'fr' => 'french',
+	'de' => 'german',
+	'it' => 'italian',
+	'pt' => 'portuguese',
+	'ru' => 'russian',
+	'ch' => 'chinese',
+);
 $config['default_language'] = $config['language_abbr'];
-$config['lang_ignore'] = true;
+$config['lang_ignore']      = true;
 
 /*
 |--------------------------------------------------------------------------
@@ -96,7 +106,7 @@ $config['charset'] = 'UTF-8';
 | setting this variable to TRUE (boolean).  See the user guide for details.
 |
 */
-$config['enable_hooks'] = FALSE;
+$config['enable_hooks'] = false;
 
 
 /*
@@ -159,11 +169,11 @@ $config['permitted_uri_chars'] = 'a-z 0-9~%.:_\-';
 | use segment based URLs.
 |
 */
-$config['allow_get_array']		= TRUE;
-$config['enable_query_strings'] = FALSE;
-$config['controller_trigger']	= 'c';
-$config['function_trigger']		= 'm';
-$config['directory_trigger']	= 'd'; // experimental not currently in use
+$config['allow_get_array']      = true;
+$config['enable_query_strings'] = false;
+$config['controller_trigger']   = 'c';
+$config['function_trigger']     = 'm';
+$config['directory_trigger']    = 'd'; // experimental not currently in use
 
 /*
 |--------------------------------------------------------------------------
@@ -186,10 +196,10 @@ $config['directory_trigger']	= 'd'; // experimental not currently in use
 |
 */
 
-if(ENVIRONMENT==='development'){
-    $config['log_threshold'] = 1;
-}else{
-    $config['log_threshold'] = 0;
+if ( ENVIRONMENT === 'development' ) {
+	$config['log_threshold'] = 1;
+} else {
+	$config['log_threshold'] = 0;
 }
 
 
@@ -256,15 +266,15 @@ $config['encryption_key'] = 'test';
 | 'sess_time_to_update'		= how many seconds between CI refreshing Session Information
 |
 */
-$config['sess_cookie_name']		= 'ci_session';
-$config['sess_expiration']		= 7200;
-$config['sess_expire_on_close']	= FALSE;
-$config['sess_encrypt_cookie']	= FALSE;
-$config['sess_use_database']	= FALSE;
-$config['sess_table_name']		= 'ci_sessions';
-$config['sess_match_ip']		= FALSE;
-$config['sess_match_useragent']	= TRUE;
-$config['sess_time_to_update']	= 300;
+$config['sess_cookie_name']     = 'ci_session';
+$config['sess_expiration']      = 7200;
+$config['sess_expire_on_close'] = false;
+$config['sess_encrypt_cookie']  = false;
+$config['sess_use_database']    = false;
+$config['sess_table_name']      = 'ci_sessions';
+$config['sess_match_ip']        = false;
+$config['sess_match_useragent'] = true;
+$config['sess_time_to_update']  = 300;
 
 /*
 |--------------------------------------------------------------------------
@@ -277,10 +287,10 @@ $config['sess_time_to_update']	= 300;
 | 'cookie_secure' =  Cookies will only be set if a secure HTTPS connection exists.
 |
 */
-$config['cookie_prefix']	= "";
-$config['cookie_domain']	= "";
-$config['cookie_path']		= "/";
-$config['cookie_secure']	= FALSE;
+$config['cookie_prefix'] = '';
+$config['cookie_domain'] = '';
+$config['cookie_path']   = '/';
+$config['cookie_secure'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -291,13 +301,15 @@ $config['cookie_secure']	= FALSE;
 | COOKIE data is encountered
 |
 */
-$config['global_xss_filtering'] = TRUE;
-$config['xss_exclude_uris'] = array('formbuilder/forms/ajax_email_sendsample',
-    'formbuilder/forms/ajax_pdf_showsample',
-    'formbuilder/forms/ajax_save_form',
-    'formbuilder/forms/ajax_variables_emailpage',
-    'formbuilder/forms/ajax_variables_openmodal',
-    'formbuilder/forms/ajax_refresh_previewpanel');
+$config['global_xss_filtering'] = true;
+$config['xss_exclude_uris']     = array(
+	'formbuilder/forms/ajax_email_sendsample',
+	'formbuilder/forms/ajax_pdf_showsample',
+	'formbuilder/forms/ajax_save_form',
+	'formbuilder/forms/ajax_variables_emailpage',
+	'formbuilder/forms/ajax_variables_openmodal',
+	'formbuilder/forms/ajax_refresh_previewpanel',
+);
 /*
 |--------------------------------------------------------------------------
 | Cross Site Request Forgery
@@ -310,11 +322,11 @@ $config['xss_exclude_uris'] = array('formbuilder/forms/ajax_email_sendsample',
 | 'csrf_cookie_name' = The cookie name
 | 'csrf_expire' = The number in seconds the token should expire.
 */
-$config['csrf_protection'] = TRUE;
-$config['csrf_token_name'] = 'csrf_field_name';
+$config['csrf_protection']  = true;
+$config['csrf_token_name']  = 'csrf_field_name';
 $config['csrf_cookie_name'] = 'csrfcookiename';
-$config['csrf_expire'] = 7200;
-$config['csrf_ignore'] = array('uiformbuilder');
+$config['csrf_expire']      = 7200;
+$config['csrf_ignore']      = array( 'uiformbuilder' );
 /*
 |--------------------------------------------------------------------------
 | Output Compression
@@ -332,7 +344,7 @@ $config['csrf_ignore'] = array('uiformbuilder');
 | by the output class.  Do not 'echo' any values with compression enabled.
 |
 */
-$config['compress_output'] = FALSE;
+$config['compress_output'] = false;
 
 /*
 |--------------------------------------------------------------------------
@@ -358,7 +370,7 @@ $config['time_reference'] = 'local';
 | in your view files.  Options are TRUE or FALSE (boolean)
 |
 */
-$config['rewrite_short_tags'] = FALSE;
+$config['rewrite_short_tags'] = false;
 
 
 /*
@@ -372,13 +384,14 @@ $config['rewrite_short_tags'] = FALSE;
 | Comma-delimited, e.g. '10.0.1.200,10.0.1.201'
 |
 */
-$config['cache_dir'] = APPPATH.'cache/';
+$config['cache_dir']             = APPPATH . 'cache/';
 $config['cache_default_expires'] = 0;
-$config['proxy_ips'] = '';
-$config['wysiwyg'] = 'tinymce';
-$config['admin_assets_path'] = $config['base_url'] . 'assets/';
-$config['cmscs_version']	= "1.0.1";
-$config['uiform_url_ssl'] = %SSL%;
-/* End of file config.php */
+$config['proxy_ips']             = '';
+$config['wysiwyg']               = 'tinymce';
+$config['admin_assets_path']     = $config['base_url'] . 'assets/';
+$config['cmscs_version']         = '1.0.1';
+$config['uiform_url_ssl']        = % SSL % ;
+/*
+ End of file config.php */
 /* Location: ./application/config/config.php */
 

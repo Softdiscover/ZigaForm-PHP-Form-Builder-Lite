@@ -27,7 +27,7 @@ ob_start();
 }
    #rockfm_<?php echo $id; ?> .rockfm-heading{
 		<?php
-		//input
+		// input
 		?>
 		display:inline-block;
 		<?php if ( $input['size'] ) { ?>
@@ -53,19 +53,19 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 				<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 				?>
 			<?php } ?>
 		<?php } ?>
 		
 		 <?php
-			//el_background
+			// el_background
 			if ( isset( $el_background['show_st'] ) && intval( $el_background['show_st'] ) === 1 ) {
 				switch ( intval( $el_background['type'] ) ) {
 					case 1:
-						//solid
+						// solid
 						if ( ! empty( $el_background['solid_color'] ) ) {
 							?>
 								background:<?php echo $el_background['solid_color']; ?>;
@@ -73,7 +73,7 @@ ob_start();
 						}
 						break;
 					case 2:
-						//gradient
+						// gradient
 						if ( ! empty( $el_background['start_color'] ) && ! empty( $el_background['end_color'] ) ) {
 							?>
 								background: <?php echo $el_background['start_color']; ?>;
@@ -89,7 +89,7 @@ ob_start();
 				?>
 			<?php } ?>
 		 <?php
-			//el_border_radius
+			// el_border_radius
 			if ( isset( $el_border_radius['show_st'] ) && intval( $el_border_radius['show_st'] ) === 1 ) {
 				?>
 			 -webkit-border-radius: <?php echo $el_border_radius['size']; ?>;
@@ -99,7 +99,7 @@ ob_start();
 			}
 			?>
 		<?php
-		 //el_border
+		 // el_border
 		if ( isset( $el_border['show_st'] )
 				 && intval( $el_border['show_st'] ) === 1
 				 && ! empty( $el_border['color'] )
@@ -119,7 +119,7 @@ ob_start();
 		?>
 	}
 	<?php
-	//el_border
+	// el_border
 	if ( isset( $el_border['color_focus_st'] )
 				 && intval( $el_border['color_focus_st'] ) === 1 ) {
 		if ( intval( $el_border['style'] ) === 2 ) {

@@ -232,7 +232,7 @@ $default_template = ob_get_clean();
 						'editor_height' => 325,
 						'textarea_rows' => 20,
 					);
-					//wp_editor($default_template, 'uifm_frm_email_tmpl',$settings );
+					// wp_editor($default_template, 'uifm_frm_email_tmpl',$settings );
 					?>
 					<textarea 
 													class="uifm_tinymce_obj"
@@ -365,7 +365,7 @@ $default_template = ob_get_clean();
 									'editor_height' => 325,
 									'textarea_rows' => 20,
 								);
-									//wp_editor($default_template, 'uifm_frm_email_usr_tmpl',$settings );
+									// wp_editor($default_template, 'uifm_frm_email_usr_tmpl',$settings );
 								?>
 								<textarea 
 													class="uifm_tinymce_obj"
@@ -436,7 +436,7 @@ $default_template = ob_get_clean();
 															'editor_height' => 325,
 															'textarea_rows' => 20,
 														);
-														//wp_editor($default_template, 'uifm_frm_email_usr_tmpl_pdf',$settings );
+														// wp_editor($default_template, 'uifm_frm_email_usr_tmpl_pdf',$settings );
 														?>
 														<textarea 
 														class="uifm_tinymce_obj"

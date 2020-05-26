@@ -19,7 +19,7 @@ ob_start();
    <?php if ( ! empty( $label ) ) { ?>
    #rockfm_<?php echo $id; ?> .rockfm-label{
 		<?php
-		//label
+		// label
 		?>
    display:block;
 		<?php if ( $label['size'] ) { ?>
@@ -47,15 +47,15 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 				<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 				?>
 		   <?php } ?>
 			
 		<?php } ?>
 		<?php
-		 //shadow
+		 // shadow
 		if ( isset( $label['shadow_st'] )
 				 && intval( $label['shadow_st'] ) === 1
 				 && ! empty( $label['shadow_color'] )
@@ -79,7 +79,7 @@ ob_start();
    <?php if ( ! empty( $sublabel ) ) { ?>
    #rockfm_<?php echo $id; ?> .rockfm-sublabel{
 		<?php
-		//sublabel
+		// sublabel
 		?>
 		<?php if ( $sublabel['size'] ) { ?>
 			font-size:<?php echo $sublabel['size']; ?>px;
@@ -104,15 +104,15 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 				<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 				?>
 		   <?php } ?>
 			
 		<?php } ?>
 		<?php
-		 //shadow
+		 // shadow
 		if ( isset( $sublabel['shadow_st'] )
 				 && intval( $sublabel['shadow_st'] ) === 1
 				 && ! empty( $sublabel['shadow_color'] )
@@ -139,20 +139,20 @@ ob_start();
 		if ( isset( $txt_block['block_st'] ) && intval( $txt_block['block_st'] ) === 1 ) {
 			switch ( intval( $txt_block['block_align'] ) ) {
 				case 1:
-					//center
+					// center
 					?>
 							text-align: center;
 					<?php
 					break;
 				case 2:
-					//right
+					// right
 					?>
 							text-align: right;
 						   <?php
 					break;
 				case 0:
 				default:
-					//left
+					// left
 					?>
 							text-align: left;
 						   <?php
@@ -183,9 +183,9 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 			<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 			?>
 		   <?php } ?>
 			

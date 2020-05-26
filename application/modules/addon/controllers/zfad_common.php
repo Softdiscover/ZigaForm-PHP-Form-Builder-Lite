@@ -45,9 +45,8 @@ class zfad_common extends BackendController {
 	function __construct() {
 		 parent::__construct();
 		$this->load->language_alt( model_settings::$db_config['language'] );
-		//$this->template->set('controller', $this);
-		//$this->load->model('model_addon');
-
+		// $this->template->set('controller', $this);
+		// $this->load->model('model_addon');
 	}
 
 	/**
@@ -67,8 +66,8 @@ class zfad_common extends BackendController {
 	public function init() {
 
 		try {
-			//$instance_example = new WPPS_Instance_Class( 'Instance example', '42' );
-			//add_notice('ba');
+			// $instance_example = new WPPS_Instance_Class( 'Instance example', '42' );
+			// add_notice('ba');
 		} catch ( Exception $exception ) {
 			add_notice( __METHOD__ . ' error: ' . $exception->getMessage(), 'error' );
 		}

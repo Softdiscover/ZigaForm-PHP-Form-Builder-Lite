@@ -1,15 +1,16 @@
-<?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );}
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 4.3.2 or newer
  *
- * @package		CodeIgniter
- * @author		ExpressionEngine Dev Team
- * @copyright	Copyright (c) 2006 - 2012 EllisLab, Inc.
- * @license		http://codeigniter.com/user_guide/license.html
- * @link		http://codeigniter.com
- * @since		Version 2.0
+ * @package     CodeIgniter
+ * @author      ExpressionEngine Dev Team
+ * @copyright   Copyright (c) 2006 - 2012 EllisLab, Inc.
+ * @license     http://codeigniter.com/user_guide/license.html
+ * @link        http://codeigniter.com
+ * @since       Version 2.0
  * @filesource
  */
 
@@ -18,10 +19,10 @@
 /**
  * CodeIgniter Dummy Caching Class
  *
- * @package		CodeIgniter
- * @subpackage	Libraries
- * @category	Core
- * @author		ExpressionEngine Dev Team
+ * @package     CodeIgniter
+ * @subpackage  Libraries
+ * @category    Core
+ * @author      ExpressionEngine Dev Team
  * @link
  */
 
@@ -32,12 +33,11 @@ class CI_Cache_dummy extends CI_Driver {
 	 *
 	 * Since this is the dummy class, it's always going to return FALSE.
 	 *
-	 * @param 	string
-	 * @return 	Boolean		FALSE
+	 * @param   string
+	 * @return  Boolean     FALSE
 	 */
-	public function get($id)
-	{
-		return FALSE;
+	public function get( $id ) {
+		return false;
 	}
 
 	// ------------------------------------------------------------------------
@@ -45,15 +45,14 @@ class CI_Cache_dummy extends CI_Driver {
 	/**
 	 * Cache Save
 	 *
-	 * @param 	string		Unique Key
-	 * @param 	mixed		Data to store
-	 * @param 	int			Length of time (in seconds) to cache the data
+	 * @param   string      Unique Key
+	 * @param   mixed       Data to store
+	 * @param   int         Length of time (in seconds) to cache the data
 	 *
-	 * @return 	boolean		TRUE, Simulating success
+	 * @return  boolean     TRUE, Simulating success
 	 */
-	public function save($id, $data, $ttl = 60)
-	{
-		return TRUE;
+	public function save( $id, $data, $ttl = 60 ) {
+		 return true;
 	}
 
 	// ------------------------------------------------------------------------
@@ -61,12 +60,11 @@ class CI_Cache_dummy extends CI_Driver {
 	/**
 	 * Delete from Cache
 	 *
-	 * @param 	mixed		unique identifier of the item in the cache
-	 * @param 	boolean		TRUE, simulating success
+	 * @param   mixed       unique identifier of the item in the cache
+	 * @param   boolean     TRUE, simulating success
 	 */
-	public function delete($id)
-	{
-		return TRUE;
+	public function delete( $id ) {
+		 return true;
 	}
 
 	// ------------------------------------------------------------------------
@@ -74,11 +72,10 @@ class CI_Cache_dummy extends CI_Driver {
 	/**
 	 * Clean the cache
 	 *
-	 * @return 	boolean		TRUE, simulating success
+	 * @return  boolean     TRUE, simulating success
 	 */
-	public function clean()
-	{
-		return TRUE;
+	public function clean() {
+		return true;
 	}
 
 	// ------------------------------------------------------------------------
@@ -86,25 +83,23 @@ class CI_Cache_dummy extends CI_Driver {
 	/**
 	 * Cache Info
 	 *
-	 * @param 	string		user/filehits
-	 * @return 	boolean		FALSE
+	 * @param   string      user/filehits
+	 * @return  boolean     FALSE
 	 */
-	 public function cache_info($type = NULL)
-	 {
-		 return FALSE;
-	 }
+	public function cache_info( $type = null ) {
+		return false;
+	}
 
 	// ------------------------------------------------------------------------
 
 	/**
 	 * Get Cache Metadata
 	 *
-	 * @param 	mixed		key to get cache metadata on
-	 * @return 	boolean		FALSE
+	 * @param   mixed       key to get cache metadata on
+	 * @return  boolean     FALSE
 	 */
-	public function get_metadata($id)
-	{
-		return FALSE;
+	public function get_metadata( $id ) {
+		return false;
 	}
 
 	// ------------------------------------------------------------------------
@@ -115,9 +110,8 @@ class CI_Cache_dummy extends CI_Driver {
 	 *
 	 * @return TRUE;
 	 */
-	public function is_supported()
-	{
-		return TRUE;
+	public function is_supported() {
+		return true;
 	}
 
 	// ------------------------------------------------------------------------
@@ -125,5 +119,6 @@ class CI_Cache_dummy extends CI_Driver {
 }
 // End Class
 
-/* End of file Cache_dummy.php */
+/*
+ End of file Cache_dummy.php */
 /* Location: ./system/libraries/Cache/drivers/Cache_dummy.php */

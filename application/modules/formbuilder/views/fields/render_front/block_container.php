@@ -26,7 +26,7 @@ $field_laygrid = ( isset( $txt_block['grid_layout'] ) ) ? $txt_block['grid_layou
 						<?php
 						switch ( intval( $txt_block['block_pos'] ) ) {
 							case 1:
-								//top
+								// top
 								?>
 									<div class="rkfm-col-sm-12 rockfm-wrap-label">
 									<?php echo $render_block_label; ?>
@@ -37,7 +37,7 @@ $field_laygrid = ( isset( $txt_block['grid_layout'] ) ) ? $txt_block['grid_layou
 									<?php
 								break;
 							case 2:
-								//right
+								// right
 								?>
 									 <div class="rkfm-col-sm-<?php echo $tmp_labblock_pos['left']; ?>">
 									<?php echo $render_block_input_cont; ?>
@@ -48,7 +48,7 @@ $field_laygrid = ( isset( $txt_block['grid_layout'] ) ) ? $txt_block['grid_layou
 									<?php
 								break;
 							case 3:
-								//bottom
+								// bottom
 								?>
 									<div class="rkfm-col-sm-12">
 									<?php echo $render_block_input_cont; ?>
@@ -60,7 +60,7 @@ $field_laygrid = ( isset( $txt_block['grid_layout'] ) ) ? $txt_block['grid_layou
 								break;
 							case 0:
 							default:
-								//left
+								// left
 								?>
 									<div class="rkfm-col-sm-<?php echo $tmp_labblock_pos['left']; ?> rockfm-wrap-label">
 									<?php echo $render_block_label; ?>

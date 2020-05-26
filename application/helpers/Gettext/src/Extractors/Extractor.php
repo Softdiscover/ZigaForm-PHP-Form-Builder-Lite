@@ -6,85 +6,82 @@ use Exception;
 use InvalidArgumentException;
 use Gettext\Translations;
 
-abstract class Extractor
-{
-    /**
-     * Extract the translations from a file.
-     *
-     * @param array|string      $file         A path of a file or files
-     * @param null|Translations $translations The translations instance to append the new translations.
-     *
-     * @return Translations
-     */
-    public static function fromFile($file, Translations $translations = null)
-    {
-        if ($translations === null) {
-            $translations = new Translations();
-        }
+abstract class Extractor {
 
-        foreach (self::getFiles($file) as $file) {
-            static::fromString(self::readFile($file), $translations, $file);
-        }
+	/**
+	 * Extract the translations from a file.
+	 *
+	 * @param array|string      $file         A path of a file or files
+	 * @param null|Translations $translations The translations instance to append the new translations.
+	 *
+	 * @return Translations
+	 */
+	public static function fromFile( $file, Translations $translations = null ) {
+		if ( $translations === null ) {
+			$translations = new Translations();
+		}
 
-        return $translations;
-    }
+		foreach ( self::getFiles( $file ) as $file ) {
+			static::fromString( self::readFile( $file ), $translations, $file );
+		}
 
-    /**
-     * Checks and returns all files.
-     *
-     * @param string|array $file The file/s
-     *
-     * @return array The file paths
-     */
-    protected static function getFiles($file)
-    {
-        if (empty($file)) {
-            throw new InvalidArgumentException('There is not any file defined');
-        }
+		return $translations;
+	}
 
-        if (is_string($file)) {
-            if (!is_file($file)) {
-                throw new InvalidArgumentException("'$file' is not a valid file");
-            }
+	/**
+	 * Checks and returns all files.
+	 *
+	 * @param string|array $file The file/s
+	 *
+	 * @return array The file paths
+	 */
+	protected static function getFiles( $file ) {
+		if ( empty( $file ) ) {
+			throw new InvalidArgumentException( 'There is not any file defined' );
+		}
 
-            if (!is_readable($file)) {
-                throw new InvalidArgumentException("'$file' is not a readable file");
-            }
+		if ( is_string( $file ) ) {
+			if ( ! is_file( $file ) ) {
+				throw new InvalidArgumentException( "'$file' is not a valid file" );
+			}
 
-            return array($file);
-        }
+			if ( ! is_readable( $file ) ) {
+				throw new InvalidArgumentException( "'$file' is not a readable file" );
+			}
 
-        if (is_array($file)) {
-            $files = array();
+			return array( $file );
+		}
 
-            foreach ($file as $f) {
-                $files = array_merge($files, self::getFiles($f));
-            }
+		if ( is_array( $file ) ) {
+			$files = array();
 
-            return $files;
-        }
+			foreach ( $file as $f ) {
+				$files = array_merge( $files, self::getFiles( $f ) );
+			}
 
-        throw new InvalidArgumentException('The first argumet must be string or array');
-    }
+			return $files;
+		}
 
-    /**
-     * Reads and returns the content of a file.
-     *
-     * @param string $file
-     *
-     * @return string
-     */
-    protected static function readFile($file)
-    {
-        $length = filesize($file);
+		throw new InvalidArgumentException( 'The first argumet must be string or array' );
+	}
 
-        if (!($fd = fopen($file, 'rb'))) {
-            throw new Exception("Cannot read the file '$file', probably permissions");
-        }
+	/**
+	 * Reads and returns the content of a file.
+	 *
+	 * @param string $file
+	 *
+	 * @return string
+	 */
+	protected static function readFile( $file ) {
+		$length = filesize( $file );
 
-        $content = $length ? fread($fd, $length) : '';
-        fclose($fd);
+		if ( ! ( $fd = fopen( $file, 'rb' ) ) ) {
+			throw new Exception( "Cannot read the file '$file', probably permissions" );
+		}
 
-        return $content;
-    }
+		$content = $length ? fread( $fd, $length ) : '';
+		fclose( $fd );
+
+		return $content;
+	}
 }

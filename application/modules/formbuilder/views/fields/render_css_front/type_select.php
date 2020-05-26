@@ -5,7 +5,7 @@ ob_start();
 ?>
 	   #rockfm_<?php echo $id; ?> .rockfm-input2-wrap .rockfm-inp2-opt-label{
 		<?php
-		//input
+		// input
 		?>
 		<?php if ( $input2['size'] ) { ?>
 			font-size:<?php echo $input2['size']; ?>px;
@@ -30,9 +30,9 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 				<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 				?>
 			<?php } ?>
 		<?php } ?>
@@ -98,9 +98,9 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>!important;
 				<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 				?>
 		   <?php } ?> 
 		<?php } ?>         

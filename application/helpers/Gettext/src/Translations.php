@@ -8,386 +8,365 @@ use BadMethodCallException;
 /**
  * Class to manage a collection of translations.
  */
-class Translations extends \ArrayObject
-{
-    const MERGE_ADD = 1;
-    const MERGE_REMOVE = 2;
-    const MERGE_HEADERS = 4;
-    const MERGE_REFERENCES = 8;
-    const MERGE_COMMENTS = 16;
-    const MERGE_LANGUAGE = 32;
-    const MERGE_PLURAL = 64;
-    const MERGE_OVERRIDE = 128;
+class Translations extends \ArrayObject {
 
-    const HEADER_LANGUAGE = 'Language';
-    const HEADER_PLURAL = 'Plural-Forms';
-    const HEADER_DOMAIN = 'X-Domain';
+	const MERGE_ADD        = 1;
+	const MERGE_REMOVE     = 2;
+	const MERGE_HEADERS    = 4;
+	const MERGE_REFERENCES = 8;
+	const MERGE_COMMENTS   = 16;
+	const MERGE_LANGUAGE   = 32;
+	const MERGE_PLURAL     = 64;
+	const MERGE_OVERRIDE   = 128;
 
-    public static $mergeDefault = 93; // self::MERGE_ADD | self::MERGE_HEADERS | self::MERGE_COMMENTS | self::MERGE_REFERENCES | self::MERGE_PLURAL
+	const HEADER_LANGUAGE = 'Language';
+	const HEADER_PLURAL   = 'Plural-Forms';
+	const HEADER_DOMAIN   = 'X-Domain';
 
-    private $headers;
-    private $translationCount;
+	public static $mergeDefault = 93; // self::MERGE_ADD | self::MERGE_HEADERS | self::MERGE_COMMENTS | self::MERGE_REFERENCES | self::MERGE_PLURAL
 
-    /**
-     * @see \ArrayObject::__construct()
-     */
-    public function __construct($input = array(), $flags = 0, $iterator_class = 'ArrayIterator')
-    {
-        $this->headers = array(
-            'Project-Id-Version' => '',
-            'Report-Msgid-Bugs-To' => '',
-            'Last-Translator' => '',
-            'Language-Team' => '',
-            'MIME-Version' => '1.0',
-            'Content-Type' => 'text/plain; charset=UTF-8',
-            'Content-Transfer-Encoding' => '8bit',
-            'POT-Creation-Date' => date('c'),
-            'PO-Revision-Date' => date('c'),
-        );
-        $this->headers[self::HEADER_LANGUAGE] = '';
-        parent::__construct($input, $flags, $iterator_class);
-    }
+	private $headers;
+	private $translationCount;
 
-    /**
-     * Magic method to create new instances using extractors
-     * For example: Translations::fromMoFile($filename);.
-     *
-     * @return Translations
-     */
-    public static function __callStatic($name, $arguments)
-    {
-        if (!preg_match('/^from(\w+)(File|String)$/i', $name, $matches)) {
-            throw new BadMethodCallException("The method $name does not exists");
-        }
+	/**
+	 * @see \ArrayObject::__construct()
+	 */
+	public function __construct( $input = array(), $flags = 0, $iterator_class = 'ArrayIterator' ) {
+		$this->headers                          = array(
+			'Project-Id-Version'        => '',
+			'Report-Msgid-Bugs-To'      => '',
+			'Last-Translator'           => '',
+			'Language-Team'             => '',
+			'MIME-Version'              => '1.0',
+			'Content-Type'              => 'text/plain; charset=UTF-8',
+			'Content-Transfer-Encoding' => '8bit',
+			'POT-Creation-Date'         => date( 'c' ),
+			'PO-Revision-Date'          => date( 'c' ),
+		);
+		$this->headers[ self::HEADER_LANGUAGE ] = '';
+		parent::__construct( $input, $flags, $iterator_class );
+	}
 
-        return call_user_func_array('Gettext\\Extractors\\'.$matches[1].'::from'.$matches[2], $arguments);
-    }
+	/**
+	 * Magic method to create new instances using extractors
+	 * For example: Translations::fromMoFile($filename);.
+	 *
+	 * @return Translations
+	 */
+	public static function __callStatic( $name, $arguments ) {
+		if ( ! preg_match( '/^from(\w+)(File|String)$/i', $name, $matches ) ) {
+			throw new BadMethodCallException( "The method $name does not exists" );
+		}
 
-    /**
-     * Magic method to import/export the translations to a specific format
-     * For example: $translations->toMoFile($filename);
-     * For example: $translations->addFromMoFile($filename);.
-     *
-     * @return self|bool
-     */
-    public function __call($name, $arguments)
-    {
-        if (!preg_match('/^(addFrom|to)(\w+)(File|String)$/i', $name, $matches)) {
-            throw new BadMethodCallException("The method $name does not exists");
-        }
+		return call_user_func_array( 'Gettext\\Extractors\\' . $matches[1] . '::from' . $matches[2], $arguments );
+	}
 
-        if ($matches[1] === 'addFrom') {
-            $arguments[] = $this;
+	/**
+	 * Magic method to import/export the translations to a specific format
+	 * For example: $translations->toMoFile($filename);
+	 * For example: $translations->addFromMoFile($filename);.
+	 *
+	 * @return self|bool
+	 */
+	public function __call( $name, $arguments ) {
+		if ( ! preg_match( '/^(addFrom|to)(\w+)(File|String)$/i', $name, $matches ) ) {
+			throw new BadMethodCallException( "The method $name does not exists" );
+		}
 
-            call_user_func_array('Gettext\\Extractors\\'.$matches[2].'::from'.$matches[3], $arguments);
+		if ( $matches[1] === 'addFrom' ) {
+			$arguments[] = $this;
 
-            return $this;
-        }
+			call_user_func_array( 'Gettext\\Extractors\\' . $matches[2] . '::from' . $matches[3], $arguments );
 
-        array_unshift($arguments, $this);
+			return $this;
+		}
 
-        return call_user_func_array('Gettext\\Generators\\'.$matches[2].'::to'.$matches[3], $arguments);
-    }
+		array_unshift( $arguments, $this );
 
-    /**
-     * Magic method to clone each translation on clone the translations object.
-     */
-    public function __clone()
-    {
-        $array = array();
+		return call_user_func_array( 'Gettext\\Generators\\' . $matches[2] . '::to' . $matches[3], $arguments );
+	}
 
-        foreach ($this as $key => $translation) {
-            $array[$key] = clone $translation;
-        }
+	/**
+	 * Magic method to clone each translation on clone the translations object.
+	 */
+	public function __clone() {
+		 $array = array();
 
-        $this->exchangeArray($array);
-    }
+		foreach ( $this as $key => $translation ) {
+			$array[ $key ] = clone $translation;
+		}
 
-    /**
-     * Control the new translations added.
-     *
-     * @param mixed       $index
-     * @param Translation $value
-     *
-     * @throws InvalidArgumentException If the value is not an instance of Gettext\Translation
-     *
-     * @return Translation
-     */
-    public function offsetSet($index, $value)
-    {
-        if (!($value instanceof Translation)) {
-            throw new \InvalidArgumentException('Only instances of Gettext\\Translation must be added to a Gettext\\Translations');
-        }
+		$this->exchangeArray( $array );
+	}
 
-        $id = $value->getId();
+	/**
+	 * Control the new translations added.
+	 *
+	 * @param mixed       $index
+	 * @param Translation $value
+	 *
+	 * @throws InvalidArgumentException If the value is not an instance of Gettext\Translation
+	 *
+	 * @return Translation
+	 */
+	public function offsetSet( $index, $value ) {
+		if ( ! ( $value instanceof Translation ) ) {
+			throw new \InvalidArgumentException( 'Only instances of Gettext\\Translation must be added to a Gettext\\Translations' );
+		}
 
-        if ($this->offsetExists($id)) {
-            $this[$id]->mergeWith($value);
-            $this[$id]->setTranslationCount($this->translationCount);
+		$id = $value->getId();
 
-            return $this[$id];
-        }
+		if ( $this->offsetExists( $id ) ) {
+			$this[ $id ]->mergeWith( $value );
+			$this[ $id ]->setTranslationCount( $this->translationCount );
 
-        $value->setTranslationCount($this->translationCount);
+			return $this[ $id ];
+		}
 
-        parent::offsetSet($id, $value);
+		$value->setTranslationCount( $this->translationCount );
 
-        return $value;
-    }
+		parent::offsetSet( $id, $value );
 
-    /**
-     * Set the plural definition.
-     *
-     * @param int    $count
-     * @param string $rule
-     */
-    public function setPluralForms($count, $rule)
-    {
-        $this->setHeader(self::HEADER_PLURAL, "nplurals={$count}; plural={$rule};");
-    }
+		return $value;
+	}
 
-    /**
-     * Returns the parsed plural definition.
-     *
-     * @param null|array [count, rule]
-     */
-    public function getPluralForms()
-    {
-        $header = $this->getHeader(self::HEADER_PLURAL);
+	/**
+	 * Set the plural definition.
+	 *
+	 * @param int    $count
+	 * @param string $rule
+	 */
+	public function setPluralForms( $count, $rule ) {
+		$this->setHeader( self::HEADER_PLURAL, "nplurals={$count}; plural={$rule};" );
+	}
 
-        if ($header && preg_match('/^nplurals\s*=\s*(\d+)\s*;\s*plural\s*=\s*([^;]+)\s*;$/', $header, $matches)) {
-            return array(intval($matches[1]), $matches[2]);
-        }
-    }
+	/**
+	 * Returns the parsed plural definition.
+	 *
+	 * @param null|array [count, rule]
+	 */
+	public function getPluralForms() {
+		$header = $this->getHeader( self::HEADER_PLURAL );
 
-    /**
-     * Set a new header.
-     *
-     * @param string $name
-     * @param string $value
-     */
-    public function setHeader($name, $value)
-    {
-        $name = trim($name);
-        $this->headers[$name] = trim($value);
+		if ( $header && preg_match( '/^nplurals\s*=\s*(\d+)\s*;\s*plural\s*=\s*([^;]+)\s*;$/', $header, $matches ) ) {
+			return array( intval( $matches[1] ), $matches[2] );
+		}
+	}
 
-        if ($name === self::HEADER_PLURAL) {
-            if ($forms = $this->getPluralForms()) {
-                $this->translationCount = $forms[0];
+	/**
+	 * Set a new header.
+	 *
+	 * @param string $name
+	 * @param string $value
+	 */
+	public function setHeader( $name, $value ) {
+		$name                   = trim( $name );
+		$this->headers[ $name ] = trim( $value );
 
-                foreach ($this as $t) {
-                    $t->setTranslationCount($this->translationCount);
-                }
-            } else {
-                $this->translationCount = null;
-            }
-        }
-    }
+		if ( $name === self::HEADER_PLURAL ) {
+			if ( $forms = $this->getPluralForms() ) {
+				$this->translationCount = $forms[0];
 
-    /**
-     * Returns a header value.
-     *
-     * @param string $name
-     *
-     * @return null|string
-     */
-    public function getHeader($name)
-    {
-        return isset($this->headers[$name]) ? $this->headers[$name] : null;
-    }
+				foreach ( $this as $t ) {
+					$t->setTranslationCount( $this->translationCount );
+				}
+			} else {
+				$this->translationCount = null;
+			}
+		}
+	}
 
-    /**
-     * Returns all header for this translations.
-     *
-     * @return array
-     */
-    public function getHeaders()
-    {
-        return $this->headers;
-    }
+	/**
+	 * Returns a header value.
+	 *
+	 * @param string $name
+	 *
+	 * @return null|string
+	 */
+	public function getHeader( $name ) {
+		return isset( $this->headers[ $name ] ) ? $this->headers[ $name ] : null;
+	}
 
-    /**
-     * Removes all headers.
-     */
-    public function deleteHeaders()
-    {
-        $this->headers = array();
-    }
+	/**
+	 * Returns all header for this translations.
+	 *
+	 * @return array
+	 */
+	public function getHeaders() {
+		return $this->headers;
+	}
 
-    /**
-     * Removes one header.
-     *
-     * @param string $name
-     */
-    public function deleteHeader($name)
-    {
-        unset($this->headers[$name]);
-    }
+	/**
+	 * Removes all headers.
+	 */
+	public function deleteHeaders() {
+		$this->headers = array();
+	}
 
-    /**
-     * Returns the language value.
-     *
-     * @return string $language
-     */
-    public function getLanguage()
-    {
-        return $this->getHeader(self::HEADER_LANGUAGE);
-    }
+	/**
+	 * Removes one header.
+	 *
+	 * @param string $name
+	 */
+	public function deleteHeader( $name ) {
+		 unset( $this->headers[ $name ] );
+	}
 
-    /**
-     * Sets the language and the plural forms.
-     *
-     * @param string $language
-     *
-     * @return bool Returns true if the plural rules has been updated, false if $language hasn't been recognized
-     */
-    public function setLanguage($language)
-    {
-        $this->setHeader(self::HEADER_LANGUAGE, trim($language));
+	/**
+	 * Returns the language value.
+	 *
+	 * @return string $language
+	 */
+	public function getLanguage() {
+		 return $this->getHeader( self::HEADER_LANGUAGE );
+	}
 
-        if (($info = Language::getById($language))) {
-            $this->setPluralForms(count($info->categories), $info->formula);
+	/**
+	 * Sets the language and the plural forms.
+	 *
+	 * @param string $language
+	 *
+	 * @return bool Returns true if the plural rules has been updated, false if $language hasn't been recognized
+	 */
+	public function setLanguage( $language ) {
+		$this->setHeader( self::HEADER_LANGUAGE, trim( $language ) );
 
-            return true;
-        }
+		if ( ( $info = Language::getById( $language ) ) ) {
+			$this->setPluralForms( count( $info->categories ), $info->formula );
 
-        return false;
-    }
+			return true;
+		}
 
-    /**
-     * Checks whether the language is empty or not.
-     *
-     * @return bool
-     */
-    public function hasLanguage()
-    {
-        $language = $this->getLanguage();
+		return false;
+	}
 
-        return (is_string($language) && ($language !== '')) ? true : false;
-    }
+	/**
+	 * Checks whether the language is empty or not.
+	 *
+	 * @return bool
+	 */
+	public function hasLanguage() {
+		 $language = $this->getLanguage();
 
-    /**
-     * Set a new domain for this translations.
-     *
-     * @param string $domain
-     */
-    public function setDomain($domain)
-    {
-        $this->setHeader(self::HEADER_DOMAIN, trim($domain));
-    }
+		return ( is_string( $language ) && ( $language !== '' ) ) ? true : false;
+	}
 
-    /**
-     * Returns the domain.
-     *
-     * @return string
-     */
-    public function getDomain()
-    {
-        return $this->getHeader(self::HEADER_DOMAIN);
-    }
+	/**
+	 * Set a new domain for this translations.
+	 *
+	 * @param string $domain
+	 */
+	public function setDomain( $domain ) {
+		$this->setHeader( self::HEADER_DOMAIN, trim( $domain ) );
+	}
 
-    /**
-     * Checks whether the domain is empty or not.
-     *
-     * @return bool
-     */
-    public function hasDomain()
-    {
-        $domain = $this->getDomain();
+	/**
+	 * Returns the domain.
+	 *
+	 * @return string
+	 */
+	public function getDomain() {
+		return $this->getHeader( self::HEADER_DOMAIN );
+	}
 
-        return (is_string($domain) && ($domain !== '')) ? true : false;
-    }
+	/**
+	 * Checks whether the domain is empty or not.
+	 *
+	 * @return bool
+	 */
+	public function hasDomain() {
+		$domain = $this->getDomain();
 
-    /**
-     * Search for a specific translation.
-     *
-     * @param string|Translation $context  The context of the translation or a translation instance
-     * @param string             $original The original string
-     *
-     * @return Translation|false
-     */
-    public function find($context, $original = '')
-    {
-        if ($context instanceof Translation) {
-            $id = $context->getId();
-        } else {
-            $id = Translation::generateId($context, $original);
-        }
+		return ( is_string( $domain ) && ( $domain !== '' ) ) ? true : false;
+	}
 
-        return $this->offsetExists($id) ? $this[$id] : false;
-    }
+	/**
+	 * Search for a specific translation.
+	 *
+	 * @param string|Translation $context  The context of the translation or a translation instance
+	 * @param string             $original The original string
+	 *
+	 * @return Translation|false
+	 */
+	public function find( $context, $original = '' ) {
+		if ( $context instanceof Translation ) {
+			$id = $context->getId();
+		} else {
+			$id = Translation::generateId( $context, $original );
+		}
 
-    /**
-     * Creates and insert/merges a new translation.
-     *
-     * @param string $context  The translation context
-     * @param string $original The translation original string
-     * @param string $plural   The translation original plural string
-     *
-     * @return Translation The translation created
-     */
-    public function insert($context, $original, $plural = '')
-    {
-        return $this->offsetSet(null, new Translation($context, $original, $plural));
-    }
+		return $this->offsetExists( $id ) ? $this[ $id ] : false;
+	}
 
-    /**
-     * Merges this translations with other translations.
-     *
-     * @param Translations $translations The translations instance to merge with
-     * @param int|null     $method       One or various Translations::MERGE_* constants to define how to merge the translations
-     */
-    public function mergeWith(Translations $translations, $method = null)
-    {
-        if ($method === null) {
-            $method = self::$mergeDefault;
-        }
+	/**
+	 * Creates and insert/merges a new translation.
+	 *
+	 * @param string $context  The translation context
+	 * @param string $original The translation original string
+	 * @param string $plural   The translation original plural string
+	 *
+	 * @return Translation The translation created
+	 */
+	public function insert( $context, $original, $plural = '' ) {
+		return $this->offsetSet( null, new Translation( $context, $original, $plural ) );
+	}
 
-        if ($method & self::MERGE_HEADERS) {
-            foreach ($translations->getHeaders() as $name => $value) {
-                if (!$this->getHeader($name)) {
-                    $this->setHeader($name, $value);
-                }
-            }
-        }
+	/**
+	 * Merges this translations with other translations.
+	 *
+	 * @param Translations $translations The translations instance to merge with
+	 * @param int|null     $method       One or various Translations::MERGE_* constants to define how to merge the translations
+	 */
+	public function mergeWith( Translations $translations, $method = null ) {
+		if ( $method === null ) {
+			$method = self::$mergeDefault;
+		}
 
-        $add = (boolean) ($method & self::MERGE_ADD);
+		if ( $method & self::MERGE_HEADERS ) {
+			foreach ( $translations->getHeaders() as $name => $value ) {
+				if ( ! $this->getHeader( $name ) ) {
+					$this->setHeader( $name, $value );
+				}
+			}
+		}
 
-        foreach ($translations as $entry) {
-            if (($existing = $this->find($entry))) {
-                $existing->mergeWith($entry, $method);
-            } elseif ($add) {
-                $this[] = clone $entry;
-            }
-        }
+		$add = (bool) ( $method & self::MERGE_ADD );
 
-        if ($method & self::MERGE_REMOVE) {
-            $filtered = array();
+		foreach ( $translations as $entry ) {
+			if ( ( $existing = $this->find( $entry ) ) ) {
+				$existing->mergeWith( $entry, $method );
+			} elseif ( $add ) {
+				$this[] = clone $entry;
+			}
+		}
 
-            foreach ($this as $entry) {
-                if ($translations->find($entry)) {
-                    $filtered[] = $entry;
-                }
-            }
+		if ( $method & self::MERGE_REMOVE ) {
+			$filtered = array();
 
-            $this->exchangeArray($filtered);
-        }
+			foreach ( $this as $entry ) {
+				if ( $translations->find( $entry ) ) {
+					$filtered[] = $entry;
+				}
+			}
 
-        if ($method & self::MERGE_LANGUAGE) {
-            $language = $translations->getLanguage();
-            $pluralForm = $translations->getPluralForms();
+			$this->exchangeArray( $filtered );
+		}
 
-            if (!$pluralForm) {
-                if ($language) {
-                    $this->setLanguage($language);
-                }
-            } else {
-                if ($language) {
-                    $this->setHeader(self::HEADER_LANGUAGE, $language);
-                }
+		if ( $method & self::MERGE_LANGUAGE ) {
+			$language   = $translations->getLanguage();
+			$pluralForm = $translations->getPluralForms();
 
-                $this->setPluralForms($pluralForm[0], $pluralForm[1]);
-            }
-        }
-    }
+			if ( ! $pluralForm ) {
+				if ( $language ) {
+					$this->setLanguage( $language );
+				}
+			} else {
+				if ( $language ) {
+					$this->setHeader( self::HEADER_LANGUAGE, $language );
+				}
+
+				$this->setPluralForms( $pluralForm[0], $pluralForm[1] );
+			}
+		}
+	}
 }

@@ -2,64 +2,62 @@
 
 namespace Gettext\Utils;
 
-class PhpFunctionsScanner extends FunctionsScanner
-{
-    protected $tokens;
+class PhpFunctionsScanner extends FunctionsScanner {
 
-    /**
-     * Constructor.
-     *
-     * @param string $code The php code to scan
-     */
-    public function __construct($code)
-    {
-        $this->tokens = token_get_all($code);
-    }
+	protected $tokens;
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getFunctions()
-    {
-        $count = count($this->tokens);
-        $bufferFunctions = array();
-        $functions = array();
+	/**
+	 * Constructor.
+	 *
+	 * @param string $code The php code to scan
+	 */
+	public function __construct( $code ) {
+		$this->tokens = token_get_all( $code );
+	}
 
-        for ($k = 0; $k < $count; ++$k) {
-            $value = $this->tokens[$k];
+	/**
+	 * {@inheritdoc}
+	 */
+	public function getFunctions() {
+		$count           = count( $this->tokens );
+		$bufferFunctions = array();
+		$functions       = array();
 
-            //close the current function
-            if (is_string($value)) {
-                if ($value === ')' && isset($bufferFunctions[0])) {
-                    $functions[] = array_shift($bufferFunctions);
-                }
+		for ( $k = 0; $k < $count; ++$k ) {
+			$value = $this->tokens[ $k ];
 
-                continue;
-            }
+			// close the current function
+			if ( is_string( $value ) ) {
+				if ( $value === ')' && isset( $bufferFunctions[0] ) ) {
+					$functions[] = array_shift( $bufferFunctions );
+				}
 
-            //add an argument to the current function
-            if (isset($bufferFunctions[0]) && ($value[0] === T_CONSTANT_ENCAPSED_STRING)) {
-                $val = $value[1];
+				continue;
+			}
 
-                if ($val[0] === '"') {
-                    $val = str_replace('\\"', '"', $val);
-                } else {
-                    $val = str_replace("\\'", "'", $val);
-                }
+			// add an argument to the current function
+			if ( isset( $bufferFunctions[0] ) && ( $value[0] === T_CONSTANT_ENCAPSED_STRING ) ) {
+				$val = $value[1];
 
-                $bufferFunctions[0][2][] = substr($val, 1, -1);
-                continue;
-            }
+				if ( $val[0] === '"' ) {
+					$val = str_replace( '\\"', '"', $val );
+				} else {
+					$val = str_replace( "\\'", "'", $val );
+				}
 
-            //new function found
-            if (($value[0] === T_STRING) && is_string($this->tokens[$k + 1]) && ($this->tokens[$k + 1] === '(')) {
-                array_unshift($bufferFunctions, array($value[1], $value[2], array()));
-                ++$k;
+				$bufferFunctions[0][2][] = substr( $val, 1, -1 );
+				continue;
+			}
 
-                continue;
-            }
-        }
+			// new function found
+			if ( ( $value[0] === T_STRING ) && is_string( $this->tokens[ $k + 1 ] ) && ( $this->tokens[ $k + 1 ] === '(' ) ) {
+				array_unshift( $bufferFunctions, array( $value[1], $value[2], array() ) );
+				++$k;
 
-        return $functions;
-    }
+				continue;
+			}
+		}
+
+		return $functions;
+	}
 }

@@ -82,7 +82,8 @@ class Uiform_Backup {
 			/* BEGIN: Restore Database Content */
 			if ( isset( $database_file ) ) {
 
-				/* $database_file = $database_file;
+				/*
+				 $database_file = $database_file;
 				$sql_file = @file_get_contents($database_file, true);
 				$sql_queries = explode(";\n", $sql_file);
 
@@ -90,9 +91,9 @@ class Uiform_Backup {
 					mysql_query($sql_queries[$i], $conn);
 				}*/
 
-				//---------------------------------------------------------------------------
-				//Forign code Start here
-				//---------------------------------------------------------------------------
+				// ---------------------------------------------------------------------------
+				// Forign code Start here
+				// ---------------------------------------------------------------------------
 				$templine = '';
 				// Read in entire file
 				$lines = file( $database_file );
@@ -112,7 +113,7 @@ class Uiform_Backup {
 						$templine = '';
 					}
 				}
-				//echo "Database imported successfully <br/>";
+				// echo "Database imported successfully <br/>";
 				return true;
 
 			}
@@ -184,7 +185,7 @@ class Uiform_Backup {
 		mysql_select_db( $name, $link );
 		mysql_query( 'SET NAMES `utf8` COLLATE `utf8_general_ci`', $link ); // Unicode
 
-		if ( $tables == '*' ) { //get all of the tables
+		if ( $tables == '*' ) { // get all of the tables
 			$tables = array();
 			$result = mysql_query( 'SHOW TABLES' );
 			while ( $row = mysql_fetch_row( $result ) ) {
@@ -245,11 +246,10 @@ class Uiform_Backup {
 	 * @param string directory , as the directory to put file
 	 * @param $outname as file name just the name !, if file exist will be overide as numeric next ++ as name_1.sql.gz , name_2.sql.gz next ++
 	 *
-	 * @param string $dbhost database host
-	 * @param string $dbuser database user
-	 * @param string $dbpass database password
-	 * @param string $dbname database name
-	 *
+	 * @param string                                                                                           $dbhost database host
+	 * @param string                                                                                           $dbuser database user
+	 * @param string                                                                                           $dbpass database password
+	 * @param string                                                                                           $dbname database name
 	 */
 	public function backup_database( $directory, $outname, $dbhost, $dbuser, $dbpass, $dbname, $tables = '*' ) {
 
@@ -266,7 +266,7 @@ class Uiform_Backup {
 		$dir    = $directory;
 		$result = '<p> Could not create backup directory on :' . $dir . ' Please Please make sure you have set Directory on 755 or 777 for a while.</p>';
 
-		//$tables = '*';
+		// $tables = '*';
 
 		if ( $tables == '*' ) {
 			$tables = array();
@@ -278,7 +278,7 @@ class Uiform_Backup {
 			$tables = is_array( $tables ) ? $tables : explode( ',', $tables );
 		}
 
-		//cycle through data
+		// cycle through data
 		$return = '';
 		foreach ( $tables as $table ) {
 			$result     = mysqli_query( $conn, 'SELECT * FROM ' . $table );
@@ -310,7 +310,7 @@ class Uiform_Backup {
 					$return2 .= "\n\t(";
 					for ( $j = 0; $j < $num_fields; $j++ ) {
 						$row[ $j ] = $mysqli->escape_string( $row[ $j ] );
-						//$row[$j] = preg_replace("\n","\\n",$row[$j]);
+						// $row[$j] = preg_replace("\n","\\n",$row[$j]);
 						if ( isset( $row[ $j ] ) ) {
 							$return2 .= "'" . $row[ $j ] . "'";
 						} else {
@@ -338,7 +338,7 @@ class Uiform_Backup {
 		if ( true ) {
 			$name = $outname;
 
-			$fullname = $dir . '/' . $name . '.sql'; # full structures
+			$fullname = $dir . '/' . $name . '.sql'; // full structures
 
 			 $return = '-- ---------------------------------------------------------
                     --
@@ -361,7 +361,7 @@ class Uiform_Backup {
                     /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
                     /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
                     /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;';
-					# end values result
+					// end values result
 
 					write_file( $fullname, $return );
 

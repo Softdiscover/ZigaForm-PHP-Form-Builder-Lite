@@ -27,7 +27,7 @@ ob_start();
 }
    #rockfm_<?php echo $id; ?> .rockfm-btn-wiznext{
 		<?php
-		//input
+		// input
 		?>
 		<?php if ( $input12['size'] ) { ?>
 			font-size:<?php echo $input12['size']; ?>px;
@@ -52,19 +52,19 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 				<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 				?>
 			<?php } ?>
 		<?php } ?>
 		
 		 <?php
-			//el_background
+			// el_background
 			if ( isset( $el12_background['show_st'] ) && intval( $el12_background['show_st'] ) === 1 ) {
 				switch ( intval( $el12_background['type'] ) ) {
 					case 1:
-						//solid
+						// solid
 						if ( ! empty( $el12_background['solid_color'] ) ) {
 							?>
 								background:<?php echo $el12_background['solid_color']; ?>;
@@ -72,7 +72,7 @@ ob_start();
 						}
 						break;
 					case 2:
-						//gradient
+						// gradient
 						if ( ! empty( $el12_background['start_color'] ) && ! empty( $el12_background['end_color'] ) ) {
 							?>
 								background: <?php echo $el12_background['start_color']; ?>;
@@ -88,7 +88,7 @@ ob_start();
 				?>
 			<?php } ?>
 		 <?php
-			//el_border_radius
+			// el_border_radius
 			if ( isset( $el12_border_radius['show_st'] ) && intval( $el12_border_radius['show_st'] ) === 1 ) {
 				?>
 			 -webkit-border-radius: <?php echo $el12_border_radius['size']; ?>;
@@ -98,7 +98,7 @@ ob_start();
 			}
 			?>
 		<?php
-		 //el_border
+		 // el_border
 		if ( isset( $el12_border['show_st'] )
 				 && intval( $el12_border['show_st'] ) === 1
 				 && ! empty( $el12_border['color'] )
@@ -118,7 +118,7 @@ ob_start();
 		?>
 	}
 	<?php
-	//el_border
+	// el_border
 	if ( isset( $el12_border['color_focus_st'] )
 				 && intval( $el12_border['color_focus_st'] ) === 1 ) {
 		if ( intval( $el12_border['style'] ) === 2 ) {
@@ -138,7 +138,7 @@ ob_start();
 
    #rockfm_<?php echo $id; ?> .rockfm-btn-wizprev{
 		<?php
-		//input
+		// input
 		?>
 		<?php if ( $input13['size'] ) { ?>
 			font-size:<?php echo $input13['size']; ?>px;
@@ -163,19 +163,19 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 				<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 				?>
 			<?php } ?>
 		<?php } ?>
 		
 		 <?php
-			//el_background
+			// el_background
 			if ( isset( $el13_background['show_st'] ) && intval( $el13_background['show_st'] ) === 1 ) {
 				switch ( intval( $el13_background['type'] ) ) {
 					case 1:
-						//solid
+						// solid
 						if ( ! empty( $el13_background['solid_color'] ) ) {
 							?>
 								background:<?php echo $el13_background['solid_color']; ?>;
@@ -183,7 +183,7 @@ ob_start();
 						}
 						break;
 					case 2:
-						//gradient
+						// gradient
 						if ( ! empty( $el13_background['start_color'] ) && ! empty( $el13_background['end_color'] ) ) {
 							?>
 								background: <?php echo $el13_background['start_color']; ?>;
@@ -199,7 +199,7 @@ ob_start();
 				?>
 			<?php } ?>
 		 <?php
-			//el_border_radius
+			// el_border_radius
 			if ( isset( $el13_border_radius['show_st'] ) && intval( $el13_border_radius['show_st'] ) === 1 ) {
 				?>
 			 -webkit-border-radius: <?php echo $el13_border_radius['size']; ?>;
@@ -209,7 +209,7 @@ ob_start();
 			}
 			?>
 		<?php
-		 //el_border
+		 // el_border
 		if ( isset( $el13_border['show_st'] )
 				 && intval( $el13_border['show_st'] ) === 1
 				 && ! empty( $el13_border['color'] )
@@ -229,7 +229,7 @@ ob_start();
 		?>
 	}
 	<?php
-	//el_border
+	// el_border
 	if ( isset( $el13_border['color_focus_st'] )
 				 && intval( $el13_border['color_focus_st'] ) === 1 ) {
 		if ( intval( $el13_border['style'] ) === 2 ) {
@@ -257,9 +257,9 @@ ob_start();
 			
 			font-family:<?php echo $font_temp['family']; ?>;
 			<?php
-				//storing to global fonts
+				// storing to global fonts
 				Uiform_Form_Helper::form_store_fonts( $font_temp );
-				//end storing to global fonts
+				// end storing to global fonts
 			?>
 		   <?php } ?> 
 		<?php } ?>

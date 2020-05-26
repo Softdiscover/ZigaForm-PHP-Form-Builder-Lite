@@ -1,4 +1,5 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );}
 /*
 | -------------------------------------------------------------------------
 | Profiler Sections
@@ -13,5 +14,6 @@
 
 
 
-/* End of file profiler.php */
+/*
+ End of file profiler.php */
 /* Location: ./application/config/profiler.php */

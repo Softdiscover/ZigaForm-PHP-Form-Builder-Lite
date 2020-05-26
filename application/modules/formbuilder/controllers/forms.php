@@ -124,7 +124,7 @@ class Forms extends BackendController {
 
 		$file_name = 'zgfm_pdf_sample';
 
-		 //remove previous pdf sample
+		 // remove previous pdf sample
 		@unlink( FCPATH . 'temp/' . $file_name . '.pdf' );
 
 		$output = generate_pdf( $content, $file_name, $pdf_paper_size, $pdf_paper_orie, false );
@@ -142,7 +142,7 @@ class Forms extends BackendController {
 		$json['dir']      = FCPATH;
 		$json['pdf_url']  = base_url() . 'temp/' . $file_name . '.pdf';
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -175,13 +175,13 @@ class Forms extends BackendController {
 		$data_mail['bcc']          = '';
 		$data_mail['mail_replyto'] = '';
 
-		//$mail_errors=$this->process_mail($data_mail);
+		// $mail_errors=$this->process_mail($data_mail);
 		$mail_errors = modules::run( 'formbuilder/frontend/process_mail', $data_mail );
 
 		$json             = array();
 		$json['st_error'] = ( $mail_errors === true ) ? 1 : 0;
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -190,14 +190,15 @@ class Forms extends BackendController {
 
 	public function ajax_rollback_process() {
 
-		//check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
+		// check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
 
 		$log_id = ( isset( $_POST['log_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( trim( $_POST['log_id'] ) ) : '';
 
 		$query_obj = $this->model_form_log->getLogById( $log_id );
 
 		$json = array();
-		/* $json['log_frm_data'] =  $query_obj->log_frm_data;
+		/*
+		 $json['log_frm_data'] =  $query_obj->log_frm_data;
 		$json['log_frm_name'] =  $query_obj->log_frm_name;
 		$json['log_frm_html_backend'] =  $query_obj->log_frm_html_backend;
 		$json['log_frm_id'] =  $query_obj->log_frm_id;  */
@@ -209,7 +210,7 @@ class Forms extends BackendController {
 
 		$json['data'] = $data;
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -218,7 +219,7 @@ class Forms extends BackendController {
 
 	public function ajax_rollback_openmodal() {
 
-		//check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
+		// check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
 
 		$form_id = ( isset( $_POST['form_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( trim( $_POST['form_id'] ) ) : '';
 
@@ -242,7 +243,7 @@ class Forms extends BackendController {
 		$json['modal_body']   = $this->load->view( 'formbuilder/forms/ajax_rollback_openmodal', $data, true );
 		$json['modal_footer'] = $this->load->view( 'formbuilder/forms/modal1_footer', $data, true );
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		 die();
@@ -250,7 +251,7 @@ class Forms extends BackendController {
 
 	public function ajax_integrity_openmodal() {
 
-		//check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
+		// check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
 
 		$form_id = ( isset( $_POST['form_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( trim( $_POST['form_id'] ) ) : '';
 
@@ -262,7 +263,7 @@ class Forms extends BackendController {
 		$json['modal_body']   = self::render_template( 'formbuilder/views/forms/ajax_integrity_openmodal.php', $data, 'always' );
 		$json['modal_footer'] = self::render_template( 'formbuilder/views/forms/modal1_footer.php', $data );
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -282,7 +283,7 @@ class Forms extends BackendController {
 		$json['modal_body']   = $this->load->view( 'formbuilder/forms/ajax_variables_openmodal', $data, true );
 		$json['modal_footer'] = $this->load->view( 'formbuilder/forms/modal1_footer', $data, true );
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -301,7 +302,7 @@ class Forms extends BackendController {
 		$json            = array();
 		$json['message'] = $this->load->view( 'formbuilder/forms/ajax_variables_emailpage', $data, true );
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -326,7 +327,7 @@ class Forms extends BackendController {
 	 * @return
 	 */
 	public function ajax_load_getthumbimg() {
-		//this function is disabled
+		// this function is disabled
 		return;
 		$id_img            = ( $_POST['img_id'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['img_id'] ) : '';
 		$img_full          = ( $_POST['img_src_full'] ) ? Uiform_Form_Helper::sanitizeInput_html( $_POST['img_src_full'] ) : '';
@@ -368,7 +369,7 @@ class Forms extends BackendController {
 		$fmb_data = ( ! empty( $_POST['form_data'] ) ) ? $_POST['form_data'] : '';
 		$fmb_data = ( ! empty( $fmb_data ) ) ? array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode( $fmb_data, true ) ) : array();
 
-		//creating again
+		// creating again
 		$steps_src        = $fmb_data['steps_src'];
 		$tmp_var_typename = array();
 		$tmp_var_fname    = array();
@@ -413,7 +414,7 @@ class Forms extends BackendController {
 
 		$clogic_src = $saveform_clogic;
 		if ( ! empty( $clogic_src ) ) {
-			//get fires
+			// get fires
 			$fields_fire = array();
 			foreach ( $clogic_src['cond'] as $key => $value ) {
 				foreach ( $value['list'] as $key2 => $value2 ) {
@@ -576,7 +577,7 @@ class Forms extends BackendController {
 		$json['html_title']  = __( 'Success', 'FRocket_admin' );
 		$json['html']        = $this->load->view( 'formbuilder/forms/form_show_shortcodes', $data, true );
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-type: text/html' );
 		echo json_encode( $json );
 		die();
@@ -591,7 +592,7 @@ class Forms extends BackendController {
 		$json['html_title'] = __( 'Shortcodes', 'FRocket_admin' );
 		$json['html']       = $this->load->view( 'formbuilder/forms/form_show_shortcodes', $data, true );
 
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-type: text/html' );
 		echo json_encode( $json );
 		die();
@@ -612,7 +613,7 @@ class Forms extends BackendController {
 		$data['fmb_data'] = $fmb_data;
 		$data['fmb_name'] = ( ! empty( $_POST['uifm_frm_main_title'] ) ) ? Uiform_Form_Helper::sanitizeInput( trim( $_POST['uifm_frm_main_title'] ) ) : '';
 
-		//in case title is empty
+		// in case title is empty
 		if ( empty( $data['fmb_name'] ) && ! empty( $_POST['uifm_frm_main_id'] ) && intval( $_POST['uifm_frm_main_id'] ) > 0 ) {
 			$tmp_form_id      = ( ! empty( $_POST['uifm_frm_main_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( trim( $_POST['uifm_frm_main_id'] ) ) : '';
 			$tmp_form_title   = $this->model_forms->getTitleFormById( $tmp_form_id );
@@ -624,7 +625,7 @@ class Forms extends BackendController {
 		$tmp_html                 = $this->generate_previewpanel_html( $data );
 		$data['fmb_html_backend'] = Uiform_Form_Helper::encodeHex( do_shortcode( $tmp_html['output_html'] ) );
 		$json['data']             = $data;
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -649,7 +650,7 @@ class Forms extends BackendController {
 			$json['status'] = 'updated';
 			$json['id']     = $fmb_id;
 		}
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -675,7 +676,7 @@ class Forms extends BackendController {
 		} catch ( Exception $e ) {
 
 		}
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -700,19 +701,19 @@ class Forms extends BackendController {
 			$fmb_data = urldecode( $fmb_data );
 			$fmb_data = ( isset( $fmb_data ) && $fmb_data ) ? array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode( $fmb_data, true ) ) : array();
 
-			//here a message should be sent
+			// here a message should be sent
 			if ( empty( $fmb_data ) ) {
 				return false;
 			}
 
-			//addon data
+			// addon data
 			$fmb_addon_data = ( isset( $_POST['addon_data'] ) ) ? urldecode( Uiform_Form_Helper::sanitizeInput_html( $_POST['addon_data'] ) ) : '';
 			$fmb_addon_data = ( isset( $fmb_addon_data ) && $fmb_addon_data ) ? array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode( $fmb_addon_data, true ) ) : array();
 
-			//form_inputs
+			// form_inputs
 			$fmb_data['fm_inputs'] = ( isset( $_POST['form_inputs'] ) ) ? urldecode( Uiform_Form_Helper::sanitizeInput_html( $_POST['form_inputs'] ) ) : '';
 
-			//more options
+			// more options
 			$data['fmb_rec_tpl_html'] = ( isset( $_POST['uifm_frm_rec_tpl_html'] ) ) ? urldecode( Uiform_Form_Helper::sanitizeInput_html( $_POST['uifm_frm_rec_tpl_html'] ) ) : '';
 			$data['fmb_rec_tpl_st']   = ( isset( $_POST['uifm_frm_rec_tpl_st'] ) ) ? urldecode( Uiform_Form_Helper::sanitizeInput_html( $_POST['uifm_frm_rec_tpl_st'] ) ) : '';
 
@@ -797,19 +798,19 @@ class Forms extends BackendController {
 				$this->current_data_onsubm   = ( $fmb_data['onsubm'] ) ? $fmb_data['onsubm'] : array();
 				$this->current_data_main     = ( $fmb_data['main'] ) ? $fmb_data['main'] : array();
 
-				//save fields to table
+				// save fields to table
 				$this->saved_form_id = $json['id'];
 				$this->save_data_fields( $json['id'] );
-				//save fields to table
+				// save fields to table
 				$this->save_form_clogic();
 
-				//generate form html
+				// generate form html
 				$gen_return                = $this->generate_form_html( $json['id'] );
 				$data4                     = array();
 				$data4['fmb_html']         = $gen_return['output_html'];
 				$data4['fmb_html_backend'] = $this->generate_admin_form_html( $json['id'] );
 
-				//get global style
+				// get global style
 				$data2                     = array();
 				$data2['idform']           = $json['id'];
 				$data2['addition_css']     = $this->current_data_main['add_css'];
@@ -824,7 +825,7 @@ class Forms extends BackendController {
 				$this->db->where( 'fmb_id', $json['id'] );
 				$this->db->update( $this->model_forms->table );
 
-				//generate form css
+				// generate form css
 				ob_start();
 				$pathCssFile = FCPATH . '/assets/frontend/css/rockfm_form' . $json['id'] . '.css';
 				$f           = fopen( $pathCssFile, 'w' );
@@ -832,7 +833,7 @@ class Forms extends BackendController {
 				fclose( $f );
 				ob_end_clean();
 
-				//add to log
+				// add to log
 				$save_log_st   = false;
 				$count_log_rec = $this->model_form_log->CountLogsByFormId( $json['id'] );
 
@@ -862,12 +863,12 @@ class Forms extends BackendController {
 					$data5['created_by']           = 1;
 					$data5['created_date']         = date( 'Y-m-d h:i:s' );
 
-					//$this->wpdb->insert($this->model_form_log->table, $data5);
+					// $this->wpdb->insert($this->model_form_log->table, $data5);
 					 $this->db->set( $data5 );
 					 $this->db->insert( $this->model_form_log->table );
 					 $log_lastid = $this->db->insert_id();
 
-					 //remove oldest if limit is exceeded
+					 // remove oldest if limit is exceeded
 					if ( intval( $count_log_rec ) > 50 ) {
 						$tmp_log = $this->model_form_log->getOldLogById( $json['id'] );
 
@@ -892,7 +893,7 @@ class Forms extends BackendController {
 					}
 				}
 
-				//checking errors
+				// checking errors
 				$output_error = ob_get_contents();
 				if ( ob_get_length() ) {
 					ob_end_clean();
@@ -906,7 +907,7 @@ class Forms extends BackendController {
 			$json['status']  = 'failed';
 			$json['Message'] = $e->getMessage();
 		}
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();
@@ -944,151 +945,151 @@ class Forms extends BackendController {
 
 		switch ( intval( $child_field['type'] ) ) {
 			case 6:
-				//textbox
+				// textbox
 
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_textbox', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_textbox_css', $data );
 
 				break;
 			case 7:
-				//textarea
+				// textarea
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_textarea', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_textarea_css', $data );
 
 				break;
 			case 8:
-				//radio button
+				// radio button
 				$data['main']  = $this->current_data_main;
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_radiobtn', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_radiobtn_css', $data );
 
 				break;
 			case 9:
-				//checkbox
+				// checkbox
 				$data['main']  = $this->current_data_main;
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_checkbox', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_checkbox_css', $data );
 
 				break;
 			case 10:
-				//select
+				// select
 				$data['main']  = $this->current_data_main;
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_select', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_select_css', $data );
 
 				break;
 			case 11:
-				//multiselect
+				// multiselect
 				$data['main']  = $this->current_data_main;
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_multiselect', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_multiselect_css', $data );
 
 				break;
 			case 12:
-				//fileupload
+				// fileupload
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_fileupload', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_fileupload_css', $data );
 
 				break;
 			case 13:
-				//imageupload
+				// imageupload
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_imageupload', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_imageupload_css', $data );
 				break;
 			case 14:
-				//custom html
+				// custom html
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_customhtml', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_customhtml_css', $data );
 				break;
 			case 15:
-				//password
+				// password
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_password', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_password_css', $data );
 				break;
 			case 16:
-				//slider
+				// slider
 				$data['main']  = $this->current_data_main;
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_slider', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_slider_css', $data );
 				break;
 			case 17:
-				//range
+				// range
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_range', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_range_css', $data );
 				break;
 			case 18:
-				//spinner
+				// spinner
 				$data['main']  = $this->current_data_main;
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_spinner', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_spinner_css', $data );
 				break;
 			case 19:
-				//captcha
+				// captcha
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_captcha', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_captcha_css', $data );
 				break;
 			case 20:
-				//submit button
+				// submit button
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_submitbtn', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_submitbtn_css', $data );
 				break;
 			case 21:
-				//hidden field
+				// hidden field
 				$str_output .= modules::run( 'formbuilder/fields/formhtml_hiddeninput', $data, $child_field['num_tab'] );
 
 				break;
 			case 22:
-				//star rating
+				// star rating
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_ratingstar', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_ratingstar_css', $data );
 				break;
 			case 23:
-				//color picker
+				// color picker
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_colorpicker', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_colorpicker_css', $data );
 				break;
 			case 24:
-				//date picker
+				// date picker
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_datepicker', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_datepicker_css', $data );
 				break;
 			case 25:
-				//time picker
+				// time picker
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_timepicker', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_timepicker_css', $data );
 				break;
 			case 26:
-				//date time
+				// date time
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_datetime', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_datetime_css', $data );
 				break;
 			case 27:
-				//recaptcha
+				// recaptcha
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_recaptcha', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_recaptcha_css', $data );
 				break;
 			case 28:
-				//prepended text
+				// prepended text
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_preptext', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_preptext_css', $data );
 				break;
 			case 29:
-				//appended text
+				// appended text
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_appetext', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_appetext_css', $data );
 				break;
 			case 30:
-				//prep app text
+				// prep app text
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_prepapptext', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_prepapptext_css', $data );
 				break;
 			case 31:
-				//panel
+				// panel
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_panelfld', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_panelfld_css', $data );
 				break;
 			case 32:
-				//divider
+				// divider
 				$str_output       .= modules::run( 'formbuilder/fields/formhtml_divider', $data, $child_field['num_tab'] );
 				$data['form_skin'] = $this->current_data_skin;
 				$str_output_3     .= modules::run( 'formbuilder/fields/formhtml_divider_css', $data );
@@ -1100,39 +1101,39 @@ class Forms extends BackendController {
 			case 36:
 			case 37:
 			case 38:
-				//heading
+				// heading
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_heading', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_heading_css', $data );
 				break;
 			case 39:
-				//wizard buttons
+				// wizard buttons
 				$data['form_wizard'] = $this->current_data_wizard;
 				$data['tab_count']   = $this->current_data_steps;
 				$str_output         .= modules::run( 'formbuilder/fields/formhtml_wizardbtn', $data, $child_field['num_tab'] );
 				$str_output_3       .= modules::run( 'formbuilder/fields/formhtml_wizardbtn_css', $data );
 				break;
 			case 40:
-				//switch
+				// switch
 				$data['main']  = $this->current_data_main;
 				$str_output   .= modules::run( 'formbuilder/fields/formhtml_switch', $data, $child_field['num_tab'] );
 				$str_output_3 .= modules::run( 'formbuilder/fields/formhtml_switch_css', $data );
 				break;
 			case 41:
-				//dyn checkbox
+				// dyn checkbox
 				$data['main']    = $this->current_data_main;
 				$data['form_id'] = $this->saved_form_id;
 				$str_output     .= modules::run( 'formbuilder/fields/formhtml_dyncheckbox', $data, $child_field['num_tab'] );
 				$str_output_3   .= modules::run( 'formbuilder/fields/formhtml_dyncheckbox_css', $data );
 				break;
 			case 42:
-				//dyn radiobtn
+				// dyn radiobtn
 				$data['main']    = $this->current_data_main;
 				$data['form_id'] = $this->saved_form_id;
 				$str_output     .= modules::run( 'formbuilder/fields/formhtml_dynradiobtn', $data, $child_field['num_tab'] );
 				$str_output_3   .= modules::run( 'formbuilder/fields/formhtml_dynradiobtn_css', $data );
 				break;
 			case 43:
-				//date 2
+				// date 2
 				$data['main']    = $this->current_data_main;
 				$data['form_id'] = $this->saved_form_id;
 				$str_output     .= modules::run( 'formbuilder/fields/formhtml_date2', $data, $child_field['num_tab'] );
@@ -1145,8 +1146,8 @@ class Forms extends BackendController {
 		$return                = array();
 		$return['output_html'] = $str_output;
 
-		//add css inside namespace of the form
-			require_once( FCPATH . '/libs/lesslib/lessc.inc.php' );
+		// add css inside namespace of the form
+			require_once FCPATH . '/libs/lesslib/lessc.inc.php';
 			$less      = new lessc();
 			$css_store = '';
 		try {
@@ -1200,151 +1201,151 @@ class Forms extends BackendController {
 		$data['quick_options'] = $this->load->view( 'formbuilder/fields/templates/prevpanel_quickopts', $data, true );
 		switch ( intval( $child_field['type'] ) ) {
 			case 6:
-				//textbox
+				// textbox
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_textbox', $data, true );
 				break;
 			case 7:
-				//textarea
+				// textarea
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_textarea', $data, true );
 				break;
 			case 8:
-				//radio button
+				// radio button
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_radiobtn', $data, true );
 				break;
 			case 9:
-				//checkbox
+				// checkbox
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_checkbox', $data, true );
 				break;
 			case 10:
-				//select
+				// select
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_select', $data, true );
 				break;
 			case 11:
-				//multiselect
+				// multiselect
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_multiselect', $data, true );
 				break;
 			case 12:
-				//fileupload
+				// fileupload
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_fileupload', $data, true );
 				break;
 			case 13:
-				//imageupload
+				// imageupload
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_imageupload', $data, true );
 				break;
 			case 14:
-				//custom html
+				// custom html
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_customhtml', $data, true );
 				break;
 			case 15:
-				//password
+				// password
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_password', $data, true );
 				break;
 			case 16:
-				//slider
+				// slider
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_slider', $data, true );
 				break;
 			case 17:
-				//range
+				// range
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_range', $data, true );
 				break;
 			case 18:
-				//spinner
+				// spinner
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_spinner', $data, true );
 				break;
 			case 19:
-				//captcha
+				// captcha
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_captcha', $data, true );
 				break;
 			case 20:
-				//submit button
+				// submit button
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_submitbtn', $data, true );
 				break;
 			case 21:
-				//hidden field
+				// hidden field
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_hiddeninput', $data, true );
 				break;
 			case 22:
-				//star rating
+				// star rating
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_ratingstar', $data, true );
 				break;
 			case 23:
-				//color picker
+				// color picker
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_colorpicker', $data, true );
 				break;
 			case 24:
-				//date picker
+				// date picker
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_datepicker', $data, true );
 				break;
 			case 25:
-				//time picker
+				// time picker
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_timepicker', $data, true );
 				break;
 			case 26:
-				//date time
+				// date time
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_datetime', $data, true );
 				break;
 			case 27:
-				//recaptcha
+				// recaptcha
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_recaptcha', $data, true );
 				break;
 			case 28:
-				//prepended text
+				// prepended text
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_preptext', $data, true );
 				break;
 			case 29:
-				//appended text
+				// appended text
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_appetext', $data, true );
 				break;
 			case 30:
-				//prep app text
+				// prep app text
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_prepapptext', $data, true );
 				break;
 			case 32:
-				//divider
+				// divider
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_divider', $data, true );
 				break;
 			case 33:
-				//heading 1
+				// heading 1
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_heading1', $data, true );
 				break;
 			case 34:
-				//heading 2
+				// heading 2
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_heading2', $data, true );
 				break;
 			case 35:
-				//heading 3
+				// heading 3
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_heading3', $data, true );
 				break;
 			case 36:
-				//heading 4
+				// heading 4
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_heading4', $data, true );
 				break;
 			case 37:
-				//heading 5
+				// heading 5
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_heading5', $data, true );
 				break;
 			case 38:
-				//heading 6
+				// heading 6
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_heading6', $data, true );
 				break;
 			case 39:
-				//wizard buttons
+				// wizard buttons
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_wizardbtn', $data, true );
 				break;
 			case 40:
-				//switch
+				// switch
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_switch', $data, true );
 				break;
 			case 41:
-				//dyn checkbox
+				// dyn checkbox
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_dyncheckbox', $data, true );
 				break;
 			case 42:
-				//dyn radiobtn
+				// dyn radiobtn
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_dynradiobtn', $data, true );
 				break;
 			case 43:
-				//date
+				// date
 				$str_output .= $this->load->view( 'formbuilder/fields/templates/prevpanel_datetime_2', $data, true );
 				break;
 			default:
@@ -1632,7 +1633,7 @@ class Forms extends BackendController {
 							}
 							if ( ! empty( $value['children'] ) ) {
 								foreach ( $value['children'] as $key2 => $value2 ) {
-									//get field
+									// get field
 									$get_data    = array();
 									$str_output .= '<div class="">';
 									if ( isset( $value2['iscontainer'] ) && intval( $value2['iscontainer'] ) === 1 ) {
@@ -1671,7 +1672,7 @@ class Forms extends BackendController {
 
 							if ( ! empty( $value['children'] ) ) {
 								foreach ( $value['children'] as $key2 => $value2 ) {
-									//get field
+									// get field
 									$get_data = array();
 
 									if ( isset( $value2['iscontainer'] ) && intval( $value2['iscontainer'] ) === 1 ) {
@@ -1744,7 +1745,7 @@ class Forms extends BackendController {
 
 						foreach ( $child_field['inner'] as $key => $value ) {
 
-							//controling 12 cols
+							// controling 12 cols
 							$tmp_col_rest2 = $tmp_col_rest - abs( $value['cols'] );
 							if ( $tmp_col_rest2 < 12 && $tmp_col_rest2 > 0 ) {
 
@@ -1760,7 +1761,7 @@ class Forms extends BackendController {
 
 							if ( ! empty( $value['children'] ) ) {
 								foreach ( $value['children'] as $key2 => $value2 ) {
-									//get field
+									// get field
 									$get_data = array();
 
 									if ( isset( $value2['iscontainer'] ) && intval( $value2['iscontainer'] ) === 1 ) {
@@ -1837,7 +1838,7 @@ class Forms extends BackendController {
 
 								if ( ! empty( $value['children'] ) ) {
 									foreach ( $value['children'] as $key2 => $value2 ) {
-										//get field
+										// get field
 										$get_data = array();
 
 										if ( isset( $value2['iscontainer'] ) && intval( $value2['iscontainer'] ) === 1 ) {
@@ -1883,10 +1884,10 @@ class Forms extends BackendController {
 	}
 
 	 /**
-	 * Forms::generate_form_container()
-	 *
-	 * @return
-	 */
+	  * Forms::generate_form_container()
+	  *
+	  * @return
+	  */
 	public function generate_form_container( $id, $numtab, $str_output ) {
 		$data = array();
 		if ( intval( $numtab ) > 1 ) {
@@ -1942,10 +1943,11 @@ class Forms extends BackendController {
 		$data                    = array();
 		$data['tabindex']        = $tabindex;
 		$data['tab_html_fields'] = $str_output;
-		//if (intval($tab_cont_num) > 1) {
-		//apply function
+		// if (intval($tab_cont_num) > 1) {
+		// apply function
 		$output .= $this->load->view( 'formbuilder/forms/previewpanel_tabcontainer', $data, true );
-		/* } else {
+		/*
+		 } else {
 		  $output.=$str_output;
 		  } */
 		return $output;
@@ -1962,7 +1964,7 @@ class Forms extends BackendController {
 		$data['tabindex']        = $tabindex;
 		$data['tab_html_fields'] = $str_output;
 		if ( intval( $tab_cont_num ) > 1 ) {
-			//apply function
+			// apply function
 			$output .= $this->load->view( 'formbuilder/forms/formhtml_tabcontainer', $data, true );
 		} else {
 			$output .= $str_output;
@@ -1978,7 +1980,7 @@ class Forms extends BackendController {
 	public function save_form_clogic() {
 		$clogic_src = $this->saveform_clogic;
 		if ( ! empty( $clogic_src ) ) {
-			//get fires
+			// get fires
 			$fields_fire = array();
 			foreach ( $clogic_src['cond'] as $key => $value ) {
 				foreach ( $value['list'] as $key2 => $value2 ) {
@@ -2021,14 +2023,14 @@ class Forms extends BackendController {
 		$check_rec_querys = $this->model_fields->queryGetQtyFieldsEnabled( $form_id );
 		if ( intval( $check_rec_querys ) === 1 ) {
 
-			//getting ones enabled for showing on list records
+			// getting ones enabled for showing on list records
 			$tmp_query_list  = array();
 			$rec_querys_list = $this->model_fields->queryGetListFieldsEnabled( $form_id );
 			foreach ( $rec_querys_list as $value ) {
 				$tmp_query_list[] = $value->fmf_uniqueid;
 
 			}
-			//storing rec orders
+			// storing rec orders
 			$tmp_recorder_list = array();
 			$rec_querys_list   = $this->model_fields->queryGetListFieldsById( $form_id );
 			foreach ( $rec_querys_list as $value ) {
@@ -2037,12 +2039,12 @@ class Forms extends BackendController {
 			}
 		}
 
-		//deleting form
+		// deleting form
 		$this->db->where( 'form_fmb_id', $form_id )->delete( $this->model_fields->table );
-		//creating again
+		// creating again
 		$data_form = $this->model_forms->getFormById( $form_id );
 		$fmb_data  = json_decode( $data_form->fmb_data, true );
-		//$tab_cont=$fmb_data['steps']['tab_cont'];
+		// $tab_cont=$fmb_data['steps']['tab_cont'];
 		$steps_src = $fmb_data['steps_src'];
 
 		$set_rec_querys = 0;
@@ -2077,7 +2079,7 @@ class Forms extends BackendController {
 							case 40:
 							case 41:
 							case 42:
-														//assign selected fields to the report
+														// assign selected fields to the report
 								if ( intval( $check_rec_querys ) === 0 && $set_rec_querys < 5 ) {
 									$data['fmf_status_qu'] = 1;
 									$set_rec_querys++;
@@ -2098,7 +2100,7 @@ class Forms extends BackendController {
 							case 19:
 							case 20:
 							case 27:
-									//asigning order to fields
+									// asigning order to fields
 									$data['order_frm'] = $value['order_frm'];
 								break;
 						}
@@ -2137,25 +2139,26 @@ class Forms extends BackendController {
 	 * @return
 	 */
 	public function generate_form_html( $form_id = null ) {
-		/*$data_form = $this->model_forms->getFormById($form_id);
+		/*
+		$data_form = $this->model_forms->getFormById($form_id);
 		$fmb_data = json_decode($data_form->fmb_data, true);*/
-		//all fields position
+		// all fields position
 		$tab_cont           = $this->current_data_tab_cont;
 		$this->gen_post_src = $this->current_data_form;
 		$tab_cont_num       = $this->current_data_num_tabs;
-		//generating
+		// generating
 
 		$str_output_2   = '';
 		$str_output_tab = '';
 
 		foreach ( $tab_cont as $key => $value ) {
-			//tabs
+			// tabs
 			$str_output = '';
 			if ( ! empty( $value['content'] ) ) {
 				foreach ( $value['content'] as $key2 => $value2 ) {
 					$get_data = array();
 
-					//fields
+					// fields
 					if ( isset( $value2['iscontainer'] ) && intval( $value2['iscontainer'] ) === 1 ) {
 						$get_data      = $this->generate_form_getChildren( $value2 );
 						$str_output   .= $get_data['output_html'];
@@ -2168,15 +2171,15 @@ class Forms extends BackendController {
 				}
 			}
 
-			//set tab container
+			// set tab container
 			$str_output_tab .= $this->generate_form_tabContent( $tab_cont_num, $key, $str_output );
-			//jump if it is one
+			// jump if it is one
 			if ( intval( $tab_cont_num ) === 1 ) {
 				break 1;
 			}
 		}
 
-		//generate form css
+		// generate form css
 		$str_output_2 .= $this->generate_form_css( $form_id );
 		if ( $tab_cont_num > 1 ) {
 			$str_output_2 .= $this->generate_form_tab_css( $form_id );
@@ -2196,23 +2199,23 @@ class Forms extends BackendController {
 			return;
 		}
 		$fmb_data = json_decode( $data_form->fmb_data, true );
-		//all fields position
+		// all fields position
 		$tab_cont = $fmb_data['steps']['tab_cont'];
 
-		//generating
+		// generating
 
 		$str_output_tab = '';
 		$tab_cont_num   = $fmb_data['num_tabs'];
 
 		if ( ! empty( $tab_cont ) ) {
 			foreach ( $tab_cont as $key => $value ) {
-				//tabs
+				// tabs
 				$str_output = '';
 				if ( ! empty( $value['content'] ) ) {
 					foreach ( $value['content'] as $key2 => $value2 ) {
 						$get_data = array();
 
-						//fields
+						// fields
 						if ( isset( $value2['iscontainer'] ) && intval( $value2['iscontainer'] ) === 1 ) {
 							$get_data    = $this->generate_admin_form_getChildren( $value2 );
 							$str_output .= $get_data['output_html'];
@@ -2224,15 +2227,15 @@ class Forms extends BackendController {
 					}
 				}
 
-				//set tab container
+				// set tab container
 				$str_output_tab .= $this->generate_previewpanel_tabContent( $tab_cont_num, $key, $str_output );
-				//jump if it is one
+				// jump if it is one
 				if ( intval( $tab_cont_num ) === 1 ) {
 					break 1;
 				}
 			}
 		} else {
-			//set tab container
+			// set tab container
 				$str_output_tab .= $this->generate_previewpanel_tabContent( 0, 0, '' );
 		}
 
@@ -2251,7 +2254,7 @@ class Forms extends BackendController {
 	 */
 	public function generate_previewpanel_html( $data ) {
 		$fmb_data = $data['fmb_data'];
-		//all fields position
+		// all fields position
 		$tab_cont = $fmb_data['steps']['tab_cont'];
 		// all data fields
 		$steps_src                 = $fmb_data['steps_src'];
@@ -2261,21 +2264,21 @@ class Forms extends BackendController {
 		$this->current_data_wizard = ( $fmb_data['wizard'] ) ? $fmb_data['wizard'] : array();
 		$this->current_data_onsubm = ( $fmb_data['onsubm'] ) ? $fmb_data['onsubm'] : array();
 		$this->current_data_main   = ( $fmb_data['main'] ) ? $fmb_data['main'] : array();
-		//generating
+		// generating
 
 		$str_output_tab = '';
 		$tab_cont_num   = $fmb_data['num_tabs'];
 
 		if ( ! empty( $tab_cont ) ) {
 			foreach ( $tab_cont as $key => $value ) {
-				//tabs
+				// tabs
 				$str_output = '';
 				if ( ! empty( $value['content'] ) ) {
 					foreach ( $value['content'] as $key2 => $value2 ) {
 						$get_data = array();
-						//fields
+						// fields
 						if ( isset( $value2['iscontainer'] ) && intval( $value2['iscontainer'] ) === 1 ) {
-							//$get_data = $this->generate_previewpanel_getChildren($value2);
+							// $get_data = $this->generate_previewpanel_getChildren($value2);
 
 							$get_data = $this->generate_admin_form_getChildren( $value2 );
 
@@ -2288,16 +2291,16 @@ class Forms extends BackendController {
 					}
 				}
 
-				//set tab container
+				// set tab container
 				$str_output_tab .= $this->generate_previewpanel_tabContent( $tab_cont_num, $key, $str_output );
-				//jump if it is one
+				// jump if it is one
 				if ( intval( $tab_cont_num ) === 1 ) {
 					break 1;
 				}
 			}
 		} else {
-			//there nos data
-			 //set tab container
+			// there nos data
+			 // set tab container
 				$str_output_tab .= $this->generate_previewpanel_tabContent( 0, 0, '' );
 		}
 
@@ -2373,7 +2376,7 @@ class Forms extends BackendController {
 		$data_form           = $this->model_forms->getFormById( $form_id );
 		$data_form->fmb_data = json_decode( $data_form->fmb_data );
 		$json['data']        = $data_form;
-		 //temp
+		 // temp
 		$tmp_addon_names = $this->model_addon->getActiveAddonsNamesOnBack( $form_id );
 
 		$tmp_addon = array();
@@ -2397,10 +2400,11 @@ class Forms extends BackendController {
 	 * @return
 	 */
 	public function list_uiforms( $offset = 0 ) {
-		//generate cache
-			//check if cache exist
+		// generate cache
+			// check if cache exist
 
-		/*$this->load->library('cache');
+		/*
+		$this->load->library('cache');
 			$data1 = $this->cache->get('addon_back');
 			$data2 = $this->cache->get('addon_front');
 			$data3 = $this->cache->get('addon_routes');
@@ -2474,7 +2478,7 @@ class Forms extends BackendController {
 		$data['segment'] = 0;
 		$data['offset']  = $opt_offset;
 
-		//self::$_models['formbuilder']['form']->getListFormsFiltered($data);
+		// self::$_models['formbuilder']['form']->getListFormsFiltered($data);
 
 		$result = $this->ajax_formlist_refresh( $data );
 
@@ -2492,7 +2496,7 @@ class Forms extends BackendController {
 
 		$offset = $data['offset'];
 
-		//list all forms
+		// list all forms
 		$config                         = array();
 		$config['base_url']             = site_url() . 'formbuilder/forms/list_uiforms';
 		$config['total_rows']           = $this->model_forms->CountForms();
@@ -2629,7 +2633,7 @@ class Forms extends BackendController {
 
 		$data['fields_fastload'] = get_option( 'zgfm_fields_fastload', 0 );
 
-		//$data['modules_tab_extension']= self::$_modules['addon']['backend']->addons_doActions('back_exttab_block');
+		// $data['modules_tab_extension']= self::$_modules['addon']['backend']->addons_doActions('back_exttab_block');
 
 		$data['modules_tab_extension'] = modules::run( 'addon/zfad_backend/addons_doActions', 'back_exttab_block', true );
 
@@ -2659,7 +2663,7 @@ class Forms extends BackendController {
 		if ( $query->num_rows() === 1 ) {
 			$data = array();
 
-			//get data from form
+			// get data from form
 			$form_data        = $this->model_forms->getFormById_2( $id_form );
 			$form_data_onsubm = json_decode( $form_data->fmb_data2, true );
 
@@ -2694,7 +2698,7 @@ class Forms extends BackendController {
 			$data['cached_content'] = escape_text( $cached_content['html'] );
 
 			$json['html'] = $this->load->view( 'formbuilder/forms/getcode', $data, true );
-			//return data to ajax callback
+			// return data to ajax callback
 			header( 'Content-type: text/html' );
 			echo json_encode( $json );
 		} else {
@@ -2715,7 +2719,7 @@ class Forms extends BackendController {
 		$query = $this->db->get_where( $this->model_forms->table, array( 'fmb_id' => $id_form ), 1 );
 		if ( $query->num_rows() === 1 ) {
 			$data = array();
-			//get data from form
+			// get data from form
 			$form_data        = $this->model_forms->getFormById_2( $id_form );
 			$form_data_onsubm = json_decode( $form_data->fmb_data2, true );
 
@@ -2743,13 +2747,13 @@ class Forms extends BackendController {
 
 			$data['iframe'] = escape_text( $this->load->view( 'formbuilder/forms/get_code_iframe', $temp, true ) );
 
-			 //  echo $this->load->view('formbuilder/forms/form_success', $data, true);
+			 // echo $this->load->view('formbuilder/forms/form_success', $data, true);
 
 			$json               = array();
 			$json['html_title'] = __( 'Shortcodes', 'FRocket_admin' );
 			$json['html']       = $this->load->view( 'formbuilder/forms/form_success', $data, true );
 
-			//return data to ajax callback
+			// return data to ajax callback
 			header( 'Content-type: text/html' );
 			echo json_encode( $json );
 			die();

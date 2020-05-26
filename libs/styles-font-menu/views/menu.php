@@ -5,10 +5,11 @@
 	// Passed arguments: do_action( 'styles_font_menu', $attributes, $value );
 ?>
 
-<select <?php echo $attributes ?> class="<?php echo $this->menu_class ?>" data-selected="<?php echo htmlentities( $value ) ?>" data-placeholder="Select a Font...">
+<select <?php echo $attributes; ?> class="<?php echo $this->menu_class; ?>" data-selected="<?php echo htmlentities( $value ); ?>" data-placeholder="Select a Font...">
 	<option value=""></option>
 
-	<?php /* 
+	<?php
+	/*
 		Fonts loaded by styles-font-menu.js
 
 		This is done for performance reasons. The list is 600+ fonts.
@@ -17,6 +18,7 @@
 
 		This avoids that by outputting the list once in javascript,
 		then building the menus with javascript on the client-side.
-	*/ ?>
+	*/
+	?>
 
 </select>

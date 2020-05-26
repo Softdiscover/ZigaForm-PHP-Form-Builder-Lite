@@ -37,7 +37,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 				  
 				</div>
 						<?php $message = __( 'Wizard form', 'FRocket_admin' ); ?>
-						<?php include( APPPATH . '/modules/formbuilder/views/settings/blocked_getmessage.php' ); ?>
+						<?php include APPPATH . '/modules/formbuilder/views/settings/blocked_getmessage.php'; ?>
 				
 		<?php } else { ?>
 		   <label for="uifm_frm_wiz_st"><?php echo __( 'Enable wizard forms', 'FRocket_admin' ); ?></label>

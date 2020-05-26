@@ -17,7 +17,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 }
 use Dompdf\Dompdf;
 function generate_pdf_old( $html, $filename, $stream = true ) {
-	require_once( 'dompdf/dompdf_config.inc.php' );
+	require_once 'dompdf/dompdf_config.inc.php';
 	$dompdf = new DOMPDF();
 	$dompdf->load_html( $html );
 	$dompdf->render();
@@ -30,7 +30,7 @@ function generate_pdf_old( $html, $filename, $stream = true ) {
 
 function generate_pdf( $html, $filename, $papersize, $paperorien, $stream = true ) {
 
-	require_once( 'dompdf/autoload.inc.php' );
+	require_once 'dompdf/autoload.inc.php';
 
 	$dompdf = new Dompdf();
 	$dompdf->loadHtml( $html );

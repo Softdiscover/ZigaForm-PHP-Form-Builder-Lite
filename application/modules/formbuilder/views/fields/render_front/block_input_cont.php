@@ -19,7 +19,7 @@ ob_start();
 if ( isset( $help_block['show_st'] ) && intval( $help_block['show_st'] ) === 1 ) {
 	switch ( $help_block['pos'] ) {
 		case 1:
-			//top
+			// top
 			?>
 				<div class="rockfm-help-block"><?php echo urldecode( $help_block['text'] ); ?></div>
 				<div class="rockfm-input-container">
@@ -28,7 +28,7 @@ if ( isset( $help_block['show_st'] ) && intval( $help_block['show_st'] ) === 1 )
 				<?php
 			break;
 		case 2:
-			//tooltip
+			// tooltip
 			?>
 				<div class="rockfm-input-container">
 			   <?php echo $render_block_input; ?>
@@ -36,7 +36,7 @@ if ( isset( $help_block['show_st'] ) && intval( $help_block['show_st'] ) === 1 )
 				<?php
 			break;
 		case 3:
-			//popup
+			// popup
 			?>
 				<div class="rockfm-input-container">
 				<?php echo $render_block_input; ?>
@@ -45,7 +45,7 @@ if ( isset( $help_block['show_st'] ) && intval( $help_block['show_st'] ) === 1 )
 			break;
 		case 0:
 		default:
-			//bottom
+			// bottom
 			?>
 				<div class="rockfm-input-container">
 			<?php echo $render_block_input; ?>

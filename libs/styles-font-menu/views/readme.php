@@ -1,7 +1,7 @@
 <div class="wrap" id="styles-font-menu-readme">
 
 	<?php screen_icon(); ?>
-	<h2><?php _e('Font Menu', 'styles-font-menu'); ?></h2>
+	<h2><?php _e( 'Font Menu', 'styles-font-menu' ); ?></h2>
 
 	<p><a href="#" id="generate-previews">Generate Missing Font Previews</a></p>
 
@@ -70,7 +70,7 @@
 				}
 
 				var name = preview_gen.google_fonts.pop(),
-				    $status_text;
+					$status_text;
 
 				$status_text = $( '<p>Generating ' + name + '<br/></p>' );
 				$('#generate-previews').after( $status_text );

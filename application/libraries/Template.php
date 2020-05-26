@@ -14,8 +14,9 @@
  */
 
 
-if (!defined('BASEPATH'))
-    exit('No direct script access allowed');
+if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );
+}
 /**
  * Template
  *
@@ -27,59 +28,56 @@ if (!defined('BASEPATH'))
  * @version   Release: 1.00
  * @link      https://php-form-builder.zigaform.com/
  */
-class Template
-{
+class Template {
 
-    var $template_data = array();
-    
-    /**
-     * Set name
-     *
-     * @param string $name  username
-     * @param string $value password
-     * 
-     * @return	array
-     */
-    function set($name, $value) 
-    {
-        $this->template_data[$name] = $value;
-    }
-    
-    /**
-     * Load template
-     *
-     * @param string  $template  template
-     * @param string  $view      view
-     * @param string  $view_data view_data
-     * @param boolean $return    return
-     * 
-     * @return	array
-     */
-    function load($template = '', $view = '', $view_data = array(), $return = false) 
-    {   
-        $this->CI = & get_instance();
-        $this->set('content', $this->CI->load->view($view, $view_data, true));
-        return $this->CI->load->view($template, $this->template_data, $return);
-    }
-    
-    /**
-     * Load partial
-     *
-     * @param string  $template  template
-     * @param string  $view      view
-     * @param string  $view_data view_data
-     * @param boolean $return    return
-     * 
-     * @return	array
-     */
-    function loadPartial($template = '', $view = '', $view_data = array(), $return = false) 
-    {
-       
-        $this->set('content', $this->template_data['controller']->load->view2($view, $view_data, true));
-        return $this->template_data['controller']->load->view2($template, $this->template_data, $return);
-    }
+
+	var $template_data = array();
+
+	/**
+	 * Set name
+	 *
+	 * @param string $name  username
+	 * @param string $value password
+	 *
+	 * @return  array
+	 */
+	function set( $name, $value ) {
+		 $this->template_data[ $name ] = $value;
+	}
+
+	/**
+	 * Load template
+	 *
+	 * @param string  $template  template
+	 * @param string  $view      view
+	 * @param string  $view_data view_data
+	 * @param boolean $return    return
+	 *
+	 * @return  array
+	 */
+	function load( $template = '', $view = '', $view_data = array(), $return = false ) {
+		$this->CI = & get_instance();
+		$this->set( 'content', $this->CI->load->view( $view, $view_data, true ) );
+		return $this->CI->load->view( $template, $this->template_data, $return );
+	}
+
+	/**
+	 * Load partial
+	 *
+	 * @param string  $template  template
+	 * @param string  $view      view
+	 * @param string  $view_data view_data
+	 * @param boolean $return    return
+	 *
+	 * @return  array
+	 */
+	function loadPartial( $template = '', $view = '', $view_data = array(), $return = false ) {
+		$this->set( 'content', $this->template_data['controller']->load->view2( $view, $view_data, true ) );
+		return $this->template_data['controller']->load->view2( $template, $this->template_data, $return );
+	}
 
 }
 
-/* End of file Template.php */
+/*
+ End of file Template.php */
 /* Location: ./system/application/libraries/Template.php */

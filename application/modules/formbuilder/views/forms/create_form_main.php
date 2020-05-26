@@ -21,7 +21,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					<div 
 						data-intro="<?php echo __( 'Fields section. Drag and Drop or just click to add to the preview section', 'FRocket_admin' ); ?>"
 						class="uiform-sidebar-fields">
-						 <?php include( 'fields_available.php' ); ?>
+						 <?php require 'fields_available.php'; ?>
 					</div>
 
 				</div>
@@ -147,7 +147,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 																<div class="uiform-tab-content  scroll-pane-arrows">
 																	<div class="uiform-tab-content-inner">
 																	 <!--container -->
-																		<?php include( 'settings_form_skin.php' ); ?>
+																		<?php require 'settings_form_skin.php'; ?>
 																	<!--\end container -->
 																	</div>
 																</div>
@@ -156,7 +156,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 																<div class="uiform-tab-content  scroll-pane-arrows">
 																	<div class="uiform-tab-content-inner">
 																		<!--container -->
-																		<?php include( 'settings_form_wizard.php' ); ?>
+																		<?php require 'settings_form_wizard.php'; ?>
 																		<!--\end container -->
 																	</div>
 																</div>

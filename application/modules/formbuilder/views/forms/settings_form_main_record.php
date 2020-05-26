@@ -109,7 +109,7 @@ $default_template = ob_get_clean();
 															$default_template = urldecode( $uifm_frm_record_tpl_content );
 														}
 
-														//wp_editor($default_template, 'uifm_frm_record_tpl_content',$settings );
+														// wp_editor($default_template, 'uifm_frm_record_tpl_content',$settings );
 														?>
 														<textarea 
 														class="uifm_tinymce_obj"

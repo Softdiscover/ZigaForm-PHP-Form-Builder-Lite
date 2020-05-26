@@ -29,10 +29,10 @@ class model_visitor extends CI_Model {
 
 	public $table = '';
 	/**
-	* register the global settings information
-	*
-	* @var array
-	*/
+	 * register the global settings information
+	 *
+	 * @var array
+	 */
 	public static $db_config = array();
 
 	/**

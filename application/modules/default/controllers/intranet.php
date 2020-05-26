@@ -42,7 +42,7 @@ class Intranet extends CommonController {
 		$this->template->set( 'controller', $this );
 		$this->load->model( 'formbuilder/model_settings' );
 		$this->load->model( 'user/model_user' );
-		//check update
+		// check update
 		$this->auth->checkupdate();
 
 	}
@@ -82,7 +82,7 @@ class Intranet extends CommonController {
 
 		$email_message = $this->load->view( 'intranet/recoverpass_mail', $data, true );
 
-		//sending email
+		// sending email
 		$this->load->library( 'email', emailConfiguration( intval( model_settings::$db_config['type_email'] ) ) );
 		$this->email->set_newline( "\r\n" );
 		$this->email->from( model_settings::$db_config['admin_mail'], model_settings::$db_config['site_title'] );
@@ -252,7 +252,7 @@ class Intranet extends CommonController {
 		$data['sendmail_path'] = ( $this->input->post( 'sendmail_path' ) ) ? Uiform_Form_Helper::sanitizeInput( $this->input->post( 'sendmail_path' ) ) : '';
 		$data['language']      = ( $this->input->post( 'language' ) ) ? Uiform_Form_Helper::sanitizeInput( $this->input->post( 'language' ) ) : 'en';
 
-		//inserting data
+		// inserting data
 		$this->db->set( $data );
 		$this->db->where( 'id', 1 );
 		$this->db->update( $this->model_settings->table );

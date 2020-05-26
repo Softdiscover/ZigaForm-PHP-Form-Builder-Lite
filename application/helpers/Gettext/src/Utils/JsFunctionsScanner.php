@@ -2,219 +2,213 @@
 
 namespace Gettext\Utils;
 
-class JsFunctionsScanner extends FunctionsScanner
-{
-    protected $code;
-    protected $status = array();
+class JsFunctionsScanner extends FunctionsScanner {
 
-    /**
-     * Constructor.
-     *
-     * @param string $code The php code to scan
-     */
-    public function __construct($code)
-    {
-        $this->code = $code;
-    }
+	protected $code;
+	protected $status = array();
 
-    /**
-     * {@inheritdoc}
-     */
-    public function getFunctions()
-    {
-        $length = strlen($this->code);
-        $line = 1;
-        $buffer = '';
-        $functions = array();
-        $bufferFunctions = array();
-        $char = null;
+	/**
+	 * Constructor.
+	 *
+	 * @param string $code The php code to scan
+	 */
+	public function __construct( $code ) {
+		$this->code = $code;
+	}
 
-        for ($pos = 0; $pos < $length; ++$pos) {
-            $prev = $char;
-            $char = $this->code[$pos];
-            $next = isset($this->code[$pos]) ? $this->code[$pos] : null;
+	/**
+	 * {@inheritdoc}
+	 */
+	public function getFunctions() {
+		$length          = strlen( $this->code );
+		$line            = 1;
+		$buffer          = '';
+		$functions       = array();
+		$bufferFunctions = array();
+		$char            = null;
 
-            switch ($char) {
-                case "\n":
-                    ++$line;
+		for ( $pos = 0; $pos < $length; ++$pos ) {
+			$prev = $char;
+			$char = $this->code[ $pos ];
+			$next = isset( $this->code[ $pos ] ) ? $this->code[ $pos ] : null;
 
-                    if ($this->status('line-comment')) {
-                        $this->upStatus();
-                    }
-                    break;
+			switch ( $char ) {
+				case "\n":
+					++$line;
 
-                case '/':
-                    switch ($this->status()) {
-                        case 'simple-quote':
-                        case 'double-quote':
-                        case 'line-comment':
-                            break;
+					if ( $this->status( 'line-comment' ) ) {
+						$this->upStatus();
+					}
+					break;
 
-                        case 'block-comment':
-                            if ($prev === '*') {
-                                $this->upStatus();
-                            }
-                            break;
+				case '/':
+					switch ( $this->status() ) {
+						case 'simple-quote':
+						case 'double-quote':
+						case 'line-comment':
+							break;
 
-                        default:
-                            if ($next === '/') {
-                                $this->downStatus('line-comment');
-                            } elseif ($next === '*') {
-                                $this->downStatus('block-comment');
-                            }
-                            break;
-                    }
-                    break;
+						case 'block-comment':
+							if ( $prev === '*' ) {
+								$this->upStatus();
+							}
+							break;
 
-                case "'":
-                    switch ($this->status()) {
-                        case 'simple-quote':
-                            $this->upStatus();
-                            break;
+						default:
+							if ( $next === '/' ) {
+								$this->downStatus( 'line-comment' );
+							} elseif ( $next === '*' ) {
+								$this->downStatus( 'block-comment' );
+							}
+							break;
+					}
+					break;
 
-                        case 'line-comment':
-                        case 'block-comment':
-                        case 'double-quote':
-                            break;
+				case "'":
+					switch ( $this->status() ) {
+						case 'simple-quote':
+							$this->upStatus();
+							break;
 
-                        default:
-                            $this->downStatus('simple-quote');
-                            break;
-                    }
-                    break;
+						case 'line-comment':
+						case 'block-comment':
+						case 'double-quote':
+							break;
 
-                case '"':
-                    switch ($this->status()) {
-                        case 'double-quote':
-                            $this->upStatus();
-                            break;
+						default:
+							$this->downStatus( 'simple-quote' );
+							break;
+					}
+					break;
 
-                        case 'line-comment':
-                        case 'block-comment':
-                        case 'simple-quote':
-                            break;
+				case '"':
+					switch ( $this->status() ) {
+						case 'double-quote':
+							$this->upStatus();
+							break;
 
-                        default:
-                            $this->downStatus('double-quote');
-                            break;
-                    }
-                    break;
+						case 'line-comment':
+						case 'block-comment':
+						case 'simple-quote':
+							break;
 
-                case '(':
-                    switch ($this->status()) {
-                        case 'double-quote':
-                        case 'line-comment':
-                        case 'block-comment':
-                        case 'line-comment':
-                            break;
+						default:
+							$this->downStatus( 'double-quote' );
+							break;
+					}
+					break;
 
-                        default:
-                            if ($buffer && preg_match('/(\w+)$/', $buffer, $matches)) {
-                                $this->downStatus('function');
-                                array_unshift($bufferFunctions, array($matches[1], $line, array()));
-                                $buffer = '';
-                                continue 3;
-                            }
-                            break;
-                    }
-                    break;
+				case '(':
+					switch ( $this->status() ) {
+						case 'double-quote':
+						case 'line-comment':
+						case 'block-comment':
+						case 'line-comment':
+							break;
 
-                case ')':
-                    switch ($this->status()) {
-                        case 'function':
-                            if (($argument = self::prepareArgument($buffer))) {
-                                $bufferFunctions[0][2][] = $argument;
-                            }
+						default:
+							if ( $buffer && preg_match( '/(\w+)$/', $buffer, $matches ) ) {
+								$this->downStatus( 'function' );
+								array_unshift( $bufferFunctions, array( $matches[1], $line, array() ) );
+								$buffer = '';
+								continue 3;
+							}
+							break;
+					}
+					break;
 
-                            if ($bufferFunctions) {
-                                $functions[] = array_shift($bufferFunctions);
-                            }
+				case ')':
+					switch ( $this->status() ) {
+						case 'function':
+							if ( ( $argument = self::prepareArgument( $buffer ) ) ) {
+								$bufferFunctions[0][2][] = $argument;
+							}
 
-                            $buffer = '';
-                            continue 3;
-                    }
+							if ( $bufferFunctions ) {
+								$functions[] = array_shift( $bufferFunctions );
+							}
 
-                case ',':
-                    switch ($this->status()) {
-                        case 'function':
-                            if (($argument = self::prepareArgument($buffer))) {
-                                $bufferFunctions[0][2][] = $argument;
-                            }
+							$buffer = '';
+							continue 3;
+					}
 
-                            $buffer = '';
-                            continue 3;
-                    }
-            }
+				case ',':
+					switch ( $this->status() ) {
+						case 'function':
+							if ( ( $argument = self::prepareArgument( $buffer ) ) ) {
+								$bufferFunctions[0][2][] = $argument;
+							}
 
-            switch ($this->status()) {
-                case 'line-comment':
-                case 'block-comment':
-                    break;
+							$buffer = '';
+							continue 3;
+					}
+			}
 
-                default:
-                    $buffer .= $char;
-                    break;
-            }
-        }
+			switch ( $this->status() ) {
+				case 'line-comment':
+				case 'block-comment':
+					break;
 
-        return $functions;
-    }
+				default:
+					$buffer .= $char;
+					break;
+			}
+		}
 
-    /**
-     * Get the current context of the scan.
-     *
-     * @param null|string $match To check whether the current status is this value
-     *
-     * @return string|bool
-     */
-    protected function status($match = null)
-    {
-        $status = isset($this->status[0]) ? $this->status[0] : null;
+		return $functions;
+	}
 
-        if ($match) {
-            return $status === $match;
-        }
+	/**
+	 * Get the current context of the scan.
+	 *
+	 * @param null|string $match To check whether the current status is this value
+	 *
+	 * @return string|bool
+	 */
+	protected function status( $match = null ) {
+		$status = isset( $this->status[0] ) ? $this->status[0] : null;
 
-        return $status;
-    }
+		if ( $match ) {
+			return $status === $match;
+		}
 
-    /**
-     * Add a new status to the stack.
-     *
-     * @param string $status
-     */
-    protected function downStatus($status)
-    {
-        array_unshift($this->status, $status);
-    }
+		return $status;
+	}
 
-    /**
-     * Removes and return the current status.
-     *
-     * @return string|null
-     */
-    protected function upStatus()
-    {
-        return array_shift($this->status);
-    }
+	/**
+	 * Add a new status to the stack.
+	 *
+	 * @param string $status
+	 */
+	protected function downStatus( $status ) {
+		array_unshift( $this->status, $status );
+	}
 
-    /**
-     * Prepares the arguments found in functions.
-     *
-     * @param string $argument
-     *
-     * @return string
-     */
-    protected static function prepareArgument($argument)
-    {
-        if ($argument && ($argument[0] === '"' || $argument[0] === "'")) {
-            if ($argument[0] === '"') {
-                $argument = str_replace('\\"', '"', $argument);
-            } else {
-                $argument = str_replace("\\'", "'", $argument);
-            }
+	/**
+	 * Removes and return the current status.
+	 *
+	 * @return string|null
+	 */
+	protected function upStatus() {
+		 return array_shift( $this->status );
+	}
 
-            return substr($argument, 1, -1);
-        }
-    }
+	/**
+	 * Prepares the arguments found in functions.
+	 *
+	 * @param string $argument
+	 *
+	 * @return string
+	 */
+	protected static function prepareArgument( $argument ) {
+		if ( $argument && ( $argument[0] === '"' || $argument[0] === "'" ) ) {
+			if ( $argument[0] === '"' ) {
+				$argument = str_replace( '\\"', '"', $argument );
+			} else {
+				$argument = str_replace( "\\'", "'", $argument );
+			}
+
+			return substr( $argument, 1, -1 );
+		}
+	}
 }

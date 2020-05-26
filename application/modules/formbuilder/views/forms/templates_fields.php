@@ -1934,7 +1934,7 @@ if ( ! defined( 'BASEPATH' ) ) {
  <div style="display:none;">
 	  
 	<div class="zgpb-hidden-editor">
-			<?php //wp_editor(' ', 'zgpbrefeditor', array('wpautop' => true)); ?>
+			<?php // wp_editor(' ', 'zgpbrefeditor', array('wpautop' => true)); ?>
 		<textarea 
 							class=""
 							name="zgpbrefeditor"

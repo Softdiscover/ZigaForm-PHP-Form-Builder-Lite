@@ -80,13 +80,13 @@ class model_user extends CI_Model {
 	}
 
 	  /**
-	 * model_user::getUserById()
-	 * Get user by id
-	 *
-	 * @param int $id_user id of user
-	 *
-	 * @return array
-	 */
+	   * model_user::getUserById()
+	   * Get user by id
+	   *
+	   * @param int $id_user id of user
+	   *
+	   * @return array
+	   */
 	function getFirstUser() {
 		$this->db->select( 'c.*' );
 		$this->db->from( '{PRE}uiform_user c' );

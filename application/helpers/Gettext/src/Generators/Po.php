@@ -4,136 +4,131 @@ namespace Gettext\Generators;
 
 use Gettext\Translations;
 
-class Po extends Generator implements GeneratorInterface
-{
-    /**
-     * {@parentDoc}.
-     */
-    public static function toString(Translations $translations)
-    {
-        $lines = array('msgid ""', 'msgstr ""');
+class Po extends Generator implements GeneratorInterface {
 
-        $headers = $translations->getHeaders();
-        $headers['PO-Revision-Date'] = date('c');
+	/**
+	 * {@parentDoc}.
+	 */
+	public static function toString( Translations $translations ) {
+		 $lines = array( 'msgid ""', 'msgstr ""' );
 
-        foreach ($headers as $name => $value) {
-            $lines[] = '"'.$name.': '.$value.'\\n"';
-        }
+		$headers                     = $translations->getHeaders();
+		$headers['PO-Revision-Date'] = date( 'c' );
 
-        $lines[] = '';
+		foreach ( $headers as $name => $value ) {
+			$lines[] = '"' . $name . ': ' . $value . '\\n"';
+		}
 
-        //Translations
-        foreach ($translations as $translation) {
-            if ($translation->hasComments()) {
-                foreach ($translation->getComments() as $comment) {
-                    $lines[] = '# '.$comment;
-                }
-            }
+		$lines[] = '';
 
-            if ($translation->hasExtractedComments()) {
-                foreach ($translation->getExtractedComments() as $comment) {
-                    $lines[] = '#. '.$comment;
-                }
-            }
+		// Translations
+		foreach ( $translations as $translation ) {
+			if ( $translation->hasComments() ) {
+				foreach ( $translation->getComments() as $comment ) {
+					$lines[] = '# ' . $comment;
+				}
+			}
 
-            if ($translation->hasReferences()) {
-                foreach ($translation->getReferences() as $reference) {
-                    $lines[] = '#: '.$reference[0].(!is_null($reference[1]) ? ':'.$reference[1] : null);
-                }
-            }
+			if ( $translation->hasExtractedComments() ) {
+				foreach ( $translation->getExtractedComments() as $comment ) {
+					$lines[] = '#. ' . $comment;
+				}
+			}
 
-            if ($translation->hasFlags()) {
-                $lines[] = '#, '.implode(',', $translation->getFlags());
-            }
+			if ( $translation->hasReferences() ) {
+				foreach ( $translation->getReferences() as $reference ) {
+					$lines[] = '#: ' . $reference[0] . ( ! is_null( $reference[1] ) ? ':' . $reference[1] : null );
+				}
+			}
 
-            if ($translation->hasContext()) {
-                $lines[] = 'msgctxt '.self::quote($translation->getContext());
-            }
+			if ( $translation->hasFlags() ) {
+				$lines[] = '#, ' . implode( ',', $translation->getFlags() );
+			}
 
-            self::addLines($lines, 'msgid', self::removeEOT($translation->getOriginal()));
-            if ($translation->hasPlural()) {
-                self::addLines($lines, 'msgid_plural', self::removeEOT($translation->getPlural()));
-                self::addLines($lines, 'msgstr[0]', self::removeEOT($translation->getTranslation()));
+			if ( $translation->hasContext() ) {
+				$lines[] = 'msgctxt ' . self::quote( $translation->getContext() );
+			}
 
-                foreach ($translation->getPluralTranslation() as $k => $v) {
-                    self::addLines($lines, 'msgstr['.($k + 1).']', $v);
-                }
-            } else {
-                self::addLines($lines, 'msgstr', self::removeEOT($translation->getTranslation()));
-            }
+			self::addLines( $lines, 'msgid', self::removeEOT( $translation->getOriginal() ) );
+			if ( $translation->hasPlural() ) {
+				self::addLines( $lines, 'msgid_plural', self::removeEOT( $translation->getPlural() ) );
+				self::addLines( $lines, 'msgstr[0]', self::removeEOT( $translation->getTranslation() ) );
 
-            $lines[] = '';
-        }
+				foreach ( $translation->getPluralTranslation() as $k => $v ) {
+					self::addLines( $lines, 'msgstr[' . ( $k + 1 ) . ']', $v );
+				}
+			} else {
+				self::addLines( $lines, 'msgstr', self::removeEOT( $translation->getTranslation() ) );
+			}
 
-        return implode("\n", $lines);
-    }
+			$lines[] = '';
+		}
 
-    /**
-     * Escape Control Characters like EOT from strings.
-     * 
-     * @param string $text
-     * 
-     * @return string
-     */
-    private static function removeEOT($text)
-    {
-        return  preg_replace('/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/', '', $text);
-    }
+		return implode( "\n", $lines );
+	}
 
-    /**
-     * Escapes and adds double quotes to a string.
-     *
-     * @param string $string
-     *
-     * @return string
-     */
-    private static function quote($string)
-    {
-        return '"'.str_replace(array('\\', "\r", "\n", "\t", '"'), array('\\\\', '', '\n', '\t', '\\"'), $string).'"';
-    }
+	/**
+	 * Escape Control Characters like EOT from strings.
+	 *
+	 * @param string $text
+	 *
+	 * @return string
+	 */
+	private static function removeEOT( $text ) {
+		return preg_replace( '/[\x00-\x09\x0B\x0C\x0E-\x1F\x7F]/', '', $text );
+	}
 
-    /**
-     * Escapes and adds double quotes to a string.
-     *
-     * @param string $string
-     *
-     * @return string
-     */
-    private static function multilineQuote($string)
-    {
-        $lines = explode("\n", $string);
-        $last = count($lines) - 1;
+	/**
+	 * Escapes and adds double quotes to a string.
+	 *
+	 * @param string $string
+	 *
+	 * @return string
+	 */
+	private static function quote( $string ) {
+		return '"' . str_replace( array( '\\', "\r", "\n", "\t", '"' ), array( '\\\\', '', '\n', '\t', '\\"' ), $string ) . '"';
+	}
 
-        foreach ($lines as $k => $line) {
-            if ($k === $last) {
-                $lines[$k] = self::quote($line);
-            } else {
-                $lines[$k] = self::quote($line."\n");
-            }
-        }
+	/**
+	 * Escapes and adds double quotes to a string.
+	 *
+	 * @param string $string
+	 *
+	 * @return string
+	 */
+	private static function multilineQuote( $string ) {
+		 $lines = explode( "\n", $string );
+		$last   = count( $lines ) - 1;
 
-        return $lines;
-    }
+		foreach ( $lines as $k => $line ) {
+			if ( $k === $last ) {
+				$lines[ $k ] = self::quote( $line );
+			} else {
+				$lines[ $k ] = self::quote( $line . "\n" );
+			}
+		}
 
-    /**
-     * Add one or more lines depending whether the string is multiline or not.
-     *
-     * @param array  &$lines
-     * @param string $name
-     * @param string $value
-     */
-    private static function addLines(array &$lines, $name, $value)
-    {
-        $newLines = self::multilineQuote($value);
+		return $lines;
+	}
 
-        if (count($newLines) === 1) {
-            $lines[] = $name.' '.$newLines[0];
-        } else {
-            $lines[] = $name.' ""';
+	/**
+	 * Add one or more lines depending whether the string is multiline or not.
+	 *
+	 * @param array  &$lines
+	 * @param string $name
+	 * @param string $value
+	 */
+	private static function addLines( array &$lines, $name, $value ) {
+		$newLines = self::multilineQuote( $value );
 
-            foreach ($newLines as $line) {
-                $lines[] = $line;
-            }
-        }
-    }
+		if ( count( $newLines ) === 1 ) {
+			$lines[] = $name . ' ' . $newLines[0];
+		} else {
+			$lines[] = $name . ' ""';
+
+			foreach ( $newLines as $line ) {
+				$lines[] = $line;
+			}
+		}
+	}
 }

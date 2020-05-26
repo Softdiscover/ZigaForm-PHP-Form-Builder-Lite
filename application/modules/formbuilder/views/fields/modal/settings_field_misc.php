@@ -39,7 +39,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 						'media_buttons' => true,
 						'textarea_rows' => 5,
 					);
-					//wp_editor('', 'uifm_fld_msc_text',$settings );
+					// wp_editor('', 'uifm_fld_msc_text',$settings );
 					?>
 					 <textarea 
 							class="uifm_tinymce_obj"

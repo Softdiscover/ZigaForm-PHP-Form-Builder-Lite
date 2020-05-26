@@ -36,6 +36,7 @@ class SFM_Admin {
 	/**
 	 * Display readme and working example in WordPress admin
 	 * Does not add a menu item
+	 *
 	 * @link /wp-admin/plugins.php?page=styles-font-menu
 	 */
 	public function add_readme_page() {
@@ -46,7 +47,7 @@ class SFM_Admin {
 	 * Display views/readme.php, which modifies readme.md to show a working example.
 	 */
 	public function get_view_readme() {
-		if ( !function_exists( 'Markdown' ) ) {
+		if ( ! function_exists( 'Markdown' ) ) {
 			require_once dirname( __FILE__ ) . '/markdown/markdown.php';
 		}
 		$this->plugin->get_view( 'readme' );

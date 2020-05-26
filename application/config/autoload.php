@@ -1,4 +1,5 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );}
 /*
 | -------------------------------------------------------------------
 | AUTO-LOADER
@@ -52,7 +53,7 @@ $autoload['packages'] = array();
 |	$autoload['libraries'] = array('database', 'session', 'xmlrpc');
 */
 
-$autoload['libraries'] = array('hooking','database', 'session','template','auth','cache','locale','addon');
+$autoload['libraries'] = array( 'hooking', 'database', 'session', 'template', 'auth', 'cache', 'locale', 'addon' );
 
 
 /*
@@ -64,7 +65,7 @@ $autoload['libraries'] = array('hooking','database', 'session','template','auth'
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('hooking','url', 'form','shortcodes','common','email_configuration','dompdflib','zendjson','wordpress','wpfunctions');
+$autoload['helper'] = array( 'hooking', 'url', 'form', 'shortcodes', 'common', 'email_configuration', 'dompdflib', 'zendjson', 'wordpress', 'wpfunctions' );
 
 
 /*
@@ -109,7 +110,8 @@ $autoload['language'] = array();
 |
 */
 
-$autoload['model'] = array('formbuilder/model_settings');
+$autoload['model'] = array( 'formbuilder/model_settings' );
 
-/* End of file autoload.php */
+/*
+ End of file autoload.php */
 /* Location: ./application/config/autoload.php */

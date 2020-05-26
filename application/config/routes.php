@@ -1,4 +1,5 @@
-<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
+<?php  if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );}
 /*
 | -------------------------------------------------------------------------
 | URI ROUTING
@@ -38,15 +39,16 @@
 |
 */
 
-$route['default_controller'] = "formbuilder/frontend/index";
-$route['404_override'] = 'default/error/error';
-$route['uiformbuilder/(:any)'] = "formbuilder/frontend/$1";
+$route['default_controller']   = 'formbuilder/frontend/index';
+$route['404_override']         = 'default/error/error';
+$route['uiformbuilder/(:any)'] = 'formbuilder/frontend/$1';
 
-#ADMIN
-$route['^(\w{2})/(.*)$'] = '$2';
-$route['^(\w{2})$'] = $route['default_controller'];
-$route['admin/login|admin'] = "default/intranet/login";
+// ADMIN
+$route['^(\w{2})/(.*)$']    = '$2';
+$route['^(\w{2})$']         = $route['default_controller'];
+$route['admin/login|admin'] = 'default/intranet/login';
 
-/* End of file routes.php */
+/*
+ End of file routes.php */
 /* Location: ./application/config/routes.php */
 

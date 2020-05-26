@@ -31,17 +31,17 @@ if ( ! defined( 'BASEPATH' ) ) {
 class Intranet extends BackendController {
 
 	/**
-	* max number of user in order show by pagination
-	*
-	* @var int
-	*/
+	 * max number of user in order show by pagination
+	 *
+	 * @var int
+	 */
 	var $per_page = 10;
 
 	/**
-	* name of user table
-	*
-	* @var string
-	*/
+	 * name of user table
+	 *
+	 * @var string
+	 */
 	var $table = '';
 
 	/**
@@ -68,9 +68,9 @@ class Intranet extends BackendController {
 	 * @return array
 	 */
 	public function index( $offset = 0 ) {
-		//list all forms
+		// list all forms
 		$data = $config = array();
-		//create pagination
+		// create pagination
 		$this->load->library( 'pagination' );
 		$config['base_url']        = site_url() . 'default/dashboard/index';
 		$config['total_rows']      = $this->db->count_all( $this->table );

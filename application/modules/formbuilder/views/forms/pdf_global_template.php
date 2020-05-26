@@ -34,7 +34,7 @@ if ( isset( $html_wholecont ) && intval( $html_wholecont ) === 1 ) {
 			if ( isset( $font ) ) {
 				switch ( intval( $font ) ) {
 					case 2:
-						//dejavu sans mono
+						// dejavu sans mono
 						?>
 						body {
 						font-family: "DejaVu Sans Mono", monospace;
@@ -46,7 +46,7 @@ if ( isset( $html_wholecont ) && intval( $html_wholecont ) === 1 ) {
 						<?php
 						break;
 					case 3:
-						//korean
+						// korean
 						?>
 						   @font-face {
 							font-family: 'BMYEONSUNG';
@@ -60,7 +60,7 @@ if ( isset( $html_wholecont ) && intval( $html_wholecont ) === 1 ) {
 						<?php
 						break;
 					case 4:
-						//japanese
+						// japanese
 						?>
 						   @font-face {
 							font-family: 'mushin';
@@ -74,7 +74,7 @@ if ( isset( $html_wholecont ) && intval( $html_wholecont ) === 1 ) {
 						<?php
 						break;
 					case 5:
-						//chinese
+						// chinese
 						?>
 						   @font-face {
 							font-family: 'chinese';
@@ -88,7 +88,7 @@ if ( isset( $html_wholecont ) && intval( $html_wholecont ) === 1 ) {
 						<?php
 						break;
 					case 1:
-						//arial
+						// arial
 					default:
 						?>
 						

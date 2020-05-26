@@ -31,7 +31,7 @@ ob_start();
 if ( isset( $input18['text']['html_pos'] ) && isset( $input18['text']['show_st'] ) && intval( $input18['text']['show_st'] ) === 1 ) {
 	switch ( $input18['text']['html_pos'] ) {
 		case 1:
-			//top
+			// top
 			?>
 						<div class="rkfm-col-sm-12">
 							<div class="uifm-inp31-txthtml-content">
@@ -43,7 +43,7 @@ if ( isset( $input18['text']['html_pos'] ) && isset( $input18['text']['show_st']
 				<?php
 			break;
 		case 2:
-			//right
+			// right
 			?>
 				<div class="rkfm-col-sm-7">
 							<div class="uifm-inp31-txthtml-content">
@@ -55,7 +55,7 @@ if ( isset( $input18['text']['html_pos'] ) && isset( $input18['text']['show_st']
 				<?php
 			break;
 		case 3:
-			//bottom
+			// bottom
 			?>
 				
 						<div class="rkfm-col-sm-12">
@@ -69,7 +69,7 @@ if ( isset( $input18['text']['html_pos'] ) && isset( $input18['text']['show_st']
 			break;
 		case 0:
 		default:
-			//left
+			// left
 			?>
 				<div class="rkfm-col-sm-5">
 							<div class="uifm-inp31-txthtml-content">

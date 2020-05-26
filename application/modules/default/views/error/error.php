@@ -12,8 +12,8 @@
  * @version   CVS: $Id: error.php, v2.00 2013-11-30 02:52:40 Softdiscover $
  * @link      https://php-form-builder.zigaform.com/
  */
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
+if ( ! defined( 'BASEPATH' ) ) {
+	exit( 'No direct script access allowed' );
 }
 ?>
 <!DOCTYPE html>
@@ -72,11 +72,13 @@ p {
 </style>
 </head>
 <body>
-    <div class="logo" style="float:none;text-align: center;"> 
-        <img src="<?php
-echo site_url();
-?>assets/frontend/img/logo-uiform-2.png" alt="uiForm - Universal PHP Form builder">          
-    </div>
+	<div class="logo" style="float:none;text-align: center;"> 
+		<img src="
+		<?php
+		echo site_url();
+		?>
+		assets/frontend/img/logo-uiform-2.png" alt="uiForm - Universal PHP Form builder">          
+	</div>
 	<div id="container">
 		<h1><?php echo $heading; ?></h1>
 		<?php echo $message; ?>

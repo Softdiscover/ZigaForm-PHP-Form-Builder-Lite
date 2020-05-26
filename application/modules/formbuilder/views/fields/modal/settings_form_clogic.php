@@ -44,7 +44,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 				</div>
 				
 							<?php $message = __( 'Conditional logic', 'FRocket_admin' ); ?>
-							<?php include( APPPATH . '/modules/formbuilder/views/settings/blocked_getmessage.php' ); ?>
+							<?php include APPPATH . '/modules/formbuilder/views/settings/blocked_getmessage.php'; ?>
 				
 					<?php } else { ?>
 						<label ><?php echo __( 'Enable Conditional logic', 'FRocket_admin' ); ?></label>

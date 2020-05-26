@@ -24,38 +24,36 @@
  * @version   Release: 1.00
  * @link      http://php-cost-estimator.zigaform.com/
  */
-class Addon
-{
-    var $CI;
-    var $_username;
-    
-    /**
-     * Auth::__construct()
-     * 
-     * @return 
-     */
-    function __construct()
-    {
-        $this->CI =& get_instance();
-        $this->CI->load->helper('url');
-        $this->CI->load->helper('string');
-        $this->CI->load->helper('cookie');
-        $this->CI->load->model('addon/model_addon');
-         
-    }
-    
-    /**
-     * Auth::Auth
-     * 
-     * @return void
-     */
-    function Addon()
-    {
-        self::__construct();
-         
-    }
-    
-     
-    
-    
+class Addon {
+
+	var $CI;
+	var $_username;
+
+	/**
+	 * Auth::__construct()
+	 *
+	 * @return
+	 */
+	function __construct() {
+		$this->CI =& get_instance();
+		$this->CI->load->helper( 'url' );
+		$this->CI->load->helper( 'string' );
+		$this->CI->load->helper( 'cookie' );
+		$this->CI->load->model( 'addon/model_addon' );
+
+	}
+
+	/**
+	 * Auth::Auth
+	 *
+	 * @return void
+	 */
+	function Addon() {
+		self::__construct();
+
+	}
+
+
+
+
 }

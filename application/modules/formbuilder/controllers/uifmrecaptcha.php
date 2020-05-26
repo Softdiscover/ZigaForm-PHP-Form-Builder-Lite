@@ -58,7 +58,7 @@ class uifmrecaptcha extends FrontendController {
 	 */
 	public function front_verify_recaptcha() {
 
-		require_once( FCPATH . 'libs/recaptcha2/autoload.php' );
+		require_once FCPATH . 'libs/recaptcha2/autoload.php';
 
 		$uid_field = ( isset( $_POST['rockfm-uid-field'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_POST['rockfm-uid-field'] ) : '';
 		$form_id   = ( isset( $_POST['form_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_POST['form_id'] ) : 0;
@@ -95,7 +95,7 @@ class uifmrecaptcha extends FrontendController {
 
 		$json            = array();
 		$json['success'] = $success;
-		//return data to ajax callback
+		// return data to ajax callback
 		header( 'Content-Type: application/json' );
 		echo json_encode( $json );
 		die();

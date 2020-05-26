@@ -4,37 +4,35 @@ namespace Gettext\Generators;
 
 use Gettext\Translations;
 
-class Jed extends PhpArray implements GeneratorInterface
-{
-    /**
-     * {@parentDoc}.
-     */
-    public static function toString(Translations $translations)
-    {
-        $array = static::toArray($translations);
+class Jed extends PhpArray implements GeneratorInterface {
 
-        return json_encode($array);
-    }
+	/**
+	 * {@parentDoc}.
+	 */
+	public static function toString( Translations $translations ) {
+		 $array = static::toArray( $translations );
 
-    /**
-     * {@parentdoc}.
-     */
-    protected static function buildArray(Translations $translations)
-    {
-        $array = array();
+		return json_encode( $array );
+	}
 
-        $context_glue = "\004";
+	/**
+	 * {@parentdoc}.
+	 */
+	protected static function buildArray( Translations $translations ) {
+		$array = array();
 
-        foreach ($translations as $translation) {
-            $key = ($translation->hasContext() ? $translation->getContext().$context_glue : '').$translation->getOriginal();
+		$context_glue = "\004";
 
-            if ($translation->hasPluralTranslation()) {
-                $array[$key] = array_merge(array($translation->getTranslation()), $translation->getPluralTranslation());
-            } else {
-                $array[$key] = array($translation->getTranslation());
-            }
-        }
+		foreach ( $translations as $translation ) {
+			$key = ( $translation->hasContext() ? $translation->getContext() . $context_glue : '' ) . $translation->getOriginal();
 
-        return $array;
-    }
+			if ( $translation->hasPluralTranslation() ) {
+				$array[ $key ] = array_merge( array( $translation->getTranslation() ), $translation->getPluralTranslation() );
+			} else {
+				$array[ $key ] = array( $translation->getTranslation() );
+			}
+		}
+
+		return $array;
+	}
 }

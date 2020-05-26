@@ -77,14 +77,14 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/common/js/bgallery/3.1.3/css/bootstrap-image-gallery.css" rel="stylesheet">
 	
 	
-	<?php 
-	if(UIFORM_DEBUG===1){
+	<?php
+	if ( UIFORM_DEBUG === 1 ) {
 		?>
 
-		<link href="<?php echo base_url(); ?>assets/backend/css/admin.debug.css?v<?php echo date( 'YmdHis' );?>" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>assets/backend/css/admin.debug.css?v<?php echo date( 'YmdHis' ); ?>" rel="stylesheet">
 
 		<?php
-	}else{
+	} else {
 		?>
 		<link href="<?php echo base_url(); ?>assets/backend/css/admin.min.css" rel="stylesheet">
 		<?php
@@ -223,7 +223,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	  <div id="page-wrapper">
 		  <div id="rocketform-bk-dashboard" class="sfdc-wrap">
 			<div id="rocketform-bk-header">
-				<?php include( 'header-blank.php' ); ?>
+				<?php require 'header-blank.php'; ?>
 			</div>
 			<div id="rocketform-bk-content">
 				<div id="uiform-panel-loadingst" style="display:none;">
@@ -245,11 +245,11 @@ if ( ! defined( 'BASEPATH' ) ) {
 				<div class="clear"></div>
 			</div>
 			<div id="rocketform-bk-footer">
-				<?php include( 'footer.php' ); ?>
+				<?php require 'footer.php'; ?>
 			</div>
-			 <?php include( 'notice_footer.php' ); ?>
+			 <?php require 'notice_footer.php'; ?>
 		</div>
-		<?php include( 'captions.php' ); ?>
+		<?php require 'captions.php'; ?>
 
 	  </div><!-- /#page-wrapper -->
 

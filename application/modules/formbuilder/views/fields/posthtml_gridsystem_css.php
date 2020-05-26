@@ -21,10 +21,10 @@ if ( isset( $skin['background']['show_st'] )
 		&& intval( $skin['background']['show_st'] ) === 1 ) {
 	?>
 	<?php
-	//el_background
+	// el_background
 	switch ( intval( $skin['background']['type'] ) ) {
 		case 1:
-			  //solid
+			  // solid
 			if ( ! empty( $skin['background']['cl_solid_color'] ) ) {
 				?>
 								background-color:<?php echo $skin['background']['cl_solid_color']; ?>;
@@ -32,7 +32,7 @@ if ( isset( $skin['background']['show_st'] )
 			}
 			break;
 		case 2:
-					 //gradient
+					 // gradient
 			if ( ! empty( $skin['background']['cl_start_color'] ) && ! empty( $skin['background']['cl_start_color'] ) ) {
 				?>
 								background-color: <?php echo $skin['background']['cl_start_color']; ?>;
@@ -52,28 +52,28 @@ if ( isset( $skin['background']['show_st'] )
 				<?php } ?>
 			  
 			   <?php
-				//repeat
+				// repeat
 				if ( isset( $skin['background']['img_repeat'] ) ) {
 
 					switch ( intval( $skin['background']['img_repeat'] ) ) {
 						case 1:
-							//repeat-x
+							// repeat-x
 							$tmp_bg_str = 'repeat-x';
 							break;
 						case 2:
-							//repeat-y
+							// repeat-y
 							$tmp_bg_str = 'repeat-y';
 							break;
 						case 3:
-							//no-repeat
+							// no-repeat
 							$tmp_bg_str = 'no-repeat';
 							break;
 						case 4:
-							//initial
+							// initial
 							$tmp_bg_str = 'initial';
 							break;
 						case 5:
-							//inherit
+							// inherit
 							$tmp_bg_str = 'inherit';
 							break;
 						case 0:
@@ -88,32 +88,32 @@ if ( isset( $skin['background']['show_st'] )
 					background-repeat:<?php echo $tmp_bg_str; ?>;
 				 <?php } ?>     
 			   <?php
-				//size
+				// size
 				if ( isset( $skin['background']['img_size_type'] ) ) {
 
 					switch ( intval( $skin['background']['img_size_type'] ) ) {
 						case 1:
-							//length
+							// length
 							$tmp_bg_str = $skin['background']['img_size_len'];
 							break;
 						case 2:
-							//percentage
+							// percentage
 							$tmp_bg_str = $skin['background']['img_size_len'];
 							break;
 						case 3:
-							//cover
+							// cover
 							$tmp_bg_str = 'cover';
 							break;
 						case 4:
-							//contain
+							// contain
 							$tmp_bg_str = 'contain';
 							break;
 						case 5:
-							//initial
+							// initial
 							$tmp_bg_str = 'initial';
 							break;
 						case 6:
-							//inherit
+							// inherit
 							$tmp_bg_str = 'inherit';
 							break;
 						case 0:
@@ -137,7 +137,7 @@ if ( isset( $skin['background']['show_st'] )
 <?php } ?> 
 
 	<?php
-		 //el_border_radius
+		 // el_border_radius
 	if ( isset( $skin['border_radius']['show_st'] ) && intval( $skin['border_radius']['show_st'] ) === 1 ) {
 		?>
 			 -webkit-border-radius: <?php echo $skin['border_radius']['size']; ?>px;
@@ -148,7 +148,7 @@ if ( isset( $skin['background']['show_st'] )
 	?>
 						 
 	  <?php
-		 //el_border
+		 // el_border
 		if ( isset( $skin['border']['show_st'] )
 				 && intval( $skin['border']['show_st'] ) === 1
 				 && ! empty( $skin['border']['color'] )
@@ -168,7 +168,7 @@ if ( isset( $skin['background']['show_st'] )
 		?>
 		  
 	 <?php
-		 //shadow
+		 // shadow
 		if ( isset( $skin['shadow']['show_st'] )
 				 && intval( $skin['shadow']['show_st'] ) === 1
 				 && ! empty( $skin['shadow']['color'] )
@@ -185,7 +185,7 @@ if ( isset( $skin['background']['show_st'] )
 		?>
 		  
 		<?php
-		 //padding
+		 // padding
 		if ( isset( $skin['padding']['show_st'] ) && intval( $skin['padding']['show_st'] ) === 1 ) {
 			?>
 			 padding: <?php echo $skin['padding']['top']; ?>px <?php echo $skin['padding']['right']; ?>px <?php echo $skin['padding']['bottom']; ?>px <?php echo $skin['padding']['left']; ?>px;
@@ -196,7 +196,7 @@ if ( isset( $skin['background']['show_st'] )
 			 padding:0px 0px 0px 0px;
 		 <?php } ?>
 		<?php
-		 //margin
+		 // margin
 		if ( isset( $skin['margin']['show_st'] ) && intval( $skin['margin']['show_st'] ) === 1 ) {
 			?>
 			 margin: <?php echo $skin['margin']['top']; ?>px <?php echo $skin['margin']['right']; ?>px <?php echo $skin['margin']['bottom']; ?>px <?php echo $skin['margin']['left']; ?>px;

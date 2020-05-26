@@ -51,10 +51,11 @@ class Dashboard extends BackendController {
 	 * @return void
 	 */
 	public function index() {
-		//generate cache
-			//check if cache exist
+		// generate cache
+			// check if cache exist
 
-		/*$this->load->library('cache');
+		/*
+		$this->load->library('cache');
 			$data1 = $this->cache->get('addon_back');
 			$data2 = $this->cache->get('addon_front');
 			$data3 = $this->cache->get('addon_routes');

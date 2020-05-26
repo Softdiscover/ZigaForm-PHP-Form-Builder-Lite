@@ -9,14 +9,16 @@
  * @return mixed A scalar data
  */
 function maybe_serialize( $data ) {
-	if ( is_array( $data ) || is_object( $data ) )
+	if ( is_array( $data ) || is_object( $data ) ) {
 		return serialize( $data );
+	}
 
 	// Double serialization is required for backward compatibility.
 	// See https://core.trac.wordpress.org/ticket/12930
 	// Also the world will end. See WP 3.6.1.
-	if ( is_serialized( $data, false ) )
+	if ( is_serialized( $data, false ) ) {
 		return serialize( $data );
+	}
 
 	return $data;
 }
@@ -39,7 +41,7 @@ function is_serialized( $data, $strict = true ) {
 		return false;
 	}
 	$data = trim( $data );
- 	if ( 'N;' == $data ) {
+	if ( 'N;' == $data ) {
 		return true;
 	}
 	if ( strlen( $data ) < 4 ) {
@@ -57,17 +59,20 @@ function is_serialized( $data, $strict = true ) {
 		$semicolon = strpos( $data, ';' );
 		$brace     = strpos( $data, '}' );
 		// Either ; or } must exist.
-		if ( false === $semicolon && false === $brace )
+		if ( false === $semicolon && false === $brace ) {
 			return false;
+		}
 		// But neither must be in the first X characters.
-		if ( false !== $semicolon && $semicolon < 3 )
+		if ( false !== $semicolon && $semicolon < 3 ) {
 			return false;
-		if ( false !== $brace && $brace < 4 )
+		}
+		if ( false !== $brace && $brace < 4 ) {
 			return false;
+		}
 	}
 	$token = $data[0];
 	switch ( $token ) {
-		case 's' :
+		case 's':
 			if ( $strict ) {
 				if ( '"' !== substr( $data, -2, 1 ) ) {
 					return false;
@@ -76,12 +81,12 @@ function is_serialized( $data, $strict = true ) {
 				return false;
 			}
 			// or else fall through
-		case 'a' :
-		case 'O' :
+		case 'a':
+		case 'O':
 			return (bool) preg_match( "/^{$token}:[0-9]+:/s", $data );
-		case 'b' :
-		case 'i' :
-		case 'd' :
+		case 'b':
+		case 'i':
+		case 'd':
 			$end = $strict ? '$' : '';
 			return (bool) preg_match( "/^{$token}:[0-9.E-]+;$end/", $data );
 	}
@@ -97,7 +102,8 @@ function is_serialized( $data, $strict = true ) {
  * @return mixed Unserialized data can be any type.
  */
 function maybe_unserialize( $original ) {
-	if ( is_serialized( $original ) ) // don't attempt to unserialize data that wasn't serialized going in
+	if ( is_serialized( $original ) ) { // don't attempt to unserialize data that wasn't serialized going in
 		return @unserialize( $original );
+	}
 	return $original;
 }

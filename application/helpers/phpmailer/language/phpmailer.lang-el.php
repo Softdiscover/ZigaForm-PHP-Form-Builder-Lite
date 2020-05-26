@@ -1,6 +1,7 @@
 <?php
 /**
  * Greek PHPMailer language file: refer to English translation for definitive list
+ *
  * @package PHPMailer
  */
 
@@ -22,4 +23,4 @@ $PHPMAILER_LANG['signing']              = 'Σφάλμα υπογραφής: ';
 $PHPMAILER_LANG['smtp_connect_failed']  = 'Αποτυχία σύνδεσης στον SMTP Server.';
 $PHPMAILER_LANG['smtp_error']           = 'Σφάλμα από τον SMTP Server: ';
 $PHPMAILER_LANG['variable_set']         = 'Αδυναμία ορισμού ή αρχικοποίησης μεταβλητής: ';
-//$PHPMAILER_LANG['extension_missing']    = 'Extension missing: ';
+// $PHPMAILER_LANG['extension_missing']    = 'Extension missing: ';

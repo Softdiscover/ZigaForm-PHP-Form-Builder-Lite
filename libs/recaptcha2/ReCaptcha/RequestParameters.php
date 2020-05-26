@@ -29,75 +29,79 @@ namespace ReCaptcha;
 /**
  * Stores and formats the parameters for the request to the reCAPTCHA service.
  */
-class RequestParameters
-{
-    /**
-     * The shared key between your site and reCAPTCHA.
-     * @var string
-     */
-    private $secret;
+class RequestParameters {
 
-    /**
-     * The user response token provided by reCAPTCHA, verifying the user on your site.
-     * @var string
-     */
-    private $response;
+	/**
+	 * The shared key between your site and reCAPTCHA.
+	 *
+	 * @var string
+	 */
+	private $secret;
 
-    /**
-     * Remote user's IP address.
-     * @var string
-     */
-    private $remoteIp;
+	/**
+	 * The user response token provided by reCAPTCHA, verifying the user on your site.
+	 *
+	 * @var string
+	 */
+	private $response;
 
-    /**
-     * Client version.
-     * @var string
-     */
-    private $version;
+	/**
+	 * Remote user's IP address.
+	 *
+	 * @var string
+	 */
+	private $remoteIp;
 
-    /**
-     * Initialise parameters.
-     *
-     * @param string $secret Site secret.
-     * @param string $response Value from g-captcha-response form field.
-     * @param string $remoteIp User's IP address.
-     * @param string $version Version of this client library.
-     */
-    public function __construct($secret, $response, $remoteIp = null, $version = null)
-    {
-        $this->secret = $secret;
-        $this->response = $response;
-        $this->remoteIp = $remoteIp;
-        $this->version = $version;
-    }
+	/**
+	 * Client version.
+	 *
+	 * @var string
+	 */
+	private $version;
 
-    /**
-     * Array representation.
-     *
-     * @return array Array formatted parameters.
-     */
-    public function toArray()
-    {
-        $params = array('secret' => $this->secret, 'response' => $this->response);
+	/**
+	 * Initialise parameters.
+	 *
+	 * @param string $secret Site secret.
+	 * @param string $response Value from g-captcha-response form field.
+	 * @param string $remoteIp User's IP address.
+	 * @param string $version Version of this client library.
+	 */
+	public function __construct( $secret, $response, $remoteIp = null, $version = null ) {
+		$this->secret   = $secret;
+		$this->response = $response;
+		$this->remoteIp = $remoteIp;
+		$this->version  = $version;
+	}
 
-        if (!is_null($this->remoteIp)) {
-            $params['remoteip'] = $this->remoteIp;
-        }
+	/**
+	 * Array representation.
+	 *
+	 * @return array Array formatted parameters.
+	 */
+	public function toArray() {
+		 $params = array(
+			 'secret'   => $this->secret,
+			 'response' => $this->response,
+		 );
 
-        if (!is_null($this->version)) {
-            $params['version'] = $this->version;
-        }
+		 if ( ! is_null( $this->remoteIp ) ) {
+			 $params['remoteip'] = $this->remoteIp;
+		 }
 
-        return $params;
-    }
+		 if ( ! is_null( $this->version ) ) {
+			 $params['version'] = $this->version;
+		 }
 
-    /**
-     * Query string representation for HTTP request.
-     *
-     * @return string Query string formatted parameters.
-     */
-    public function toQueryString()
-    {
-        return http_build_query($this->toArray(), '', '&');
-    }
+		 return $params;
+	}
+
+	/**
+	 * Query string representation for HTTP request.
+	 *
+	 * @return string Query string formatted parameters.
+	 */
+	public function toQueryString() {
+		return http_build_query( $this->toArray(), '', '&' );
+	}
 }

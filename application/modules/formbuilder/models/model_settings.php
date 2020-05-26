@@ -30,10 +30,10 @@ class model_settings extends CI_Model {
 
 
 	/**
-	* register the global settings information
-	*
-	* @var array
-	*/
+	 * register the global settings information
+	 *
+	 * @var array
+	 */
 	public static $db_config = array();
 
 	public $table = '';
@@ -140,7 +140,7 @@ class model_settings extends CI_Model {
 	}
 
 	function getAllDatabases() {
-		//return $this->wpdb->get_results("SHOW TABLES", ARRAY_N);
+		// return $this->wpdb->get_results("SHOW TABLES", ARRAY_N);
 		return (array) $this->db->list_tables();
 	}
 

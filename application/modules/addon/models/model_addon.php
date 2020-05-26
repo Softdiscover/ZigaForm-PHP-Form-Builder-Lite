@@ -208,14 +208,14 @@ class model_addon extends CI_Model {
 	}
 
 	   /**
-	 * addonmodel::getListAddon()
-	 * List form estimator
-	 *
-	 * @param int $per_page max number of form estimators
-	 * @param int $segment  Number of pagination
-	 *
-	 * @return array
-	 */
+		* addonmodel::getListAddon()
+		* List form estimator
+		*
+		* @param int $per_page max number of form estimators
+		* @param int $segment  Number of pagination
+		*
+		* @return array
+		*/
 	function getListAddons( $per_page = '', $segment = '' ) {
 		$query = sprintf(
 			'

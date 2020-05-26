@@ -33,64 +33,65 @@ use ReCaptcha\RequestParameters;
 /**
  * Sends cURL request to the reCAPTCHA service.
  * Note: this requires the cURL extension to be enabled in PHP
+ *
  * @see http://php.net/manual/en/book.curl.php
  */
-class CurlPost implements RequestMethod
-{
-    /**
-     * Curl connection to the reCAPTCHA service
-     * @var Curl
-     */
-    private $curl;
+class CurlPost implements RequestMethod {
 
-    /**
-     * URL for reCAPTCHA sitevrerify API
-     * @var string
-     */
-    private $siteVerifyUrl;
+	/**
+	 * Curl connection to the reCAPTCHA service
+	 *
+	 * @var Curl
+	 */
+	private $curl;
 
-    /**
-     * Only needed if you want to override the defaults
-     *
-     * @param Curl $curl Curl resource
-     * @param string $siteVerifyUrl URL for reCAPTCHA sitevrerify API
-     */
-    public function __construct(Curl $curl = null, $siteVerifyUrl = null)
-    {
-        $this->curl = (is_null($curl)) ? new Curl() : $curl;
-        $this->siteVerifyUrl = (is_null($siteVerifyUrl)) ? ReCaptcha::SITE_VERIFY_URL : $siteVerifyUrl;
-    }
+	/**
+	 * URL for reCAPTCHA sitevrerify API
+	 *
+	 * @var string
+	 */
+	private $siteVerifyUrl;
 
-    /**
-     * Submit the cURL request with the specified parameters.
-     *
-     * @param RequestParameters $params Request parameters
-     * @return string Body of the reCAPTCHA response
-     */
-    public function submit(RequestParameters $params)
-    {
-        $handle = $this->curl->init($this->siteVerifyUrl);
+	/**
+	 * Only needed if you want to override the defaults
+	 *
+	 * @param Curl   $curl Curl resource
+	 * @param string $siteVerifyUrl URL for reCAPTCHA sitevrerify API
+	 */
+	public function __construct( Curl $curl = null, $siteVerifyUrl = null ) {
+		$this->curl          = ( is_null( $curl ) ) ? new Curl() : $curl;
+		$this->siteVerifyUrl = ( is_null( $siteVerifyUrl ) ) ? ReCaptcha::SITE_VERIFY_URL : $siteVerifyUrl;
+	}
 
-        $options = array(
-            CURLOPT_POST => true,
-            CURLOPT_POSTFIELDS => $params->toQueryString(),
-            CURLOPT_HTTPHEADER => array(
-                'Content-Type: application/x-www-form-urlencoded'
-            ),
-            CURLINFO_HEADER_OUT => false,
-            CURLOPT_HEADER => false,
-            CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_SSL_VERIFYPEER => true
-        );
-        $this->curl->setoptArray($handle, $options);
+	/**
+	 * Submit the cURL request with the specified parameters.
+	 *
+	 * @param RequestParameters $params Request parameters
+	 * @return string Body of the reCAPTCHA response
+	 */
+	public function submit( RequestParameters $params ) {
+		$handle = $this->curl->init( $this->siteVerifyUrl );
 
-        $response = $this->curl->exec($handle);
-        $this->curl->close($handle);
+		$options = array(
+			CURLOPT_POST           => true,
+			CURLOPT_POSTFIELDS     => $params->toQueryString(),
+			CURLOPT_HTTPHEADER     => array(
+				'Content-Type: application/x-www-form-urlencoded',
+			),
+			CURLINFO_HEADER_OUT    => false,
+			CURLOPT_HEADER         => false,
+			CURLOPT_RETURNTRANSFER => true,
+			CURLOPT_SSL_VERIFYPEER => true,
+		);
+		$this->curl->setoptArray( $handle, $options );
 
-        if ($response !== false) {
-            return $response;
-        }
+		$response = $this->curl->exec( $handle );
+		$this->curl->close( $handle );
 
-        return '{"success": false, "error-codes": ["'.ReCaptcha::E_CONNECTION_FAILED.'"]}';
-    }
+		if ( $response !== false ) {
+			return $response;
+		}
+
+		return '{"success": false, "error-codes": ["' . ReCaptcha::E_CONNECTION_FAILED . '"]}';
+	}
 }

@@ -5,9 +5,9 @@ if ( isset( $_GET['rkopt'] ) ) {
 	if ( ! defined( 'BASEPATH' ) ) {
 		define( 'BASEPATH', dirname( __FILE__ ) . '/' );
 	}
-	//require_once($wp_abs_path[0]."wp-load.php");
-	require_once( BASEPATH . '../application/helpers/exporttocsv.php' );
-	require_once( BASEPATH . '../application/helpers/common_helper.php' );
+	// require_once($wp_abs_path[0]."wp-load.php");
+	require_once BASEPATH . '../application/helpers/exporttocsv.php';
+	require_once BASEPATH . '../application/helpers/common_helper.php';
 
 	if ( isset( $_GET['rkopt'] ) && $_GET['rkopt'] === 'gencsv' ) {
 

@@ -26,20 +26,20 @@ class Uiform_Form_Helper {
 	public static function getroute() {
 		$return = array();
 		if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
-			//post
-			$return['module']     = isset( $_POST['mod'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['mod'] ) : '';
-			$return['controller'] = isset( $_POST['controller'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['controller'] ) : '';
-			$return['action']     = isset( $_POST['action'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['action'] ) : '';
+			// post
+			$return['module']     = isset( $_POST['mod'] ) ? self::sanitizeInput( $_POST['mod'] ) : '';
+			$return['controller'] = isset( $_POST['controller'] ) ? self::sanitizeInput( $_POST['controller'] ) : '';
+			$return['action']     = isset( $_POST['action'] ) ? self::sanitizeInput( $_POST['action'] ) : '';
 		} elseif ( $_SERVER['REQUEST_METHOD'] === 'GET' ) {
-			//get
-			$return['module']     = isset( $_GET['mod'] ) ? Uiform_Form_Helper::sanitizeInput( $_GET['mod'] ) : '';
-			$return['controller'] = isset( $_GET['controller'] ) ? Uiform_Form_Helper::sanitizeInput( $_GET['controller'] ) : '';
-			$return['action']     = isset( $_GET['action'] ) ? Uiform_Form_Helper::sanitizeInput( $_GET['action'] ) : '';
+			// get
+			$return['module']     = isset( $_GET['mod'] ) ? self::sanitizeInput( $_GET['mod'] ) : '';
+			$return['controller'] = isset( $_GET['controller'] ) ? self::sanitizeInput( $_GET['controller'] ) : '';
+			$return['action']     = isset( $_GET['action'] ) ? self::sanitizeInput( $_GET['action'] ) : '';
 		} else {
-			//request
-			$return['module']     = isset( $_REQUEST['mod'] ) ? Uiform_Form_Helper::sanitizeInput( $_REQUEST['mod'] ) : '';
-			$return['controller'] = isset( $_REQUEST['controller'] ) ? Uiform_Form_Helper::sanitizeInput( $_REQUEST['controller'] ) : '';
-			$return['action']     = isset( $_REQUEST['action'] ) ? Uiform_Form_Helper::sanitizeInput( $_REQUEST['action'] ) : '';
+			// request
+			$return['module']     = isset( $_REQUEST['mod'] ) ? self::sanitizeInput( $_REQUEST['mod'] ) : '';
+			$return['controller'] = isset( $_REQUEST['controller'] ) ? self::sanitizeInput( $_REQUEST['controller'] ) : '';
+			$return['action']     = isset( $_REQUEST['action'] ) ? self::sanitizeInput( $_REQUEST['action'] ) : '';
 		}
 		return $return;
 	}
@@ -47,14 +47,14 @@ class Uiform_Form_Helper {
 	public static function getHttpRequest( $var ) {
 		$var = strval( $var );
 		if ( $_SERVER['REQUEST_METHOD'] === 'POST' ) {
-			//post
-			$value = isset( $_POST[ $var ] ) ? Uiform_Form_Helper::sanitizeInput( $_POST[ $var ] ) : '';
+			// post
+			$value = isset( $_POST[ $var ] ) ? self::sanitizeInput( $_POST[ $var ] ) : '';
 		} elseif ( $_SERVER['REQUEST_METHOD'] === 'GET' ) {
-			//get
-			$value = isset( $_GET[ $var ] ) ? Uiform_Form_Helper::sanitizeInput( $_GET[ $var ] ) : '';
+			// get
+			$value = isset( $_GET[ $var ] ) ? self::sanitizeInput( $_GET[ $var ] ) : '';
 		} else {
-			//request
-			$value = isset( $_REQUEST[ $var ] ) ? Uiform_Form_Helper::sanitizeInput( $_REQUEST[ $var ] ) : '';
+			// request
+			$value = isset( $_REQUEST[ $var ] ) ? self::sanitizeInput( $_REQUEST[ $var ] ) : '';
 		}
 
 		return $value;
@@ -67,7 +67,7 @@ class Uiform_Form_Helper {
 		}
 		foreach ( $array as $key => $value ) {
 			if ( is_array( $value ) || is_object( $value ) ) {
-				Uiform_Form_Helper::array2xml( $value, $xml );
+				self::array2xml( $value, $xml );
 			} else {
 				if ( is_numeric( $key ) ) {
 					if ( is_string( $value ) ) {
@@ -120,7 +120,7 @@ class Uiform_Form_Helper {
 		$string = preg_replace( '/[\n\r\t]/', ' ', $string );
 		$string = trim( $string, "\x00..\x1F" );
 
-		//$string = sanitize_text_field($string);
+		// $string = sanitize_text_field($string);
 		return $string;
 	}
 
@@ -154,13 +154,13 @@ class Uiform_Form_Helper {
 		$string = preg_replace( '/[^\pL\pN]+/', '', $string );
 		$string = preg_replace( '/[^a-zA-Z0-9]+/', '', $string );
 		$string = strtolower( $string );
-		//reserved words
+		// reserved words
 		switch ( trim( $string ) ) {
 			case 'check':
 				$string = $string . '1';
 				break;
 			default:
-				# code...
+				// code...
 				break;
 		}
 
@@ -195,7 +195,7 @@ class Uiform_Form_Helper {
 		if ( is_array( $data ) ) {
 			return array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive' ), $data );
 		} else {
-			return Uiform_Form_Helper::sanitizeInput( $data );
+			return self::sanitizeInput( $data );
 		}
 	}
 
@@ -210,7 +210,7 @@ class Uiform_Form_Helper {
 		if ( is_array( $data ) ) {
 			return array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), $data );
 		} else {
-			return Uiform_Form_Helper::sanitizeInput_html( $data );
+			return self::sanitizeInput_html( $data );
 		}
 	}
 
@@ -327,8 +327,8 @@ class Uiform_Form_Helper {
 	}
 
 	public static function is_uiform_page() {
-		$vget_page  = ( isset( $_GET['page'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_GET['page'] ) : '';
-		$vpost_page = ( isset( $_POST['page'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_POST['page'] ) : '';
+		$vget_page  = ( isset( $_GET['page'] ) ) ? self::sanitizeInput( $_GET['page'] ) : '';
+		$vpost_page = ( isset( $_POST['page'] ) ) ? self::sanitizeInput( $_POST['page'] ) : '';
 		if ( ( $vget_page === 'zgfm_form_builder' ) || ( $vpost_page === 'zgfm_form_builder' ) ) {
 			return true;
 		} else {
@@ -379,13 +379,13 @@ class Uiform_Form_Helper {
 	}
 
 	/**
-	* Verify if field is checked
-	*
-	* @param int $row    value field
-	* @param int $status status check
-	*
-	* @return array
-	*/
+	 * Verify if field is checked
+	 *
+	 * @param int $row    value field
+	 * @param int $status status check
+	 *
+	 * @return array
+	 */
 	public static function getChecked( $row, $status ) {
 		if ( $row == $status ) {
 			echo 'checked="checked"';
@@ -412,16 +412,16 @@ class Uiform_Form_Helper {
 	}
 	public static function json_encode_advanced( array $arr, $sequential_keys = false, $quotes = false, $beautiful_json = false ) {
 
-		   $output = Uiform_Form_Helper::isAssoc( $arr ) ? '{' : '[';
+		   $output = self::isAssoc( $arr ) ? '{' : '[';
 			$count = 0;
 		foreach ( $arr as $key => $value ) {
 
-			if ( Uiform_Form_Helper::isAssoc( $arr ) || ( ! Uiform_Form_Helper::isAssoc( $arr ) && $sequential_keys == true ) ) {
+			if ( self::isAssoc( $arr ) || ( ! self::isAssoc( $arr ) && $sequential_keys == true ) ) {
 				$output .= ( $quotes ? '"' : '' ) . $key . ( $quotes ? '"' : '' ) . ' : ';
 			}
 
 			if ( is_array( $value ) ) {
-				$output .= Uiform_Form_Helper::json_encode_advanced( $value, $sequential_keys, $quotes, $beautiful_json );
+				$output .= self::json_encode_advanced( $value, $sequential_keys, $quotes, $beautiful_json );
 			} elseif ( is_bool( $value ) ) {
 				$output .= ( $value ? 'true' : 'false' );
 			} elseif ( is_numeric( $value ) ) {
@@ -437,7 +437,7 @@ class Uiform_Form_Helper {
 			}
 		}
 
-			$output .= Uiform_Form_Helper::isAssoc( $arr ) ? '}' : ']';
+			$output .= self::isAssoc( $arr ) ? '}' : ']';
 
 			return $output;
 	}
@@ -450,7 +450,7 @@ class Uiform_Form_Helper {
 	}
 
 	public static function get_font_library() {
-		require_once( FCPATH . 'libs/styles-font-menu/plugin.php' );
+		require_once FCPATH . 'libs/styles-font-menu/plugin.php';
 		$objsfm = new SFM_Plugin();
 
 		return $objsfm;
@@ -459,7 +459,7 @@ class Uiform_Form_Helper {
 	public static function check_User_Access() {
 		$form_id = null;
 
-		//check form id
+		// check form id
 
 		return true;
 	}
@@ -548,7 +548,7 @@ class Uiform_Form_Helper {
 		 * @since   v0.0.1
 		 * @version v1.0.0  Saturday, April 11th, 2020.
 		 * @access  public static
-		 * @param   mixed   $str
+		 * @param   mixed $str
 		 * @return  mixed
 		 */
 	public static function encodeURIComponent( $str ) {
@@ -561,73 +561,75 @@ class Uiform_Form_Helper {
 		);
 		return strtr( rawurlencode( $str ), $revert );
 	}
-	
-	
-	    /**
-     * Formats a JSON string for pretty printing
-     *
-     * @param string $json The JSON to make pretty
-     * @param bool $html Insert nonbreaking spaces and <br />s for tabs and linebreaks
-     * @return string The prettified output
-     * @author Jay Roberts
-     */
-    public static function _format_json($json, $html = false) {
-        $tabcount = 0;
-        $result = '';
-        $inquote = false;
-        $ignorenext = false;
-        if ($html) {
-            $tab = "&nbsp;&nbsp;&nbsp;&nbsp;";
-            $newline = "<br/>";
-        } else {
-            $tab = "\t";
-            $newline = "\n";
-        }
-        for($i = 0; $i < strlen($json); $i++) {
-            $char = $json[$i];
-            if ($ignorenext) {
-                $result .= $char;
-                $ignorenext = false;
-            } else {
-                switch($char) {
-                    case '[':
-                    case '{':
-                        $tabcount++;
-                        $result .= $char . $newline . str_repeat($tab, $tabcount);
-                        break;
-                    case ']':
-                    case '}':
-                        $tabcount--;
-                        $result = trim($result) . $newline . str_repeat($tab, $tabcount) . $char;
-                        break;
-                    case ',':
-                        $result .= $char . $newline . str_repeat($tab, $tabcount);
-                        break;
-                    case '"':
-                        $inquote = !$inquote;
-                        $result .= $char;
-                        break;
-                    case '\\':
-                        if ($inquote) $ignorenext = true;
-                        $result .= $char;
-                        break;
-                    default:
-                        $result .= $char;
-                }
-            }
-        }
-        return $result;
-    }
+
+
+		/**
+		 * Formats a JSON string for pretty printing
+		 *
+		 * @param string $json The JSON to make pretty
+		 * @param bool   $html Insert nonbreaking spaces and <br />s for tabs and linebreaks
+		 * @return string The prettified output
+		 * @author Jay Roberts
+		 */
+	public static function _format_json( $json, $html = false ) {
+		$tabcount   = 0;
+		$result     = '';
+		$inquote    = false;
+		$ignorenext = false;
+		if ( $html ) {
+			$tab     = '&nbsp;&nbsp;&nbsp;&nbsp;';
+			$newline = '<br/>';
+		} else {
+			$tab     = "\t";
+			$newline = "\n";
+		}
+		for ( $i = 0; $i < strlen( $json ); $i++ ) {
+			$char = $json[ $i ];
+			if ( $ignorenext ) {
+				$result    .= $char;
+				$ignorenext = false;
+			} else {
+				switch ( $char ) {
+					case '[':
+					case '{':
+						$tabcount++;
+						$result .= $char . $newline . str_repeat( $tab, $tabcount );
+						break;
+					case ']':
+					case '}':
+						$tabcount--;
+						$result = trim( $result ) . $newline . str_repeat( $tab, $tabcount ) . $char;
+						break;
+					case ',':
+						$result .= $char . $newline . str_repeat( $tab, $tabcount );
+						break;
+					case '"':
+						$inquote = ! $inquote;
+						$result .= $char;
+						break;
+					case '\\':
+						if ( $inquote ) {
+							$ignorenext = true;
+						}
+						$result .= $char;
+						break;
+					default:
+						$result .= $char;
+				}
+			}
+		}
+		return $result;
+	}
 }
 
 
   /**
- * Escaping for textarea values.
- *
- * @param string $text
- *
- * @return string
- */
+   * Escaping for textarea values.
+   *
+   * @param string $text
+   *
+   * @return string
+   */
 function escape_text( $text ) {
 	$safe_text = htmlspecialchars( $text, ENT_QUOTES );
 	return $safe_text;
@@ -754,6 +756,7 @@ function uifm_loggedin() {
 /**
  * Prefix a table name with a user-defined string to avoid conflicts.
  * This MUST be used in all database queries.
+ *
  * @param string $tablename name of the table
  * @return prefixed table name
  * @since 0.6
@@ -764,6 +767,7 @@ function prefix( $tablename = null ) {
 
 /**
  * returns an XSRF token
+ *
  * @param striong $action
  */
 function getXSRFToken( $action ) {
@@ -782,6 +786,7 @@ function getXSRFToken( $action ) {
 
 /**
  * Checks for Cross Site Request Forgeries
+ *
  * @param string $action
  */
 function XSRFdefender( $action ) {
