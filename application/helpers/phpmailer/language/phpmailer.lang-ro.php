@@ -1,7 +1,6 @@
 <?php
 /**
  * Romanian PHPMailer language file: refer to English translation for definitive list
- *
  * @package PHPMailer
  * @author Alex Florea <alecz.fia@gmail.com>
  */

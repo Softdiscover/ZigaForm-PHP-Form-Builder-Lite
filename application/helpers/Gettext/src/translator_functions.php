@@ -9,20 +9,21 @@ use Gettext\BaseTranslator;
  *
  * @return string
  */
-function __( $original ) {
-	$text = BaseTranslator::$current->gettext( $original );
+function __($original)
+{
+    $text = BaseTranslator::$current->gettext($original);
 
-	if ( func_num_args() === 1 ) {
-		return $text;
-	}
+    if (func_num_args() === 1) {
+        return $text;
+    }
 
-	$args = array_slice( func_get_args(), 1 );
+    $args = array_slice(func_get_args(), 1);
 
-	return vsprintf( $text, is_array( $args[0] ) ? $args[0] : $args );
+    return vsprintf($text, is_array($args[0]) ? $args[0] : $args);
 }
 
 
-
+ 
 /**
  * Returns the singular/plural translation of a string.
  *
@@ -32,16 +33,17 @@ function __( $original ) {
  *
  * @return string
  */
-function n__( $original, $plural, $value ) {
-	$text = BaseTranslator::$current->ngettext( $original, $plural, $value );
+function n__($original, $plural, $value)
+{
+    $text = BaseTranslator::$current->ngettext($original, $plural, $value);
 
-	if ( func_num_args() === 3 ) {
-		return $text;
-	}
+    if (func_num_args() === 3) {
+        return $text;
+    }
 
-	$args = array_slice( func_get_args(), 3 );
+    $args = array_slice(func_get_args(), 3);
 
-	return vsprintf( $text, is_array( $args[0] ) ? $args[0] : $args );
+    return vsprintf($text, is_array($args[0]) ? $args[0] : $args);
 }
 
 /**
@@ -52,16 +54,17 @@ function n__( $original, $plural, $value ) {
  *
  * @return string
  */
-function p__( $context, $original ) {
-	$text = BaseTranslator::$current->pgettext( $context, $original );
+function p__($context, $original)
+{
+    $text = BaseTranslator::$current->pgettext($context, $original);
 
-	if ( func_num_args() === 2 ) {
-		return $text;
-	}
+    if (func_num_args() === 2) {
+        return $text;
+    }
 
-	$args = array_slice( func_get_args(), 2 );
+    $args = array_slice(func_get_args(), 2);
 
-	return vsprintf( $text, is_array( $args[0] ) ? $args[0] : $args );
+    return vsprintf($text, is_array($args[0]) ? $args[0] : $args);
 }
 
 /**
@@ -72,16 +75,17 @@ function p__( $context, $original ) {
  *
  * @return string
  */
-function d__( $domain, $original ) {
-	$text = BaseTranslator::$current->dgettext( $domain, $original );
+function d__($domain, $original)
+{
+    $text = BaseTranslator::$current->dgettext($domain, $original);
 
-	if ( func_num_args() === 2 ) {
-		return $text;
-	}
+    if (func_num_args() === 2) {
+        return $text;
+    }
 
-	$args = array_slice( func_get_args(), 2 );
+    $args = array_slice(func_get_args(), 2);
 
-	return vsprintf( $text, is_array( $args[0] ) ? $args[0] : $args );
+    return vsprintf($text, is_array($args[0]) ? $args[0] : $args);
 }
 
 /**
@@ -93,16 +97,17 @@ function d__( $domain, $original ) {
  *
  * @return string
  */
-function dp__( $domain, $context, $original ) {
-	 $text = BaseTranslator::$current->dpgettext( $domain, $context, $original );
+function dp__($domain, $context, $original)
+{
+    $text = BaseTranslator::$current->dpgettext($domain, $context, $original);
 
-	if ( func_num_args() === 3 ) {
-		return $text;
-	}
+    if (func_num_args() === 3) {
+        return $text;
+    }
 
-	$args = array_slice( func_get_args(), 3 );
+    $args = array_slice(func_get_args(), 3);
 
-	return vsprintf( $text, is_array( $args[0] ) ? $args[0] : $args );
+    return vsprintf($text, is_array($args[0]) ? $args[0] : $args);
 }
 
 /**
@@ -116,16 +121,17 @@ function dp__( $domain, $context, $original ) {
  *
  * @return string
  */
-function dnp__( $domain, $context, $original, $plural, $value ) {
-	$text = BaseTranslator::$current->dnpgettext( $domain, $context, $original, $plural, $value );
+function dnp__($domain, $context, $original, $plural, $value)
+{
+    $text = BaseTranslator::$current->dnpgettext($domain, $context, $original, $plural, $value);
 
-	if ( func_num_args() === 5 ) {
-		return $text;
-	}
+    if (func_num_args() === 5) {
+        return $text;
+    }
 
-	$args = array_slice( func_get_args(), 5 );
+    $args = array_slice(func_get_args(), 5);
 
-	return vsprintf( $text, is_array( $args[0] ) ? $args[0] : $args );
+    return vsprintf($text, is_array($args[0]) ? $args[0] : $args);
 }
 
 /**
@@ -133,8 +139,9 @@ function dnp__( $domain, $context, $original, $plural, $value ) {
  *
  * @see __
  */
-function __e() {
-	echo call_user_func_array( '__', func_get_args() );
+function __e()
+{
+    echo call_user_func_array('__', func_get_args());
 }
 
 /**
@@ -142,8 +149,9 @@ function __e() {
  *
  * @see n__
  */
-function n__e() {
-	echo call_user_func_array( 'n__', func_get_args() );
+function n__e()
+{
+    echo call_user_func_array('n__', func_get_args());
 }
 
 /**
@@ -151,8 +159,9 @@ function n__e() {
  *
  * @see p__
  */
-function p__e() {
-	echo call_user_func_array( 'p__', func_get_args() );
+function p__e()
+{
+    echo call_user_func_array('p__', func_get_args());
 }
 
 /**
@@ -160,8 +169,9 @@ function p__e() {
  *
  * @see d__
  */
-function d__e() {
-	echo call_user_func_array( 'd__', func_get_args() );
+function d__e()
+{
+    echo call_user_func_array('d__', func_get_args());
 }
 
 /**
@@ -169,8 +179,9 @@ function d__e() {
  *
  * @see dp__
  */
-function dp__e() {
-	echo call_user_func_array( 'dp__', func_get_args() );
+function dp__e()
+{
+    echo call_user_func_array('dp__', func_get_args());
 }
 
 /**
@@ -178,6 +189,7 @@ function dp__e() {
  *
  * @see dnp__
  */
-function dnp__e() {
-	 echo call_user_func_array( 'dnp__', func_get_args() );
+function dnp__e()
+{
+    echo call_user_func_array('dnp__', func_get_args());
 }

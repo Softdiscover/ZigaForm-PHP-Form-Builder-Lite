@@ -1,7 +1,6 @@
 <?php
 /**
  * Russian PHPMailer language file: refer to English translation for definitive list
- *
  * @package PHPMailer
  * @author Alexey Chumakov <alex@chumakov.ru>
  * @author Foster Snowhill <i18n@forstwoof.ru>

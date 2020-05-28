@@ -390,7 +390,7 @@ $config['proxy_ips']             = '';
 $config['wysiwyg']               = 'tinymce';
 $config['admin_assets_path']     = $config['base_url'] . 'assets/';
 $config['cmscs_version']         = '1.0.1';
-$config['uiform_url_ssl']        = % SSL % ;
+$config['uiform_url_ssl']        = %SSL% ;
 /*
  End of file config.php */
 /* Location: ./application/config/config.php */

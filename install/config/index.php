@@ -167,7 +167,7 @@ if ( ! is_dir( $system_path ) ) {
 	define( 'BASEPATH', str_replace( '\\', '/', $system_path ) );
 
 	// Path to the front controller (this file)
-	define( 'FCPATH', str_replace( self, '', __FILE__ ) );
+	define( 'FCPATH', str_replace( SELF, '', __FILE__ ) );
 
 	// Name of the "system folder"
 	define( 'SYSDIR', trim( strrchr( trim( BASEPATH, '/' ), '/' ), '/' ) );

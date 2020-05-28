@@ -1,13 +1,14 @@
 <?php
 namespace Gettext\Languages\Exporter;
 
-class Docs extends Html {
-
-	/**
-	 * @see Exporter::toStringDo
-	 */
-	protected static function toStringDo( $languages ) {
-		$result  = <<<EOT
+class Docs extends Html
+{
+    /**
+     * @see Exporter::toStringDo
+     */
+    protected static function toStringDo($languages)
+    {
+        $result = <<<EOT
 <!doctype html>
 <html lang="en">
     <head>
@@ -25,8 +26,8 @@ class Docs extends Html {
         <div class="container-fluid">
 
 EOT;
-		$result .= static::buildTable( $languages, true );
-		$result .= <<<EOT
+        $result .= static::buildTable($languages, true);
+        $result .= <<<EOT
 
         </div>
         <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -35,18 +36,20 @@ EOT;
 </html>
 EOT;
 
-		return $result;
-	}
-	/**
-	 * @see Exporter::isForPublicUse
-	 */
-	public static function isForPublicUse() {
-		return false;
-	}
-	/**
-	 * @see Exporter::getDescription
-	 */
-	public static function getDescription() {
-		return 'Build the page http://mlocati.github.io/cldr-to-gettext-plural-rules';
-	}
+        return $result;
+    }
+    /**
+     * @see Exporter::isForPublicUse
+     */
+    public static function isForPublicUse()
+    {
+        return false;
+    }
+    /**
+     * @see Exporter::getDescription
+     */
+    public static function getDescription()
+    {
+        return 'Build the page http://mlocati.github.io/cldr-to-gettext-plural-rules';
+    }
 }

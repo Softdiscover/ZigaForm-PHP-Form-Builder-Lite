@@ -1,28 +1,28 @@
 <?php
 
-error_reporting( 0 );
-define( 'BASEPATH', realpath( dirname( __FILE__ ) . '/../../../' ) );
+error_reporting(0);
+define('BASEPATH', realpath(dirname(__FILE__) . '/../../../'));
 session_start();
 
-require_once BASEPATH . '/application/helpers/common_helper.php';
+require_once(BASEPATH. '/application/helpers/common_helper.php');
 
-if ( ! defined( 'WEBPATH' ) ) {
-	define( 'WEBPATH', getRootWebPath() );
+if (!defined('WEBPATH')) {
+	define('WEBPATH', getRootWebPath());
 }
 
-define( 'UPLOAD_FOLDER', 'uploaded' );
+define('UPLOAD_FOLDER', 'uploaded');
 
-XSRFdefender( 'elFinder' );
+XSRFdefender('elFinder');
 
 // // To Enable(true) handling of PostScript files by ImageMagick
-// // It is disabled by default as a countermeasure
+// // It is disabled by default as a countermeasure 
 // // of Ghostscript multiple -dSAFER sandbox bypass vulnerabilities
 // // see https://www.kb.cert.org/vuls/id/332928
 // define('ELFINDER_IMAGEMAGICK_PS', true);
 // ===============================================
 
 // load composer autoload before load elFinder autoload If you need composer
-// require './vendor/autoload.php';
+//require './vendor/autoload.php';
 
 // elFinder autoload
 require './autoload.php';
@@ -117,12 +117,12 @@ elFinder::$netDrivers['ftp'] = 'FTP';
  * @param  string    $relpath file path relative to volume root directory started with directory separator
  * @return bool|null
  **/
-function access( $attr, $path, $data, $volume, $isDir, $relpath ) {
-	$basename = basename( $path );
+function access($attr, $path, $data, $volume, $isDir, $relpath) {
+	$basename = basename($path);
 	return $basename[0] === '.'                  // if file/folder begins with '.' (dot)
-			 && strlen( $relpath ) !== 1           // but with out volume root
-		? ! ( $attr == 'read' || $attr == 'write' ) // set read+write to false, other (locked+hidden) set to true
-		: null;                                 // else elFinder decide it itself
+			 && strlen($relpath) !== 1           // but with out volume root
+		? !($attr == 'read' || $attr == 'write') // set read+write to false, other (locked+hidden) set to true
+		:  null;                                 // else elFinder decide it itself
 }
 
 
@@ -133,27 +133,27 @@ $opts = array(
 	'roots' => array(
 		// Items volume
 		array(
-			'driver'        => 'LocalFileSystem',
-			'startPath'     => BASEPATH . '/',
-			'path'          => BASEPATH . '/',
-			'URL'           => WEBPATH . '/',
-			'mimeDetect'    => 'internal',
-			'tmbPath'       => BASEPATH . '/' . UPLOAD_FOLDER . '/' . '.tmb',
-			'tmbURL'        => WEBPATH . '/' . UPLOAD_FOLDER . '/' . '.tmb',
-			'utf8fix'       => true,
-			'tmbCrop'       => false,
-			'tmbBgColor'    => 'transparent',
+			'driver'				 => 'LocalFileSystem',
+						'startPath'			 => BASEPATH . '/' ,
+						'path'					 => BASEPATH . '/' ,
+						'URL'						 => WEBPATH . '/',
+			'mimeDetect'		 => 'internal',
+						'tmbPath'				 => BASEPATH . '/'. UPLOAD_FOLDER . '/'.'.tmb',
+                                                'tmbURL'				 => WEBPATH . '/'. UPLOAD_FOLDER . '/'.'.tmb',
+						'utf8fix'				 => true,
+						'tmbCrop'				 => false,
+						'tmbBgColor'		 => 'transparent',                       
 			'winHashFix'    => DIRECTORY_SEPARATOR !== '/', // to make hash same to Linux one on windows too
-			'uploadDeny'    => array( 'all' ),                // All Mimetypes not allowed to upload
-			'uploadAllow'   => array( 'all' ), // Mimetype `image` and `text/plain` allowed to upload
-			'uploadOrder'   => array( 'deny', 'allow' ),      // allowed Mimetype `image` and `text/plain` only
-			'accessControl' => 'access',                     // disable and hide dot starting files (OPTIONAL)
+			'uploadDeny'    => array('all'),                // All Mimetypes not allowed to upload
+			'uploadAllow'   => array('all'), // Mimetype `image` and `text/plain` allowed to upload
+			'uploadOrder'   => array('deny', 'allow'),      // allowed Mimetype `image` and `text/plain` only
+			'accessControl' => 'access'                     // disable and hide dot starting files (OPTIONAL)
 		),
-
-	),
+		 
+	)
 );
 
 // run elFinder
-$connector = new elFinderConnector( new elFinder( $opts ) );
+$connector = new elFinderConnector(new elFinder($opts));
 $connector->run();
 

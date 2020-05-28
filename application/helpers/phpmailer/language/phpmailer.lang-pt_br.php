@@ -1,7 +1,6 @@
 <?php
 /**
  * Brazilian Portuguese PHPMailer language file: refer to English translation for definitive list
- *
  * @package PHPMailer
  * @author Paulo Henrique Garcia <paulo@controllerweb.com.br>
  * @author Lucas Guimarães <lucas@lucasguimaraes.com>

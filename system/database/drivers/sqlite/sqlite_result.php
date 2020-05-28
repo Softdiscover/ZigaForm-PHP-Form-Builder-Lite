@@ -1,16 +1,15 @@
-<?php  if ( ! defined( 'BASEPATH' ) ) {
-	exit( 'No direct script access allowed' );}
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 /**
  * CodeIgniter
  *
  * An open source application development framework for PHP 5.1.6 or newer
  *
- * @package     CodeIgniter
- * @author      ExpressionEngine Dev Team
- * @copyright   Copyright (c) 2008 - 2011, EllisLab, Inc.
- * @license     http://codeigniter.com/user_guide/license.html
- * @link        http://codeigniter.com
- * @since       Version 1.0
+ * @package		CodeIgniter
+ * @author		ExpressionEngine Dev Team
+ * @copyright	Copyright (c) 2008 - 2011, EllisLab, Inc.
+ * @license		http://codeigniter.com/user_guide/license.html
+ * @link		http://codeigniter.com
+ * @since		Version 1.0
  * @filesource
  */
 
@@ -21,20 +20,21 @@
  *
  * This class extends the parent result class: CI_DB_result
  *
- * @category    Database
- * @author      ExpressionEngine Dev Team
- * @link        http://codeigniter.com/user_guide/database/
+ * @category	Database
+ * @author		ExpressionEngine Dev Team
+ * @link		http://codeigniter.com/user_guide/database/
  */
 class CI_DB_sqlite_result extends CI_DB_result {
 
 	/**
 	 * Number of rows in the result set
 	 *
-	 * @access  public
-	 * @return  integer
+	 * @access	public
+	 * @return	integer
 	 */
-	function num_rows() {
-		return @sqlite_num_rows( $this->result_id );
+	function num_rows()
+	{
+		return @sqlite_num_rows($this->result_id);
 	}
 
 	// --------------------------------------------------------------------
@@ -42,11 +42,12 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	/**
 	 * Number of fields in the result set
 	 *
-	 * @access  public
-	 * @return  integer
+	 * @access	public
+	 * @return	integer
 	 */
-	function num_fields() {
-		 return @sqlite_num_fields( $this->result_id );
+	function num_fields()
+	{
+		return @sqlite_num_fields($this->result_id);
 	}
 
 	// --------------------------------------------------------------------
@@ -56,13 +57,15 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 *
 	 * Generates an array of column names
 	 *
-	 * @access  public
-	 * @return  array
+	 * @access	public
+	 * @return	array
 	 */
-	function list_fields() {
+	function list_fields()
+	{
 		$field_names = array();
-		for ( $i = 0; $i < $this->num_fields(); $i++ ) {
-			$field_names[] = sqlite_field_name( $this->result_id, $i );
+		for ($i = 0; $i < $this->num_fields(); $i++)
+		{
+			$field_names[] = sqlite_field_name($this->result_id, $i);
 		}
 
 		return $field_names;
@@ -75,18 +78,20 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 *
 	 * Generates an array of objects containing field meta-data
 	 *
-	 * @access  public
-	 * @return  array
+	 * @access	public
+	 * @return	array
 	 */
-	function field_data() {
-		 $retval = array();
-		for ( $i = 0; $i < $this->num_fields(); $i++ ) {
-			$F              = new stdClass();
-			$F->name        = sqlite_field_name( $this->result_id, $i );
-			$F->type        = 'varchar';
-			$F->max_length  = 0;
+	function field_data()
+	{
+		$retval = array();
+		for ($i = 0; $i < $this->num_fields(); $i++)
+		{
+			$F				= new stdClass();
+			$F->name		= sqlite_field_name($this->result_id, $i);
+			$F->type		= 'varchar';
+			$F->max_length	= 0;
 			$F->primary_key = 0;
-			$F->default     = '';
+			$F->default		= '';
 
 			$retval[] = $F;
 		}
@@ -99,9 +104,10 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	/**
 	 * Free the result
 	 *
-	 * @return  null
+	 * @return	null
 	 */
-	function free_result() {
+	function free_result()
+	{
 		// Not implemented in SQLite
 	}
 
@@ -114,11 +120,12 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 * this internally before fetching results to make sure the
 	 * result set starts at zero
 	 *
-	 * @access  private
-	 * @return  array
+	 * @access	private
+	 * @return	array
 	 */
-	function _data_seek( $n = 0 ) {
-		 return sqlite_seek( $this->result_id, $n );
+	function _data_seek($n = 0)
+	{
+		return sqlite_seek($this->result_id, $n);
 	}
 
 	// --------------------------------------------------------------------
@@ -128,11 +135,12 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 *
 	 * Returns the result set as an array
 	 *
-	 * @access  private
-	 * @return  array
+	 * @access	private
+	 * @return	array
 	 */
-	function _fetch_assoc() {
-		return sqlite_fetch_array( $this->result_id );
+	function _fetch_assoc()
+	{
+		return sqlite_fetch_array($this->result_id);
 	}
 
 	// --------------------------------------------------------------------
@@ -142,19 +150,24 @@ class CI_DB_sqlite_result extends CI_DB_result {
 	 *
 	 * Returns the result set as an object
 	 *
-	 * @access  private
-	 * @return  object
+	 * @access	private
+	 * @return	object
 	 */
-	function _fetch_object() {
-		if ( function_exists( 'sqlite_fetch_object' ) ) {
-			return sqlite_fetch_object( $this->result_id );
-		} else {
-			$arr = sqlite_fetch_array( $this->result_id, SQLITE_ASSOC );
-			if ( is_array( $arr ) ) {
+	function _fetch_object()
+	{
+		if (function_exists('sqlite_fetch_object'))
+		{
+			return sqlite_fetch_object($this->result_id);
+		}
+		else
+		{
+			$arr = sqlite_fetch_array($this->result_id, SQLITE_ASSOC);
+			if (is_array($arr))
+			{
 				$obj = (object) $arr;
 				return $obj;
 			} else {
-				return null;
+				return NULL;
 			}
 		}
 	}
@@ -162,6 +175,5 @@ class CI_DB_sqlite_result extends CI_DB_result {
 }
 
 
-/*
- End of file sqlite_result.php */
+/* End of file sqlite_result.php */
 /* Location: ./system/database/drivers/sqlite/sqlite_result.php */

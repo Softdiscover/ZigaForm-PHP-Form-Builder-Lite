@@ -1,7 +1,6 @@
 <?php
 /**
  * Latvian PHPMailer language file: refer to English translation for definitive list
- *
  * @package PHPMailer
  * @author Eduards M. <e@npd.lv>
  */
@@ -24,4 +23,4 @@ $PHPMAILER_LANG['signing']              = 'Autorizācijas kļūda: ';
 $PHPMAILER_LANG['smtp_connect_failed']  = 'SMTP savienojuma kļūda';
 $PHPMAILER_LANG['smtp_error']           = 'SMTP servera kļūda: ';
 $PHPMAILER_LANG['variable_set']         = 'Nevar piešķirt mainīgā vērtību: ';
-// $PHPMAILER_LANG['extension_missing']    = 'Extension missing: ';
+//$PHPMAILER_LANG['extension_missing']    = 'Extension missing: ';

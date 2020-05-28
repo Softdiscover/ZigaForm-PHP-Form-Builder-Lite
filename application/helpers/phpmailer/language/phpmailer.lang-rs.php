@@ -1,7 +1,6 @@
 <?php
 /**
  * Serbian PHPMailer language file: refer to English translation for definitive list
- *
  * @package PHPMailer
  * @author Александар Јевремовић <ajevremovic@gmail.com>
  */
