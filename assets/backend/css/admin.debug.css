@@ -13566,7 +13566,6 @@ button.btn img {
 /*field select */
 select.uifm-input2-opt-main {
   display: inline-block !important;
-  width: auto !important;
 }
 
 .rockfm-select .rockfm-input2-wrap .rockfm-inp2-opt-price-lbl,
