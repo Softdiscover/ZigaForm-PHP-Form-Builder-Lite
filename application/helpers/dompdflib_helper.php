@@ -30,7 +30,12 @@ function generate_pdf_old( $html, $filename, $stream = true ) {
 
 function generate_pdf( $html, $filename, $papersize, $paperorien, $stream = true ) {
 
-	require_once 'dompdf/autoload.inc.php';
+	if (version_compare(phpversion(), '7.1', '>='))
+	{
+		require_once 'dompdf/0.8.5/autoload.inc.php';
+	}else{
+		require_once 'dompdf/0.8.3/autoload.inc.php';
+	}
 
 	$dompdf = new Dompdf();
 	$dompdf->loadHtml( $html );
