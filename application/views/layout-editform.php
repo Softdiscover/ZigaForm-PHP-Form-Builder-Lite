@@ -294,6 +294,13 @@ if ( ! defined( 'BASEPATH' ) ) {
 	
 	<?php do_action( 'admin_enqueue_scripts' ); ?>
 	<?php // $this->addon->load_addons_Head(); ?>
+
+	<?php 
+	//load font lib
+	require_once dirname( __FILE__ ) . '/../../libs/styles-font-menu/classes/sfm-plugin.php';
+	$fontLib= new SFM_Plugin();
+	$fontLib->print_scripts(); ?>
+
   </head>
    <body class="tundra ">
 	

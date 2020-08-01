@@ -1,6 +1,6 @@
 <?php
 	// Load Google Fonts and scripts only once and as late as possible
-	$this->print_scripts();
+//	$this->print_scripts();
 
 	// Passed arguments: do_action( 'styles_font_menu', $attributes, $value );
 ?>

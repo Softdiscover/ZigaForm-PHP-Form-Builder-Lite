@@ -22,6 +22,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 				 <th><?php echo $value->fieldname; ?></th>
 			<?php } ?>
 				 <th><?php echo __( 'Date', 'FRocket_admin' ); ?></th>
+				 <th>ID</th>
 				 <th><?php echo __( 'Options', 'FRocket_admin' ); ?></th>
 		</tr>
 	</thead>
@@ -33,6 +34,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					<td><?php echo $value2; ?></td>
 				<?php } ?>
 			<?php } ?>
+			<td><?php echo $value['fbh_id'];?></td>
 			<td>
 				<div class="sfdc-btn-group">
 				<ul class="unstyled">
