@@ -1017,11 +1017,23 @@ class Frontend extends FrontendController {
 								$form_f_tmp[ $key ]['label']     = $tmp_field_label;
 
 								// for records
-								$tmp_options_rec = array();
-							foreach ( $value as $value2 ) {
-								$tmp_options_rec[] = $value2;
-							}
-								$form_f_rec_tmp[ $key ] = implode( '^,^', $tmp_options_rec );
+								$tmp_summary=array();
+								 
+								foreach ( $value as $key2 => $value2 ) {
+									$tmp_summary_inner='';
+									 
+									if(isset($tmp_fdata['input17']['options'][ $key2 ]['label'])){
+										$tmp_summary_inner.=$tmp_fdata['input17']['options'][ $key2 ]['label'];
+									}
+									
+									if(intval($value2) > 1){
+										$tmp_summary_inner.= ' - qty: '.$value2;
+									}
+									$tmp_summary[] = $tmp_summary_inner;
+								}
+								 
+							 
+								$form_f_rec_tmp[ $key ] =implode('^,^', $tmp_summary);
 								// end for records
 
 							foreach ( $value as $key2 => $value2 ) {
