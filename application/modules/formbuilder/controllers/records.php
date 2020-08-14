@@ -317,8 +317,9 @@ class Records extends BackendController {
 		$data['record_info'] = $data2['record_info'] = $new_record_user;
 		$data['info_date']   = $data2['info_date'] = date( 'F j, Y, g:i a', strtotime( $data_record->created_date ) );
 		$data['info_ip']     = $data2['info_ip'] = $data_record->created_ip;
-		require_once APPPATH . '/helpers/clientsniffer.php';
-		$data['info_useragent'] = $data2['info_useragent'] = ClientSniffer::test( array( $data_record->fbh_user_agent ) );
+		require_once APPPATH . '/helpers/Browser.php';
+		$browser = new Browser($data_record->fbh_user_agent);
+		$data['info_useragent'] = $data2['info_useragent'] = $browser->getBrowser().__( ' , version : ', 'frocket_front' ).$browser->getVersion().__( ' , platform : ', 'frocket_front' ).$browser->getPlatform();
 		$data['info_referer']   = $data2['info_referer'] = $data_record->fbh_referer;
 		$data['form_name']      = $data2['form_name'] = $form_rec_data->fmb_name;
 		$data2['info_labels']   = array(

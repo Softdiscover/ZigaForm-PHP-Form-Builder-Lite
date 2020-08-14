@@ -10898,6 +10898,7 @@ a:focus {
   padding: 10px;
   background: #efefef;
   min-height: 333px;
+  word-break: break-word;
 }
 
 #uifm-record-results {
