@@ -106,7 +106,7 @@ if (!$uifm.isFunction(zgfm_back_addon)) {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'addon/zfad_backend/listaddon_updateStatus',
-					data: 'action=rocket_fbuilder_addon_status&page=zgfm_cost_estimate&add_name=' + tmp_addon_name + '&add_status=' + status + '&csrf_field_name=' + uiform_vars.csrf_field_name,
+					data: 'action=rocket_fbuilder_addon_status&page=zgfm_form_builder&add_name=' + tmp_addon_name + '&add_status=' + status + '&csrf_field_name=' + uiform_vars.csrf_field_name,
 					success: function (msg) {
 						rocketform.redirect_tourl(uiform_vars.url_admin + 'addon/zfad_backend/list_extensions');
 					}

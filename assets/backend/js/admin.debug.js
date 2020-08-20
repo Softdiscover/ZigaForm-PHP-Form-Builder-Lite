@@ -807,6 +807,7 @@ if (!$uifm.isFunction(rocketform)) {
 					'.uifm-set-section-inputappend',
 					'.uifm-set-section-input4-range',
 					'.uifm-set-section-input4-defaultvalue',
+					'.uifm-set-section-input4-spinner-opts',
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
@@ -3788,6 +3789,9 @@ if (!$uifm.isFunction(rocketform)) {
 								case 'set_step':
 									tab.find('#uifm_fld_inp4_spinner_opt4').val(parseFloat(value));
 									break;
+								case 'set_decimal':
+									tab.find('#uifm_fld_inp4_spinner_decimals').val(parseFloat(value));
+									break;	
 								case 'set_range1':
 									tab.find('#uifm_fld_inp4_spinner_opt5').val(parseFloat(value));
 									break;
@@ -7556,7 +7560,33 @@ if (!$uifm.isFunction(rocketform)) {
 										if (typeof mainrformb['steps_src'][currentIndex][$(this).attr('id')] == 'undefined') {
 											$(this).remove();
 											rocketform.delUiData3('steps_src', currentIndex, $(this).attr('id'));
-										}
+										}else{
+
+											let tmp_field=mainrformb['steps_src'][currentIndex][$(this).attr('id')];
+
+											if(tmp_field.hasOwnProperty('clogic')){
+												let tmp_clist=tmp_field['clogic']['list'];
+												if ( tmp_clist && tmp_clist.length>0) {
+													var tmp_new_clist=[];
+													$.each(tmp_clist, function( clindex, clvalue ) {
+												  		if($("#" + clvalue['field_fire']).length == 0) {
+														}else{
+															tmp_new_clist.push(tmp_clist[clindex]);
+														}
+													});
+
+													if ( parseInt(tmp_new_clist.length) === 0) {
+
+														mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['show_st']='0';														
+													}
+
+													mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['list']=tmp_new_clist;
+												}else{
+													mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['show_st']='0';
+												}
+											}
+
+ 										}
 									} catch (ex) {
 										$(this).remove();
 										try {
@@ -11398,7 +11428,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 						uifm_afterdrag_timer = setInterval(function () {
 							if ($('#' + tmp_new_id).find('.sfdc-container-fluid').length) {
-								if (parseInt(tmp_vars['inner'].length) != 0) {
+								if (tmp_vars.hasOwnProperty('inner') && parseInt(tmp_vars['inner'].length) != 0) {
 									$.each(tmp_vars['inner'], function (index2, value2) {
 										tmp_new_parent = $('#' + tmp_new_id).find('> .sfdc-container-fluid .zgpb-fl-gs-block-style:eq(' + index2 + ')');
 										tmp_new_parent_f2 = tmp_new_parent.find('> .zgpb-fl-gs-block-inner');
@@ -26409,6 +26439,7 @@ var uifmsetting;
 					set_max: '1000',
 					set_default: '5',
 					set_step: '1',
+					set_decimal: '0',
 					skin_maxwidth_st: '1',
 					skin_maxwidth: '200'
 				},
@@ -26621,6 +26652,7 @@ var uifmsetting;
 
 					'#uifm-fld-inp2-block-align-box',
 					'.uifm-set-section-input4-defaultvalue',
+					'.uifm-set-section-input4-spinner-opts',
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',

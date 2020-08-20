@@ -69,6 +69,27 @@ if ( ! defined( 'BASEPATH' ) ) {
 				</div>
 			</div>
 		</div>
+		<div class="uifm-set-section-input4-spinner-opts">	
+	<div class="sfdc-row">
+			<div class="sfdc-col-md-6">
+				 
+		<div class="sfdc-form-group">
+					<label ><?php echo __( 'Decimals', 'FRocket_admin' ); ?></label>
+					<input  
+						id="uifm_fld_inp4_spinner_decimals"
+						data-field-store="input4-set_decimal"
+						class="uifm_fld_inp2_stl1"
+						type="text" value="0">
+				</div>
+	 
+				
+			</div>
+		 <div class="sfdc-col-sm-6">
+				 
+			</div>
+		</div>
+	</div>
+			
 	<div class="uifm-set-section-input4-range">
 	<div class="sfdc-row">
 			<div class="sfdc-col-md-6">

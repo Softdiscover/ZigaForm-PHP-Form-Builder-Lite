@@ -10,7 +10,7 @@ select.selectpicker {
   display: none !important;
 }
 .bootstrap-select {
-  width: 220px \0;
+  max-width: 220px;
   /*IE9 and below*/
 }
 .bootstrap-select > .sfdc-dropdown-toggle {
@@ -50,7 +50,7 @@ select.selectpicker {
   width: auto !important;
 }
 .bootstrap-select:not([class*="col-"]):not([class*="form-control"]):not(.input-group-btn) {
-  width: 220px;
+  max-width: 220px;
 }
 .bootstrap-select .sfdc-dropdown-toggle:focus {
   /*outline: thin dotted #333333 !important;
@@ -126,7 +126,7 @@ select.selectpicker {
 .bootstrap-select.sfdc-btn-group .sfdc-dropdown-toggle .sfdc-caret {
   position: absolute;
   top: 50%;
-  right: 12px;
+  right: 5px;
   margin-top: -2px;
   vertical-align: middle;
 }

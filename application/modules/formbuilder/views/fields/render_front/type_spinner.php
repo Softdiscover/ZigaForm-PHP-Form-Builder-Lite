@@ -24,6 +24,7 @@ ob_start();
 				data-rockfm-max="<?php echo floatval( $input4['set_max'] ); ?>"
 				data-rockfm-step="<?php echo floatval( $input4['set_step'] ); ?>"
 				data-rockfm-value="<?php echo floatval( $input4['set_default'] ); ?>"
+				data-rockfm-decimal="<?php echo floatval( $input4['set_decimal'] ); ?>"
 			type="text"
 			>
 </div>
