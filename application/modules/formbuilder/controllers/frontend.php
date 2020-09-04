@@ -293,7 +293,12 @@ class Frontend extends FrontendController {
 			return;
 		}
 
-		$rdata = $this->model_forms->getFormById( $form_id );
+		$rdata = $this->model_forms->getAvailableFormById( $form_id );
+		if(empty($rdata)){
+			$response['success']="0";
+			$response['html_content']="";
+		}else{
+
 
 		$form_data_onsubm = json_decode( $rdata->fmb_data2, true );
 		 $onload_scroll   = ( isset( $form_data_onsubm['main']['onload_scroll'] ) ) ? $form_data_onsubm['main']['onload_scroll'] : '1';
@@ -316,8 +321,12 @@ class Frontend extends FrontendController {
 			$response['rockfm_vars_arr']           = $form_variables;
 
 		if ( ! empty( $rdata ) ) {
+			$response['success']="1";
 			$response['html_content'] = Uiform_Form_Helper::encodeHex( do_shortcode( $rdata->fmb_html ) );
 		}
+ 
+		}
+
 		$data         = array();
 		$data['json'] = $response;
 

@@ -59,11 +59,11 @@ if ( ! defined( 'BASEPATH' ) ) {
 					</div>
 					<div class="uiform-listform-options-col">
 						<a class="sfdc-btn sfdc-btn-sm sfdc-btn-danger uiform-confirmation-func-action" 
-						   data-dialog-title="<?php echo __( 'Delete Form', 'FRocket_admin' ); ?>"
+						   data-dialog-title="<?php echo __( 'Move to trash', 'FRocket_admin' ); ?>"
 						   data-dialog-callback="rocketform.listform_updateStatus(0);"
 						href="javascript:void(0);">
 							<i class="fa fa-trash-o"></i>
-						<?php echo __( 'Delete', 'FRocket_admin' ); ?>
+						<?php echo __( 'Move to trash', 'FRocket_admin' ); ?>
 						</a>
 					</div>
 					
@@ -131,6 +131,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 											<option value="400" <?php echo ( $per_page === 400 ) ? 'selected' : ''; ?> >400</option>
 											<option value="500" <?php echo ( $per_page === 500 ) ? 'selected' : ''; ?> >500</option>
 											<option value="1000" <?php echo ( $per_page === 1000 ) ? 'selected' : ''; ?> >1000</option>
+											<option value="" <?php echo ( $per_page === 0 ) ? 'selected' : ''; ?> ><?php echo __( 'All', 'FRocket_admin' ); ?></option>
 										</select>                                
 									</div> <!-- form group [rows] -->
 									<div class="sfdc-form-group">
@@ -163,7 +164,8 @@ if ( ! defined( 'BASEPATH' ) ) {
 					</div>   
 					
 				</div>
-				<div id="zgfm-back-listform-maintable-container"></div>
+				<?php echo $subsubsub; ?>
+				<div id="zgfm-back-listform-maintable-container" class="clear clearfix"></div>
 			</div> 
 		</div> 
 	</div>

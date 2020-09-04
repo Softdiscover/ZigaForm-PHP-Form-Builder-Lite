@@ -29,21 +29,21 @@ if ( ! defined( 'BASEPATH' ) ) {
 				  <div class="sfdc-form-group">
 					<label class=" sfdc-col-sm-2 sfdc-control-label"><?php echo __( 'Widget code', 'FRocket_admin' ); ?></label>
 					  <div class="sfdc-col-sm-10">
-						<textarea  onClick="this.select();"  style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo stripslashes( $script ); ?></textarea>
+						<textarea  onClick="this.select();"  style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo  $script; ?></textarea>
 					  </div>
 				  </div>
 				  <div class="space10"></div>
 				 <div class="sfdc-form-group">
 					<label class=" sfdc-col-sm-2 sfdc-control-label"><?php echo __( 'iframe', 'FRocket_admin' ); ?></label>
 					  <div class="sfdc-col-sm-10">
-						<textarea onClick="this.select();"   style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo stripslashes( $iframe ); ?></textarea>
+						<textarea onClick="this.select();"   style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo  $iframe; ?></textarea>
 					  </div>
 				  </div>
 				  <div class="space10"></div>
 				 <div class="sfdc-form-group">
 					<label class=" sfdc-col-sm-2 sfdc-control-label"><?php echo __( 'Url', 'FRocket_admin' ); ?></label>
 					  <div class="sfdc-col-sm-10">
-						<textarea onClick="this.select();" style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo stripslashes( $url ); ?></textarea>
+						<textarea onClick="this.select();" style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo  $url; ?></textarea>
 					  </div>
 				  </div>   
 				  <div class="sfdc-row">
@@ -84,7 +84,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					  <div class="sfdc-col-sm-10">
 						<textarea onClick="this.select();"
 								  style="height:100px;" rows="5"
-								  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo stripslashes( $cached_scripts ); ?></textarea>
+								  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo  $cached_scripts; ?></textarea>
 					  </div>
 				  </div>   
 				  <div class="sfdc-form-group">
@@ -92,7 +92,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					  <div class="sfdc-col-sm-10">
 						<textarea onClick="this.select();"
 								  style="height:100px;" rows="5"
-								  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo stripslashes( $cached_content ); ?></textarea>
+								  placeholder=""  class="sfdc-form-control sfdc-col-md-7"><?php echo  $cached_content; ?></textarea>
 					  </div>
 				  </div>   
 			  </div>

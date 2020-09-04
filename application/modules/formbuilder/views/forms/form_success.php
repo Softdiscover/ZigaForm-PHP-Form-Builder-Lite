@@ -38,21 +38,21 @@ if ( ! defined( 'BASEPATH' ) ) {
 				  <div class="sfdc-form-group">
 					<label class=" col-sm-2 control-label"><?php echo __( 'Widget code', 'FRocket_admin' ); ?></label>
 					  <div class="sfdc-col-sm-10">
-						<textarea  onClick="this.select();"  style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control col-md-7"><?php echo stripslashes( $script ); ?></textarea>
+						<textarea  onClick="this.select();"  style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control col-md-7"><?php echo  $script; ?></textarea>
 					  </div>
 				  </div>
 				  <div class="space10"></div>
 				 <div class="sfdc-form-group">
 					<label class=" col-sm-2 control-label"><?php echo __( 'iframe', 'FRocket_admin' ); ?></label>
 					  <div class="sfdc-col-sm-10">
-						<textarea onClick="this.select();"   style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control col-md-7"><?php echo stripslashes( $iframe ); ?></textarea>
+						<textarea onClick="this.select();"   style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control col-md-7"><?php echo  $iframe; ?></textarea>
 					  </div>
 				  </div>
 				  <div class="space10"></div>
 				 <div class="sfdc-form-group">
 					<label class=" col-sm-2 control-label"><?php echo __( 'Url', 'FRocket_admin' ); ?></label>
 					  <div class="sfdc-col-sm-10">
-						<textarea onClick="this.select();" style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control col-md-7"><?php echo stripslashes( $url ); ?></textarea>
+						<textarea onClick="this.select();" style="height:100px;" rows="5"  placeholder=""  class="sfdc-form-control col-md-7"><?php echo  $url; ?></textarea>
 					  </div>
 				  </div>   
 			  </div>

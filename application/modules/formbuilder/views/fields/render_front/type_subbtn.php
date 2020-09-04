@@ -17,7 +17,7 @@ ob_start();
 ?>
  <button data-uifm-tabnum="<?php echo $tab_num; ?>"
 	   class="rockfm-txtbox-inp-val sfdc-btn"
-			type="submit"
+			type="button"
 			data-val-btn="<?php echo $input['value']; ?>"
 			data-val-subm="<?php echo __( 'Sending', 'FRocket_admin' ); ?>"
 			

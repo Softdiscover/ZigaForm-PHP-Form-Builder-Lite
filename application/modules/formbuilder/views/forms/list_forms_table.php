@@ -22,7 +22,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 						  >
 						
 					
-					<table class="table table-striped table-bordered dataTable" id="form_list">
+					<table class="sfdc-table sfdc-table-striped sfdc-table-bordered dataTable" id="form_list">
 					<thead>
 						<tr>
 							<th>
@@ -87,10 +87,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 											<i class="fa fa-pencil-square-o"></i> <?php echo __( 'Edit', 'FRocket_admin' ); ?></a></li>
 									<li><a 
 										   class="guidetour-flist-del sfdc-btn sfdc-btn-sm sfdc-btn-danger uiform-confirmation-func-action"
-											data-intro="<?php echo __( 'Delete form', 'FRocket_admin' ); ?>"
-											data-dialog-title="<?php echo __( 'Delete Form', 'FRocket_admin' ); ?>"
+											data-intro="<?php echo __( 'Move to trash', 'FRocket_admin' ); ?>"
+											data-dialog-title="<?php echo __( 'Move to trash', 'FRocket_admin' ); ?>"
 											data-dialog-callback="rocketform.listform_deleteFormById(<?php echo $row->fmb_id; ?>);"
-										   href="javascript:void(0);"><i class="fa fa-trash-o"></i> <?php echo __( 'Delete', 'FRocket_admin' ); ?></a></li>
+										   href="javascript:void(0);"><i class="fa fa-trash-o"></i> <?php echo __( 'Move to Trash ', 'FRocket_admin' ); ?></a></li>
 									</ul>
 								</div>
 							</td>

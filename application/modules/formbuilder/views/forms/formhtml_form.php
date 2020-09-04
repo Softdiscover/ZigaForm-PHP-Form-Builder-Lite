@@ -18,7 +18,7 @@ ob_start();
 <div class="rockfm-form-container uiform-wrap sfdc-wrap">
 <div class="rockfm-alert-container" style="display:none;"></div>
 <form class="rockfm-form" 
-	  action="" 
+	  action="javascript:void(0);" 
 	  name="" 
 	  method="post" 
 	  data-zgfm-type="1"
@@ -111,7 +111,7 @@ ob_start();
  <?php if ( isset( $main['add_js'] ) && ! empty( $main['add_js'] ) ) { ?>
   <!-- Additional javascript -->
    <script type="text/javascript">
-		<?php echo stripslashes( urldecode( $main['add_js'] ) ); ?>
+		<?php echo  urldecode( $main['add_js'] ) ; ?>
 	 </script>  
 	<!-- adittional javascript -->
 <?php } ?>

@@ -76,6 +76,22 @@ class Template {
 		return $this->template_data['controller']->load->view2( $template, $this->template_data, $return );
 	}
 
+	/**
+	 * Load partial 2
+	 *
+	 * @param string  $template  template
+	 * @param string  $view      view
+	 * @param string  $view_data view_data
+	 * @param boolean $return    return
+	 *
+	 * @return  array
+	 */
+	function loadPartial2( $template = '',  $view_data = array(), $return = false ) {
+		 $this->set( 'content', $view_data );
+		return $this->template_data['controller']->load->view2( $template, $this->template_data, $return );
+		
+	}
+
 }
 
 /*

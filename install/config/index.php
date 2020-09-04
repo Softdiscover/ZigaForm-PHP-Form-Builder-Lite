@@ -184,6 +184,15 @@ if ( is_dir( $application_folder ) ) {
 	define( 'APPPATH', BASEPATH . $application_folder . '/' );
 }
 
+
+		// Composer autoload
+        $composer_path = FCPATH.'vendor/autoload.php';
+        
+        if (file_exists($composer_path)) {
+            require_once $composer_path;
+        }
+        
+
 /*
  * --------------------------------------------------------------------
  * LOAD THE BOOTSTRAP FILE

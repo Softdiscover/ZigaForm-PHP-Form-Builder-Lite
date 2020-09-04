@@ -350,7 +350,7 @@ function uifm_load_cssfiles() {
 
 	//load css
 	var uifm_cssFiles = [
-		{ id: 'uifm_css_font_a', href: UIFORM_SRC + 'assets/common/css/fontawesome/4.7.0/css/font-awesome.min.css' },
+		{ id: 'uifm_css_font_a', href: UIFORM_SRC + 'assets/common/css/fontawesome/4.7.0/css/font-awesome.min-sfdc.css' },
 		{ id: 'uifm_css_b_jasny', href: UIFORM_SRC + 'assets/common/js/bjasny/jasny-bootstrap.css' },
 		{ id: 'uifm_css_b_slider', href: UIFORM_SRC + 'assets/backend/js/bslider/4.12.1/bootstrap-slider.css' },
 		{ id: 'uifm_css_b_touchspin', href: UIFORM_SRC + 'assets/backend/js/btouchspin/jquery.bootstrap-touchspin.css' },

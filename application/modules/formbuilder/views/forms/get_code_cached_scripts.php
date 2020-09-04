@@ -39,7 +39,7 @@ ob_start();
 	
 	<link href="<?php echo base_url(); ?>assets/frontend/css/rockfm_form<?php echo $id_form; ?>.css?<?php echo date( 'YmdHis' ); ?>" rel="stylesheet">
 	
-	<?php if ( ZIGAFORM_C_LITE === 0 ) { ?>
+	<?php if ( ZIGAFORM_F_LITE === 0 ) { ?>
 	<script type="text/javascript" src="<?php echo base_url(); ?>application/modules/addon_func_anim/views/frontend/assets/js/waypoints/2.0.5/waypoints.min.js"></script>
 	<?php } ?>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/frontend/js/iframe/4.1.1/iframeResizer.min.js"></script>

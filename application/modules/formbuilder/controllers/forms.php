@@ -16,6 +16,8 @@ if ( ! defined( 'BASEPATH' ) ) {
 	exit( 'No direct script access allowed' );
 }
 
+use \Zigaform\Admin\List_data;
+
 /**
  * Estimator intranet class
  *
@@ -70,10 +72,11 @@ class Forms extends BackendController {
 		$this->template->set( 'controller', $this );
 		$this->load->model( 'model_forms' );
 		$this->load->model( 'model_fields' );
+		$this->load->model( 'model_record' );
 		$this->load->model( 'model_form_log' );
 		$this->load->model( 'addon/model_addon' );
 		$this->load->model( 'addon/model_addon_details' );
-
+		$this->load->model( 'addon/model_addon_details_log' );
 		$this->load->library( 'cache' );
 
 	}
@@ -515,6 +518,87 @@ class Forms extends BackendController {
 		}
 	}
 
+	public function ajax_list_trashform_updatest() {
+		 
+		$list_ids = ( isset( $_POST['id'] ) && $_POST['id'] ) ? array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive' ), $_POST['id'] ) : array();
+		$form_st  = ( isset( $_POST['form_st'] ) && $_POST['form_st'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['form_st'] ) : '';
+		if ( $list_ids ) {
+		
+			switch (intval($form_st)) {
+				case 1:
+				case 2:	
+					foreach ( $list_ids as $value ) {
+						$data = array(
+							'flag_status' => intval( $form_st ),
+						);
+		
+						$this->db->set( $data );
+						$this->db->where( 'fmb_id', $value );
+						$this->db->update( $this->model_forms->table );
+					}
+					break;
+				case 0:
+					foreach ( $list_ids as $value ) {
+					
+						$this->delete_form_process($value);
+						 
+					}
+					
+					break;
+				default:
+					# code...
+					break;
+			}
+			
+		}
+	}
+	
+	private function delete_form_process($value){
+		//remove from log form
+		$this->db->where('log_frm_id', $value);
+		$this->db->delete($this->model_form_log->table);
+		
+		//remove from fields
+		$this->db->where('form_fmb_id', $value);
+		$this->db->delete($this->model_fields->table);
+		
+		
+		//remove from addons logs
+		$this->db->where('fmb_id', $value);
+		$this->db->delete($this->model_addon_details_log->table);
+		
+		//remove from addons		
+		$this->db->where('fmb_id', $value);
+		$this->db->delete($this->model_addon_details->table);
+		
+		//remove pay record logs
+		$this->model_gateways_logs->deleteRecordbyFormId($value);
+		
+		//remove pay records
+		$this->model_gateways_records->deleteRecordbyFormId($value);
+		
+		//remove from records
+		$this->db->where('form_fmb_id', $value);
+		$this->db->delete($this->model_record->table);
+		
+		//remove from form
+		$this->db->where('fmb_id', $value);
+		$this->db->delete($this->model_forms->table);
+	}
+	
+	
+	/**
+	 * delete trash form by form id
+	 *
+	 * @return void
+	 */
+	public function ajax_delete_trashform_byid() {
+ 
+		$form_id = ( isset( $_POST['form_id'] ) && $_POST['form_id'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['form_id'] ) : 0;
+		
+		$this->delete_form_process($form_id);
+	}
+	
 	/**
 	 * Forms::ajax_delete_form_byid()
 	 *
@@ -2400,38 +2484,7 @@ class Forms extends BackendController {
 	 * @return
 	 */
 	public function list_uiforms( $offset = 0 ) {
-		// generate cache
-			// check if cache exist
-
-		/*
-		$this->load->library('cache');
-			$data1 = $this->cache->get('addon_back');
-			$data2 = $this->cache->get('addon_front');
-			$data3 = $this->cache->get('addon_routes');
-
-			if( !file_exists(FCPATH .'application/cache/addon_back.cache')
-					&&  !file_exists(FCPATH .'application/cache/addon_front.cache')
-					&& !file_exists(FCPATH .'application/cache/addon_routes.cache')
-					){
-			   if (empty($data1) ) {
-					$tmp_addon=$this->addon->load_addonsbyBack();
-					$this->cache->write($tmp_addon, 'addon_back');
-			   }
-
-			  if (empty($data2) ) {
-				   $tmp_addon=$this->addon->load_addonsByFront();
-					$this->cache->write($tmp_addon, 'addon_front');
-			   }
-
-			   if (empty($data3) ) {
-				   $tmp_addon=$this->addon->load_addRoutes();
-					$this->cache->write($tmp_addon, 'addon_routes');
-			   }
-
-			   redirect(site_url() . 'formbuilder/forms/list_uiforms');
-
-			} */
-
+		 
 		$filter_data = get_option( 'zgfm_listform_searchfilter', true );
 
 		$data2 = array();
@@ -2447,12 +2500,158 @@ class Forms extends BackendController {
 
 		$offset          = ( isset( $_GET['offset'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_GET['offset'] ) : 0;
 		$data2['offset'] = $offset;
-
+		
+		$form_data=$this->model_forms->ListTotals();
+		
+		$data2['all']=$form_data->r_all;
+		$data2['trash']=$form_data->r_trash;
+		$data2['subcurrent']=1;
+		$data2['subsubsub'] = List_data::get()->subsubsub($data2);
+		
 		$this->template->loadPartial( 'layout', 'forms/list_forms', $data2 );
 	}
 
 
 
+    /**
+	 * Show trash list
+	 *
+	 * @return void
+	 */
+    public function list_trash(){
+    
+		$filter_data = get_option( 'zgfm_listform_searchfilter', true );
+		$data2       = array();
+		if ( empty( $filter_data ) ) {
+			$data2['per_page']   = intval( $this->per_page );
+			$data2['orderby']    = 'asc';
+		} else {
+			$data2['per_page']   = intval( $filter_data['per_page'] );
+			$data2['orderby']    = $filter_data['orderby'];
+		}
+
+		$offset          = ( isset( $_GET['offset'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_GET['offset'] ) : 0;
+		$data2['offset'] = $offset;
+		
+		$form_data=$this->model_forms->ListTotals();
+		$data2['title']=__( 'Forms in trash', 'FRocket_admin' );
+		$data2['all']=$form_data->r_all;
+		$data2['trash']=$form_data->r_trash;
+		$data2['header_buttons']= List_data::get()->list_detail_form_headerbuttons();
+		$data2['script_trigger']= 'zgfm_back_general.formslist_trashsearch_process();';
+		$data2['subcurrent']= 2;
+		$data2['subsubsub'] = List_data::get()->subsubsub($data2);
+    
+    
+        $content=List_data::get()->show_list($data2);
+        //echo self::loadPartial2( 'layout.php', $content);
+        echo $this->template->loadPartial2( 'layout', $content );
+    }
+    
+    
+    /**
+	 * List trash forms
+	 *
+	 * @return void
+	 */
+	function ajax_trashformlist_sendfilter() {
+		 
+
+		$data_filter = ( isset( $_POST['data_filter'] ) && $_POST['data_filter'] ) ? $_POST['data_filter'] : '';
+
+		$opt_save   = ( isset( $_POST['opt_save'] ) && $_POST['opt_save'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['opt_save'] ) : 0;
+		$opt_offset = ( isset( $_POST['opt_offset'] ) && $_POST['opt_offset'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['opt_offset'] ) : 0;
+
+		parse_str( $data_filter, $data_filter_arr );
+
+		$per_page   = $data_filter_arr['zgfm-listform-pref-perpage'];
+		$orderby    = $data_filter_arr['zgfm-listform-pref-orderby'];
+
+		$data               = array();
+		$data['per_page']   = $per_page;
+		$data['orderby']    = $orderby;
+
+		if ( intval( $opt_save ) === 1 ) {
+			update_option( 'zgfm_listform_trash', $data );
+		}
+
+		$data['segment'] = 0;
+		$data['offset']  = $opt_offset;
+		
+ 
+		$result = $this->ajax_trashformlist_refresh( $data );
+
+		$json            = array();
+		$json['content'] = $result;
+
+		header( 'Content-Type: application/json' );
+		echo json_encode( $json );
+		die();
+	}
+    
+    /**
+	 * get forms in trash
+	 *
+	 * @param [type] $data
+	 * @return void
+	 */
+	function ajax_trashformlist_refresh( $data ) {
+
+		$this->load->library( 'pagination' );
+
+		$offset = $data['offset'];
+
+		// list all forms
+		$config                         = array();
+		$config['base_url']             = site_url() . 'formbuilder/forms/list_trash';
+		
+		$tmp = $this->model_forms->ListTotals();
+		$config['total_rows']           = $tmp->r_trash;
+		$config['per_page']             = $data['per_page'];
+		$config['first_link']           = 'First';
+		$config['last_link']            = 'Last';
+		$config['full_tag_open']        = '<ul class="pagination pagination-sm">';
+		$config['full_tag_close']       = '</ul>';
+		$config['first_tag_open']       = '<li>';
+		$config['first_tag_close']      = '</li>';
+		$config['last_tag_open']        = '<li>';
+		$config['last_tag_close']       = '</li>';
+		$config['cur_tag_open']         = '<li class="zgfm-pagination-active"><span>';
+		$config['cur_tag_close']        = '</span></li>';
+		$config['next_tag_open']        = '<li>';
+		$config['next_tag_close']       = '</li>';
+		$config['prev_tag_open']        = '<li>';
+		$config['prev_tag_close']       = '</li>';
+		$config['num_tag_open']         = '<li>';
+		$config['num_tag_close']        = '</li>';
+		$config['page_query_string']    = true;
+		$config['query_string_segment'] = 'offset';
+
+		$this->pagination->initialize( $config );
+		// If the pagination library doesn't recognize the current page add:
+		$this->pagination->cur_page = $offset;
+
+		$data2               = array();
+		$data2['per_page']   = $data['per_page'];
+		$data2['segment']    = $offset;
+		$data2['orderby']    = $data['orderby'];
+		$data2['query']      = $this->model_forms->getListTrashFormsFiltered( $data2 );
+		$data2['pagination'] = $this->pagination->create_links();
+		$data2['obj_list_data'] = List_data::get();
+		$data2['is_trash']  = 1;
+		
+		//$data2['list_buttons'] = List_data::get()->list_detail_form_buttons();
+		///$content=List_data::get()->list_detail($data3);
+        return List_data::get()->list_detail($data2);
+		
+		//return self::render_template( 'formbuilder/views/forms/list_forms_table.php', $data3 );
+	}
+    
+    /**
+	 * list forms
+	 *
+	 * @return void
+	 */
 	function ajax_formlist_sendfilter() {
 
 		$data_filter = ( isset( $_POST['data_filter'] ) && $_POST['data_filter'] ) ? $_POST['data_filter'] : '';

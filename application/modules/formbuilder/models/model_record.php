@@ -72,6 +72,87 @@ class model_record extends CI_Model {
 		return $query2->result();
 	}
 
+	/**
+	 * Show all records according to filter
+	 *
+	 * @param string $per_page
+	 * @param string $segment
+	 * @return void
+	 */
+	function getListAllRecordsFiltered( $data ) {
+	 
+		
+		$per_page   = $data['per_page'];
+		$segment    = $data['segment'];
+		$orderby    = $data['orderby'];
+
+		$query = sprintf(
+			'
+			select c.fbh_id,c.fbh_data,c.fbh_data_rec,
+			c.created_date,c.flag_status,c.fbh_data_user,c.form_fmb_id,c.fbh_data_rec_xml,c.fbh_user_agent,c.fbh_page,
+			c.fbh_referer,c.fbh_params,f.fmb_name
+			from %s c
+			join %s f on c.form_fmb_id=f.fmb_id
+			where c.flag_status>0 ',
+			$this->table,
+			$this->tbform
+		);
+ 
+		$orderby = ( $orderby === 'asc' ) ? 'asc' : 'desc';
+
+		$query .= sprintf( ' ORDER BY c.created_date %s ', $orderby );
+
+		if ( $per_page != '' || $segment != '' ) {
+			$segment = ( ! empty( $segment ) ) ? $segment : 0;
+			$query  .= sprintf( ' limit %s,%s', (int) $segment, (int) $per_page );
+		}
+
+		$query2 = $this->db->query( $query );
+		return $query2->result();
+		 
+	}
+	
+	/**
+	 * Show trash records according to filter
+	 *
+	 * @param string $per_page
+	 * @param string $segment
+	 * @return void
+	 */
+	function getListTrashRecordsFiltered( $data ) {
+	 
+		
+		$per_page   = $data['per_page'];
+		$segment    = $data['segment'];
+		$orderby    = $data['orderby'];
+
+		$query = sprintf(
+			'
+			select c.fbh_id,c.fbh_data,c.fbh_data_rec,
+			c.created_date,c.flag_status,c.fbh_data_user,c.form_fmb_id,c.fbh_data_rec_xml,c.fbh_user_agent,c.fbh_page,
+			c.fbh_referer,c.fbh_params,f.fmb_name
+			from %s c
+			join %s f on c.form_fmb_id=f.fmb_id
+			where c.flag_status=0 ',
+			$this->table,
+			$this->tbform
+		);
+ 
+		$orderby = ( $orderby === 'asc' ) ? 'asc' : 'desc';
+
+		$query .= sprintf( ' ORDER BY c.created_date %s ', $orderby );
+
+		if ( $per_page != '' || $segment != '' ) {
+			$segment = ( ! empty( $segment ) ) ? $segment : 0;
+			$query  .= sprintf( ' limit %s,%s', (int) $segment, (int) $per_page );
+		}
+
+		$query2 = $this->db->query( $query );
+		return $query2->result();
+		 
+	}
+
+
 	function getDetailRecord( $names, $form_id ) {
 		if ( intval( $form_id ) > 0 ) {
 			$unique_names = array();
@@ -305,7 +386,7 @@ class model_record extends CI_Model {
 			'select  f.fmb_name, frec.form_fmb_id, f.fmb_data,f.fmb_rec_tpl_st,f.fmb_rec_tpl_html,frec.fbh_data,f.fmb_data2
         from %s frec
         join %s f on f.fmb_id=frec.form_fmb_id
-        where frec.flag_status>0
+        where frec.flag_status>=0
         and frec.fbh_id=%s',
 			$this->table,
 			$this->tbform,
@@ -441,6 +522,26 @@ class model_record extends CI_Model {
 
 		$query2 = $this->db->query( $query );
 		return $query2->row();
+	}
+
+		/*
+	* list all and trash forms
+	*/
+	function ListTotals(){
+		$query = sprintf(
+			'
+			SELECT 
+			  SUM(CASE WHEN flag_status = 0 THEN 1 ELSE 0 END) AS r_trash,
+			  SUM(CASE WHEN flag_status != 0 THEN 1 ELSE 0 END) AS r_all
+			FROM %s
+			',
+			$this->table
+			
+		);
+
+		$query2 = $this->db->query( $query );
+		return $query2->row();
+	
 	}
 
 }

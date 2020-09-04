@@ -84,7 +84,44 @@ class model_forms extends CI_Model {
 	}
 
 	/**
-	 * model_forms::getListForms()
+	 * formsmodel::getListForms()
+	 * List form estimator
+	 *
+	 * @param int $per_page max number of form estimators
+	 * @param int $segment  Number of pagination
+	 *
+	 * @return array
+	 */
+	function getListTrashFormsFiltered( $data ) {
+
+		$per_page   = $data['per_page'];
+		$segment    = $data['segment'];
+		$orderby    = $data['orderby'];
+
+		$query = sprintf(
+			'
+			select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date,
+				uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2
+			from %s uf
+			where uf.flag_status=0 ',
+			$this->table
+		);
+ 
+		$orderby = ( $orderby === 'asc' ) ? 'asc' : 'desc';
+
+		$query .= sprintf( ' ORDER BY uf.updated_date %s ', $orderby );
+
+		if ( $per_page != '' || $segment != '' ) {
+			$segment = ( ! empty( $segment ) ) ? $segment : 0;
+			$query  .= sprintf( ' limit %s,%s', (int) $segment, (int) $per_page );
+		}
+
+		$query2 = $this->db->query( $query );
+		return $query2->result();
+	}
+
+	/**
+	 * formsmodel::getListForms()
 	 * List form estimator
 	 *
 	 * @param int $per_page max number of form estimators
@@ -228,7 +265,26 @@ class model_forms extends CI_Model {
 		return $this->db->get()->result();
 	}
 
+	/*
+	* list all and trash forms
+	*/
+	function ListTotals(){
+		$query = sprintf(
+			'
+			SELECT 
+			  SUM(CASE WHEN flag_status = 0 THEN 1 ELSE 0 END) AS r_trash,
+			  SUM(CASE WHEN flag_status != 0 THEN 1 ELSE 0 END) AS r_all
+			FROM %s
+			',
+			$this->table
+			
+		);
 
+		$query2 = $this->db->query( $query );
+		return $query2->row();
+	
+	}
+	
 
 }
 

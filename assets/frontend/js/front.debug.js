@@ -1170,7 +1170,7 @@ if (!$uifm.isFunction(rocketfm)) {
 						zgfm_front_helper.load_form_init_events(obj_form);
 						$(document).trigger('zgfm.form.init_loaded', { form: obj_form });
 
-						obj_form.on('click', '.rockfm-submitbtn.rockfm-field [type="submit"]', function (e) {
+						obj_form.on('click', '.rockfm-submitbtn.rockfm-field [type="button"],.rockfm-submitbtn.rockfm-field [type="submit"]', function (e) {
 							e.preventDefault();
 							var obj_form_alt = $(this).closest('.rockfm-form');
 							rocketfm.setInnerVariable('submitting_form_id', obj_form_alt.find('._rockfm_form_id').val());
@@ -1464,6 +1464,11 @@ if (!$uifm.isFunction(rocketfm)) {
 						var msg;
 						if (response) {
 							var arrJson = $.parseJSON(response);
+
+							if(arrJson.hasOwnProperty("success") && parseInt(arrJson['success']) === 0 ){
+								form_obj.html(arrJson['html_content']);
+								return;
+							}
 
 							rockfm_vars = arrJson.rockfm_vars_arr;
 							var scripts_arr = [];
