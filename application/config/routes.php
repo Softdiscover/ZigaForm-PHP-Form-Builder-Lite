@@ -40,7 +40,7 @@
 */
 
 $route['default_controller']   = 'formbuilder/frontend/index';
-$route['404_override']         = 'default/error/error';
+$route['404_override']         = 'default/zerror/index';
 $route['uiformbuilder/(:any)'] = 'formbuilder/frontend/$1';
 
 // ADMIN

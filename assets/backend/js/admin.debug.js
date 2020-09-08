@@ -9112,6 +9112,8 @@ if (!$uifm.isFunction(rocketform)) {
 							.input2settings_preview_genAllOptions();
 						break;
 				}
+
+				zgfm_back_input2.input2settings_refreshSortable();
 			};
 
 			arguments.callee.input2settings_deleteAllOptions = function () {
@@ -9191,17 +9193,26 @@ if (!$uifm.isFunction(rocketform)) {
 
 				var tmp_new_arr = {};
 				var tmp_var1, tmp_var2, tmp_var3;
+
+				var myObject = new Map();
+				var optkey;
 				for (var i in lines) {
 					tmp_var1 = lines[i][0] || '';
 					tmp_var2 = lines[i][1] || '';
 					tmp_var3 = lines[i][2] || '';
 
-					tmp_new_arr[i] = {
+					optkey = zgfm_back_helper.generateUniqueID(5);
+					myObject.set(optkey,  {
 						value: tmp_var2,
 						label: tmp_var1,
 						checked: 0
-					};
-				}
+					});
+
+ 				}
+
+					tmp_new_arr = Array.from(myObject).reduce((obj, [key, value]) => (
+						Object.assign(obj, { [key]: value }) 
+					  ), {}); 
 
 				rocketform.setUiData5('steps_src', parseInt(f_step), f_id, 'input2', 'options', tmp_new_arr);
 
@@ -9973,6 +9984,8 @@ if (!$uifm.isFunction(rocketform)) {
 						});
 						break;
 				}
+
+				zgfm_back_input2.input2settings_refreshSortable();
 			};
 
 			arguments.callee.input2settings_deleteOption = function (element) {
@@ -24149,11 +24162,15 @@ var uifmsetting;
 					prev_el_sel.find('input').prop('checked', opt_value);
 
 					if (parseInt(stl1_st) === 1) {
-						if (opt_value === 1) {
-							prev_el_sel.find('input').data('checkradios').form.radioEnable(prev_el_sel.find('input'));
-						} else {
-							prev_el_sel.find('input').data('checkradios').form.radioDisable(prev_el_sel.find('input'));
-						}
+
+												$('#' + f_id).find('input.uifm-inp2-rdo').each(function () {
+								if ($(this).is(':checked')) {
+									$(this).data('checkradios').form.radioEnable($(this));
+								} else {
+									$(this).data('checkradios').form.radioDisable($(this));
+								}
+
+							});
 					}
 
 					break;
@@ -29880,6 +29897,134 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 			};
 		};
 		window.zgfm_back_helper = zgfm_back_helper = $.zgfm_back_helper = new zgfm_back_helper();
+	})($uifm, window);
+}
+
+if (typeof $uifm === 'undefined') {
+	$uifm = jQuery;
+}
+var zgfm_back_input2 = zgfm_back_input2 || null;
+if (!$uifm.isFunction(zgfm_back_input2)) {
+	(function ($, window) {
+		'use strict';
+
+		var zgfm_back_input2 = function () {
+			var zgfm_variable = [];
+			zgfm_variable.innerVars = {};
+			zgfm_variable.externalVars = {};
+
+			this.initialize = function () {};
+
+			this.length_obj = function (obj) {
+				var count = 0;
+				for (var p in obj) {
+					obj.hasOwnProperty(p) && count++;
+				}
+				return count;
+			};
+
+			this.generateUniqueID = function (nrodec) {
+				var number = Math.random(); 
+				number.toString(36); 
+				var id = number.toString(36).substr(2, nrodec); 
+				return id;
+			};
+
+
+		    			this.input2settings_refreshSortable = function () {
+				$('#uifm-fld-inp2-options-container').sortable({
+					items: '.uifm-fld-inp2-options-row',
+					axis: 'y',
+					start: function (event, ui) {
+						$(ui.item).data('startindex', ui.item.index());
+					},
+					stop: function (event, ui) {
+					    var startIndex = ui.item.data('startindex');
+					    zgfm_back_input2.input2settings_sortOrder();
+					}
+				});
+			};
+
+						this.input2settings_sortOrder = function () {
+				try {
+
+									var f_id = $('#uifm-field-selected-id').val();
+				var f_step = $('#' + f_id)
+					.closest('.uiform-step-pane')
+					.data('uifm-step');
+				var f_type = rocketform.getUiData4('steps_src', f_step, f_id, 'type');
+				var field_options = rocketform.getUiData5('steps_src', f_step, f_id, 'input2', 'options');
+
+				 				var tmp_ul = $('#uifm-fld-inp2-options-container .uifm-fld-inp2-options-row');
+
+				var tmp_index, tmp_id, tmp_stored;
+
+				var tmp_new_index=0;
+				$.each(tmp_ul, function (index, value) {
+					tmp_index = $(this).data('opt-index');
+					tmp_stored = zgfm_back_input2.search_varId(field_options, tmp_index);
+					if (String(tmp_stored) != '') {
+						rocketform.setUiData7('steps_src', f_step, f_id, 'input2','options', tmp_stored['key'], 'order', tmp_new_index);
+					}
+
+										tmp_new_index++;
+				});
+
+									field_options = rocketform.getUiData5('steps_src', f_step, f_id, 'input2', 'options');
+
+					let new_field_options = Object.keys(field_options).sort(function(a,b){return field_options[a]['order']-field_options[b]['order']}).map(key => field_options[key]);
+
+					var result = zgfm_back_input2.input2settings_ArrayToObject(new_field_options);
+
+					let result2 = Array.from(result).reduce((obj, [key, value]) => (
+						Object.assign(obj, { [key]: value }) 
+					  ), {}); 
+
+					 					rocketform.setUiData5('steps_src', f_step, f_id, 'input2', 'options',{});
+					rocketform.setUiData5('steps_src', f_step, f_id, 'input2', 'options',result2);
+
+									} catch (error) {
+					console.error(error);
+
+					 				}
+			};
+
+			this.input2settings_ArrayToObject = function (arr) {
+
+				var myObject = new Map();
+
+				 				for (var i = 0; i < arr.length; i++) {
+						myObject.set(arr[i]['id'], arr[i]);
+				}
+				return myObject;
+			};
+
+			this.search_varId = function (obj, search) {
+				var returnKey = '';
+				var newobj = {};
+				$.each(obj, function (key, info) {
+					if (String(info.id) === String(search)) {
+						newobj['key'] = key;
+						newobj['data'] = info;
+						returnKey = newobj;
+						return false;
+					}
+				});
+
+				return returnKey;
+			};
+
+			this.convertIDsToIndex = function(options){
+				let new_options=[];
+				$.each(options, function (index, value) {
+					new_options.push(value);
+
+								});
+				return new_options;
+			};
+
+					};
+		window.zgfm_back_input2 = zgfm_back_input2 = $.zgfm_back_input2 = new zgfm_back_input2();
 	})($uifm, window);
 }
 

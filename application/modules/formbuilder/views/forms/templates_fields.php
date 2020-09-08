@@ -1984,13 +1984,18 @@ if ( ! defined( 'BASEPATH' ) ) {
 <div id="uifm_frm_inp2_templates" style="display:none;">
 	<div data-opt-index="0" class="uifm-fld-inp2-options-row clearfix">
 		<div class="sfdc-col-md-1">
+			<div class="zgfm_inp2_opt_sortablerow">
+			<i class="fa fa-sort"></i>
+			</div>
+		</div>
+		<div class="sfdc-col-md-1">
 			<input type="checkbox" 
 				class="uifm_frm_inp2_opt_checked"   
 				value="1"
 				onclick="javascript:rocketform.input2settings_statusRdoOption(this);"
 				id="uifm_frm_inp2_opt0_rdo">
 		</div>
-		<div class="sfdc-col-md-5">
+		<div class="sfdc-col-md-4">
 			<div class="sfdc-form-group">
 				<textarea id="uifm_frm_inp2_opt0_label"
 							onkeyup="rocketform.input2settings_labelOption(this);"
@@ -2002,13 +2007,13 @@ if ( ! defined( 'BASEPATH' ) ) {
 		</div>
 		<div class="sfdc-col-md-4">
 			<div class="sfdc-form-group">
-					<input type="text" 
+					<textarea  
 							id="uifm_frm_inp2_opt0_value"
 							onkeyup="rocketform.input2settings_valueOption(this);"
 							onfocus="rocketform.input2settings_valueOption(this);"
 							onchange="rocketform.input2settings_valueOption(this);"
 							class="uifm_frm_inp2_opt_value_evt col-md-12"
-							placeholder="<?php echo __( 'Type value', 'FRocket_admin' ); ?>"  class="sfdc-form-control">   
+							placeholder="<?php echo __( 'Type value', 'FRocket_admin' ); ?>"  class="sfdc-form-control"></textarea>  
 			</div>
 		</div>
 		<div class="sfdc-col-md-2">
@@ -2019,6 +2024,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 				<i class="fa fa-trash-o"></i> 
 			</a>
 		</div>
+		
 	</div>
 	<div class="sfdc-radio" data-inp2-opt-index="0">
 									<label>

@@ -10205,7 +10205,7 @@ a:focus {
   border-radius: 5px 5px 0 0;
   margin-right: 7px;
   padding: 10px 10px;
-  text-shadow: 1px 1px #ffffff;
+  /*text-shadow: 1px 1px #ffffff;*/
 }
 
 .uiform-wrap .uiform-editing-main .sfdc-nav-tabs > li.sfdc-active > a,
@@ -16278,3 +16278,23 @@ ol.inline li {
   padding: 0;
   white-space: nowrap;
 }
+
+.zgfm-tab-calc-mathvar-item a:after {
+  font-family: FontAwesome;
+  content: "\f0dc";
+  display: inline-block;
+  padding-right: 3px;
+  float: right;
+  cursor: move;
+}
+
+.zgfm_inp2_opt_sortablerow {
+  color: #fff000;
+  font-size: 15px;
+  cursor: move;
+}
+
+.uifm_frm_inp2_opt_checked {
+  text-align: center;
+}
+

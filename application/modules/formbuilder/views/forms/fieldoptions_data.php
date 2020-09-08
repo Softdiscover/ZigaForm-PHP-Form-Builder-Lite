@@ -6354,31 +6354,30 @@ zgfm_back_fld_options.selfld_field_opt_column();
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Remove all options&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_fillBlankValues();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-success&quot;&gt;
-			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Fill Empty Spaces&lt;/button&gt;
+			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Copy Label to Value&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_ImportBulkData();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-warning&quot;&gt;
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Import bulk data&lt;/button&gt;
 		&lt;/div&gt;
 		&lt;/div&gt;
 	   &lt;div class=&quot;space20&quot;&gt;&lt;/div&gt;
-	   &lt;div class=&quot;sfdc-row&quot;&gt;
+	   &lt;div class=&quot;clearfix&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
-				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
 					&lt;label &gt;Check&lt;/label&gt;   
 				&lt;/div&gt;
-				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
+					&lt;/div&gt;
+				&lt;div class=&quot;sfdc-col-md-3&quot;&gt;
 					&lt;label &gt;Label&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
 					&lt;label &gt;Value&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
-					
+					&lt;/div&gt;
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-fld-inp2-options-container&quot;&gt;
-
-				&lt;/div&gt;
-
 			&lt;/div&gt;
 		&lt;/div&gt;
 	   
@@ -6519,6 +6518,27 @@ zgfm_back_fld_options.selfld_field_opt_column();
 				&lt;/div&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
+		&lt;div class=&quot;uifm-set-section-input4-spinner-opts&quot;&gt;	
+	&lt;div class=&quot;sfdc-row&quot;&gt;
+			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+				 
+		&lt;div class=&quot;sfdc-form-group&quot;&gt;
+					&lt;label &gt;Decimals&lt;/label&gt;
+					&lt;input  
+						id=&quot;uifm_fld_inp4_spinner_decimals&quot;
+						data-field-store=&quot;input4-set_decimal&quot;
+						class=&quot;uifm_fld_inp2_stl1&quot;
+						type=&quot;text&quot; value=&quot;0&quot;&gt;
+				&lt;/div&gt;
+	 
+				
+			&lt;/div&gt;
+		 &lt;div class=&quot;sfdc-col-sm-6&quot;&gt;
+				 
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+			
 	&lt;div class=&quot;uifm-set-section-input4-range&quot;&gt;
 	&lt;div class=&quot;sfdc-row&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
@@ -11963,31 +11983,30 @@ zgfm_back_fld_options.selfld_field_opt_column();
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Remove all options&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_fillBlankValues();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-success&quot;&gt;
-			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Fill Empty Spaces&lt;/button&gt;
+			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Copy Label to Value&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_ImportBulkData();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-warning&quot;&gt;
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Import bulk data&lt;/button&gt;
 		&lt;/div&gt;
 		&lt;/div&gt;
 	   &lt;div class=&quot;space20&quot;&gt;&lt;/div&gt;
-	   &lt;div class=&quot;sfdc-row&quot;&gt;
+	   &lt;div class=&quot;clearfix&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
-				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
 					&lt;label &gt;Check&lt;/label&gt;   
 				&lt;/div&gt;
-				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
+					&lt;/div&gt;
+				&lt;div class=&quot;sfdc-col-md-3&quot;&gt;
 					&lt;label &gt;Label&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
 					&lt;label &gt;Value&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
-					
+					&lt;/div&gt;
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-fld-inp2-options-container&quot;&gt;
-
-				&lt;/div&gt;
-
 			&lt;/div&gt;
 		&lt;/div&gt;
 	   
@@ -12230,6 +12249,27 @@ zgfm_back_fld_options.selfld_field_opt_column();
 				&lt;/div&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
+		&lt;div class=&quot;uifm-set-section-input4-spinner-opts&quot;&gt;	
+	&lt;div class=&quot;sfdc-row&quot;&gt;
+			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+				 
+		&lt;div class=&quot;sfdc-form-group&quot;&gt;
+					&lt;label &gt;Decimals&lt;/label&gt;
+					&lt;input  
+						id=&quot;uifm_fld_inp4_spinner_decimals&quot;
+						data-field-store=&quot;input4-set_decimal&quot;
+						class=&quot;uifm_fld_inp2_stl1&quot;
+						type=&quot;text&quot; value=&quot;0&quot;&gt;
+				&lt;/div&gt;
+	 
+				
+			&lt;/div&gt;
+		 &lt;div class=&quot;sfdc-col-sm-6&quot;&gt;
+				 
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+			
 	&lt;div class=&quot;uifm-set-section-input4-range&quot;&gt;
 	&lt;div class=&quot;sfdc-row&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
@@ -17674,31 +17714,30 @@ zgfm_back_fld_options.selfld_field_opt_column();
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Remove all options&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_fillBlankValues();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-success&quot;&gt;
-			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Fill Empty Spaces&lt;/button&gt;
+			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Copy Label to Value&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_ImportBulkData();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-warning&quot;&gt;
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Import bulk data&lt;/button&gt;
 		&lt;/div&gt;
 		&lt;/div&gt;
 	   &lt;div class=&quot;space20&quot;&gt;&lt;/div&gt;
-	   &lt;div class=&quot;sfdc-row&quot;&gt;
+	   &lt;div class=&quot;clearfix&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
-				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
 					&lt;label &gt;Check&lt;/label&gt;   
 				&lt;/div&gt;
-				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
+					&lt;/div&gt;
+				&lt;div class=&quot;sfdc-col-md-3&quot;&gt;
 					&lt;label &gt;Label&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
 					&lt;label &gt;Value&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
-					
+					&lt;/div&gt;
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-fld-inp2-options-container&quot;&gt;
-
-				&lt;/div&gt;
-
 			&lt;/div&gt;
 		&lt;/div&gt;
 	   
@@ -17941,6 +17980,27 @@ zgfm_back_fld_options.selfld_field_opt_column();
 				&lt;/div&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
+		&lt;div class=&quot;uifm-set-section-input4-spinner-opts&quot;&gt;	
+	&lt;div class=&quot;sfdc-row&quot;&gt;
+			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+				 
+		&lt;div class=&quot;sfdc-form-group&quot;&gt;
+					&lt;label &gt;Decimals&lt;/label&gt;
+					&lt;input  
+						id=&quot;uifm_fld_inp4_spinner_decimals&quot;
+						data-field-store=&quot;input4-set_decimal&quot;
+						class=&quot;uifm_fld_inp2_stl1&quot;
+						type=&quot;text&quot; value=&quot;0&quot;&gt;
+				&lt;/div&gt;
+	 
+				
+			&lt;/div&gt;
+		 &lt;div class=&quot;sfdc-col-sm-6&quot;&gt;
+				 
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+			
 	&lt;div class=&quot;uifm-set-section-input4-range&quot;&gt;
 	&lt;div class=&quot;sfdc-row&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
@@ -23385,31 +23445,30 @@ zgfm_back_fld_options.selfld_field_opt_column();
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Remove all options&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_fillBlankValues();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-success&quot;&gt;
-			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Fill Empty Spaces&lt;/button&gt;
+			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Copy Label to Value&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_ImportBulkData();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-warning&quot;&gt;
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Import bulk data&lt;/button&gt;
 		&lt;/div&gt;
 		&lt;/div&gt;
 	   &lt;div class=&quot;space20&quot;&gt;&lt;/div&gt;
-	   &lt;div class=&quot;sfdc-row&quot;&gt;
+	   &lt;div class=&quot;clearfix&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
-				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
 					&lt;label &gt;Check&lt;/label&gt;   
 				&lt;/div&gt;
-				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
+					&lt;/div&gt;
+				&lt;div class=&quot;sfdc-col-md-3&quot;&gt;
 					&lt;label &gt;Label&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
 					&lt;label &gt;Value&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
-					
+					&lt;/div&gt;
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-fld-inp2-options-container&quot;&gt;
-
-				&lt;/div&gt;
-
 			&lt;/div&gt;
 		&lt;/div&gt;
 	   
@@ -23753,6 +23812,27 @@ zgfm_back_fld_options.selfld_field_opt_column();
 				&lt;/div&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
+		&lt;div class=&quot;uifm-set-section-input4-spinner-opts&quot;&gt;	
+	&lt;div class=&quot;sfdc-row&quot;&gt;
+			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+				 
+		&lt;div class=&quot;sfdc-form-group&quot;&gt;
+					&lt;label &gt;Decimals&lt;/label&gt;
+					&lt;input  
+						id=&quot;uifm_fld_inp4_spinner_decimals&quot;
+						data-field-store=&quot;input4-set_decimal&quot;
+						class=&quot;uifm_fld_inp2_stl1&quot;
+						type=&quot;text&quot; value=&quot;0&quot;&gt;
+				&lt;/div&gt;
+	 
+				
+			&lt;/div&gt;
+		 &lt;div class=&quot;sfdc-col-sm-6&quot;&gt;
+				 
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+			
 	&lt;div class=&quot;uifm-set-section-input4-range&quot;&gt;
 	&lt;div class=&quot;sfdc-row&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
@@ -29197,31 +29277,30 @@ zgfm_back_fld_options.selfld_field_opt_column();
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Remove all options&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_fillBlankValues();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-success&quot;&gt;
-			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Fill Empty Spaces&lt;/button&gt;
+			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Copy Label to Value&lt;/button&gt;
 			 &lt;button onclick=&quot;javascript:rocketform.input2settings_ImportBulkData();&quot; 
 					class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-warning&quot;&gt;
 			 &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Import bulk data&lt;/button&gt;
 		&lt;/div&gt;
 		&lt;/div&gt;
 	   &lt;div class=&quot;space20&quot;&gt;&lt;/div&gt;
-	   &lt;div class=&quot;sfdc-row&quot;&gt;
+	   &lt;div class=&quot;clearfix&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
-				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
 					&lt;label &gt;Check&lt;/label&gt;   
 				&lt;/div&gt;
-				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
+				&lt;div class=&quot;sfdc-col-md-1&quot;&gt;
+					&lt;/div&gt;
+				&lt;div class=&quot;sfdc-col-md-3&quot;&gt;
 					&lt;label &gt;Label&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-4&quot;&gt;
 					&lt;label &gt;Value&lt;/label&gt;   
 				&lt;/div&gt;
 				&lt;div class=&quot;sfdc-col-md-2&quot;&gt;
-					
+					&lt;/div&gt;
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-fld-inp2-options-container&quot;&gt;
-
-				&lt;/div&gt;
-
 			&lt;/div&gt;
 		&lt;/div&gt;
 	   
@@ -29565,6 +29644,27 @@ zgfm_back_fld_options.selfld_field_opt_column();
 				&lt;/div&gt;
 			&lt;/div&gt;
 		&lt;/div&gt;
+		&lt;div class=&quot;uifm-set-section-input4-spinner-opts&quot;&gt;	
+	&lt;div class=&quot;sfdc-row&quot;&gt;
+			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+				 
+		&lt;div class=&quot;sfdc-form-group&quot;&gt;
+					&lt;label &gt;Decimals&lt;/label&gt;
+					&lt;input  
+						id=&quot;uifm_fld_inp4_spinner_decimals&quot;
+						data-field-store=&quot;input4-set_decimal&quot;
+						class=&quot;uifm_fld_inp2_stl1&quot;
+						type=&quot;text&quot; value=&quot;0&quot;&gt;
+				&lt;/div&gt;
+	 
+				
+			&lt;/div&gt;
+		 &lt;div class=&quot;sfdc-col-sm-6&quot;&gt;
+				 
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+			
 	&lt;div class=&quot;uifm-set-section-input4-range&quot;&gt;
 	&lt;div class=&quot;sfdc-row&quot;&gt;
 			&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
