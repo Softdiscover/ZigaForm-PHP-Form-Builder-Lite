@@ -112,7 +112,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 		</div>
 			   <?php if ( isset( $addons_actions['back_exttab_block'] ) ) { ?>
 		<div id="uiformc-menu-sec7" class="sfdc-tab-pane ">
-			<div class="uiformc-tab-content-inner2 clearfix">
+			<div class="uiformc-tab-content-inner2 sfdc-clearfix">
 					<!-- load modules -->
 					<?php
 					if ( ! empty( $modules_tab_extension ) ) {

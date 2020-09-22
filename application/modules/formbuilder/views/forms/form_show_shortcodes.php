@@ -34,7 +34,7 @@ ob_start();
 						  <div class="widget widget-padding span12">
 							   
 							<div class="widget-body">
-							  <div class="widget-forms clearfix">
+							  <div class="widget-forms sfdc-clearfix">
 								  <div class="sfdc-alert sfdc-alert-info">
 									 <?php echo __( 'Copy and paste the shortcode to your WordPress site', 'FRocket_admin' ); ?>
 								  </div>

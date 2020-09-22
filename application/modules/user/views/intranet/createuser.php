@@ -25,7 +25,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 
 		</div>
 		<div class="widget-body">
-			<div class="widget-forms clearfix">
+			<div class="widget-forms sfdc-clearfix">
 				<?php
 				$use_id_var = ( isset( $use_id ) ) ? $use_id : '';
 				$attributes = array(

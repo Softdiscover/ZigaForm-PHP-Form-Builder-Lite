@@ -31,7 +31,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 				
 			</div>  
 			<div class="widget-body">
-			   <div class="widget-forms clearfix">
+			   <div class="widget-forms sfdc-clearfix">
 				   
 				   <div class="sfdc-form-group">
 					   <label class="sfdc-col-md-2 control-label"><?php echo __( 'Name backup', 'FRocket_admin' ); ?></label>

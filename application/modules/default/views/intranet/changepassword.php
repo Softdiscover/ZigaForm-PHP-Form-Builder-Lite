@@ -54,7 +54,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 														
 														
 												</div>  
-											<div class="widget-body clearfix" style="padding:25px;">
+											<div class="widget-body sfdc-clearfix" style="padding:25px;">
 												<!-- form elements section -->
 												<?php
 												echo form_open( 'default/intranet/processchangepassword/?', 'name="login"' );

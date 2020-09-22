@@ -134,7 +134,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 		</div>
 		</div>
 	   <div class="space20"></div>
-	   <div class="clearfix">
+	   <div class="sfdc-clearfix">
 			<div class="sfdc-col-md-12">
 				<div class="sfdc-col-md-1">
 					<label ><?php echo __( 'Check', 'FRocket_admin' ); ?></label>   

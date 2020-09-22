@@ -54,18 +54,18 @@ if ( ! defined( 'BASEPATH' ) ) {
 														
 														
 												</div>  
-											<div class="widget-body clearfix" style="padding:25px;">
+											<div class="widget-body sfdc-clearfix" style="padding:25px;">
 												<!-- form elements section -->
 												<?php
 												echo form_open( 'default/intranet/authenticate/', 'name="login"' );
 												?>
-												<div class="sfdc-form-group  clearfix">
+												<div class="sfdc-form-group  sfdc-clearfix">
 												   
 															<input name="username" class="sfdc-form-control col-md-12" type="text" id="inputEmail" placeholder="Username">
 														
 												   
 												</div>
-												<div class="sfdc-form-group  clearfix">
+												<div class="sfdc-form-group  sfdc-clearfix">
 												   
 															<input name="password" class="sfdc-form-control col-md-12" type="password" id="inputPassword" placeholder="Password">
 													   

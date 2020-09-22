@@ -31,7 +31,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 				
 			</div>  
 			<div class="widget-body">
-			   <div class="widget-forms clearfix">
+			   <div class="widget-forms sfdc-clearfix">
 				   <form 
 					   id="uifrm-setting-form"
 					   chartset="utf-8"

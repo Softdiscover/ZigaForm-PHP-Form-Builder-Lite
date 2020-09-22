@@ -33,7 +33,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 			 <div class="widget widget-padding span12">
 			  
 			<div class="widget-body">
-			  <div class="widget-forms clearfix">
+			  <div class="widget-forms sfdc-clearfix">
 				  
 				  <div class="sfdc-form-group">
 					<label class=" col-sm-2 control-label"><?php echo __( 'Widget code', 'FRocket_admin' ); ?></label>

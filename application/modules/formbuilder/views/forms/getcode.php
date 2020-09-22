@@ -24,7 +24,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 			  <i class="fa fa-list-alt"></i><h5><?php echo __( 'Your Form code', 'FRocket_admin' ); ?>  </h5>
 			</div>
 			<div class="widget-body">
-			  <div class="widget-forms clearfix">
+			  <div class="widget-forms sfdc-clearfix">
 				 
 				  <div class="sfdc-form-group">
 					<label class=" sfdc-col-sm-2 sfdc-control-label"><?php echo __( 'Widget code', 'FRocket_admin' ); ?></label>
@@ -70,7 +70,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 			  <i class="fa fa-list-alt"></i><h5><?php echo __( 'Cached Content', 'FRocket_admin' ); ?>  </h5> <span style="color:red;"><i>(BETA)</i></span>
 			</div>
 			<div class="widget-body">
-			  <div class="widget-forms clearfix">                  
+			  <div class="widget-forms sfdc-clearfix">                  
 				  
 				  <div class="sfdc-alert sfdc-alert-info">
 										<strong><?php echo __( 'Info', 'FRocket_admin' ); ?></strong>  <?php echo __( 'Cached content allow to load directly the files needed for the form. just copy the "scripts" part and past into head tag or footer of your html content. And copy the "HTML content" and paste inside the body tag of your html content.', 'FRocket_admin' ); ?> 

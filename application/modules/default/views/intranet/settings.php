@@ -36,7 +36,7 @@ if ( $this->session->flashdata( 'message' ) ) {
 
 		</div>
 		<div class="widget-body">
-			<div class="widget-forms clearfix">
+			<div class="widget-forms sfdc-clearfix">
 				<?php
 				$attributes = array(
 					'class' => 'form-horizontal',

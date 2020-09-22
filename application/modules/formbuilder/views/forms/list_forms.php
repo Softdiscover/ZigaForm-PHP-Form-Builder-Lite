@@ -165,7 +165,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					
 				</div>
 				<?php echo $subsubsub; ?>
-				<div id="zgfm-back-listform-maintable-container" class="clear clearfix"></div>
+				<div id="zgfm-back-listform-maintable-container" class="sfdc-clearfix"></div>
 			</div> 
 		</div> 
 	</div>
