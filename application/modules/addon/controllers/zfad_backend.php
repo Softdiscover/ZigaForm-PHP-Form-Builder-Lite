@@ -95,7 +95,7 @@ class zfad_backend extends BackendController {
 
 		$data          = array();
 		$data['query'] = $this->model_addon->getListAddons( 100, 0 );
-
+		$data['wp_version']=UIFORM_VERSION;
 		// $this->template->loadPartial('layout', 'addon/zfad_backend/list_extensions', $data);
 		$this->template->loadPartial( 'layout', 'backend/list_extensions', $data );
 	}

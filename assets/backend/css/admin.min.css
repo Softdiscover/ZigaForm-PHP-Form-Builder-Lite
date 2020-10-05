@@ -39,3 +39,4 @@ body{margin-top:50px}#wrapper{padding-left:0}#page-wrapper{margin-top:62px;width
 .zgfm_inp2_opt_sortablerow{color:#fff000;font-size:15px;cursor:move}.uifm_frm_inp2_opt_checked{text-align:center}
 
 .sfdc-clearfix{clear:both}
+#zgfm-extensions-page .list-options ul li:first-child{color:#4169e1}#zgfm-extensions-page .list-options ul li{display:inline;margin-right:10px}#zgfm-extensions-page .list-options ul .fa-check-square{color:#038b03}#zgfm-extensions-page .list-options ul .fa-window-close{color:red}

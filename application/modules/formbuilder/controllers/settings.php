@@ -227,45 +227,9 @@ class Settings extends BackendController {
 		$data  = array();
 		$query = $this->model_settings->getOptions();
 
-		$list_lang         = array();
-		$list_lang[]       = array(
-			'val'   => '',
-			'label' => __( 'Select language', 'FRocket_admin' ),
-		);
-		$list_lang[]       = array(
-			'val'   => 'en',
-			'label' => __( 'english', 'FRocket_admin' ),
-		);
-		$list_lang[]       = array(
-			'val'   => 'es',
-			'label' => __( 'spanish', 'FRocket_admin' ),
-		);
-		$list_lang[]       = array(
-			'val'   => 'fr',
-			'label' => __( 'french', 'FRocket_admin' ),
-		);
-		$list_lang[]       = array(
-			'val'   => 'de',
-			'label' => __( 'german', 'FRocket_admin' ),
-		);
-		$list_lang[]       = array(
-			'val'   => 'it',
-			'label' => __( 'italian', 'FRocket_admin' ),
-		);
-		$list_lang[]       = array(
-			'val'   => 'pt',
-			'label' => __( 'portuguese', 'FRocket_admin' ),
-		);
-		$list_lang[]       = array(
-			'val'   => 'ru',
-			'label' => __( 'russian', 'FRocket_admin' ),
-		);
-		$list_lang[]       = array(
-			'val'   => 'zh',
-			'label' => __( 'chinese', 'FRocket_admin' ),
-		);
-		$data['language']  = $query->language;
-		$data['lang_list'] = $list_lang;
+		$pofilespath=FCPATH.'i18n/languages/backend/';    
+		$data['language']        = $query->language;
+		$data['lang_list']       = Uiform_Form_Helper::getLanguageList($pofilespath);
 
 		$data['fields_fastload'] = get_option( 'zgfm_fields_fastload', 0 );
 

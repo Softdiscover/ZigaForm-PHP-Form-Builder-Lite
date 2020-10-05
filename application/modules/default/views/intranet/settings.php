@@ -69,9 +69,9 @@ if ( $this->session->flashdata( 'message' ) ) {
 
 						foreach ( $lang_list as $key => $frow ) :
 							?>
-							<?php $sel = ( $key == $language ) ? ' selected="selected"' : ''; ?>
-							<option value="<?php echo $key; ?>" <?php echo $sel; ?>>
-							  <?php echo $frow; ?>
+							<?php $sel = ( $frow['val'] == $language ) ? ' selected="selected"' : ''; ?>
+							<option value="<?php echo $frow['val']; ?>" <?php echo $sel; ?>>
+							  <?php echo $frow['label']; ?>
 							</option>
 							<?php
 						endforeach;

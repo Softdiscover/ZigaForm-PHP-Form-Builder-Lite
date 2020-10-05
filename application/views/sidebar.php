@@ -34,6 +34,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 			<li><a href="<?php echo site_url(); ?>default/intranet/help"><i class="fa fa-question-circle"></i> <?php echo __( 'Help', 'FRocket_admin' ); ?></a></li>
 			<li><a href="<?php echo site_url(); ?>default/intranet/about"><i class="fa fa-info"></i> <?php echo __( 'About', 'FRocket_admin' ); ?></a></li>
 			<li><a href="<?php echo site_url(); ?>default/intranet/showfilemanager"><i class="fa fa-code"></i> <?php echo __( 'File manager', 'FRocket_admin' ); ?></a></li>
+			<li><a href="<?php echo site_url(); ?>addon_mgtranslate/zfaddn_mgtranslate_back/show_list"><i class="fa fa-globe" aria-hidden="true"></i> <?php echo __( 'Translation Manager', 'FRocket_admin' ); ?></a></li>
 			<?php if ( ZIGAFORM_F_LITE == 1 ) { ?>
 			<li><a href="<?php echo site_url(); ?>default/intranet/gopro"><i class="fa fa-angle-right"></i> <?php echo __( 'Go Pro', 'FRocket_admin' ); ?></a></li>
 			<?php } ?>

@@ -1,0 +1,3610 @@
+# Copyright (C) 2020 Zigaform WP Cost Estimation Form Builder 5.0.5
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.0.5 package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Rocket form\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: softdiscover <info@softdiscover.com>\n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: application/views/captions.php:6
+msgid "Removing"
+msgstr "删除"
+
+#: application/views/captions.php:7
+msgid "Form saved"
+msgstr "Form Name"
+
+#: application/views/captions.php:8
+msgid "Processing"
+msgstr "Processing"
+
+#: application/views/captions.php:9
+msgid "Loading"
+msgstr "加载中"
+
+#: application/views/captions.php:10
+msgid "Saving"
+msgstr "Saving"
+
+#: application/views/footer-global.php:18, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:88, application/modules/formbuilder/views/forms/create_form_modals.php:31, application/modules/formbuilder/views/forms/formhtml_form.php:131, application/modules/formbuilder/views/forms/modal1_footer.php:19, application/modules/formbuilder/views/forms/templates_fields.php:1924, application/modules/formbuilder/views/fields/render_front/block_label.php:88, application/modules/formbuilder/views/fields/templates/prevpanel_main.php:43, application/modules/formbuilder/views/fields/options/select/impbulkdata_footer.php:20
+msgid "Close"
+msgstr "关闭"
+
+#: application/views/footer.php:32
+msgid "Regenerate"
+msgstr "Regenerate"
+
+#: application/views/footer.php:43
+msgid "Tour guide info"
+msgstr "旅游指南信息"
+
+#: application/views/footer.php:44
+msgid "there is not tour guide for this page. press the accept button"
+msgstr "不是此页面的导游。按接受按钮"
+
+#: application/views/footer.php:45
+msgid "Success! Updated successfully"
+msgstr "Success! Updated successfully"
+
+#: application/views/footer.php:46
+msgid "Form was created"
+msgstr "Form was created"
+
+#: application/views/footer.php:47, application/modules/formbuilder/controllers/forms.php:658
+msgid ""
+"Success! The form was created. Now just copy and paste the shortcode to "
+"your content"
+msgstr ""
+"Success! The form was created. Now just copy and paste the shortcode to "
+"your content"
+
+#: application/views/footer.php:48
+msgid ""
+"the form did not loaded properly. Press regenerate button in order to "
+"recover the form"
+msgstr ""
+"the form did not loaded properly. Press regenerate button in order to "
+"recover the form"
+
+#: application/views/footer.php:52
+msgid "Regenerate Form"
+msgstr "Regenerate Form"
+
+#: application/views/footer.php:54, application/modules/formbuilder/views/forms/templates_fields.php:1974
+msgid "Delete field selected"
+msgstr "删除所选字段"
+
+#: application/views/footer.php:55, application/modules/formbuilder/views/forms/templates_fields.php:1975
+msgid "Are you sure?"
+msgstr "您确定吗？"
+
+#: application/views/footer.php:56, application/modules/default/views/intranet/settings.php:194, application/modules/formbuilder/views/forms/templates_fields.php:1976, application/modules/user/views/intranet/createuser.php:90
+msgid "Cancel"
+msgstr "取消"
+
+#: application/views/footer.php:57, application/modules/formbuilder/views/forms/templates_fields.php:1977
+msgid "Yes"
+msgstr "好的"
+
+#: application/views/footer.php:60, application/modules/formbuilder/views/forms/templates_fields.php:1980
+msgid "Are you sure about this?"
+msgstr "您确定吗？"
+
+#: application/views/header-uiform.php:10
+msgid "Toggle navigation"
+msgstr "切换导航"
+
+#: application/views/header-uiform.php:22, application/views/sidebar.php:27
+msgid "Forms"
+msgstr "表格"
+
+#: application/views/header-uiform.php:24
+msgid "New"
+msgstr "新建"
+
+#: application/views/header-uiform.php:26, application/modules/default/views/intranet/settings.php:191, application/modules/default/views/intranet/settings.php:189, application/modules/user/views/intranet/createuser.php:85, application/modules/user/views/intranet/createuser.php:83
+msgid "Save"
+msgstr "保存"
+
+#: application/views/header-uiform.php:29
+msgid "List forms"
+msgstr "列表窗体"
+
+#: application/views/header-uiform.php:38
+msgid "Templates"
+msgstr "模板"
+
+#: application/views/header-uiform.php:41
+msgid "Contact us"
+msgstr "بىز بىلەن ئالاقىلىشىڭ"
+
+#: application/views/header-uiform.php:44
+msgid "Newsletter"
+msgstr "新闻简报"
+
+#: application/views/header-uiform.php:47
+msgid "Survey Questionnaire"
+msgstr "调查问卷"
+
+#: application/views/header-uiform.php:50
+msgid "Online event registration"
+msgstr "在线事件注册"
+
+#: application/views/header-uiform.php:53
+msgid "Reservation Request"
+msgstr "Reservation Request"
+
+#: application/views/header-uiform.php:56
+msgid "Purchase Order - Point Of Sale"
+msgstr "采购订单-销售点"
+
+#: application/views/header-uiform.php:59
+msgid "Website Design Request"
+msgstr "网站设计要求"
+
+#: application/views/header-uiform.php:62
+msgid "Job Application"
+msgstr "求职申请"
+
+#: application/views/header-uiform.php:65
+msgid "CV Submission"
+msgstr "简历提交"
+
+#: application/views/header-uiform.php:68
+msgid "Order form"
+msgstr "Order form"
+
+#: application/views/header-uiform.php:74
+msgid "wizard form"
+msgstr "向导窗体"
+
+#: application/views/header-uiform.php:78
+msgid "All fields"
+msgstr "全部字段"
+
+#: application/views/header-uiform.php:81, application/modules/default/views/intranet/gopro.php:103
+msgid "Conditional Logic"
+msgstr "开启逻辑条件"
+
+#: application/views/header-uiform.php:84
+msgid "Custom skin"
+msgstr "自定义外观"
+
+#: application/views/header-uiform.php:91
+msgid "Preview"
+msgstr "预览"
+
+#: application/views/header-uiform.php:95
+msgid "desktop"
+msgstr "桌面"
+
+#: application/views/header-uiform.php:98, application/modules/formbuilder/views/forms/create_form_modals.php:39
+msgid "Tablet"
+msgstr "平板"
+
+#: application/views/header-uiform.php:101
+msgid "smartphone"
+msgstr "智能手机"
+
+#: application/views/header-uiform.php:108, application/modules/formbuilder/views/forms/create_form.php:74
+msgid "Records"
+msgstr "记录"
+
+#: application/views/header-uiform.php:111
+msgid "List all Forms"
+msgstr "请列出所有形式"
+
+#: application/views/header-uiform.php:124
+msgid "List by Form"
+msgstr "List by Form"
+
+#: application/views/header-uiform.php:119
+msgid "Filter records"
+msgstr "Filter records"
+
+#: application/views/header-uiform.php:137, application/views/header-uiform.php:132
+msgid "Custom Report"
+msgstr "自定义报告"
+
+#: application/views/header-uiform.php:146, application/modules/formbuilder/views/forms/create_form.php:70
+msgid "Import"
+msgstr "导入"
+
+#: application/views/header-uiform.php:149
+msgid "Export"
+msgstr "导出"
+
+#: application/views/header-uiform.php:152
+msgid "Charts"
+msgstr "統計圖表"
+
+#: application/views/header-uiform.php:157
+msgid "Form Settings"
+msgstr "Form Settings"
+
+#: application/views/header-uiform.php:162, application/modules/default/views/intranet/gopro.php:83, application/modules/formbuilder/views/settings/backup_settings.php:29
+msgid "Backup"
+msgstr "背景"
+
+#: application/views/header-uiform.php:167
+msgid "Guided tour"
+msgstr "使用指南"
+
+#: application/views/header-uiform.php:172
+msgid "System Check"
+msgstr "System Check"
+
+#: application/views/header-uiform.php:178, application/views/sidebar.php:34
+msgid "Help"
+msgstr "Help"
+
+#: application/views/header-uiform.php:181
+msgid "Documentation"
+msgstr "Documentation"
+
+#: application/views/header-uiform.php:185
+msgid "Forum"
+msgstr "Forum"
+
+#: application/views/header-uiform.php:188
+msgid "Zigaform Community"
+msgstr "Zigaform Community"
+
+#: application/views/header-uiform.php:194, application/modules/addon/views/backend/list_extensions.php:27, application/modules/formbuilder/views/forms/create_form.php:42, application/modules/formbuilder/views/forms/create_form.php:43
+msgid "Extensions"
+msgstr "Extensions"
+
+#: application/views/header.php:43, application/modules/default/views/intranet/settings.php:35, application/modules/formbuilder/views/forms/create_form_main.php:114, application/modules/formbuilder/views/fields/modal/settings_field_input_14.php:23, application/modules/formbuilder/views/fields/modal/settings_field_input_15.php:23
+msgid "Settings"
+msgstr "设置"
+
+#: application/views/header.php:45
+msgid "Log out"
+msgstr "Log out"
+
+#: application/views/sidebar.php:29, application/modules/user/views/intranet/index.php:36
+msgid "Users"
+msgstr "Users"
+
+#: application/views/sidebar.php:30
+msgid "More Settings"
+msgstr "More Settings"
+
+#: application/views/sidebar.php:35
+msgid "About"
+msgstr "About"
+
+#: application/views/sidebar.php:36, application/modules/default/views/intranet/showfilemanager.php:21
+msgid "File manager"
+msgstr "File manager"
+
+#: application/views/sidebar.php:37, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:83, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:157, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:256, application/modules/addon_mgtranslate/views/backend/show_list.php:24
+msgid "Translation Manager"
+msgstr "翻译错误消息"
+
+#: application/views/sidebar.php:39
+msgid "Go Pro"
+msgstr "Go Pro"
+
+#: application/views/frontend/footer.php:22
+msgid "All Rights Reserved."
+msgstr "All Rights Reserved."
+
+#: application/views/frontend/footer.php:26
+msgid "Powered by ZigaForm"
+msgstr "Powered by ZigaForm"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:238
+msgid "Customs"
+msgstr "自定义css"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:263
+msgid "Attention Seekers"
+msgstr "Attention Seekers"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:300
+msgid "Bouncing Entrances"
+msgstr "Bouncing Entrances"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:326
+msgid "Bouncing Exits"
+msgstr "Bouncing Exits"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:352
+msgid "Fading Entrances"
+msgstr "Fading Entrances"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:394
+msgid "Fading Exits"
+msgstr "右填充"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:435
+msgid "Flippers"
+msgstr "Flippers"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:460
+msgid "Lightspeed"
+msgstr "加亮"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:473
+msgid "Rotating Entrances"
+msgstr "Rotating Entrances"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:498
+msgid "Rotating Exits"
+msgstr "Rotating Exits"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:523
+msgid "Specials"
+msgstr "Specials"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:540
+msgid "Zoom Entrances"
+msgstr "Zoom Entrances"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:565
+msgid "Zoom Exits"
+msgstr "Zoom Exits"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:590
+msgid "Slide Entrances"
+msgstr "Slide Entrances"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:611
+msgid "Slide Exits"
+msgstr "Slide Exits"
+
+#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:115
+msgid "New translation created successfully"
+msgstr "New translation created successfully"
+
+#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:132
+msgid "Error! An error ocurred during the process"
+msgstr "Error! An error ocurred during the process"
+
+#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:160
+msgid "Create New"
+msgstr "创建"
+
+#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:257
+msgid "Translation saved successfully"
+msgstr "Translation saved successfully"
+
+#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:315, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:315, application/modules/addon_mgtranslate/views/backend/ajax_load_pofile.php:36
+msgid "Translation"
+msgstr "Translation"
+
+#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:371
+msgid ""
+"Extension is not availabe. Go to Extensions Header menu and activate "
+"Translation Manager Add-on"
+msgstr ""
+"Extension is not availabe. Go to Extensions Header menu and activate "
+"Translation Manager Add-on"
+
+#: application/modules/formbuilder/controllers/fields.php:223
+msgid "Import Bulk Data"
+msgstr "Import Bulk Data"
+
+#: application/modules/formbuilder/controllers/fields.php:286, application/modules/formbuilder/views/forms/templates_fields.php:73
+msgid "Column"
+msgstr "Column"
+
+#: application/modules/formbuilder/controllers/forms.php:245
+msgid "Rollback Form"
+msgstr "Rollback Form"
+
+#: application/modules/formbuilder/controllers/forms.php:264
+msgid "Error message"
+msgstr "自定义错误消息"
+
+#: application/modules/formbuilder/controllers/forms.php:285
+msgid "Form variables"
+msgstr "Form Name"
+
+#: application/modules/formbuilder/controllers/forms.php:661
+msgid "Success"
+msgstr "成功提示信息"
+
+#: application/modules/formbuilder/controllers/forms.php:676, application/modules/formbuilder/controllers/forms.php:2892, application/modules/formbuilder/controllers/forms.php:2952
+msgid "Shortcodes"
+msgstr "简码"
+
+#: application/modules/formbuilder/controllers/forms.php:748, application/modules/formbuilder/controllers/forms.php:778
+msgid "Error! User has no permission to edit this form"
+msgstr "Error! User has no permission to edit this form"
+
+#: application/modules/formbuilder/controllers/forms.php:2537
+msgid "Forms in trash"
+msgstr "Form Name"
+
+#: application/modules/formbuilder/controllers/frontend.php:150
+msgid "paypal success message"
+msgstr "paypal success message"
+
+#: application/modules/formbuilder/controllers/frontend.php:153
+msgid "error found while submitting"
+msgstr "error found while submitting"
+
+#: application/modules/formbuilder/controllers/frontend.php:156
+msgid "Offline success"
+msgstr "Offline success"
+
+#: application/modules/formbuilder/controllers/frontend.php:1337
+msgid "Order summary"
+msgstr "Order summary"
+
+#: application/modules/formbuilder/controllers/records.php:405
+msgid "Entry information"
+msgstr "输入信息"
+
+#: application/modules/formbuilder/controllers/records.php:406, application/modules/formbuilder/views/records/info_record.php:28
+msgid "Submitted form data"
+msgstr "提交的表单数据"
+
+#: application/modules/formbuilder/controllers/records.php:407, application/modules/formbuilder/views/records/info_record.php:82
+msgid "Additional info"
+msgstr "附加信息"
+
+#: application/modules/formbuilder/controllers/records.php:408, application/modules/formbuilder/views/forms/fields_available.php:787, application/modules/formbuilder/views/records/info_record.php:85, application/modules/formbuilder/views/records/list_records_getdatatable.php:24, application/modules/formbuilder/views/settings/backup_settings.php:66
+msgid "Date"
+msgstr "日期"
+
+#: application/modules/formbuilder/controllers/records.php:409, application/modules/formbuilder/views/records/info_record.php:89
+msgid "IP"
+msgstr "IP"
+
+#: application/modules/formbuilder/controllers/records.php:410, application/modules/formbuilder/views/records/info_record.php:93
+msgid "Client PC info"
+msgstr "客户端 PC 信息"
+
+#: application/modules/formbuilder/controllers/records.php:411
+msgid "Form URL"
+msgstr "URL形式"
+
+#: application/modules/formbuilder/controllers/records.php:412, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:55, application/modules/formbuilder/views/forms/create_form_main.php:88, application/modules/formbuilder/views/forms/create_form_modals.php:114, application/modules/formbuilder/views/forms/settings_form_email.php:562, application/modules/formbuilder/views/records/info_record.php:101
+msgid "Form name"
+msgstr "Form Name"
+
+#: application/modules/formbuilder/controllers/records.php:445
+msgid "Records list"
+msgstr "记录"
+
+#: application/modules/formbuilder/controllers/records.php:478
+msgid "Records in trash"
+msgstr "记录"
+
+#: application/modules/addon/views/backend/list_extensions.php:64
+msgid "locked"
+msgstr "模块"
+
+#: application/modules/addon/views/backend/list_extensions.php:58
+msgid ""
+"This addon is not compatible with your site. try to upgrade your site and "
+"fullfil the requirements."
+msgstr ""
+"This addon is not compatible with your site. try to upgrade your site and "
+"fullfil the requirements."
+
+#: application/modules/addon/views/backend/list_extensions.php:53, application/modules/formbuilder/views/forms/list_forms.php:48
+msgid "Disable"
+msgstr "禁用"
+
+#: application/modules/addon/views/backend/list_extensions.php:50, application/modules/formbuilder/views/forms/list_forms.php:57, application/modules/formbuilder/views/records/custom_report_getAllfields.php:24
+msgid "Enable"
+msgstr "启用"
+
+#: application/modules/addon/views/backend/list_extensions.php:77
+msgid "Requirements"
+msgstr "必须的"
+
+#: application/modules/addon/views/backend/list_extensions.php:79
+msgid "PHP"
+msgstr "PHP"
+
+#: application/modules/addon_func_anim/views/backend/get_field_back_animation.php:24
+msgid "Animation"
+msgstr "输入信息"
+
+#: application/modules/addon_func_anim/views/backend/get_field_back_animation.php:31
+msgid "Choose animation"
+msgstr "选择所需的图标"
+
+#: application/modules/addon_func_anim/views/backend/get_field_back_animation.php:53
+msgid "Show animation"
+msgstr "表单中的信息"
+
+#: application/modules/addon_func_anim/views/backend/get_field_back_animation.php:70
+msgid "Animation delay"
+msgstr "Animation delay"
+
+#: application/modules/addon_mgtranslate/views/backend/ajax_load_pofile.php:25, application/modules/default/views/intranet/settings.php:64, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:156, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:157, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:23
+msgid "Language"
+msgstr "语言"
+
+#: application/modules/addon_mgtranslate/views/backend/ajax_load_pofile.php:25
+msgid "Side"
+msgstr "Side"
+
+#: application/modules/addon_mgtranslate/views/backend/ajax_load_pofile.php:35
+msgid "Message ID"
+msgstr "Message ID"
+
+#: application/modules/addon_mgtranslate/views/backend/ajax_new_lang.php:24
+msgid "Add a Wordpress locale code or a custom name"
+msgstr "Add a Wordpress locale code or a custom name"
+
+#: application/modules/addon_mgtranslate/views/backend/ajax_new_lang.php:26
+msgid ""
+"it is recommended to add Wordpress Local Code (e.g. nl_NL) as new "
+"translation name or just add a new custom name."
+msgstr ""
+"it is recommended to add Wordpress Local Code (e.g. nl_NL) as new "
+"translation name or just add a new custom name."
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:31
+msgid "Select Language"
+msgstr "选择图像"
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:47
+msgid "Select side"
+msgstr "选择文件"
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:49
+msgid "Admin-side"
+msgstr "Admin-side"
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:50
+msgid "Client-side"
+msgstr "Client-side"
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:56, application/modules/addon_mgtranslate/views/backend/show_list.php:57
+msgid "Fill empty spaces"
+msgstr "Fill empty spaces"
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:67
+msgid ""
+"Warning! if you have some changes on the translations and you are about to "
+"make an upgrade of the software, make a backup before, just copying the po "
+"and mo files from the next directory: "
+msgstr ""
+"Warning! if you have some changes on the translations and you are about to "
+"make an upgrade of the software, make a backup before, just copying the po "
+"and mo files from the next directory: "
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:68
+msgid ""
+"Then after the upgrade is done, just replace/overwrite the po and mo files "
+"using your backup in order to keep the changes. also you can send your "
+"translations to zigaform.com  in order to keep your translations on future "
+"version updates. "
+msgstr ""
+"Then after the upgrade is done, just replace/overwrite the po and mo files "
+"using your backup in order to keep the changes. also you can send your "
+"translations to zigaform.com in order to keep your translations on future "
+"version updates. "
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:87, application/modules/addon_mgtranslate/views/backend/show_list.php:84
+msgid "Create New Language"
+msgstr "Create New Language"
+
+#: application/modules/addon_mgtranslate/views/backend/show_list.php:88, application/modules/addon_mgtranslate/views/backend/show_list.php:85, application/modules/formbuilder/views/records/custom_report.php:53
+msgid "Save Changes"
+msgstr "保存更改"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:31
+msgid "Webhook settings"
+msgstr "Webhook settings"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:38
+msgid "Send data collected through forms to other services"
+msgstr "Send data collected through forms to other services"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:46
+msgid "Webhook Status"
+msgstr "状态"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:50
+msgid "disabled"
+msgstr "禁用"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:54
+msgid "enabled"
+msgstr "启用"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:59
+msgid "Webhook URL"
+msgstr "Webhook URL"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:65
+msgid "Content Type"
+msgstr "Content Type"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:78
+msgid "Form Fields"
+msgstr "更多的字段"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:82
+msgid ""
+"Under this section, choose the fields whose data should be transferred "
+"using Webhooks"
+msgstr ""
+"Under this section, choose the fields whose data should be transferred "
+"using Webhooks"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:85, application/modules/addon_webhook/views/backend/get_content.php:124
+msgid "Map URL parameters"
+msgstr "Map URL parameters"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:89
+msgid "To form values"
+msgstr "新的形式要求"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:93, application/modules/addon_webhook/views/backend/get_content.php:132, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:34, application/modules/formbuilder/views/forms/create_form.php:198, application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/records/list_records_getdatatable.php:26, application/modules/formbuilder/views/settings/backup_settings.php:67, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:114
+msgid "Options"
+msgstr "选项"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:109
+msgid "Add New Field Parameter"
+msgstr "Add New Field Parameter"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:117
+msgid "Additional Parameters"
+msgstr "Additional CSS"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:121
+msgid ""
+"Under this section, you can add additional parameters whose data should be "
+"transferred using Webhooks"
+msgstr ""
+"Under this section, you can add additional parameters whose data should be "
+"transferred using Webhooks"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:128
+msgid "To custom values"
+msgstr "To custom values"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:146
+msgid "Add New Custom Parameter"
+msgstr "Add New Custom Parameter"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:173
+msgid "choose an option"
+msgstr "删除所有选项"
+
+#: application/modules/default/views/intranet/about.php:27
+msgid "ABOUT"
+msgstr "ABOUT"
+
+#: application/modules/default/views/intranet/about.php:29
+msgid ""
+"Zigaform is a drag and drop form builder with live preview which makes you "
+"to build your forms on few easy steps. Also it provides an advanced grid "
+"system and skin live customizer that makes you to build amazing forms."
+msgstr ""
+"Zigaform is a drag and drop form builder with live preview which makes you "
+"to build your forms on few easy steps. Also it provides an advanced grid "
+"system and skin live customizer that makes you to build amazing forms."
+
+#: application/modules/default/views/intranet/about.php:36
+msgid "Rate Zigaform"
+msgstr "保存窗体"
+
+#: application/modules/default/views/intranet/about.php:67, application/modules/default/views/intranet/about.php:52
+msgid "Leave 5 Stars"
+msgstr "Leave 5 Stars"
+
+#: application/modules/default/views/intranet/about.php:73
+msgid ""
+"Please leave 5 stars if you like the software and I’ll keep rolling new "
+"updates and cool features."
+msgstr ""
+"Please leave 5 stars if you like the software and I'll keep rolling new "
+"updates and cool features."
+
+#: application/modules/default/views/intranet/about.php:83
+msgid "Spread the Word"
+msgstr "Spread the Word"
+
+#: application/modules/default/views/intranet/about.php:90
+msgid "Create amazing forms with Zigaform"
+msgstr "Create amazing forms with Zigaform"
+
+#: application/modules/default/views/intranet/about.php:91
+msgid "Ultimate PHP Form Builder by zigaform.com"
+msgstr "Ultimate PHP Form Builder by zigaform.com"
+
+#: application/modules/default/views/intranet/changepassword.php:33
+msgid "Change password"
+msgstr "Change password"
+
+#: application/modules/default/views/intranet/changepassword.php:75
+msgid "Confirm Password"
+msgstr "Confirm Password"
+
+#: application/modules/default/views/intranet/changepassword.php:79
+msgid "Update password"
+msgstr "Update password"
+
+#: application/modules/default/views/intranet/gopro.php:22
+msgid "Upgrade from Lite to PRO"
+msgstr "Upgrade from Lite to PRO"
+
+#: application/modules/default/views/intranet/gopro.php:34
+msgid "Features"
+msgstr "Features"
+
+#: application/modules/default/views/intranet/gopro.php:35
+msgid "Lite"
+msgstr "Lite"
+
+#: application/modules/default/views/intranet/gopro.php:36
+msgid "PRO"
+msgstr "PRO"
+
+#: application/modules/default/views/intranet/gopro.php:42
+msgid "Drag and drop builder"
+msgstr "Drag and drop builder"
+
+#: application/modules/default/views/intranet/gopro.php:48
+msgid "Grid system"
+msgstr "网格系统"
+
+#: application/modules/default/views/intranet/gopro.php:56
+msgid "Skin customizer"
+msgstr "Skin customizer"
+
+#: application/modules/default/views/intranet/gopro.php:62
+msgid "Graphic chart"
+msgstr "Graphic chart"
+
+#: application/modules/default/views/intranet/gopro.php:68
+msgid "Form validation"
+msgstr "表单中的信息"
+
+#: application/modules/default/views/intranet/gopro.php:73
+msgid "Duplicate fields"
+msgstr "复制"
+
+#: application/modules/default/views/intranet/gopro.php:78
+msgid "42 form elements"
+msgstr "42 form elements"
+
+#: application/modules/default/views/intranet/gopro.php:88
+msgid "Export & Import forms"
+msgstr "导入窗体"
+
+#: application/modules/default/views/intranet/gopro.php:93
+msgid "Export Form records"
+msgstr "导出至 csv"
+
+#: application/modules/default/views/intranet/gopro.php:98
+msgid "Wizard forms"
+msgstr "向导窗体"
+
+#: application/modules/default/views/intranet/gopro.php:108
+msgid "Animated effects"
+msgstr "Animated effects"
+
+#: application/modules/default/views/intranet/gopro.php:113
+msgid "Filter and search submitted data"
+msgstr "Filter and search submitted data"
+
+#: application/modules/default/views/intranet/gopro.php:118
+msgid "Duplication form"
+msgstr "复制"
+
+#: application/modules/default/views/intranet/gopro.php:123
+msgid "PDF feature"
+msgstr "PDF feature"
+
+#: application/modules/default/views/intranet/gopro.php:128
+msgid "Priority Support"
+msgstr "Priority Support"
+
+#: application/modules/default/views/intranet/gopro.php:133
+msgid "Plus Many Other Features..."
+msgstr "Plus Many Other Features..."
+
+#: application/modules/default/views/intranet/gopro.php:150
+msgid "DOWNLOAD"
+msgstr "DOWNLOAD"
+
+#: application/modules/default/views/intranet/gopro.php:154
+msgid "GET STARTED"
+msgstr "GET STARTED"
+
+#: application/modules/default/views/intranet/help.php:20
+msgid "HELP"
+msgstr "HELP"
+
+#: application/modules/default/views/intranet/help.php:25
+msgid ""
+"Creating forms is a complex process and the logic to make all the magic "
+"happen smoothly may not work quickly with every site. With over a lot of "
+"softwares and a very complex server eco-system some forms may run into "
+"issues. This is why zigaform includes a detailed knowledge base that can "
+"help with many common issues. Resources to additional support to fit your "
+"needs can be found below. "
+msgstr ""
+"Creating forms is a complex process and the logic to make all the magic "
+"happen smoothly may not work quickly with every site. With over a lot of "
+"softwares and a very complex server eco-system some forms may run into "
+"issues. This is why zigaform includes a detailed knowledge base that can "
+"help with many common issues. Resources to additional support to fit your "
+"needs can be found below. "
+
+#: application/modules/default/views/intranet/help.php:34
+msgid "Knowledgebase"
+msgstr "Knowledgebase"
+
+#: application/modules/default/views/intranet/help.php:40
+msgid "Online documentation"
+msgstr "在线事件注册"
+
+#: application/modules/default/views/intranet/help.php:45
+msgid "User guide"
+msgstr "User guide"
+
+#: application/modules/default/views/intranet/help.php:58
+msgid "Online Support"
+msgstr "Online Support"
+
+#: application/modules/default/views/intranet/help.php:64
+msgid "Get help from professionals"
+msgstr "Get help from professionals"
+
+#: application/modules/default/views/intranet/help.php:69
+msgid "Get support"
+msgstr "Get support"
+
+#: application/modules/default/views/intranet/login.php:33
+msgid "Enter your username and password"
+msgstr "Enter your username and password"
+
+#: application/modules/default/views/intranet/login.php:76
+msgid "Forgot Password"
+msgstr "Forgot Password"
+
+#: application/modules/default/views/intranet/login.php:80
+msgid "Sign in"
+msgstr "Sign in"
+
+#: application/modules/default/views/intranet/settings.php:50, application/modules/default/views/intranet/settings.php:52
+msgid "Site title"
+msgstr "Site title"
+
+#: application/modules/default/views/intranet/settings.php:56, application/modules/default/views/intranet/settings.php:58
+msgid "Admin mail"
+msgstr "Admin mail"
+
+#: application/modules/default/views/intranet/settings.php:67
+msgid "Select here ..."
+msgstr "Select here ..."
+
+#: application/modules/default/views/intranet/settings.php:86
+msgid "Mailer default"
+msgstr "Mailer default"
+
+#: application/modules/default/views/intranet/settings.php:122, application/modules/default/views/intranet/settings.php:128, application/modules/default/views/intranet/settings.php:134, application/modules/default/views/intranet/settings.php:140, application/modules/default/views/intranet/settings.php:177, application/modules/formbuilder/views/forms/preview_clogic_graph.php:28, application/modules/formbuilder/views/forms/preview_clogic_graph.php:35, application/modules/formbuilder/views/forms/settings_form_skin.php:154, application/modules/formbuilder/views/forms/settings_form_submission.php:72, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:460, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:278, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:257, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:271
+msgid "Type"
+msgstr "商品数据"
+
+#: application/modules/default/views/intranet/settings.php:175
+msgid "Sendmail path"
+msgstr "Sendmail path"
+
+#: application/modules/formbuilder/views/forms/ajax_integrity_openmodal.php:23
+msgid "Error!"
+msgstr "Error!"
+
+#: application/modules/formbuilder/views/forms/ajax_integrity_openmodal.php:23
+msgid ""
+"An error has ocurred. Use rollback option or load the form again. if the "
+"problem continues, report the issue on next:  "
+msgstr ""
+"An error has ocurred. Use rollback option or load the form again. if the "
+"problem continues, report the issue on next: "
+
+#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:23, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:24, application/modules/formbuilder/views/forms/settings_form_email.php:266, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:186
+msgid "Info!"
+msgstr "Info!"
+
+#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:23
+msgid ""
+"Everytime you save form, a log is created. so you can rollback to your "
+"previous form configuration. just select the date and click rollback button."
+msgstr ""
+"Everytime you save form, a log is created. so you can rollback to your "
+"previous form configuration. just select the date and click rollback button."
+
+#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:30
+msgid "Name form"
+msgstr "名称窗体"
+
+#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:32, application/modules/formbuilder/views/forms/list_forms_table.php:39, application/modules/formbuilder/views/records/list_records.php:36, application/modules/user/views/intranet/index.php:46
+msgid "Created"
+msgstr "创建"
+
+#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:50, application/modules/formbuilder/views/forms/create_form.php:203
+msgid "Rollback"
+msgstr "Rollback"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:24, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:75, application/modules/formbuilder/views/forms/settings_form_email.php:524, application/modules/formbuilder/views/forms/templates_fields.php:91, application/modules/formbuilder/views/forms/templates_fields.php:115
+msgid "Field"
+msgstr "字段名"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:25, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:76, application/modules/formbuilder/views/forms/settings_form_email.php:525
+msgid "Codes"
+msgstr "Codes"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:28, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:79, application/modules/formbuilder/views/forms/settings_form_email.php:528
+msgid "label"
+msgstr "标签"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:29, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:80, application/modules/formbuilder/views/forms/settings_form_email.php:529
+msgid "input"
+msgstr "输入"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:31, application/modules/formbuilder/views/forms/settings_form_email.php:530
+msgid "quantity"
+msgstr "quantity"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:32, application/modules/formbuilder/views/forms/settings_form_email.php:531
+msgid "wrapper"
+msgstr "wrapper"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:24
+msgid ""
+"Choose your variable. Under Frontend tab, you will find variables to be "
+"used on frontend and Under Backend tab, you will find variables to be used "
+"in mail notification or Submission message"
+msgstr ""
+"Choose your variable. Under Frontend tab, you will find variables to be "
+"used on frontend and Under Backend tab, you will find variables to be used "
+"in mail notification or Submission message"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:27
+msgid "Backend"
+msgstr "背景"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:28
+msgid "Frontend"
+msgstr "Frontend"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:32, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:70
+msgid "Fields"
+msgstr "上传字段"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:35, application/modules/formbuilder/views/forms/fields_available.php:716
+msgid "Others"
+msgstr "Others"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:40, application/modules/formbuilder/views/forms/settings_form_email.php:547
+msgid "variables"
+msgstr "禁用"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:41, application/modules/formbuilder/views/forms/settings_form_email.php:548
+msgid "Code"
+msgstr "Code"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:47, application/modules/formbuilder/views/forms/settings_form_email.php:554
+msgid "Summary of submitted data"
+msgstr "提交的表单数据"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:51, application/modules/formbuilder/views/forms/settings_form_email.php:558
+msgid "Form Url"
+msgstr "URL形式"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:60, application/modules/formbuilder/views/forms/settings_form_email.php:567
+msgid "Form record id"
+msgstr "Form record id"
+
+#: application/modules/formbuilder/views/forms/create_form.php:24
+msgid "Form editor"
+msgstr "Form Name"
+
+#: application/modules/formbuilder/views/forms/create_form.php:27, application/modules/formbuilder/views/forms/create_form_main.php:127
+msgid "email section. you can set mail options. e.g. the recipient mail"
+msgstr "通过电子邮件发送一节。您可以设置邮件选项。如收件人的邮件"
+
+#: application/modules/formbuilder/views/forms/create_form.php:28
+msgid "Email Settings"
+msgstr "全局设置"
+
+#: application/modules/formbuilder/views/forms/create_form.php:31, application/modules/formbuilder/views/forms/create_form_main.php:132
+msgid "submission section. you can modify the success message and other messages"
+msgstr "提交第一节。您可以修改成功消息和其它消息"
+
+#: application/modules/formbuilder/views/forms/create_form.php:32, application/modules/formbuilder/views/forms/create_form_main.php:133
+msgid "On Submission"
+msgstr "在提交"
+
+#: application/modules/formbuilder/views/forms/create_form.php:35
+msgid "main settings"
+msgstr "设置"
+
+#: application/modules/formbuilder/views/forms/create_form.php:36
+msgid "Global settings"
+msgstr "全局设置"
+
+#: application/modules/formbuilder/views/forms/create_form.php:69
+msgid "Main"
+msgstr "Main"
+
+#: application/modules/formbuilder/views/forms/create_form.php:71, application/modules/formbuilder/views/fields/modal/field_opt_column.php:906, application/modules/formbuilder/views/fields/modal/settings_form_more.php:193
+msgid "Additional"
+msgstr "Additional CSS"
+
+#: application/modules/formbuilder/views/forms/create_form.php:72
+msgid "PDF"
+msgstr "PDF"
+
+#: application/modules/formbuilder/views/forms/create_form.php:73, application/modules/formbuilder/views/forms/create_form_main.php:128, application/modules/user/views/intranet/createuser.php:45, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:102, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:323
+msgid "Email"
+msgstr "电子邮件"
+
+#: application/modules/formbuilder/views/forms/create_form.php:179
+msgid "Dev Options"
+msgstr "选项"
+
+#: application/modules/formbuilder/views/forms/create_form.php:184
+msgid "test"
+msgstr "test"
+
+#: application/modules/formbuilder/views/forms/create_form.php:186
+msgid "Show data"
+msgstr "显示明细数据"
+
+#: application/modules/formbuilder/views/forms/create_form.php:188
+msgid "Generate field static data"
+msgstr "Generate field static data"
+
+#: application/modules/formbuilder/views/forms/create_form.php:205, application/modules/formbuilder/views/forms/settings_form_email.php:501, application/modules/formbuilder/views/forms/settings_form_email.php:508
+msgid "Variables"
+msgstr "禁用"
+
+#: application/modules/formbuilder/views/forms/create_form.php:208
+msgid "C.Logic Graph"
+msgstr "C.Logic"
+
+#: application/modules/formbuilder/views/forms/create_form.php:211
+msgid "Refresh & Clean Form"
+msgstr "Refresh & Clean Form"
+
+#: application/modules/formbuilder/views/forms/create_form.php:220
+msgid "preview"
+msgstr "预览...."
+
+#: application/modules/formbuilder/views/forms/create_form.php:229
+msgid "Save form"
+msgstr "保存窗体"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:22
+msgid "Fields section. Drag and Drop or just click to add to the preview section"
+msgstr "字段一节。拖放或只需单击要添加到预览部分"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:42
+msgid ""
+"preview section. you can view how the fields will look like and you can "
+"change the settings on live mode  "
+msgstr "预览部分。您可以查看如何字段将会看起来像和您可以更改在实时模式设置"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:50, application/modules/formbuilder/views/forms/previewpanel_form.php:25
+msgid "Tab title"
+msgstr "选项卡标题"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:72, application/modules/formbuilder/views/forms/settings_form_email.php:37, application/modules/formbuilder/views/forms/settings_form_email.php:513, application/modules/formbuilder/views/forms/settings_form_main_record.php:37
+msgid "Form"
+msgstr "表单"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:73
+msgid "Selected Field"
+msgstr "选定字段"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:81
+msgid "Form settings. you can set all options related to the form"
+msgstr "窗体设置。您可以设置到窗体相关的所有选项"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:112
+msgid "setting section. you can change the submit mode between ajax and post"
+msgstr "设置部分。您可以更改 ajax 和职位之间的提交模式"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:117
+msgid "skin section. you can change skin options of your form"
+msgstr "皮肤一节。您可以更改您的窗体的外观选项"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:118, application/modules/formbuilder/views/fields/modal/field_opt_column.php:79, application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:125
+msgid "Skin"
+msgstr "皮肤"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:122
+msgid "wizard section. you can enable the wizard form and add many forms"
+msgstr "向导第一节。您可以启用向导窗体并添加多种形式"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:123
+msgid "Wizard"
+msgstr "向导"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:250
+msgid "You need to save the form before seeing the preview"
+msgstr "你需要在没有看到预览之前保存窗体"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:251
+msgid "Preview for desktops"
+msgstr "预览桌面"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:252
+msgid "Preview for tablets"
+msgstr "预览片"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:253
+msgid "Preview for smartphone"
+msgstr "智能手机的预览"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:254, application/modules/formbuilder/views/forms/settings_form_main_imp.php:42, application/modules/formbuilder/views/forms/settings_form_main_imp.php:33
+msgid "Import form"
+msgstr "导入窗体"
+
+#: application/modules/formbuilder/views/forms/create_form_main.php:255
+msgid "The import has failed. press the accept button"
+msgstr "导入已失败。按接受按钮"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:35
+msgid "Desktop"
+msgstr "桌面"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:43
+msgid "Smartphone"
+msgstr "智能手机"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:69
+msgid "Load form"
+msgstr "加载窗体"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:94, application/modules/formbuilder/views/forms/create_form_modals.php:124
+msgid "Accept"
+msgstr "接受"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:108
+msgid "Set Form name"
+msgstr "设置窗体名称"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:116
+msgid "e.g. My custom form"
+msgstr "例如我自定义的窗体"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:134
+msgid "Drag and Drop the fields to this area "
+msgstr "拖动并将字段放置到此区域"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:135
+msgid "or just click the button fields to add it here "
+msgstr "或只需单击按钮字段以将其添加在这里"
+
+#: application/modules/formbuilder/views/forms/create_form_modals.php:137
+msgid "Conditional Logic graph"
+msgstr "开启逻辑条件"
+
+#: application/modules/formbuilder/views/forms/export_form.php:33
+msgid "Code to export"
+msgstr "若要导出的代码"
+
+#: application/modules/formbuilder/views/forms/export_form.php:36
+msgid "the exporting code is used for backuping your custom form"
+msgstr "出口的代码用于备份自定义窗体"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:19
+msgid "Main fields"
+msgstr "主要领域"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:20
+msgid "More fields"
+msgstr "更多的字段"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:30
+msgid "Standard Fields"
+msgstr "标准字段"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:44
+msgid "Text Box"
+msgstr "文本框"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:58
+msgid "Text Area"
+msgstr "文本区域"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:70
+msgid "Radio Button"
+msgstr "单选按钮"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:83
+msgid "Check Box"
+msgstr "复选框"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:96
+msgid "Select List"
+msgstr "选择列表"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:109
+msgid "Multiselect"
+msgstr "Multiselect"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:121
+msgid "Submit Button"
+msgstr "送出按鈕"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:133
+msgid "Spinner"
+msgstr "Spinner"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:145
+msgid "Slider"
+msgstr "幻灯片"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:157
+msgid "Range"
+msgstr "范围"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:171
+msgid "Grid System"
+msgstr "网格系统"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:183
+msgid "1 Col"
+msgstr "1 上校"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:196
+msgid "2 Cols"
+msgstr "2列"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:209
+msgid "3 Cols"
+msgstr "3列"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:221
+msgid "4 Cols"
+msgstr "4列"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:234
+msgid "6 Cols"
+msgstr "6 cols"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:249
+msgid "Additional Fields"
+msgstr "附加字段"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:261
+msgid "Star rating"
+msgstr "星級"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:274
+msgid "ReCaptcha"
+msgstr "验证码"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:287
+msgid "Custom Html"
+msgstr "自定义HTML"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:301
+msgid "Hidden Input"
+msgstr "隐藏的输入"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:315, application/modules/user/views/intranet/createuser.php:51
+msgid "Password"
+msgstr "密    码"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:329
+msgid "Captcha"
+msgstr "驗證碼"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:344
+msgid "Date Picker"
+msgstr "日期选择器"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:357, application/modules/formbuilder/views/forms/fields_available.php:545, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:23
+msgid "Prepend"
+msgstr "前置"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:372
+msgid "Layout Elements"
+msgstr "布局元素"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:389
+msgid "Divider"
+msgstr "分割线"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:405, application/modules/formbuilder/views/forms/fields_available.php:602
+msgid "Heading H1"
+msgstr "页眉 H1"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:420
+msgid "Upload Fields"
+msgstr "上传字段"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:432
+msgid "File Upload"
+msgstr "文件上传"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:445
+msgid "Image Upload"
+msgstr "上传图片"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:465
+msgid "Picker Fields"
+msgstr "选择器字段"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:478
+msgid "Date "
+msgstr "日期"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:491, application/modules/formbuilder/views/forms/settings_form_skin.php:187, application/modules/formbuilder/views/forms/settings_form_skin.php:341, application/modules/formbuilder/views/forms/settings_form_skin.php:432, application/modules/formbuilder/views/forms/settings_form_submission.php:103, application/modules/formbuilder/views/fields/modal/field_opt_column.php:336, application/modules/formbuilder/views/fields/modal/field_opt_column.php:422, application/modules/formbuilder/views/fields/modal/field_opt_column.php:649, application/modules/formbuilder/views/fields/modal/field_opt_column.php:801, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:311, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:490, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:603, application/modules/formbuilder/views/fields/modal/settings_field_input_11.php:77, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:129, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:308, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:421, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:108, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:287, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:400, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:301, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:444, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:530, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:69, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:36, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:77, application/modules/formbuilder/views/fields/modal/settings_field_label.php:136, application/modules/formbuilder/views/fields/modal/settings_field_label.php:343
+msgid "Color"
+msgstr "颜色"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:505
+msgid "Time"
+msgstr "Time"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:518
+msgid "Date and Time"
+msgstr "日期和时间"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:533
+msgid "Prepend/Append Fields - Text Box"
+msgstr "前置/追加字段的文本框"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:561, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:126
+msgid "Append"
+msgstr "附加"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:575
+msgid "Prepend/App"
+msgstr "预置将追加"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:590
+msgid "Headings"
+msgstr "ཁ་བྱང་།"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:615
+msgid "Heading H2"
+msgstr "页眉 H2"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:628
+msgid "Heading H3"
+msgstr "页眉 H3"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:641
+msgid "Heading H4"
+msgstr "页眉 H4"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:654
+msgid "Heading H5"
+msgstr "页眉 H5"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:667
+msgid "Heading H6"
+msgstr "页眉 H6"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:684
+msgid "Wizard elements"
+msgstr "布局元素"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:697
+msgid "Wizard buttons"
+msgstr "单选按钮"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:728
+msgid "Switch"
+msgstr "Switch"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:742
+msgid "Dyn Checkbox"
+msgstr "复选框"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:756
+msgid "Dyn RadioBtn"
+msgstr "单选按钮"
+
+#: application/modules/formbuilder/views/forms/fields_available.php:772
+msgid "Panel"
+msgstr "Panel"
+
+#: application/modules/formbuilder/views/forms/formhtml_form.php:99, application/modules/formbuilder/views/forms/templates_fields.php:164
+msgid "Previous"
+msgstr "上一页"
+
+#: application/modules/formbuilder/views/forms/formhtml_form.php:102, application/modules/formbuilder/views/forms/templates_fields.php:167, application/modules/formbuilder/views/forms/templates_fields.php:1706, application/modules/formbuilder/views/fields/templates/prevpanel_wizardbtn.php:31
+msgid "Next"
+msgstr "下一页"
+
+#: application/modules/formbuilder/views/forms/form_show_shortcodes.php:39
+msgid "Copy and paste the shortcode to your WordPress site"
+msgstr "复制并粘贴到您所需的页面简码"
+
+#: application/modules/formbuilder/views/forms/form_show_shortcodes.php:42, application/modules/formbuilder/views/forms/list_forms_table.php:38
+msgid "Shortcode"
+msgstr "简码"
+
+#: application/modules/formbuilder/views/forms/form_show_shortcodes.php:49
+msgid "Use the shortcode alternative in case the first shortcode does not work"
+msgstr "Use the shortcode alternative in case the first shortcode does not work"
+
+#: application/modules/formbuilder/views/forms/form_show_shortcodes.php:52
+msgid "Shortcode alternative"
+msgstr "简码"
+
+#: application/modules/formbuilder/views/forms/form_success.php:23
+msgid ""
+"Success! The form was created. Go to url to see your changes or copy & "
+"paste widget code to your page"
+msgstr ""
+"Success! The form was created. Go to url to see your changes or copy & "
+"paste widget code to your page"
+
+#: application/modules/formbuilder/views/forms/form_success.php:39, application/modules/formbuilder/views/forms/getcode.php:30
+msgid "Widget code"
+msgstr "Widget code"
+
+#: application/modules/formbuilder/views/forms/form_success.php:46, application/modules/formbuilder/views/forms/getcode.php:37
+msgid "iframe"
+msgstr "iframe"
+
+#: application/modules/formbuilder/views/forms/form_success.php:53, application/modules/formbuilder/views/forms/getcode.php:44
+msgid "Url"
+msgstr "Url"
+
+#: application/modules/formbuilder/views/forms/getcode.php:24
+msgid "Your Form code"
+msgstr "Your Form code"
+
+#: application/modules/formbuilder/views/forms/getcode.php:70
+msgid "Cached Content"
+msgstr "Cached Content"
+
+#: application/modules/formbuilder/views/forms/getcode.php:76, application/modules/formbuilder/views/settings/view_settings.php:92, application/modules/formbuilder/views/fields/options/select/impbulkdata.php:23
+msgid "Info"
+msgstr "Info"
+
+#: application/modules/formbuilder/views/forms/getcode.php:76
+msgid ""
+"Cached content allow to load directly the files needed for the form. just "
+"copy the \"scripts\" part and past into head tag or footer of your html "
+"content. And copy the \"HTML content\" and paste inside the body tag of "
+"your html content."
+msgstr ""
+"Cached content allow to load directly the files needed for the form. just "
+"copy the \"scripts\" part and past into head tag or footer of your html "
+"content. And copy the \"HTML content\" and paste inside the body tag of "
+"your html content."
+
+#: application/modules/formbuilder/views/forms/getcode.php:79, application/modules/formbuilder/views/fields/options/select/impbulkdata.php:27
+msgid "Warning"
+msgstr "Warning"
+
+#: application/modules/formbuilder/views/forms/getcode.php:79
+msgid ""
+"it will allow to load your form faster but when you make some change on "
+"backend, you will have to copy and paste again (refresh) the \"scripts\" "
+"and \"HTML content\" part. "
+msgstr ""
+"it will allow to load your form faster but when you make some change on "
+"backend, you will have to copy and paste again (refresh) the \"scripts\" "
+"and \"HTML content\" part. "
+
+#: application/modules/formbuilder/views/forms/getcode.php:83
+msgid "scripts"
+msgstr "scripts"
+
+#: application/modules/formbuilder/views/forms/getcode.php:91
+msgid "HTML content"
+msgstr "HTML content"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:25
+msgid "List forms."
+msgstr "列表窗体。"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:39
+msgid "Add new form"
+msgstr "添加新窗体"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:44
+msgid "Disable Form"
+msgstr "禁用"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:53
+msgid "Enable Form"
+msgstr "启用"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:62, application/modules/formbuilder/views/forms/list_forms.php:66, application/modules/formbuilder/views/forms/list_forms_table.php:90, application/modules/formbuilder/views/forms/list_forms_table.php:91
+msgid "Move to trash"
+msgstr "Move to trash"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:86
+msgid "Duplicate Form"
+msgstr "复制"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:90, application/modules/formbuilder/views/forms/list_forms.php:79
+msgid "Duplicate"
+msgstr "复制"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:101
+msgid "Advanced Search"
+msgstr "Advanced Search"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:112
+msgid "Rows per page"
+msgstr "Rows per page"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:134, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:89
+msgid "All"
+msgstr "全部"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:138
+msgid "Search"
+msgstr "Search"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:147
+msgid "Order by"
+msgstr "边框样式"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:149
+msgid "Descendent"
+msgstr "Descendent"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:150
+msgid "Ascendent"
+msgstr "Ascendent"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:155
+msgid "Remember parameters"
+msgstr "Remember parameters"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:158
+msgid "Save Settings"
+msgstr "设置"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:178
+msgid "List form information"
+msgstr "列表表单中的信息"
+
+#: application/modules/formbuilder/views/forms/list_forms.php:180
+msgid "there is no forms selected. select one at least"
+msgstr "那里是没有选择的形式。至少选择一个"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:34, application/modules/formbuilder/views/records/list_records.php:35
+msgid "Name Form"
+msgstr "名称窗体"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:37
+msgid "Copy and paste the shortcode to your desired page"
+msgstr "复制并粘贴到您所需的页面简码"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:40, application/modules/formbuilder/views/records/list_records.php:37, application/modules/formbuilder/views/settings/system_check.php:53, application/modules/user/views/intranet/createuser.php:63, application/modules/user/views/intranet/index.php:47
+msgid "Status"
+msgstr "状态"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:104, application/modules/formbuilder/views/records/list_records.php:88
+msgid "there is not forms. Add new one"
+msgstr "不是形式。添加新"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:58
+msgid "Get shortcode"
+msgstr "简码"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:74, application/modules/formbuilder/views/records/list_records.php:59, application/modules/user/views/intranet/index.php:69
+msgid "Inactive"
+msgstr "暂停"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:67, application/modules/formbuilder/views/records/list_records.php:52
+msgid "Active"
+msgstr "有效"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:85
+msgid "Edit and load your custom form"
+msgstr "Edit and load your custom form"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:87
+msgid "Edit"
+msgstr "编辑"
+
+#: application/modules/formbuilder/views/forms/list_forms_table.php:93
+msgid "Move to Trash "
+msgstr "Move to Trash "
+
+#: application/modules/formbuilder/views/forms/preview_clogic_graph.php:47
+msgid "There is no conditional logic on the form."
+msgstr "There is no conditional logic on the form."
+
+#: application/modules/formbuilder/views/forms/preview_clogic_graph.php:27, application/modules/formbuilder/views/forms/preview_clogic_graph.php:34
+msgid "Field Name"
+msgstr "字段名"
+
+#: application/modules/formbuilder/views/forms/preview_clogic_graph.php:29, application/modules/formbuilder/views/forms/preview_clogic_graph.php:36, application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:62
+msgid "Step"
+msgstr "步骤"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:23
+msgid "New form request"
+msgstr "新的形式要求"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:27
+msgid "You are receiving a new form request"
+msgstr "您收到一个新的窗体请求"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:35, application/modules/formbuilder/views/forms/settings_form_main_record.php:35
+msgid "Form information"
+msgstr "表单中的信息"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:36, application/modules/formbuilder/views/forms/settings_form_main_record.php:36
+msgid "URL"
+msgstr "URL"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:52
+msgid "Attributes"
+msgstr "Attributes"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:59
+msgid "From Mail"
+msgstr "From Mail"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:61
+msgid "it email goes to from mail in the message"
+msgstr "it email goes to from mail in the message"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:68
+msgid "Type From mail"
+msgstr "CC 型邮件"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:75
+msgid "From Name"
+msgstr "From Name"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:77
+msgid "this goes to From Name in the message attributes"
+msgstr "this goes to From Name in the message attributes"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:82
+msgid "Here goes your From Name"
+msgstr "在这里去你主题的邮件"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:84
+msgid "Type From Name"
+msgstr "类型字段名称"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:103
+msgid "Send email to the customer?"
+msgstr "Send email to the customer?"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:127
+msgid "Admin"
+msgstr "Admin"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:128
+msgid "Customer"
+msgstr "自定义报表"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:136
+msgid "Admin email"
+msgstr "Admin email"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:141, application/modules/formbuilder/views/forms/settings_form_email.php:274
+msgid "Recipient mail"
+msgstr "收件人的邮件"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:143, application/modules/formbuilder/views/forms/settings_form_email.php:276
+msgid "This is the recipient mail. if you leave it blank, admin mail will be taken"
+msgstr "这是收件人的邮件。如果你将它保留为空，将采取管理邮件"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:150
+msgid "user1@testmail.com"
+msgstr "user1@testmail.com"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:157, application/modules/formbuilder/views/forms/settings_form_email.php:294
+msgid "Subject mail"
+msgstr "邮件主题"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:159, application/modules/formbuilder/views/forms/settings_form_email.php:296
+msgid "it is the title of the message. do not leave blank"
+msgstr "它是邮件的标题。不会留下空白"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:164, application/modules/formbuilder/views/forms/settings_form_email.php:301
+msgid "Here goes your subject mail"
+msgstr "在这里去你主题的邮件"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:166, application/modules/formbuilder/views/forms/settings_form_email.php:303
+msgid "Type subject"
+msgstr "键入主题"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:175, application/modules/formbuilder/views/forms/settings_form_email.php:312
+msgid "this mail will receive a copy of the email"
+msgstr "这封邮件将接收的电子邮件的副本"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:181, application/modules/formbuilder/views/forms/settings_form_email.php:196, application/modules/formbuilder/views/forms/settings_form_email.php:318, application/modules/formbuilder/views/forms/settings_form_email.php:333
+msgid "user1@testmail.com,user2@testmail.com"
+msgstr "user1@testmail.com,user2@testmail.com"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:190, application/modules/formbuilder/views/forms/settings_form_email.php:327
+msgid ""
+"this mail will receive a copy of the email without letting the others "
+"notice it"
+msgstr "这封邮件将接收的电子邮件的副本，不让其他人注意到它"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:203, application/modules/formbuilder/views/forms/settings_form_email.php:340
+msgid "Reply To"
+msgstr "Reply To"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:203
+msgid "Choose field to put as reply in mail message"
+msgstr "Choose field to put as reply in mail message"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:205, application/modules/formbuilder/views/forms/settings_form_email.php:342
+msgid "if you leave it blank, reply option will not be taken it"
+msgstr "if you leave it blank, reply option will not be taken it"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:210, application/modules/formbuilder/views/forms/settings_form_email.php:281, application/modules/formbuilder/views/forms/settings_form_email.php:285
+msgid "Select Field"
+msgstr "选定字段"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:214
+msgid "Select Field or leave it blank"
+msgstr "Select Field or leave it blank"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:225, application/modules/formbuilder/views/forms/settings_form_email.php:358
+msgid "Email Template"
+msgstr "邮件模板"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:248, application/modules/formbuilder/views/forms/settings_form_email.php:381
+msgid "Send email sample of template "
+msgstr "Send email sample of template "
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:251, application/modules/formbuilder/views/forms/settings_form_email.php:384
+msgid "Send sample"
+msgstr "Send sample"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:266
+msgid ""
+"this option is disabled. Enable this feature changing \"Send email to the "
+"customer\" option to \"On\". %s This option is located above this tab. "
+msgstr ""
+"this option is disabled. Enable this feature changing \"Send email to the "
+"customer\" option to \"On\". %s This option is located above this tab. "
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:270
+msgid "Customer email"
+msgstr "自定义HTML"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:274
+msgid "Choose field to receive notification (field needs to have email validation)"
+msgstr "Choose field to receive notification (field needs to have email validation)"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:397
+msgid "Attach pdf"
+msgstr "Attach pdf"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:405
+msgid "Attach custom pdf to customer mail message"
+msgstr "Attach custom pdf to customer mail message"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:429
+msgid "Template for attachment pdf "
+msgstr "Template for attachment pdf "
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:454
+msgid "File name"
+msgstr "字段名"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:470
+msgid "Show PDF sample "
+msgstr "Show PDF sample "
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:473
+msgid "Show sample"
+msgstr "显示明细数据"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:508
+msgid "To be used in Email Template"
+msgstr "邮件模板"
+
+#: application/modules/formbuilder/views/forms/settings_form_email.php:514
+msgid "General"
+msgstr "General"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:23
+msgid "REFRESH AND CLEAN FORM"
+msgstr "REFRESH AND CLEAN FORM"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:29
+msgid "Refresh"
+msgstr "Refresh"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:32, application/modules/formbuilder/views/forms/settings_form_main.php:48, application/modules/formbuilder/views/forms/settings_form_main.php:65
+msgid ""
+"this is used in order to fix if something is not showing fine on the "
+"preview editor panel"
+msgstr ""
+"this is used in order to fix if something is not showing fine on the "
+"preview editor panel"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:39
+msgid "REFRESH FORM FROM DATA"
+msgstr "REFRESH FORM FROM DATA"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:45
+msgid "Refresh From Data"
+msgstr "Refresh From Data"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:55
+msgid "REFRESH AND MIGRATE TO VERSION 3"
+msgstr "REFRESH AND MIGRATE TO VERSION 3"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:56
+msgid "Use only if you upgraded from version 2.x to 3"
+msgstr "Use only if you upgraded from version 2.x to 3"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:62
+msgid "Refresh and migrate"
+msgstr "Refresh and migrate"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:73
+msgid "AUTOSCROLL AFTER LOADING FORM"
+msgstr "AUTOSCROLL AFTER LOADING FORM"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:82
+msgid "if you want to stop the autoscroll when the form is loaded"
+msgstr "if you want to stop the autoscroll when the form is loaded"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:94
+msgid "ENABLE NO CONFLICT OPTION"
+msgstr "ENABLE NO CONFLICT OPTION"
+
+#: application/modules/formbuilder/views/forms/settings_form_main.php:103
+msgid ""
+"if you see something weird when the form is loaded, maybe there is a "
+"conflict with your site, just enable this option"
+msgstr ""
+"if you see something weird when the form is loaded, maybe there is a "
+"conflict with your site, just enable this option"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_add.php:25
+msgid "ADDITIONAL CSS"
+msgstr "ADDITIONAL CSS"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_add.php:27
+msgid ""
+"This is not required. You can add extra css to your form. this will be "
+"added to css file "
+msgstr ""
+"This is not required. You can add extra css to your form. this will be "
+"added to css file "
+
+#: application/modules/formbuilder/views/forms/settings_form_main_add.php:37
+msgid "Just put the selectors. e.g. #id_form .control-label {color:red} "
+msgstr "Just put the selectors. e.g. #id_form .control-label {color:red} "
+
+#: application/modules/formbuilder/views/forms/settings_form_main_add.php:51
+msgid "ADDITIONAL JAVASCRIPT"
+msgstr "ADDITIONAL JAVASCRIPT"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_add.php:54
+msgid ""
+"This is not required. You can add extra javascript code or some script to "
+"your form."
+msgstr "这不是必需的。您可以将额外的 javascript 代码或一些脚本添加到表单中。"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_add.php:64
+msgid ""
+"proceed with caution. if you put a wrong javascript code, the form will not "
+"work properly e.g. "
+msgstr "谨慎行事。如果你把错误的 javascript 代码，窗体将无法正常工作如"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_email.php:24
+msgid "CONTROL WHOLE HTML CONTENT OF MAIL NOTIFICATION"
+msgstr "CONTROL WHOLE HTML CONTENT OF MAIL NOTIFICATION"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_email.php:34, application/modules/formbuilder/views/forms/settings_form_main_pdf.php:126
+msgid "Enable control whole html content"
+msgstr "Enable control whole html content"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_email.php:38
+msgid ""
+"When you active this option, you have to add html, head, and body tag in "
+"the message because it allows you to have whole control of html content in "
+"the mail notifications. remember this is only for all mail notification of "
+"zigaform"
+msgstr ""
+"When you active this option, you have to add html, head, and body tag in "
+"the message because it allows you to have whole control of html content in "
+"the mail notifications. remember this is only for all mail notification of "
+"zigaform"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_email.php:53
+msgid "Disable email submission"
+msgstr "Disable email submission"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_email.php:62
+msgid "Disable email submission for this form"
+msgstr "Disable email submission for this form"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_imp.php:23, application/modules/formbuilder/views/forms/settings_form_main_imp.php:55
+msgid "IMPORT FORM"
+msgstr "IMPORT FORM"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_imp.php:46
+msgid "Import the backuped form"
+msgstr "导入备份窗体"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:23
+msgid "Dimensions of paper sizes in points"
+msgstr "Dimensions of paper sizes in points"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:41
+msgid "Orientation of Paper"
+msgstr "Orientation of Paper"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:46
+msgid "landscape"
+msgstr "landscape"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:47
+msgid "letter"
+msgstr "信件"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:48
+msgid "portrait"
+msgstr "portrait"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:56
+msgid ""
+"Options below are only included in the pdf when your html content doesn't "
+"have Body and Html tag "
+msgstr ""
+"Options below are only included in the pdf when your html content doesn't "
+"have Body and Html tag "
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:64
+msgid "SELECT CHARACTER ENCONDING"
+msgstr "SELECT CHARACTER ENCONDING"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:96
+msgid "TEXT FONT"
+msgstr "TEXT FONT"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:116
+msgid "CONTROL WHOLE HTML CONTENT OF PDF"
+msgstr "CONTROL WHOLE HTML CONTENT OF PDF"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:130
+msgid ""
+"When you active this option, you have to add html, head, and body tag in "
+"the template because it allows you to have whole control of html content "
+"for pdf generation. remember this is only for all pdf content of zigaform"
+msgstr ""
+"When you active this option, you have to add html, head, and body tag in "
+"the template because it allows you to have whole control of html content "
+"for pdf generation. remember this is only for all pdf content of zigaform"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:138
+msgid "PDF Export"
+msgstr "导出"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_record.php:23
+msgid "Summary"
+msgstr "Summary"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_record.php:27
+msgid "you information is shown on next:"
+msgstr "you information is shown on next:"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_record.php:51
+msgid "Custom Template "
+msgstr "Custom Template "
+
+#: application/modules/formbuilder/views/forms/settings_form_main_record.php:58
+msgid "Enable custom template for Summary Records and PDF"
+msgstr "Enable custom template for Summary Records and PDF"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_record.php:83
+msgid "Sample "
+msgstr "Sample "
+
+#: application/modules/formbuilder/views/forms/settings_form_main_record.php:86
+msgid "Show PDF sample"
+msgstr "Show PDF sample"
+
+#: application/modules/formbuilder/views/forms/settings_form_main_record.php:97
+msgid "Custom template "
+msgstr "自定义HTML"
+
+#: application/modules/formbuilder/views/forms/settings_form_samplebuttons.php:123
+msgid "Text font size"
+msgstr "文本字体大小"
+
+#: application/modules/formbuilder/views/forms/settings_form_samplebuttons.php:125
+msgid "Select font size"
+msgstr "选择字体大小"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:21, application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:132
+msgid "Custom width"
+msgstr "自定义 Logo 宽度"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:35, application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:145
+msgid "Max width"
+msgstr "最大宽度"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:57, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:115
+msgid "Custom padding"
+msgstr "自定义填充"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:71, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:128
+msgid "Padding top"
+msgstr "顶部填充"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:85, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:140
+msgid "Padding right"
+msgstr "右填充"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:98, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:152
+msgid "Padding bottom"
+msgstr "下填充"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:111, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:164
+msgid "Padding left"
+msgstr "左填充"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:135, application/modules/formbuilder/views/forms/settings_form_submission.php:54, application/modules/formbuilder/views/fields/modal/field_opt_column.php:360, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:441, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:259, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:238, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:253
+msgid "Background"
+msgstr "背景"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:142, application/modules/formbuilder/views/forms/settings_form_submission.php:61, application/modules/formbuilder/views/forms/settings_form_wizard.php:140, application/modules/formbuilder/views/forms/settings_form_wizard.php:208, application/modules/formbuilder/views/forms/settings_form_wizard.php:298, application/modules/formbuilder/views/forms/settings_form_wizard.php:365, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:448, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:266, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:245, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:260
+msgid "Background color"
+msgstr "背景颜色"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:168, application/modules/formbuilder/views/forms/settings_form_skin.php:375, application/modules/formbuilder/views/forms/settings_form_submission.php:86, application/modules/formbuilder/views/fields/modal/field_opt_column.php:398, application/modules/formbuilder/views/fields/modal/field_opt_column.php:685, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:473, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:661, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:291, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:479, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:270, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:458, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:284, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:476
+msgid "Solid"
+msgstr "实线"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:178, application/modules/formbuilder/views/forms/settings_form_submission.php:95, application/modules/formbuilder/views/fields/modal/field_opt_column.php:408, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:482, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:300, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:279, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:293
+msgid "Gradient"
+msgstr "渐变色"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:195, application/modules/formbuilder/views/forms/settings_form_skin.php:218, application/modules/formbuilder/views/forms/settings_form_skin.php:237, application/modules/formbuilder/views/forms/settings_form_skin.php:349, application/modules/formbuilder/views/forms/settings_form_skin.php:440, application/modules/formbuilder/views/forms/settings_form_submission.php:109, application/modules/formbuilder/views/forms/settings_form_submission.php:128, application/modules/formbuilder/views/forms/settings_form_submission.php:146, application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:55, application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:73, application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:91, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:52, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:72, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:90, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:111, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:129, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:148, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:497, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:517, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:535, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:610, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:629, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:315, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:335, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:353, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:428, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:447, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:294, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:314, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:332, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:407, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:426, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:308, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:328, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:346, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:451, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:537, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:43, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:84, application/modules/formbuilder/views/fields/modal/settings_field_label.php:142, application/modules/formbuilder/views/fields/modal/settings_field_label.php:349
+msgid "Pick the color"
+msgstr "选取这种颜色"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:209, application/modules/formbuilder/views/forms/settings_form_submission.php:122, application/modules/formbuilder/views/fields/modal/field_opt_column.php:449, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:509, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:327, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:306, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:320
+msgid "Start color"
+msgstr "起始颜色"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:228, application/modules/formbuilder/views/forms/settings_form_submission.php:139, application/modules/formbuilder/views/fields/modal/field_opt_column.php:472, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:527, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:345, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:324, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:338
+msgid "End color"
+msgstr "结束颜色"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:249, application/modules/formbuilder/views/fields/modal/field_opt_column.php:496, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:356
+msgid "Background image"
+msgstr "背景图片"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:289, application/modules/formbuilder/views/forms/settings_form_skin.php:327, application/modules/formbuilder/views/fields/modal/field_opt_column.php:625, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:554, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:590, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:372, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:408, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:351, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:387, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:396, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:431
+msgid "Border"
+msgstr "边框"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:296, application/modules/formbuilder/views/fields/modal/field_opt_column.php:730, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:561, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:379, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:358, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:403
+msgid "Border radius"
+msgstr "边框半径"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:362, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:649, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:467, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:446, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:464
+msgid "border style"
+msgstr "边框样式"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:385, application/modules/formbuilder/views/fields/modal/field_opt_column.php:695, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:670, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:488, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:467, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:485
+msgid "Dotted"
+msgstr "点线"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:393, application/modules/formbuilder/views/fields/modal/field_opt_column.php:709, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:678, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:496, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:475, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:493
+msgid "Border width"
+msgstr "边框宽度"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:419, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:518
+msgid "Box Shadow"
+msgstr "盒阴影"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:454, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:551, application/modules/formbuilder/views/fields/modal/settings_field_label.php:156
+msgid "horizontal"
+msgstr "水平的"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:471, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:567, application/modules/formbuilder/views/fields/modal/settings_field_label.php:172
+msgid "vertical"
+msgstr "垂直的"
+
+#: application/modules/formbuilder/views/forms/settings_form_skin.php:489, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:584, application/modules/formbuilder/views/fields/modal/settings_field_label.php:189, application/modules/formbuilder/views/fields/modal/settings_field_label.php:396
+msgid "blur"
+msgstr "蓝"
+
+#: application/modules/formbuilder/views/forms/settings_form_submission.php:21
+msgid "Success! Form was sent successfully."
+msgstr "成功 ！表单已成功发送。"
+
+#: application/modules/formbuilder/views/forms/settings_form_submission.php:30
+msgid "Success Message"
+msgstr "成功提示信息"
+
+#: application/modules/formbuilder/views/forms/settings_form_submission.php:166
+msgid "Url Redirection"
+msgstr "Url Redirection"
+
+#: application/modules/formbuilder/views/forms/settings_form_submission.php:173
+msgid "Enable Page redirection"
+msgstr "Enable Page redirection"
+
+#: application/modules/formbuilder/views/forms/settings_form_submission.php:181
+msgid "Url after submitting form "
+msgstr "Ajax 模式时提交表单"
+
+#: application/modules/formbuilder/views/forms/settings_form_submission.php:188
+msgid ""
+"you need to enable page redirection first and add http or https at the "
+"beginning of the url"
+msgstr ""
+"you need to enable page redirection first and add http or https at the "
+"beginning of the url"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:43, application/modules/formbuilder/views/forms/settings_form_wizard.php:27
+msgid "Enable wizard forms"
+msgstr "启用向导窗体"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:25, application/modules/formbuilder/views/forms/settings_form_wizard.php:39
+msgid "Wizard form"
+msgstr "向导窗体"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:29, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:31
+msgid "feature locked"
+msgstr "feature locked"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:62
+msgid "Tabs management"
+msgstr "选项卡管理"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:69
+msgid "Clean Tabs"
+msgstr "简洁"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:73, application/modules/formbuilder/views/forms/templates_fields.php:2086
+msgid "Add new"
+msgstr "添加新的"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:86, application/modules/formbuilder/views/forms/settings_form_wizard.php:412
+msgid "Tab"
+msgstr "平板"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:91, application/modules/formbuilder/views/forms/settings_form_wizard.php:417
+msgid "Type tab title"
+msgstr "类型选项卡标题"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:98, application/modules/formbuilder/views/forms/settings_form_wizard.php:424, application/modules/formbuilder/views/records/list_records.php:74, application/modules/formbuilder/views/records/list_records.php:77, application/modules/formbuilder/views/settings/backup_settings.php:94, application/modules/user/views/intranet/index.php:90, application/modules/user/views/intranet/index.php:86
+msgid "Delete"
+msgstr "删除"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:114
+msgid "Skin tab"
+msgstr "皮肤选项卡"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:123, application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:22, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:22, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:207
+msgid "Theme 1"
+msgstr "主题"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:124
+msgid "Theme 2"
+msgstr "主题"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:132
+msgid "Inactive mode"
+msgstr "非活动模式"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:157, application/modules/formbuilder/views/forms/settings_form_wizard.php:384
+msgid "Text color"
+msgstr "文字颜色"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:176, application/modules/formbuilder/views/forms/settings_form_wizard.php:243, application/modules/formbuilder/views/forms/settings_form_wizard.php:333
+msgid "Number text color"
+msgstr "号码颜色"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:200
+msgid "Active Mode"
+msgstr "激活模式"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:225, application/modules/formbuilder/views/forms/settings_form_wizard.php:315
+msgid "Title color"
+msgstr "标题颜色"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:261
+msgid "Background for number container"
+msgstr "Background for number container"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:285
+msgid "Done mode"
+msgstr "非活动模式"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:288
+msgid "this when the tab is completed. this will be shown on frontend"
+msgstr "this when the tab is completed. this will be shown on frontend"
+
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:357
+msgid "Tab container "
+msgstr "选项卡上的容器"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:45
+msgid "Row"
+msgstr "Row"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:436, application/modules/formbuilder/views/forms/templates_fields.php:510, application/modules/formbuilder/views/forms/templates_fields.php:573, application/modules/formbuilder/views/forms/templates_fields.php:636, application/modules/formbuilder/views/forms/templates_fields.php:677, application/modules/formbuilder/views/forms/templates_fields.php:720, application/modules/formbuilder/views/forms/templates_fields.php:766, application/modules/formbuilder/views/forms/templates_fields.php:813, application/modules/formbuilder/views/forms/templates_fields.php:850, application/modules/formbuilder/views/forms/templates_fields.php:888, application/modules/formbuilder/views/forms/templates_fields.php:929, application/modules/formbuilder/views/forms/templates_fields.php:970, application/modules/formbuilder/views/forms/templates_fields.php:1012, application/modules/formbuilder/views/forms/templates_fields.php:1055, application/modules/formbuilder/views/forms/templates_fields.php:1096, application/modules/formbuilder/views/forms/templates_fields.php:1135, application/modules/formbuilder/views/forms/templates_fields.php:1203, application/modules/formbuilder/views/forms/templates_fields.php:1240, application/modules/formbuilder/views/forms/templates_fields.php:1284, application/modules/formbuilder/views/forms/templates_fields.php:1327, application/modules/formbuilder/views/forms/templates_fields.php:1369, application/modules/formbuilder/views/forms/templates_fields.php:1417, application/modules/formbuilder/views/forms/templates_fields.php:1453, application/modules/formbuilder/views/forms/templates_fields.php:1503, application/modules/formbuilder/views/forms/templates_fields.php:1538, application/modules/formbuilder/views/forms/templates_fields.php:1572, application/modules/formbuilder/views/forms/templates_fields.php:1606, application/modules/formbuilder/views/forms/templates_fields.php:1640, application/modules/formbuilder/views/forms/templates_fields.php:1674, application/modules/formbuilder/views/forms/templates_fields.php:1732, application/modules/formbuilder/views/forms/templates_fields.php:1770, application/modules/formbuilder/views/forms/templates_fields.php:1811, application/modules/formbuilder/views/forms/templates_fields.php:1874, application/modules/formbuilder/views/fields/templates/prevpanel_appetext.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_captcha.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_checkbox.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_colorpicker.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_customhtml.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_datepicker.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_datetime.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_datetime_2.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_dyncheckbox.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_dynradiobtn.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_fileupload.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_heading1.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_heading2.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_heading3.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_heading4.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_heading5.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_heading6.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_imageupload.php:36, application/modules/formbuilder/views/fields/templates/prevpanel_multiselect.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_password.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_prepapptext.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_preptext.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_radiobtn.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_range.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_ratingstar.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_recaptcha.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_select.php:36, application/modules/formbuilder/views/fields/templates/prevpanel_slider.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_spinner.php:35, application/modules/formbuilder/views/fields/templates/prevpanel_submitbtn.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_switch.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_textbox.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_timepicker.php:35
+msgid "Textbox label"
+msgstr "文本框标签"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:439, application/modules/formbuilder/views/forms/templates_fields.php:513, application/modules/formbuilder/views/forms/templates_fields.php:576, application/modules/formbuilder/views/forms/templates_fields.php:639, application/modules/formbuilder/views/forms/templates_fields.php:680, application/modules/formbuilder/views/forms/templates_fields.php:723, application/modules/formbuilder/views/forms/templates_fields.php:769, application/modules/formbuilder/views/forms/templates_fields.php:816, application/modules/formbuilder/views/forms/templates_fields.php:853, application/modules/formbuilder/views/forms/templates_fields.php:891, application/modules/formbuilder/views/forms/templates_fields.php:932, application/modules/formbuilder/views/forms/templates_fields.php:973, application/modules/formbuilder/views/forms/templates_fields.php:1015, application/modules/formbuilder/views/forms/templates_fields.php:1058, application/modules/formbuilder/views/forms/templates_fields.php:1099, application/modules/formbuilder/views/forms/templates_fields.php:1138, application/modules/formbuilder/views/forms/templates_fields.php:1206, application/modules/formbuilder/views/forms/templates_fields.php:1243, application/modules/formbuilder/views/forms/templates_fields.php:1287, application/modules/formbuilder/views/forms/templates_fields.php:1330, application/modules/formbuilder/views/forms/templates_fields.php:1372, application/modules/formbuilder/views/forms/templates_fields.php:1420, application/modules/formbuilder/views/forms/templates_fields.php:1456, application/modules/formbuilder/views/forms/templates_fields.php:1506, application/modules/formbuilder/views/forms/templates_fields.php:1541, application/modules/formbuilder/views/forms/templates_fields.php:1575, application/modules/formbuilder/views/forms/templates_fields.php:1609, application/modules/formbuilder/views/forms/templates_fields.php:1643, application/modules/formbuilder/views/forms/templates_fields.php:1677, application/modules/formbuilder/views/forms/templates_fields.php:1735, application/modules/formbuilder/views/forms/templates_fields.php:1773, application/modules/formbuilder/views/forms/templates_fields.php:1814, application/modules/formbuilder/views/forms/templates_fields.php:1877, application/modules/formbuilder/views/fields/templates/prevpanel_appetext.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_captcha.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_checkbox.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_colorpicker.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_customhtml.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_datepicker.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_datetime.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_datetime_2.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_dyncheckbox.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_dynradiobtn.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_fileupload.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_heading1.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_heading2.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_heading3.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_heading4.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_heading5.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_heading6.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_imageupload.php:39, application/modules/formbuilder/views/fields/templates/prevpanel_multiselect.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_password.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_prepapptext.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_preptext.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_radiobtn.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_range.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_ratingstar.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_recaptcha.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_select.php:39, application/modules/formbuilder/views/fields/templates/prevpanel_slider.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_spinner.php:38, application/modules/formbuilder/views/fields/templates/prevpanel_submitbtn.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_switch.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_textbox.php:37, application/modules/formbuilder/views/fields/templates/prevpanel_timepicker.php:38
+msgid "Textbox sublabel"
+msgstr "文本框 sublabel"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:451, application/modules/formbuilder/views/forms/templates_fields.php:487, application/modules/formbuilder/views/forms/templates_fields.php:551, application/modules/formbuilder/views/forms/templates_fields.php:614, application/modules/formbuilder/views/forms/templates_fields.php:655, application/modules/formbuilder/views/forms/templates_fields.php:698, application/modules/formbuilder/views/forms/templates_fields.php:744, application/modules/formbuilder/views/forms/templates_fields.php:791, application/modules/formbuilder/views/forms/templates_fields.php:828, application/modules/formbuilder/views/forms/templates_fields.php:866, application/modules/formbuilder/views/forms/templates_fields.php:907, application/modules/formbuilder/views/forms/templates_fields.php:948, application/modules/formbuilder/views/forms/templates_fields.php:990, application/modules/formbuilder/views/forms/templates_fields.php:1033, application/modules/formbuilder/views/forms/templates_fields.php:1074, application/modules/formbuilder/views/forms/templates_fields.php:1113, application/modules/formbuilder/views/forms/templates_fields.php:1181, application/modules/formbuilder/views/forms/templates_fields.php:1218, application/modules/formbuilder/views/forms/templates_fields.php:1262, application/modules/formbuilder/views/forms/templates_fields.php:1306, application/modules/formbuilder/views/forms/templates_fields.php:1348, application/modules/formbuilder/views/forms/templates_fields.php:1385, application/modules/formbuilder/views/forms/templates_fields.php:1432, application/modules/formbuilder/views/forms/templates_fields.php:1469, application/modules/formbuilder/views/forms/templates_fields.php:1517, application/modules/formbuilder/views/forms/templates_fields.php:1552, application/modules/formbuilder/views/forms/templates_fields.php:1586, application/modules/formbuilder/views/forms/templates_fields.php:1620, application/modules/formbuilder/views/forms/templates_fields.php:1654, application/modules/formbuilder/views/forms/templates_fields.php:1688, application/modules/formbuilder/views/forms/templates_fields.php:1711, application/modules/formbuilder/views/forms/templates_fields.php:1749, application/modules/formbuilder/views/forms/templates_fields.php:1790, application/modules/formbuilder/views/forms/templates_fields.php:1829, application/modules/formbuilder/views/forms/templates_fields.php:1898, application/modules/formbuilder/views/fields/modal/settings_field_helpblock.php:25, application/modules/formbuilder/views/fields/modal/settings_field_misc.php:34, application/modules/formbuilder/views/fields/templates/prevpanel_appetext.php:54, application/modules/formbuilder/views/fields/templates/prevpanel_captcha.php:81, application/modules/formbuilder/views/fields/templates/prevpanel_checkbox.php:76, application/modules/formbuilder/views/fields/templates/prevpanel_colorpicker.php:50, application/modules/formbuilder/views/fields/templates/prevpanel_customhtml.php:50, application/modules/formbuilder/views/fields/templates/prevpanel_datepicker.php:57, application/modules/formbuilder/views/fields/templates/prevpanel_datetime.php:55, application/modules/formbuilder/views/fields/templates/prevpanel_datetime_2.php:59, application/modules/formbuilder/views/fields/templates/prevpanel_dyncheckbox.php:51, application/modules/formbuilder/views/fields/templates/prevpanel_dynradiobtn.php:51, application/modules/formbuilder/views/fields/templates/prevpanel_fileupload.php:58, application/modules/formbuilder/views/fields/templates/prevpanel_heading1.php:48, application/modules/formbuilder/views/fields/templates/prevpanel_heading2.php:48, application/modules/formbuilder/views/fields/templates/prevpanel_heading3.php:48, application/modules/formbuilder/views/fields/templates/prevpanel_heading4.php:48, application/modules/formbuilder/views/fields/templates/prevpanel_heading5.php:48, application/modules/formbuilder/views/fields/templates/prevpanel_heading6.php:48, application/modules/formbuilder/views/fields/templates/prevpanel_imageupload.php:61, application/modules/formbuilder/views/fields/templates/prevpanel_multiselect.php:56, application/modules/formbuilder/views/fields/templates/prevpanel_password.php:51, application/modules/formbuilder/views/fields/templates/prevpanel_prepapptext.php:55, application/modules/formbuilder/views/fields/templates/prevpanel_preptext.php:54, application/modules/formbuilder/views/fields/templates/prevpanel_radiobtn.php:76, application/modules/formbuilder/views/fields/templates/prevpanel_range.php:54, application/modules/formbuilder/views/fields/templates/prevpanel_ratingstar.php:49, application/modules/formbuilder/views/fields/templates/prevpanel_recaptcha.php:50, application/modules/formbuilder/views/fields/templates/prevpanel_select.php:55, application/modules/formbuilder/views/fields/templates/prevpanel_slider.php:57, application/modules/formbuilder/views/fields/templates/prevpanel_spinner.php:52, application/modules/formbuilder/views/fields/templates/prevpanel_submitbtn.php:50, application/modules/formbuilder/views/fields/templates/prevpanel_switch.php:51, application/modules/formbuilder/views/fields/templates/prevpanel_textarea.php:50, application/modules/formbuilder/views/fields/templates/prevpanel_textbox.php:49, application/modules/formbuilder/views/fields/templates/prevpanel_timepicker.php:57, application/modules/formbuilder/views/fields/templates/prevpanel_wizardbtn.php:36
+msgid "Help block text"
+msgstr "帮助块文本"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:471, application/modules/formbuilder/views/fields/templates/prevpanel_textarea.php:34
+msgid "Textarea label"
+msgstr "文本标签"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:474, application/modules/formbuilder/views/fields/templates/prevpanel_textarea.php:37
+msgid "Textarea sublabel"
+msgstr "Textarea sublabel"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:527, application/modules/formbuilder/views/forms/templates_fields.php:536, application/modules/formbuilder/views/forms/templates_fields.php:545, application/modules/formbuilder/views/forms/templates_fields.php:590, application/modules/formbuilder/views/forms/templates_fields.php:599, application/modules/formbuilder/views/forms/templates_fields.php:608, application/modules/formbuilder/views/forms/templates_fields.php:648, application/modules/formbuilder/views/forms/templates_fields.php:649, application/modules/formbuilder/views/forms/templates_fields.php:650, application/modules/formbuilder/views/forms/templates_fields.php:690, application/modules/formbuilder/views/forms/templates_fields.php:692, application/modules/formbuilder/views/forms/templates_fields.php:693, application/modules/formbuilder/views/forms/templates_fields.php:2035, application/modules/formbuilder/views/forms/templates_fields.php:2044, application/modules/formbuilder/views/fields/templates/prevpanel_checkbox.php:52, application/modules/formbuilder/views/fields/templates/prevpanel_checkbox.php:61, application/modules/formbuilder/views/fields/templates/prevpanel_checkbox.php:70, application/modules/formbuilder/views/fields/templates/prevpanel_multiselect.php:48, application/modules/formbuilder/views/fields/templates/prevpanel_multiselect.php:50, application/modules/formbuilder/views/fields/templates/prevpanel_multiselect.php:51, application/modules/formbuilder/views/fields/templates/prevpanel_radiobtn.php:52, application/modules/formbuilder/views/fields/templates/prevpanel_radiobtn.php:61, application/modules/formbuilder/views/fields/templates/prevpanel_radiobtn.php:70, application/modules/formbuilder/views/fields/templates/prevpanel_select.php:48, application/modules/formbuilder/views/fields/templates/prevpanel_select.php:49, application/modules/formbuilder/views/fields/templates/prevpanel_select.php:50
+msgid "option"
+msgstr "选项"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:735, application/modules/formbuilder/views/settings/backup_settings.php:123, application/modules/formbuilder/views/fields/render_front/type_fileupload.php:24, application/modules/formbuilder/views/fields/render_front/type_imageupload.php:24, application/modules/formbuilder/views/fields/templates/prevpanel_fileupload.php:50
+msgid "Select file"
+msgstr "选择文件"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:736, application/modules/formbuilder/views/forms/templates_fields.php:782, application/modules/formbuilder/views/settings/backup_settings.php:124, application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:104, application/modules/formbuilder/views/fields/render_front/type_fileupload.php:25, application/modules/formbuilder/views/fields/render_front/type_imageupload.php:25, application/modules/formbuilder/views/fields/templates/prevpanel_fileupload.php:51, application/modules/formbuilder/views/fields/templates/prevpanel_imageupload.php:52
+msgid "Change"
+msgstr "变更"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:739, application/modules/formbuilder/views/forms/templates_fields.php:785, application/modules/formbuilder/views/settings/backup_settings.php:127, application/modules/formbuilder/views/fields/modal/field_opt_column.php:49, application/modules/formbuilder/views/fields/modal/field_opt_text.php:49, application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:118, application/modules/formbuilder/views/fields/render_front/type_fileupload.php:28, application/modules/formbuilder/views/fields/render_front/type_imageupload.php:27, application/modules/formbuilder/views/fields/templates/prevpanel_fileupload.php:53, application/modules/formbuilder/views/fields/templates/prevpanel_imageupload.php:55
+msgid "Remove"
+msgstr "删除"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:781, application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:90, application/modules/formbuilder/views/fields/templates/prevpanel_imageupload.php:51
+msgid "Select image"
+msgstr "选择图像"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:1175, application/modules/formbuilder/views/fields/render_front/type_captcha.php:70, application/modules/formbuilder/views/fields/templates/prevpanel_captcha.php:75
+msgid "CAPTCHA Code"
+msgstr "验证码代码"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:1513, application/modules/formbuilder/views/fields/templates/prevpanel_heading1.php:44
+msgid "Type your heading H1 here"
+msgstr "键入您的标题 H1 在这里"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:1548, application/modules/formbuilder/views/fields/templates/prevpanel_heading2.php:44
+msgid "Type your heading H2 here"
+msgstr "键入您的标题 H2 在这里"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:1582, application/modules/formbuilder/views/fields/templates/prevpanel_heading3.php:44
+msgid "Type your heading H3 here"
+msgstr "键入您的标题 H3 在这里"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:1616, application/modules/formbuilder/views/fields/templates/prevpanel_heading4.php:44
+msgid "Type your heading H4 here"
+msgstr "键入您的标题 H4 在这里"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:1650, application/modules/formbuilder/views/fields/templates/prevpanel_heading5.php:44
+msgid "Type your heading H5 here"
+msgstr "键入您的标题 H5 在这里"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:1684, application/modules/formbuilder/views/fields/templates/prevpanel_heading6.php:44
+msgid "Type your heading H6 here"
+msgstr "键入您的标题 H6 在这里"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:1703, application/modules/formbuilder/views/fields/templates/prevpanel_wizardbtn.php:28
+msgid "Prev"
+msgstr "预览"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:2005
+msgid "Type label"
+msgstr "类型标签"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:2016
+msgid "Type value"
+msgstr "类型标签"
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:2083, application/modules/formbuilder/views/forms/templates_fields.php:2097
+msgid "Images"
+msgstr "图片"
+
+#: application/modules/formbuilder/views/frontend/form_summary.php:40, application/modules/formbuilder/views/records/info_record.php:45, application/modules/formbuilder/views/records/info_record_topdf.php:58
+msgid "Units"
+msgstr "Units"
+
+#: application/modules/formbuilder/views/records/custom_report.php:33
+msgid "Custom report"
+msgstr "自定义报表"
+
+#: application/modules/formbuilder/views/records/custom_report.php:36, application/modules/formbuilder/views/records/view_charts.php:36
+msgid "Select your custom fields to be shown on list report"
+msgstr "选择要显示在列表报告您自定义字段"
+
+#: application/modules/formbuilder/views/records/custom_report_getAllfields.php:25, application/modules/formbuilder/views/fields/modal/field_opt_column.php:32, application/modules/formbuilder/views/fields/modal/field_opt_text.php:32
+msgid "Field name"
+msgstr "字段名"
+
+#: application/modules/formbuilder/views/records/custom_report_getAllfields.php:26
+msgid "Order"
+msgstr "边框"
+
+#: application/modules/formbuilder/views/records/info_record.php:97
+msgid "URL page"
+msgstr "URL page"
+
+#: application/modules/formbuilder/views/records/info_record.php:127, application/modules/formbuilder/views/records/info_record.php:120
+msgid "Export to PDF"
+msgstr "导出到PDF"
+
+#: application/modules/formbuilder/views/records/list_records.php:26
+msgid "List Records."
+msgstr "List Records."
+
+#: application/modules/formbuilder/views/records/list_records.php:71, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:81
+msgid "Show"
+msgstr "显示"
+
+#: application/modules/formbuilder/views/records/list_records_byforms.php:32
+msgid "Export to csv"
+msgstr "导出至 csv"
+
+#: application/modules/formbuilder/views/records/list_records_getdatatable.php:44
+msgid "Show detail"
+msgstr "显示明细数据"
+
+#: application/modules/formbuilder/views/records/view_charts.php:33
+msgid "View chart"
+msgstr "View chart"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:37
+msgid "Name backup"
+msgstr "Name backup"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:42
+msgid ""
+"Enter a backup name or leave blank, current date will be assigned to backup "
+"name"
+msgstr ""
+"Enter a backup name or leave blank, current date will be assigned to backup "
+"name"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:52, application/modules/formbuilder/views/settings/backup_settings.php:48
+msgid "Create backup"
+msgstr "创建"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:64
+msgid "Name"
+msgstr "名称窗体"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:65, application/modules/formbuilder/views/fields/modal/field_opt_column.php:531, application/modules/formbuilder/views/fields/modal/field_opt_column.php:754
+msgid "Size"
+msgstr "Size"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:105
+msgid "there is not backup stored. Create new one"
+msgstr "不是形式。添加新"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:84
+msgid "Download"
+msgstr "Download"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:89, application/modules/formbuilder/views/settings/backup_settings.php:176
+msgid "Restore Backup"
+msgstr "Restore Backup"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:134
+msgid "Upload Backup"
+msgstr "Upload Backup"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:156, application/modules/formbuilder/views/settings/view_settings.php:118, application/modules/formbuilder/views/settings/view_settings.php:109
+msgid "Save changes"
+msgstr "保存更改"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:174
+msgid "Database backup success"
+msgstr "Database backup success"
+
+#: application/modules/formbuilder/views/settings/backup_settings.php:175
+msgid "Delete File selected"
+msgstr "删除所选字段"
+
+#: application/modules/formbuilder/views/settings/blocked_getmessage.php:21
+msgid "is a PRO Feature"
+msgstr "is a PRO Feature"
+
+#: application/modules/formbuilder/views/settings/blocked_getmessage.php:24
+msgid ""
+"We're sorry, %s is not available on free version.<br><br>Please upgrade to "
+"Pro version to unlocks all these features, and puts you on the upgrade path "
+"for additional features that we’re excited to share in the near future."
+msgstr ""
+"We're sorry, %s is not available on free version.<br><br>Please upgrade to "
+"Pro version to unlocks all these features, and puts you on the upgrade path "
+"for additional features that we're excited to share in the near future."
+
+#: application/modules/formbuilder/views/settings/blocked_getmessage.php:30
+msgid "UPGRADE TO PRO VERSION"
+msgstr "UPGRADE TO PRO VERSION"
+
+#: application/modules/formbuilder/views/settings/system_check.php:29
+msgid "System check"
+msgstr "System check"
+
+#: application/modules/formbuilder/views/settings/system_check.php:43
+msgid "Database Integrity"
+msgstr "Database Integrity"
+
+#: application/modules/formbuilder/views/settings/system_check.php:99
+msgid "Database is fine"
+msgstr "Database is fine"
+
+#: application/modules/formbuilder/views/settings/system_check.php:52
+msgid "Tables"
+msgstr "平板"
+
+#: application/modules/formbuilder/views/settings/system_check.php:90
+msgid ""
+"if you see a red status for any table, it means the software installation "
+"have failed. try making a fresh install or contact developer for support"
+msgstr ""
+"if you see a red status for any table, it means the software installation "
+"have failed. try making a fresh install or contact developer for support"
+
+#: application/modules/formbuilder/views/settings/system_check.php:117
+msgid "Directives"
+msgstr "有效"
+
+#: application/modules/formbuilder/views/settings/system_check.php:120
+msgid "allow_url_fopen"
+msgstr "allow_url_fopen"
+
+#: application/modules/formbuilder/views/settings/system_check.php:131
+msgid "allow_url_fopen php directive is disabled and Recaptcha will not work"
+msgstr "allow_url_fopen php directive is disabled and Recaptcha will not work"
+
+#: application/modules/formbuilder/views/settings/system_check.php:142
+msgid "PHP Extensions"
+msgstr "PHP Extensions"
+
+#: application/modules/formbuilder/views/settings/system_check.php:145
+msgid "Simple XML"
+msgstr "Simple XML"
+
+#: application/modules/formbuilder/views/settings/system_check.php:156
+msgid ""
+"simplexml extension is important for the software. ask your webhost if this "
+"extension is not installed"
+msgstr ""
+"simplexml extension is important for the software. ask your webhost if this "
+"extension is not installed"
+
+#: application/modules/formbuilder/views/settings/view_settings.php:29
+msgid "Global Settings"
+msgstr "全局设置"
+
+#: application/modules/formbuilder/views/settings/view_settings.php:45
+msgid "LANGUAGE"
+msgstr "LANGUAGE"
+
+#: application/modules/formbuilder/views/settings/view_settings.php:47
+msgid "it allows to change the language"
+msgstr "it allows to change the language"
+
+#: application/modules/formbuilder/views/settings/view_settings.php:74
+msgid "FIELDS FAST LOAD"
+msgstr "FIELDS FAST LOAD"
+
+#: application/modules/formbuilder/views/settings/view_settings.php:76
+msgid "it allows to loads field options in a fast way."
+msgstr "it allows to loads field options in a fast way."
+
+#: application/modules/formbuilder/views/settings/view_settings.php:92
+msgid ""
+"This feature is in beta test, so you if you enable option, maybe you could "
+"face some weird issues when loading field options. In case of that, just "
+"disable that option and report this issue at info@softdiscover.com "
+msgstr ""
+"This feature is in beta test, so you if you enable option, maybe you could "
+"face some weird issues when loading field options. In case of that, just "
+"disable that option and report this issue at info@softdiscover.com "
+
+#: application/modules/user/views/intranet/createuser.php:24
+msgid "User Information"
+msgstr "User Information"
+
+#: application/modules/user/views/intranet/createuser.php:39
+msgid "Username"
+msgstr "Username"
+
+#: application/modules/user/views/intranet/createuser.php:41
+msgid "Type username"
+msgstr "Type username"
+
+#: application/modules/user/views/intranet/createuser.php:47
+msgid "Type email"
+msgstr "Type email"
+
+#: application/modules/user/views/intranet/createuser.php:53
+msgid "Type password"
+msgstr "Type password"
+
+#: application/modules/user/views/intranet/createuser.php:57, application/modules/user/views/intranet/createuser.php:59
+msgid "Confirm password"
+msgstr "Confirm password"
+
+#: application/modules/user/views/intranet/createuser.php:67
+msgid "Enabled"
+msgstr "Enabled"
+
+#: application/modules/user/views/intranet/createuser.php:71
+msgid "Disabled"
+msgstr "Disabled"
+
+#: application/modules/user/views/intranet/index.php:45
+msgid "User"
+msgstr "User"
+
+#: application/modules/user/views/intranet/index.php:62
+msgid "active"
+msgstr "active"
+
+#: application/modules/user/views/intranet/index.php:78
+msgid "Action"
+msgstr "Action"
+
+#: application/modules/user/views/intranet/index.php:89, application/modules/user/views/intranet/index.php:84
+msgid "Edit User"
+msgstr "Edit User"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:31
+msgid "Icon"
+msgstr "Icon"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:49, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:46
+msgid "Border Color"
+msgstr "边框"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:67, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:63, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:431
+msgid "Background Color"
+msgstr "背景颜色"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:85, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:142
+msgid "Icon Color"
+msgstr "背景颜色"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:104
+msgid "Icon Size"
+msgstr "Icon Size"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:34, application/modules/formbuilder/views/fields/modal/field_opt_text.php:34
+msgid "This is important to identify the field on reports and conditional logic"
+msgstr "这是重要的是确定字段在报告和条件逻辑"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:38, application/modules/formbuilder/views/fields/modal/field_opt_text.php:38
+msgid "Type field name"
+msgstr "类型字段名称"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:80
+msgid "More Options"
+msgstr "选项"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:94, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:376, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:417, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:194, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:235, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:173, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:214, application/modules/formbuilder/views/fields/modal/settings_field_input_14.php:51, application/modules/formbuilder/views/fields/modal/settings_field_label.php:644
+msgid "Center"
+msgstr "对中"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:101
+msgid "Enable Center position"
+msgstr "显示报警位置"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:102
+msgid "Enable center position"
+msgstr "显示报警位置"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:125, application/modules/formbuilder/views/fields/modal/field_opt_column.php:126
+msgid "Enable Width"
+msgstr "启用"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:157, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:21, application/modules/formbuilder/views/fields/modal/settings_form_more.php:21
+msgid "Margin"
+msgstr "Margin"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:163, application/modules/formbuilder/views/fields/modal/field_opt_column.php:249, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:73, application/modules/formbuilder/views/fields/modal/settings_field_label.php:452, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:374, application/modules/formbuilder/views/fields/modal/settings_form_more.php:27, application/modules/formbuilder/views/fields/modal/settings_form_more.php:112
+msgid "Top"
+msgstr "上"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:164, application/modules/formbuilder/views/fields/modal/field_opt_column.php:250, application/modules/formbuilder/views/fields/modal/settings_form_more.php:28, application/modules/formbuilder/views/fields/modal/settings_form_more.php:113
+msgid "Top margin (px)"
+msgstr "Top margin (px)"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:183, application/modules/formbuilder/views/fields/modal/field_opt_column.php:269, application/modules/formbuilder/views/fields/modal/settings_field_label.php:474, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:396, application/modules/formbuilder/views/fields/modal/settings_form_more.php:46, application/modules/formbuilder/views/fields/modal/settings_form_more.php:132
+msgid "Bottom"
+msgstr "下"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:184, application/modules/formbuilder/views/fields/modal/field_opt_column.php:270, application/modules/formbuilder/views/fields/modal/settings_form_more.php:47, application/modules/formbuilder/views/fields/modal/settings_form_more.php:133
+msgid "Bottom margin (px)"
+msgstr "Bottom margin (px)"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:203, application/modules/formbuilder/views/fields/modal/field_opt_column.php:289, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:106, application/modules/formbuilder/views/fields/modal/settings_form_more.php:66, application/modules/formbuilder/views/fields/modal/settings_form_more.php:152
+msgid "left"
+msgstr "left"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:204, application/modules/formbuilder/views/fields/modal/field_opt_column.php:290, application/modules/formbuilder/views/fields/modal/settings_form_more.php:67, application/modules/formbuilder/views/fields/modal/settings_form_more.php:153
+msgid "Left margin (px)"
+msgstr "Left margin (px)"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:223, application/modules/formbuilder/views/fields/modal/field_opt_column.php:309, application/modules/formbuilder/views/fields/modal/settings_form_more.php:86, application/modules/formbuilder/views/fields/modal/settings_form_more.php:172
+msgid "right"
+msgstr "右"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:224, application/modules/formbuilder/views/fields/modal/field_opt_column.php:310, application/modules/formbuilder/views/fields/modal/settings_form_more.php:87, application/modules/formbuilder/views/fields/modal/settings_form_more.php:173
+msgid "Right margin (px)"
+msgstr "Right margin (px)"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:243, application/modules/formbuilder/views/fields/modal/settings_form_more.php:106
+msgid "Padding"
+msgstr "顶部填充"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:330, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:236, application/modules/formbuilder/views/fields/modal/settings_field_input_11.php:23, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:33, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:35, application/modules/formbuilder/views/fields/modal/settings_field_input_8.php:23
+msgid "Text"
+msgstr "文本"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:337
+msgid "Color for texts inner field"
+msgstr "Color for texts inner field"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:366, application/modules/formbuilder/views/fields/modal/field_opt_column.php:367
+msgid "Enable background"
+msgstr "背景"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:383
+msgid "Background type"
+msgstr "背景"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:384
+msgid "Choose background type"
+msgstr "Choose background type"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:423
+msgid "Color for background"
+msgstr "颜色 （焦点）"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:450
+msgid "Start color for background"
+msgstr "Start color for background"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:473
+msgid "End color for background"
+msgstr "End color for background"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:495
+msgid "Image"
+msgstr "图片"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:511
+msgid "Update Image"
+msgstr "上传图片"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:532
+msgid "Background size"
+msgstr "背景图片"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:572
+msgid "Repeat"
+msgstr "Repeat"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:573
+msgid "Background repeat"
+msgstr "背景"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:602
+msgid "Position"
+msgstr "选项"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:603
+msgid "Background position"
+msgstr "背景颜色"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:631
+msgid "Enable Border"
+msgstr "启用"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:632
+msgid "Enable border"
+msgstr "启用"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:650
+msgid "Color for border"
+msgstr "Color for border"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:670
+msgid "Border type"
+msgstr "边框样式"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:671
+msgid "Choose border type"
+msgstr "边框样式"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:708
+msgid "Width"
+msgstr "Width"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:736, application/modules/formbuilder/views/fields/modal/field_opt_column.php:737
+msgid "Enable border radius"
+msgstr "边框半径"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:755
+msgid "Drag the slider to increase the size of border radius"
+msgstr "Drag the slider to increase the size of border radius"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:777
+msgid "Shadow"
+msgstr "盒阴影"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:783, application/modules/formbuilder/views/fields/modal/field_opt_column.php:784
+msgid "Enable shadow"
+msgstr "文本阴影"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:802
+msgid "Shadow color"
+msgstr "起始颜色"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:824
+msgid "Horizontal"
+msgstr "水平的"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:825
+msgid "Drag the slider to modify horizontal value"
+msgstr "Drag the slider to modify horizontal value"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:848
+msgid "Vertical"
+msgstr "垂直的"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:849
+msgid "Drag the slider to modify vertical value"
+msgstr "Drag the slider to modify vertical value"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:872
+msgid "Blur"
+msgstr "Blur"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:873
+msgid "Drag the slider to modify blur value"
+msgstr "Drag the slider to modify blur value"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:913, application/modules/formbuilder/views/fields/modal/settings_form_more.php:200
+msgid "ID selector"
+msgstr "ID selector"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:914, application/modules/formbuilder/views/fields/modal/settings_form_more.php:201
+msgid "ID selector let you control through css or javascript"
+msgstr "ID selector let you control through css or javascript"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:931, application/modules/formbuilder/views/fields/modal/settings_form_more.php:219
+msgid "CSS class"
+msgstr "CSS class"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:932, application/modules/formbuilder/views/fields/modal/settings_form_more.php:220
+msgid "CSS class let you control through css or javascript"
+msgstr "CSS class let you control through css or javascript"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_column.php:949, application/modules/formbuilder/views/fields/modal/field_opt_column.php:950, application/modules/formbuilder/views/fields/modal/settings_form_more.php:239, application/modules/formbuilder/views/fields/modal/settings_form_more.php:240
+msgid "Additional css"
+msgstr "Additional CSS"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:31
+msgid "Quick color"
+msgstr "选取这种颜色"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:66, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:105
+msgid "Start Color"
+msgstr "起始颜色"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:84, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:123
+msgid "End Color"
+msgstr "结束颜色"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:102
+msgid "Background color on hover"
+msgstr "背景颜色"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:160
+msgid "Enable search option"
+msgstr "Enable search option"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:172, application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:87
+msgid "Custom Translations"
+msgstr "自定义的前线"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:175
+msgid "None selected text"
+msgstr "未分级的文本"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:189
+msgid "none result text"
+msgstr "未分级的文本"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:203
+msgid "Count selected text"
+msgstr "未分级的文本"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_text.php:68, application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:83, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:145
+msgid "Label"
+msgstr "标签"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_text.php:72, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:229, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:26, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:28
+msgid "Input"
+msgstr "输入"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_text.php:76
+msgid "Help Block"
+msgstr "帮助块"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_text.php:80, application/modules/formbuilder/views/fields/modal/settings_field_misc.php:142
+msgid "Validators"
+msgstr "验证程序"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_text.php:85
+msgid "C.Logic"
+msgstr "C.Logic"
+
+#: application/modules/formbuilder/views/fields/modal/field_opt_text.php:89
+msgid "More"
+msgstr "More"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_helpblock.php:52, application/modules/formbuilder/views/fields/modal/settings_field_misc.php:56
+msgid "Show help block"
+msgstr "显示帮助区块"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_helpblock.php:66, application/modules/formbuilder/views/fields/modal/settings_field_label.php:92, application/modules/formbuilder/views/fields/modal/settings_field_misc.php:64
+msgid "Text Font"
+msgstr "文本字体"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_helpblock.php:94, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:61, application/modules/formbuilder/views/fields/modal/settings_field_misc.php:105
+msgid "Help block position"
+msgstr "帮助块位置"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_helpblock.php:106
+msgid "At bottom"
+msgstr "在底部"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_helpblock.php:117
+msgid "At Top"
+msgstr "顶部"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_helpblock.php:128
+msgid "Tooltip"
+msgstr "提示"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_helpblock.php:139
+msgid "Pop up"
+msgstr "弹出"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:45, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:71, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:95, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:148, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:174, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:198
+msgid "Add"
+msgstr "添加"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:112, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:215
+msgid "Clean"
+msgstr "简洁"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:294, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:112, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:91
+msgid "Place holder"
+msgstr "占位符"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:325, application/modules/formbuilder/views/fields/modal/settings_field_input_11.php:91, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:143, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:122, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:83
+msgid "Font family"
+msgstr "字体族"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:355, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:173, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:152
+msgid "Input value alignment"
+msgstr "输入的值的对齐方式"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:366, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:407, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:184, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:225, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:163, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:204, application/modules/formbuilder/views/fields/modal/settings_field_input_14.php:41, application/modules/formbuilder/views/fields/modal/settings_field_label.php:441, application/modules/formbuilder/views/fields/modal/settings_field_label.php:636, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:407
+msgid "Left"
+msgstr "左"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:386, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:427, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:204, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:245, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:183, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:224, application/modules/formbuilder/views/fields/modal/settings_field_input_14.php:61, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:84, application/modules/formbuilder/views/fields/modal/settings_field_label.php:463, application/modules/formbuilder/views/fields/modal/settings_field_label.php:652, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:385
+msgid "Right"
+msgstr "右"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:396, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:214, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:193
+msgid "Button alignment"
+msgstr "按钮对齐"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:622, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:440, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:419
+msgid "Color (focus)"
+msgstr "颜色 （焦点）"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_11.php:120
+msgid "Divider bar Color"
+msgstr "分割线颜色"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:20
+msgid "Next Button"
+msgstr "送出按鈕"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:88
+msgid "Text for last button"
+msgstr "Text for last button"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:91
+msgid "you can check this on frontend page or preview"
+msgstr "you can check this on frontend page or preview"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:21
+msgid "Prev Button"
+msgstr "单选按钮"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_14.php:30
+msgid "Buttons alignment"
+msgstr "按钮对齐"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_15.php:31
+msgid "label Yes"
+msgstr "Sublabel 文本"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_15.php:43
+msgid "label no"
+msgstr "标签"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:24
+msgid "allowed extensions"
+msgstr "allowed extensions"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:34
+msgid "Put the extensions between commas"
+msgstr "Put the extensions between commas"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:45
+msgid "Maximum size"
+msgstr "最大"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:70
+msgid "Attach files to mail notification"
+msgstr "Attach files to mail notification"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_16.php:83
+msgid ""
+"if you enable attachment option, make sure your web server (hosting) and "
+"mail server support your maximum size file"
+msgstr ""
+"if you enable attachment option, make sure your web server (hosting) and "
+"mail server support your maximum size file"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:23
+msgid "Image Height"
+msgstr "Image Height"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:32
+msgid "Image width"
+msgstr "最大宽度"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:44
+msgid "Layout mode"
+msgstr "布局元素"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:52
+msgid "one"
+msgstr "one"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:53
+msgid "two"
+msgstr "two"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:63
+msgid "Show zoom option"
+msgstr "Show zoom option"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:72
+msgid "Use Thumbnail"
+msgstr "Use Thumbnail"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:88
+msgid "hide"
+msgstr "hide"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:89
+msgid "show on hover"
+msgstr "show on hover"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:90
+msgid "put below image"
+msgstr "put below image"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:91
+msgid "put above image"
+msgstr "put above image"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:98
+msgid "Show Check Box"
+msgstr "复选框"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:114, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:124
+msgid "Add new option"
+msgstr "添加新的选项"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:117, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:127
+msgid "Remove all options"
+msgstr "删除所有选项"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:24
+msgid "Custom text"
+msgstr "自定义的文本颜色"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:47
+msgid "Show text"
+msgstr "显示明细数据"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:95
+msgid "bottom"
+msgstr "下"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:183
+msgid "Custom margin"
+msgstr "自定义外观"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:196
+msgid "Margin top"
+msgstr "顶部填充"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:208
+msgid "Margin right"
+msgstr "右填充"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:220
+msgid "Margin bottom"
+msgstr "下填充"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:232
+msgid "Margin left"
+msgstr "左填充"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:27, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:28
+msgid "Enable time"
+msgstr "启用"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:45, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:46, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:64
+msgid "No calendar"
+msgstr "No calendar"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:63
+msgid "time 24 hour"
+msgstr "time 24 hour"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:81, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:82
+msgid "Alternative input"
+msgstr "Alternative input"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:99
+msgid "Alternative input format"
+msgstr "Alternative input format"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:100
+msgid "Alternative format input"
+msgstr "Alternative format input"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:118, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:119
+msgid "Inline display"
+msgstr "内嵌"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:136, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:137
+msgid "Date format"
+msgstr "删除表单"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:165, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:27
+msgid "English"
+msgstr "英语"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:166, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:28
+msgid "Spanish"
+msgstr "西班牙语"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:167, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:29
+msgid "French"
+msgstr "法语"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:168, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:30
+msgid "Italian"
+msgstr "意大利语"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:169, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:31
+msgid "Japanese"
+msgstr "Japanese"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:170, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:32
+msgid "Portuguese"
+msgstr "葡萄牙"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:171, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:33
+msgid "Russian"
+msgstr "俄文"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:172, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:34
+msgid "Chinese"
+msgstr "中文"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:186, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:187
+msgid "Minimum date"
+msgstr "最低"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:206, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:207
+msgid "Maximum date"
+msgstr "最大"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:226, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:227
+msgid "Default date"
+msgstr "默认值"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:22
+msgid "Settings label option"
+msgstr "Settings label option"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:130
+msgid "Copy Label to Value"
+msgstr "Copy Label to Value"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:133
+msgid "Import bulk data"
+msgstr "Import bulk data"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:140
+msgid "Check"
+msgstr "复选框"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:148
+msgid "Value"
+msgstr "Value"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:161, application/modules/formbuilder/views/fields/modal/settings_field_label.php:627
+msgid "Block alignment"
+msgstr "块对齐"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:172
+msgid "Block"
+msgstr "模块"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:182
+msgid "Inline"
+msgstr "内嵌"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:195, application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:47
+msgid "Theme"
+msgstr "主题"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:201
+msgid "Choose Theme"
+msgstr "Choose Theme"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:206, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:44
+msgid "Default"
+msgstr "默认"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_3.php:23
+msgid "Custom html content"
+msgstr "自定义内容"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:24
+msgid "Minimum"
+msgstr "最低"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:34
+msgid "Maximum"
+msgstr "最大"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:50
+msgid "Default value"
+msgstr "默认值"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:77
+msgid "Decimals"
+msgstr "Decimals"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:97
+msgid "Range 1"
+msgstr "1 范围"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_4.php:107
+msgid "Range 2"
+msgstr "范围 2"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:24
+msgid "Public key"
+msgstr "公开密钥加密"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:33
+msgid "Secret key"
+msgstr "秘匙"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:57
+msgid "Light"
+msgstr "加亮"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:66
+msgid "Dark"
+msgstr "暗"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:77
+msgid ""
+"Get private and publi key from Recaptcha site, and choose reCAPTCHA v2 "
+"type. only recaptcha v2 is supported. Get recaptcha keys here: "
+msgstr ""
+"Get private and publi key from Recaptcha site, and choose reCAPTCHA v2 "
+"type. only recaptcha v2 is supported. Get recaptcha keys here: "
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:77
+msgid "Go to Recaptcha site"
+msgstr "Go to Recaptcha site"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:24
+msgid "Custom text color"
+msgstr "自定义的文本颜色"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:65
+msgid "Custom Background color"
+msgstr "自定义背景图片颜色"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:105
+msgid "Custom Behind lines"
+msgstr "自定义后面的行"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:117, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:151
+msgid "Lines"
+msgstr "明细"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:140
+msgid "Custom front lines"
+msgstr "自定义的前线"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:173
+msgid "Distortion"
+msgstr "失真"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:40
+msgid "Format"
+msgstr "རྣམ་པ།"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_9.php:23
+msgid "Text star 1"
+msgstr "文本星 1"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_9.php:34
+msgid "Text star 2"
+msgstr "文本之星 2 号"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_9.php:46
+msgid "Text star 3"
+msgstr "文本星 3"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_9.php:58
+msgid "Text star 4"
+msgstr "文本星级 4"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_9.php:70
+msgid "Text star 5"
+msgstr "文本星 5"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_9.php:82
+msgid "Not rated text"
+msgstr "未分级的文本"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:23
+msgid "Label text"
+msgstr "标签"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:78, application/modules/formbuilder/views/fields/modal/settings_field_label.php:289, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:416
+msgid "Text Color"
+msgstr "文本颜色"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:124
+msgid "Text Shadow"
+msgstr "文本阴影"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:218
+msgid "Sub label"
+msgstr "子标签"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:225
+msgid "Sublabel text"
+msgstr "Sublabel 文本"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:303
+msgid "Text font"
+msgstr "文本字体"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:331
+msgid "Text shadow"
+msgstr "文本阴影"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:362
+msgid "x"
+msgstr "x"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:379
+msgid "y"
+msgstr "y"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:423
+msgid "Text Block"
+msgstr "文本块"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:429
+msgid "Block position"
+msgstr "块位置"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:483
+msgid "Grid layout of label block when is on left or right position"
+msgstr "Grid layout of label block when is on left or right position"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:495
+msgid "1|11"
+msgstr "1|11"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:506
+msgid "2|10"
+msgstr "2|10"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:517
+msgid "3|9"
+msgstr "3|9"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:528
+msgid "4|8"
+msgstr "4|8"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:539
+msgid "5|7"
+msgstr "5|7"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:550
+msgid "6|6"
+msgstr "6|6"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:561
+msgid "7|5"
+msgstr "7|5"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:572
+msgid "8|4"
+msgstr "8|4"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:583
+msgid "9|3"
+msgstr "9|3"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:594
+msgid "10|2"
+msgstr "10|2"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:605
+msgid "11|1"
+msgstr "11|1"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_label.php:614
+msgid "Show Block"
+msgstr "显示块"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:24
+msgid "Help block"
+msgstr "帮助块"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:78
+msgid "Help block alignment (temp - delete)"
+msgstr "帮助块对齐 （temp-删除）"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:149, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:40, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:147
+msgid "Required"
+msgstr "必须的"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:157
+msgid "Allow whitespace"
+msgstr "允许空格"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:166, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:23
+msgid "Add validator"
+msgstr "添加验证程序"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:230, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:147, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:206, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:245, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:284, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:323
+msgid "Validator configuration: "
+msgstr "验证配置："
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:230, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:124
+msgid "Less than"
+msgstr "文件小于"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:234, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:159, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:218, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:257, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:296, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:335
+msgid "Default Message"
+msgstr "默认消息"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:242, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:171, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:230, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:269, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:308, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:347
+msgid "Custom Error Message"
+msgstr "自定义错误消息"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:253, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:362
+msgid "Alert position"
+msgstr "显示报警位置"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:287, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:457
+msgid "Set required icon"
+msgstr "设置所需的图标"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:295, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:469
+msgid "Choose required icon"
+msgstr "选择所需的图标"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:305, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:485
+msgid "Required icon position"
+msgstr "所需的图标的位置"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:312, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:496
+msgid "Before label"
+msgstr "之前的标签"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_misc.php:318, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:506
+msgid "After label"
+msgstr "之后的标签"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:52
+msgid "Custom"
+msgstr "自定义css"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:66, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:206
+msgid "Letters"
+msgstr "信件"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:78
+msgid "Letter & Numbers"
+msgstr "字母 & 数"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:91, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:284
+msgid "Only numbers"
+msgstr "请只使用数字"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:112
+msgid "Greater than"
+msgstr "不等"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:118
+msgid "Identical"
+msgstr "相同"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:130
+msgid "Length"
+msgstr "长度"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:139
+msgid "Validator: "
+msgstr "验证器："
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:153, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:212, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:251, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:290, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:329
+msgid "Translate error message "
+msgstr "翻译错误消息"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:162, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:165, application/modules/formbuilder/views/fields/render_front/block_main.php:70, application/modules/formbuilder/views/fields/render_front/type_captcha.php:58, application/modules/formbuilder/views/fields/render_front/type_recaptcha.php:37
+msgid "this is required"
+msgstr "这是必须的"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:184
+msgid "Custom validation"
+msgstr "自定义填充"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:186
+msgid "Validation using a character pattern or regular expression"
+msgstr "Validation using a character pattern or regular expression"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:221, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:224, application/modules/formbuilder/views/fields/render_front/block_main.php:53
+msgid "Required only letters"
+msgstr "要求只有字母"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:245
+msgid "Letters and Numbers"
+msgstr "字母和数字"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:260, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:263, application/modules/formbuilder/views/fields/render_front/block_main.php:57
+msgid "Required only Letters and Numbers"
+msgstr "要求只有字母和数字"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:299, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:302, application/modules/formbuilder/views/fields/render_front/block_main.php:61
+msgid "Required only numbers"
+msgstr "要求只有其中的数字"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:338, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:341, application/modules/formbuilder/views/fields/render_front/block_main.php:65
+msgid "Required a valid mail"
+msgstr "需要一个有效的邮件"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_validate.php:450
+msgid "Required icon"
+msgstr "必填的图标"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:50, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:29
+msgid "Enable Conditional logic"
+msgstr "开启逻辑条件"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:26, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:46
+msgid "Conditional logic"
+msgstr "开启逻辑条件"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:82
+msgid "Hide"
+msgstr "隠藏"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:84
+msgid "this field if"
+msgstr "显示此字段值"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:90
+msgid "Any"
+msgstr "任意"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:92
+msgid "of the following rule match"
+msgstr "下面的规则匹配的"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:102
+msgid "Add new conditional Logic"
+msgstr "添加新的条件逻辑"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:105
+msgid "Remove all"
+msgstr "全部移除"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:140, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:146
+msgid "is"
+msgstr "IS"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:141, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:147
+msgid "is not"
+msgstr "不是"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:148
+msgid "greater than"
+msgstr "大於"
+
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:149
+msgid "less than"
+msgstr "小於"
+
+#: application/modules/formbuilder/views/fields/render_front/type_subbtn.php:22, application/modules/formbuilder/views/fields/render_front/type_wizardbtn.php:40
+msgid "Sending"
+msgstr "正在发送"
+
+#: application/modules/formbuilder/views/fields/options/select/impbulkdata.php:23
+msgid ""
+"Paste the csv content, the fields have to to be delimited by \"|\". the "
+"headears will go in the next order: label, value, price. Check the example: "
+" "
+msgstr ""
+"Paste the csv content, the fields have to to be delimited by \"|\". the "
+"headears will go in the next order: label, value, price. Check the example: "
+
+#: application/modules/formbuilder/views/fields/options/select/impbulkdata.php:23
+msgid "Download here"
+msgstr "Download here"
+
+#: application/modules/formbuilder/views/fields/options/select/impbulkdata.php:27
+msgid "The current options of the field will be removed after importing "
+msgstr "The current options of the field will be removed after importing "
+
+#: application/modules/formbuilder/views/fields/options/select/impbulkdata_footer.php:21
+msgid "Import Data"
+msgstr "导入"

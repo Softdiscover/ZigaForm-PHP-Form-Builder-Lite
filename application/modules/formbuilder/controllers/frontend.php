@@ -1177,7 +1177,7 @@ class Frontend extends FrontendController {
 				$email_recipient = ( isset( $form_data_onsubm['onsubm']['mail_recipient'] ) ) ? $form_data_onsubm['onsubm']['mail_recipient'] : model_settings::$db_config['admin_mail'];
 				$email_cc        = ( isset( $form_data_onsubm['onsubm']['mail_cc'] ) ) ? $form_data_onsubm['onsubm']['mail_cc'] : '';
 				$email_bcc       = ( isset( $form_data_onsubm['onsubm']['mail_bcc'] ) ) ? $form_data_onsubm['onsubm']['mail_bcc'] : '';
-				$mail_subject    = ( isset( $form_data_onsubm['onsubm']['mail_subject'] ) ) ? do_shortcode( $form_data_onsubm['onsubm']['mail_subject'] ) : __( 'New form request', 'FRocket_front' );
+				$mail_subject    = ( isset( $form_data_onsubm['onsubm']['mail_subject'] ) ) ? do_shortcode( $form_data_onsubm['onsubm']['mail_subject'] ) : __( 'New form request', 'frocket_front' );
 
 				$mail_usr_recipient = ( isset( $form_data_onsubm['onsubm']['mail_usr_recipient'] ) ) ? $form_data_onsubm['onsubm']['mail_usr_recipient'] : '';
 				$mail_replyto       = ( isset( $form_data_onsubm['onsubm']['mail_replyto'] ) ) ? $form_data_onsubm['onsubm']['mail_replyto'] : '';
@@ -1222,7 +1222,7 @@ class Frontend extends FrontendController {
 					$mail_usr_cc      = ( isset( $form_data_onsubm['onsubm']['mail_usr_cc'] ) ) ? $form_data_onsubm['onsubm']['mail_usr_cc'] : '';
 					$mail_usr_bcc     = ( isset( $form_data_onsubm['onsubm']['mail_usr_bcc'] ) ) ? $form_data_onsubm['onsubm']['mail_usr_bcc'] : '';
 					$mail_usr_replyto = ( isset( $form_data_onsubm['onsubm']['mail_usr_replyto'] ) ) ? $form_data_onsubm['onsubm']['mail_usr_replyto'] : '';
-					$mail_usr_subject = ( isset( $form_data_onsubm['onsubm']['mail_usr_subject'] ) ) ? do_shortcode( $form_data_onsubm['onsubm']['mail_usr_subject'] ) : __( 'New form request', 'FRocket_front' );
+					$mail_usr_subject = ( isset( $form_data_onsubm['onsubm']['mail_usr_subject'] ) ) ? do_shortcode( $form_data_onsubm['onsubm']['mail_usr_subject'] ) : __( 'New form request', 'frocket_front' );
 
 					$mail_usr_pdf_st = ( isset( $form_data_onsubm['onsubm']['mail_usr_pdf_st'] ) ) ? $form_data_onsubm['onsubm']['mail_usr_pdf_st'] : '0';
 					if ( intval( $mail_usr_pdf_st ) === 1 ) {

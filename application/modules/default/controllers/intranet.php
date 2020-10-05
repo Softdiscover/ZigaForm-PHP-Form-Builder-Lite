@@ -175,8 +175,9 @@ class Intranet extends CommonController {
 		$data['smtp_conn']     = $rdata->smtp_conn;
 		$data['sendmail_path'] = $rdata->sendmail_path;
 		$data['language']      = $rdata->language;
-
-		$data['lang_list'] = $this->config->item( 'lang_uri_abbr' );
+		
+		$pofilespath=FCPATH.'i18n/languages/backend/';
+		$data['lang_list'] = Uiform_Form_Helper::getLanguageList($pofilespath);
 
 		$this->template->loadPartial( 'layout', 'intranet/settings', $data );
 	}

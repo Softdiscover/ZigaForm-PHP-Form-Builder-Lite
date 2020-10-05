@@ -16,28 +16,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	exit( 'No direct script access allowed' );
 }
 ?>
-<!-- Modal -->
-<div class="sfdc-modal sfdc-fade" id="uifm_modal_msg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="sfdc-modal-dialog">
-		<div class="sfdc-modal-content">
-			<div class="sfdc-modal-header">
-				<button type="button" class="sfdc-close" data-dismiss="modal" aria-hidden="true">&times;</button>
-				 <h4 class="sfdc-modal-title"></h4>
-
-			</div>
-			<div class="sfdc-modal-body"></div>
-			<div class="sfdc-modal-footer">
-				<button type="button" 
-						class="sfdc-btn sfdc-btn-default"
-						data-dismiss="modal"><?php echo __( 'Close', 'FRocket_admin' ); ?></button>
-				
-			</div>
-		</div>
-		<!-- /.sfdc-modal-content -->
-	</div>
-	<!-- /.sfdc-modal-dialog -->
-</div>
-<!-- /.modal -->
+ <?php include('footer-global.php');?>
 <!-- Modal -->
 <div class="sfdc-modal sfdc-fade" id="uifm_modal_alert_regen_msg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="sfdc-modal-dialog">

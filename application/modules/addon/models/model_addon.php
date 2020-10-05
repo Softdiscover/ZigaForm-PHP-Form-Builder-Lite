@@ -219,7 +219,9 @@ class model_addon extends CI_Model {
 	function getListAddons( $per_page = '', $segment = '' ) {
 		$query = sprintf(
 			'
-            select  c.add_name, c.add_title, c.add_info, c.flag_status
+            select  c.add_name, c.add_title, c.add_info, c.flag_status, c.add_params,
+            extractvalue(c.add_xml, "/params/child::required_wp") as required_wp,
+            extractvalue(c.add_xml, "/params/child::required_php") as required_php
             from %s c            
             where c.flag_status>=0
             ORDER BY c.created_date desc

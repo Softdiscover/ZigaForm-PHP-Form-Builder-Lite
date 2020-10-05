@@ -620,6 +620,58 @@ class Uiform_Form_Helper {
 		}
 		return $result;
 	}
+
+
+		public static function getLanguageList($pofilespath){
+	
+		
+		$files = scandir($pofilespath);
+        $total = count($files);
+        $list_lang               = array();
+		$list_lang[]             = array(
+			'val'   => '',
+			'label' => __( 'Select language', 'FRocket_admin' ),
+		);
+        for ($x = 0; $x <= $total; $x++) :
+            if (isset($files[$x]) && $files[$x] != '.' && $files[$x] != '..' && strtolower(substr($files[$x], strrpos($files[$x], '.') + 1)) == 'po' ) {
+                $temp = str_replace(".po", "", str_replace("wprockf-", "", $files[$x]));
+                $pre_list=array();
+                $pre_list['val']=$temp;
+                switch ($temp) {
+					case 'en_US':
+						$pre_list['label']=__('English', 'FRocket_admin');
+						break;
+					case 'es_ES':
+						$pre_list['label']=__('Spanish', 'FRocket_admin');
+						break;
+					case 'fr_FR':
+						$pre_list['label']=__('French', 'FRocket_admin');
+						break;	
+					case 'de_DE':
+						$pre_list['label']=__('German', 'FRocket_admin');
+						break;	
+					case 'it_IT':
+						$pre_list['label']=__('Italian', 'FRocket_admin');
+						break;
+					case 'pt_BR':
+						$pre_list['label']=__('Portuguese', 'FRocket_admin');
+						break;
+					case 'ru_RU':
+						$pre_list['label']=__('Russian', 'FRocket_admin');
+						break;
+					case 'zh_CN':
+						$pre_list['label']=__('Chinese', 'FRocket_admin');
+						break;
+					default:
+						$pre_list['label']=$temp;
+						break;
+				}
+                $list_lang[]=$pre_list;
+            }
+        endfor;
+		
+		return $list_lang;
+	}
 }
 
 

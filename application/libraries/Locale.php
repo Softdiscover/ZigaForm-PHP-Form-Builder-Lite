@@ -36,7 +36,7 @@ class CI_Locale {
 		$CI->load->library( 'form_validation' );
 		$CI->load->library( 'session' );
 		$CI->form_validation->set_rules( 'lang_select', 'lang_select', 'exact_length[2]' );
-		$this->lang_default = 'en';
+		$this->lang_default = 'en_US';
 
 		if ( $CI->input->post( 'lang_select' ) ) {
 
@@ -60,7 +60,7 @@ class CI_Locale {
 				if ( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ) {
 									$this->lang = substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 );
 				} else {
-					$this->lang = 'en';
+					$this->lang = 'en_US';
 				}
 
 				if ( array_key_exists( $this->lang, $this->lang_allowed ) ) {
@@ -101,24 +101,26 @@ class CI_Locale {
 		 * @param   string  alternative path to look for language file
 		 * @return  mixed
 		 */
-	public function load( $lang = 'en' ) {
+	public function load( $lang = 'en_US' ) {
 		   $lang_allowed = array(
-			   'en' => 'english',
-			   'es' => 'spanish',
-			   'fr' => 'french',
-			   'de' => 'german',
-			   'it' => 'italian',
-			   'pt' => 'portuguese',
-			   'ru' => 'russian',
-			   'ch' => 'chinese',
+			   'en' => 'en_US',
+			   'es' => 'es_ES',
+			   'fr' => 'fr_FR',
+			   'de' => 'de_DE',
+			   'it' => 'it_IT',
+			   'pt' => 'pt_BR',
+			   'ru' => 'ru_RU',
+			   'ch' => 'zh_CN',
 		   ); // Languages translated
-		   if ( ! empty( $lang ) ) {
-			   $lang_pre = $lang;
+		   if ( !empty( $lang_allowed[$lang] ) ) {
+			   $lang_pre = $lang_allowed[$lang];
+			} else if($lang !='') {	   
+				$lang_pre = $lang;
 		   } else {
-			   $lang_pre = 'en';
+			   $lang_pre = 'en_US';
 		   }
 
-			$lang_name = $lang_allowed[ $lang_pre ];
+		 
 
 			// setlocale(LC_ALL, $CI->session->userdata('lang').'_'.strtoupper($CI->session->userdata('lang')).'.UTF-8');
 		   // setlocale(LC_NUMERIC, $CI->session->userdata('lang').'_'.strtoupper($CI->session->userdata('lang')).'.UTF-8');
@@ -131,9 +133,10 @@ class CI_Locale {
 				// Load the translations using any of the following ways:
 				// die($CI->session->userdata('lang_txt'));
 				// 3. using a Gettext\Translations instance (slower)
-				$translations = Gettext\Translations::fromPoFile( APPPATH . 'language/' . $lang_name . '/uifmcost-' . $lang_pre . '.po' );
+				$translations = Gettext\Translations::fromPoFile( FCPATH . 'i18n/languages/backend/wprockf-' . $lang_pre . '.po' );
 				$t->loadTranslations( $translations );
-
+				$translations = Gettext\Translations::fromPoFile( FCPATH . 'i18n/languages/front/wprockf-' . $lang_pre . '.po' );
+				$t->loadTranslations( $translations );
 				// Now you can use it in your templates
 
 				$t->register();

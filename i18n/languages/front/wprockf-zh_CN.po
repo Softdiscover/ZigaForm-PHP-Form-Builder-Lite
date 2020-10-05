@@ -1,0 +1,51 @@
+# Copyright (C) 2020 Zigaform PHP Form Builder 5.0.5
+# This file is distributed under the same license as the Zigaform PHP Form Builder 5.0.5 package.
+msgid ""
+msgstr ""
+"Project-Id-Version: Rocket form\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: softdiscover <info@softdiscover.com>\n"
+"Language: zh\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: Poedit 2.4.1\n"
+
+#: application/views/frontend/header.php:32
+msgid "Form"
+msgstr "Form"
+
+#: application/modules/formbuilder/controllers/frontend.php:636
+msgid "warning! Form was not submitted"
+msgstr "警告 ！不提交表单"
+
+#: application/modules/formbuilder/controllers/frontend.php:633
+msgid "Success! your form was submitted"
+msgstr "成功 ！提交您的窗体"
+
+#: application/modules/formbuilder/controllers/frontend.php:926
+msgid "Error! The file exceeds the allowed size of"
+msgstr "Error! The file exceeds the allowed size of"
+
+#: application/modules/formbuilder/controllers/frontend.php:933
+msgid "Error! Type of file is not allowed to upload"
+msgstr "Error! Type of file is not allowed to upload"
+
+#: application/modules/formbuilder/controllers/frontend.php:1180, application/modules/formbuilder/controllers/frontend.php:1225
+msgid "New form request"
+msgstr "新的形式要求"
+
+#: application/modules/formbuilder/controllers/records.php:401
+msgid " , version : "
+msgstr " , version : "
+
+#: application/modules/formbuilder/controllers/records.php:401
+msgid " , platform : "
+msgstr " , platform : "
+
+#: application/modules/formbuilder/views/frontend/mail_generate_fields.php:97, application/modules/formbuilder/views/frontend/mail_generate_fields.php:128
+msgid "Units"
+msgstr "Units"

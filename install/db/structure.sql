@@ -176,7 +176,7 @@ CREATE TABLE `fbcf_uiform_settings` (
 -- ----------------------------
 -- Records of fbcf_uiform_settings
 -- ----------------------------
-INSERT INTO `fbcf_uiform_settings` VALUES ('5.0.1', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
+INSERT INTO `fbcf_uiform_settings` VALUES ('5.0.5', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
 
 -- ----------------------------
 -- Table structure for `fbcf_uiform_user`
@@ -273,6 +273,8 @@ CREATE TABLE `fbcf_uiform_addon` (
 
 INSERT INTO `fbcf_uiform_addon` VALUES ('func_anim', 'Animation effect', 'You can animate your fields adding many animation effects. Also you can set up the delay and other options.', 1, 1, NULL, NULL, 1, 1, NULL, NULL, NULL, 0, '1980-01-01 00:00:01', '2018-01-31 10:35:14', NULL, NULL, NULL, NULL, NULL, 1, 1, 1);
 INSERT INTO `fbcf_uiform_addon` VALUES ('webhook', 'WebHooks Add-On', 'You can use the WebHooks Add-On to send data from your forms to any custom page or script you like. This page can perform integration tasks to transform, parse, manipulate and send your submission data to wherever you choose. If you are developing an application that needs to be updated every time a form is submitted, WebHooks is for you. The advantage of WebHooks is that the passing of data is immediate and you can pass all submitted form data at once. e.g. you can connect with Webhook of Zapier - https%3A%2F%2Fzapier.com%2Fpage%2Fwebhooks%2F', 1, 1, NULL, NULL, 1, 2, NULL, NULL, NULL, 0, '2019-12-30 01:36:23', '2019-12-30 01:34:27', NULL, NULL, NULL, NULL, NULL, 1, 1, 0);
+INSERT INTO `fbcf_uiform_addon` VALUES ('mgtranslate', 'Translation Manager Add-on', 'Translate any text on zigaform, and add new language', 1, 1, '1.0', NULL, 0, 4, '{\"required_wp\":5.0,\"required_php\":7.2}', NULL, NULL, 0, '2020-09-26 12:13:06', '2020-09-26 12:12:40', NULL, NULL, NULL, NULL, '<?xml version=\"1.0\"?> <params><required_wp>5.0</required_wp><required_php>7.2</required_php></params>', 1, 0, 0);
+
 
 DROP TABLE IF EXISTS `fbcf_uiform_addon_details`;
 CREATE TABLE `fbcf_uiform_addon_details` (
