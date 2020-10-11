@@ -42,7 +42,7 @@ if ( ! defined( 'BASEPATH' ) ) {
                                         <div class="zgfm-ext-buttons">
                                                    
                                                         <?php
-                                                        if (ZIGAFORM_F_LITE === 0 || strval($value->add_name) === 'woocommerce') {
+                                                        if (ZIGAFORM_F_LITE === 0 || strval($value->add_name) === 'woocommerce'  || strval($value->add_name) === 'mgtranslate' ) {
                                                             ?>
                                                             <?php if ( version_compare(PHP_VERSION, $value->required_php, '>=')) {?>
                                                                     <?php if (intval($value->flag_status) === 0) { ?>
