@@ -28,7 +28,7 @@ var rockfm_vars;
 	?>
   
 	 <?php
-		if ( isset($preload_noconflict) && intval( $preload_noconflict ) === 1 ) {
+		if ( isset( $preload_noconflict ) && intval( $preload_noconflict ) === 1 ) {
 			?>
 	   _uifmvar.fm_preload_noconflict = "1";         
 		<?php } ?>

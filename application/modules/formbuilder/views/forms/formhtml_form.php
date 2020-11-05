@@ -111,7 +111,7 @@ ob_start();
  <?php if ( isset( $main['add_js'] ) && ! empty( $main['add_js'] ) ) { ?>
   <!-- Additional javascript -->
    <script type="text/javascript">
-		<?php echo  urldecode( $main['add_js'] ) ; ?>
+		<?php echo  urldecode( $main['add_js'] ); ?>
 	 </script>  
 	<!-- adittional javascript -->
 <?php } ?>

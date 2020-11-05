@@ -16,7 +16,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	exit( 'No direct script access allowed' );
 }
 ?>
- <?php include('footer-global.php');?>
+ <?php include( 'footer-global.php' ); ?>
 <!-- Modal -->
 <div class="sfdc-modal sfdc-fade" id="uifm_modal_alert_regen_msg" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
 	<div class="sfdc-modal-dialog">

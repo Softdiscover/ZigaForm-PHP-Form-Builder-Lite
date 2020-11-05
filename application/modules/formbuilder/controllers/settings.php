@@ -227,9 +227,9 @@ class Settings extends BackendController {
 		$data  = array();
 		$query = $this->model_settings->getOptions();
 
-		$pofilespath=FCPATH.'i18n/languages/backend/';    
+		$pofilespath = FCPATH . 'i18n/languages/backend/';
 		$data['language']        = $query->language;
-		$data['lang_list']       = Uiform_Form_Helper::getLanguageList($pofilespath);
+		$data['lang_list']       = Uiform_Form_Helper::getLanguageList( $pofilespath );
 
 		$data['fields_fastload'] = get_option( 'zgfm_fields_fastload', 0 );
 

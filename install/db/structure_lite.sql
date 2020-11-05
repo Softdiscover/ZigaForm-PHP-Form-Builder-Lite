@@ -112,9 +112,9 @@ CREATE TABLE `fbcf_uiform_form` (
   `fmb_html_css` longtext,
   `fmb_default` tinyint(1) DEFAULT '0',
   `fmb_skin_status` tinyint(1) DEFAULT '0',
-  `fmb_skin_data` text,
+  `fmb_skin_data` longtext,
   `fmb_skin_type` smallint(5) DEFAULT '1',
-  `fmb_data2` text,
+  `fmb_data2` longtext,
     `fmb_rec_tpl_html` longtext NULL ,
     `fmb_rec_tpl_st` TINYINT(1) NULL DEFAULT 0 ,
   PRIMARY KEY (`fmb_id`)
@@ -142,8 +142,8 @@ CREATE TABLE `fbcf_uiform_form_records` (
   `fbh_user_agent` text,
   `fbh_page` text,
   `fbh_referer` text,
-  `fbh_params` text,
-  `fbh_error` text,
+  `fbh_params` longtext,
+  `fbh_error` longtext,
   PRIMARY KEY (`fbh_id`)
 ) DEFAULT CHARSET=utf8;
 
@@ -176,7 +176,7 @@ CREATE TABLE `fbcf_uiform_settings` (
 -- ----------------------------
 -- Records of fbcf_uiform_settings
 -- ----------------------------
-INSERT INTO `fbcf_uiform_settings` VALUES ('5.0.9', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
+INSERT INTO `fbcf_uiform_settings` VALUES ('5.1.4', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
 
 -- ----------------------------
 -- Table structure for `fbcf_uiform_user`
@@ -254,8 +254,8 @@ CREATE TABLE `fbcf_uiform_addon` (
     `add_icon` text ,
     `add_installed` smallint(5) DEFAULT NULL,
     `add_order` int(5) DEFAULT NULL,
-    `add_params` text ,
-    `add_log` text ,
+    `add_params` longtext,
+    `add_log` longtext,
     `addonscol` varchar(45) DEFAULT NULL,
     `flag_status` smallint(5)  DEFAULT 1,
     `created_date` timestamp NULL,
@@ -264,7 +264,7 @@ CREATE TABLE `fbcf_uiform_addon` (
     `updated_ip` varchar(100)  DEFAULT NULL,
     `created_by` varchar(100) DEFAULT NULL,
     `updated_by` varchar(100) DEFAULT NULL,
-    `add_xml` text ,
+    `add_xml` longtext,
     `add_load_back` smallint(5) DEFAULT NULL,
     `add_load_front` smallint(5) DEFAULT NULL,
     `is_field` smallint(5) DEFAULT NULL,

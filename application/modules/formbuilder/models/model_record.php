@@ -80,8 +80,7 @@ class model_record extends CI_Model {
 	 * @return void
 	 */
 	function getListAllRecordsFiltered( $data ) {
-	 
-		
+
 		$per_page   = $data['per_page'];
 		$segment    = $data['segment'];
 		$orderby    = $data['orderby'];
@@ -97,7 +96,7 @@ class model_record extends CI_Model {
 			$this->table,
 			$this->tbform
 		);
- 
+
 		$orderby = ( $orderby === 'asc' ) ? 'asc' : 'desc';
 
 		$query .= sprintf( ' ORDER BY c.created_date %s ', $orderby );
@@ -109,9 +108,9 @@ class model_record extends CI_Model {
 
 		$query2 = $this->db->query( $query );
 		return $query2->result();
-		 
+
 	}
-	
+
 	/**
 	 * Show trash records according to filter
 	 *
@@ -120,8 +119,7 @@ class model_record extends CI_Model {
 	 * @return void
 	 */
 	function getListTrashRecordsFiltered( $data ) {
-	 
-		
+
 		$per_page   = $data['per_page'];
 		$segment    = $data['segment'];
 		$orderby    = $data['orderby'];
@@ -137,7 +135,7 @@ class model_record extends CI_Model {
 			$this->table,
 			$this->tbform
 		);
- 
+
 		$orderby = ( $orderby === 'asc' ) ? 'asc' : 'desc';
 
 		$query .= sprintf( ' ORDER BY c.created_date %s ', $orderby );
@@ -149,7 +147,7 @@ class model_record extends CI_Model {
 
 		$query2 = $this->db->query( $query );
 		return $query2->result();
-		 
+
 	}
 
 
@@ -527,7 +525,7 @@ class model_record extends CI_Model {
 		/*
 	* list all and trash forms
 	*/
-	function ListTotals(){
+	function ListTotals() {
 		$query = sprintf(
 			'
 			SELECT 
@@ -536,12 +534,11 @@ class model_record extends CI_Model {
 			FROM %s
 			',
 			$this->table
-			
 		);
 
 		$query2 = $this->db->query( $query );
 		return $query2->row();
-	
+
 	}
 
 }

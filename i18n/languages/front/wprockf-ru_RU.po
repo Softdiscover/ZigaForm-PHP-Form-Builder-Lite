@@ -1,5 +1,5 @@
-# Copyright (C) 2020 Zigaform PHP Form Builder 5.0.9
-# This file is distributed under the same license as the Zigaform PHP Form Builder 5.0.9 package.
+# Copyright (C) 2020 Zigaform PHP Form Builder 5.1.4
+# This file is distributed under the same license as the Zigaform PHP Form Builder 5.1.4 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -18,31 +18,31 @@ msgstr ""
 msgid "Form"
 msgstr "Form"
 
-#: application/modules/formbuilder/controllers/frontend.php:636
+#: application/modules/formbuilder/controllers/frontend.php:698
 msgid "warning! Form was not submitted"
 msgstr "предупреждение! Форма не отправлена"
 
-#: application/modules/formbuilder/controllers/frontend.php:633
+#: application/modules/formbuilder/controllers/frontend.php:695
 msgid "Success! your form was submitted"
 msgstr "Успех! формы был представлен"
 
-#: application/modules/formbuilder/controllers/frontend.php:926
+#: application/modules/formbuilder/controllers/frontend.php:988
 msgid "Error! The file exceeds the allowed size of"
 msgstr "Error! The file exceeds the allowed size of"
 
-#: application/modules/formbuilder/controllers/frontend.php:933
+#: application/modules/formbuilder/controllers/frontend.php:995
 msgid "Error! Type of file is not allowed to upload"
 msgstr "Error! Type of file is not allowed to upload"
 
-#: application/modules/formbuilder/controllers/frontend.php:1180, application/modules/formbuilder/controllers/frontend.php:1225
+#: application/modules/formbuilder/controllers/frontend.php:1241, application/modules/formbuilder/controllers/frontend.php:1286
 msgid "New form request"
 msgstr "Новый запрос форма"
 
-#: application/modules/formbuilder/controllers/records.php:401
+#: application/modules/formbuilder/controllers/records.php:396
 msgid " , version : "
 msgstr " , version : "
 
-#: application/modules/formbuilder/controllers/records.php:401
+#: application/modules/formbuilder/controllers/records.php:396
 msgid " , platform : "
 msgstr " , platform : "
 

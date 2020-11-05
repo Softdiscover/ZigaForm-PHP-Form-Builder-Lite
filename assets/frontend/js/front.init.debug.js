@@ -35,67 +35,67 @@ if (ZIGAFORM_F_LITE === 1) {
 			script1: 'assets/frontend/js/script',
 			'blueimp-gallery-jquery': 'assets/common/js/blueimp/2.27.0/js/jquery.blueimp-gallery',
 			'bootstrap-image-gallery': 'assets/common/js/bgallery/3.1.3/js/bootstrap-image-gallery',
-			iframescript: 'assets/frontend/js/iframe/4.1.1/iframeResizer.min'
+			iframescript: 'assets/frontend/js/iframe/4.1.1/iframeResizer.min',
 		},
 		waitSeconds: 0,
 		map: {
 			'*': {
-				'blueimp-gallery': 'assets/common/js/blueimp/2.27.0/js/blueimp-gallery'
-			}
+				'blueimp-gallery': 'assets/common/js/blueimp/2.27.0/js/blueimp-gallery',
+			},
 		},
 		deps: ['jqueryNoConflict'],
 		shim: {
 			jqueryNoConflict: { exports: '$' },
 			jquery_ui: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			bootstrap: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			b_jasny: {
-				deps: ['jqueryNoConflict', 'bootstrap']
+				deps: ['jqueryNoConflict', 'bootstrap'],
 			},
 			b_slider: {
 				deps: ['jqueryNoConflict'],
-				exports: '$.fn.bootstrapSlider'
+				exports: '$.fn.bootstrapSlider',
 			},
 			b_selpicker: {
 				deps: ['jqueryNoConflict', 'bootstrap'],
-				exports: 'selectpicker'
+				exports: 'selectpicker',
 			},
 			b_touchspin: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			b_switch: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			flatpickr: {
 				deps: ['jqueryNoConflict', 'bootstrap'],
-				exports: 'Flatpickr'
+				exports: 'Flatpickr',
 			},
 			flatpickr_moment: {
-				deps: ['flatpickr']
+				deps: ['flatpickr'],
 			},
 			b_dtpicker2: {
 				deps: ['jqueryNoConflict', 'moment'],
-				exports: '$.fn.datepicker'
+				exports: '$.fn.datepicker',
 			},
 			moment: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			b_star: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			b_cpicker: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			j_form: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			'blueimp-gallery': {
-				exports: 'blueimpgal'
-			}
-		}
+				exports: 'blueimpgal',
+			},
+		},
 	});
 } else {
 	require.config({
@@ -123,136 +123,112 @@ if (ZIGAFORM_F_LITE === 1) {
 			'blueimp-gallery-jquery': 'assets/common/js/blueimp/2.27.0/js/jquery.blueimp-gallery',
 			'bootstrap-image-gallery': 'assets/common/js/bgallery/3.1.3/js/bootstrap-image-gallery',
 			waypoints: 'application/modules/addon_func_anim/views/frontend/assets/js/waypoints/2.0.5/waypoints.min',
-			iframescript: 'assets/frontend/js/iframe/4.1.1/iframeResizer.min'
+			iframescript: 'assets/frontend/js/iframe/4.1.1/iframeResizer.min',
 		},
 		waitSeconds: 0,
 		map: {
 			'*': {
-				'blueimp-gallery': 'assets/common/js/blueimp/2.27.0/js/blueimp-gallery'
-			}
+				'blueimp-gallery': 'assets/common/js/blueimp/2.27.0/js/blueimp-gallery',
+			},
 		},
 		deps: ['jqueryNoConflict'],
 		shim: {
 			jqueryNoConflict: { exports: '$' },
 			jquery_ui: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			bootstrap: {
-				deps: ['jqueryInternal', 'jqueryNoConflict']
+				deps: ['jqueryInternal', 'jqueryNoConflict'],
 			},
 			b_jasny: {
-				deps: ['jqueryNoConflict', 'bootstrap']
+				deps: ['jqueryNoConflict', 'bootstrap'],
 			},
 			b_slider: {
 				deps: ['jqueryNoConflict'],
-				exports: '$.fn.bootstrapSlider'
+				exports: '$.fn.bootstrapSlider',
 			},
 			b_selpicker: {
 				deps: ['jqueryNoConflict', 'bootstrap'],
-				exports: 'selectpicker'
+				exports: 'selectpicker',
 			},
 
 			b_touchspin: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			b_switch: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			flatpickr: {
 				deps: ['jqueryNoConflict', 'bootstrap'],
-				exports: 'Flatpickr'
+				exports: 'Flatpickr',
 			},
 			flatpickr_moment: {
-				deps: ['flatpickr']
+				deps: ['flatpickr'],
 			},
 			b_dtpicker2: {
 				deps: ['jqueryNoConflict', 'moment'],
-				exports: '$.fn.datepicker'
+				exports: '$.fn.datepicker',
 			},
 			moment: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			waypoints: {
 				deps: ['jqueryNoConflict'],
-				exports: '$.fn.waypoint'
+				exports: '$.fn.waypoint',
 			},
 			b_star: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			b_cpicker: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			j_form: {
-				deps: ['jqueryNoConflict']
+				deps: ['jqueryNoConflict'],
 			},
 			'blueimp-gallery': {
-				exports: 'blueimpgal'
-			}
-		}
+				exports: 'blueimpgal',
+			},
+		},
 	});
 }
 
 if (ZIGAFORM_F_LITE === 1) {
-	require(['jqueryNoConflict'], function (jQuery) {
-		(function ($uifm) {
+	require(['jqueryNoConflict'], function(jQuery) {
+		(function($uifm) {
 			/*
 			 * start using jQuery normally here
 			 */
 			window.$uifm = $uifm;
 			//window.$uifm = $uifm = $;
-			require([
-				'b_slider',
-				'script1',
-				'b_touchspin',
-				'b_switch',
-				'bootstrap',
-				'flatpickr',
-				'flatpickr_moment',
-				'b_dtpicker2',
-				'b_star',
-				'b_cpicker',
-				'j_form',
-				'blueimp-gallery',
-				'blueimp-gallery-jquery',
-				'b_selpicker',
-				'iframescript',
-				'b_checkradios',
-				'b_jasny',
-				'placeholder'
-			], function (bootstrapSlider, script, TouchSpin, BootstrapSwitch, _bootstrap, flatpickr, flatpickr_moment, datetimepicker, rating, colorpicker, ajaxSubmit, blueimpgal, selectpicker, iframescript) {
+			require(['b_slider', 'script1', 'b_touchspin', 'b_switch', 'bootstrap', 'flatpickr', 'flatpickr_moment', 'b_dtpicker2', 'b_star', 'b_cpicker', 'j_form', 'blueimp-gallery', 'blueimp-gallery-jquery', 'b_selpicker', 'iframescript', 'b_checkradios', 'b_jasny', 'placeholder'], function(
+				bootstrapSlider,
+				script,
+				TouchSpin,
+				BootstrapSwitch,
+				_bootstrap,
+				flatpickr,
+				flatpickr_moment,
+				datetimepicker,
+				rating,
+				colorpicker,
+				ajaxSubmit,
+				blueimpgal,
+				selectpicker,
+				iframescript
+			) {
 				_zgfm_loader_form(script, blueimpgal);
 			});
 		})(jQuery);
 	});
 } else {
-	require(['jqueryNoConflict'], function (jQuery) {
-		(function ($uifm) {
+	require(['jqueryNoConflict'], function(jQuery) {
+		(function($uifm) {
 			/*
 			 * start using jQuery normally here
 			 */
 			window.$uifm = $uifm;
 			//window.$uifm = $uifm = $;
-			require([
-				'b_slider',
-				'script1',
-				'b_touchspin',
-				'b_switch',
-				'bootstrap',
-				'flatpickr',
-				'flatpickr_moment',
-				'b_dtpicker2',
-				'b_star',
-				'b_cpicker',
-				'j_form',
-				'blueimp-gallery',
-				'blueimp-gallery-jquery',
-				'b_selpicker',
-				'iframescript',
-				'waypoints',
-				'b_checkradios',
-				'b_jasny',
-				'placeholder'
-			], function (
+			require(['b_slider', 'script1', 'b_touchspin', 'b_switch', 'bootstrap', 'flatpickr', 'flatpickr_moment', 'b_dtpicker2', 'b_star', 'b_cpicker', 'j_form', 'blueimp-gallery', 'blueimp-gallery-jquery', 'b_selpicker', 'iframescript', 'waypoints', 'b_checkradios', 'b_jasny', 'placeholder'], function(
 				bootstrapSlider,
 				script,
 				TouchSpin,
@@ -275,9 +251,9 @@ if (ZIGAFORM_F_LITE === 1) {
 	});
 }
 
-var zgfm_Loader = function () {};
+var zgfm_Loader = function() {};
 zgfm_Loader.prototype = {
-	require: function (scripts, callback) {
+	require: function(scripts, callback) {
 		this.loadCount = 0;
 		this.totalRequired = scripts.length;
 		this.callback = callback;
@@ -286,12 +262,12 @@ zgfm_Loader.prototype = {
 			this.writeScript(scripts[i]);
 		}
 	},
-	loaded: function (evt) {
+	loaded: function(evt) {
 		this.loadCount++;
 
 		if (this.loadCount == this.totalRequired && typeof this.callback == 'function') this.callback.call();
 	},
-	writeScript: function (src) {
+	writeScript: function(src) {
 		var self = this;
 		var s = document.createElement('script');
 		s.type = 'text/javascript';
@@ -299,32 +275,32 @@ zgfm_Loader.prototype = {
 		s.src = src;
 		s.addEventListener(
 			'load',
-			function (e) {
+			function(e) {
 				self.loaded(e);
 			},
 			false
 		);
 		var head = document.getElementsByTagName('head')[0];
 		head.appendChild(s);
-	}
+	},
 };
 
 function _zgfm_loader_form(script, blueimpgal) {
 	window.blueimpgal = blueimpgal;
-	if( ZIGAFORM_DEBUG === 1 ){
+	if (ZIGAFORM_DEBUG === 1) {
 		script(UIFORM_SRC + 'assets/frontend/js/front.debug.js', 'uifm_js');
-	}else{
+	} else {
 		script(UIFORM_SRC + 'assets/frontend/js/front.min.js', 'uifm_js');
 	}
-	
-	script.ready('uifm_js', function () {
+
+	script.ready('uifm_js', function() {
 		var uifm_jq14 = $uifm;
-		(function ($) {
+		(function($) {
 			rocketfm();
 			rocketfm.initialize();
 			rocketfm.setExternalVars(_uifmvar);
 
-			$.each(_uifmvar.fm_ids, function (index, value) {
+			$.each(_uifmvar.fm_ids, function(index, value) {
 				if (parseInt(value[0]) > 0) {
 					rocketfm.run_form(value[0]);
 				}
@@ -334,7 +310,7 @@ function _zgfm_loader_form(script, blueimpgal) {
 }
 
 function uifm_load_cssfiles() {
-	var uifm_loadcssfile = function (cssFilesArr) {
+	var uifm_loadcssfile = function(cssFilesArr) {
 		for (var i in cssFilesArr) {
 			if (!document.getElementById(cssFilesArr[i].id)) {
 				var fileref = document.createElement('link');
@@ -362,48 +338,48 @@ function uifm_load_cssfiles() {
 		{ id: 'uifm_css_star_rating', href: UIFORM_SRC + 'assets/backend/js/bratestar/3.5.7/css/star-rating.css' },
 		{ id: 'uifm_css_b_switch', href: UIFORM_SRC + 'assets/backend/js/bswitch/bootstrap-switch.css' },
 		{ id: 'uifm_css_blueimp', href: UIFORM_SRC + 'assets/common/js/blueimp/2.16.0/css/blueimp-gallery.min.css' },
-		{ id: 'uifm_css_b_imgal', href: UIFORM_SRC + 'assets/common/js/bgallery/3.1.3/css/bootstrap-image-gallery.css' }
+		{ id: 'uifm_css_b_imgal', href: UIFORM_SRC + 'assets/common/js/bgallery/3.1.3/css/bootstrap-image-gallery.css' },
 	];
-	if( ZIGAFORM_DEBUG === 1 ){
-		uifm_cssFiles.push({ id: 'uifm_css_global', href: UIFORM_SRC + 'assets/frontend/css/front.debug.css'});
-	}else{
-		uifm_cssFiles.push({ id: 'uifm_css_global', href: UIFORM_SRC + 'assets/frontend/css/front.min.css'});
+	if (ZIGAFORM_DEBUG === 1) {
+		uifm_cssFiles.push({ id: 'uifm_css_global', href: UIFORM_SRC + 'assets/frontend/css/front.debug.css' });
+	} else {
+		uifm_cssFiles.push({ id: 'uifm_css_global', href: UIFORM_SRC + 'assets/frontend/css/front.min.css' });
 	}
-	 
+
 	var uifm_preload_noconflict = _uifmvar.fm_preload_noconflict || '1';
 	uifm_preload_noconflict = 1;
 	if (parseInt(uifm_preload_noconflict) === 1) {
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_bootstrap_w',
-			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/bootstrap-wrapper.css'
+			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/bootstrap-wrapper.css',
 		});
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_b_theme_w',
-			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/bootstrap-theme-wrapper.css'
+			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/bootstrap-theme-wrapper.css',
 		});
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_bootstrap',
-			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/bootstrap-sfdc.css'
+			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/bootstrap-sfdc.css',
 		});
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_b_theme',
-			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/bootstrap-theme-sfdc.css'
+			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/bootstrap-theme-sfdc.css',
 		});
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_b_theme_1',
-			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/dropdown-sfdc.css'
+			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/dropdown-sfdc.css',
 		});
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_b_theme_2',
-			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/modals-sfdc.css'
+			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/modals-sfdc.css',
 		});
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_b_theme_3',
-			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/popovers-sfdc.css'
+			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/popovers-sfdc.css',
 		});
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_b_theme_4',
-			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/tooltip-sfdc.css'
+			href: UIFORM_SRC + 'assets/common/bootstrap/3.3.7/css/tooltip-sfdc.css',
 		});
 		/*uifm_cssFiles.unshift({
                                 id: 'uifm_css_def_bootstrap',
@@ -412,11 +388,11 @@ function uifm_load_cssfiles() {
 	} else {
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_bootstrap',
-			href: UIFORM_SRC + 'assets/common/js/bootstrap/custom/bootstrap.css'
+			href: UIFORM_SRC + 'assets/common/js/bootstrap/custom/bootstrap.css',
 		});
 		uifm_cssFiles.unshift({
 			id: 'uifm_css_b_theme',
-			href: UIFORM_SRC + 'assets/common/js/bootstrap/custom/bootstrap-theme.css'
+			href: UIFORM_SRC + 'assets/common/js/bootstrap/custom/bootstrap-theme.css',
 		});
 	}
 	//load css of form
@@ -428,7 +404,7 @@ function uifm_load_cssfiles() {
 		if (parseInt(tmp_fmid) > 0) {
 			tmp_element = {
 				id: 'uifm_css_' + _uifmvar.fm_ids[i][0],
-				href: UIFORM_SRC + 'assets/frontend/css/rockfm_form' + _uifmvar.fm_ids[i][0] + '.css?' + Math.round(+new Date() / 1000)
+				href: UIFORM_SRC + 'assets/frontend/css/rockfm_form' + _uifmvar.fm_ids[i][0] + '.css?' + Math.round(+new Date() / 1000),
 			};
 			uifm_cssFiles.push(tmp_element);
 		}

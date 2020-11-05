@@ -100,7 +100,7 @@ class Auth {
 	 */
 	function checkupdate() {
 			$version     = UIFORM_VERSION;
-			$install_ver = (!empty(model_settings::$db_config['version'])) ? model_settings::$db_config['version']:UIFORM_VERSION;
+			$install_ver = ( ! empty( model_settings::$db_config['version'] ) ) ? model_settings::$db_config['version'] : UIFORM_VERSION;
 
 		if ( version_compare( $version, $install_ver, '>' ) ) {
 

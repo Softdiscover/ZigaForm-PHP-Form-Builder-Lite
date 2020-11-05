@@ -1,8 +1,8 @@
 #uiformc-menu-sec7 .sfdc-col-xs-3 {
-	padding-right: 0px !important;
+	padding-right: 0 !important;
 }
 #uiformc-menu-sec7 .sfdc-col-xs-9 {
-	padding-left: 0px !important;
+	padding-left: 0 !important;
 }
 
 #uiformc-menu-sec7 .sfdc-nav-tabs li.sfdc-active a {
@@ -18,5 +18,5 @@
 #uiformc-menu-sec7 .tabs-left > li a,
 .tabs-right > li a {
 	border: none !important;
-	margin: 0px !important;
+	margin: 0 !important;
 }

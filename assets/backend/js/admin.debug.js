@@ -1,8 +1,6 @@
-;var $uifm_prev = jQuery.noConflict();
+var $uifm_prev = jQuery.noConflict();
 
-;var $uifm=jQuery.noConflict();
-
-
+var $uifm = jQuery.noConflict();
 
 if (typeof $uifm === 'undefined') {
 	$uifm = jQuery;
@@ -12,8 +10,8 @@ var uiform_is_children = false;
 var rocketform = rocketform || null;
 
 if (!$uifm.isFunction(rocketform)) {
-	(function ($, window) {
-		window.rocketform = rocketform = $.rocketform = function () {
+	(function($, window) {
+		window.rocketform = rocketform = $.rocketform = function() {
 			var uifmvariable = [];
 			uifmvariable.innerVars = {};
 			uifmvariable.setfield_tab_active = '';
@@ -33,19 +31,19 @@ if (!$uifm.isFunction(rocketform)) {
 					pdf_paper_orie: 'landscape',
 					pdf_html_fullpage: '0',
 					email_html_fullpage: '0',
-					email_dissubm: '0'
+					email_dissubm: '0',
 				},
 				skin: {
 					form_width: {
 						show_st: '0',
-						max: '800'
+						max: '800',
 					},
 					form_padding: {
 						show_st: '1',
 						pos_top: '20',
 						pos_right: '17',
 						pos_bottom: '20',
-						pos_left: '17'
+						pos_left: '17',
 					},
 					form_background: {
 						show_st: '1',
@@ -53,25 +51,25 @@ if (!$uifm.isFunction(rocketform)) {
 						start_color: '#eeeeee',
 						end_color: '#ffffff',
 						solid_color: '#ffffff',
-						image: ''
+						image: '',
 					},
 					form_border_radius: {
 						show_st: '0',
-						size: '5'
+						size: '5',
 					},
 					form_border: {
 						show_st: '0',
 						color: '#000',
 						style: '1',
-						width: '1'
+						width: '1',
 					},
 					form_shadow: {
 						show_st: '1',
 						color: '#CCCCCC',
 						h_shadow: '3',
 						v_shadow: '3',
-						blur: '10'
-					}
+						blur: '10',
+					},
 				},
 				wizard: {
 					enable_st: '0',
@@ -88,7 +86,7 @@ if (!$uifm.isFunction(rocketform)) {
 							skin_tab_done_txtcolor: '#ffffff',
 							skin_tab_done_numtxtcolor: '#ECF0F1',
 							skin_tab_cont_bgcolor: '#F9F9F9',
-							skin_tab_cont_borcol: '#D4D4D4'
+							skin_tab_cont_borcol: '#D4D4D4',
 						},
 						1: {
 							skin_tab_cur_bgcolor: '#4798E7',
@@ -96,9 +94,9 @@ if (!$uifm.isFunction(rocketform)) {
 							skin_tab_cur_numtxtcolor: '#4798E7',
 							skin_tab_cur_bg_numtxt: '#ffffff',
 							skin_tab_inac_bgcolor: '#cccccc',
-							skin_tab_inac_txtcolor: '#95A5A6'
-						}
-					}
+							skin_tab_inac_txtcolor: '#95A5A6',
+						},
+					},
 				},
 				onsubm: {
 					sm_successtext: '<div class="rockfm-alert rockfm-alert-success" role="alert">Success! Form was sent successfully.</div>',
@@ -126,14 +124,14 @@ if (!$uifm.isFunction(rocketform)) {
 					mail_usr_recipient_name: '',
 					mail_usr_cc: '',
 					mail_usr_bcc: '',
-					mail_usr_subject: ''
+					mail_usr_subject: '',
 				},
 				num_tabs: 1,
 				steps: {
 					tab_title: [],
-					tab_cont: []
+					tab_cont: [],
 				},
-				steps_src: []
+				steps_src: [],
 			};
 
 			function initialize() {
@@ -141,7 +139,7 @@ if (!$uifm.isFunction(rocketform)) {
 				enableSortableItems();
 			}
 
-			arguments.callee.backend_init_load = function () {
+			arguments.callee.backend_init_load = function() {
 				initialize();
 			};
 
@@ -156,7 +154,7 @@ if (!$uifm.isFunction(rocketform)) {
 						cursor: 'move',
 						handle: '.sfdc-btn1-icon-left',
 						appendTo: '.uiform-main-form',
-						drag: function (event, ui) {}
+						drag: function(event, ui) {},
 					})
 					.disableSelection();
 			}
@@ -167,7 +165,7 @@ if (!$uifm.isFunction(rocketform)) {
 					connectWith: '.uiform-items-container',
 					revert: false,
 
-					helper: function (event, item) {
+					helper: function(event, item) {
 						var field_type = $(item).attr('data-typefield');
 						var tmp_text = $('.uiform-builder-fields')
 							.first()
@@ -176,13 +174,13 @@ if (!$uifm.isFunction(rocketform)) {
 						return $('<div class="zgpb-draggable-helper" style="width: 130px; height: 35px;">' + tmp_text + '</div>');
 					},
 					handle: '.uiform-field-move',
-					sort: function (event, ui) {
+					sort: function(event, ui) {
 						if (typeof ui.placeholder === 'undefined') {
 							return;
 						}
 
 					},
-					receive: function (event, ui) {
+					receive: function(event, ui) {
 						var field_type = ui.item.data('type');
 
 						if (!ui.item.attr('id')) {
@@ -191,12 +189,16 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.getFieldsAfterDraggable(this, field_type, false, '');
 						}
 					},
-					stop: function (event, ui) {
+					stop: function(event, ui) {
 						if ($('#zgpb-editor-container').find('.zgpb-draggable-helper').length) {
-							$('#zgpb-editor-container').find('.zgpb-draggable-helper').remove();
+							$('#zgpb-editor-container')
+								.find('.zgpb-draggable-helper')
+								.remove();
 						}
 						if ($('#zgpb-editor-container').find('.zgpb-fl-gs-block-style-hover').length) {
-							$('#zgpb-editor-container').find('.zgpb-fl-gs-block-style-hover').removeClass('zgpb-fl-gs-block-style-hover');
+							$('#zgpb-editor-container')
+								.find('.zgpb-fl-gs-block-style-hover')
+								.removeClass('zgpb-fl-gs-block-style-hover');
 						}
 
 						if (uiform_is_dragging === true) {
@@ -206,14 +208,14 @@ if (!$uifm.isFunction(rocketform)) {
 							}
 						}
 					},
-					start: function (e, ui) {
+					start: function(e, ui) {
 						uiform_is_dragging = true;
 						uiform_is_children = false;
 						var id_field = ui.item.attr('id');
 
 					},
 					tolerance: 'pointer',
-					opacity: 0.5
+					opacity: 0.5,
 				});
 			}
 
@@ -222,54 +224,57 @@ if (!$uifm.isFunction(rocketform)) {
 					activeClass: 'ui-state-hover',
 					hoverClass: 'ui-state-active',
 					accept: '.uiform-draggable-field',
-					drop: function (event, ui) {
+					drop: function(event, ui) {
 						return;
 						$(this).addClass('ui-state-highlight');
-						if ($(ui.draggable).hasClass('uiform-draggable-field')) $(ui.draggable).clone().appendTo(this);
+						if ($(ui.draggable).hasClass('uiform-draggable-field'))
+							$(ui.draggable)
+								.clone()
+								.appendTo(this);
 						else $(ui.draggable).appendTo(this);
-					}
+					},
 				});
 
 			}
-			arguments.callee.setInnerVariable = function (name, value) {
+			arguments.callee.setInnerVariable = function(name, value) {
 				uifmvariable.innerVars[name] = value;
 			};
-			arguments.callee.getInnerVariable = function (name) {
+			arguments.callee.getInnerVariable = function(name) {
 				if (uifmvariable.innerVars[name]) {
 					return uifmvariable.innerVars[name];
 				} else {
 					return '';
 				}
 			};
-			arguments.callee.generateUniqueID = function () {
+			arguments.callee.generateUniqueID = function() {
 				var number = Math.random(); 
 				number.toString(36); 
 				var id = number.toString(36).substr(2, 9); 
 				return id;
 			};
-			arguments.callee.generateSuffixID = function (min, max) {
+			arguments.callee.generateSuffixID = function(min, max) {
 				return Math.floor(Math.random() * (max - min + 1) + min);
 			};
 
-			arguments.callee.setUiVar = function (name, value) {
+			arguments.callee.setUiVar = function(name, value) {
 				uivars[name] = value;
 			};
-			arguments.callee.setUiArray = function (name, id, value) {
+			arguments.callee.setUiArray = function(name, id, value) {
 				uivars[name][id] = value;
 			};
-			arguments.callee.getUiArray = function (name, id) {
+			arguments.callee.getUiArray = function(name, id) {
 				return uivars[name][id];
 			};
-			arguments.callee.getUiVar = function (name) {
+			arguments.callee.getUiVar = function(name) {
 				return uivars[name];
 			};
-			arguments.callee.getFieldById = function (id) {
+			arguments.callee.getFieldById = function(id) {
 				return uivars['fields'][id];
 			};
-			arguments.callee.getFieldArray = function (id, name) {
+			arguments.callee.getFieldArray = function(id, name) {
 				return uivars['fields'][id][name];
 			};
-			arguments.callee.showLoader = function (type, is_loading, is_fading) {
+			arguments.callee.showLoader = function(type, is_loading, is_fading) {
 				switch (parseInt(type)) {
 					case 2:
 						rocketform.alerts_msg(3, $('#alert_header_msg_processing').val());
@@ -290,15 +295,19 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 
 				if (is_loading) {
-					$('#uifm-loading-box').find('.sfdc-alert').append(' <span class="uifm-loader-header-1"></span>');
+					$('#uifm-loading-box')
+						.find('.sfdc-alert')
+						.append(' <span class="uifm-loader-header-1"></span>');
 				} else {
-					$('#uifm-loading-box').find('.uifm-loader-header-1').remove();
+					$('#uifm-loading-box')
+						.find('.uifm-loader-header-1')
+						.remove();
 				}
 
 				if (is_fading) {
 					$('#uifm-loading-box')
 						.fadeTo(2000, 500)
-						.slideUp(500, function () {
+						.slideUp(500, function() {
 							$('#uifm-loading-box').slideUp(500);
 						});
 				} else {
@@ -307,11 +316,14 @@ if (!$uifm.isFunction(rocketform)) {
 
 				$('#uifm-loading-box').show();
 			};
-			arguments.callee.hideLoader = function () {
+			arguments.callee.hideLoader = function() {
 				$('#uifm-loading-box').hide();
-				$('#uifm-loading-box').find('.alert').attr('class', 'alert').html('');
+				$('#uifm-loading-box')
+					.find('.alert')
+					.attr('class', 'alert')
+					.html('');
 			};
-			arguments.callee.loading_boxField = function (id, st) {
+			arguments.callee.loading_boxField = function(id, st) {
 				if (parseInt(st) === 1) {
 					$('<div class="uiform-field-loadingst"><div class="zgpb-loader-header-1"></div></div>').appendTo($('#' + id).css('position', 'relative'));
 				} else {
@@ -321,26 +333,30 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.loading_panelbox2 = function (st) {
+			arguments.callee.loading_panelbox2 = function(st) {
 				if (parseInt(st) === 1) {
-					$('#uiform-panel-loadingst').parent().css('position', 'relative');
+					$('#uiform-panel-loadingst')
+						.parent()
+						.css('position', 'relative');
 					$('#uiform-panel-loadingst').show();
 				} else {
-					$('#uiform-panel-loadingst').parent().removeCss('position', 'relative');
+					$('#uiform-panel-loadingst')
+						.parent()
+						.removeCss('position', 'relative');
 					$('#uiform-panel-loadingst').hide();
 				}
 			};
 
-			arguments.callee.loading_panelbox = function (id, st) {
+			arguments.callee.loading_panelbox = function(id, st) {
 				if (parseInt(st) === 1) {
-					$('#' + id).show('fast', function () {
+					$('#' + id).show('fast', function() {
 						$(window).trigger('resize');
 					});
 				} else {
 					$('#uiform-panel-loadingst').hide();
 				}
 			};
-			arguments.callee.alerts_global_msg = function (type, txt_msg) {
+			arguments.callee.alerts_global_msg = function(type, txt_msg) {
 				var rockfm_class;
 				switch (parseInt(type)) {
 					case 1:
@@ -364,7 +380,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				return content;
 			};
-			arguments.callee.alerts_msg = function (type, txt_msg) {
+			arguments.callee.alerts_msg = function(type, txt_msg) {
 				var rockfm_class;
 				switch (parseInt(type)) {
 					case 1:
@@ -386,19 +402,21 @@ if (!$uifm.isFunction(rocketform)) {
 					.html(txt_msg)
 					.append(' <span class="uifm-loader-header-1"></span>');
 			};
-			arguments.callee.setHighlightPicked = function (obj) {
+			arguments.callee.setHighlightPicked = function(obj) {
 				if ($(document).find('.uifm-highlight-edited')) {
-					$(document).find('.uifm-highlight-edited').removeClass('uifm-highlight-edited');
+					$(document)
+						.find('.uifm-highlight-edited')
+						.removeClass('uifm-highlight-edited');
 				}
 				obj.addClass('uifm-highlight-edited');
 			};
-			arguments.callee.getUiData = function (name) {
+			arguments.callee.getUiData = function(name) {
 				return mainrformb[name];
 			};
-			arguments.callee.setUiData = function (name, value) {
+			arguments.callee.setUiData = function(name, value) {
 				mainrformb[name] = value;
 			};
-			arguments.callee.getUiData2 = function (name, index) {
+			arguments.callee.getUiData2 = function(name, index) {
 				try {
 					return mainrformb[name][index];
 				} catch (err) {
@@ -406,17 +424,17 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.delUiData2 = function (name, index) {
+			arguments.callee.delUiData2 = function(name, index) {
 				delete mainrformb[name][index];
 			};
 
-			arguments.callee.spliceUiData2 = function (name, index) {
+			arguments.callee.spliceUiData2 = function(name, index) {
 				if (parseInt(index) > -1) {
 					mainrformb[name].splice(parseInt(index), 1);
 				}
 			};
 
-			arguments.callee.setUiData2 = function (name, index, value) {
+			arguments.callee.setUiData2 = function(name, index, value) {
 				if (!mainrformb.hasOwnProperty(name)) {
 					mainrformb[name] = {};
 				}
@@ -425,30 +443,30 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 				mainrformb[name][index] = value;
 			};
-			arguments.callee.addIndexUiData2 = function (name, index, value) {
+			arguments.callee.addIndexUiData2 = function(name, index, value) {
 				if (typeof mainrformb[name][index] == 'undefined') {
 				} else {
 					mainrformb[name][index][value] = {};
 				}
 			};
-			arguments.callee.getUiData3 = function (name, index, key) {
+			arguments.callee.getUiData3 = function(name, index, key) {
 				try {
 					return mainrformb[name][index][key];
 				} catch (err) {
 					console.log('error getUiData3: ' + err.message);
 				}
 			};
-			arguments.callee.delUiData3 = function (name, index, key) {
+			arguments.callee.delUiData3 = function(name, index, key) {
 				delete mainrformb[name][index][key];
 			};
 
-			arguments.callee.spliceUiData3 = function (name, index, key) {
+			arguments.callee.spliceUiData3 = function(name, index, key) {
 				if (parseInt(key) > -1) {
 					mainrformb[name][index].splice(parseInt(key), 1);
 				}
 			};
 
-			arguments.callee.setUiData3 = function (name, index, key, value) {
+			arguments.callee.setUiData3 = function(name, index, key, value) {
 				if (!mainrformb.hasOwnProperty(name)) {
 					mainrformb[name] = {};
 				}
@@ -458,7 +476,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				mainrformb[name][index][key] = value;
 			};
-			arguments.callee.setUiData4 = function (name, index, key, option, value) {
+			arguments.callee.setUiData4 = function(name, index, key, option, value) {
 				if (!mainrformb.hasOwnProperty(name)) {
 					mainrformb[name] = {};
 				}
@@ -472,14 +490,14 @@ if (!$uifm.isFunction(rocketform)) {
 
 				mainrformb[name][index][key][option] = value;
 			};
-			arguments.callee.getUiData4 = function (name, index, key, option) {
+			arguments.callee.getUiData4 = function(name, index, key, option) {
 				try {
 					return mainrformb[name][index][key][option];
 				} catch (err) {
 					console.log('error getUiData4: name: ' + name + ' index:' + index + ' key:' + key + ' option:' + option + ' error:' + err.message);
 				}
 			};
-			arguments.callee.getUiData5 = function (name, index, key, section, option) {
+			arguments.callee.getUiData5 = function(name, index, key, section, option) {
 				try {
 					if (typeof mainrformb[name][index] == 'undefined') {
 						return '';
@@ -491,7 +509,7 @@ if (!$uifm.isFunction(rocketform)) {
 					return '';
 				}
 			};
-			arguments.callee.setUiData5 = function (name, index, key, section, option, value) {
+			arguments.callee.setUiData5 = function(name, index, key, section, option, value) {
 				if (!mainrformb.hasOwnProperty(name)) {
 					mainrformb[name] = {};
 				}
@@ -509,14 +527,14 @@ if (!$uifm.isFunction(rocketform)) {
 
 				mainrformb[name][index][key][section][option] = value;
 			};
-			arguments.callee.addIndexUiData5 = function (name, index, key, section, option, value) {
+			arguments.callee.addIndexUiData5 = function(name, index, key, section, option, value) {
 				if (typeof mainrformb[name][index][key][section][option] == 'undefined') {
 				} else {
 					mainrformb[name][index][key][section][option][value] = {};
 				}
 			};
 
-			arguments.callee.getUiData6 = function (name, index, key, section, option, option2) {
+			arguments.callee.getUiData6 = function(name, index, key, section, option, option2) {
 				try {
 					if (typeof mainrformb[name][index][key][section][option][option2] == 'undefined') {
 						return '';
@@ -529,7 +547,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.setUiData6 = function (name, index, key, section, option, option2, value) {
+			arguments.callee.setUiData6 = function(name, index, key, section, option, option2, value) {
 				if (!mainrformb.hasOwnProperty(name)) {
 					mainrformb[name] = {};
 				}
@@ -552,11 +570,11 @@ if (!$uifm.isFunction(rocketform)) {
 				mainrformb[name][index][key][section][option][option2] = value;
 			};
 
-			arguments.callee.delUiData6 = function (name, index, key, section, option, option2) {
+			arguments.callee.delUiData6 = function(name, index, key, section, option, option2) {
 				delete mainrformb[name][index][key][section][option][option2];
 			};
 
-			arguments.callee.getUiData7 = function (name, index, key, section, option, option2, option3) {
+			arguments.callee.getUiData7 = function(name, index, key, section, option, option2, option3) {
 				try {
 					if (typeof mainrformb[name][index][key][section][option][option2][option3] == 'undefined') {
 						return '';
@@ -568,7 +586,7 @@ if (!$uifm.isFunction(rocketform)) {
 					return '';
 				}
 			};
-			arguments.callee.setUiData7 = function (name, index, key, section, option, option2, option3, value) {
+			arguments.callee.setUiData7 = function(name, index, key, section, option, option2, option3, value) {
 				if (!mainrformb.hasOwnProperty(name)) {
 					mainrformb[name] = {};
 				}
@@ -594,13 +612,13 @@ if (!$uifm.isFunction(rocketform)) {
 
 				mainrformb[name][index][key][section][option][option2][option3] = value;
 			};
-			arguments.callee.addIndexUiData7 = function (name, index, key, section, option, option2, value) {
+			arguments.callee.addIndexUiData7 = function(name, index, key, section, option, option2, value) {
 				if (typeof mainrformb[name][index][key][section][option][option2] == 'undefined') {
 				} else {
 					mainrformb[name][index][key][section][option][option2][value] = {};
 				}
 			};
-			arguments.callee.setUiData8 = function (name, index, key, section, option, option2, option3, option4, value) {
+			arguments.callee.setUiData8 = function(name, index, key, section, option, option2, option3, option4, value) {
 				if (!mainrformb.hasOwnProperty(name)) {
 					mainrformb[name] = {};
 				}
@@ -630,17 +648,17 @@ if (!$uifm.isFunction(rocketform)) {
 
 				mainrformb[name][index][key][section][option][option2][option3][option4] = value;
 			};
-			arguments.callee.addIndexUiData8 = function (name, index, key, section, option, option2, option3, value) {
+			arguments.callee.addIndexUiData8 = function(name, index, key, section, option, option2, option3, value) {
 				if (typeof mainrformb[name][index][key][section][option][option2][option3] == 'undefined') {
 				} else {
 					mainrformb[name][index][key][section][option][option2][option3][value] = {};
 				}
 			};
-			arguments.callee.delUiData8 = function (name, index, key, section, option, option2, option3, option4) {
+			arguments.callee.delUiData8 = function(name, index, key, section, option, option2, option3, option4) {
 				delete mainrformb[name][index][key][section][option][option2][option3][option4];
 			};
 
-			arguments.callee.setUiData9 = function (name, index, key, section, option, option2, option3, option4, option5, value) {
+			arguments.callee.setUiData9 = function(name, index, key, section, option, option2, option3, option4, option5, value) {
 				if (!mainrformb.hasOwnProperty(name)) {
 					mainrformb[name] = {};
 				}
@@ -674,7 +692,7 @@ if (!$uifm.isFunction(rocketform)) {
 				mainrformb[name][index][key][section][option][option2][option3][option4][option5] = value;
 			};
 
-			arguments.callee.checkIntegrityDataField = function (id) {
+			arguments.callee.checkIntegrityDataField = function(id) {
 				var status = false;
 				try {
 
@@ -698,16 +716,16 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.dumpvar3 = function (object) {
+			arguments.callee.dumpvar3 = function(object) {
 				return JSON.stringify(object, null, 2);
 			};
-			arguments.callee.dumpvar2 = function (object) {
+			arguments.callee.dumpvar2 = function(object) {
 				return JSON.stringify(object);
 			};
 
-			arguments.callee.dumpvar = function (object) {
+			arguments.callee.dumpvar = function(object) {
 				var seen = [];
-				var json = JSON.stringify(object, function (key, val) {
+				var json = JSON.stringify(object, function(key, val) {
 					if (val != null && typeof val == 'object') {
 						if (seen.indexOf(val) >= 0) return;
 						seen.push(val);
@@ -717,20 +735,28 @@ if (!$uifm.isFunction(rocketform)) {
 				return seen;
 			};
 
-			arguments.callee.checkScrollTab = function () {
+			arguments.callee.checkScrollTab = function() {
 				var tablist = $('.uiform-set-options-tabs').find('ul.sfdc-nav-tabs');
 				var currentWidth = 0;
-				tablist.find('li').each(function (i) {
+				tablist.find('li').each(function(i) {
 					currentWidth = currentWidth + parseInt($(this).width());
 				});
 				if (currentWidth > 480) {
-					$('.uiform-set-options-tabs').find('.uifm-tab-navigation').show();
+					$('.uiform-set-options-tabs')
+						.find('.uifm-tab-navigation')
+						.show();
 				} else {
-					$('.uiform-set-options-tabs').find('.uifm-tab-navigation').hide();
+					$('.uiform-set-options-tabs')
+						.find('.uifm-tab-navigation')
+						.hide();
 				}
 			};
-			arguments.callee.setScrollTab = function (offset, element) {
-				var tablist = $(element).parent().parent().parent().find('ul.sfdc-nav-tabs');
+			arguments.callee.setScrollTab = function(offset, element) {
+				var tablist = $(element)
+					.parent()
+					.parent()
+					.parent()
+					.find('ul.sfdc-nav-tabs');
 				var currentScroll;
 				currentScroll = tablist.css('left');
 				currentScroll.replace('px', '');
@@ -740,7 +766,7 @@ if (!$uifm.isFunction(rocketform)) {
 					currentScroll = parseInt(currentScroll) - 10;
 				}
 				var currentWidth = 0;
-				tablist.find('li').each(function (i) {
+				tablist.find('li').each(function(i) {
 					currentWidth = currentWidth + parseInt($(this).width());
 				});
 				if (currentScroll > 0) {
@@ -752,7 +778,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 				tablist.css('left', currentScroll + 'px');
 			};
-			arguments.callee.cleanSettingTab = function () {
+			arguments.callee.cleanSettingTab = function() {
 				var clvars;
 				clvars = [
 					'.uifm-set-section-fieldname',
@@ -812,9 +838,9 @@ if (!$uifm.isFunction(rocketform)) {
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).addClass('uifm-hide');
 				});
 				$('#uifm_fld_main_fldname').val('');
@@ -840,47 +866,49 @@ if (!$uifm.isFunction(rocketform)) {
 					'#uifm_fld_val_pos_1',
 					'#uifm_fld_val_pos_2',
 					'#uifm_fld_val_pos_3',
-					'#uifm_fld_val_pos_4'
+					'#uifm_fld_val_pos_4',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).prop('checked', false);
-					$(String(this)).parent().removeClass('sfdc-active');
+					$(String(this))
+						.parent()
+						.removeClass('sfdc-active');
 				});
 				clvars = ['#uifm_fld_val_reqicon_pos_2', '#uifm_fld_val_reqicon_pos_1'];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).prop('checked', false);
 					$(String(this)).removeClass('sfdc-active');
 				});
 				clvars = ['#uifm-custom-val-req-custxt', '#uifm-custom-val-alpha-custxt', '#uifm-custom-val-alphanum-custxt', '#uifm-custom-val-numbers-custxt', '#uifm-custom-val-email-custxt'];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).val('');
 				});
 			};
 
-			arguments.callee.closeSettingTab = function () {
+			arguments.callee.closeSettingTab = function() {
 				$('.sfdc-nav-tabs a[href="#uiform-build-form-tab"]').sfdc_tab('show');
 				$('.sfdc-nav-tabs a[href="#uiform-settings-tab3-2"]').sfdc_tab('show');
 				$('.uifm-tab-selectedfield').hide();
 				$('#uifm-field-selected-id').val('');
 			};
 
-			arguments.callee.loadDataOptionByFieldId = function (id_field) {
+			arguments.callee.loadDataOptionByFieldId = function(id_field) {
 				console.log('loadDataOptionByFieldId not using');
 				return;
 				var idselected = $('#uifm-field-selected-id').val();
 
 				if (id_field === idselected) {
 					var tabobject = $('#uifm-field-selected-id').parent();
-					$.each(data_field, function (index, value) {
+					$.each(data_field, function(index, value) {
 						if ($.isPlainObject(value)) {
-							$.each(value, function (index2, value2) {
+							$.each(value, function(index2, value2) {
 								rocketform.setDataOptToSetTab(tabobject, index, index2, value2);
 							});
 						}
 					});
 				}
 			};
-			arguments.callee.enableSettingTabOption = function (option) {
+			arguments.callee.enableSettingTabOption = function(option) {
 				switch (option) {
 					case 'uifm-label':
 					case 'uifm-sublabel':
@@ -898,17 +926,17 @@ if (!$uifm.isFunction(rocketform)) {
 					default:
 				}
 			};
-			arguments.callee.setDataToSettingTab = function (id_field, data_field) {
+			arguments.callee.setDataToSettingTab = function(id_field, data_field) {
 				var idselected = $('#uifm-field-selected-id').val();
 				var obj_field = $('#' + id_field);
 				var f_store_a;
 				if (id_field === idselected) {
 					var tabobject = $('#uifm-field-selected-id').parent();
-					$.each(data_field, function (index, value) {
+					$.each(data_field, function(index, value) {
 						if ($.isPlainObject(value)) {
-							$.each(value, function (index2, value2) {
+							$.each(value, function(index2, value2) {
 								if ($.isPlainObject(value2)) {
-									$.each(value2, function (index3, value3) {
+									$.each(value2, function(index3, value3) {
 										f_store_a = [];
 										f_store_a.push(index);
 										f_store_a.push(index2);
@@ -926,20 +954,20 @@ if (!$uifm.isFunction(rocketform)) {
 					});
 				}
 			};
-			arguments.callee.setDataToSettingTabAndPreview = function (id_field, data_field) {
+			arguments.callee.setDataToSettingTabAndPreview = function(id_field, data_field) {
 				var idselected = $('#uifm-field-selected-id').val();
 				var obj_field = $('#' + id_field);
 				var f_store_a;
 				if (id_field === idselected) {
 					var tabobject = $('#uifm-field-selected-id').parent();
 
-					$.each(data_field, function (index, value) {
+					$.each(data_field, function(index, value) {
 						if ($.isPlainObject(value)) {
-							$.each(value, function (index2, value2) {
+							$.each(value, function(index2, value2) {
 								if ($.isPlainObject(value2)) {
-									$.each(value2, function (index3, value3) {
+									$.each(value2, function(index3, value3) {
 										if ($.isPlainObject(value3)) {
-											$.each(value3, function (index4, value4) {
+											$.each(value3, function(index4, value4) {
 												f_store_a = [];
 												f_store_a.push(index);
 												f_store_a.push(index2);
@@ -974,14 +1002,14 @@ if (!$uifm.isFunction(rocketform)) {
 					});
 				}
 			};
-			arguments.callee.loadForm_updatePreviewField = function (id_field, data_field) {
+			arguments.callee.loadForm_updatePreviewField = function(id_field, data_field) {
 				try {
 					var obj_field = $('#' + id_field);
-					$.each(data_field, function (index, value) {
+					$.each(data_field, function(index, value) {
 						if ($.isPlainObject(value)) {
-							$.each(value, function (index2, value2) {
+							$.each(value, function(index2, value2) {
 								if ($.isPlainObject(value2)) {
-									$.each(value2, function (index3, value3) {
+									$.each(value2, function(index3, value3) {
 										rocketform.setDataOptToPrevField(obj_field, index + '-' + index2 + '-' + index3, value3);
 									});
 								} else {
@@ -994,19 +1022,19 @@ if (!$uifm.isFunction(rocketform)) {
 					console.log('id_field:' + id_field + ' - error: ' + e.message);
 				}
 			};
-			arguments.callee.setDataToPreviewField = function (id_field, data_field) {
+			arguments.callee.setDataToPreviewField = function(id_field, data_field) {
 				var obj_field = $('#' + id_field);
 				if (obj_field) {
-					$.each(data_field, function (index, value) {
+					$.each(data_field, function(index, value) {
 						if ($.isPlainObject(value)) {
-							$.each(value, function (index2, value2) {
+							$.each(value, function(index2, value2) {
 								rocketform.setDataOptToPrevField(obj_field, index + '-' + index2, value2);
 							});
 						}
 					});
 				}
 			};
-			arguments.callee.setDataOptToCoreData = function (step, id, f_store, value) {
+			arguments.callee.setDataOptToCoreData = function(step, id, f_store, value) {
 				try {
 					var f_sec, f_opt, f_opt2, f_opt3, tmp_store;
 
@@ -1039,7 +1067,7 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error('error setDataOptToCoreData ', ex.message);
 				}
 			};
-			arguments.callee.previewform_shadowBox = function (obj) {
+			arguments.callee.previewform_shadowBox = function(obj) {
 				var style, s_x, s_y, s_blur, s_st, s_color;
 
 
@@ -1056,7 +1084,7 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find('.uiform-main-form').removeCss('box-shadow');
 				}
 			};
-			arguments.callee.previewfield_shadowBox = function (obj, section, container) {
+			arguments.callee.previewfield_shadowBox = function(obj, section, container) {
 				var style, s_x, s_y, s_blur, s_st, s_color;
 
 				var f_id = obj.attr('id');
@@ -1076,7 +1104,7 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find(container).removeCss('text-shadow');
 				}
 			};
-			arguments.callee.previewfield_elementBorderRadius = function (obj, section, inputClass) {
+			arguments.callee.previewfield_elementBorderRadius = function(obj, section, inputClass) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -1089,7 +1117,7 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find(inputClass).removeCss('border-radius');
 				}
 			};
-			arguments.callee.previewform_elementBorderRadius = function (obj, section) {
+			arguments.callee.previewform_elementBorderRadius = function(obj, section) {
 				var show_st = this.getUiData3('skin', 'form_border_radius', 'show_st');
 				var size = this.getUiData3('skin', 'form_border_radius', 'size');
 				if (parseInt(show_st) === 1) {
@@ -1099,7 +1127,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_elementHelpBlockText = function (obj, section) {
+			arguments.callee.previewfield_elementHelpBlockText = function(obj, section) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -1127,7 +1155,7 @@ if (!$uifm.isFunction(rocketform)) {
 									placement: blt.data('placement') || 'top',
 									container: 'body',
 									html: true,
-									title: decodeURIComponent(text)
+									title: decodeURIComponent(text),
 								});
 								blt.tooltip('show');
 							}
@@ -1149,7 +1177,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_elementTextarea = function (obj, section) {
+			arguments.callee.previewfield_elementTextarea = function(obj, section) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -1173,7 +1201,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_helpBlockPosition = function (obj, section) {
+			arguments.callee.previewfield_helpBlockPosition = function(obj, section) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -1225,7 +1253,7 @@ if (!$uifm.isFunction(rocketform)) {
 								placement: blt.data('placement') || 'top',
 								container: 'body',
 								html: true,
-								title: block_text
+								title: block_text,
 							});
 							blt.attr('data-original-title', decodeURIComponent(block_text));
 							if (String(this.getInnerVariable('setfield_tab_active')) === 'helpb') {
@@ -1287,7 +1315,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_validateRecIcon = function (obj, section) {
+			arguments.callee.previewfield_validateRecIcon = function(obj, section) {
 				var f_id = obj.attr('id'),
 					f_step = $('#' + f_id)
 						.closest('.uiform-step-pane')
@@ -1307,7 +1335,7 @@ if (!$uifm.isFunction(rocketform)) {
 					$('#' + f_id + '_val_iconreq_img').remove();
 				}
 			};
-			arguments.callee.previewfield_hideAllPopOver = function () {
+			arguments.callee.previewfield_hideAllPopOver = function() {
 				var f_id = $('#uifm-field-selected-id').val();
 				var obj = $('#' + f_id);
 				if (obj) {
@@ -1317,24 +1345,24 @@ if (!$uifm.isFunction(rocketform)) {
 					}
 				}
 			};
-			arguments.callee.previewfield_removeAllPopovers = function () {
+			arguments.callee.previewfield_removeAllPopovers = function() {
 				var tmp_popover = $('.uiform-main-form [aria-describedby^=popover]');
 				if (tmp_popover) {
-					$.each(tmp_popover, function (index, element) {
+					$.each(tmp_popover, function(index, element) {
 						if ($(element).data && $(element).data('bs.popover')) {
 							$(element).popover('destroy');
 						}
 					});
 				}
 			};
-			arguments.callee.previewfield_removeAllUndesiredObj = function (current) {
+			arguments.callee.previewfield_removeAllUndesiredObj = function(current) {
 				var tmp_dtimes = $('.uiform-main-form .uiform-datepicker').not(current);
 				var tmp_dtimes_others = tmp_dtimes.find('.bootstrap-datetimepicker-widget');
 				if (tmp_dtimes_others) {
 					tmp_dtimes_others.remove();
 				}
 			};
-			arguments.callee.previewfield_hidePopOver = function () {
+			arguments.callee.previewfield_hidePopOver = function() {
 				var f_id = $('#uifm-field-selected-id').val();
 				var obj = $('#' + f_id);
 				if (obj) {
@@ -1358,7 +1386,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_helpblock_hidetooltip = function () {
+			arguments.callee.previewfield_helpblock_hidetooltip = function() {
 				var f_id = $('#uifm-field-selected-id').val();
 				var obj = $('#' + f_id);
 				if (obj) {
@@ -1379,7 +1407,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_validatePopover = function (obj, section) {
+			arguments.callee.previewfield_validatePopover = function(obj, section) {
 				var f_id = obj.attr('id'),
 					f_step = $('#' + f_id)
 						.closest('.uiform-step-pane')
@@ -1445,10 +1473,10 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 				}
 
-				var showPopover = function () {
+				var showPopover = function() {
 						el.popover('show');
 					},
-					hidePopover = function () {
+					hidePopover = function() {
 						el.popover('hide');
 					};
 				var custom_txt, default_txt, content_txt;
@@ -1547,7 +1575,7 @@ if (!$uifm.isFunction(rocketform)) {
 							trigger: 'manual',
 							animation: false,
 							container: 'body',
-							html: true
+							html: true,
 						})
 							.focus(showPopover)
 							.blur(hidePopover);
@@ -1596,7 +1624,7 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 				}
 			};
-			arguments.callee.previewfield_elementBorder = function (obj, section, inputClass) {
+			arguments.callee.previewfield_elementBorder = function(obj, section, inputClass) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -1621,7 +1649,7 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find(inputClass).removeCss('border');
 				}
 			};
-			arguments.callee.previewform_elementBorder = function (obj, section) {
+			arguments.callee.previewform_elementBorder = function(obj, section) {
 				var show_st = this.getUiData3('skin', 'form_border', 'show_st');
 				var color = this.getUiData3('skin', 'form_border', 'color');
 				var style = this.getUiData3('skin', 'form_border', 'style');
@@ -1639,7 +1667,7 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find('.uiform-main-form').removeCss('border');
 				}
 			};
-			arguments.callee.previewfield_elementBackground = function (obj, section, inputClass) {
+			arguments.callee.previewfield_elementBackground = function(obj, section, inputClass) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -1659,7 +1687,7 @@ if (!$uifm.isFunction(rocketform)) {
 								'background-image': '-moz-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
 								'background-image': '-ms-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
 								'background-image': '-o-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
-								'background-image': 'linear-gradient(to bottom, ' + start_color + ',' + end_color + ')'
+								'background-image': 'linear-gradient(to bottom, ' + start_color + ',' + end_color + ')',
 							});
 							break;
 						case 1:
@@ -1674,7 +1702,7 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find(inputClass).removeCss('background-image');
 				}
 			};
-			arguments.callee.previewform_elementPadding = function (obj, section) {
+			arguments.callee.previewform_elementPadding = function(obj, section) {
 				var show_st = this.getUiData3('skin', 'form_padding', 'show_st');
 				var pos_top = this.getUiData3('skin', 'form_padding', 'pos_top');
 				var pos_right = this.getUiData3('skin', 'form_padding', 'pos_right');
@@ -1687,7 +1715,7 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find('.uiform-main-form').removeCss('padding');
 				}
 			};
-			arguments.callee.previewform_elementBackground = function (obj, section) {
+			arguments.callee.previewform_elementBackground = function(obj, section) {
 				var show_st = this.getUiData3('skin', 'form_background', 'show_st');
 				var type = this.getUiData3('skin', 'form_background', 'type');
 				var start_color = this.getUiData3('skin', 'form_background', 'start_color');
@@ -1704,7 +1732,7 @@ if (!$uifm.isFunction(rocketform)) {
 								'background-image': '-moz-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
 								'background-image': '-ms-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
 								'background-image': '-o-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
-								'background-image': 'linear-gradient(to bottom, ' + start_color + ',' + end_color + ')'
+								'background-image': 'linear-gradient(to bottom, ' + start_color + ',' + end_color + ')',
 							});
 							if ($('.uiform-main-form').find('.uiform-divider-text')) {
 								$('.uiform-main-form')
@@ -1715,7 +1743,7 @@ if (!$uifm.isFunction(rocketform)) {
 										'background-image': '-moz-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
 										'background-image': '-ms-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
 										'background-image': '-o-linear-gradient(top, ' + start_color + ', ' + end_color + ')',
-										'background-image': 'linear-gradient(to bottom, ' + start_color + ',' + end_color + ')'
+										'background-image': 'linear-gradient(to bottom, ' + start_color + ',' + end_color + ')',
 									});
 							}
 							break;
@@ -1725,7 +1753,9 @@ if (!$uifm.isFunction(rocketform)) {
 								obj.find('.uiform-main-form').css('background', solid_color);
 							}
 							if ($('.uiform-main-form').find('.uiform-divider-text')) {
-								$('.uiform-main-form').find('.uiform-divider-text').css('background', solid_color);
+								$('.uiform-main-form')
+									.find('.uiform-divider-text')
+									.css('background', solid_color);
 							}
 
 							break;
@@ -1734,14 +1764,14 @@ if (!$uifm.isFunction(rocketform)) {
 						obj.find('.uiform-main-form').removeCss('background-image');
 						obj.find('.uiform-main-form').css({
 							'background-image': "url('" + skin_bg_imgurl + "')",
-							'background-repeat': 'repeat'
+							'background-repeat': 'repeat',
 						});
 						if ($('.uiform-main-form').find('.uiform-divider-text')) {
 							$('.uiform-main-form')
 								.find('.uiform-divider-text')
 								.css({
 									'background-image': "url('" + skin_bg_imgurl + "')",
-									'background-repeat': 'repeat'
+									'background-repeat': 'repeat',
 								});
 						}
 					} else {
@@ -1750,14 +1780,20 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find('.uiform-main-form').removeCss('background');
 					obj.find('.uiform-main-form').removeCss('background-image');
 					if ($('.uiform-main-form').find('.uiform-divider-text')) {
-						$('.uiform-main-form').find('.uiform-divider-text').removeCss('background');
-						$('.uiform-main-form').find('.uiform-divider-text').removeCss('background-image');
-						$('.uiform-main-form').find('.uiform-divider-text').removeCss('background-repeat');
+						$('.uiform-main-form')
+							.find('.uiform-divider-text')
+							.removeCss('background');
+						$('.uiform-main-form')
+							.find('.uiform-divider-text')
+							.removeCss('background-image');
+						$('.uiform-main-form')
+							.find('.uiform-divider-text')
+							.removeCss('background-repeat');
 					}
 				}
 			};
 
-			arguments.callee.previewfield_controlBlockLabel = function (obj, section) {
+			arguments.callee.previewfield_controlBlockLabel = function(obj, section) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -1767,7 +1803,10 @@ if (!$uifm.isFunction(rocketform)) {
 				var block_align = this.getUiData5('steps_src', f_step, f_id, section, 'block_align');
 				var grid_layout = this.getUiData5('steps_src', f_step, f_id, section, 'grid_layout');
 				var col_block = obj.find('.uifm-control-label').parent();
-				var col_input = obj.find('.uifm-control-label').parent().siblings();
+				var col_input = obj
+					.find('.uifm-control-label')
+					.parent()
+					.siblings();
 				var col_block_pos = parseInt(col_block.index());
 				let tmp_pos;
 				if (parseInt(block_st) === 1) {
@@ -1778,8 +1817,15 @@ if (!$uifm.isFunction(rocketform)) {
 							if (col_block_pos === 1) {
 								$(col_block).insertBefore(col_input);
 							}
-							obj.find('.uifm-control-label').parent().attr('class', 'rkfm-col-sm-12');
-							obj.find('.uifm-control-label').parent().siblings().attr('class', 'rkfm-col-sm-12');
+							obj
+								.find('.uifm-control-label')
+								.parent()
+								.attr('class', 'rkfm-col-sm-12');
+							obj
+								.find('.uifm-control-label')
+								.parent()
+								.siblings()
+								.attr('class', 'rkfm-col-sm-12');
 							break;
 						case 2:
 							if (col_block_pos === 0) {
@@ -1788,16 +1834,30 @@ if (!$uifm.isFunction(rocketform)) {
 
 							tmp_pos = this.previewfield_getBlockGridLayout(grid_layout);
 
-							obj.find('.uifm-control-label').parent().attr('class', `rkfm-col-sm-${tmp_pos['right']}`);
-							obj.find('.uifm-control-label').parent().siblings().attr('class', `rkfm-col-sm-${tmp_pos['left']}`);
+							obj
+								.find('.uifm-control-label')
+								.parent()
+								.attr('class', `rkfm-col-sm-${tmp_pos['right']}`);
+							obj
+								.find('.uifm-control-label')
+								.parent()
+								.siblings()
+								.attr('class', `rkfm-col-sm-${tmp_pos['left']}`);
 
 							break;
 						case 3:
 							if (col_block_pos === 0) {
 								$(col_input).insertBefore(col_block);
 							}
-							obj.find('.uifm-control-label').parent().attr('class', 'rkfm-col-sm-12');
-							obj.find('.uifm-control-label').parent().siblings().attr('class', 'rkfm-col-sm-12');
+							obj
+								.find('.uifm-control-label')
+								.parent()
+								.attr('class', 'rkfm-col-sm-12');
+							obj
+								.find('.uifm-control-label')
+								.parent()
+								.siblings()
+								.attr('class', 'rkfm-col-sm-12');
 							break;
 						case 0:
 						default:
@@ -1806,8 +1866,15 @@ if (!$uifm.isFunction(rocketform)) {
 							}
 							tmp_pos = this.previewfield_getBlockGridLayout(grid_layout);
 
-							obj.find('.uifm-control-label').parent().attr('class', `rkfm-col-sm-${tmp_pos['left']}`);
-							obj.find('.uifm-control-label').parent().siblings().attr('class', `rkfm-col-sm-${tmp_pos['right']}`);
+							obj
+								.find('.uifm-control-label')
+								.parent()
+								.attr('class', `rkfm-col-sm-${tmp_pos['left']}`);
+							obj
+								.find('.uifm-control-label')
+								.parent()
+								.siblings()
+								.attr('class', `rkfm-col-sm-${tmp_pos['right']}`);
 							break;
 					}
 
@@ -1829,7 +1896,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_getBlockGridLayout = function (pos) {
+			arguments.callee.previewfield_getBlockGridLayout = function(pos) {
 				var output = {};
 				switch (parseInt(pos)) {
 					case 1:
@@ -1882,7 +1949,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				return output;
 			};
-			arguments.callee.previewfield_fontfamily = function (obj, section, container) {
+			arguments.callee.previewfield_fontfamily = function(obj, section, container) {
 				var f_st, f_font;
 				var tmp_font_id;
 				var f_id = obj.attr('id');
@@ -1909,7 +1976,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_fontfamily2 = function (obj, section) {
+			arguments.callee.previewfield_fontfamily2 = function(obj, section) {
 				var f_st, f_font;
 				var tmp_font_id;
 				var f_id = obj.attr('id');
@@ -1933,7 +2000,7 @@ if (!$uifm.isFunction(rocketform)) {
 					}
 				}
 			};
-			arguments.callee.setDataOptToPrevForm = function (obj, section, f_store, value) {
+			arguments.callee.setDataOptToPrevForm = function(obj, section, f_store, value) {
 				var section2, option, option2, tmp_store;
 
 				tmp_store = f_store.split('-');
@@ -2153,7 +2220,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewform_skin_maxwidth = function () {
+			arguments.callee.previewform_skin_maxwidth = function() {
 				var maxwidth_st = this.getUiData3('skin', 'form_width', 'show_st');
 				var maxwidth = this.getUiData3('skin', 'form_width', 'max');
 				if (parseInt(maxwidth_st) === 1) {
@@ -2162,7 +2229,7 @@ if (!$uifm.isFunction(rocketform)) {
 					$('.uiform-main-form').removeCss('max-width');
 				}
 			};
-			arguments.callee.setDataOptToPrevField = function (obj, f_store, value) {
+			arguments.callee.setDataOptToPrevField = function(obj, f_store, value) {
 				try {
 					var id = obj.attr('id');
 					var step = $('#' + id)
@@ -2201,7 +2268,10 @@ if (!$uifm.isFunction(rocketform)) {
 							}
 							switch (String(option)) {
 								case 'value_lbl':
-									obj.find(inputClass).find('.uifm-inp-lbl').html(value);
+									obj
+										.find(inputClass)
+										.find('.uifm-inp-lbl')
+										.html(value);
 									break;
 								case 'value':
 									var tmp_val = obj.find(inputClass).get(0) || null;
@@ -2277,16 +2347,25 @@ if (!$uifm.isFunction(rocketform)) {
 								case 'obj_align':
 									switch (parseInt(value)) {
 										case 1:
-											obj.find(inputClass).parent().css('text-align', 'center');
+											obj
+												.find(inputClass)
+												.parent()
+												.css('text-align', 'center');
 
 											break;
 										case 2:
-											obj.find(inputClass).parent().css('text-align', 'right');
+											obj
+												.find(inputClass)
+												.parent()
+												.css('text-align', 'right');
 
 											break;
 										case 0:
 										default:
-											obj.find(inputClass).parent().css('text-align', 'left');
+											obj
+												.find(inputClass)
+												.parent()
+												.css('text-align', 'left');
 
 											break;
 									}
@@ -2846,7 +2925,7 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error('error setDataOptToPrevField obj.id : ' + obj.attr('id') + ' type: ' + obj.attr('data-typefield') + ' - store: ' + f_store + ' - value: ' + value + ' - error:' + ex.message);
 				}
 			};
-			arguments.callee.setDataOptToSetTab_1 = function (tab, section, value, type) {
+			arguments.callee.setDataOptToSetTab_1 = function(tab, section, value, type) {
 				switch (String(section)) {
 					case 'field_name':
 						switch (parseInt(type)) {
@@ -2890,7 +2969,7 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 				}
 			};
-			arguments.callee.setDataOptToSetFormTab = function (tab, section, f_store, value) {
+			arguments.callee.setDataOptToSetFormTab = function(tab, section, f_store, value) {
 				var section2, option, option2, tmp_store;
 				var editor, content;
 				tmp_store = f_store.split('-');
@@ -2930,7 +3009,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 									showUncommentButton: true,
 									styleActiveLine: true,
-									tabSize: 2
+									tabSize: 2,
 								});
 								field_obj_inp_html.foldCode(CodeMirror.Pos(0, 0));
 								field_obj_inp_html.foldCode(CodeMirror.Pos(21, 0));
@@ -2962,7 +3041,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 									showUncommentButton: true,
 									styleActiveLine: true,
-									tabSize: 2
+									tabSize: 2,
 								});
 
 								field_obj_inp_html.setSize('100%', '100%');
@@ -3088,13 +3167,17 @@ if (!$uifm.isFunction(rocketform)) {
 								if (parseInt(subm_bgtyp) === 1) {
 									$('#uifm_frm_subm_bgst_typ1').addClass('sfdc-active');
 									$('#uifm_frm_subm_bgst_typ2').removeClass('sfdc-active');
-									$('#uifm_frm_subm_bgst_typ1').find('input').prop('checked', true);
+									$('#uifm_frm_subm_bgst_typ1')
+										.find('input')
+										.prop('checked', true);
 									$('#uifm_frm_subm_bgst_typ1_handle').show();
 									$('#uifm_frm_subm_bgst_typ2_handle').hide();
 								} else {
 									$('#uifm_frm_subm_bgst_typ2').addClass('sfdc-active');
 									$('#uifm_frm_subm_bgst_typ1').removeClass('sfdc-active');
-									$('#uifm_frm_subm_bgst_typ2').find('input').prop('checked', true);
+									$('#uifm_frm_subm_bgst_typ2')
+										.find('input')
+										.prop('checked', true);
 									$('#uifm_frm_subm_bgst_typ1_handle').hide();
 									$('#uifm_frm_subm_bgst_typ2_handle').show();
 								}
@@ -3291,15 +3374,24 @@ if (!$uifm.isFunction(rocketform)) {
 										}
 										break;
 									case 'start_color':
-										tab.find('#uifm_frm_skin_fmbg_color_2').parent().colorpicker('setValue', value);
+										tab
+											.find('#uifm_frm_skin_fmbg_color_2')
+											.parent()
+											.colorpicker('setValue', value);
 										tab.find('#uifm_frm_skin_fmbg_color_2').val(value);
 										break;
 									case 'end_color':
-										tab.find('#uifm_frm_skin_fmbg_color_3').parent().colorpicker('setValue', value);
+										tab
+											.find('#uifm_frm_skin_fmbg_color_3')
+											.parent()
+											.colorpicker('setValue', value);
 										tab.find('#uifm_frm_skin_fmbg_color_3').val(value);
 										break;
 									case 'solid_color':
-										tab.find('#uifm_frm_skin_fmbg_color_1').parent().colorpicker('setValue', value);
+										tab
+											.find('#uifm_frm_skin_fmbg_color_1')
+											.parent()
+											.colorpicker('setValue', value);
 										tab.find('#uifm_frm_skin_fmbg_color_1').val(value);
 										break;
 									case 'image':
@@ -3337,7 +3429,10 @@ if (!$uifm.isFunction(rocketform)) {
 										}
 										break;
 									case 'color':
-										tab.find('#uifm_frm_skin_fmbor_color').parent().colorpicker('setValue', value);
+										tab
+											.find('#uifm_frm_skin_fmbor_color')
+											.parent()
+											.colorpicker('setValue', value);
 										tab.find('#uifm_frm_skin_fmbor_color').val(value);
 										break;
 									case 'style':
@@ -3368,7 +3463,10 @@ if (!$uifm.isFunction(rocketform)) {
 										}
 										break;
 									case 'color':
-										tab.find('#uifm_frm_skin_sha_co').parent().colorpicker('setValue', value);
+										tab
+											.find('#uifm_frm_skin_sha_co')
+											.parent()
+											.colorpicker('setValue', value);
 										tab.find('#uifm_frm_skin_sha_co').val(value);
 										break;
 									case 'h_shadow':
@@ -3389,7 +3487,7 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 				}
 			};
-			arguments.callee.setDataOptToSetTab = function (tab, f_store, value) {
+			arguments.callee.setDataOptToSetTab = function(tab, f_store, value) {
 				try {
 					var id = $('#uifm-field-selected-id').val();
 					var step = $('#' + id)
@@ -3586,34 +3684,55 @@ if (!$uifm.isFunction(rocketform)) {
 									break;
 								case 'bold':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_inp2_bold').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_bold')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_bold').val(1);
 									} else {
-										tab.find('#uifm_fld_inp2_bold').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_bold')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_bold').val(0);
 									}
 									break;
 								case 'italic':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_inp2_italic').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_italic')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_italic').val(1);
 									} else {
-										tab.find('#uifm_fld_inp2_italic').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_italic')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_italic').val(0);
 									}
 									break;
 								case 'underline':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_inp2_u').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_u')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_u').val(1);
 									} else {
-										tab.find('#uifm_fld_inp2_u').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_u')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_u').val(0);
 									}
 									break;
 
 								case 'color':
-									tab.find('#uifm_fld_inp2_color').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_inp2_color')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_inp2_color').val(value);
 									break;
 								case 'font':
@@ -3630,12 +3749,18 @@ if (!$uifm.isFunction(rocketform)) {
 									switch (parseInt(value)) {
 										case 1:
 											tab.find('input#uifm_fld_inp2_blo_align_2').prop('checked', true);
-											tab.find('input#uifm_fld_inp2_blo_align_2').parent().addClass('sfdc-active');
+											tab
+												.find('input#uifm_fld_inp2_blo_align_2')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 0:
 										default:
 											tab.find('input#uifm_fld_inp2_blo_align_1').prop('checked', true);
-											tab.find('input#uifm_fld_inp2_blo_align_1').parent().addClass('sfdc-active');
+											tab
+												.find('input#uifm_fld_inp2_blo_align_1')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 									}
 									break;
@@ -3657,15 +3782,24 @@ if (!$uifm.isFunction(rocketform)) {
 								case 'stl1':
 									switch (String(opt2)) {
 										case 'border_color':
-											tab.find('#uifm_fld_inp2_stl1_brdcolor').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_fld_inp2_stl1_brdcolor')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_fld_inp2_stl1_brdcolor').val(value);
 											break;
 										case 'bg_color':
-											tab.find('#uifm_fld_inp2_stl1_bgcolor').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_fld_inp2_stl1_bgcolor')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_fld_inp2_stl1_bgcolor').val(value);
 											break;
 										case 'icon_color':
-											tab.find('#uifm_fld_inp2_stl1_iconcolor').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_fld_inp2_stl1_iconcolor')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_fld_inp2_stl1_iconcolor').val(value);
 											break;
 										case 'icon_mark':
@@ -3676,19 +3810,31 @@ if (!$uifm.isFunction(rocketform)) {
 
 											break;
 										case 'bg1_color1':
-											tab.find('#uifm_fld_inp2_stl1_bg1_color1').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_fld_inp2_stl1_bg1_color1')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_fld_inp2_stl1_bg1_color1').val(value);
 											break;
 										case 'bg1_color2':
-											tab.find('#uifm_fld_inp2_stl1_bg1_color2').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_fld_inp2_stl1_bg1_color2')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_fld_inp2_stl1_bg1_color2').val(value);
 											break;
 										case 'bg2_color1_h':
-											tab.find('#uifm_fld_inp2_bg2_color1_h').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_fld_inp2_bg2_color1_h')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_fld_inp2_bg2_color1_h').val(value);
 											break;
 										case 'bg2_color2_h':
-											tab.find('#uifm_fld_inp2_stl1_bg2_color2_h').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_fld_inp2_stl1_bg2_color2_h')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_fld_inp2_stl1_bg2_color2_h').val(value);
 											break;
 										case 'search_st':
@@ -3732,34 +3878,55 @@ if (!$uifm.isFunction(rocketform)) {
 									break;
 								case 'bold':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_inp2_bold').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_bold')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_bold').val(1);
 									} else {
-										tab.find('#uifm_fld_inp2_bold').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_bold')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_bold').val(0);
 									}
 									break;
 								case 'italic':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_inp2_italic').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_italic')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_italic').val(1);
 									} else {
-										tab.find('#uifm_fld_inp2_italic').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_italic')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_italic').val(0);
 									}
 									break;
 								case 'underline':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_inp2_u').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_u')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_u').val(1);
 									} else {
-										tab.find('#uifm_fld_inp2_u').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_inp2_u')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_inp2_u').val(0);
 									}
 									break;
 
 								case 'color':
-									tab.find('#uifm_fld_inp2_color').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_inp2_color')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_inp2_color').val(value);
 									break;
 								case 'font':
@@ -3791,7 +3958,7 @@ if (!$uifm.isFunction(rocketform)) {
 									break;
 								case 'set_decimal':
 									tab.find('#uifm_fld_inp4_spinner_decimals').val(parseFloat(value));
-									break;	
+									break;
 								case 'set_range1':
 									tab.find('#uifm_fld_inp4_spinner_opt5').val(parseFloat(value));
 									break;
@@ -3819,16 +3986,30 @@ if (!$uifm.isFunction(rocketform)) {
 									tab.find('#uifm_fld_inp5_ksecret').val(value);
 									break;
 								case 'g_theme':
-									tab.find('#uifm_fld_inp5_theme_2').parent().children('label').removeClass('sfdc-active');
-									tab.find('#uifm_fld_inp5_theme_2').parent().children('input').prop('checked', false);
+									tab
+										.find('#uifm_fld_inp5_theme_2')
+										.parent()
+										.children('label')
+										.removeClass('sfdc-active');
+									tab
+										.find('#uifm_fld_inp5_theme_2')
+										.parent()
+										.children('input')
+										.prop('checked', false);
 									switch (parseInt(value)) {
 										case 1:
-											tab.find('#uifm_fld_inp5_theme_2').find('input').prop('checked', true);
+											tab
+												.find('#uifm_fld_inp5_theme_2')
+												.find('input')
+												.prop('checked', true);
 											tab.find('#uifm_fld_inp5_theme_2').addClass('sfdc-active');
 											break;
 										default:
 											tab.find('#uifm_fld_inp5_theme_1').addClass('sfdc-active');
-											tab.find('#uifm_fld_inp5_theme_1').find('input').prop('checked', true);
+											tab
+												.find('#uifm_fld_inp5_theme_1')
+												.find('input')
+												.prop('checked', true);
 											break;
 									}
 									break;
@@ -3844,7 +4025,10 @@ if (!$uifm.isFunction(rocketform)) {
 									}
 									break;
 								case 'txt_color':
-									tab.find('#uifm_fld_inp6_txtcolor').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_inp6_txtcolor')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_inp6_txtcolor').val(value);
 									break;
 								case 'background_st':
@@ -3855,7 +4039,10 @@ if (!$uifm.isFunction(rocketform)) {
 									}
 									break;
 								case 'background_color':
-									tab.find('#uifm_fld_inp6_bgcolor').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_inp6_bgcolor')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_inp6_bgcolor').val(value);
 									break;
 								case 'distortion':
@@ -3932,7 +4119,10 @@ if (!$uifm.isFunction(rocketform)) {
 									tab.find('#uifm_fld_input11_textval').val(value);
 									break;
 								case 'text_color':
-									tab.find('#uifm_fld_input11_textcolor').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_input11_textcolor')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_input11_textcolor').val(value);
 									break;
 								case 'div_color':
@@ -3950,28 +4140,46 @@ if (!$uifm.isFunction(rocketform)) {
 									break;
 								case 'bold':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_input11_textbold').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_input11_textbold')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_input11_textbold').val(1);
 									} else {
-										tab.find('#uifm_fld_input11_textbold').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_input11_textbold')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_input11_textbold').val(0);
 									}
 									break;
 								case 'italic':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_input11_textitalic').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_input11_textitalic')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_input11_textitalic').val(1);
 									} else {
-										tab.find('#uifm_fld_input11_textitalic').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_input11_textitalic')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_input11_textitalic').val(0);
 									}
 									break;
 								case 'underline':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_input11_textu').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_input11_textu')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_input11_textu').val(1);
 									} else {
-										tab.find('#uifm_fld_input11_textu').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_input11_textu')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_input11_textu').val(0);
 									}
 									break;
@@ -3991,21 +4199,40 @@ if (!$uifm.isFunction(rocketform)) {
 						case 'input14':
 							switch (String(option)) {
 								case 'obj_align':
-									tab.find('#uifm_fld_inp14_objalign_2').parent().parent().find('input').prop('checked', false);
-									tab.find('#uifm_fld_inp14_objalign_2').parent().parent().find('label').removeClass('sfdc-active');
+									tab
+										.find('#uifm_fld_inp14_objalign_2')
+										.parent()
+										.parent()
+										.find('input')
+										.prop('checked', false);
+									tab
+										.find('#uifm_fld_inp14_objalign_2')
+										.parent()
+										.parent()
+										.find('label')
+										.removeClass('sfdc-active');
 									switch (parseInt(value)) {
 										case 1:
 											tab.find('#uifm_fld_inp14_objalign_2').prop('checked', true);
-											tab.find('#uifm_fld_inp14_objalign_2').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_inp14_objalign_2')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 2:
 											tab.find('#uifm_fld_inp14_objalign_3').prop('checked', true);
-											tab.find('#uifm_fld_inp14_objalign_3').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_inp14_objalign_3')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 0:
 										default:
 											tab.find('#uifm_fld_inp14_objalign_1').prop('checked', true);
-											tab.find('#uifm_fld_inp14_objalign_1').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_inp14_objalign_1')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 									}
 									break;
@@ -4120,20 +4347,32 @@ if (!$uifm.isFunction(rocketform)) {
 											switch (parseInt(value)) {
 												case 1:
 													tab.find('#uifm_fld_inp18_txt_pos_2').prop('checked', true);
-													tab.find('#uifm_fld_inp18_txt_pos_2').parent().addClass('sfdc-active');
+													tab
+														.find('#uifm_fld_inp18_txt_pos_2')
+														.parent()
+														.addClass('sfdc-active');
 													break;
 												case 2:
 													tab.find('#uifm_fld_inp18_txt_pos_3').prop('checked', true);
-													tab.find('#uifm_fld_inp18_txt_pos_3').parent().addClass('sfdc-active');
+													tab
+														.find('#uifm_fld_inp18_txt_pos_3')
+														.parent()
+														.addClass('sfdc-active');
 													break;
 												case 3:
 													tab.find('#uifm_fld_inp18_txt_pos_4').prop('checked', true);
-													tab.find('#uifm_fld_inp18_txt_pos_4').parent().addClass('sfdc-active');
+													tab
+														.find('#uifm_fld_inp18_txt_pos_4')
+														.parent()
+														.addClass('sfdc-active');
 													break;
 												case 0:
 												default:
 													tab.find('#uifm_fld_inp18_txt_pos_1').prop('checked', true);
-													tab.find('#uifm_fld_inp18_txt_pos_1').parent().addClass('sfdc-active');
+													tab
+														.find('#uifm_fld_inp18_txt_pos_1')
+														.parent()
+														.addClass('sfdc-active');
 													break;
 											}
 											break;
@@ -4199,30 +4438,57 @@ if (!$uifm.isFunction(rocketform)) {
 												case 2:
 													tab.find('#uifm_frm_inp18_fmbg_type_2').prop('checked', true);
 													tab.find('#uifm_frm_inp18_fmbg_type_2').addClass('sfdc-active');
-													tab.find('#uifm_frm_inp18_fmbg_color_1').closest('.sfdc-row').hide();
-													tab.find('#uifm_frm_inp18_fmbg_color_2').closest('.sfdc-row').show();
-													tab.find('#uifm_frm_inp18_fmbg_color_3').closest('.sfdc-row').show();
+													tab
+														.find('#uifm_frm_inp18_fmbg_color_1')
+														.closest('.sfdc-row')
+														.hide();
+													tab
+														.find('#uifm_frm_inp18_fmbg_color_2')
+														.closest('.sfdc-row')
+														.show();
+													tab
+														.find('#uifm_frm_inp18_fmbg_color_3')
+														.closest('.sfdc-row')
+														.show();
 													break;
 												case 1:
 												default:
 													tab.find('#uifm_frm_inp18_fmbg_type_1').prop('checked', true);
 													tab.find('#uifm_frm_inp18_fmbg_type_1').addClass('sfdc-active');
-													tab.find('#uifm_frm_inp18_fmbg_color_1').closest('.sfdc-row').show();
-													tab.find('#uifm_frm_inp18_fmbg_color_2').closest('.sfdc-row').hide();
-													tab.find('#uifm_frm_inp18_fmbg_color_3').closest('.sfdc-row').hide();
+													tab
+														.find('#uifm_frm_inp18_fmbg_color_1')
+														.closest('.sfdc-row')
+														.show();
+													tab
+														.find('#uifm_frm_inp18_fmbg_color_2')
+														.closest('.sfdc-row')
+														.hide();
+													tab
+														.find('#uifm_frm_inp18_fmbg_color_3')
+														.closest('.sfdc-row')
+														.hide();
 													break;
 											}
 											break;
 										case 'start_color':
-											tab.find('#uifm_frm_inp18_fmbg_color_2').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_frm_inp18_fmbg_color_2')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_frm_inp18_fmbg_color_2').val(value);
 											break;
 										case 'end_color':
-											tab.find('#uifm_frm_inp18_fmbg_color_3').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_frm_inp18_fmbg_color_3')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_frm_inp18_fmbg_color_3').val(value);
 											break;
 										case 'solid_color':
-											tab.find('#uifm_frm_inp18_fmbg_color_1').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_frm_inp18_fmbg_color_1')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_frm_inp18_fmbg_color_1').val(value);
 											break;
 										case 'image':
@@ -4260,7 +4526,10 @@ if (!$uifm.isFunction(rocketform)) {
 											}
 											break;
 										case 'color':
-											tab.find('#uifm_frm_inp18_fmbor_color').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_frm_inp18_fmbor_color')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_frm_inp18_fmbor_color').val(value);
 											break;
 										case 'style':
@@ -4291,7 +4560,10 @@ if (!$uifm.isFunction(rocketform)) {
 											}
 											break;
 										case 'color':
-											tab.find('#uifm_frm_inp18_sha_co').parent().colorpicker('setValue', value);
+											tab
+												.find('#uifm_frm_inp18_sha_co')
+												.parent()
+												.colorpicker('setValue', value);
 											tab.find('#uifm_frm_inp18_sha_co').val(value);
 											break;
 										case 'h_shadow':
@@ -4327,33 +4599,54 @@ if (!$uifm.isFunction(rocketform)) {
 									break;
 								case 'bold':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_lbl_bold').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_lbl_bold')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_lbl_bold').val(1);
 									} else {
-										tab.find('#uifm_fld_lbl_bold').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_lbl_bold')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_lbl_bold').val(0);
 									}
 									break;
 								case 'italic':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_lbl_italic').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_lbl_italic')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_lbl_italic').val(1);
 									} else {
-										tab.find('#uifm_fld_lbl_italic').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_lbl_italic')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_lbl_italic').val(0);
 									}
 									break;
 								case 'underline':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_lbl_u').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_lbl_u')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_lbl_u').val(1);
 									} else {
-										tab.find('#uifm_fld_lbl_u').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_lbl_u')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_lbl_u').val(0);
 									}
 									break;
 								case 'color':
-									tab.find('#uifm_fld_lbl_color').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_lbl_color')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_lbl_color').val(value);
 									break;
 								case 'font':
@@ -4374,7 +4667,10 @@ if (!$uifm.isFunction(rocketform)) {
 									}
 									break;
 								case 'shadow_color':
-									tab.find('#uifm_fld_lbl_sha_co').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_lbl_sha_co')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_lbl_sha_co').val(value);
 									break;
 								case 'shadow_x':
@@ -4402,33 +4698,54 @@ if (!$uifm.isFunction(rocketform)) {
 									break;
 								case 'bold':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_sublbl_bold').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_sublbl_bold')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_sublbl_bold').val(1);
 									} else {
-										tab.find('#uifm_fld_sublbl_bold').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_sublbl_bold')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_sublbl_bold').val(0);
 									}
 									break;
 								case 'italic':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_sublbl_italic').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_sublbl_italic')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_sublbl_italic').val(1);
 									} else {
-										tab.find('#uifm_fld_sublbl_italic').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_sublbl_italic')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_sublbl_italic').val(0);
 									}
 									break;
 								case 'underline':
 									if (parseInt(value) === 1) {
-										tab.find('#uifm_fld_sublbl_u').parent().addClass('sfdc-active');
+										tab
+											.find('#uifm_fld_sublbl_u')
+											.parent()
+											.addClass('sfdc-active');
 										tab.find('#uifm_fld_sublbl_u').val(1);
 									} else {
-										tab.find('#uifm_fld_sublbl_u').parent().removeClass('sfdc-active');
+										tab
+											.find('#uifm_fld_sublbl_u')
+											.parent()
+											.removeClass('sfdc-active');
 										tab.find('#uifm_fld_sublbl_u').val(0);
 									}
 									break;
 								case 'color':
-									tab.find('#uifm_fld_sublbl_color').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_sublbl_color')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_sublbl_color').val(value);
 									break;
 								case 'font':
@@ -4449,7 +4766,10 @@ if (!$uifm.isFunction(rocketform)) {
 									}
 									break;
 								case 'shadow_color':
-									tab.find('#uifm_fld_sublbl_sha_co').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_sublbl_sha_co')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_sublbl_sha_co').val(value);
 									break;
 								case 'shadow_x':
@@ -4472,21 +4792,33 @@ if (!$uifm.isFunction(rocketform)) {
 									switch (parseInt(value)) {
 										case 1:
 											tab.find('#uifm_fld_lbl_blo_pos_2').prop('checked', true);
-											tab.find('#uifm_fld_lbl_blo_pos_2').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_lbl_blo_pos_2')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 2:
 											tab.find('#uifm_fld_lbl_blo_pos_3').prop('checked', true);
-											tab.find('#uifm_fld_lbl_blo_pos_3').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_lbl_blo_pos_3')
+												.parent()
+												.addClass('sfdc-active');
 											$('#uifm_fld_lbl_glay_container').show();
 											break;
 										case 3:
 											tab.find('#uifm_fld_lbl_blo_pos_4').prop('checked', true);
-											tab.find('#uifm_fld_lbl_blo_pos_4').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_lbl_blo_pos_4')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 0:
 										default:
 											tab.find('#uifm_fld_lbl_blo_pos_1').prop('checked', true);
-											tab.find('#uifm_fld_lbl_blo_pos_1').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_lbl_blo_pos_1')
+												.parent()
+												.addClass('sfdc-active');
 											$('#uifm_fld_lbl_glay_container').show();
 											break;
 									}
@@ -4502,16 +4834,25 @@ if (!$uifm.isFunction(rocketform)) {
 									switch (parseInt(value)) {
 										case 1:
 											tab.find('#uifm_fld_lbl_blo_align_2').prop('checked', true);
-											tab.find('#uifm_fld_lbl_blo_align_2').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_lbl_blo_align_2')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 2:
 											tab.find('#uifm_fld_lbl_blo_align_3').prop('checked', true);
-											tab.find('#uifm_fld_lbl_blo_align_3').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_lbl_blo_align_3')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 0:
 										default:
 											tab.find('#uifm_fld_lbl_blo_align_1').prop('checked', true);
-											tab.find('#uifm_fld_lbl_blo_align_1').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_lbl_blo_align_1')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 									}
 									break;
@@ -4528,12 +4869,18 @@ if (!$uifm.isFunction(rocketform)) {
 										case 10:
 										case 11:
 											tab.find(`#uifm_fld_lbl_glay_pos_${value}`).prop('checked', true);
-											tab.find(`#uifm_fld_lbl_glay_pos_${value}`).parent().addClass('sfdc-active');
+											tab
+												.find(`#uifm_fld_lbl_glay_pos_${value}`)
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 2:
 										default:
 											tab.find('#uifm_fld_lbl_glay_pos_2').prop('checked', true);
-											tab.find('#uifm_fld_lbl_glay_pos_2').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_lbl_glay_pos_2')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 									}
 									break;
@@ -4774,20 +5121,32 @@ if (!$uifm.isFunction(rocketform)) {
 									switch (parseInt(value)) {
 										case 1:
 											tab.find('#uifm_fld_hblock_pos_2').prop('checked', true);
-											tab.find('#uifm_fld_hblock_pos_2').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_hblock_pos_2')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 2:
 											tab.find('#uifm_fld_hblock_pos_3').prop('checked', true);
-											tab.find('#uifm_fld_hblock_pos_3').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_hblock_pos_3')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 3:
 											tab.find('#uifm_fld_hblock_pos_4').prop('checked', true);
-											tab.find('#uifm_fld_hblock_pos_4').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_hblock_pos_4')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 0:
 										default:
 											tab.find('#uifm_fld_hblock_pos_1').prop('checked', true);
-											tab.find('#uifm_fld_hblock_pos_1').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_hblock_pos_1')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 									}
 									break;
@@ -4836,29 +5195,47 @@ if (!$uifm.isFunction(rocketform)) {
 									switch (parseInt(value)) {
 										case 1:
 											tab.find('#uifm_fld_val_pos_2').prop('checked', true);
-											tab.find('#uifm_fld_val_pos_2').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_val_pos_2')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 2:
 											tab.find('#uifm_fld_val_pos_3').prop('checked', true);
-											tab.find('#uifm_fld_val_pos_3').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_val_pos_3')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 3:
 											tab.find('#uifm_fld_val_pos_4').prop('checked', true);
-											tab.find('#uifm_fld_val_pos_4').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_val_pos_4')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 										case 0:
 										default:
 											tab.find('#uifm_fld_val_pos_1').prop('checked', true);
-											tab.find('#uifm_fld_val_pos_1').parent().addClass('sfdc-active');
+											tab
+												.find('#uifm_fld_val_pos_1')
+												.parent()
+												.addClass('sfdc-active');
 											break;
 									}
 									break;
 								case 'tip_col':
-									tab.find('#uifm_fld_val_tipcolor').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_val_tipcolor')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_val_tipcolor').val(value);
 									break;
 								case 'tip_bg':
-									tab.find('#uifm_fld_val_tipbg').parent().colorpicker('setValue', value);
+									tab
+										.find('#uifm_fld_val_tipbg')
+										.parent()
+										.colorpicker('setValue', value);
 									tab.find('#uifm_fld_val_tipbg').val(value);
 									break;
 								case 'reqicon_st':
@@ -4967,7 +5344,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.enableSettingTabOnPick = function (id, type) {
+			arguments.callee.enableSettingTabOnPick = function(id, type) {
 				switch (parseInt(type)) {
 					case 1:
 					case 2:
@@ -5047,7 +5424,7 @@ if (!$uifm.isFunction(rocketform)) {
 					default:
 				}
 			};
-			arguments.callee.enableSettingTabOnCreate = function (id, type) {
+			arguments.callee.enableSettingTabOnCreate = function(id, type) {
 				try {
 					$('#uifm-field-selected-id').val(id);
 					$('.uifm-tab-selectedfield').show();
@@ -5056,7 +5433,7 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error(' error enableSettingTabOnCreate ', ex.message);
 				}
 			};
-			arguments.callee.loadDataTabFromFStore = function (id, field_type) {
+			arguments.callee.loadDataTabFromFStore = function(id, field_type) {
 				switch (parseInt(field_type)) {
 					case 6:
 						$('#' + id)
@@ -5066,7 +5443,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.loadForm_globalSettings = function () {
+			arguments.callee.loadForm_globalSettings = function() {
 				$('#uifm_frm_skin_bg_st').bootstrapSwitchZgpb('state', true);
 				$('.uifm_frm_skin_bgcolor_event').colorpicker('setValue', '#eeeeee');
 				$('#uifm_frm_skin_bg_color').val('#eeeeee');
@@ -5074,9 +5451,9 @@ if (!$uifm.isFunction(rocketform)) {
 				$('.sfdc-nav-tabs a[href="#uiform-settings-tab3-2"]').sfdc_tab('show');
 			};
 
-			arguments.callee.loadForm_globalSettings_end = function () {};
+			arguments.callee.loadForm_globalSettings_end = function() {};
 
-			arguments.callee.loadFormSaved = function (id) {
+			arguments.callee.loadFormSaved = function(id) {
 				rocketform.showLoader(1, true, true);
 				$.ajax({
 					type: 'POST',
@@ -5085,9 +5462,9 @@ if (!$uifm.isFunction(rocketform)) {
 						action: 'rocket_fbuilder_load_form',
 						page: 'zgfm_form_builder',
 						form_id: id,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						rocketform.loadFormToEditPanel(msg);
 						rocketform.loading_panelbox('rocketform-bk-dashboard', 0);
 
@@ -5095,7 +5472,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 						var refreshIntervalId = null;
 
-						var checkIfCoreDataIsSet = function () {
+						var checkIfCoreDataIsSet = function() {
 							if (parseInt($('.uiform-main-form').length) != 0) {
 								zgfm_back_addon.load_addon();
 								clearInterval(refreshIntervalId);
@@ -5112,10 +5489,10 @@ if (!$uifm.isFunction(rocketform)) {
 
 						enableDraggableItems();
 						enableSortableItems();
-					}
+					},
 				});
 			};
-			arguments.callee.refresh_coreData = function () {
+			arguments.callee.refresh_coreData = function() {
 				var tmp_tab_title = mainrformb['steps']['tab_title'];
 				var tmp_new_tab_title = [];
 
@@ -5138,12 +5515,12 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 				mainrformb['steps_src'] = tmp_new_steps_src;
 
-				mainrformb['num_tabs'] = $.map(tmp_new_tab_title, function (n, i) {
+				mainrformb['num_tabs'] = $.map(tmp_new_tab_title, function(n, i) {
 					return i;
 				}).length;
 			};
 
-			arguments.callee.loadFormToEditPanel_default = function (form_data) {
+			arguments.callee.loadFormToEditPanel_default = function(form_data) {
 				if (typeof form_data != 'undefined' && form_data) {
 					$('#uifm_frm_record_tpl_enable').bootstrapSwitchZgpb('state', parseInt(form_data.data['fmb_rec_tpl_st']));
 
@@ -5166,12 +5543,12 @@ if (!$uifm.isFunction(rocketform)) {
 
 				tab = $('#uiform-build-form-tab');
 
-				$.each(mainrformb, function (i, value) {
+				$.each(mainrformb, function(i, value) {
 					switch (String(i)) {
 						case 'main':
 						case 'onsubm':
 							if ($.isPlainObject(value)) {
-								$.each(value, function (i2, value2) {
+								$.each(value, function(i2, value2) {
 									rocketform.setDataOptToSetFormTab(tab, i, i2, value2);
 								});
 							} else {
@@ -5184,9 +5561,9 @@ if (!$uifm.isFunction(rocketform)) {
 				var form_tab_skin = this.getUiData('skin');
 				tab = $('#uiform-settings-tab3-2');
 				var obj_field = $('.uiform-preview-base');
-				$.each(form_tab_skin, function (i, value) {
+				$.each(form_tab_skin, function(i, value) {
 					if ($.isPlainObject(value)) {
-						$.each(value, function (i2, value2) {
+						$.each(value, function(i2, value2) {
 							rocketform.setDataOptToSetFormTab(tab, 'skin', i + '-' + i2, value2);
 							rocketform.setDataOptToPrevForm(obj_field, 'skin', i + '-' + i2, value2);
 						});
@@ -5219,7 +5596,7 @@ if (!$uifm.isFunction(rocketform)) {
 				$(window).trigger('resize');
 			};
 
-			arguments.callee.loadFormToEditPanel = function (form_data) {
+			arguments.callee.loadFormToEditPanel = function(form_data) {
 				try {
 
 					var mainrformb_tmp = {
@@ -5229,7 +5606,7 @@ if (!$uifm.isFunction(rocketform)) {
 						onsubm: form_data.data.fmb_data['onsubm'],
 						num_tabs: form_data.data.fmb_data['num_tabs'],
 						steps: form_data.data.fmb_data['steps'],
-						steps_src: form_data.data.fmb_data['steps_src']
+						steps_src: form_data.data.fmb_data['steps_src'],
 					};
 					mainrformb = $.extend(true, {}, mainrformb, mainrformb_tmp);
 					zgfm_back_addon.load_initData(form_data.addons);
@@ -5244,7 +5621,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 					$('input,textarea').attr('autocomplete', 'off');
 					$('#zgfm_edit_panel').disableAutoFill({
-						passwordField: '.password'
+						passwordField: '.password',
 					});
 
 					if (parseInt($('.uiform-main-form').length) != 0) {
@@ -5254,8 +5631,8 @@ if (!$uifm.isFunction(rocketform)) {
 					}
 
 					$('#uifm_frm_main_title').val(form_data.data.fmb_name);
-					$.each(mainrformb['steps_src'], function (index, value) {
-						$.each(value, function (index2, value2) {
+					$.each(mainrformb['steps_src'], function(index, value) {
+						$.each(value, function(index2, value2) {
 							rocketform.enableFieldPlugin(index, value2.id, value2.type, value2);
 						});
 					});
@@ -5285,12 +5662,12 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.validateFieldOptions = function (data_field) {
+			arguments.callee.validateFieldOptions = function(data_field) {
 				var data_return = {};
 				data_return = { data: data_field };
-				$.each(data_field, function (index, value) {
+				$.each(data_field, function(index, value) {
 					if ($.isPlainObject(value)) {
-						$.each(value, function (index2, value2) {
+						$.each(value, function(index2, value2) {
 							data_return['data'][index][index2] = rocketform.validateValueFieldOptions(index, index2, value2);
 						});
 					} else {
@@ -5301,7 +5678,7 @@ if (!$uifm.isFunction(rocketform)) {
 				return data_return;
 			};
 
-			arguments.callee.validateValueFieldOptions = function (section, option, value) {
+			arguments.callee.validateValueFieldOptions = function(section, option, value) {
 				var value_return;
 				value_return = value;
 				switch (String(section)) {
@@ -5445,17 +5822,19 @@ if (!$uifm.isFunction(rocketform)) {
 
 				return value_return;
 			};
-			arguments.callee.loadFontSaved = function (value) {
+			arguments.callee.loadFontSaved = function(value) {
 				if (value != '') {
 					var font = JSON.parse(value);
 
 					if (undefined !== font.import_family) {
 						var atImport = '@import url(//fonts.googleapis.com/css?family=' + font.import_family;
-						$('<style>').append(atImport).appendTo('head');
+						$('<style>')
+							.append(atImport)
+							.appendTo('head');
 					}
 				}
 			};
-			arguments.callee.enableFieldPlugin = function (step_pane, id, field_type, data_field) {
+			arguments.callee.enableFieldPlugin = function(step_pane, id, field_type, data_field) {
 				try {
 					var set_option, field_instance;
 					var el_table;
@@ -5763,7 +6142,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.getFieldsAfterDraggable = function (element, field_type, isClicked, id_doubled) {
+			arguments.callee.getFieldsAfterDraggable = function(element, field_type, isClicked, id_doubled) {
 
 				this.previewfield_hideAllPopOver();
 				var fieldhtml = '',
@@ -5783,7 +6162,9 @@ if (!$uifm.isFunction(rocketform)) {
 
 				id = 'ui' + rocketform.generateUniqueID();
 				suffixid = rocketform.generateSuffixID(999, 9999);
-				var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+				var step_pane = $(element)
+					.closest('.uiform-step-pane')
+					.data('uifm-step');
 
 				var tmp_fld_load = [];
 
@@ -5796,7 +6177,9 @@ if (!$uifm.isFunction(rocketform)) {
 						if (isClicked) {
 							$(element).replaceWith(fieldhtml);
 						} else {
-							$(element).find('a.uiform-draggable-field').replaceWith(fieldhtml);
+							$(element)
+								.find('a.uiform-draggable-field')
+								.replaceWith(fieldhtml);
 						}
 
 						rocketform.loading_boxField(id, 1);
@@ -5821,7 +6204,7 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.hideLoader();
 							rocketform.loading_boxField(id, 0);
 						} else {
-							uifm_afterdrag_timer = setInterval(function () {
+							uifm_afterdrag_timer = setInterval(function() {
 								if (rocketform.checkIntegrityDataField(id)) {
 
 									rocketform.enableSettingTabOnCreate(fieldhtml.attr('id'), fieldhtml.data('typefield'));
@@ -5852,7 +6235,9 @@ if (!$uifm.isFunction(rocketform)) {
 						if (isClicked) {
 							$(element).replaceWith(fieldhtml);
 						} else {
-							$(element).find('a.uiform-draggable-field').replaceWith(fieldhtml);
+							$(element)
+								.find('a.uiform-draggable-field')
+								.replaceWith(fieldhtml);
 						}
 						rocketform.loading_boxField(id, 1);
 						$('#' + id).uiform_textarea(Opt_Doubled);
@@ -5873,7 +6258,7 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.hideLoader();
 							rocketform.loading_boxField(id, 0);
 						} else {
-							uifm_afterdrag_timer = setInterval(function () {
+							uifm_afterdrag_timer = setInterval(function() {
 								if (rocketform.checkIntegrityDataField(id)) {
 									rocketform.enableSettingTabOnCreate(fieldhtml.attr('id'), fieldhtml.data('typefield'));
 
@@ -5903,7 +6288,9 @@ if (!$uifm.isFunction(rocketform)) {
 						if (isClicked) {
 							$(element).replaceWith(fieldhtml);
 						} else {
-							$(element).find('a.uiform-draggable-field').replaceWith(fieldhtml);
+							$(element)
+								.find('a.uiform-draggable-field')
+								.replaceWith(fieldhtml);
 						}
 						rocketform.loading_boxField(id, 1);
 						$('#' + id).uiform_recaptcha(Opt_Doubled);
@@ -5921,7 +6308,7 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.hideLoader();
 							rocketform.loading_boxField(id, 0);
 						} else {
-							uifm_afterdrag_timer = setInterval(function () {
+							uifm_afterdrag_timer = setInterval(function() {
 								if (rocketform.checkIntegrityDataField(id)) {
 									rocketform.enableSettingTabOnCreate(fieldhtml.attr('id'), fieldhtml.data('typefield'));
 									tmp_fld_load['id'] = fieldhtml.attr('id');
@@ -6072,7 +6459,9 @@ if (!$uifm.isFunction(rocketform)) {
 						if (isClicked) {
 							$(element).replaceWith(fieldhtml);
 						} else {
-							$(element).find('a.uiform-draggable-field').replaceWith(fieldhtml);
+							$(element)
+								.find('a.uiform-draggable-field')
+								.replaceWith(fieldhtml);
 						}
 						rocketform.loading_boxField(id, 1);
 						switch (parseInt(field_type)) {
@@ -6297,7 +6686,7 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.hideLoader();
 							rocketform.loading_boxField(id, 0);
 						} else {
-							uifm_afterdrag_timer = setInterval(function () {
+							uifm_afterdrag_timer = setInterval(function() {
 								if (rocketform.checkIntegrityDataField(id)) {
 									rocketform.enableSettingTabOnCreate(fieldhtml.attr('id'), fieldhtml.data('typefield'));
 
@@ -6347,7 +6736,9 @@ if (!$uifm.isFunction(rocketform)) {
 						if (isClicked) {
 							$(element).replaceWith(fieldhtml);
 						} else {
-							$(element).find('a.uiform-draggable-field').replaceWith(fieldhtml);
+							$(element)
+								.find('a.uiform-draggable-field')
+								.replaceWith(fieldhtml);
 						}
 						rocketform.loading_boxField(id, 1);
 						$('#' + id).zgpbld_gridsystem();
@@ -6401,7 +6792,7 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.hideLoader();
 							rocketform.loading_boxField(id, 0);
 						} else {
-							uifm_afterdrag_timer = setInterval(function () {
+							uifm_afterdrag_timer = setInterval(function() {
 								if (rocketform.checkIntegrityDataField(id)) {
 									rocketform.enableSettingTabOnCreate(fieldhtml.attr('id'), fieldhtml.data('typefield'));
 
@@ -6455,7 +6846,9 @@ if (!$uifm.isFunction(rocketform)) {
 						if (isClicked) {
 							$(element).replaceWith(fieldhtml);
 						} else {
-							$(element).find('a.uiform-draggable-field').replaceWith(fieldhtml);
+							$(element)
+								.find('a.uiform-draggable-field')
+								.replaceWith(fieldhtml);
 						}
 						rocketform.loading_boxField(id, 1);
 						$('#' + id).uiform_heading(Opt_Doubled);
@@ -6467,7 +6860,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 						if (
 							parseInt(
-								$.map(Opt_Doubled, function (n, i) {
+								$.map(Opt_Doubled, function(n, i) {
 									return i;
 								}).length
 							) == 0
@@ -6522,7 +6915,7 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.hideLoader();
 							rocketform.loading_boxField(id, 0);
 						} else {
-							uifm_afterdrag_timer = setInterval(function () {
+							uifm_afterdrag_timer = setInterval(function() {
 								if (rocketform.checkIntegrityDataField(id)) {
 									rocketform.enableSettingTabOnCreate(fieldhtml.attr('id'), fieldhtml.data('typefield'));
 
@@ -6551,11 +6944,11 @@ if (!$uifm.isFunction(rocketform)) {
 
 				var field_handle1 = $(element).find('.uiform-field-move');
 				field_handle1
-					.mouseover(function () {
+					.mouseover(function() {
 						$(this).css('overflow', 'hidden');
 						$(this).css('cursor', 'move');
 					})
-					.mouseout(function () {
+					.mouseout(function() {
 						$(this).css('overflow', 'visible');
 					});
 				enableDraggableItems();
@@ -6581,7 +6974,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				return id;
 			};
-			arguments.callee.captureEventTinyMCE_process = function (tab_opt, f_id, f_content) {
+			arguments.callee.captureEventTinyMCE_process = function(tab_opt, f_id, f_content) {
 				if ($('#uiform-build-field-tab').hasClass('zgfm-fieldtab-flag-loading')) {
 					return;
 				}
@@ -6640,7 +7033,7 @@ if (!$uifm.isFunction(rocketform)) {
 					default:
 				}
 			};
-			arguments.callee.captureEventTinyMCE2 = function (e) {
+			arguments.callee.captureEventTinyMCE2 = function(e) {
 				var tab_opt = $(e.target).attr('id');
 				var tmp_content = $(e.target).val();
 				var tmp_id = $('#uifm-field-selected-id').val();
@@ -6661,7 +7054,7 @@ if (!$uifm.isFunction(rocketform)) {
 						rocketform.captureEventTinyMCE_process(tab_opt, tmp_id, tmp_content);
 				}
 			};
-			arguments.callee.captureEventTinyMCE = function (ed, e) {
+			arguments.callee.captureEventTinyMCE = function(ed, e) {
 				var tab_opt = ed.id;
 				switch (tab_opt) {
 					case 'uifm_frm_subm_msg':
@@ -6682,16 +7075,16 @@ if (!$uifm.isFunction(rocketform)) {
 				addon_data['textarea_content'] = tmp_content;
 				zgfm_back_addon.do_action('tinyMCE_onChange', addon_data);
 			};
-			arguments.callee.initPanel = function () {
+			arguments.callee.initPanel = function() {
 				this.loading_panelbox('rocketform-bk-dashboard', 1);
 			};
-			arguments.callee.showLogMessage = function (msg) {
+			arguments.callee.showLogMessage = function(msg) {
 				console.log(msg);
 			};
-			arguments.callee.printmaindata = function () {
+			arguments.callee.printmaindata = function() {
 				console.log(this.dumpvar3(mainrformb));
 			};
-			arguments.callee.redirect_tourl = function (redirect) {
+			arguments.callee.redirect_tourl = function(redirect) {
 				if (window.event) {
 					window.event.returnValue = false;
 					window.location = redirect;
@@ -6699,7 +7092,7 @@ if (!$uifm.isFunction(rocketform)) {
 					location.href = redirect;
 				}
 			};
-			arguments.callee.getLayoutFormByStep_checkInColumn = function (children, f_step, type) {
+			arguments.callee.getLayoutFormByStep_checkInColumn = function(children, f_step, type) {
 				var fields = {};
 				var values_tmp, el_container, el_id, el_type, el_children_count, el_children, children_tmp_a, children_tmp_ob, child_id, check_field, num_columns;
 
@@ -6720,7 +7113,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				$(children)
 					.find(tmp_wrap_class)
-					.each(function (index, element) {
+					.each(function(index, element) {
 						values_tmp = {};
 						children_tmp_ob = {};
 						children_tmp_a = [];
@@ -6739,7 +7132,7 @@ if (!$uifm.isFunction(rocketform)) {
 							values_tmp.count_children = parseInt(el_children_count);
 							el_children = element.find('.uiform-field');
 							if (parseInt(el_children_count) > 0) {
-								$(el_children).each(function (index2, element2) {
+								$(el_children).each(function(index2, element2) {
 									child_id = $(this).attr('id') ? $(this).attr('id') : 0;
 									children_tmp_a.push(child_id);
 								});
@@ -6757,7 +7150,7 @@ if (!$uifm.isFunction(rocketform)) {
 				return fields;
 			};
 
-			arguments.callee.getLayoutFormByStep_checkChildren = function (id, children, type, el, f_step) {
+			arguments.callee.getLayoutFormByStep_checkChildren = function(id, children, type, el, f_step) {
 				var fields = {};
 				var num_columns, values_tmp, num_cols;
 
@@ -6768,7 +7161,7 @@ if (!$uifm.isFunction(rocketform)) {
 					case 4:
 					case 5:
 						num_columns = el.find('.sfdc-row:eq(0) > .zgpb-fl-gs-block-style');
-						num_columns.each(function (index, element) {
+						num_columns.each(function(index, element) {
 							values_tmp = {};
 							element = $(element);
 							num_cols = element.attr('data-zgpb-blockcol');
@@ -6788,7 +7181,13 @@ if (!$uifm.isFunction(rocketform)) {
 						values_tmp.cols = 0;
 						values_tmp.num_tab = parseInt(f_step);
 
-						values_tmp.children = rocketform.getLayoutFormByStep_checkInColumn($(el).find('.uifm-input31-main-wrap').first(), f_step, type);
+						values_tmp.children = rocketform.getLayoutFormByStep_checkInColumn(
+							$(el)
+								.find('.uifm-input31-main-wrap')
+								.first(),
+							f_step,
+							type
+						);
 
 						fields[0] = values_tmp;
 
@@ -6799,20 +7198,20 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 				return fields;
 			};
-			arguments.callee.getLayoutFormByStep_addFieldFlag = function (value) {
+			arguments.callee.getLayoutFormByStep_addFieldFlag = function(value) {
 				var temp;
 				temp = this.getInnerVariable('fields_flag_stored');
 				temp.push(value);
 				this.setInnerVariable('fields_flag_stored', temp);
 			};
-			arguments.callee.getLayoutFormByStep = function (f_step) {
+			arguments.callee.getLayoutFormByStep = function(f_step) {
 				if ($('#uifm-step-tab-' + f_step)) {
 					var fields = {};
 					var values_tmp, el_container, el_id, el_type, el_children_count, el_children, children_tmp_a, children_tmp_ob, child_id, check_field;
 
 					rocketform.setInnerVariable('fields_flag_stored', []);
 
-					$('#uifm-step-tab-' + f_step + ' .uiform-field').each(function (index, element) {
+					$('#uifm-step-tab-' + f_step + ' .uiform-field').each(function(index, element) {
 						values_tmp = {};
 						children_tmp_ob = {};
 						children_tmp_a = [];
@@ -6834,7 +7233,7 @@ if (!$uifm.isFunction(rocketform)) {
 							el_children = element.find('.uiform-field') || null;
 							if (parseInt(el_children_count) > 0) {
 								children_tmp_a = [];
-								$(el_children).each(function (index2, element2) {
+								$(el_children).each(function(index2, element2) {
 									child_id = $(this).attr('id') ? $(this).attr('id') : 0;
 									children_tmp_a.push(child_id);
 								});
@@ -6855,7 +7254,7 @@ if (!$uifm.isFunction(rocketform)) {
 				return fields;
 			};
 
-			arguments.callee.loadNewForm = function () {
+			arguments.callee.loadNewForm = function() {
 				rocketform.loadFormToEditPanel_default(null);
 
 				if (parseInt($('#rocketform-bk-dashboard').length) != 0) {
@@ -6865,28 +7264,28 @@ if (!$uifm.isFunction(rocketform)) {
 
 				zgfm_back_addon.load_addon();
 			};
-			arguments.callee.formsetting_setFieldName = function () {
+			arguments.callee.formsetting_setFieldName = function() {
 				var modal_obj = $('#uifm_form_setting_setfname');
 				modal_obj.sfdc_modal({
 					show: true,
 					backdrop: 'static',
-					keyboard: false
+					keyboard: false,
 				});
 				modal_obj.on('show.bs.sfdc-modal', rocketform.modal_centerPos(modal_obj));
 			};
-			arguments.callee.formsetting_setFieldName_check = function () {
+			arguments.callee.formsetting_setFieldName_check = function() {
 				var modal_obj = $('#uifm_form_setting_setfname');
 
 				modal_obj.sfdc_modal('hide');
 			};
-			arguments.callee.saveTabContent = function () {
+			arguments.callee.saveTabContent = function() {
 				var tab_content = {},
 					tab_titles = {},
 					tabcontent_tmp,
 					tabtitle_tmp;
 				var var_steps_src = this.getUiData('steps_src');
 
-				$.each(var_steps_src, function (i, value) {
+				$.each(var_steps_src, function(i, value) {
 					tabcontent_tmp = {};
 					tabcontent_tmp.content = rocketform.getLayoutFormByStep(i);
 					tab_content[i] = tabcontent_tmp;
@@ -6906,7 +7305,11 @@ if (!$uifm.isFunction(rocketform)) {
 					}
 				}
 				var onsubm_bg_st = $('#uifm_frm_subm_bgst').prop('checked') ? 1 : 0;
-				var onsubm_bg_type = $('#uifm_frm_subm_bgst_handle').find('input:checked') ? $('#uifm_frm_subm_bgst_handle').find('input:checked').val() : 1;
+				var onsubm_bg_type = $('#uifm_frm_subm_bgst_handle').find('input:checked')
+					? $('#uifm_frm_subm_bgst_handle')
+							.find('input:checked')
+							.val()
+					: 1;
 				var onsubm_bg_solid = $('#uifm_frm_subm_bgst_typ1_col').val();
 				var onsubm_bg_start = $('#uifm_frm_subm_bgst_typ2_col1').val();
 				var onsubm_bg_end = $('#uifm_frm_subm_bgst_typ2_col2').val();
@@ -6920,8 +7323,12 @@ if (!$uifm.isFunction(rocketform)) {
 				this.setUiData2('onsubm', 'sm_boxmsg_bg_end', onsubm_bg_end);
 				this.setUiData2('onsubm', 'sm_redirect_st', onsubm_redirect_st);
 				this.setUiData2('onsubm', 'sm_redirect_url', encodeURIComponent(onsubm_redirect_url));
-				var main_addcss = $('textarea#uifm_frm_main_addcss').data('CodeMirrorInstance').getValue();
-				var main_addjs = $('textarea#uifm_frm_main_addjs').data('CodeMirrorInstance').getValue();
+				var main_addcss = $('textarea#uifm_frm_main_addcss')
+					.data('CodeMirrorInstance')
+					.getValue();
+				var main_addjs = $('textarea#uifm_frm_main_addjs')
+					.data('CodeMirrorInstance')
+					.getValue();
 				var main_onload_scroll = $('#uifm_frm_main_onload_scroll').prop('checked') ? 1 : 0;
 				var main_preload_noconf = $('#uifm_frm_main_preload_noconflict').prop('checked') ? 1 : 0;
 				this.setUiData2('main', 'add_css', encodeURIComponent(main_addcss));
@@ -7032,7 +7439,7 @@ if (!$uifm.isFunction(rocketform)) {
 				this.wizardtab_saveChangesToMdata();
 			};
 
-			arguments.callee.records_delreg = function (rec_id) {
+			arguments.callee.records_delreg = function(rec_id) {
 				rocketform.showLoader(4, true, true);
 
 				$.ajax({
@@ -7043,18 +7450,18 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						rec_id: rec_id,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$("#uiform-container a[data-recid='" + rec_id + "']")
 							.closest('tr')
 							.fadeOut('slow');
 
 						rocketform.hideLoader();
-					}
+					},
 				});
 			};
-			arguments.callee.records_loadDataByForm = function (el) {
+			arguments.callee.records_loadDataByForm = function(el) {
 				var idform = $('#uifm-record-form-cmb').val();
 				rocketform.showLoader(1, true, true);
 				$.ajax({
@@ -7065,16 +7472,16 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: parseInt(idform),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#uifm-record-results').html(msg);
 						$('#table_id').DataTable();
 						rocketform.hideLoader();
-					}
+					},
 				});
 			};
-			arguments.callee.exportForm_loadCodebyForm = function () {
+			arguments.callee.exportForm_loadCodebyForm = function() {
 				var idform = $('#uifm-list-form-cmb').val();
 				rocketform.showLoader(1, true, true);
 				$.ajax({
@@ -7085,31 +7492,31 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: parseInt(idform),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#uifm_frm_exportform_code').html(msg);
 						rocketform.hideLoader();
-					}
+					},
 				});
 			};
 
-			arguments.callee.importForm_onfailExit = function () {
+			arguments.callee.importForm_onfailExit = function() {
 				var re_url = rockfm_vars.uifm_siteurl + '/formbuilder/forms/create_uiform';
 				rocketform.redirect_tourl(re_url);
 			};
-			arguments.callee.importForm_onfailPopup = function () {
+			arguments.callee.importForm_onfailPopup = function() {
 				$('#uifm_form_import_modal').sfdc_modal('hide');
 				$('#uifm_form_import_onfail .sfdc-modal-title').html($('#uifm_frm_preview_import_title').val());
 				$('#uifm_form_import_onfail .sfdc-modal-body').html('<p>' + $('#uifm_frm_preview_import_onfail').val() + '</p>');
 				$('#uifm_form_import_onfail').sfdc_modal({
 					show: true,
 					backdrop: 'static',
-					keyboard: false
+					keyboard: false,
 				});
 			};
 
-			arguments.callee.importForm_loadForm = function () {
+			arguments.callee.importForm_loadForm = function() {
 				try {
 					var importcode = $('#uifm_frm_importform_code').val();
 					rocketform.showLoader(1, true, true);
@@ -7121,18 +7528,18 @@ if (!$uifm.isFunction(rocketform)) {
 							page: 'zgfm_form_builder',
 							zgfm_security: uiform_vars.ajax_nonce,
 							importcode: importcode,
-							csrf_field_name: uiform_vars.csrf_field_name
+							csrf_field_name: uiform_vars.csrf_field_name,
 						},
-						error: function (xhr, error) {
+						error: function(xhr, error) {
 							rocketform.importForm_onfailPopup();
 						},
-						success: function (response) {
+						success: function(response) {
 							if ($.isPlainObject(response)) {
 								if (String(response.data.fmb_html_backend)) {
 									rocketform.loadFormToEditPanel(response);
 									var refreshIntervalId = null;
 
-									var checkIfCoreDataIsSet = function () {
+									var checkIfCoreDataIsSet = function() {
 										if (parseInt($('.uiform-main-form').length) != 0) {
 											zgfm_back_addon.load_addon();
 											clearInterval(refreshIntervalId);
@@ -7153,32 +7560,35 @@ if (!$uifm.isFunction(rocketform)) {
 							} else {
 								rocketform.importForm_onfailPopup();
 							}
-						}
+						},
 					});
 				} catch (ex) {
 					rocketform.importForm_onfailPopup();
 				}
 			};
-			arguments.callee.genpdf_inforecord = function (rec_id) {
+			arguments.callee.genpdf_inforecord = function(rec_id) {
 				try {
 					$('body').append("<iframe src='" + uiform_vars.url_admin + 'formbuilder/frontend/pdf_show_record/?uifm_mode=pdf&id=' + rec_id + "' style='display: none;' ></iframe>");
 				} catch (ex) {
 					console.error(' genpdf_inforecord : ', ex.message);
-					var uifm_iframeform = function (url) {
+					var uifm_iframeform = function(url) {
 						var object = this;
 						object.time = new Date().getTime();
 						object.form = $('<form action="' + url + '" target="iframe' + object.time + '" method="post" style="display:none;" id="form' + object.time + '"></form>');
 
-						object.addParameter = function (parameter, value) {
-							$("<input type='hidden' />").attr('name', parameter).attr('value', value).appendTo(object.form);
+						object.addParameter = function(parameter, value) {
+							$("<input type='hidden' />")
+								.attr('name', parameter)
+								.attr('value', value)
+								.appendTo(object.form);
 						};
 
-						object.send = function () {
+						object.send = function() {
 							var iframe = $('<iframe data-time="' + object.time + '" style="display:none;" id="iframe' + object.time + '"></iframe>');
 							$('body').append(iframe);
 							$('body').append(object.form);
 							object.form.submit();
-							iframe.load(function () {
+							iframe.load(function() {
 								$('#form' + $(this).data('time')).remove();
 								$(this).remove();
 							});
@@ -7189,12 +7599,14 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.importForm_openModal = function () {
+			arguments.callee.importForm_openModal = function() {
 				$('#uifm_form_import_modal .sfdc-modal-title').html($('#uifm_frm_preview_import_title').val());
-				$('#uifm_form_import_modal .sfdc-modal-body').find('.uifm_frm_importform_code').val('');
+				$('#uifm_form_import_modal .sfdc-modal-body')
+					.find('.uifm_frm_importform_code')
+					.val('');
 				$('#uifm_form_import_modal').sfdc_modal('show');
 			};
-			arguments.callee.customReport_loadFieldbyForm = function () {
+			arguments.callee.customReport_loadFieldbyForm = function() {
 				var idform = $('#uifm-record-form-cmb').val();
 				rocketform.showLoader(1, true, true);
 				$.ajax({
@@ -7204,18 +7616,18 @@ if (!$uifm.isFunction(rocketform)) {
 						action: 'rocket_fbuilder_creport_byform',
 						page: 'zgfm_form_builder',
 						form_id: parseInt(idform),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#uifm-customreport-results').html(msg);
 						rocketform.hideLoader();
-					}
+					},
 				});
 			};
-			arguments.callee.customReport_saveFields = function () {
+			arguments.callee.customReport_saveFields = function() {
 				var idform = $('#uifm-record-form-cmb').val();
 				var myCheckboxes = new Array();
-				$('#uifm-customreport-form input:checked').each(function () {
+				$('#uifm-customreport-form input:checked').each(function() {
 					myCheckboxes.push($(this).val());
 				});
 				rocketform.showLoader(3, true, true);
@@ -7230,14 +7642,14 @@ if (!$uifm.isFunction(rocketform)) {
 						form_id: parseInt(idform),
 						data: myCheckboxes,
 						data2: elems.serializeArray(),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						rocketform.hideLoader();
-					}
+					},
 				});
 			};
-			arguments.callee.saveForm_showModalSuccess = function (idval) {
+			arguments.callee.saveForm_showModalSuccess = function(idval) {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/form_success',
@@ -7245,47 +7657,51 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: idval,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					beforeSend: function () {
+					beforeSend: function() {
 						$('#uifm_modal_msg .sfdc-modal-body').html(' <i class="sfdc-glyphicon sfdc-glyphicon-refresh gly-spin"></i>');
 					},
-					success: function (response) {
+					success: function(response) {
 						var arrJson = (JSON && JSON.parse(response)) || $.parseJSON(response);
 						$('#uifm_modal_msg').sfdc_modal('show');
 						$('#uifm_modal_msg .sfdc-modal-title').html(arrJson.html_title);
 						$('#uifm_modal_msg .sfdc-modal-body').html(arrJson.html);
-					}
+					},
 				});
 			};
-			arguments.callee.loadFormSaved_regen_closePopUp = function (idval) {
+			arguments.callee.loadFormSaved_regen_closePopUp = function(idval) {
 				$('#uifm_modal_alert_regen_msg').sfdc_modal('hide');
 			};
-			arguments.callee.loadFormSaved_regenerateForm = function () {
+			arguments.callee.loadFormSaved_regenerateForm = function() {
 				$('#uifm_modal_alert_regen_msg').sfdc_modal({
 					backdrop: 'static',
 					keyboard: false,
-					show: true
+					show: true,
 				});
 				$('#uifm_modal_alert_regen_msg .sfdc-modal-title').html($('#alert_uifm_loading_reg_title').val());
 				var content = '<p>' + $('#alert_uifm_loading_reg_cont').val() + '</p>';
 				$('#uifm_modal_alert_regen_msg .sfdc-modal-body').html(content);
 			};
 
-			arguments.callee.saveform_updateOptionsToFields = function () {
+			arguments.callee.saveform_updateOptionsToFields = function() {
 				var numtabs = $('.uiform-steps li');
 				var currentTab, currentIndex, currentVal, currentFields;
 				var numorder = 1;
 				var field_cur;
 				var field_type;
-				$.each(numtabs, function (index, value) {
-					currentTab = $(this).find('a').attr('href');
+				$.each(numtabs, function(index, value) {
+					currentTab = $(this)
+						.find('a')
+						.attr('href');
 					if (parseInt($(currentTab).length) != 0) {
-						currentIndex = $(this).find('a').attr('data-tab-nro');
+						currentIndex = $(this)
+							.find('a')
+							.attr('data-tab-nro');
 
 						currentFields = $(currentTab).find('.uiform-field');
 						if (parseInt(currentFields.length) != 0) {
-							$.each(currentFields, function (index2, value2) {
+							$.each(currentFields, function(index2, value2) {
 								field_cur = $(this).attr('id');
 
 								field_type = $(this).attr('data-typefield');
@@ -7334,7 +7750,7 @@ if (!$uifm.isFunction(rocketform)) {
 				});
 			};
 
-			arguments.callee.saveForm = function () {
+			arguments.callee.saveForm = function() {
 				rocketform.loading_panelbox2(1);
 
 				rocketform.showLoader(3, true, false);
@@ -7348,10 +7764,10 @@ if (!$uifm.isFunction(rocketform)) {
 							page: 'zgfm_form_builder',
 							zgfm_security: uiform_vars.ajax_nonce,
 							uifm_frm_main_title: $('#uifm_frm_main_title').val(),
-							csrf_field_name: uiform_vars.csrf_field_name
+							csrf_field_name: uiform_vars.csrf_field_name,
 						},
 
-						success: function (msg) {
+						success: function(msg) {
 							if (parseInt(msg.id) > 0) {
 								$('#uifm_frm_main_id').val(msg.id);
 								$('#uifm_frm_main_isnewform').val('1');
@@ -7359,7 +7775,7 @@ if (!$uifm.isFunction(rocketform)) {
 							} else {
 								alert('Error');
 							}
-						}
+						},
 					});
 
 					return;
@@ -7373,10 +7789,14 @@ if (!$uifm.isFunction(rocketform)) {
 				this.saveform_updateOptionsToFields();
 
 				if ($(document).find('.uifm-highlight-edited')) {
-					$(document).find('.uifm-highlight-edited').removeClass('uifm-highlight-edited');
+					$(document)
+						.find('.uifm-highlight-edited')
+						.removeClass('uifm-highlight-edited');
 				}
 				$('.uiform-main-form .uiform-fields-qopt-select input:checked').prop('checked', false);
-				$('.uiform-main-form .uiform-fields-qopt-select input:checked').closest('.uiform-fields-quick-options').removeCss('display');
+				$('.uiform-main-form .uiform-fields-qopt-select input:checked')
+					.closest('.uiform-fields-quick-options')
+					.removeCss('display');
 				this.closeSettingTab();
 				rocketform.showLoader(3, true, true);
 				this.saveTabContent();
@@ -7385,7 +7805,7 @@ if (!$uifm.isFunction(rocketform)) {
 				var tmp_frm = mainrformb;
 				if (parseInt($('.uiform-main-form').find('.uifm-input-ratingstar').length) != 0) {
 					var rockfm_tmp_rs = $('.uiform-main-form').find('.uifm-input-ratingstar');
-					rockfm_tmp_rs.each(function (i) {
+					rockfm_tmp_rs.each(function(i) {
 						$(this).rating('destroy');
 					});
 				}
@@ -7395,7 +7815,7 @@ if (!$uifm.isFunction(rocketform)) {
 				if (parseInt($('.uiform-main-form').find('.uifm-input-ratingstar').length) != 0) {
 					$('.uiform-main-form')
 						.find('.uifm-input-ratingstar')
-						.each(function (i) {
+						.each(function(i) {
 							rocketform.input9settings_updateField($(this).closest('.uiform-field'), 'input9');
 						});
 				}
@@ -7428,14 +7848,23 @@ if (!$uifm.isFunction(rocketform)) {
 						form_data: encodeURIComponent(JSON.stringify(tmp_frm)),
 						addon_data: encodeURIComponent(JSON.stringify(tmp_addon_data)),
 						form_inputs: $('form#zgfm_edit_panel').serialize(),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						if (String(msg.status) === 'failed') {
 							rocketform.fields_showModalOptions();
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-header-inner').html(msg.modal_header);
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.sfdc-modal-body').html(msg.Message);
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-footer-wrap').html(msg.modal_footer);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.zgpb-modal-header-inner')
+								.html(msg.modal_header);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.sfdc-modal-body')
+								.html(msg.Message);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.zgpb-modal-footer-wrap')
+								.html(msg.modal_footer);
 						}
 
 						rocketform.loading_panelbox2(0);
@@ -7449,21 +7878,23 @@ if (!$uifm.isFunction(rocketform)) {
 							$('#uifm_frm_main_isnewform').val('0');
 						}
 
-					}
+					},
 				});
 			};
-			arguments.callee.loadForm_tab_subm_msgbg1 = function () {
+			arguments.callee.loadForm_tab_subm_msgbg1 = function() {
 				$('#uifm_frm_subm_bgst_typ1_handle').show();
 				$('#uifm_frm_subm_bgst_typ2_handle').hide();
 			};
-			arguments.callee.loadForm_tab_subm_msgbg2 = function () {
+			arguments.callee.loadForm_tab_subm_msgbg2 = function() {
 				$('#uifm_frm_subm_bgst_typ1_handle').hide();
 				$('#uifm_frm_subm_bgst_typ2_handle').show();
 			};
-			arguments.callee.loadForm_tab_subm = function () {
+			arguments.callee.loadForm_tab_subm = function() {
 				$('#uifm_frm_subm_bgst_typ1_handle').hide();
 				$('#uifm_frm_subm_bgst_typ2_handle').hide();
-				var valinput = $('#uifm_frm_subm_bgst_handle').find('input').val();
+				var valinput = $('#uifm_frm_subm_bgst_handle')
+					.find('input')
+					.val();
 				if (parseInt(valinput) === 1) {
 					$('#uifm_frm_subm_bgst_typ1_handle').show();
 					$('#uifm_frm_subm_bgst_typ2_handle').hide();
@@ -7476,12 +7907,12 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.loadForm_tab_skin_delbgimg = function () {
+			arguments.callee.loadForm_tab_skin_delbgimg = function() {
 				$('#uifm_frm_skin_bg_srcimg_wrap').html('');
 				$('#uifm_frm_skin_bg_imgurl').val('');
 				rocketform.loadForm_tab_skin_updateBG();
 			};
-			arguments.callee.loadForm_tab_skin_updateBG = function () {
+			arguments.callee.loadForm_tab_skin_updateBG = function() {
 				var skin_bg_imgurl = $('#uifm_frm_skin_bg_imgurl').val();
 				this.setUiData3('skin', 'form_background', 'image', skin_bg_imgurl);
 				var obj_field = $('.uiform-preview-base');
@@ -7490,21 +7921,23 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.loadForm_tab_inp18_updateBG = function () {
+			arguments.callee.loadForm_tab_inp18_updateBG = function() {
 			};
-			arguments.callee.wizardtab_addSubmitButton = function () {
-				var current_content = $('.uiform-steps .uifm-current').find('a').attr('href');
+			arguments.callee.wizardtab_addSubmitButton = function() {
+				var current_content = $('.uiform-steps .uifm-current')
+					.find('a')
+					.attr('href');
 				var obj = $(current_content);
 				if (parseInt(obj.find('.uiform-wizardbtn').length) > 0) {
 				} else {
 					var el_field = $('.uiform-enable-fieldset').find('a.uiform-wizardbtn');
 					rocketform.mainfields_addFieldToForm(el_field, 39);
-					setTimeout(function () {
+					setTimeout(function() {
 						$('.sfdc-nav-tabs a[href="#uiform-build-form-tab"]').sfdc_tab('show');
 					}, 2000);
 				}
 			};
-			arguments.callee.wizardtab_enableStatus = function () {
+			arguments.callee.wizardtab_enableStatus = function() {
 				var wiz_st = $('#uifm_frm_wiz_st').prop('checked') ? 1 : 0;
 				if (wiz_st === 1) {
 					$('.uiform-step-list').show();
@@ -7518,14 +7951,14 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 				rocketform.setUiData2('wizard', 'enable_st', wiz_st);
 			};
-			arguments.callee.wizardtab_changeTabTitle = function (nro) {
+			arguments.callee.wizardtab_changeTabTitle = function(nro) {
 				var tabobj = $(".uiform-step-list li > a[data-tab-nro='" + nro + "']").find('.uifm-title');
 				var tab_title = $('#uifm_frm_skin_tab' + nro + '_title').val() ? $('#uifm_frm_skin_tab' + nro + '_title').val() : 'Tab title';
 				tabobj.html(tab_title);
 				rocketform.setUiData4('steps', 'tab_title', nro, 'title', tab_title);
 			};
 
-			arguments.callee.saveform_cleanForm2 = function () {
+			arguments.callee.saveform_cleanForm2 = function() {
 				var tmp_arr;
 				var tmp_len;
 				var tmp_i;
@@ -7544,49 +7977,50 @@ if (!$uifm.isFunction(rocketform)) {
 
 				mainrformb['steps_src'] = tmp_new_arr;
 			};
-			arguments.callee.saveform_cleanForm = function () {
+			arguments.callee.saveform_cleanForm = function() {
 				try {
 					var numtabs = $('.uiform-steps li');
 					var currentTab, currentIndex, currentVal, currentFields;
-					$.each(numtabs, function (index, value) {
-						currentTab = $(this).find('a').attr('href');
+					$.each(numtabs, function(index, value) {
+						currentTab = $(this)
+							.find('a')
+							.attr('href');
 						if (parseInt($(currentTab).length) != 0) {
-							currentIndex = $(this).find('a').attr('data-tab-nro');
+							currentIndex = $(this)
+								.find('a')
+								.attr('data-tab-nro');
 
 							currentFields = $(currentTab).find('.uiform-field');
 							if (parseInt(currentFields.length) != 0) {
-								$.each(currentFields, function (index2, value2) {
+								$.each(currentFields, function(index2, value2) {
 									try {
 										if (typeof mainrformb['steps_src'][currentIndex][$(this).attr('id')] == 'undefined') {
 											$(this).remove();
 											rocketform.delUiData3('steps_src', currentIndex, $(this).attr('id'));
-										}else{
+										} else {
+											let tmp_field = mainrformb['steps_src'][currentIndex][$(this).attr('id')];
 
-											let tmp_field=mainrformb['steps_src'][currentIndex][$(this).attr('id')];
-
-											if(tmp_field.hasOwnProperty('clogic')){
-												let tmp_clist=tmp_field['clogic']['list'];
-												if ( tmp_clist && tmp_clist.length>0) {
-													var tmp_new_clist=[];
-													$.each(tmp_clist, function( clindex, clvalue ) {
-												  		if($("#" + clvalue['field_fire']).length == 0) {
-														}else{
+											if (tmp_field.hasOwnProperty('clogic')) {
+												let tmp_clist = tmp_field['clogic']['list'];
+												if (tmp_clist && tmp_clist.length > 0) {
+													var tmp_new_clist = [];
+													$.each(tmp_clist, function(clindex, clvalue) {
+														if ($('#' + clvalue['field_fire']).length == 0) {
+														} else {
 															tmp_new_clist.push(tmp_clist[clindex]);
 														}
 													});
 
-													if ( parseInt(tmp_new_clist.length) === 0) {
-
-														mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['show_st']='0';														
+													if (parseInt(tmp_new_clist.length) === 0) {
+														mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['show_st'] = '0';
 													}
 
-													mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['list']=tmp_new_clist;
-												}else{
-													mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['show_st']='0';
+													mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['list'] = tmp_new_clist;
+												} else {
+													mainrformb['steps_src'][currentIndex][$(this).attr('id')]['clogic']['show_st'] = '0';
 												}
 											}
-
- 										}
+										}
 									} catch (ex) {
 										$(this).remove();
 										try {
@@ -7608,13 +8042,13 @@ if (!$uifm.isFunction(rocketform)) {
 
 					if (
 						parseInt(
-							$.map(mainrformb['steps_src'], function (n, i) {
+							$.map(mainrformb['steps_src'], function(n, i) {
 								return i;
 							}).length
 						) != 0
 					) {
-						$.each(mainrformb['steps_src'], function (index3, value3) {
-							$.each(value3, function (index4, value4) {
+						$.each(mainrformb['steps_src'], function(index3, value3) {
+							$.each(value3, function(index4, value4) {
 								if (parseInt($('#' + index4).length) != 0) {
 									switch (parseInt(value4['type'])) {
 										case 8:
@@ -7642,13 +8076,13 @@ if (!$uifm.isFunction(rocketform)) {
 
 					if (
 						parseInt(
-							$.map(mainrformb['steps_src'], function (n, i) {
+							$.map(mainrformb['steps_src'], function(n, i) {
 								return i;
 							}).length
 						) != 0
 					) {
-						$.each(mainrformb['steps_src'], function (index3, value3) {
-							$.each(value3, function (index4, value4) {
+						$.each(mainrformb['steps_src'], function(index3, value3) {
+							$.each(value3, function(index4, value4) {
 								if (parseInt($('#' + index4).length) === 0) {
 									switch (parseInt(value4['type'])) {
 										case 1:
@@ -7670,7 +8104,7 @@ if (!$uifm.isFunction(rocketform)) {
 					var tmp_arr = rocketform.getUiData('steps_src');
 					var tmp_arr_new = {};
 					var tmp_len = 0;
-					$.each(tmp_arr, function (key, value) {
+					$.each(tmp_arr, function(key, value) {
 						tmp_len++;
 						if (tmp_arr[key] && !$.isEmptyObject(tmp_arr[key])) {
 							tmp_arr_new[key] = value;
@@ -7682,10 +8116,12 @@ if (!$uifm.isFunction(rocketform)) {
 					var tmpnum_list = $('#uifm_frm_skin_tabs_box .uifm_frm_skin_tab_content');
 					var tmpTabs = {};
 					var tabCount = 0;
-					tmpnum_list.each(function (i) {
+					tmpnum_list.each(function(i) {
 						var tmpTab_inner_num = $(this).attr('data-tab-nro');
 						var tmpTab_inner = {};
-						tmpTab_inner.title = $(this).find('.uifm_frm_skin_tab_title_evt').val();
+						tmpTab_inner.title = $(this)
+							.find('.uifm_frm_skin_tab_title_evt')
+							.val();
 
 						if (mainrformb['steps_src'].hasOwnProperty(parseInt(tmpTab_inner_num))) {
 							if (tmpTab_inner_num) {
@@ -7698,7 +8134,7 @@ if (!$uifm.isFunction(rocketform)) {
 							var tmp_arr_2 = rocketform.getUiData2('steps', 'tab_title');
 							var tmp_arr_new_2 = {};
 							var tmp_len_2 = 0;
-							$.each(tmp_arr_2, function (key, value) {
+							$.each(tmp_arr_2, function(key, value) {
 								tmp_len_2++;
 								if (tmp_arr_2[key] && !$.isEmptyObject(tmp_arr_2[key])) {
 									tmp_arr_new_2[key] = value;
@@ -7710,32 +8146,42 @@ if (!$uifm.isFunction(rocketform)) {
 								.parent()
 								.remove();
 
-							$(this).parent().remove();
+							$(this)
+								.parent()
+								.remove();
 						}
 					});
 					this.setUiData2('steps', 'num_tabs', tabCount);
 
-					$('.uiform-main-form').find('.uiform-draggable-field').remove();
+					$('.uiform-main-form')
+						.find('.uiform-draggable-field')
+						.remove();
 				} catch (ex) {
 					console.error('saveform_cleanForm : ', ex.message);
 				}
 			};
-			arguments.callee.wizardtab_cleanTabs = function () {
+			arguments.callee.wizardtab_cleanTabs = function() {
 				$('#uifm_frm_skin_tabs_box').html('');
 				var numtabs = $('.uiform-steps li');
 				var currentTab, currentIndex, currentVal, currentFields;
-				$.each(numtabs, function (index, value) {
-					currentTab = $(this).find('a').attr('href');
+				$.each(numtabs, function(index, value) {
+					currentTab = $(this)
+						.find('a')
+						.attr('href');
 					if (parseInt($(currentTab).length) != 0) {
-						currentIndex = $(this).find('a').attr('data-tab-nro');
-						currentVal = $(this).find('a span.uifm-title').text();
+						currentIndex = $(this)
+							.find('a')
+							.attr('data-tab-nro');
+						currentVal = $(this)
+							.find('a span.uifm-title')
+							.text();
 						rocketform.wizardtab_addTabController(currentIndex);
 						$('#uifm_frm_skin_tabs_box')
 							.find('#uifm_frm_skin_tab' + currentIndex + '_title')
 							.val(currentVal);
 						currentFields = $(currentTab).find('.uiform-field');
 						if (parseInt(currentFields.length) != 0) {
-							$.each(currentFields, function (index2, value2) {
+							$.each(currentFields, function(index2, value2) {
 								try {
 									if (typeof mainrformb['steps_src'][currentIndex][$(this).attr('id')] == 'undefined') {
 										$(this).remove();
@@ -7758,13 +8204,13 @@ if (!$uifm.isFunction(rocketform)) {
 
 				if (
 					parseInt(
-						$.map(mainrformb['steps_src'], function (n, i) {
+						$.map(mainrformb['steps_src'], function(n, i) {
 							return i;
 						}).length
 					) != 0
 				) {
-					$.each(mainrformb['steps_src'], function (index3, value3) {
-						$.each(value3, function (index4, value4) {
+					$.each(mainrformb['steps_src'], function(index3, value3) {
+						$.each(value3, function(index4, value4) {
 							if (parseInt($('#' + index4).length) != 0) {
 							} else {
 								rocketform.delUiData3('steps_src', index3, index4);
@@ -7773,7 +8219,7 @@ if (!$uifm.isFunction(rocketform)) {
 					});
 				}
 			};
-			arguments.callee.wizardtab_addNewTab = function () {
+			arguments.callee.wizardtab_addNewTab = function() {
 				var num = $('.uiform-steps li').length;
 				var newNum = new Number(num);
 				var wiz_theme_typ = parseInt(this.getUiData2('wizard', 'theme_type'));
@@ -7788,7 +8234,10 @@ if (!$uifm.isFunction(rocketform)) {
 						stringvar += '</a>';
 						stringvar += '</li>';
 
-						$('.uiform-steps').find('.uifm-current').removeClass('uifm-current').addClass('uifm-disabled');
+						$('.uiform-steps')
+							.find('.uifm-current')
+							.removeClass('uifm-current')
+							.addClass('uifm-disabled');
 						$('.uiform-steps').append(stringvar);
 						break;
 				}
@@ -7807,7 +8256,7 @@ if (!$uifm.isFunction(rocketform)) {
 				rocketform.wizardtab_addTabController(newNum);
 				enableSortableItems();
 			};
-			arguments.callee.wizardtab_addTabController = function (numvar) {
+			arguments.callee.wizardtab_addTabController = function(numvar) {
 				try {
 					var tmp_tmpl = wp.template('zgfm-frm-wiz-templates');
 					var tmpTpl2 = $('<div></div>');
@@ -7826,13 +8275,18 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error('wizardtab_addTabController : ', ex.message);
 				}
 			};
-			arguments.callee.wizardtab_gotoFirstPosition = function () {
-				$('.uiform-steps').find('.uifm-current').removeClass('uifm-current').addClass('uifm-disabled');
-				$('.uiform-steps li:first').removeClass('uifm-disabled').addClass('uifm-current');
+			arguments.callee.wizardtab_gotoFirstPosition = function() {
+				$('.uiform-steps')
+					.find('.uifm-current')
+					.removeClass('uifm-current')
+					.addClass('uifm-disabled');
+				$('.uiform-steps li:first')
+					.removeClass('uifm-disabled')
+					.addClass('uifm-current');
 				$('.uiform-step-content .uiform-step-pane').hide();
 				$('.uiform-step-content .uiform-step-pane:first').show();
 			};
-			arguments.callee.wizardtab_deleteTab = function (element) {
+			arguments.callee.wizardtab_deleteTab = function(element) {
 				var el = $(element);
 				var el_num = el.closest('.uifm_frm_skin_tab_content').data('tab-nro');
 				if (parseInt(el_num) != 0) {
@@ -7849,11 +8303,11 @@ if (!$uifm.isFunction(rocketform)) {
 					var tmp_num_tabs = $('.uiform-step-list li > a').length;
 					rocketform.setUiData('num_tabs', parseInt(tmp_num_tabs));
 
-					$.each($('.uiform-step-list li > a'), function (index, value) {
+					$.each($('.uiform-step-list li > a'), function(index, value) {
 						$(this).attr('data-tab-nro', index);
 						$(this).attr('href', '#uifm-step-tab-' + index);
 					});
-					$.each($('.uiform-step-content > div'), function (index, value) {
+					$.each($('.uiform-step-content > div'), function(index, value) {
 						$(this).attr('id', 'uifm-step-tab-' + index);
 						$(this).attr('data-uifm-step', index);
 					});
@@ -7861,13 +8315,13 @@ if (!$uifm.isFunction(rocketform)) {
 					rocketform.wizardtab_refreshTabSettings();
 				}
 			};
-			arguments.callee.wizardtab_changeTheme = function (type) {
+			arguments.callee.wizardtab_changeTheme = function(type) {
 				this.setUiData2('wizard', 'theme_type', type);
 				this.wizardtab_showOptions();
 				rocketform.wizardtab_setDataToTabSettings();
 				this.wizardtab_changeThemeOnPreview();
 			};
-			arguments.callee.wizardtab_changeThemeOnPreview = function () {
+			arguments.callee.wizardtab_changeThemeOnPreview = function() {
 				var wiz_theme_typ = parseInt(this.getUiData2('wizard', 'theme_type'));
 				this.wizardtab_gotoFirstPosition();
 				$('ul.uiform-steps li').off('click');
@@ -7882,7 +8336,7 @@ if (!$uifm.isFunction(rocketform)) {
 						string_html += '';
 						string_html += '<ul class="uiform-steps">';
 
-						$.each(elm_li, function (index, value) {
+						$.each(elm_li, function(index, value) {
 							if (count === 0) {
 								string_html += '<li class="uifm-current">';
 							} else {
@@ -7903,7 +8357,7 @@ if (!$uifm.isFunction(rocketform)) {
 						string_html += '';
 						string_html += '<ul class="uiform-steps">';
 
-						$.each(elm_li, function (index, value) {
+						$.each(elm_li, function(index, value) {
 							if (count === 0) {
 								string_html += '<li class="uifm-current">';
 							} else {
@@ -7923,7 +8377,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				this.wizardtab_tabManageEvt();
 			};
-			arguments.callee.wizardtab_showOptions = function () {
+			arguments.callee.wizardtab_showOptions = function() {
 				try {
 					var clvars;
 					clvars = [
@@ -7942,9 +8396,9 @@ if (!$uifm.isFunction(rocketform)) {
 						'#uifm_frm_wiz_tab_done_wrap',
 						'#uifm_frm_wiz_tab_done_bgcolor_wrap',
 						'#uifm_frm_wiz_tab_done_txtcolor_wrap',
-						'#uifm_frm_wiz_tab_done_numtxtcolor_wrap'
+						'#uifm_frm_wiz_tab_done_numtxtcolor_wrap',
 					];
-					$.each(clvars, function () {
+					$.each(clvars, function() {
 						$(String(this)).addClass('uifm-hide');
 					});
 
@@ -7967,24 +8421,15 @@ if (!$uifm.isFunction(rocketform)) {
 								'#uifm_frm_wiz_tab_done_wrap',
 								'#uifm_frm_wiz_tab_done_bgcolor_wrap',
 								'#uifm_frm_wiz_tab_done_txtcolor_wrap',
-								'#uifm_frm_wiz_tab_done_numtxtcolor_wrap'
+								'#uifm_frm_wiz_tab_done_numtxtcolor_wrap',
 							];
-							$.each(clvars, function () {
+							$.each(clvars, function() {
 								$(String(this)).removeClass('uifm-hide');
 							});
 							break;
 						case 1:
-							clvars = [
-								'#uifm_frm_wiz_tab_active_wrap',
-								'#uifm_frm_wiz_tab_active_bgcolor_wrap',
-								'#uifm_frm_wiz_tab_active_txtcolor_wrap',
-								'#uifm_frm_wiz_tab_active_numtxtcolor_wrap',
-								'#uifm_frm_wiz_tab_active_bg_numtxt_wrap',
-								'#uifm_frm_wiz_tab_inactive_wrap',
-								'#uifm_frm_wiz_tab_inactive_bgcolor_wrap',
-								'#uifm_frm_wiz_tab_inactive_txtcolor_wrap'
-							];
-							$.each(clvars, function () {
+							clvars = ['#uifm_frm_wiz_tab_active_wrap', '#uifm_frm_wiz_tab_active_bgcolor_wrap', '#uifm_frm_wiz_tab_active_txtcolor_wrap', '#uifm_frm_wiz_tab_active_numtxtcolor_wrap', '#uifm_frm_wiz_tab_active_bg_numtxt_wrap', '#uifm_frm_wiz_tab_inactive_wrap', '#uifm_frm_wiz_tab_inactive_bgcolor_wrap', '#uifm_frm_wiz_tab_inactive_txtcolor_wrap'];
+							$.each(clvars, function() {
 								$(String(this)).removeClass('uifm-hide');
 							});
 							break;
@@ -7993,7 +8438,7 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error('wizardtab_showOptions : ', ex.message);
 				}
 			};
-			arguments.callee.wizardtab_setDataToTabSettings = function () {
+			arguments.callee.wizardtab_setDataToTabSettings = function() {
 				try {
 					var type = parseInt(this.getUiData2('wizard', 'theme_type'));
 					if (type) {
@@ -8003,59 +8448,81 @@ if (!$uifm.isFunction(rocketform)) {
 						case 0:
 							var wiz_active_bgcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_cur_bgcolor');
 							if (wiz_active_bgcol) {
-								$('#uifm_frm_wiz_tab_active_bgcolor').parent().colorpicker('setValue', wiz_active_bgcol);
+								$('#uifm_frm_wiz_tab_active_bgcolor')
+									.parent()
+									.colorpicker('setValue', wiz_active_bgcol);
 								$('#uifm_frm_wiz_tab_active_bgcolor').val(wiz_active_bgcol);
 							}
 							var wiz_active_txtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_cur_txtcolor');
 							if (wiz_active_txtcol) {
-								$('#uifm_frm_wiz_tab_active_txtcolor').parent().colorpicker('setValue', wiz_active_txtcol);
+								$('#uifm_frm_wiz_tab_active_txtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_active_txtcol);
 								$('#uifm_frm_wiz_tab_active_txtcolor').val(wiz_active_txtcol);
 							}
 							var wiz_active_numtxtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_cur_numtxtcolor');
 							if (wiz_active_numtxtcol) {
-								$('#uifm_frm_wiz_tab_active_numtxtcolor').parent().colorpicker('setValue', wiz_active_numtxtcol);
+								$('#uifm_frm_wiz_tab_active_numtxtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_active_numtxtcol);
 								$('#uifm_frm_wiz_tab_active_numtxtcolor').val(wiz_active_numtxtcol);
 							}
 
 							var wiz_inactive_bgcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_inac_bgcolor');
 							if (wiz_inactive_bgcol) {
-								$('#uifm_frm_wiz_tab_inactive_bgcolor').parent().colorpicker('setValue', wiz_inactive_bgcol);
+								$('#uifm_frm_wiz_tab_inactive_bgcolor')
+									.parent()
+									.colorpicker('setValue', wiz_inactive_bgcol);
 								$('#uifm_frm_wiz_tab_inactive_bgcolor').val(wiz_inactive_bgcol);
 							}
 							var wiz_inactive_txtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_inac_txtcolor');
 							if (wiz_inactive_txtcol) {
-								$('#uifm_frm_wiz_tab_inactive_txtcolor').parent().colorpicker('setValue', wiz_inactive_txtcol);
+								$('#uifm_frm_wiz_tab_inactive_txtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_inactive_txtcol);
 								$('#uifm_frm_wiz_tab_inactive_txtcolor').val(wiz_inactive_txtcol);
 							}
 							var wiz_inactive_numtxtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_inac_numtxtcolor');
 							if (wiz_inactive_numtxtcol) {
-								$('#uifm_frm_wiz_tab_inactive_numtxtcolor').parent().colorpicker('setValue', wiz_inactive_numtxtcol);
+								$('#uifm_frm_wiz_tab_inactive_numtxtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_inactive_numtxtcol);
 								$('#uifm_frm_wiz_tab_inactive_numtxtcolor').val(wiz_inactive_numtxtcol);
 							}
 							var wiz_done_bgcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_done_bgcolor');
 							if (wiz_done_bgcol) {
-								$('#uifm_frm_wiz_tab_done_bgcolor').parent().colorpicker('setValue', wiz_done_bgcol);
+								$('#uifm_frm_wiz_tab_done_bgcolor')
+									.parent()
+									.colorpicker('setValue', wiz_done_bgcol);
 								$('#uifm_frm_wiz_tab_done_bgcolor').val(wiz_done_bgcol);
 							}
 							var wiz_done_txtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_done_txtcolor');
 							if (wiz_done_txtcol) {
-								$('#uifm_frm_wiz_tab_done_txtcolor').parent().colorpicker('setValue', wiz_done_txtcol);
+								$('#uifm_frm_wiz_tab_done_txtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_done_txtcol);
 								$('#uifm_frm_wiz_tab_done_txtcolor').val(wiz_done_txtcol);
 							}
 							var wiz_done_numtxtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_done_numtxtcolor');
 							if (wiz_done_numtxtcol) {
-								$('#uifm_frm_wiz_tab_done_numtxtcolor').parent().colorpicker('setValue', wiz_done_numtxtcol);
+								$('#uifm_frm_wiz_tab_done_numtxtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_done_numtxtcol);
 								$('#uifm_frm_wiz_tab_done_numtxtcolor').val(wiz_done_numtxtcol);
 							}
 
 							var wiz_cont_bgcolor = this.getUiData4('wizard', 'theme', type, 'skin_tab_cont_bgcolor');
 							if (wiz_cont_bgcolor) {
-								$('#uifm_frm_wiz_tab_cont_bgcolor').parent().colorpicker('setValue', wiz_cont_bgcolor);
+								$('#uifm_frm_wiz_tab_cont_bgcolor')
+									.parent()
+									.colorpicker('setValue', wiz_cont_bgcolor);
 								$('#uifm_frm_wiz_tab_cont_bgcolor').val(wiz_cont_bgcolor);
 							}
 							var wiz_cont_borcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_cont_borcol');
 							if (wiz_cont_borcol) {
-								$('#uifm_frm_wiz_tab_cont_borcol').parent().colorpicker('setValue', wiz_cont_borcol);
+								$('#uifm_frm_wiz_tab_cont_borcol')
+									.parent()
+									.colorpicker('setValue', wiz_cont_borcol);
 								$('#uifm_frm_wiz_tab_cont_borcol').val(wiz_cont_borcol);
 							}
 
@@ -8063,33 +8530,45 @@ if (!$uifm.isFunction(rocketform)) {
 						case 1:
 							var wiz_active_bgcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_cur_bgcolor');
 							if (wiz_active_bgcol) {
-								$('#uifm_frm_wiz_tab_active_bgcolor').parent().colorpicker('setValue', wiz_active_bgcol);
+								$('#uifm_frm_wiz_tab_active_bgcolor')
+									.parent()
+									.colorpicker('setValue', wiz_active_bgcol);
 								$('#uifm_frm_wiz_tab_active_bgcolor').val(wiz_active_bgcol);
 							}
 							var wiz_active_txtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_cur_txtcolor');
 							if (wiz_active_txtcol) {
-								$('#uifm_frm_wiz_tab_active_txtcolor').parent().colorpicker('setValue', wiz_active_txtcol);
+								$('#uifm_frm_wiz_tab_active_txtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_active_txtcol);
 								$('#uifm_frm_wiz_tab_active_txtcolor').val(wiz_active_txtcol);
 							}
 							var wiz_active_numtxtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_cur_numtxtcolor');
 							if (wiz_active_numtxtcol) {
-								$('#uifm_frm_wiz_tab_active_numtxtcolor').parent().colorpicker('setValue', wiz_active_numtxtcol);
+								$('#uifm_frm_wiz_tab_active_numtxtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_active_numtxtcol);
 								$('#uifm_frm_wiz_tab_active_numtxtcolor').val(wiz_active_numtxtcol);
 							}
 							var wiz_active_bg_numtxt = this.getUiData4('wizard', 'theme', type, 'skin_tab_cur_bg_numtxt');
 							if (wiz_active_bg_numtxt) {
-								$('#uifm_frm_wiz_tab_active_bg_numtxt').parent().colorpicker('setValue', wiz_active_bg_numtxt);
+								$('#uifm_frm_wiz_tab_active_bg_numtxt')
+									.parent()
+									.colorpicker('setValue', wiz_active_bg_numtxt);
 								$('#uifm_frm_wiz_tab_active_bg_numtxt').val(wiz_active_bg_numtxt);
 							}
 
 							var wiz_inactive_bgcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_inac_bgcolor');
 							if (wiz_inactive_bgcol) {
-								$('#uifm_frm_wiz_tab_inactive_bgcolor').parent().colorpicker('setValue', wiz_inactive_bgcol);
+								$('#uifm_frm_wiz_tab_inactive_bgcolor')
+									.parent()
+									.colorpicker('setValue', wiz_inactive_bgcol);
 								$('#uifm_frm_wiz_tab_inactive_bgcolor').val(wiz_inactive_bgcol);
 							}
 							var wiz_inactive_txtcol = this.getUiData4('wizard', 'theme', type, 'skin_tab_inac_txtcolor');
 							if (wiz_inactive_txtcol) {
-								$('#uifm_frm_wiz_tab_inactive_txtcolor').parent().colorpicker('setValue', wiz_inactive_txtcol);
+								$('#uifm_frm_wiz_tab_inactive_txtcolor')
+									.parent()
+									.colorpicker('setValue', wiz_inactive_txtcol);
 								$('#uifm_frm_wiz_tab_inactive_txtcolor').val(wiz_inactive_txtcol);
 							}
 
@@ -8099,7 +8578,7 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error(' wizardtab_setDataToTabSettings : ', ex.message);
 				}
 			};
-			arguments.callee.wizardtab_refreshTabSettings = function () {
+			arguments.callee.wizardtab_refreshTabSettings = function() {
 				try {
 					var wiz_bg_st = parseInt(this.getUiData2('wizard', 'enable_st')) === 1 ? true : false;
 					$('#uifm_frm_wiz_st').bootstrapSwitchZgpb('state', wiz_bg_st);
@@ -8107,7 +8586,7 @@ if (!$uifm.isFunction(rocketform)) {
 					var wiz_tab_list = this.getUiData2('steps', 'tab_title');
 					$('#uifm_frm_skin_tabs_box').html('');
 
-					$.each(wiz_tab_list, function (index, value) {
+					$.each(wiz_tab_list, function(index, value) {
 						rocketform.wizardtab_addTabController(index);
 						$('#uifm_frm_skin_tab' + index + '_title').val(value.title);
 					});
@@ -8117,7 +8596,7 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error(' wizardtab_refreshTabSettings : ', ex.message);
 				}
 			};
-			arguments.callee.wizardtab_refreshPreview = function () {
+			arguments.callee.wizardtab_refreshPreview = function() {
 				try {
 					var wiz_theme_typ = parseInt(this.getUiData2('wizard', 'theme_type'));
 					var border_focus_str;
@@ -8251,7 +8730,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.wizardtab_saveChangesToMdata = function () {
+			arguments.callee.wizardtab_saveChangesToMdata = function() {
 				var wiz_st = $('#uifm_frm_wiz_st').prop('checked') ? 1 : 0;
 				var wiz_theme_typ = parseInt($('#uifm_frm_wiz_theme_typ').val());
 				var wiz_active_bgcol = $('#uifm_frm_wiz_tab_active_bgcolor').val();
@@ -8294,16 +8773,20 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 				}
 			};
-			arguments.callee.wizardtab_tabManualEvt = function (element, selected) {
+			arguments.callee.wizardtab_tabManualEvt = function(element, selected) {
 				var el;
 				if (selected) {
-					var tmp_el = $(element).closest('.uifm_frm_skin_tab_content').attr('data-tab-nro');
+					var tmp_el = $(element)
+						.closest('.uifm_frm_skin_tab_content')
+						.attr('data-tab-nro');
 					var tmp_tabhead = $('.uiform-step-list .uiform-steps a[data-tab-nro=' + tmp_el + ']');
 					el = tmp_tabhead.parent();
 				} else {
 					el = $(element);
 				}
-				$('ul.uiform-steps li').removeClass('uifm-current').addClass('uifm-disabled');
+				$('ul.uiform-steps li')
+					.removeClass('uifm-current')
+					.addClass('uifm-disabled');
 				el.addClass('uifm-current').removeClass('uifm-disabled');
 				$('.uiform-step-pane').hide();
 
@@ -8311,20 +8794,20 @@ if (!$uifm.isFunction(rocketform)) {
 
 				$(activeTab).show();
 			};
-			arguments.callee.wizardtab_tabManageEvt = function () {
-				$('ul.uiform-steps li').on('click', function () {
+			arguments.callee.wizardtab_tabManageEvt = function() {
+				$('ul.uiform-steps li').on('click', function() {
 					rocketform.wizardtab_tabManualEvt(this, false);
 					return false;
 				});
 			};
-			arguments.callee.fieldsetting_updateName = function (step, id, name) {
+			arguments.callee.fieldsetting_updateName = function(step, id, name) {
 				try {
 					this.setUiData4('steps_src', String(step), String(id), 'field_name', name);
 				} catch (ex) {
 					console.error('  updateName error : ', ex.message);
 				}
 			};
-			arguments.callee.fieldsetting_deleteField = function (idselected) {
+			arguments.callee.fieldsetting_deleteField = function(idselected) {
 				var fld_step = $('#' + idselected)
 					.closest('.uiform-step-pane')
 					.data('uifm-step');
@@ -8341,7 +8824,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.fieldsetting_deleteFieldFromPreview = function (el) {
+			arguments.callee.fieldsetting_deleteFieldFromPreview = function(el) {
 				var box_title = $('#uifm_fld_del_box_title').val(),
 					box_msg = $('#uifm_fld_del_box_msg').val(),
 					btn1_title = $('#uifm_fld_del_box_bt1_title').val(),
@@ -8354,15 +8837,17 @@ if (!$uifm.isFunction(rocketform)) {
 						fld_del_opt1: {
 							label: btn1_title,
 							className: 'sfdc-btn-default',
-							callback: function () {
+							callback: function() {
 								$('body').removeClass('sfdc-modal-open');
-							}
+							},
 						},
 						fld_del_opt2: {
 							label: btn2_title,
 							className: 'sfdc-btn-primary',
-							callback: function () {
-								var idselected = $(el).closest('.uiform-field').attr('id');
+							callback: function() {
+								var idselected = $(el)
+									.closest('.uiform-field')
+									.attr('id');
 								rocketform.fieldsetting_deleteField(idselected);
 
 								rocketform.formvariables_removeFromlist(idselected);
@@ -8372,13 +8857,13 @@ if (!$uifm.isFunction(rocketform)) {
 								zgfm_back_helper.tooltip_removeall();
 
 								$('body').removeClass('sfdc-modal-open');
-							}
-						}
-					}
+							},
+						},
+					},
 				});
 			};
 
-			arguments.callee.fieldsetting_deleteFieldDialog = function () {
+			arguments.callee.fieldsetting_deleteFieldDialog = function() {
 				var box_title = $('#uifm_fld_del_box_title').val(),
 					box_msg = $('#uifm_fld_del_box_msg').val(),
 					btn1_title = $('#uifm_fld_del_box_bt1_title').val(),
@@ -8391,14 +8876,14 @@ if (!$uifm.isFunction(rocketform)) {
 						fld_del_opt1: {
 							label: btn1_title,
 							className: 'sfdc-btn-default',
-							callback: function () {
+							callback: function() {
 								$('body').removeClass('sfdc-modal-open');
-							}
+							},
 						},
 						fld_del_opt2: {
 							label: btn2_title,
 							className: 'sfdc-btn-primary',
-							callback: function () {
+							callback: function() {
 								var idselected = $('#uifm-field-selected-id').val();
 								rocketform.fields2_fieldsetting_deleteField(idselected);
 
@@ -8409,13 +8894,13 @@ if (!$uifm.isFunction(rocketform)) {
 								zgfm_back_helper.tooltip_removeall();
 
 								$('body').removeClass('sfdc-modal-open');
-							}
-						}
-					}
+							},
+						},
+					},
 				});
 			};
 
-			arguments.callee.mainfields_addFieldToForm = function (element, field_type) {
+			arguments.callee.mainfields_addFieldToForm = function(element, field_type) {
 				try {
 					var cur_step = $('.uiform-step-content .uiform-step-pane:visible').data('uifm-step');
 					var el = $(element).clone();
@@ -8427,34 +8912,61 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error('mainfields_addFieldToForm error : ', ex.message);
 				}
 			};
-			arguments.callee.previewform_resizeBox = function (type) {
+			arguments.callee.previewform_resizeBox = function(type) {
 				var prev_box_desk_title = $('#uifm_frm_preview_msg_desktop_title').val();
 				var prev_box_tablet_title = $('#uifm_frm_preview_msg_tablet_title').val();
 				var prev_box_phone_title = $('#uifm_frm_preview_msg_phone_title').val();
 
-				$('#uifm_preview_form').find('.sfdc-modal-dialog').attr('class', 'sfdc-modal-dialog');
+				$('#uifm_preview_form')
+					.find('.sfdc-modal-dialog')
+					.attr('class', 'sfdc-modal-dialog');
 				switch (parseInt(type)) {
 					case 1:
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').animate({ width: 1100 }, 200);
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').find('iframe').css('width', 1070);
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.animate({ width: 1100 }, 200);
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.find('iframe')
+							.css('width', 1070);
 
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').find('.sfdc-modal-title').html(prev_box_desk_title);
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.find('.sfdc-modal-title')
+							.html(prev_box_desk_title);
 
 						break;
 					case 2:
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').animate({ width: 750 }, 200);
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').find('iframe').css('width', 720);
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').find('.sfdc-modal-title').html(prev_box_tablet_title);
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.animate({ width: 750 }, 200);
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.find('iframe')
+							.css('width', 720);
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.find('.sfdc-modal-title')
+							.html(prev_box_tablet_title);
 						break;
 					case 3:
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').animate({ width: 320 }, 200).addClass('uifm_preview_phone');
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').find('iframe').css('width', 300);
-						$('#uifm_preview_form').find('.sfdc-modal-dialog').find('.sfdc-modal-title').html(prev_box_phone_title);
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.animate({ width: 320 }, 200)
+							.addClass('uifm_preview_phone');
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.find('iframe')
+							.css('width', 300);
+						$('#uifm_preview_form')
+							.find('.sfdc-modal-dialog')
+							.find('.sfdc-modal-title')
+							.html(prev_box_phone_title);
 
 						break;
 				}
 			};
-			arguments.callee.previewform_showForm = function (type) {
+			arguments.callee.previewform_showForm = function(type) {
 				var idform = $('#uifm_frm_main_id').val();
 				var prev_msg_notsaved = $('#uifm_frm_preview_msg_notsaved').val();
 				var prev_box_desk_title = $('#uifm_frm_preview_msg_desktop_title').val();
@@ -8469,13 +8981,19 @@ if (!$uifm.isFunction(rocketform)) {
 					$('#uifm_preview_form').sfdc_modal('show');
 					switch (parseInt(type)) {
 						case 1:
-							$('#uifm_preview_form').find('.sfdc-modal-title').text(prev_box_desk_title);
+							$('#uifm_preview_form')
+								.find('.sfdc-modal-title')
+								.text(prev_box_desk_title);
 							break;
 						case 2:
-							$('#uifm_preview_form').find('.sfdc-modal-title').text(prev_box_tablet_title);
+							$('#uifm_preview_form')
+								.find('.sfdc-modal-title')
+								.text(prev_box_tablet_title);
 							break;
 						case 3:
-							$('#uifm_preview_form').find('.sfdc-modal-title').text(prev_box_phone_title);
+							$('#uifm_preview_form')
+								.find('.sfdc-modal-title')
+								.text(prev_box_phone_title);
 							break;
 					}
 
@@ -8489,32 +9007,34 @@ if (!$uifm.isFunction(rocketform)) {
 							page: 'zgfm_form_builder',
 							zgfm_security: uiform_vars.ajax_nonce,
 							form_id: idform,
-							csrf_field_name: uiform_vars.csrf_field_name
+							csrf_field_name: uiform_vars.csrf_field_name,
 						},
-						success: function (msg) {
-							$('#uifm_preview_form').find('.sfdc-modal-body').html(msg);
+						success: function(msg) {
+							$('#uifm_preview_form')
+								.find('.sfdc-modal-body')
+								.html(msg);
 							rocketform.previewform_resizeBox(type);
-						}
+						},
 					});
 				} else {
-					bootbox.alert(prev_msg_notsaved, function () {});
+					bootbox.alert(prev_msg_notsaved, function() {});
 				}
 			};
 
-			arguments.callee.previewform_onClosePopUp = function () {
+			arguments.callee.previewform_onClosePopUp = function() {
 				$('.uiform_popover_frontend').popover('destroy');
 			};
 
-			arguments.callee.listform_duplicate = function () {
+			arguments.callee.listform_duplicate = function() {
 				if ($('.uiform-listform-chk-id').is(':checked')) {
 					var data = $('#uiform-form-listform').serialize();
 					$.ajax({
 						type: 'POST',
 						url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/ajax_listform_duplicate',
 						data: data + '&action=rocket_fbuilder_listform_duplicate&page=zgfm_form_builder&csrf_field_name=' + uiform_vars.csrf_field_name,
-						success: function (msg) {
+						success: function(msg) {
 							rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/forms/list_uiforms');
-						}
+						},
 					});
 				} else {
 					$('#uifm_modal_msg').sfdc_modal('show');
@@ -8523,7 +9043,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.listform_selectallforms = function (element) {
+			arguments.callee.listform_selectallforms = function(element) {
 				var el = $(element);
 				if (el.is(':checked')) {
 					$('.uiform-listform-chk-id').prop('checked', true);
@@ -8531,33 +9051,31 @@ if (!$uifm.isFunction(rocketform)) {
 					$('.uiform-listform-chk-id').prop('checked', false);
 				}
 			};
-			arguments.callee.modal_centerPos = function (el) {
-				el.each(function (i) {
-					var $clone = $(this).clone().css('display', 'block').appendTo('body');
+			arguments.callee.modal_centerPos = function(el) {
+				el.each(function(i) {
+					var $clone = $(this)
+						.clone()
+						.css('display', 'block')
+						.appendTo('body');
 					var top = Math.round(($clone.height() - $clone.find('.sfdc-modal-content').height()) / 2);
 					top = top > 0 ? top : 0;
 					$clone.remove();
-					$(this).find('.sfdc-modal-content').css('margin-top', top);
+					$(this)
+						.find('.sfdc-modal-content')
+						.css('margin-top', top);
 				});
 			};
 
-			arguments.callee.listform_updateStatus = function (form_st) {
+			arguments.callee.listform_updateStatus = function(form_st) {
 				if ($('.uiform-listform-chk-id').is(':checked')) {
 					var data = $('#uiform-form-listform').serialize();
 					$.ajax({
 						type: 'POST',
 						url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/ajax_listform_updatest',
-						data:
-							data +
-							'&action=rocket_fbuilder_listform_updatest&page=zgfm_form_builder&form_st=' +
-							form_st +
-							'&zgfm_security=' +
-							uiform_vars.ajax_nonce +
-							'&csrf_field_name=' +
-							uiform_vars.csrf_field_name,
-						success: function (msg) {
+						data: data + '&action=rocket_fbuilder_listform_updatest&page=zgfm_form_builder&form_st=' + form_st + '&zgfm_security=' + uiform_vars.ajax_nonce + '&csrf_field_name=' + uiform_vars.csrf_field_name,
+						success: function(msg) {
 							rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/forms/list_uiforms');
-						}
+						},
 					});
 				} else {
 					$('#uifm_modal_msg').sfdc_modal('show');
@@ -8567,7 +9085,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.listrecords_exportToCsv = function () {
+			arguments.callee.listrecords_exportToCsv = function() {
 				try {
 					var idrec = $('#uifm-record-form-cmb').val();
 
@@ -8577,7 +9095,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.listform_deleteFormById = function (idform) {
+			arguments.callee.listform_deleteFormById = function(idform) {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/ajax_delete_form_byid',
@@ -8586,14 +9104,14 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: idform,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/forms/list_uiforms');
-					}
+					},
 				});
 			};
-			arguments.callee.input2settings_labelOption = function (element) {
+			arguments.callee.input2settings_labelOption = function(element) {
 				var el = $(element);
 				var optnro = el.closest('.uifm-fld-inp2-options-row').data('opt-index');
 				var f_id = $('#uifm-field-selected-id').val();
@@ -8632,7 +9150,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input2settings_stl1_quickcolor = function (option) {
+			arguments.callee.input2settings_stl1_quickcolor = function(option) {
 				var f_id = $('#uifm-field-selected-id').val();
 
 				var f_step = $('#' + f_id)
@@ -8654,7 +9172,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input2settings_valueOption = function (element) {
+			arguments.callee.input2settings_valueOption = function(element) {
 				var el = $(element);
 				var optnro = el.closest('.uifm-fld-inp2-options-row').data('opt-index');
 				var f_id = $('#uifm-field-selected-id').val();
@@ -8671,7 +9189,7 @@ if (!$uifm.isFunction(rocketform)) {
 				var f_type = this.getUiData4('steps_src', f_step, f_id, 'type');
 			};
 
-			arguments.callee.input2settings_statusRdoOption = function (element) {
+			arguments.callee.input2settings_statusRdoOption = function(element) {
 				var el = $(element);
 				var f_id = $('#uifm-field-selected-id').val();
 				var type = $('#uifm-field-selected-type').val();
@@ -8704,7 +9222,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input17settings_deleteOption = function (element) {
+			arguments.callee.input17settings_deleteOption = function(element) {
 				var el = $(element);
 				var f_id = $('#uifm-field-selected-id').val();
 				var opt_index = el.closest('.uifm-fld-inp17-options-row').data('opt-index');
@@ -8731,7 +9249,7 @@ if (!$uifm.isFunction(rocketform)) {
 				prev_el_sel.remove();
 			};
 
-			arguments.callee.input17settings_deleteAllOptions = function () {
+			arguments.callee.input17settings_deleteAllOptions = function() {
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -8756,7 +9274,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				$('#uifm-fld-inp17-options-container').html('');
 			};
-			arguments.callee.input17settings_addNewOption = function () {
+			arguments.callee.input17settings_addNewOption = function() {
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -8779,12 +9297,12 @@ if (!$uifm.isFunction(rocketform)) {
 						0: {
 							img_full: '',
 							img_th_150x150: '',
-							title: 'image 1'
-						}
+							title: 'image 1',
+						},
 					},
 					img_list_2: {},
 					qty_st: '0',
-					qty_max: '2'
+					qty_max: '2',
 				});
 
 				switch (parseInt(thopt_mode)) {
@@ -8804,7 +9322,9 @@ if (!$uifm.isFunction(rocketform)) {
 
 				switch (parseInt(f_type)) {
 					case 41:
-						newopt = $('#uifm_frm_inp17_templates').find('.uifm-fld-inp17-options-row').clone();
+						newopt = $('#uifm_frm_inp17_templates')
+							.find('.uifm-fld-inp17-options-row')
+							.clone();
 						newopt.attr('data-opt-index', optindex);
 
 						newopt.find('.uifm_frm_inp17_opt_label').val(options.label);
@@ -8823,15 +9343,17 @@ if (!$uifm.isFunction(rocketform)) {
 							max: 1000000000,
 							stepinterval: 1,
 							verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-							verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+							verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 						});
 						newopt.find('.uifm_frm_inp17_opt_qty_max').val(options.qty_max);
 
 
 						switch (parseInt(thopt_mode)) {
 							case 2:
-								$.each(options.img_list_2, function (index2, value2) {
-									img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt2_imgwrap').clone();
+								$.each(options.img_list_2, function(index2, value2) {
+									img_obj_item = $('#uifm_frm_inp17_templates')
+										.find('.uifm_frm_inp17_opt2_imgwrap')
+										.clone();
 									if (value2['img_full']) {
 										img_obj_item.find('.sfdc-img-thumbnail').attr('src', value2['img_full']);
 									} else {
@@ -8841,16 +9363,30 @@ if (!$uifm.isFunction(rocketform)) {
 									newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap').append(img_obj_item);
 								});
 
-								newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="0"]').find('.col-md-8 p').attr('class', 'alert alert-success').html('Checked');
-								newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="1"]').find('.col-md-8 p').attr('class', 'alert alert-warning').html('Hover');
-								newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="2"]').find('.col-md-8 p').attr('class', 'alert alert-info').html('Unchecked');
+								newopt
+									.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="0"]')
+									.find('.col-md-8 p')
+									.attr('class', 'alert alert-success')
+									.html('Checked');
+								newopt
+									.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="1"]')
+									.find('.col-md-8 p')
+									.attr('class', 'alert alert-warning')
+									.html('Hover');
+								newopt
+									.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="2"]')
+									.find('.col-md-8 p')
+									.attr('class', 'alert alert-info')
+									.html('Unchecked');
 
 								break;
 							case 1:
 							default:
 								if (options.img_list) {
-									$.each(options.img_list, function (index2, value2) {
-										img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt_imgwrap').clone();
+									$.each(options.img_list, function(index2, value2) {
+										img_obj_item = $('#uifm_frm_inp17_templates')
+											.find('.uifm_frm_inp17_opt_imgwrap')
+											.clone();
 										if (value2['img_th_150x150']) {
 											img_obj_item.find('.sfdc-img-thumbnail').attr('src', value2['img_th_150x150']);
 										} else {
@@ -8868,7 +9404,9 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 
 					case 42:
-						newopt = $('#uifm_frm_inp17_templates').find('.uifm-fld-inp17-options-row').clone();
+						newopt = $('#uifm_frm_inp17_templates')
+							.find('.uifm-fld-inp17-options-row')
+							.clone();
 						newopt.attr('data-opt-index', optindex);
 
 						newopt.find('.uifm_frm_inp17_opt_label').val(options.label);
@@ -8887,14 +9425,16 @@ if (!$uifm.isFunction(rocketform)) {
 							max: 1000000000,
 							stepinterval: 1,
 							verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-							verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+							verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 						});
 						newopt.find('.uifm_frm_inp17_opt_qty_max').val(options.qty_max);
 
 						switch (parseInt(thopt_mode)) {
 							case 2:
-								$.each(options.img_list_2, function (index2, value2) {
-									img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt2_imgwrap').clone();
+								$.each(options.img_list_2, function(index2, value2) {
+									img_obj_item = $('#uifm_frm_inp17_templates')
+										.find('.uifm_frm_inp17_opt2_imgwrap')
+										.clone();
 									if (value2['img_full']) {
 										img_obj_item.find('.sfdc-img-thumbnail').attr('src', value2['img_full']);
 									} else {
@@ -8904,16 +9444,30 @@ if (!$uifm.isFunction(rocketform)) {
 									newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap').append(img_obj_item);
 								});
 
-								newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="0"]').find('.col-md-8 p').attr('class', 'alert alert-success').html('Checked');
-								newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="1"]').find('.col-md-8 p').attr('class', 'alert alert-warning').html('Hover');
-								newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="2"]').find('.col-md-8 p').attr('class', 'alert alert-info').html('Unchecked');
+								newopt
+									.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="0"]')
+									.find('.col-md-8 p')
+									.attr('class', 'alert alert-success')
+									.html('Checked');
+								newopt
+									.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="1"]')
+									.find('.col-md-8 p')
+									.attr('class', 'alert alert-warning')
+									.html('Hover');
+								newopt
+									.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="2"]')
+									.find('.col-md-8 p')
+									.attr('class', 'alert alert-info')
+									.html('Unchecked');
 
 								break;
 							case 1:
 							default:
 								if (options.img_list) {
-									$.each(options.img_list, function (index2, value2) {
-										img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt_imgwrap').clone();
+									$.each(options.img_list, function(index2, value2) {
+										img_obj_item = $('#uifm_frm_inp17_templates')
+											.find('.uifm_frm_inp17_opt_imgwrap')
+											.clone();
 										if (value2['img_th_150x150']) {
 											img_obj_item.find('.sfdc-img-thumbnail').attr('src', value2['img_th_150x150']);
 										} else {
@@ -8932,19 +9486,19 @@ if (!$uifm.isFunction(rocketform)) {
 
 				rocketform.input17settings_showOptionbyLayMode(thopt_mode);
 
-				newopt.find('.switch-field-17').on('switchChange.bootstrapSwitchZgpb', function (event, state) {
+				newopt.find('.switch-field-17').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
 					var f_val = state ? 1 : 0;
 					rocketform.input17settings_updateOption($(this), f_val, 'qty_st');
 				});
 
-				newopt.find('.uifm_frm_inp17_opt_qty_max').on('change', function (e) {
+				newopt.find('.uifm_frm_inp17_opt_qty_max').on('change', function(e) {
 					var f_val = $(e.target).val();
 					rocketform.input17settings_updateOption($(e.target), f_val, 'qty_max');
 				});
 
 				rocketform.input17settings_preview_addNew(parseInt(optindex));
 			};
-			arguments.callee.input17settings_preview_addNew = function (optindex) {
+			arguments.callee.input17settings_preview_addNew = function(optindex) {
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -8968,7 +9522,9 @@ if (!$uifm.isFunction(rocketform)) {
 				var img_obj_item;
 				switch (parseInt(f_type)) {
 					case 41:
-						newopt = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item').clone();
+						newopt = $('#uifm_frm_inp17_templates')
+							.find('.uifm-dcheckbox-item')
+							.clone();
 						newopt.attr('data-inp17-opt-index', optindex);
 						rocketform.input17settings_preview_setOption(newopt, optindex, 'label', null, null, options.label);
 						rocketform.input17settings_preview_setOption(newopt, optindex, 'checked', null, null, options.checked);
@@ -8976,8 +9532,10 @@ if (!$uifm.isFunction(rocketform)) {
 						rocketform.input17settings_preview_setOption(newopt, optindex, 'qty_st', null, null, options.qty_st);
 						rocketform.input17settings_preview_setOption(newopt, optindex, 'qty_max', null, null, options.qty_max);
 						if (tmp_img_list) {
-							$.each(tmp_img_list, function (index2, value2) {
-								img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item-imgsrc').clone();
+							$.each(tmp_img_list, function(index2, value2) {
+								img_obj_item = $('#uifm_frm_inp17_templates')
+									.find('.uifm-dcheckbox-item-imgsrc')
+									.clone();
 								if (value2['img_full']) {
 									img_obj_item.attr('href', value2['img_full']);
 								} else {
@@ -8999,7 +9557,9 @@ if (!$uifm.isFunction(rocketform)) {
 						newopt.uiformDCheckbox();
 						break;
 					case 42:
-						newopt = $('#uifm_frm_inp17_templates').find('.uifm-dradiobtn-item').clone();
+						newopt = $('#uifm_frm_inp17_templates')
+							.find('.uifm-dradiobtn-item')
+							.clone();
 						newopt.attr('data-inp17-opt-index', optindex);
 						rocketform.input17settings_preview_setOption(newopt, optindex, 'label', null, null, options.label);
 						rocketform.input17settings_preview_setOption(newopt, optindex, 'checked', null, null, options.checked);
@@ -9007,8 +9567,10 @@ if (!$uifm.isFunction(rocketform)) {
 						rocketform.input17settings_preview_setOption(newopt, optindex, 'qty_st', null, null, options.qty_st);
 						rocketform.input17settings_preview_setOption(newopt, optindex, 'qty_max', null, null, options.qty_max);
 						if (tmp_img_list) {
-							$.each(tmp_img_list, function (index2, value2) {
-								img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item-imgsrc').clone();
+							$.each(tmp_img_list, function(index2, value2) {
+								img_obj_item = $('#uifm_frm_inp17_templates')
+									.find('.uifm-dcheckbox-item-imgsrc')
+									.clone();
 								if (value2['img_full']) {
 									img_obj_item.attr('href', value2['img_full']);
 								} else {
@@ -9031,8 +9593,10 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 				}
 			};
-			arguments.callee.input2settings_addNewRdoOption = function () {
-				var newopt = $('#uifm_frm_inp2_templates').find('.uifm-fld-inp2-options-row').clone();
+			arguments.callee.input2settings_addNewRdoOption = function() {
+				var newopt = $('#uifm_frm_inp2_templates')
+					.find('.uifm-fld-inp2-options-row')
+					.clone();
 				var num = $('#uifm-fld-inp2-options-container .uifm-fld-inp2-options-row').length;
 
 				var f_id = $('#uifm-field-selected-id').val();
@@ -9116,7 +9680,7 @@ if (!$uifm.isFunction(rocketform)) {
 				zgfm_back_input2.input2settings_refreshSortable();
 			};
 
-			arguments.callee.input2settings_deleteAllOptions = function () {
+			arguments.callee.input2settings_deleteAllOptions = function() {
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -9128,11 +9692,11 @@ if (!$uifm.isFunction(rocketform)) {
 				$('#uifm-fld-inp2-options-container').html('');
 			};
 
-			arguments.callee.input2settings_fillBlankValues = function () {
+			arguments.callee.input2settings_fillBlankValues = function() {
 				var content = $('#uifm-fld-inp2-options-container');
 
 				var vindex, tmp_label;
-				content.find('.uifm-fld-inp2-options-row').each(function (i) {
+				content.find('.uifm-fld-inp2-options-row').each(function(i) {
 					vindex = $(this).attr('data-opt-index');
 					tmp_label = $('#uifm_frm_inp2_opt' + vindex + '_label').val();
 
@@ -9142,7 +9706,7 @@ if (!$uifm.isFunction(rocketform)) {
 				});
 			};
 
-			arguments.callee.input2settings_ImportBulkData = function () {
+			arguments.callee.input2settings_ImportBulkData = function() {
 				try {
 					rocketform.fields_showModalOptions();
 
@@ -9153,20 +9717,29 @@ if (!$uifm.isFunction(rocketform)) {
 							action: 'rocket_fbuilder_field_sel_impbulkdata',
 							page: 'zgfm_form_builder',
 							zgfm_security: uiform_vars.ajax_nonce,
-							csrf_field_name: uiform_vars.csrf_field_name
+							csrf_field_name: uiform_vars.csrf_field_name,
 						},
-						success: function (msg) {
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-header-inner').html(msg.modal_header);
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.sfdc-modal-body').html(msg.modal_body);
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-footer-wrap').html(msg.modal_footer);
-						}
+						success: function(msg) {
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.zgpb-modal-header-inner')
+								.html(msg.modal_header);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.sfdc-modal-body')
+								.html(msg.modal_body);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.zgpb-modal-footer-wrap')
+								.html(msg.modal_footer);
+						},
 					});
 				} catch (ex) {
 					console.error('uiform-core.js input2settings_ImportBulkData ', ex.message);
 				}
 			};
 
-			arguments.callee.input2settings_ImportBulkData_process = function () {
+			arguments.callee.input2settings_ImportBulkData_process = function() {
 				var tmp_data = $('#zgfm-fld-sel-opt-bulkdata').val();
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
@@ -9202,17 +9775,18 @@ if (!$uifm.isFunction(rocketform)) {
 					tmp_var3 = lines[i][2] || '';
 
 					optkey = zgfm_back_helper.generateUniqueID(5);
-					myObject.set(optkey,  {
+					myObject.set(optkey, {
 						value: tmp_var2,
 						label: tmp_var1,
-						checked: 0
+						checked: 0,
 					});
+				}
 
- 				}
-
-					tmp_new_arr = Array.from(myObject).reduce((obj, [key, value]) => (
-						Object.assign(obj, { [key]: value }) 
-					  ), {}); 
+				tmp_new_arr = Array.from(myObject).reduce(
+					(obj, [key, value]) =>
+						Object.assign(obj, { [key]: value }), 
+					{}
+				);
 
 				rocketform.setUiData5('steps_src', parseInt(f_step), f_id, 'input2', 'options', tmp_new_arr);
 
@@ -9249,7 +9823,7 @@ if (!$uifm.isFunction(rocketform)) {
 				$('#zgpb-modal1').sfdc_modal('hide');
 			};
 
-			arguments.callee.clogic_removeAll = function () {
+			arguments.callee.clogic_removeAll = function() {
 				$('#uifm-conditional-logic-list').html('');
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
@@ -9257,13 +9831,13 @@ if (!$uifm.isFunction(rocketform)) {
 					.data('uifm-step');
 				rocketform.setUiData5('steps_src', parseInt(f_step), f_id, 'clogic', 'list', []);
 			};
-			arguments.callee.clogic_tabeditor_generateAllOptions = function (options) {
+			arguments.callee.clogic_tabeditor_generateAllOptions = function(options) {
 				$('#uifm-conditional-logic-list').html('');
 				var optindex;
 				var logic_row;
 				var logic_cont = $('#uifm-conditional-logic-list');
 
-				$.each(options, function (index, value) {
+				$.each(options, function(index, value) {
 					if (value && parseInt($('#' + value['field_fire']).length) != 0) {
 						optindex = index;
 						logic_row = $('#uiform-set-clogic-tmpl .uifm-conditional-row').clone();
@@ -9272,11 +9846,17 @@ if (!$uifm.isFunction(rocketform)) {
 
 						rocketform.clogic_getListField(logic_row);
 
-						logic_row.find('.uifm_clogic_fieldsel').val(value['field_fire']).trigger('chosen:updated');
+						logic_row
+							.find('.uifm_clogic_fieldsel')
+							.val(value['field_fire'])
+							.trigger('chosen:updated');
 						var field = rocketform.search_fieldById(value['field_fire']);
 
 						rocketform.clogic_getTypeMatch(logic_row, field.type);
-						logic_row.find('.uifm_clogic_mtype select').val(value['mtype']).trigger('chosen:updated');
+						logic_row
+							.find('.uifm_clogic_mtype select')
+							.val(value['mtype'])
+							.trigger('chosen:updated');
 
 						rocketform.clogic_getMatchInput(logic_row, field);
 						switch (parseInt(field.type)) {
@@ -9287,7 +9867,10 @@ if (!$uifm.isFunction(rocketform)) {
 							case 41:
 							case 42:
 								if (parseInt(logic_row.find('.uifm_clogic_minput_1').find('option[value="' + value['minput'] + '"]').length) != 0) {
-									logic_row.find('.uifm_clogic_minput_1').val(value['minput']).trigger('chosen:updated');
+									logic_row
+										.find('.uifm_clogic_minput_1')
+										.val(value['minput'])
+										.trigger('chosen:updated');
 								} else {
 									rocketform.clogic_tabeditor_removeifnomatch(index);
 								}
@@ -9299,7 +9882,10 @@ if (!$uifm.isFunction(rocketform)) {
 								} else {
 									tmp_val = '0';
 								}
-								logic_row.find('.uifm_clogic_minput_1').val(tmp_val).trigger('chosen:updated');
+								logic_row
+									.find('.uifm_clogic_minput_1')
+									.val(tmp_val)
+									.trigger('chosen:updated');
 								break;
 							case 16:
 							case 18:
@@ -9313,7 +9899,7 @@ if (!$uifm.isFunction(rocketform)) {
 				});
 			};
 
-			arguments.callee.clogic_tabeditor_removeifnomatch = function (index) {
+			arguments.callee.clogic_tabeditor_removeifnomatch = function(index) {
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -9334,7 +9920,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input17settings_addNewImg = function (el) {
+			arguments.callee.input17settings_addNewImg = function(el) {
 				el = $(el);
 				var f_id = $('#uifm-field-selected-id').val();
 				var item_img = el.closest('.uifm-fld-inp17-options-row');
@@ -9344,7 +9930,9 @@ if (!$uifm.isFunction(rocketform)) {
 					.data('uifm-step');
 				var opt2index = el.closest('.uifm_frm_inp17_opt_imgwrap').attr('data-opt-index');
 
-				var newopt2_optwrap = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt_imgwrap').clone();
+				var newopt2_optwrap = $('#uifm_frm_inp17_templates')
+					.find('.uifm_frm_inp17_opt_imgwrap')
+					.clone();
 				newopt2_optwrap.find('.sfdc-img-thumbnail').attr('src', uiform_vars.url_assets + '/common/imgs/uifm-question-mark.png');
 				newopt2_optwrap.find('.uifm_frm_inp17_opt_imgitem_title').val('image description');
 				var num_imgs = item_img.find('.uifm_frm_inp17_opt_img_list_wrap .uifm_frm_inp17_opt_imgwrap').length;
@@ -9356,17 +9944,20 @@ if (!$uifm.isFunction(rocketform)) {
 				newopt2_optwrap.attr('data-opt-index', newopt2_optindex);
 
 				item_img.find('.uifm_frm_inp17_opt_img_list_wrap').append(newopt2_optwrap);
-				item_img.find('.uifm_frm_inp17_opt_img_list_wrap').find('.autogrow').autogrow();
+				item_img
+					.find('.uifm_frm_inp17_opt_img_list_wrap')
+					.find('.autogrow')
+					.autogrow();
 
 
 				rocketform.addIndexUiData8('steps_src', parseInt(f_step), f_id, 'input17', 'options', parseInt(optindex), 'img_list', parseInt(newopt2_optindex));
 				rocketform.setUiData8('steps_src', parseInt(f_step), f_id, 'input17', 'options', parseInt(optindex), 'img_list', parseInt(newopt2_optindex), {
 					img_full: '',
 					img_th_150x150: '',
-					title: 'image description'
+					title: 'image description',
 				});
 			};
-			arguments.callee.input17settings_delImglistIndex = function (el) {
+			arguments.callee.input17settings_delImglistIndex = function(el) {
 				el = $(el);
 				var f_id = $('#uifm-field-selected-id').val();
 				var item_img = el.closest('.uifm-fld-inp17-options-row');
@@ -9387,7 +9978,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input17settings_labelOption = function (el) {
+			arguments.callee.input17settings_labelOption = function(el) {
 				el = $(el);
 				var item_img = el.closest('.uifm-fld-inp17-options-row');
 				var optindex = item_img.attr('data-opt-index');
@@ -9402,7 +9993,7 @@ if (!$uifm.isFunction(rocketform)) {
 				rocketform.setUiData9('steps_src', parseInt(f_step), f_id, 'input17', 'options', parseInt(optindex), 'img_list', parseInt(opt2index), 'title', f_val);
 			};
 
-			arguments.callee.input17settings_preview_refreshImgs = function (item_main) {
+			arguments.callee.input17settings_preview_refreshImgs = function(item_main) {
 				var optindex = item_main.attr('data-inp17-opt-index');
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
@@ -9419,9 +10010,11 @@ if (!$uifm.isFunction(rocketform)) {
 				switch (parseInt(thopt_mode)) {
 					case 2:
 						if (img_list_2) {
-							$.each(img_list_2, function (index, value) {
+							$.each(img_list_2, function(index, value) {
 								if (value) {
-									newoptprev2 = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item-imgsrc').clone();
+									newoptprev2 = $('#uifm_frm_inp17_templates')
+										.find('.uifm-dcheckbox-item-imgsrc')
+										.clone();
 									newoptprev2.attr('data-inp17-opt2-index', index);
 									item_main.find('.uifm-dcheckbox-item-gal-imgs').append(newoptprev2);
 									rocketform.input17settings_preview_setOption(newoptprev2, optindex, 'img_list_2', index, 'img_full', value['img_full']);
@@ -9432,9 +10025,11 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 					case 1:
 					default:
-						$.each(img_list, function (index, value) {
+						$.each(img_list, function(index, value) {
 							if (value) {
-								newoptprev2 = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item-imgsrc').clone();
+								newoptprev2 = $('#uifm_frm_inp17_templates')
+									.find('.uifm-dcheckbox-item-imgsrc')
+									.clone();
 								newoptprev2.attr('data-inp17-opt2-index', index);
 								item_main.find('.uifm-dcheckbox-item-gal-imgs').append(newoptprev2);
 								rocketform.input17settings_preview_setOption(newoptprev2, optindex, 'img_list', index, 'title', value['title']);
@@ -9446,7 +10041,7 @@ if (!$uifm.isFunction(rocketform)) {
 				item_main.uiformDCheckbox('refreshImgs');
 			};
 
-			arguments.callee.input18settings_savePaneBg = function (el, html) {
+			arguments.callee.input18settings_savePaneBg = function(el, html) {
 				var imgurl = $('img', html).attr('src') || $(html).attr('src');
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
@@ -9459,7 +10054,7 @@ if (!$uifm.isFunction(rocketform)) {
 				this.input18settings_preview_genAllOptions($('#' + f_id), '');
 			};
 
-			arguments.callee.input17settings_saveSrcImgOption = function (el, html) {
+			arguments.callee.input17settings_saveSrcImgOption = function(el, html) {
 				var item_img = el.closest('.uifm-fld-inp17-options-row');
 				var optindex = item_img.attr('data-opt-index');
 				var f_id = $('#uifm-field-selected-id').val();
@@ -9506,7 +10101,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				rocketform.input17settings_preview_refreshImgs(item_main);
 			};
-			arguments.callee.input17settings_changeSrcImg = function (element) {
+			arguments.callee.input17settings_changeSrcImg = function(element) {
 				var el = $(element);
 
 				this.elfinder_showPopUp({
@@ -9515,15 +10110,15 @@ if (!$uifm.isFunction(rocketform)) {
 					height: 490,
 					width: 950,
 					centerScreen: 1,
-					location: 0
+					location: 0,
 				});
 
-				window.processFile = function (file) {
+				window.processFile = function(file) {
 					rocketform.input17settings_saveSrcImgOption(el, file.url);
 				};
 			};
 
-			arguments.callee.input18settings_changeSrcImg = function (element) {
+			arguments.callee.input18settings_changeSrcImg = function(element) {
 				var el = $(element);
 
 				this.elfinder_showPopUp({
@@ -9532,15 +10127,15 @@ if (!$uifm.isFunction(rocketform)) {
 					height: 490,
 					width: 950,
 					centerScreen: 1,
-					location: 0
+					location: 0,
 				});
 
-				window.processFile = function (file) {
+				window.processFile = function(file) {
 					rocketform.input18settings_savePaneBg(el, file.url);
 				};
 			};
 
-			arguments.callee.elfinder_showPopUp = function (instanceSettings) {
+			arguments.callee.elfinder_showPopUp = function(instanceSettings) {
 				var defaultSettings = {
 					centerBrowser: 0, 
 					centerScreen: 0, 
@@ -9555,28 +10150,12 @@ if (!$uifm.isFunction(rocketform)) {
 					windowName: null, 
 					windowURL: null, 
 					top: 0, 
-					toolbar: 0 
+					toolbar: 0, 
 				};
 
 				var settings = $.extend({}, defaultSettings, instanceSettings || {});
 
-				var windowFeatures =
-					'height=' +
-					settings.height +
-					',width=' +
-					settings.width +
-					',toolbar=' +
-					settings.toolbar +
-					',scrollbars=' +
-					settings.scrollbars +
-					',status=' +
-					settings.status +
-					',resizable=' +
-					settings.resizable +
-					',location=' +
-					settings.location +
-					',menuBar=' +
-					settings.menubar;
+				var windowFeatures = 'height=' + settings.height + ',width=' + settings.width + ',toolbar=' + settings.toolbar + ',scrollbars=' + settings.scrollbars + ',status=' + settings.status + ',resizable=' + settings.resizable + ',location=' + settings.location + ',menuBar=' + settings.menubar;
 
 				settings.windowName = this.name || settings.windowName;
 				settings.windowURL = this.href || settings.windowURL;
@@ -9602,7 +10181,7 @@ if (!$uifm.isFunction(rocketform)) {
 				return false;
 			};
 
-			arguments.callee.input18settings_deleteBgImagePane = function () {
+			arguments.callee.input18settings_deleteBgImagePane = function() {
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -9612,7 +10191,7 @@ if (!$uifm.isFunction(rocketform)) {
 				rocketform.setUiData6('steps_src', parseInt(f_step), f_id, 'input18', 'pane_background', 'image', '');
 				this.input18settings_preview_genAllOptions($('#' + f_id), '');
 			};
-			arguments.callee.input17settings_tabeditor_generateAllOptions = function () {
+			arguments.callee.input17settings_tabeditor_generateAllOptions = function() {
 				$('#uifm-fld-inp17-options-container').html('');
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
@@ -9627,8 +10206,10 @@ if (!$uifm.isFunction(rocketform)) {
 				var img_obj_item;
 				switch (parseInt(f_type)) {
 					case 41:
-						$.each(options, function (index, value) {
-							newopt = $('#uifm_frm_inp17_templates').find('.uifm-fld-inp17-options-row').clone();
+						$.each(options, function(index, value) {
+							newopt = $('#uifm_frm_inp17_templates')
+								.find('.uifm-fld-inp17-options-row')
+								.clone();
 							newopt.attr('data-opt-index', index);
 
 							newopt.find('.uifm_frm_inp17_opt_label').val(value['label']);
@@ -9647,7 +10228,7 @@ if (!$uifm.isFunction(rocketform)) {
 								max: 1000000000,
 								stepinterval: 1,
 								verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-								verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+								verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 							});
 							newopt.find('.uifm_frm_inp17_opt_qty_max').val(value['qty_max']);
 
@@ -9663,18 +10244,20 @@ if (!$uifm.isFunction(rocketform)) {
 
 										value['img_list_2'] = {
 											0: {
-												img_full: ''
+												img_full: '',
 											},
 											1: {
-												img_full: ''
+												img_full: '',
 											},
 											2: {
-												img_full: ''
-											}
+												img_full: '',
+											},
 										};
 									}
-									$.each(value['img_list_2'], function (index2, value2) {
-										img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt2_imgwrap').clone();
+									$.each(value['img_list_2'], function(index2, value2) {
+										img_obj_item = $('#uifm_frm_inp17_templates')
+											.find('.uifm_frm_inp17_opt2_imgwrap')
+											.clone();
 										if (value2['img_full']) {
 											img_obj_item.find('.sfdc-img-thumbnail').attr('src', value2['img_full']);
 										} else {
@@ -9684,16 +10267,30 @@ if (!$uifm.isFunction(rocketform)) {
 										newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap').append(img_obj_item);
 									});
 
-									newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="0"]').find('.col-md-8 p').attr('class', 'alert alert-success').html('Checked');
-									newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="1"]').find('.col-md-8 p').attr('class', 'alert alert-warning').html('Hover');
-									newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="2"]').find('.col-md-8 p').attr('class', 'alert alert-info').html('Unchecked');
+									newopt
+										.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="0"]')
+										.find('.col-md-8 p')
+										.attr('class', 'alert alert-success')
+										.html('Checked');
+									newopt
+										.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="1"]')
+										.find('.col-md-8 p')
+										.attr('class', 'alert alert-warning')
+										.html('Hover');
+									newopt
+										.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="2"]')
+										.find('.col-md-8 p')
+										.attr('class', 'alert alert-info')
+										.html('Unchecked');
 
 									break;
 								case 1:
 								default:
 									if (value['img_list']) {
-										$.each(value['img_list'], function (index2, value2) {
-											img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt_imgwrap').clone();
+										$.each(value['img_list'], function(index2, value2) {
+											img_obj_item = $('#uifm_frm_inp17_templates')
+												.find('.uifm_frm_inp17_opt_imgwrap')
+												.clone();
 											if (value2['img_th_150x150']) {
 												img_obj_item.find('.sfdc-img-thumbnail').attr('src', value2['img_th_150x150']);
 											} else {
@@ -9711,8 +10308,10 @@ if (!$uifm.isFunction(rocketform)) {
 						});
 						break;
 					case 42:
-						$.each(options, function (index, value) {
-							newopt = $('#uifm_frm_inp17_templates').find('.uifm-fld-inp17-options-row').clone();
+						$.each(options, function(index, value) {
+							newopt = $('#uifm_frm_inp17_templates')
+								.find('.uifm-fld-inp17-options-row')
+								.clone();
 							newopt.attr('data-opt-index', index);
 
 							newopt.find('.uifm_frm_inp17_opt_label').val(value['label']);
@@ -9731,7 +10330,7 @@ if (!$uifm.isFunction(rocketform)) {
 								max: 1000000000,
 								stepinterval: 1,
 								verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-								verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+								verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 							});
 							newopt.find('.uifm_frm_inp17_opt_qty_max').val(value['qty_max']);
 
@@ -9747,18 +10346,20 @@ if (!$uifm.isFunction(rocketform)) {
 
 										value['img_list_2'] = {
 											0: {
-												img_full: ''
+												img_full: '',
 											},
 											1: {
-												img_full: ''
+												img_full: '',
 											},
 											2: {
-												img_full: ''
-											}
+												img_full: '',
+											},
 										};
 									}
-									$.each(value['img_list_2'], function (index2, value2) {
-										img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt2_imgwrap').clone();
+									$.each(value['img_list_2'], function(index2, value2) {
+										img_obj_item = $('#uifm_frm_inp17_templates')
+											.find('.uifm_frm_inp17_opt2_imgwrap')
+											.clone();
 										if (value2['img_full']) {
 											img_obj_item.find('.sfdc-img-thumbnail').attr('src', value2['img_full']);
 										} else {
@@ -9768,16 +10369,30 @@ if (!$uifm.isFunction(rocketform)) {
 										newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap').append(img_obj_item);
 									});
 
-									newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="0"]').find('.col-md-8 p').attr('class', 'alert alert-success').html('Checked');
-									newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="1"]').find('.col-md-8 p').attr('class', 'alert alert-warning').html('Hover');
-									newopt.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="2"]').find('.col-md-8 p').attr('class', 'alert alert-info').html('Unchecked');
+									newopt
+										.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="0"]')
+										.find('.col-md-8 p')
+										.attr('class', 'alert alert-success')
+										.html('Checked');
+									newopt
+										.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="1"]')
+										.find('.col-md-8 p')
+										.attr('class', 'alert alert-warning')
+										.html('Hover');
+									newopt
+										.find('.uifm_frm_inp17_opt_img_list_2_wrap .uifm_frm_inp17_opt2_imgwrap[data-opt-index="2"]')
+										.find('.col-md-8 p')
+										.attr('class', 'alert alert-info')
+										.html('Unchecked');
 
 									break;
 								case 1:
 								default:
 									if (value['img_list']) {
-										$.each(value['img_list'], function (index2, value2) {
-											img_obj_item = $('#uifm_frm_inp17_templates').find('.uifm_frm_inp17_opt_imgwrap').clone();
+										$.each(value['img_list'], function(index2, value2) {
+											img_obj_item = $('#uifm_frm_inp17_templates')
+												.find('.uifm_frm_inp17_opt_imgwrap')
+												.clone();
 											if (value2['img_th_150x150']) {
 												img_obj_item.find('.sfdc-img-thumbnail').attr('src', value2['img_th_150x150']);
 											} else {
@@ -9799,18 +10414,18 @@ if (!$uifm.isFunction(rocketform)) {
 
 				rocketform.input17settings_showOptionbyLayMode(thopt_mode);
 
-				$('#uifm-fld-inp17-options-container .switch-field-17').on('switchChange.bootstrapSwitchZgpb', function (event, state) {
+				$('#uifm-fld-inp17-options-container .switch-field-17').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
 					var f_val = state ? 1 : 0;
 					rocketform.input17settings_updateOption($(this), f_val, 'qty_st');
 				});
 
-				$('#uifm-fld-inp17-options-container .uifm_frm_inp17_opt_qty_max').on('change', function (e) {
+				$('#uifm-fld-inp17-options-container .uifm_frm_inp17_opt_qty_max').on('change', function(e) {
 					var f_val = $(e.target).val();
 					rocketform.input17settings_updateOption($(e.target), f_val, 'qty_max');
 				});
 			};
 
-			arguments.callee.input17settings_showOptionbyLayMode = function (varmode) {
+			arguments.callee.input17settings_showOptionbyLayMode = function(varmode) {
 				if (parseInt(varmode) === 2) {
 					$('#uifm-fld-inp17-options-container .uifm_frm_inp17_opt_img_list_1').hide();
 					$('#uifm-fld-inp17-options-container .uifm_frm_inp17_opt_img_list_2').show();
@@ -9827,7 +10442,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input17settings_enableCheckOption = function (el) {
+			arguments.callee.input17settings_enableCheckOption = function(el) {
 				el = $(el);
 				var option = el.attr('data-option-store');
 				var f_val = el.is(':checked') ? 1 : 0;
@@ -9862,7 +10477,7 @@ if (!$uifm.isFunction(rocketform)) {
 					default:
 				}
 			};
-			arguments.callee.input17settings_onChangeOption = function (el) {
+			arguments.callee.input17settings_onChangeOption = function(el) {
 				el = $(el);
 				var option = el.attr('data-option-store');
 				var f_val = el.val();
@@ -9873,7 +10488,7 @@ if (!$uifm.isFunction(rocketform)) {
 				rocketform.input17settings_preview_genAllOptions($('#' + f_id), 'input17');
 			};
 
-			arguments.callee.input17settings_updateOption = function (obj, f_val, option) {
+			arguments.callee.input17settings_updateOption = function(obj, f_val, option) {
 				var item_img = obj.closest('.uifm-fld-inp17-options-row');
 				var optindex = item_img.attr('data-opt-index');
 				var f_id = $('#uifm-field-selected-id').val();
@@ -9902,7 +10517,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input2settings_tabeditor_generateAllOptions = function () {
+			arguments.callee.input2settings_tabeditor_generateAllOptions = function() {
 				$('#uifm-fld-inp2-options-container').html('');
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
@@ -9914,8 +10529,10 @@ if (!$uifm.isFunction(rocketform)) {
 				var options = this.getUiData5('steps_src', f_step, f_id, 'input2', 'options');
 				switch (parseInt(f_type)) {
 					case 8:
-						$.each(options, function (index, value) {
-							newopt = $('#uifm_frm_inp2_templates').find('.uifm-fld-inp2-options-row').clone();
+						$.each(options, function(index, value) {
+							newopt = $('#uifm_frm_inp2_templates')
+								.find('.uifm-fld-inp2-options-row')
+								.clone();
 							newopt.attr('data-opt-index', index);
 							newopt.find('.uifm_frm_inp2_opt_checked').attr('id', 'uifm_frm_inp2_opt' + index + '_rdo');
 							newopt.find('.uifm_frm_inp2_opt_checked').prop('checked', parseInt(value['checked']));
@@ -9932,8 +10549,10 @@ if (!$uifm.isFunction(rocketform)) {
 						});
 						break;
 					case 9:
-						$.each(options, function (index, value) {
-							newopt = $('#uifm_frm_inp2_templates').find('.uifm-fld-inp2-options-row').clone();
+						$.each(options, function(index, value) {
+							newopt = $('#uifm_frm_inp2_templates')
+								.find('.uifm-fld-inp2-options-row')
+								.clone();
 							newopt.attr('data-opt-index', index);
 							newopt.find('.uifm_frm_inp2_opt_checked').attr('id', 'uifm_frm_inp2_opt' + index + '_chk');
 							newopt.find('.uifm_frm_inp2_opt_checked').prop('checked', parseInt(value['checked']));
@@ -9949,8 +10568,10 @@ if (!$uifm.isFunction(rocketform)) {
 						});
 						break;
 					case 10:
-						$.each(options, function (index, value) {
-							newopt = $('#uifm_frm_inp2_templates').find('.uifm-fld-inp2-options-row').clone();
+						$.each(options, function(index, value) {
+							newopt = $('#uifm_frm_inp2_templates')
+								.find('.uifm-fld-inp2-options-row')
+								.clone();
 							newopt.attr('data-opt-index', index);
 							newopt.find('.uifm_frm_inp2_opt_checked').attr('id', 'uifm_frm_inp2_opt' + index + '_rdo');
 							newopt.find('.uifm_frm_inp2_opt_checked').prop('checked', parseInt(value['checked']));
@@ -9967,8 +10588,10 @@ if (!$uifm.isFunction(rocketform)) {
 						});
 						break;
 					case 11:
-						$.each(options, function (index, value) {
-							newopt = $('#uifm_frm_inp2_templates').find('.uifm-fld-inp2-options-row').clone();
+						$.each(options, function(index, value) {
+							newopt = $('#uifm_frm_inp2_templates')
+								.find('.uifm-fld-inp2-options-row')
+								.clone();
 							newopt.attr('data-opt-index', index);
 							newopt.find('.uifm_frm_inp2_opt_checked').attr('id', 'uifm_frm_inp2_opt' + index + '_chk');
 							newopt.find('.uifm_frm_inp2_opt_checked').prop('checked', parseInt(value['checked']));
@@ -9988,7 +10611,7 @@ if (!$uifm.isFunction(rocketform)) {
 				zgfm_back_input2.input2settings_refreshSortable();
 			};
 
-			arguments.callee.input2settings_deleteOption = function (element) {
+			arguments.callee.input2settings_deleteOption = function(element) {
 				var el = $(element);
 				var f_id = $('#uifm-field-selected-id').val();
 				var opt_index = el.closest('.uifm-fld-inp2-options-row').data('opt-index');
@@ -10033,9 +10656,9 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input2settings_preview_genAllOptions = function (obj, section, option) {
+			arguments.callee.input2settings_preview_genAllOptions = function(obj, section, option) {
 			};
-			arguments.callee.input17settings_preview_setOption = function (obj, index, opt, index2, opt2, value) {
+			arguments.callee.input17settings_preview_setOption = function(obj, index, opt, index2, opt2, value) {
 				switch (String(opt)) {
 					case 'label':
 						obj.attr('title', value);
@@ -10091,7 +10714,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input18settings_preview_genAllOptions = function (obj, section) {
+			arguments.callee.input18settings_preview_genAllOptions = function(obj, section) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -10130,10 +10753,21 @@ if (!$uifm.isFunction(rocketform)) {
 					shadow_blur = this.getUiData6('steps_src', f_step, f_id, 'input18', 'pane_shadow', 'blur');
 
 				if (parseInt(text_html_st) === 1) {
-					obj.find('.uifm-inp31-txthtml-content').first().parent().show();
-					obj.find('.uifm-inp31-txthtml-content').first().html(decodeURIComponent(text_html));
+					obj
+						.find('.uifm-inp31-txthtml-content')
+						.first()
+						.parent()
+						.show();
+					obj
+						.find('.uifm-inp31-txthtml-content')
+						.first()
+						.html(decodeURIComponent(text_html));
 				} else {
-					obj.find('.uifm-inp31-txthtml-content').first().parent().hide();
+					obj
+						.find('.uifm-inp31-txthtml-content')
+						.first()
+						.parent()
+						.hide();
 				}
 
 				if (parseInt(marg_show_st) === 1) {
@@ -10142,7 +10776,10 @@ if (!$uifm.isFunction(rocketform)) {
 						.first()
 						.css('margin', marg_pos_top + 'px ' + marg_pos_right + 'px ' + marg_pos_bottom + 'px ' + marg_pos_left + 'px');
 				} else {
-					obj.find('.uifm-input31-container').first().removeCss('margin');
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.removeCss('margin');
 				}
 				if (parseInt(pad_show_st) === 1) {
 					obj
@@ -10150,11 +10787,20 @@ if (!$uifm.isFunction(rocketform)) {
 						.first()
 						.css('padding', pad_pos_top + 'px ' + pad_pos_right + 'px ' + pad_pos_bottom + 'px ' + pad_pos_left + 'px');
 				} else {
-					obj.find('.uifm-input31-container').first().removeCss('padding');
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.removeCss('padding');
 				}
 
-				var col_block = obj.find('.uifm-inp31-txthtml-content').first().parent();
-				var col_input = obj.find('.uifm-input31-main-wrap').first().parent();
+				var col_block = obj
+					.find('.uifm-inp31-txthtml-content')
+					.first()
+					.parent();
+				var col_input = obj
+					.find('.uifm-input31-main-wrap')
+					.first()
+					.parent();
 				var col_block_pos = parseInt(col_block.index());
 
 				switch (parseInt(text_html_pos)) {
@@ -10162,8 +10808,17 @@ if (!$uifm.isFunction(rocketform)) {
 						if (col_block_pos === 1) {
 							$(col_block).insertBefore(col_input);
 						}
-						obj.find('.uifm-inp31-txthtml-content').first().parent().attr('class', 'rkfm-inp18-col-sm-12');
-						obj.find('.uifm-inp31-txthtml-content').first().parent().siblings().attr('class', 'rkfm-inp18-col-sm-12');
+						obj
+							.find('.uifm-inp31-txthtml-content')
+							.first()
+							.parent()
+							.attr('class', 'rkfm-inp18-col-sm-12');
+						obj
+							.find('.uifm-inp31-txthtml-content')
+							.first()
+							.parent()
+							.siblings()
+							.attr('class', 'rkfm-inp18-col-sm-12');
 						break;
 					case 2:
 						if (col_block_pos === 0) {
@@ -10171,10 +10826,24 @@ if (!$uifm.isFunction(rocketform)) {
 						}
 
 						if (parseInt(text_html_st) === 1) {
-							obj.find('.uifm-inp31-txthtml-content').first().parent().attr('class', 'rkfm-inp18-col-sm-5');
-							obj.find('.uifm-inp31-txthtml-content').first().parent().siblings().attr('class', 'rkfm-inp18-col-sm-7');
+							obj
+								.find('.uifm-inp31-txthtml-content')
+								.first()
+								.parent()
+								.attr('class', 'rkfm-inp18-col-sm-5');
+							obj
+								.find('.uifm-inp31-txthtml-content')
+								.first()
+								.parent()
+								.siblings()
+								.attr('class', 'rkfm-inp18-col-sm-7');
 						} else {
-							obj.find('.uifm-inp31-txthtml-content').first().parent().siblings().attr('class', 'rkfm-inp18-col-sm-12');
+							obj
+								.find('.uifm-inp31-txthtml-content')
+								.first()
+								.parent()
+								.siblings()
+								.attr('class', 'rkfm-inp18-col-sm-12');
 						}
 
 						break;
@@ -10182,8 +10851,17 @@ if (!$uifm.isFunction(rocketform)) {
 						if (col_block_pos === 0) {
 							$(col_input).insertBefore(col_block);
 						}
-						obj.find('.uifm-inp31-txthtml-content').first().parent().attr('class', 'rkfm-inp18-col-sm-12');
-						obj.find('.uifm-inp31-txthtml-content').first().parent().siblings().attr('class', 'rkfm-inp18-col-sm-12');
+						obj
+							.find('.uifm-inp31-txthtml-content')
+							.first()
+							.parent()
+							.attr('class', 'rkfm-inp18-col-sm-12');
+						obj
+							.find('.uifm-inp31-txthtml-content')
+							.first()
+							.parent()
+							.siblings()
+							.attr('class', 'rkfm-inp18-col-sm-12');
 						break;
 					case 0:
 					default:
@@ -10192,10 +10870,24 @@ if (!$uifm.isFunction(rocketform)) {
 						}
 
 						if (parseInt(text_html_st) === 1) {
-							obj.find('.uifm-inp31-txthtml-content').first().parent().attr('class', 'rkfm-inp18-col-sm-5');
-							obj.find('.uifm-inp31-txthtml-content').first().parent().siblings().attr('class', 'rkfm-inp18-col-sm-7');
+							obj
+								.find('.uifm-inp31-txthtml-content')
+								.first()
+								.parent()
+								.attr('class', 'rkfm-inp18-col-sm-5');
+							obj
+								.find('.uifm-inp31-txthtml-content')
+								.first()
+								.parent()
+								.siblings()
+								.attr('class', 'rkfm-inp18-col-sm-7');
 						} else {
-							obj.find('.uifm-inp31-txthtml-content').first().parent().siblings().attr('class', 'rkfm-inp18-col-sm-12');
+							obj
+								.find('.uifm-inp31-txthtml-content')
+								.first()
+								.parent()
+								.siblings()
+								.attr('class', 'rkfm-inp18-col-sm-12');
 						}
 
 						break;
@@ -10213,32 +10905,44 @@ if (!$uifm.isFunction(rocketform)) {
 									'background-image': '-moz-linear-gradient(top, ' + bg_start_color + ', ' + bg_end_color + ')',
 									'background-image': '-ms-linear-gradient(top, ' + bg_start_color + ', ' + bg_end_color + ')',
 									'background-image': '-o-linear-gradient(top, ' + bg_start_color + ', ' + bg_end_color + ')',
-									'background-image': 'linear-gradient(to bottom, ' + bg_start_color + ',' + bg_end_color + ')'
+									'background-image': 'linear-gradient(to bottom, ' + bg_start_color + ',' + bg_end_color + ')',
 								});
 
 							break;
 						case 1:
 						default:
 							if (bg_solid_color) {
-								obj.find('.uifm-input31-container').first().css('background', bg_solid_color);
+								obj
+									.find('.uifm-input31-container')
+									.first()
+									.css('background', bg_solid_color);
 							}
 
 							break;
 					}
 
 					if (bg_image) {
-						obj.find('.uifm-input31-container').first().removeCss('background-image');
+						obj
+							.find('.uifm-input31-container')
+							.first()
+							.removeCss('background-image');
 						obj
 							.find('.uifm-input31-container')
 							.first()
 							.css({
 								'background-image': "url('" + bg_image + "')",
-								'background-repeat': 'repeat'
+								'background-repeat': 'repeat',
 							});
 					}
 				} else {
-					obj.find('.uifm-input31-container').first().removeCss('background');
-					obj.find('.uifm-input31-container').first().removeCss('background-image');
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.removeCss('background');
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.removeCss('background-image');
 				}
 				if (parseInt(brad_show_st) === 1) {
 					obj
@@ -10246,7 +10950,10 @@ if (!$uifm.isFunction(rocketform)) {
 						.first()
 						.css('border-radius', brad_size + 'px');
 				} else {
-					obj.find('.uifm-input31-container').first().removeCss('border-radius');
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.removeCss('border-radius');
 				}
 				var border_sty;
 				if (parseInt(border_show_st) === 1) {
@@ -10256,21 +10963,33 @@ if (!$uifm.isFunction(rocketform)) {
 						border_sty = 'dotted ';
 					}
 					border_sty += border_color + ' ' + border_width + 'px';
-					obj.find('.uifm-input31-container').first().css('border', border_sty);
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.css('border', border_sty);
 				} else {
-					obj.find('.uifm-input31-container').first().removeCss('border');
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.removeCss('border');
 				}
 
 				var style;
 				if (parseInt(shadow_show_st) === 1) {
 					style = shadow_h_shadow + 'px ' + shadow_v_shadow + 'px ' + shadow_blur + 'px ' + shadow_color;
-					obj.find('.uifm-input31-container').first().css('box-shadow', style);
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.css('box-shadow', style);
 				} else {
-					obj.find('.uifm-input31-container').first().removeCss('box-shadow');
+					obj
+						.find('.uifm-input31-container')
+						.first()
+						.removeCss('box-shadow');
 				}
 			};
 
-			arguments.callee.input17settings_preview_genAllOptions = function (obj, section) {
+			arguments.callee.input17settings_preview_genAllOptions = function(obj, section) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -10298,8 +11017,10 @@ if (!$uifm.isFunction(rocketform)) {
 						obj.find('.uifm-dcheckbox-group').attr('data-thopt-showhvrtxt', f_thopt_showhvrtxt);
 						obj.find('.uifm-dcheckbox-group').attr('data-thopt-showcheckb', f_thopt_showcheckb);
 
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp17_templates')
+								.find('.uifm-dcheckbox-item')
+								.clone();
 							newoptprev.attr('data-inp17-opt-index', index);
 							obj.find('.uifm-dcheckbox-group').append(newoptprev);
 
@@ -10325,8 +11046,10 @@ if (!$uifm.isFunction(rocketform)) {
 							switch (parseInt(thopt_mode)) {
 								case 2:
 									if (value['img_list_2']) {
-										$.each(value['img_list_2'], function (index2, value2) {
-											newoptprev2 = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item-imgsrc').clone();
+										$.each(value['img_list_2'], function(index2, value2) {
+											newoptprev2 = $('#uifm_frm_inp17_templates')
+												.find('.uifm-dcheckbox-item-imgsrc')
+												.clone();
 											newoptprev2.attr('data-inp17-opt2-index', index2);
 											newoptprev.find('.uifm-dcheckbox-item-gal-imgs').append(newoptprev2);
 											rocketform.input17settings_preview_setOption(newoptprev2, index, 'img_list_2', index2, 'img_full', value2['img_full']);
@@ -10336,8 +11059,10 @@ if (!$uifm.isFunction(rocketform)) {
 								case 1:
 								default:
 									if (value['img_list']) {
-										$.each(value['img_list'], function (index2, value2) {
-											newoptprev2 = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item-imgsrc').clone();
+										$.each(value['img_list'], function(index2, value2) {
+											newoptprev2 = $('#uifm_frm_inp17_templates')
+												.find('.uifm-dcheckbox-item-imgsrc')
+												.clone();
 											newoptprev2.attr('data-inp17-opt2-index', index2);
 											newoptprev.find('.uifm-dcheckbox-item-gal-imgs').append(newoptprev2);
 											rocketform.input17settings_preview_setOption(newoptprev2, index, 'img_list', index2, 'title', value2['title']);
@@ -10363,8 +11088,10 @@ if (!$uifm.isFunction(rocketform)) {
 						obj.find('.uifm-dradiobtn-group').attr('data-thopt-showhvrtxt', f_thopt_showhvrtxt);
 						obj.find('.uifm-dradiobtn-group').attr('data-thopt-showcheckb', f_thopt_showcheckb);
 
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp17_templates').find('.uifm-dradiobtn-item').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp17_templates')
+								.find('.uifm-dradiobtn-item')
+								.clone();
 							newoptprev.attr('data-inp17-opt-index', index);
 							obj.find('.uifm-dradiobtn-group').append(newoptprev);
 
@@ -10390,8 +11117,10 @@ if (!$uifm.isFunction(rocketform)) {
 							switch (parseInt(thopt_mode)) {
 								case 2:
 									if (value['img_list_2']) {
-										$.each(value['img_list_2'], function (index2, value2) {
-											newoptprev2 = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item-imgsrc').clone();
+										$.each(value['img_list_2'], function(index2, value2) {
+											newoptprev2 = $('#uifm_frm_inp17_templates')
+												.find('.uifm-dcheckbox-item-imgsrc')
+												.clone();
 											newoptprev2.attr('data-inp17-opt2-index', index2);
 											newoptprev.find('.uifm-dcheckbox-item-gal-imgs').append(newoptprev2);
 											rocketform.input17settings_preview_setOption(newoptprev2, index, 'img_list_2', index2, 'img_full', value2['img_full']);
@@ -10401,8 +11130,10 @@ if (!$uifm.isFunction(rocketform)) {
 								case 1:
 								default:
 									if (value['img_list']) {
-										$.each(value['img_list'], function (index2, value2) {
-											newoptprev2 = $('#uifm_frm_inp17_templates').find('.uifm-dcheckbox-item-imgsrc').clone();
+										$.each(value['img_list'], function(index2, value2) {
+											newoptprev2 = $('#uifm_frm_inp17_templates')
+												.find('.uifm-dcheckbox-item-imgsrc')
+												.clone();
 											newoptprev2.attr('data-inp17-opt2-index', index2);
 											newoptprev.find('.uifm-dcheckbox-item-gal-imgs').append(newoptprev2);
 											rocketform.input17settings_preview_setOption(newoptprev2, index, 'img_list', index2, 'title', value2['title']);
@@ -10426,7 +11157,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.inputsettings_addingPrepAppe = function (element) {
+			arguments.callee.inputsettings_addingPrepAppe = function(element) {
 				var el = $(element);
 				var option = el.data('option');
 				var sourcetxt = el.data('source-txt');
@@ -10491,7 +11222,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.previewfield_prepappTxtOnInput = function (obj, option) {
+			arguments.callee.previewfield_prepappTxtOnInput = function(obj, option) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -10512,19 +11243,19 @@ if (!$uifm.isFunction(rocketform)) {
 				obj.find(class_find).html(cus_data);
 			};
 
-			arguments.callee.input5settings_loadRecaptcha = function (id, key_public, theme) {
+			arguments.callee.input5settings_loadRecaptcha = function(id, key_public, theme) {
 				try {
 					if (key_public) {
 						grecaptcha.render(id, {
 							sitekey: key_public,
-							theme: theme
+							theme: theme,
 						});
 					}
 				} catch (ex) {
 					console.error('input5settings_loadRecaptcha error : ', ex.message);
 				}
 			};
-			arguments.callee.input6settings_refreshCaptcha = function (element) {
+			arguments.callee.input6settings_refreshCaptcha = function(element) {
 				var el = $(element);
 
 				var obj_field = el.closest('.uiform-field');
@@ -10562,15 +11293,15 @@ if (!$uifm.isFunction(rocketform)) {
 						front_lines: front_lines,
 						zgfm_security: uiform_vars.ajax_nonce,
 						page: 'zgfm_form_builder',
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (response) {
+					success: function(response) {
 						obj_field.find('.uifm-inp6-captcha-img').attr('src', el_url + response.rkver);
 						obj_field.find('.uifm-inp6-wrap-refrescaptcha a').attr('data-rkver', response.rkver);
-					}
+					},
 				});
 			};
-			arguments.callee.input11settings_updateField = function (obj, section, option) {
+			arguments.callee.input11settings_updateField = function(obj, section, option) {
 				try {
 					var f_id = obj.attr('id');
 					var f_step = $('#' + f_id)
@@ -10604,7 +11335,10 @@ if (!$uifm.isFunction(rocketform)) {
 					obj.find('.uiform-divider-text').css('color', f_text_color);
 
 					if (parseInt(f_text_val.length) != 0) {
-						obj.find('.uiform-divider-text').show().html(f_text_val);
+						obj
+							.find('.uiform-divider-text')
+							.show()
+							.html(f_text_val);
 					} else {
 						obj.find('.uiform-divider-text').hide();
 					}
@@ -10614,7 +11348,7 @@ if (!$uifm.isFunction(rocketform)) {
 					console.error('input11settings_updateField error : ', ex.message);
 				}
 			};
-			arguments.callee.input9settings_updateField = function (obj, section) {
+			arguments.callee.input9settings_updateField = function(obj, section) {
 				var f_type = obj.data('typefield');
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
@@ -10633,13 +11367,13 @@ if (!$uifm.isFunction(rocketform)) {
 					$(f_inp).rating({
 						starCaptions: { 1: f_txt1, 2: f_txt2, 3: f_txt3, 4: f_txt4, 5: f_txt5 },
 						clearCaption: f_txtnorate,
-						starCaptionClasses: { 1: 'text-danger', 2: 'text-warning', 3: 'text-info', 4: 'text-primary', 5: 'text-success' }
+						starCaptionClasses: { 1: 'text-danger', 2: 'text-warning', 3: 'text-info', 4: 'text-primary', 5: 'text-success' },
 					});
 				} else {
 					$(f_inp).rating('refresh', { starCaptions: { 1: f_txt1, 2: f_txt2, 3: f_txt3, 4: f_txt4, 5: f_txt5 }, clearCaption: f_txtnorate });
 				}
 			};
-			arguments.callee.input7settings_updateField = function (obj, section, option) {
+			arguments.callee.input7settings_updateField = function(obj, section, option) {
 				var f_type = obj.data('typefield');
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
@@ -10654,7 +11388,7 @@ if (!$uifm.isFunction(rocketform)) {
 						f_inp = obj.find('.uifm-input7-datepic');
 						if (!f_inp.data('DateTimePicker')) {
 							f_inp.datetimepicker({
-								format: 'L'
+								format: 'L',
 							});
 						}
 
@@ -10672,7 +11406,7 @@ if (!$uifm.isFunction(rocketform)) {
 						f_inp = obj.find('.uifm-input7-timepic');
 						if (!f_inp.data('DateTimePicker')) {
 							f_inp.datetimepicker({
-								format: 'LT'
+								format: 'LT',
 							});
 						}
 						break;
@@ -10693,13 +11427,15 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input6settings_checkCaptcha = function (obj, section, option) {
+			arguments.callee.input6settings_checkCaptcha = function(obj, section, option) {
 				if (parseInt($('.uiform-main-form').find('.uiform-captcha').length) != 0) {
 					var rockfm_rcha_d = $('.uiform-main-form').find('.uifm-inp6-captcha');
 					if (parseInt(rockfm_rcha_d.length) > 1) {
-						rockfm_rcha_d.each(function (i) {
+						rockfm_rcha_d.each(function(i) {
 							if (parseInt(i) != 0) {
-								$(this).removeClass('uifm-inp6-captcha').html('Captcha is loaded once. Remove this field');
+								$(this)
+									.removeClass('uifm-inp6-captcha')
+									.html('Captcha is loaded once. Remove this field');
 							}
 						});
 					}
@@ -10750,25 +11486,27 @@ if (!$uifm.isFunction(rocketform)) {
 								front_lines_st: front_lines_st,
 								front_lines: front_lines,
 								page: 'zgfm_form_builder',
-								csrf_field_name: uiform_vars.csrf_field_name
+								csrf_field_name: uiform_vars.csrf_field_name,
 							},
-							success: function (response) {
+							success: function(response) {
 								obj.find('.uifm-inp6-captcha-img').attr('src', el_url + response.rkver);
 								obj.find('.uifm-inp6-wrap-refrescaptcha a').attr('data-rkver', response.rkver);
-							}
+							},
 						});
 					}
 				}
 			};
 
-			arguments.callee.input5settings_checkRecaptcha = function (obj, section, option) {
+			arguments.callee.input5settings_checkRecaptcha = function(obj, section, option) {
 				if (parseInt($('.uiform-main-form').find('.uifm-input-recaptcha').length) > 0) {
 					var uifm_rec_el;
 					var rockfm_rcha_d = $('.uiform-main-form').find('.uifm-input-recaptcha');
 					if (parseInt(rockfm_rcha_d.length) > 1) {
-						rockfm_rcha_d.each(function (i) {
+						rockfm_rcha_d.each(function(i) {
 							if (parseInt(i) != 0) {
-								$(this).removeClass('g-recaptcha').html('ReCaptcha is loaded once. Remove this field');
+								$(this)
+									.removeClass('g-recaptcha')
+									.html('ReCaptcha is loaded once. Remove this field');
 							} else {
 								uifm_rec_el = $(this);
 							}
@@ -10802,14 +11540,14 @@ if (!$uifm.isFunction(rocketform)) {
 
 			};
 
-			arguments.callee.clogic_getListField = function (logic_row) {
+			arguments.callee.clogic_getListField = function(logic_row) {
 				var field = $('#uiform-set-clogic-tmpl .uifm_clogic_fieldsel').clone();
 				var var_fields = this.getUiData('steps_src');
 				var val_selected = $('#uifm-field-selected-id').val();
 				var arr_types_allowed = [8, 9, 10, 11, 16, 18, 40, 41, 42];
 				var string_res = '';
-				$.each(var_fields, function (index, value) {
-					$.each(value, function (index2, value2) {
+				$.each(var_fields, function(index, value) {
+					$.each(value, function(index2, value2) {
 						if (String(val_selected) != String(value2.id) && $.inArray(parseInt(value2.type), arr_types_allowed) >= 0) {
 							string_res += '<option data-type="' + value2.type + '" value="' + value2.id + '">' + value2.field_name + '</option>';
 						}
@@ -10820,7 +11558,7 @@ if (!$uifm.isFunction(rocketform)) {
 				logic_row.find('.uifm_clogic_fieldsel').chosen({ width: '100%' });
 			};
 
-			arguments.callee.search_fieldById = function (field_id) {
+			arguments.callee.search_fieldById = function(field_id) {
 				var var_fields = this.getUiData('steps_src');
 				for (var i in var_fields) {
 					for (var i2 in var_fields[i]) {
@@ -10831,7 +11569,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 				return false;
 			};
-			arguments.callee.viewchart_load = function () {
+			arguments.callee.viewchart_load = function() {
 				var idform = $('#uifm-record-form-cmb').val();
 				rocketform.showLoader(1, true, true);
 				$.ajax({
@@ -10842,17 +11580,17 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: parseInt(idform),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#uiform-viewchart-result').html('');
 						rocketform.viewchart_generate(msg.data);
 						rocketform.hideLoader();
-					}
+					},
 				});
 			};
 
-			arguments.callee.viewchart_generate = function (response) {
+			arguments.callee.viewchart_generate = function(response) {
 				try {
 					Morris.Area({
 						element: 'uiform-viewchart-result',
@@ -10860,18 +11598,22 @@ if (!$uifm.isFunction(rocketform)) {
 						xkey: 'days',
 						ykeys: ['requests'],
 						labels: ['requests'],
-						smooth: false
+						smooth: false,
 					});
 				} catch (err) {
 					console.log('error viewchart_refresh: ' + err.message);
 				}
 			};
-			arguments.callee.clogic_getTypeMatch = function (logic_row, type) {
+			arguments.callee.clogic_getTypeMatch = function(logic_row, type) {
 				logic_row.find('.uifm_clogic_mtype').html('');
 				logic_row.find('.uifm_clogic_mtype').attr('data-loaded', '0');
 				logic_row.find('.uifm_clogic_mtype').append('<i class="sfdc-glyphicon sfdc-glyphicon-refresh sfdc-gly-spin sfdc-spin1"></i>');
 
-				logic_row.find('.uifm_clogic_mtype').find('.sfdc-gly-spin').fadeOut('slow').remove();
+				logic_row
+					.find('.uifm_clogic_mtype')
+					.find('.sfdc-gly-spin')
+					.fadeOut('slow')
+					.remove();
 
 				var str;
 				switch (parseInt(type)) {
@@ -10895,12 +11637,16 @@ if (!$uifm.isFunction(rocketform)) {
 				logic_row.find('.uifm_clogic_mtype').attr('data-loaded', '1');
 			};
 
-			arguments.callee.clogic_getMatchInput = function (logic_row, field) {
+			arguments.callee.clogic_getMatchInput = function(logic_row, field) {
 				logic_row.find('.uifm_clogic_minput').html('');
 				logic_row.find('.uifm_clogic_minput').attr('data-loaded', '0');
 				logic_row.find('.uifm_clogic_minput').append('<i class="sfdc-glyphicon sfdc-glyphicon-refresh sfdc-gly-spin sfdc-spin1"></i>');
 
-				logic_row.find('.uifm_clogic_minput').find('.sfdc-gly-spin').fadeOut('slow').remove();
+				logic_row
+					.find('.uifm_clogic_minput')
+					.find('.sfdc-gly-spin')
+					.fadeOut('slow')
+					.remove();
 
 				var str;
 				var str_opts;
@@ -10914,7 +11660,7 @@ if (!$uifm.isFunction(rocketform)) {
 						tmp_opts = field.input2['options'];
 						if (tmp_opts) {
 							str_opts = '';
-							$.each(tmp_opts, function (index2, value2) {
+							$.each(tmp_opts, function(index2, value2) {
 								str_opts += '<option value="' + index2 + '">' + value2.value + '</option>';
 							});
 							str.append(str_opts);
@@ -10929,7 +11675,7 @@ if (!$uifm.isFunction(rocketform)) {
 						tmp_opts = field.input17['options'];
 						if (tmp_opts) {
 							str_opts = '';
-							$.each(tmp_opts, function (index2, value2) {
+							$.each(tmp_opts, function(index2, value2) {
 								str_opts += '<option value="' + index2 + '">' + value2.label + '</option>';
 							});
 							str.append(str_opts);
@@ -10966,16 +11712,19 @@ if (!$uifm.isFunction(rocketform)) {
 							stepinterval: parseFloat(set_step),
 							verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
 							verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
-							initval: parseFloat(set_default)
+							initval: parseFloat(set_default),
 						});
 						break;
 				}
 				logic_row.find('.uifm_clogic_minput').attr('data-loaded', '1');
 			};
-			arguments.callee.clogic_changeMtype = function (elm) {
+			arguments.callee.clogic_changeMtype = function(elm) {
 				var el = $(elm);
 				var el_row = el.closest('.uifm-conditional-row');
-				var cl_sel_mtype = el_row.find('.uifm_clogic_mtype select').chosen().val();
+				var cl_sel_mtype = el_row
+					.find('.uifm_clogic_mtype select')
+					.chosen()
+					.val();
 				var optnro = el_row.data('row-index');
 				var f_id = $('#uifm-field-selected-id').val();
 				var f_step = $('#' + f_id)
@@ -10983,7 +11732,7 @@ if (!$uifm.isFunction(rocketform)) {
 					.data('uifm-step');
 				rocketform.setUiData7('steps_src', parseInt(f_step), f_id, 'clogic', 'list', parseInt(optnro), 'mtype', cl_sel_mtype);
 			};
-			arguments.callee.clogic_changeMinput = function (elm) {
+			arguments.callee.clogic_changeMinput = function(elm) {
 				var el = $(elm);
 				var el_row = el.closest('.uifm-conditional-row');
 				var optnro = el_row.data('row-index');
@@ -10991,7 +11740,10 @@ if (!$uifm.isFunction(rocketform)) {
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
 					.data('uifm-step');
-				var cl_sel_id = el_row.find('.uifm_clogic_fieldsel').chosen().val();
+				var cl_sel_id = el_row
+					.find('.uifm_clogic_fieldsel')
+					.chosen()
+					.val();
 				var type = el_row.find('.uifm_clogic_fieldsel [value="' + cl_sel_id + '"]').data('type');
 				var cl_sel_minput;
 				switch (parseInt(type)) {
@@ -11002,7 +11754,10 @@ if (!$uifm.isFunction(rocketform)) {
 					case 40:
 					case 41:
 					case 42:
-						cl_sel_minput = el_row.find('.uifm_clogic_minput_1').chosen().val();
+						cl_sel_minput = el_row
+							.find('.uifm_clogic_minput_1')
+							.chosen()
+							.val();
 
 						break;
 					case 16:
@@ -11013,7 +11768,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				rocketform.setUiData7('steps_src', parseInt(f_step), f_id, 'clogic', 'list', parseInt(optnro), 'minput', cl_sel_minput);
 			};
-			arguments.callee.clogic_deleteConditional = function (elm) {
+			arguments.callee.clogic_deleteConditional = function(elm) {
 				var el = $(elm);
 				var f_id = $('#uifm-field-selected-id').val();
 				var opt_index = el.closest('.uifm-conditional-row').data('row-index');
@@ -11034,7 +11789,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.clogic_changeField = function (elm) {
+			arguments.callee.clogic_changeField = function(elm) {
 				var el = $(elm);
 				var el_row = el.closest('.uifm-conditional-row');
 				var f_id = $('#uifm-field-selected-id').val();
@@ -11042,20 +11797,26 @@ if (!$uifm.isFunction(rocketform)) {
 					.closest('.uiform-step-pane')
 					.data('uifm-step');
 				var optnro = el_row.data('row-index');
-				var row_field_val = el_row.find('.uifm_clogic_fieldsel').chosen().val();
+				var row_field_val = el_row
+					.find('.uifm_clogic_fieldsel')
+					.chosen()
+					.val();
 
 				var field = this.search_fieldById(row_field_val);
 
 				this.clogic_getTypeMatch(el_row, field.type);
 
-				var uifm_check_timer = setInterval(function () {
+				var uifm_check_timer = setInterval(function() {
 					if (parseInt(el_row.find('.uifm_clogic_mtype').attr('data-loaded')) === 1) {
-						var cl_sel_mtype = el_row.find('.uifm_clogic_mtype select').chosen().val();
+						var cl_sel_mtype = el_row
+							.find('.uifm_clogic_mtype select')
+							.chosen()
+							.val();
 
 
 						rocketform.clogic_getMatchInput(el_row, field);
 
-						var uifm_check2_timer = setInterval(function () {
+						var uifm_check2_timer = setInterval(function() {
 							if (parseInt(el_row.find('.uifm_clogic_minput').attr('data-loaded')) === 1) {
 								var cl_sel_minput;
 								switch (parseInt(field.type)) {
@@ -11065,7 +11826,10 @@ if (!$uifm.isFunction(rocketform)) {
 									case 11:
 									case 41:
 									case 42:
-										cl_sel_minput = el_row.find('.uifm_clogic_minput_1').chosen().val();
+										cl_sel_minput = el_row
+											.find('.uifm_clogic_minput_1')
+											.chosen()
+											.val();
 										break;
 									case 40:
 									case 16:
@@ -11077,7 +11841,7 @@ if (!$uifm.isFunction(rocketform)) {
 								var tmp_list = rocketform.getUiData5('steps_src', parseInt(f_step), f_id, 'clogic', 'list');
 
 								if (tmp_list) {
-									$.each(tmp_list, function (index, value) {
+									$.each(tmp_list, function(index, value) {
 										if (String(value) === '' || value === null) {
 											tmp_list.splice(index, 1);
 										}
@@ -11098,7 +11862,7 @@ if (!$uifm.isFunction(rocketform)) {
 					}
 				}, 500);
 			};
-			arguments.callee.clogic_addNewConditional = function () {
+			arguments.callee.clogic_addNewConditional = function() {
 				var logic_cont = $('#uifm-conditional-logic-list');
 
 				var num = $('#uifm-conditional-logic-list .uifm-conditional-row').length;
@@ -11110,20 +11874,26 @@ if (!$uifm.isFunction(rocketform)) {
 
 				rocketform.clogic_getListField(logic_row);
 
-				var cl_sel_id = logic_row.find('.uifm_clogic_fieldsel').chosen().val();
+				var cl_sel_id = logic_row
+					.find('.uifm_clogic_fieldsel')
+					.chosen()
+					.val();
 				var field = rocketform.search_fieldById(cl_sel_id);
 
 
 				this.clogic_getTypeMatch(logic_row, field.type);
 
-				var uifm_check_timer = setInterval(function () {
+				var uifm_check_timer = setInterval(function() {
 					if (parseInt(logic_row.find('.uifm_clogic_mtype').attr('data-loaded')) === 1) {
-						var cl_sel_mtype = logic_row.find('.uifm_clogic_mtype select').chosen().val();
+						var cl_sel_mtype = logic_row
+							.find('.uifm_clogic_mtype select')
+							.chosen()
+							.val();
 
 
 						rocketform.clogic_getMatchInput(logic_row, field);
 
-						var uifm_check2_timer = setInterval(function () {
+						var uifm_check2_timer = setInterval(function() {
 							if (parseInt(logic_row.find('.uifm_clogic_minput').attr('data-loaded')) === 1) {
 								var cl_sel_minput;
 								switch (parseInt(field.type)) {
@@ -11133,7 +11903,10 @@ if (!$uifm.isFunction(rocketform)) {
 									case 11:
 									case 41:
 									case 42:
-										cl_sel_minput = logic_row.find('.uifm_clogic_minput_1').chosen().val();
+										cl_sel_minput = logic_row
+											.find('.uifm_clogic_minput_1')
+											.chosen()
+											.val();
 										break;
 									case 40:
 									case 16:
@@ -11149,7 +11922,7 @@ if (!$uifm.isFunction(rocketform)) {
 								var tmp_list = rocketform.getUiData5('steps_src', parseInt(f_step), f_id, 'clogic', 'list');
 
 								if (tmp_list) {
-									$.each(tmp_list, function (index, value) {
+									$.each(tmp_list, function(index, value) {
 										if (String(value) === '' || value === null) {
 											tmp_list.splice(index, 1);
 										}
@@ -11171,7 +11944,7 @@ if (!$uifm.isFunction(rocketform)) {
 					}
 				}, 500);
 			};
-			arguments.callee.fieldQuickOptions_selectField = function (id_field) {
+			arguments.callee.fieldQuickOptions_selectField = function(id_field) {
 				var el = $('#' + id_field);
 				var quopts = el.find('.uiform-fields-quick-options');
 				if (quopts.find('.uiform-fields-qopt-select input').is(':checked')) {
@@ -11182,7 +11955,7 @@ if (!$uifm.isFunction(rocketform)) {
 				this.fieldQuickOptions_selectField_showTabs();
 			};
 
-			arguments.callee.fieldQuickOptions_selectField_showTabs = function () {
+			arguments.callee.fieldQuickOptions_selectField_showTabs = function() {
 				var numChecked = $('.uiform-main-form .uiform-fields-qopt-select input:checked').length;
 
 				if (parseInt(numChecked) === 1) {
@@ -11195,16 +11968,22 @@ if (!$uifm.isFunction(rocketform)) {
 
 					rocketform.closeSettingTab();
 					if ($(document).find('.uifm-highlight-edited')) {
-						$(document).find('.uifm-highlight-edited').removeClass('uifm-highlight-edited');
+						$(document)
+							.find('.uifm-highlight-edited')
+							.removeClass('uifm-highlight-edited');
 					}
 				}
 			};
-			arguments.callee.fieldQuickOptions_EditField = function (el) {
-				var pickfield = $(el).closest('.zgpb-fields-quick-options2').parent();
+			arguments.callee.fieldQuickOptions_EditField = function(el) {
+				var pickfield = $(el)
+					.closest('.zgpb-fields-quick-options2')
+					.parent();
 				if (parseInt($('.uiform-main-form .uiform-fields-qopt-select input:checked').length) > 0) {
 					$('.uiform-main-form .uiform-fields-qopt-select input:checked').prop('checked', false);
 				}
-				$('.uiform-main-form .uiform-fields-qopt-select input').closest('.uiform-fields-quick-options').removeCss('display');
+				$('.uiform-main-form .uiform-fields-qopt-select input')
+					.closest('.uiform-fields-quick-options')
+					.removeCss('display');
 
 				rocketform.previewfield_hidePopOver();
 				rocketform.previewfield_helpblock_hidetooltip();
@@ -11213,7 +11992,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields2_fieldQuickOptions_EditField = function (element, ismain) {
+			arguments.callee.fields2_fieldQuickOptions_EditField = function(element, ismain) {
 				$('#zgpb-editor-container .zgpb-fl-gs-block-style-hover').removeClass('zgpb-fl-gs-block-style-hover');
 
 				var el = $(element),
@@ -11272,7 +12051,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.fields2_fieldQuickOptions_DuplicateField = function (id) {
+			arguments.callee.fields2_fieldQuickOptions_DuplicateField = function(id) {
 				rocketform.setInnerVariable('fields_load_settings', 2);
 
 				var pickfield = $('#' + id);
@@ -11300,7 +12079,7 @@ if (!$uifm.isFunction(rocketform)) {
 					el_children = pickfield.find('.zgpb-field-template') || null;
 					if (parseInt(el_children_count) > 0) {
 						children_tmp_a = [];
-						$(el_children).each(function (index2, element2) {
+						$(el_children).each(function(index2, element2) {
 							child_id = $(this).attr('id') ? $(this).attr('id') : 0;
 							children_tmp_a.push(child_id);
 						});
@@ -11322,12 +12101,12 @@ if (!$uifm.isFunction(rocketform)) {
 					var new_parent_id = rocketform.getFieldsAfterDraggable(el, pickfield_type, true, pickfield.attr('id'));
 				}
 
-				setTimeout(function () {
+				setTimeout(function() {
 					rocketform.setInnerVariable('fields_load_settings', 1);
 				}, 1000);
 			};
 
-			arguments.callee.fields2_fieldQuickOptions_Duplicate_process = function (el_parent, type) {
+			arguments.callee.fields2_fieldQuickOptions_Duplicate_process = function(el_parent, type) {
 				var tmp_vars = rocketform.getInnerVariable('fields_duplication_stored');
 
 				var sel_element = $('.uiform-enable-fieldset')
@@ -11352,19 +12131,19 @@ if (!$uifm.isFunction(rocketform)) {
 					case 3:
 					case 4:
 					case 5:
-						uifm_afterdrag_timer = setInterval(function () {
+						uifm_afterdrag_timer = setInterval(function() {
 							if ($('#' + new_parent_id).find('.sfdc-container-fluid').length) {
 								if (parseInt(tmp_vars['inner'].length) != 0) {
-									$.each(tmp_vars['inner'], function (index2, value2) {
+									$.each(tmp_vars['inner'], function(index2, value2) {
 										tmp_new_parent = $('#' + new_parent_id).find('> .sfdc-container-fluid .zgpb-fl-gs-block-style:eq(' + index2 + ')');
 										tmp_new_parent_f = tmp_new_parent.find('> .zgpb-fl-gs-block-inner');
 
-										len_children = $.map(value2['children'], function (n, i) {
+										len_children = $.map(value2['children'], function(n, i) {
 											return i;
 										}).length;
 
 										if (parseInt(len_children) > 0) {
-											$.each(value2['children'], function (index3, value3) {
+											$.each(value2['children'], function(index3, value3) {
 												tmp_f_id = value3['id'];
 												tmp_f_type = value3['type'];
 
@@ -11381,22 +12160,22 @@ if (!$uifm.isFunction(rocketform)) {
 
 						break;
 					case 31:
-						uifm_afterdrag_timer = setInterval(function () {
+						uifm_afterdrag_timer = setInterval(function() {
 							if ($('#' + new_parent_id).find('> .uiform-field-wrap').length) {
 								if (parseInt(tmp_vars['inner'].length) != 0) {
-									$.each(tmp_vars['inner'], function (index2, value2) {
+									$.each(tmp_vars['inner'], function(index2, value2) {
 										tmp_new_parent = $('#' + new_parent_id)
 											.find('> .uiform-field-wrap')
 											.find('.uifm-input31-main-wrap')
 											.first();
 										tmp_new_parent_f = tmp_new_parent.find('> .uiform-grid-inner-col');
 
-										len_children = $.map(value2['children'], function (n, i) {
+										len_children = $.map(value2['children'], function(n, i) {
 											return i;
 										}).length;
 
 										if (parseInt(len_children) > 0) {
-											$.each(value2['children'], function (index3, value3) {
+											$.each(value2['children'], function(index3, value3) {
 												tmp_f_id = value3['id'];
 												tmp_f_type = value3['type'];
 
@@ -11415,7 +12194,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.fieldQuickOptions_Duplicate_checkChildren = function (tmp_f_type, tmp_f_id, tmp_new_parent_f) {
+			arguments.callee.fieldQuickOptions_Duplicate_checkChildren = function(tmp_f_type, tmp_f_id, tmp_new_parent_f) {
 				var tmp_new_id, tmp_sel_el, tmp_new_el, tmp_vars, tmp_new_parent, tmp_new_parent_f2, len_children, tmp_f_id2, tmp_f_type2;
 
 				tmp_vars = rocketform.getInnerVariable('fun_dupli_cur_field');
@@ -11439,19 +12218,19 @@ if (!$uifm.isFunction(rocketform)) {
 					case 4:
 					case 5:
 
-						uifm_afterdrag_timer = setInterval(function () {
+						uifm_afterdrag_timer = setInterval(function() {
 							if ($('#' + tmp_new_id).find('.sfdc-container-fluid').length) {
 								if (tmp_vars.hasOwnProperty('inner') && parseInt(tmp_vars['inner'].length) != 0) {
-									$.each(tmp_vars['inner'], function (index2, value2) {
+									$.each(tmp_vars['inner'], function(index2, value2) {
 										tmp_new_parent = $('#' + tmp_new_id).find('> .sfdc-container-fluid .zgpb-fl-gs-block-style:eq(' + index2 + ')');
 										tmp_new_parent_f2 = tmp_new_parent.find('> .zgpb-fl-gs-block-inner');
 
-										len_children = $.map(value2['children'], function (n, i) {
+										len_children = $.map(value2['children'], function(n, i) {
 											return i;
 										}).length;
 
 										if (parseInt(len_children) > 0) {
-											$.each(value2['children'], function (index3, value3) {
+											$.each(value2['children'], function(index3, value3) {
 												tmp_f_id2 = value3['id'];
 												tmp_f_type2 = value3['type'];
 
@@ -11473,7 +12252,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.fields2_fieldQuickOptions_deleteField = function (id) {
+			arguments.callee.fields2_fieldQuickOptions_deleteField = function(id) {
 				var box_title = $('#zgpb_fld_del_box_title').val(),
 					box_msg = $('#zgpb_fld_del_box_msg').val(),
 					btn1_title = $('#zgpb_fld_del_box_bt1_title').val(),
@@ -11486,14 +12265,14 @@ if (!$uifm.isFunction(rocketform)) {
 						fld_del_opt1: {
 							label: btn1_title,
 							className: 'sfdc-btn-default',
-							callback: function () {
+							callback: function() {
 								$('body').removeClass('sfdc-modal-open');
-							}
+							},
 						},
 						fld_del_opt2: {
 							label: btn2_title,
 							className: 'sfdc-btn-primary',
-							callback: function () {
+							callback: function() {
 								rocketform.fields2_fieldsetting_deleteField(id);
 
 								rocketform.formvariables_removeFromlist(id);
@@ -11503,13 +12282,13 @@ if (!$uifm.isFunction(rocketform)) {
 								zgfm_back_helper.tooltip_removeall();
 
 								$('body').removeClass('sfdc-modal-open');
-							}
-						}
-					}
+							},
+						},
+					},
 				});
 			};
 
-			arguments.callee.fields2_fieldsetting_deleteField = function (idselected) {
+			arguments.callee.fields2_fieldsetting_deleteField = function(idselected) {
 				var fld_step = $('#' + idselected)
 					.closest('.uiform-step-pane')
 					.data('uifm-step');
@@ -11531,10 +12310,10 @@ if (!$uifm.isFunction(rocketform)) {
 				$('#' + idselected).remove();
 			};
 
-			arguments.callee.fieldQuickOptions_DuplicateField = function (element) {
+			arguments.callee.fieldQuickOptions_DuplicateField = function(element) {
 			};
 
-			arguments.callee.fieldQuickOptions_loadFieldSelected = function (pickfield) {
+			arguments.callee.fieldQuickOptions_loadFieldSelected = function(pickfield) {
 				if (pickfield && pickfield.attr('id')) {
 					var idselected = $('#uifm-field-selected-id').val();
 
@@ -11551,17 +12330,17 @@ if (!$uifm.isFunction(rocketform)) {
 					rocketform.enableSettingTabOption('uifm-label');
 				}
 			};
-			arguments.callee.fieldQuickOptions_selectField_equalToOne = function () {
+			arguments.callee.fieldQuickOptions_selectField_equalToOne = function() {
 				rocketform.closeSettingTab();
 				var obj_Checked = $('.uiform-main-form .uiform-fields-qopt-select input:checked');
 				var pickfield;
-				$.each(obj_Checked, function (index, value) {
+				$.each(obj_Checked, function(index, value) {
 					pickfield = $(this).closest('.uiform-field');
 					rocketform.fieldQuickOptions_loadFieldSelected(pickfield);
 				});
 			};
 
-			arguments.callee.fieldQuickOptions_selectField_MoreThanOne = function () {
+			arguments.callee.fieldQuickOptions_selectField_MoreThanOne = function() {
 				try {
 					var ObjChecked = $('.uiform-main-form .uiform-fields-qopt-select input:checked');
 					var ObjChecked_length = $('.uiform-main-form .uiform-fields-qopt-select input:checked').length;
@@ -11571,43 +12350,37 @@ if (!$uifm.isFunction(rocketform)) {
 					var arr_f_input_cont = 0;
 
 					if ($(document).find('.uifm-highlight-edited')) {
-						$(document).find('.uifm-highlight-edited').removeClass('uifm-highlight-edited');
+						$(document)
+							.find('.uifm-highlight-edited')
+							.removeClass('uifm-highlight-edited');
 					}
 
-					$.each(ObjChecked, function (index, value) {
-						var id_field = $(this).closest('.uiform-field').attr('data-typefield');
+					$.each(ObjChecked, function(index, value) {
+						var id_field = $(this)
+							.closest('.uiform-field')
+							.attr('data-typefield');
 						if ($.inArray(parseInt(id_field), arr_f_input) < 0) {
 						} else {
 							arr_f_input_cont++;
 						}
 						arr.push(id_field);
-						$(this).closest('.uiform-field').addClass('uifm-highlight-edited');
+						$(this)
+							.closest('.uiform-field')
+							.addClass('uifm-highlight-edited');
 					});
 
 					$('#uifm-field-selected-id').val('');
 					var clvars;
 					if (parseInt(ObjChecked_length) === arr_f_input_cont) {
 						rocketform.cleanSettingTab();
-						clvars = [
-							'.uifm-tab-fld-label',
-							'.uifm-tab-fld-input',
-							'.uifm-tab-fld-helpblock',
-							'.uifm-set-section-label',
-							'.uifm-set-section-sublabel',
-							'.uifm-set-section-blocktxt',
-							'.uifm-set-section-input-valign',
-							'.uifm-set-section-inputtextbox',
-							'.uifm-set-section-inputboxbg',
-							'.uifm-set-section-inputboxborder',
-							'.uifm-set-section-helpblock'
-						];
-						$.each(clvars, function () {
+						clvars = ['.uifm-tab-fld-label', '.uifm-tab-fld-input', '.uifm-tab-fld-helpblock', '.uifm-set-section-label', '.uifm-set-section-sublabel', '.uifm-set-section-blocktxt', '.uifm-set-section-input-valign', '.uifm-set-section-inputtextbox', '.uifm-set-section-inputboxbg', '.uifm-set-section-inputboxborder', '.uifm-set-section-helpblock'];
+						$.each(clvars, function() {
 							$(String(this)).removeClass('uifm-hide');
 						});
 					} else {
 						rocketform.cleanSettingTab();
 						clvars = ['.uifm-tab-fld-label', '.uifm-tab-fld-helpblock', '.uifm-set-section-label', '.uifm-set-section-sublabel', '.uifm-set-section-blocktxt', '.uifm-set-section-helpblock'];
-						$.each(clvars, function () {
+						$.each(clvars, function() {
 							$(String(this)).removeClass('uifm-hide');
 						});
 					}
@@ -11621,44 +12394,55 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.globalsettings_saveOptions = function () {
+			arguments.callee.globalsettings_saveOptions = function() {
 				rocketform.showLoader(3, true, true);
 				var data = $('#uifrm-setting-form').serialize();
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/settings/ajax_save_options',
 					data: data + '&action=rocket_fbuilder_setting_saveOpts&page=zgfm_form_builder' + '&zgfm_security=' + uiform_vars.ajax_nonce + '&csrf_field_name=' + uiform_vars.csrf_field_name,
-					success: function (msg) {
+					success: function(msg) {
 						rocketform.hideLoader();
 						rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/settings/view_settings');
-					}
+					},
 				});
 			};
 
-			arguments.callee.guidedtour_showTextOnPreviewPane_recalc = function () {
+			arguments.callee.guidedtour_showTextOnPreviewPane_recalc = function() {
 				if (parseInt($('.uiform-items-container').children().length) === 0) {
-					var offsetLeft = $('.uiform-step-content').position().left - $('.uiform-step-content').closest('.uiform-preview-base').position().left;
+					var offsetLeft =
+						$('.uiform-step-content').position().left -
+						$('.uiform-step-content')
+							.closest('.uiform-preview-base')
+							.position().left;
 					var offsetTop = parseFloat($('.uiform-step-content').position().top) + 25;
 					$('.uiform-newform-help-highlight').css({
 						top: offsetTop,
-						left: offsetLeft
+						left: offsetLeft,
 					});
 				}
 			};
 
-			arguments.callee.guidedtour_showTextOnPreviewPane = function (show) {
+			arguments.callee.guidedtour_showTextOnPreviewPane = function(show) {
 				if (show) {
 					if (parseInt($('.uiform-items-container').children().length) === 0) {
-						$('.uiform-builder-preview').append($('.uiform-newform-help-highlight').parent().clone().html());
+						$('.uiform-builder-preview').append(
+							$('.uiform-newform-help-highlight')
+								.parent()
+								.clone()
+								.html()
+						);
 						rocketform.guidedtour_showTextOnPreviewPane_recalc();
 					}
 				} else {
 					if ($('.uiform-builder-preview').find('.uiform-newform-help-highlight')) {
-						$('.uiform-builder-preview').find('.uiform-newform-help-highlight').remove();
+						$('.uiform-builder-preview')
+							.find('.uiform-newform-help-highlight')
+							.remove();
 					}
 				}
 			};
-			arguments.callee.images_getThumnail = function (html) {
+			arguments.callee.images_getThumnail = function(html) {
 				var theClass = $('img', html)
 					.attr('class')
 					.match(/wp-image-[\w-]*\b/);
@@ -11675,13 +12459,13 @@ if (!$uifm.isFunction(rocketform)) {
 						html: encodeURIComponent(html),
 						img_src_full: $('img', html).attr('src'),
 						img_id: img_id,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {}
+					success: function(msg) {},
 				});
 			};
 
-			arguments.callee.templates_load = function (number) {
+			arguments.callee.templates_load = function(number) {
 				rocketform.showLoader(1, true, true);
 				$.ajax({
 					type: 'POST',
@@ -11691,9 +12475,9 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						number: number,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						rocketform.loadFormToEditPanel(msg);
 						rocketform.loading_panelbox('rocketform-bk-dashboard', 0);
 
@@ -11704,11 +12488,11 @@ if (!$uifm.isFunction(rocketform)) {
 
 
 						rocketform.loading_panelbox2(0);
-					}
+					},
 				});
 			};
 
-			arguments.callee.wizardform_refresh = function () {
+			arguments.callee.wizardform_refresh = function() {
 				var wiz_st = parseInt(rocketform.getUiData2('wizard', 'enable_st')) === 1 ? true : false;
 				if (wiz_st) {
 					$('.uiform-step-list').show();
@@ -11727,9 +12511,9 @@ if (!$uifm.isFunction(rocketform)) {
 
 				var tab = $('#uiform-settings-tab3-2');
 				var obj_field = $('.uiform-preview-base');
-				$.each(form_tab_skin, function (i, value) {
+				$.each(form_tab_skin, function(i, value) {
 					if ($.isPlainObject(value)) {
-						$.each(value, function (i2, value2) {
+						$.each(value, function(i2, value2) {
 							rocketform.setDataOptToSetFormTab(tab, 'skin', i + '-' + i2, value2);
 							rocketform.setDataOptToPrevForm(obj_field, 'skin', i + '-' + i2, value2);
 						});
@@ -11740,7 +12524,7 @@ if (!$uifm.isFunction(rocketform)) {
 				});
 			};
 
-			arguments.callee.guidedtour_load = function () {
+			arguments.callee.guidedtour_load = function() {
 				var obj = $('#uiform-container');
 				var getpage = $('[data-uiform-page]').attr('data-uiform-page');
 				var options;
@@ -11752,19 +12536,19 @@ if (!$uifm.isFunction(rocketform)) {
 							steps: [
 								{
 									element: document.querySelector('#guidetour-flist-shortcode'),
-									intro: document.querySelector('#guidetour-flist-shortcode').getAttribute('data-intro')
+									intro: document.querySelector('#guidetour-flist-shortcode').getAttribute('data-intro'),
 								},
 								{
 									element: document.querySelectorAll('.guidetour-flist-edit')[0],
 									intro: document.querySelectorAll('.guidetour-flist-edit')[0].getAttribute('data-intro'),
-									position: 'left'
+									position: 'left',
 								},
 								{
 									element: document.querySelectorAll('.guidetour-flist-del')[0],
 									intro: document.querySelectorAll('.guidetour-flist-del')[0].getAttribute('data-intro'),
-									position: 'left'
-								}
-							]
+									position: 'left',
+								},
+							],
 						});
 						intro.start();
 						break;
@@ -11775,47 +12559,47 @@ if (!$uifm.isFunction(rocketform)) {
 								{
 									element: document.querySelectorAll('.uiform-sidebar-fields')[0],
 									intro: document.querySelectorAll('.uiform-sidebar-fields')[0].getAttribute('data-intro'),
-									position: 'right'
+									position: 'right',
 								},
 								{
 									element: document.querySelectorAll('.uiform-preview-base')[0],
 									intro: document.querySelectorAll('.uiform-preview-base')[0].getAttribute('data-intro'),
-									position: 'right'
+									position: 'right',
 								},
 								{
 									element: document.querySelectorAll('.uiform-builder-maintab-container')[0],
 									intro: document.querySelectorAll('.uiform-builder-maintab-container')[0].getAttribute('data-intro'),
-									position: 'left'
+									position: 'left',
 								},
 								{
 									element: document.querySelectorAll('.uiform-settings-main')[0],
 									intro: document.querySelectorAll('.uiform-settings-main')[0].getAttribute('data-intro'),
-									position: 'left'
+									position: 'left',
 								},
 								{
 									element: document.querySelectorAll('.uiform-settings-skin')[0],
 									intro: document.querySelectorAll('.uiform-settings-skin')[0].getAttribute('data-intro'),
-									position: 'left'
+									position: 'left',
 								},
 								{
 									element: document.querySelectorAll('.uiform-settings-wizard')[0],
 									intro: document.querySelectorAll('.uiform-settings-wizard')[0].getAttribute('data-intro'),
-									position: 'left'
+									position: 'left',
 								},
 								{
 									element: document.querySelectorAll('.uiform-settings-email')[0],
 									intro: document.querySelectorAll('.uiform-settings-email')[0].getAttribute('data-intro'),
-									position: 'left'
+									position: 'left',
 								},
 								{
 									element: document.querySelectorAll('.uiform-settings-subm')[0],
 									intro: document.querySelectorAll('.uiform-settings-subm')[0].getAttribute('data-intro'),
-									position: 'left'
-								}
-							]
+									position: 'left',
+								},
+							],
 						});
 
-						intro.onbeforechange(function (targetElement) {
+						intro.onbeforechange(function(targetElement) {
 							switch (this._currentStep) {
 								case 0:
 
@@ -11843,7 +12627,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.input4settings_generateField = function (obj, section) {
+			arguments.callee.input4settings_generateField = function(obj, section) {
 				var f_id = obj.attr('id');
 				var f_step = $('#' + f_id)
 					.closest('.uiform-step-pane')
@@ -11883,12 +12667,15 @@ if (!$uifm.isFunction(rocketform)) {
 									.append(tmp_el_slider);
 								f_src = $('#' + f_id).find('.uifm-inp4-fld');
 							}
-							f_src.parent().find('.slider').remove();
+							f_src
+								.parent()
+								.find('.slider')
+								.remove();
 							f_src.bootstrapSlider({
 								step: parseFloat(f_set_step),
 								min: parseFloat(f_set_min),
 								max: parseFloat(f_set_max),
-								value: parseFloat(f_set_default)
+								value: parseFloat(f_set_default),
 							});
 						}
 						break;
@@ -11911,13 +12698,16 @@ if (!$uifm.isFunction(rocketform)) {
 								f_src = $('#' + f_id).find('.uifm-inp4-fld');
 							}
 
-							f_src.parent().find('.slider').remove();
+							f_src
+								.parent()
+								.find('.slider')
+								.remove();
 							f_src.bootstrapSlider({
 								step: parseFloat(f_set_step),
 								min: parseFloat(f_set_min),
 								max: parseFloat(f_set_max),
 								range: true,
-								value: [parseFloat(f_set_range1), parseFloat(f_set_range2)]
+								value: [parseFloat(f_set_range1), parseFloat(f_set_range2)],
 							});
 						}
 						break;
@@ -11961,7 +12751,7 @@ if (!$uifm.isFunction(rocketform)) {
 									min: parseFloat(f_set_min),
 									max: parseFloat(f_set_max),
 									stepinterval: parseFloat(f_set_step),
-									initval: parseFloat(f_set_default)
+									initval: parseFloat(f_set_default),
 								});
 							} else {
 								f_src.find('.uifm-inp4-fld').TouchSpin({
@@ -11971,7 +12761,7 @@ if (!$uifm.isFunction(rocketform)) {
 									stepinterval: parseFloat(f_set_step),
 									verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
 									verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
-									initval: parseFloat(f_set_default)
+									initval: parseFloat(f_set_default),
 								});
 							}
 							var f_skin_maxwidth_st = this.getUiData5('steps_src', f_step, f_id, section, 'skin_maxwidth_st');
@@ -11988,7 +12778,7 @@ if (!$uifm.isFunction(rocketform)) {
 					}
 				}
 			};
-			arguments.callee.backup_deleteStoredFile = function (el) {
+			arguments.callee.backup_deleteStoredFile = function(el) {
 				var delfile = el.attr('data-uifm-file');
 				rocketform.loading_panelbox2(1);
 				$.ajax({
@@ -11999,16 +12789,16 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						uifm_frm_delfile: delfile,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function () {
+					success: function() {
 						rocketform.loading_panelbox2(0);
 						var re_url = uiform_vars.url_admin + 'formbuilder/settings/backup_settings';
 						rocketform.redirect_tourl(re_url);
-					}
+					},
 				});
 			};
-			arguments.callee.backup_restoreBackup = function (el) {
+			arguments.callee.backup_restoreBackup = function(el) {
 				var resfile = el.attr('data-uifm-file');
 				rocketform.loading_panelbox2(1);
 				$.ajax({
@@ -12019,16 +12809,16 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						uifm_frm_resfile: resfile,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function () {
+					success: function() {
 						rocketform.loading_panelbox2(0);
 						var msg = $('#uifm_bkp_msg_success_restore').val();
 						$('#uifm-backup-response').html(rocketform.alerts_global_msg(1, msg));
-					}
+					},
 				});
 			};
-			arguments.callee.backup_PopUpRestore = function (el) {
+			arguments.callee.backup_PopUpRestore = function(el) {
 				var box_title = $('#uifm_bkp_restore_box_title').val(),
 					box_msg = $('#uifm_fld_del_box_msg').val(),
 					btn1_title = $('#uifm_fld_del_box_bt1_title').val(),
@@ -12041,22 +12831,22 @@ if (!$uifm.isFunction(rocketform)) {
 						fld_del_opt1: {
 							label: btn1_title,
 							className: 'sfdc-btn-default',
-							callback: function () {
+							callback: function() {
 								$('body').removeClass('sfdc-modal-open');
-							}
+							},
 						},
 						fld_del_opt2: {
 							label: btn2_title,
 							className: 'sfdc-btn-primary',
-							callback: function () {
+							callback: function() {
 								rocketform.backup_restoreBackup($(el));
 								$('body').removeClass('sfdc-modal-open');
-							}
-						}
-					}
+							},
+						},
+					},
 				});
 			};
-			arguments.callee.showFeatureLocked = function (el) {
+			arguments.callee.showFeatureLocked = function(el) {
 
 				$('#uifm_modal_msg').sfdc_modal('show');
 				$('#uifm_modal_msg .sfdc-modal-title').html('Feature locked');
@@ -12073,14 +12863,14 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						message: str_output,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (data) {
+					success: function(data) {
 						$('#uifm_modal_msg .sfdc-modal-body').html(data.msg);
-					}
+					},
 				});
 			};
-			arguments.callee.backup_PopUpDelete = function (el) {
+			arguments.callee.backup_PopUpDelete = function(el) {
 				var box_title = $('#uifm_bkp_del_box_title').val(),
 					box_msg = $('#uifm_fld_del_box_msg').val(),
 					btn1_title = $('#uifm_fld_del_box_bt1_title').val(),
@@ -12093,22 +12883,22 @@ if (!$uifm.isFunction(rocketform)) {
 						fld_del_opt1: {
 							label: btn1_title,
 							className: 'sfdc-btn-default',
-							callback: function () {
+							callback: function() {
 								$('body').removeClass('sfdc-modal-open');
-							}
+							},
 						},
 						fld_del_opt2: {
 							label: btn2_title,
 							className: 'sfdc-btn-primary',
-							callback: function () {
+							callback: function() {
 								rocketform.backup_deleteStoredFile($(el));
 								$('body').removeClass('sfdc-modal-open');
-							}
-						}
-					}
+							},
+						},
+					},
 				});
 			};
-			arguments.callee.backup_create = function () {
+			arguments.callee.backup_create = function() {
 				rocketform.loading_panelbox2(1);
 				$.ajax({
 					type: 'POST',
@@ -12118,22 +12908,22 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						uifm_frm_namebackup: $('#_uifm_backup_namebkp').val(),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function () {
+					success: function() {
 						rocketform.loading_panelbox2(0);
 						$('#_uifm_backup_namebkp').val('');
 						var re_url = uiform_vars.url_admin + 'formbuilder/settings/backup_settings';
 						rocketform.redirect_tourl(re_url);
 					},
-					error: function (XMLHttpRequest, textStatus, errorThrown) {}
+					error: function(XMLHttpRequest, textStatus, errorThrown) {},
 				});
 			};
-			arguments.callee.migrateToVersion3 = function () {
+			arguments.callee.migrateToVersion3 = function() {
 				rocketform.loading_panelbox2(1);
-				$.each(mainrformb['steps_src'], function (i, value) {
+				$.each(mainrformb['steps_src'], function(i, value) {
 					if ($.isPlainObject(value)) {
-						$.each(value, function (i2, value2) {
+						$.each(value, function(i2, value2) {
 							switch (parseInt(mainrformb['steps_src'][i][i2]['type'])) {
 								case 1:
 								case 2:
@@ -12153,7 +12943,7 @@ if (!$uifm.isFunction(rocketform)) {
 				this.migrateToVersion3_process();
 			};
 
-			arguments.callee.migrateToVersion3_process = function () {
+			arguments.callee.migrateToVersion3_process = function() {
 				var tmp_frm = mainrformb;
 
 				$.ajax({
@@ -12166,9 +12956,9 @@ if (!$uifm.isFunction(rocketform)) {
 						uifm_frm_main_title: $('#uifm_frm_main_title').val(),
 						uifm_frm_main_id: $('#uifm_frm_main_id').val(),
 						form_data: encodeURIComponent(JSON.stringify(tmp_frm)),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						msg.data.fmb_html_backend = decodeURIComponent(msg.data.fmb_html_backend);
 						var mainrformb_tmp = {
 							main: msg.data.fmb_data['main'],
@@ -12177,7 +12967,7 @@ if (!$uifm.isFunction(rocketform)) {
 							onsubm: msg.data.fmb_data['onsubm'],
 							num_tabs: msg.data.fmb_data['num_tabs'],
 							steps: msg.data.fmb_data['steps'],
-							steps_src: msg.data.fmb_data['steps_src']
+							steps_src: msg.data.fmb_data['steps_src'],
 						};
 						mainrformb = $.extend(true, {}, mainrformb, mainrformb_tmp);
 
@@ -12186,9 +12976,9 @@ if (!$uifm.isFunction(rocketform)) {
 
 						var id, field_instance;
 						var set_option;
-						$.each(mainrformb['steps_src'], function (i, value) {
+						$.each(mainrformb['steps_src'], function(i, value) {
 							if ($.isPlainObject(value)) {
-								$.each(value, function (i2, value2) {
+								$.each(value, function(i2, value2) {
 									switch (parseInt(mainrformb['steps_src'][i][i2]['type'])) {
 										case 1:
 										case 2:
@@ -12250,11 +13040,11 @@ if (!$uifm.isFunction(rocketform)) {
 						rocketform.wizardform_refresh();
 
 						rocketform.loading_panelbox2(0);
-					}
+					},
 				});
 			};
 
-			arguments.callee.refreshPreviewSection_process = function () {
+			arguments.callee.refreshPreviewSection_process = function() {
 				var tmp_frm = mainrformb;
 
 				$.ajax({
@@ -12267,9 +13057,9 @@ if (!$uifm.isFunction(rocketform)) {
 						uifm_frm_main_title: $('#uifm_frm_main_title').val(),
 						uifm_frm_main_id: $('#uifm_frm_main_id').val(),
 						form_data: encodeURIComponent(JSON.stringify(tmp_frm)),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						msg.data.fmb_html_backend = decodeURIComponent(msg.data.fmb_html_backend);
 
 						rocketform.loadFormToEditPanel(msg);
@@ -12280,13 +13070,13 @@ if (!$uifm.isFunction(rocketform)) {
 
 						if (
 							parseInt(
-								$.map(mainrformb['steps_src'], function (n, i) {
+								$.map(mainrformb['steps_src'], function(n, i) {
 									return i;
 								}).length
 							) != 0
 						) {
-							$.each(mainrformb['steps_src'], function (index3, value3) {
-								$.each(value3, function (index4, value4) {
+							$.each(mainrformb['steps_src'], function(index3, value3) {
+								$.each(value3, function(index4, value4) {
 									switch (parseInt(value4['type'])) {
 										case 1:
 										case 2:
@@ -12309,7 +13099,7 @@ if (!$uifm.isFunction(rocketform)) {
 													label: tmp_opt[key]['label'],
 													checked: tmp_opt[key]['checked'],
 													order: tmp_opt[key]['order'],
-													id: tmp_opt[key]['id']
+													id: tmp_opt[key]['id'],
 												});
 											}
 
@@ -12320,18 +13110,22 @@ if (!$uifm.isFunction(rocketform)) {
 								});
 							});
 						}
-					}
+					},
 				});
 			};
 
-			arguments.callee.refreshPreviewSection = function () {
+			arguments.callee.refreshPreviewSection = function() {
 				rocketform.loading_panelbox2(1);
 				rocketform.saveform_cleanForm();
 				if ($(document).find('.uifm-highlight-edited')) {
-					$(document).find('.uifm-highlight-edited').removeClass('uifm-highlight-edited');
+					$(document)
+						.find('.uifm-highlight-edited')
+						.removeClass('uifm-highlight-edited');
 				}
 				$('.uiform-main-form .uiform-fields-qopt-select input:checked').prop('checked', false);
-				$('.uiform-main-form .uiform-fields-qopt-select input:checked').closest('.uiform-fields-quick-options').removeCss('display');
+				$('.uiform-main-form .uiform-fields-qopt-select input:checked')
+					.closest('.uiform-fields-quick-options')
+					.removeCss('display');
 				this.closeSettingTab();
 				rocketform.showLoader(2, true, true);
 
@@ -12339,7 +13133,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				if (parseInt($('.uiform-main-form').find('.uifm-input-ratingstar').length) != 0) {
 					var rockfm_tmp_rs = $('.uiform-main-form').find('.uifm-input-ratingstar');
-					rockfm_tmp_rs.each(function (i) {
+					rockfm_tmp_rs.each(function(i) {
 						$(this).rating('destroy');
 					});
 				}
@@ -12347,7 +13141,7 @@ if (!$uifm.isFunction(rocketform)) {
 				if (parseInt($('.uiform-main-form').find('.uifm-input-ratingstar').length) != 0) {
 					$('.uiform-main-form')
 						.find('.uifm-input-ratingstar')
-						.each(function (i) {
+						.each(function(i) {
 							rocketform.input9settings_updateField($(this).closest('.uiform-field'), 'input9');
 						});
 				}
@@ -12357,13 +13151,17 @@ if (!$uifm.isFunction(rocketform)) {
 				$('.sfdc-tooltip').hide();
 			};
 
-			arguments.callee.refreshPreviewSectionFromData = function () {
+			arguments.callee.refreshPreviewSectionFromData = function() {
 				rocketform.loading_panelbox2(1);
 				if ($(document).find('.uifm-highlight-edited')) {
-					$(document).find('.uifm-highlight-edited').removeClass('uifm-highlight-edited');
+					$(document)
+						.find('.uifm-highlight-edited')
+						.removeClass('uifm-highlight-edited');
 				}
 				$('.uiform-main-form .uiform-fields-qopt-select input:checked').prop('checked', false);
-				$('.uiform-main-form .uiform-fields-qopt-select input:checked').closest('.uiform-fields-quick-options').removeCss('display');
+				$('.uiform-main-form .uiform-fields-qopt-select input:checked')
+					.closest('.uiform-fields-quick-options')
+					.removeCss('display');
 				this.closeSettingTab();
 				rocketform.showLoader(2, true, true);
 
@@ -12373,7 +13171,7 @@ if (!$uifm.isFunction(rocketform)) {
 					tabtitle_tmp;
 				var var_steps_src = this.getUiData('steps_src');
 
-				$.each(var_steps_src, function (i, value) {
+				$.each(var_steps_src, function(i, value) {
 					tabcontent_tmp = {};
 					tabcontent_tmp.content = rocketform.getLayoutFormByStep(i);
 					tab_content[i] = tabcontent_tmp;
@@ -12384,7 +13182,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 				if (parseInt($('.uiform-main-form').find('.uifm-input-ratingstar').length) != 0) {
 					var rockfm_tmp_rs = $('.uiform-main-form').find('.uifm-input-ratingstar');
-					rockfm_tmp_rs.each(function (i) {
+					rockfm_tmp_rs.each(function(i) {
 						$(this).rating('destroy');
 					});
 				}
@@ -12392,7 +13190,7 @@ if (!$uifm.isFunction(rocketform)) {
 				if (parseInt($('.uiform-main-form').find('.uifm-input-ratingstar').length) != 0) {
 					$('.uiform-main-form')
 						.find('.uifm-input-ratingstar')
-						.each(function (i) {
+						.each(function(i) {
 							rocketform.input9settings_updateField($(this).closest('.uiform-field'), 'input9');
 						});
 				}
@@ -12402,7 +13200,7 @@ if (!$uifm.isFunction(rocketform)) {
 				$('.sfdc-tooltip').hide();
 			};
 
-			arguments.callee.form_getcode = function (form_id) {
+			arguments.callee.form_getcode = function(form_id) {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/getcode',
@@ -12411,24 +13209,24 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: form_id,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					beforeSend: function () {
+					beforeSend: function() {
 						$('#uifm_modal_msg .sfdc-modal-body').html(' <i class="sfdc-glyphicon sfdc-glyphicon-refresh gly-spin"></i>');
 					},
-					success: function (response) {
+					success: function(response) {
 						var arrJson = (JSON && JSON.parse(response)) || $.parseJSON(response);
 						$('#uifm_modal_msg').sfdc_modal('show');
 						$('#uifm_modal_msg .sfdc-modal-title').html(arrJson.html_title);
 						$('#uifm_modal_msg .sfdc-modal-body').html(arrJson.html);
-					}
+					},
 				});
 			};
-			arguments.callee.modal_close = function () {
+			arguments.callee.modal_close = function() {
 				$('#modaltemplate').sfdc_modal('hide');
 			};
 
-			arguments.callee.formvariables_genListToIntMem = function () {
+			arguments.callee.formvariables_genListToIntMem = function() {
 				rocketform.formvariables_generateTable();
 				return;
 
@@ -12439,13 +13237,13 @@ if (!$uifm.isFunction(rocketform)) {
 
 				if (
 					parseInt(
-						$.map(mainrformb['steps_src'], function (n, i) {
+						$.map(mainrformb['steps_src'], function(n, i) {
 							return i;
 						}).length
 					) != 0
 				) {
-					$.each(mainrformb['steps_src'], function (index3, value3) {
-						$.each(value3, function (index4, value4) {
+					$.each(mainrformb['steps_src'], function(index3, value3) {
+						$.each(value3, function(index4, value4) {
 							if (parseInt($('#' + index4).length) != 0) {
 								switch (parseInt(value4['type'])) {
 									case 6:
@@ -12481,24 +13279,24 @@ if (!$uifm.isFunction(rocketform)) {
 					});
 				}
 			};
-			arguments.callee.formvariables_addTolist = function (value) {
+			arguments.callee.formvariables_addTolist = function(value) {
 				var temp;
 				temp = this.getInnerVariable('form_rec_vars');
 				if ($.inArray(value, temp) == -1) temp.push(value);
 				this.setInnerVariable('form_rec_vars', temp);
 				rocketform.formvariables_generateTable();
 			};
-			arguments.callee.formvariables_removeFromlist = function (id) {
+			arguments.callee.formvariables_removeFromlist = function(id) {
 				var temp;
 				temp = this.getInnerVariable('form_rec_vars');
 				var removeItem = id;
-				temp = $.grep(temp, function (value) {
+				temp = $.grep(temp, function(value) {
 					return value != removeItem;
 				});
 				this.setInnerVariable('form_rec_vars', temp);
 				rocketform.formvariables_generateTable();
 			};
-			arguments.callee.formvariables_generateTable = function () {
+			arguments.callee.formvariables_generateTable = function() {
 				var id = $('#uifm_frm_main_id').val();
 
 				var tmp_frm = mainrformb;
@@ -12512,15 +13310,15 @@ if (!$uifm.isFunction(rocketform)) {
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: id,
 						form_data: encodeURIComponent(JSON.stringify(tmp_frm)),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#uiform-form-mailset-vars-tab-1 .uifm-tab-inner-vars-1').html(msg.message);
-					}
+					},
 				});
 			};
 
-			arguments.callee.formvariables_findFieldName = function (id) {
+			arguments.callee.formvariables_findFieldName = function(id) {
 				var tmpval = '';
 				dance: for (var i in mainrformb['steps_src']) {
 					for (var j in mainrformb['steps_src'][i]) {
@@ -12533,7 +13331,7 @@ if (!$uifm.isFunction(rocketform)) {
 				return tmpval;
 			};
 
-			arguments.callee.formvariables_findFieldType = function (id) {
+			arguments.callee.formvariables_findFieldType = function(id) {
 				var tmpval = '';
 				dance: for (var i in mainrformb['steps_src']) {
 					for (var j in mainrformb['steps_src'][i]) {
@@ -12546,18 +13344,18 @@ if (!$uifm.isFunction(rocketform)) {
 				return tmpval;
 			};
 
-			arguments.callee.fieldsdata_email_genListToIntMem = function () {
+			arguments.callee.fieldsdata_email_genListToIntMem = function() {
 				rocketform.setInnerVariable('form_vars_fields_emailval', []);
 
 				if (
 					parseInt(
-						$.map(mainrformb['steps_src'], function (n, i) {
+						$.map(mainrformb['steps_src'], function(n, i) {
 							return i;
 						}).length
 					) != 0
 				) {
-					$.each(mainrformb['steps_src'], function (index3, value3) {
-						$.each(value3, function (index4, value4) {
+					$.each(mainrformb['steps_src'], function(index3, value3) {
+						$.each(value3, function(index4, value4) {
 							if (parseInt($('#' + index4).length) != 0) {
 								switch (parseInt(value4['type'])) {
 									case 6:
@@ -12578,20 +13376,20 @@ if (!$uifm.isFunction(rocketform)) {
 
 				rocketform.adminemail_generateHtml();
 			};
-			arguments.callee.fieldsdata_email_addTolist = function (value) {
+			arguments.callee.fieldsdata_email_addTolist = function(value) {
 
 				var temp;
 				temp = this.getInnerVariable('form_vars_fields_emailval');
 				if ($.inArray(value, temp) == -1) temp.push(value);
 				this.setInnerVariable('form_vars_fields_emailval', temp);
 			};
-			arguments.callee.customeremail_generateHtml = function () {
+			arguments.callee.customeremail_generateHtml = function() {
 				$('#uifm_frm_email_usr_recipient').html('');
 				$('#uifm_frm_email_usr_recipient').append('<option value="">' + $('#uifm_frm_email_usr_recipient').attr('data-uifm-firstoption') + '</option>');
 
 				var temp = this.getInnerVariable('form_vars_fields_emailval');
 
-				$.each(temp, function (index, value) {
+				$.each(temp, function(index, value) {
 					$('#uifm_frm_email_usr_recipient').append('<option value="' + value + '">' + rocketform.formvariables_findFieldName(value) + '</option>');
 				});
 
@@ -12605,13 +13403,13 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.adminemail_generateHtml = function () {
+			arguments.callee.adminemail_generateHtml = function() {
 				$('#uifm_frm_email_replyto').html('');
 				$('#uifm_frm_email_replyto').append('<option value="">' + $('#uifm_frm_email_replyto').attr('data-uifm-firstoption') + '</option>');
 
 				var temp = this.getInnerVariable('form_vars_fields_emailval');
 
-				$.each(temp, function (index, value) {
+				$.each(temp, function(index, value) {
 					$('#uifm_frm_email_replyto').append('<option value="' + value + '">' + rocketform.formvariables_findFieldName(value) + '</option>');
 				});
 
@@ -12625,7 +13423,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.clogicgraph_popup = function () {
+			arguments.callee.clogicgraph_popup = function() {
 				$('#uiform-clogicgraph').dialog('open');
 
 				$.ajax({
@@ -12636,20 +13434,20 @@ if (!$uifm.isFunction(rocketform)) {
 						page: 'zgfm_form_builder',
 						csrf_field_name: uiform_vars.csrf_field_name,
 						zgfm_security: uiform_vars.ajax_nonce,
-						form_data: encodeURIComponent(JSON.stringify(mainrformb))
+						form_data: encodeURIComponent(JSON.stringify(mainrformb)),
 					},
-					beforeSend: function () {
+					beforeSend: function() {
 						$('#uiform-clogicgraph').html(' <i class="sfdc-glyphicon sfdc-glyphicon-refresh gly-spin"></i>');
 					},
-					success: function (response) {
+					success: function(response) {
 						var arrJson = (JSON && JSON.parse(response)) || $.parseJSON(response);
 						$('#uiform-clogicgraph').html(arrJson.html);
-					}
+					},
 				});
 			};
 
 
-			arguments.callee.loadFieldSettingTab = function (tmp_fld_load) {
+			arguments.callee.loadFieldSettingTab = function(tmp_fld_load) {
 				try {
 					var block;
 
@@ -12710,7 +13508,7 @@ if (!$uifm.isFunction(rocketform)) {
 						let tmp_gfld = $('<div/>')
 							.html(
 								tmp_get_fieldOption({
-									site_url: rockfm_vars.uifm_baseurl
+									site_url: rockfm_vars.uifm_baseurl,
 								})
 							)
 							.text();
@@ -12722,7 +13520,7 @@ if (!$uifm.isFunction(rocketform)) {
 								field_id: id,
 								field_type: type,
 								field_block: block,
-								addons: ['func_anim']
+								addons: ['func_anim'],
 							};
 						} else {
 							tmp_arr = {
@@ -12730,7 +13528,7 @@ if (!$uifm.isFunction(rocketform)) {
 								field_id: id,
 								field_type: type,
 								field_block: block,
-								addons: []
+								addons: [],
 							};
 						}
 
@@ -12746,11 +13544,11 @@ if (!$uifm.isFunction(rocketform)) {
 								zgfm_security: uiform_vars.ajax_nonce,
 								field_id: id,
 								field_type: type,
-								field_block: block
+								field_block: block,
 							},
-							success: function (msg) {
+							success: function(msg) {
 								zgfm_back_fld_options.load_on_selecteField(tmp_fld_load, msg);
-							}
+							},
 						});
 					}
 
@@ -12760,7 +13558,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.tinymceEvent_removeInst = function () {
+			arguments.callee.tinymceEvent_removeInst = function() {
 				var editor;
 				if ($('#uiform-build-field-tab').find('#uifm_fld_msc_text')) {
 					if (typeof tinyMCE != 'undefined') {
@@ -12800,7 +13598,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.tinymceEvent_init = function () {
+			arguments.callee.tinymceEvent_init = function() {
 				return;
 				var wpTxtContainer;
 				if ($('#uiform-build-field-tab').find('#uifm_fld_msc_text')) {
@@ -12844,7 +13642,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.checkIntegrityTinyMCE = function (type) {
+			arguments.callee.checkIntegrityTinyMCE = function(type) {
 				var status = false;
 				try {
 					var rich = typeof tinyMCE != 'undefined' && tinyMCE.activeEditor && !tinyMCE.activeEditor.isHidden();
@@ -12860,12 +13658,12 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields_events_bswitch = function (tab) {
+			arguments.callee.fields_events_bswitch = function(tab) {
 				try {
 					$('.switch-field').bootstrapSwitchZgpb();
 					$('.uifm-inp15-fld').bootstrapSwitchZgpb();
 
-					$('#uiform-build-field-tab .switch-field').on('switchChange.bootstrapSwitchZgpb', function (event, state) {
+					$('#uiform-build-field-tab .switch-field').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
 						var f_id = $('#uifm-field-selected-id').val();
 						var store = $(this).data('field-store');
 						var f_store = store.split('-');
@@ -12876,7 +13674,7 @@ if (!$uifm.isFunction(rocketform)) {
 						var field_Checked = $('.uiform-main-form .uiform-fields-qopt-select input:checked');
 						if (parseInt(field_Checked.length) > 1) {
 							obj_field = field_Checked.closest('.uiform-field');
-							$.each(obj_field, function (index2, value2) {
+							$.each(obj_field, function(index2, value2) {
 								f_id = $(this).attr('id');
 								f_step = $('#' + f_id)
 									.closest('.uiform-step-pane')
@@ -12904,7 +13702,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields_events_spinner = function (tab) {
+			arguments.callee.fields_events_spinner = function(tab) {
 				try {
 					$('.uifm_fld_inp4_spinner').TouchSpin({
 						verticalbuttons: true,
@@ -12913,7 +13711,7 @@ if (!$uifm.isFunction(rocketform)) {
 						decimals: 3,
 						step: 0.001,
 						verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 					});
 					$('.uifm_fld_inp6_spinner').TouchSpin({
 						verticalbuttons: true,
@@ -12921,7 +13719,7 @@ if (!$uifm.isFunction(rocketform)) {
 						max: 5,
 						stepinterval: 1,
 						verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 					});
 					$('.uifm_fld_inp2_stl1').TouchSpin({
 						verticalbuttons: true,
@@ -12929,7 +13727,7 @@ if (!$uifm.isFunction(rocketform)) {
 						max: 100,
 						stepinterval: 1,
 						verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 					});
 
 					$('.uifm_fld_input16_spinner').TouchSpin({
@@ -12938,7 +13736,7 @@ if (!$uifm.isFunction(rocketform)) {
 						max: 200,
 						stepinterval: 1,
 						verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 					});
 
 					$('.uifm_fld_inp17_thopt_spinner').TouchSpin({
@@ -12947,7 +13745,7 @@ if (!$uifm.isFunction(rocketform)) {
 						max: 1000,
 						stepinterval: 1,
 						verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 					});
 					$('.uifm_fld_inp17_thopt_spinner_2').TouchSpin({
 						verticalbuttons: true,
@@ -12955,10 +13753,10 @@ if (!$uifm.isFunction(rocketform)) {
 						max: 1000,
 						stepinterval: 1,
 						verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 					});
 
-					$('.uifm_fld_inp4_spinner,.uifm_fld_inp6_spinner,.uifm_fld_inp4_spinner,.uifm_fld_input16_spinner,.uifm_fld_inp2_stl1').on('change', function (e) {
+					$('.uifm_fld_inp4_spinner,.uifm_fld_inp6_spinner,.uifm_fld_inp4_spinner,.uifm_fld_input16_spinner,.uifm_fld_inp2_stl1').on('change', function(e) {
 						var f_id = $('#uifm-field-selected-id').val();
 						var store = $(e.target).data('field-store');
 						var f_store = store.split('-');
@@ -12980,7 +13778,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields_events_general = function (tab) {
+			arguments.callee.fields_events_general = function(tab) {
 				try {
 					$('#uiform-build-field-tab .uifm_tinymce_obj').html('');
 
@@ -12997,25 +13795,27 @@ if (!$uifm.isFunction(rocketform)) {
 						verify_html: false,
 						codemirror: {
 							indentOnInit: true, 
-							path: 'CodeMirror'
+							path: 'CodeMirror',
 						},
 						image_advtab: true,
 						toolbar1: 'undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect',
 						toolbar2: '| image | media | link unlink anchor | forecolor backcolor | print preview code | youtube | qrcode | flickr | picasa ',
 						file_browser_callback: elFinderBrowser,
-						setup: function (ed) {
-							ed.on('change KeyUp', function (e) {
+						setup: function(ed) {
+							ed.on('change KeyUp', function(e) {
 								rocketform.captureEventTinyMCE(ed, e);
 							});
-						}
+						},
 					});
 
 					uiformRefreshFontMenu();
 
 					jQuery('#uiform-build-field-tab select.sfm')
 						.chosen()
-						.change(function () {
-							var font_sel = jQuery(this).data('stylesFontMenu').uifm_preview_font_change();
+						.change(function() {
+							var font_sel = jQuery(this)
+								.data('stylesFontMenu')
+								.uifm_preview_font_change();
 							var f_id = $('#uifm-field-selected-id').val();
 							var store = $(this).data('field-store');
 							var f_store = store.split('-');
@@ -13028,7 +13828,7 @@ if (!$uifm.isFunction(rocketform)) {
 							if (parseInt(field_Checked.length) > 1) {
 								if (f_val) {
 									obj_field = field_Checked.closest('.uiform-field');
-									$.each(obj_field, function (index2, value2) {
+									$.each(obj_field, function(index2, value2) {
 										f_id = $(this).attr('id');
 										f_step = $('#' + f_id)
 											.closest('.uiform-step-pane')
@@ -13051,11 +13851,11 @@ if (!$uifm.isFunction(rocketform)) {
 							}
 						});
 
-					$('#uiform-build-field-tab select.sfm').change(function () {});
+					$('#uiform-build-field-tab select.sfm').change(function() {});
 
 					$('button[role="iconpicker"],div[role="iconpicker"]').iconpicker();
 
-					$(document).on('change keyup focus keypress', '#uifm_fld_main_fldname', function (e) {
+					$(document).on('change keyup focus keypress', '#uifm_fld_main_fldname', function(e) {
 						var fldname = $('#uifm_fld_main_fldname').val();
 						var pickfield = $('#uifm-field-selected-id').val();
 						var f_step = $('#' + pickfield)
@@ -13064,7 +13864,7 @@ if (!$uifm.isFunction(rocketform)) {
 						rocketform.fieldsetting_updateName(f_step, pickfield, fldname);
 					});
 
-					$('#uifm_fld_main_fldname').blur(function () {
+					$('#uifm_fld_main_fldname').blur(function() {
 						rocketform.formvariables_generateTable();
 						rocketform.customeremail_generateHtml();
 
@@ -13086,7 +13886,7 @@ if (!$uifm.isFunction(rocketform)) {
 						}
 					});
 
-					$(".uifm-fld-val-opts .sfdc-btn-group > .sfdc-btn[data-settings-option='group-checkboxes']").click(function () {
+					$(".uifm-fld-val-opts .sfdc-btn-group > .sfdc-btn[data-settings-option='group-checkboxes']").click(function() {
 						var element = $(this);
 						var parent_val = element.parent().parent();
 						var valbox;
@@ -13103,7 +13903,10 @@ if (!$uifm.isFunction(rocketform)) {
 
 						if (!element.hasClass('sfdc-active')) {
 							$('.uifm-custom-validator').hide();
-							parent_val.find('.uifm-f-setoption-gchecks').not(element).removeClass('sfdc-active');
+							parent_val
+								.find('.uifm-f-setoption-gchecks')
+								.not(element)
+								.removeClass('sfdc-active');
 
 
 							element.addClass('sfdc-active');
@@ -13126,15 +13929,15 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.setDataOptToPrevField(obj_field, store, f_val);
 						}
 					});
-					$(".sfdc-btn-group > .sfdc-btn[data-settings-option='group-radiobutton']").click(function (e) {
+					$(".sfdc-btn-group > .sfdc-btn[data-settings-option='group-radiobutton']").click(function(e) {
 						var element = $(this),
 							parent = element.parent();
 						parent
 							.children('.sfdc-btn[data-toggle-enable]')
-							.removeClass(function () {
+							.removeClass(function() {
 								return 'sfdc-active';
 							})
-							.addClass(function () {
+							.addClass(function() {
 								return '';
 							})
 							.children('input')
@@ -13144,11 +13947,11 @@ if (!$uifm.isFunction(rocketform)) {
 						element.children('input').prop('checked', true);
 					});
 
-					$(document).on('keyup focus', '#uifm_fld_msc_text,#uifm_fld_inp3_html,#uifm_fld_price_lbl_format,#uifm_frm_inp18_txt_cont', function (e) {
+					$(document).on('keyup focus', '#uifm_fld_msc_text,#uifm_fld_inp3_html,#uifm_fld_price_lbl_format,#uifm_frm_inp18_txt_cont', function(e) {
 						rocketform.captureEventTinyMCE2(e);
 					});
 
-					$(document).on('click', '.uifm-f-setoption-btn', function (e) {
+					$(document).on('click', '.uifm-f-setoption-btn', function(e) {
 						if (e) {
 							e.stopPropagation();
 							e.preventDefault();
@@ -13159,13 +13962,15 @@ if (!$uifm.isFunction(rocketform)) {
 						var f_store = store.split('-');
 						var f_sec = f_store[0];
 						var f_opt = f_store[1];
-						var f_val = $(this).find('input').val();
+						var f_val = $(this)
+							.find('input')
+							.val();
 						var f_step;
 						var field_Checked = $('.uiform-main-form .uiform-fields-qopt-select input:checked');
 
 						if (parseInt(field_Checked.length) > 1) {
 							obj_field = field_Checked.closest('.uiform-field');
-							$.each(obj_field, function (index2, value2) {
+							$.each(obj_field, function(index2, value2) {
 								f_id = $(this).attr('id');
 								f_step = $('#' + f_id)
 									.closest('.uiform-step-pane')
@@ -13188,7 +13993,7 @@ if (!$uifm.isFunction(rocketform)) {
 						}
 					});
 
-					$(document).on('change', '#uiform-build-field-tab .uifm-f-setoption-st', function (e) {
+					$(document).on('change', '#uiform-build-field-tab .uifm-f-setoption-st', function(e) {
 						if (e) {
 							e.stopPropagation();
 							e.preventDefault();
@@ -13206,7 +14011,7 @@ if (!$uifm.isFunction(rocketform)) {
 						if (parseInt(field_Checked.length) > 1) {
 							obj_field = field_Checked.closest('.uiform-field');
 
-							$.each(obj_field, function (index2, value2) {
+							$.each(obj_field, function(index2, value2) {
 								f_id = $(this).attr('id');
 								f_step = $('#' + f_id)
 									.closest('.uiform-step-pane')
@@ -13229,7 +14034,7 @@ if (!$uifm.isFunction(rocketform)) {
 						}
 					});
 
-					$(document).on('change keyup', '.uifm-f-setoption', function (e) {
+					$(document).on('change keyup', '.uifm-f-setoption', function(e) {
 						if (e) {
 							e.stopPropagation();
 							e.preventDefault();
@@ -13245,7 +14050,7 @@ if (!$uifm.isFunction(rocketform)) {
 						if (parseInt(field_Checked.length) > 1) {
 							obj_field = field_Checked.closest('.uiform-field');
 
-							$.each(obj_field, function (index2, value2) {
+							$.each(obj_field, function(index2, value2) {
 								f_id = $(this).attr('id');
 								f_step = $('#' + f_id)
 									.closest('.uiform-step-pane')
@@ -13268,7 +14073,7 @@ if (!$uifm.isFunction(rocketform)) {
 					});
 
 
-					$('#uifm_fld_inp2_style_type').on('change', function (e) {
+					$('#uifm_fld_inp2_style_type').on('change', function(e) {
 						var f_val = $(e.target).val();
 						switch (parseInt(f_val)) {
 							case 1:
@@ -13279,14 +14084,17 @@ if (!$uifm.isFunction(rocketform)) {
 						}
 					});
 
-					$(document).on('change keyup', '.uifm-f-setoption-font', function (e) {
+					$(document).on('change keyup', '.uifm-f-setoption-font', function(e) {
 						if (e) {
 							e.stopPropagation();
 							e.preventDefault();
 						}
 
 						var f_id = $('#uifm-field-selected-id').val();
-						var store = $(this).parent().find('select').data('field-store');
+						var store = $(this)
+							.parent()
+							.find('select')
+							.data('field-store');
 						var f_store = store.split('-');
 
 						var f_sec = f_store[0];
@@ -13298,7 +14106,7 @@ if (!$uifm.isFunction(rocketform)) {
 						if (parseInt(field_Checked.length) > 1) {
 							obj_field = field_Checked.closest('.uiform-field');
 
-							$.each(obj_field, function (index2, value2) {
+							$.each(obj_field, function(index2, value2) {
 								f_id = $(this).attr('id');
 								f_step = $('#' + f_id)
 									.closest('.uiform-step-pane')
@@ -13320,7 +14128,7 @@ if (!$uifm.isFunction(rocketform)) {
 						}
 					});
 
-					$('.sfdc-input-group-btn > .sfdc-btn').click(function () {
+					$('.sfdc-input-group-btn > .sfdc-btn').click(function() {
 						var element = $(this),
 							input = element.find('input');
 						if (parseInt(input.val()) === 0) {
@@ -13332,18 +14140,30 @@ if (!$uifm.isFunction(rocketform)) {
 						}
 					});
 
-					$('#uifm_fld_elbg_type_1').on('click', function () {
-						$('#uifm_fld_elbg_color_1').closest('.sfdc-row').show();
-						$('#uifm_fld_elbg_color_2').closest('.sfdc-row').hide();
-						$('#uifm_fld_elbg_color_3').closest('.sfdc-row').hide();
+					$('#uifm_fld_elbg_type_1').on('click', function() {
+						$('#uifm_fld_elbg_color_1')
+							.closest('.sfdc-row')
+							.show();
+						$('#uifm_fld_elbg_color_2')
+							.closest('.sfdc-row')
+							.hide();
+						$('#uifm_fld_elbg_color_3')
+							.closest('.sfdc-row')
+							.hide();
 					});
-					$('#uifm_fld_elbg_type_2').on('click', function () {
-						$('#uifm_fld_elbg_color_1').closest('.sfdc-row').hide();
-						$('#uifm_fld_elbg_color_2').closest('.sfdc-row').show();
-						$('#uifm_fld_elbg_color_3').closest('.sfdc-row').show();
+					$('#uifm_fld_elbg_type_2').on('click', function() {
+						$('#uifm_fld_elbg_color_1')
+							.closest('.sfdc-row')
+							.hide();
+						$('#uifm_fld_elbg_color_2')
+							.closest('.sfdc-row')
+							.show();
+						$('#uifm_fld_elbg_color_3')
+							.closest('.sfdc-row')
+							.show();
 					});
 
-					$('#uifm_fld_val_reqicon_img,#uifm_fld_inp2_stl1_icmark').on('change', function (e) {
+					$('#uifm_fld_val_reqicon_img,#uifm_fld_inp2_stl1_icmark').on('change', function(e) {
 						if (e) {
 							e.stopPropagation();
 							e.preventDefault();
@@ -13365,7 +14185,7 @@ if (!$uifm.isFunction(rocketform)) {
 					});
 
 
-					$('#uifm_frm_clogic_st').on('switchChange.bootstrapSwitchZgpb', function (event, state) {
+					$('#uifm_frm_clogic_st').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
 						var f_val = state ? 1 : 0;
 						if (f_val === 1) {
 							$('#uifm-show-conditional-logic').show();
@@ -13378,20 +14198,20 @@ if (!$uifm.isFunction(rocketform)) {
 
 					var setfield_tab_active;
 
-					$('.uiform-set-options-tabs ul.sfdc-nav-tabs').on('shown.bs.sfdc-tab', function (e) {
+					$('.uiform-set-options-tabs ul.sfdc-nav-tabs').on('shown.bs.sfdc-tab', function(e) {
 						setfield_tab_active = $(e.target).data('uifm-title');
 
 						rocketform.setInnerVariable('setfield_tab_active', setfield_tab_active);
 						rocketform.previewfield_hidePopOver();
 					});
-					$('.uiformc-menu-wrap ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"],.uiform-set-options-tabs ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function (e) {
+					$('.uiformc-menu-wrap ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"],.uiform-set-options-tabs ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function(e) {
 
 						if (!$(e.target).hasClass('uifm-tab-fld-validation')) {
 							$('.sfdc-popover').popover('hide');
 						}
 					});
 
-					$('.uiformc-menu-wrap ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"],.uiform-set-options-tabs ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function (e) {
+					$('.uiformc-menu-wrap ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"],.uiform-set-options-tabs ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function(e) {
 						setfield_tab_active = $(e.target).data('uifm-title');
 
 						if (String(setfield_tab_active) === 'helpb') {
@@ -13406,7 +14226,7 @@ if (!$uifm.isFunction(rocketform)) {
 
 					$('.uifm_field_font_selectpicker').selectpicker({
 						style: 'btn-info',
-						size: 4
+						size: 4,
 					});
 				} catch (ex) {
 					console.error(' error fields_events_general ', ex.message);
@@ -13414,7 +14234,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields2_events_cpicker = function (tab) {
+			arguments.callee.fields2_events_cpicker = function(tab) {
 				if (tab.find('.zgpb-custom-color').data('colorpicker')) {
 				} else {
 					tab.find('.zgpb-custom-color').colorpicker();
@@ -13422,9 +14242,11 @@ if (!$uifm.isFunction(rocketform)) {
 					tab
 						.find('.zgpb-custom-color')
 						.colorpicker()
-						.on('changeColor', function (ev) {
+						.on('changeColor', function(ev) {
 							var f_store = $(this).data('field-store');
-							var f_val = $(this).find('input').val();
+							var f_val = $(this)
+								.find('input')
+								.val();
 
 							rocketform.fields2_updateModalFieldCoreAndPreview(f_store, f_val);
 						});
@@ -13432,19 +14254,21 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields_events_cpicker = function (tab) {
+			arguments.callee.fields_events_cpicker = function(tab) {
 				try {
 					tab.find('.uifm-custom-color').colorpicker();
 
 					$('#uiform-build-field-tab .uifm-custom-color')
 						.colorpicker()
-						.on('changeColor', function (ev) {
+						.on('changeColor', function(ev) {
 							var f_id = $('#uifm-field-selected-id').val();
 							var store = $(this).data('field-store');
 							var f_store = store.split('-');
 							var f_sec = f_store[0];
 							var f_opt = f_store[1];
-							var f_val = $(this).find('input').val();
+							var f_val = $(this)
+								.find('input')
+								.val();
 							var f_step;
 							var obj_field;
 							var field_Checked = $('.uiform-main-form .uiform-fields-qopt-select input:checked');
@@ -13452,7 +14276,7 @@ if (!$uifm.isFunction(rocketform)) {
 								if (f_val) {
 									obj_field = field_Checked.closest('.uiform-field');
 
-									$.each(obj_field, function (index2, value2) {
+									$.each(obj_field, function(index2, value2) {
 										f_id = $(this).attr('id');
 										f_step = $('#' + f_id)
 											.closest('.uiform-step-pane')
@@ -13482,11 +14306,11 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields_events_select = function (tab) {
+			arguments.callee.fields_events_select = function(tab) {
 				try {
 					tab.find('.uifm_selectpicker').selectpicker({
 						style: 'btn-info',
-						size: 4
+						size: 4,
 					});
 					tab.find('.selectpicker').selectpicker();
 				} catch (ex) {
@@ -13495,11 +14319,11 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields_events_slider = function (tab) {
+			arguments.callee.fields_events_slider = function(tab) {
 				try {
 					tab.find('.uiform-opt-slider').bootstrapSlider();
 
-					$('#uiform-build-field-tab .uiform-opt-slider').on('slide', function (slideEvt) {
+					$('#uiform-build-field-tab .uiform-opt-slider').on('slide', function(slideEvt) {
 						var f_id = $('#uifm-field-selected-id').val();
 						var store = $(this).data('field-store');
 						var f_store = store.split('-');
@@ -13510,7 +14334,7 @@ if (!$uifm.isFunction(rocketform)) {
 						var field_Checked = $('.uiform-main-form .uiform-fields-qopt-select input:checked');
 						if (parseInt(field_Checked.length) > 1) {
 							obj_field = field_Checked.closest('.uiform-field');
-							$.each(obj_field, function (index2, value2) {
+							$.each(obj_field, function(index2, value2) {
 								f_id = $(this).attr('id');
 								f_step = $('#' + f_id)
 									.closest('.uiform-step-pane')
@@ -13537,12 +14361,12 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields2_events_bswitch = function (tab) {
+			arguments.callee.fields2_events_bswitch = function(tab) {
 				if (tab.find('.zgpb-switch-field').data('bootstrap-switch')) {
 				} else {
 					tab.find('.zgpb-switch-field').bootstrapSwitchZgpb();
 
-					tab.find('.zgpb-switch-field').on('switchChange.bootstrapSwitchZgpb', function (event, state) {
+					tab.find('.zgpb-switch-field').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
 						var f_store = $(this).data('field-store');
 						var f_val = state ? 1 : 0;
 
@@ -13552,12 +14376,12 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields2_events_groupbtn = function (tab) {
+			arguments.callee.fields2_events_groupbtn = function(tab) {
 				if (tab.find('.sfdc-form-group').find('.zgpb-form-group-loaded').length) {
 				} else {
 					tab.find('.sfdc-form-group').addClass('zgpb-form-group-loaded');
 
-					tab.find('.zgpb-col-setoption-btn').on('click', function (e) {
+					tab.find('.zgpb-col-setoption-btn').on('click', function(e) {
 						if (e) {
 							e.stopPropagation();
 							e.preventDefault();
@@ -13568,10 +14392,10 @@ if (!$uifm.isFunction(rocketform)) {
 
 						parent
 							.children('.sfdc-btn[data-toggle-enable]')
-							.removeClass(function () {
+							.removeClass(function() {
 								return $(this).data('toggle-enable');
 							})
-							.addClass(function () {
+							.addClass(function() {
 								return $(this).data('toggle-disable');
 							})
 							.children('input')
@@ -13580,7 +14404,7 @@ if (!$uifm.isFunction(rocketform)) {
 						element.children('input').prop('checked', true);
 					});
 
-					tab.find('.zgpb-col-setoption-btn').on('click', function (e) {
+					tab.find('.zgpb-col-setoption-btn').on('click', function(e) {
 						e.preventDefault();
 						var f_store = $(this).data('field-store');
 						var f_val = parseInt($(this).data('field-value'));
@@ -13590,8 +14414,8 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields2_events_general = function () {
-				$(document).on('change keyup focus keypress', '#uifm_fld_main_fldname', function (e) {
+			arguments.callee.fields2_events_general = function() {
+				$(document).on('change keyup focus keypress', '#uifm_fld_main_fldname', function(e) {
 					var fldname = $('#uifm_fld_main_fldname').val();
 					var pickfield = $('#uifm-field-selected-id').val();
 					var f_step = $('#' + pickfield)
@@ -13602,10 +14426,10 @@ if (!$uifm.isFunction(rocketform)) {
 
 				$('#uifm-field-opt-content')
 					.find('a[data-toggle="sfdc-tab"]')
-					.on('shown.bs.sfdc-tab', function (e) {
+					.on('shown.bs.sfdc-tab', function(e) {
 					});
 
-				$(document).on('change', '#uifm-field-opt-content .zgpb-f-setoption-st', function (e) {
+				$(document).on('change', '#uifm-field-opt-content .zgpb-f-setoption-st', function(e) {
 					if (e) {
 						e.stopPropagation();
 						e.preventDefault();
@@ -13616,7 +14440,7 @@ if (!$uifm.isFunction(rocketform)) {
 					rocketform.fields2_updateModalFieldCoreAndPreview(f_store, f_val);
 				});
 
-				$(document).on('change keyup', '#uifm-field-opt-content .zgpb-f-setoption', function (e) {
+				$(document).on('change keyup', '#uifm-field-opt-content .zgpb-f-setoption', function(e) {
 					if (e) {
 						e.stopPropagation();
 						e.preventDefault();
@@ -13626,22 +14450,24 @@ if (!$uifm.isFunction(rocketform)) {
 					rocketform.updateModalFieldCoreAndPreview(f_store, f_val);
 				});
 
-				$(document).on('click', '#uifm-field-opt-content .zgpb-f-setoption-btn', function (e) {
+				$(document).on('click', '#uifm-field-opt-content .zgpb-f-setoption-btn', function(e) {
 					if (e) {
 						e.stopPropagation();
 						e.preventDefault();
 					}
 					var f_store = $(this).data('field-store');
-					var f_val = $(this).find('input').val();
+					var f_val = $(this)
+						.find('input')
+						.val();
 					rocketform.fields2_updateModalFieldCoreAndPreview(f_store, f_val);
 				});
 			};
 
 
-			arguments.callee.fields2_events_slider = function (tab) {
+			arguments.callee.fields2_events_slider = function(tab) {
 				tab.find('.zgpb-custom-slider').bootstrapSlider();
 
-				tab.find('.zgpb-custom-slider').on('slide', function (slideEvt) {
+				tab.find('.zgpb-custom-slider').on('slide', function(slideEvt) {
 					var f_store = $(this).data('field-store');
 					var f_val = slideEvt.value;
 					rocketform.fields2_updateModalFieldCoreAndPreview(f_store, f_val);
@@ -13649,8 +14475,8 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields2_events_txts = function (tab) {
-				tab.find('.zgpb-field-col-event-txt').on('change keyup focus keypress', function (e) {
+			arguments.callee.fields2_events_txts = function(tab) {
+				tab.find('.zgpb-field-col-event-txt').on('change keyup focus keypress', function(e) {
 					if (e) {
 						e.stopPropagation();
 					}
@@ -13661,7 +14487,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields2_events_spinner = function (tab) {
+			arguments.callee.fields2_events_spinner = function(tab) {
 				if (tab.find('.zgpb_fld_settings_spinner').find('.bootstrap-touchspin-postfix').length) {
 				} else {
 					tab.find('.zgpb_fld_settings_spinner').TouchSpin({
@@ -13670,10 +14496,10 @@ if (!$uifm.isFunction(rocketform)) {
 						max: 1500,
 						stepinterval: 1,
 						verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
+						verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
 					});
 
-					tab.find('.zgpb_fld_settings_spinner').on('change', function (e) {
+					tab.find('.zgpb_fld_settings_spinner').on('change', function(e) {
 						if (e) {
 							e.stopPropagation();
 							e.preventDefault();
@@ -13687,7 +14513,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.modal_editfield_col_bg_delimg = function () {
+			arguments.callee.modal_editfield_col_bg_delimg = function() {
 				$('#zgpb_fld_col_bg_srcimg_wrap').html('');
 				$('#zgpb_fld_col_bg_imgsource').val('');
 				var f_store = $('#zgpb_fld_col_bg_imgsourcebtnadd').data('field-store');
@@ -13696,8 +14522,8 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields2_events_bgimages = function (tab) {
-				tab.find('#zgpb_fld_col_bg_imgsourcebtnadd').on('click', function (e) {
+			arguments.callee.fields2_events_bgimages = function(tab) {
+				tab.find('#zgpb_fld_col_bg_imgsourcebtnadd').on('click', function(e) {
 					if (e) {
 						e.stopPropagation();
 						e.preventDefault();
@@ -13711,10 +14537,10 @@ if (!$uifm.isFunction(rocketform)) {
 						height: 490,
 						width: 950,
 						centerScreen: 1,
-						location: 0
+						location: 0,
 					});
 
-					window.processFile = function (file) {
+					window.processFile = function(file) {
 						var imgurl = file.url;
 						$('#' + formfield).val(imgurl);
 						$('#zgpb_fld_col_bg_srcimg_wrap').html('<img class="sfdc-img-thumbnail" src="' + imgurl + '" />');
@@ -13726,7 +14552,7 @@ if (!$uifm.isFunction(rocketform)) {
 				});
 			};
 
-			arguments.callee.fields2_updateModalFieldCoreAndPreview = function (f_store, f_val) {
+			arguments.callee.fields2_updateModalFieldCoreAndPreview = function(f_store, f_val) {
 				try {
 					var f_id;
 					var f_type;
@@ -13757,7 +14583,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.fields2_setDataOptToCoreData = function (id, f_type, f_store, value, addt) {
+			arguments.callee.fields2_setDataOptToCoreData = function(id, f_type, f_store, value, addt) {
 				try {
 					var f_obj = $('#' + id);
 					var tmp_vars;
@@ -13966,7 +14792,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.fields2_setDataOptToPrevField = function (f_obj, f_type, f_store, value, addt) {
+			arguments.callee.fields2_setDataOptToPrevField = function(f_obj, f_type, f_store, value, addt) {
 				try {
 					switch (parseInt(f_type)) {
 						case 1:
@@ -13996,7 +14822,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.rollback_openModal = function () {
+			arguments.callee.rollback_openModal = function() {
 				var id = $('#uifm_frm_main_id').val();
 
 				try {
@@ -14010,20 +14836,29 @@ if (!$uifm.isFunction(rocketform)) {
 							page: 'zgfm_form_builder',
 							zgfm_security: uiform_vars.ajax_nonce,
 							form_id: id,
-							csrf_field_name: uiform_vars.csrf_field_name
+							csrf_field_name: uiform_vars.csrf_field_name,
 						},
-						success: function (msg) {
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-header-inner').html(msg.modal_header);
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.sfdc-modal-body').html(msg.modal_body);
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-footer-wrap').html(msg.modal_footer);
-						}
+						success: function(msg) {
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.zgpb-modal-header-inner')
+								.html(msg.modal_header);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.sfdc-modal-body')
+								.html(msg.modal_body);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.zgpb-modal-footer-wrap')
+								.html(msg.modal_footer);
+						},
 					});
 				} catch (ex) {
 					console.error('error rollback_openModal ', ex.message);
 				}
 			};
 
-			arguments.callee.rollback_process = function (id) {
+			arguments.callee.rollback_process = function(id) {
 				try {
 					rocketform.fields_showModalOptions();
 
@@ -14035,9 +14870,9 @@ if (!$uifm.isFunction(rocketform)) {
 							page: 'zgfm_form_builder',
 							zgfm_security: uiform_vars.ajax_nonce,
 							log_id: id,
-							csrf_field_name: uiform_vars.csrf_field_name
+							csrf_field_name: uiform_vars.csrf_field_name,
 						},
-						success: function (msg) {
+						success: function(msg) {
 							msg.data.fmb_html_backend = decodeURIComponent(msg.data.fmb_html_backend);
 
 							rocketform.loadFormToEditPanel(msg);
@@ -14047,7 +14882,7 @@ if (!$uifm.isFunction(rocketform)) {
 							rocketform.loading_panelbox2(0);
 
 							$('#zgpb-modal1').sfdc_modal('hide');
-						}
+						},
 					});
 				} catch (ex) {
 					console.error('error rollback_openModal ', ex.message);
@@ -14055,29 +14890,41 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 
-			arguments.callee.fields_showModalOptions = function () {
+			arguments.callee.fields_showModalOptions = function() {
 
 				var $html_loading = '<img src="' + uiform_vars.url_assets + '/backend/image/ajax-loader-black.gif' + '"/>';
-				$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-header-inner').html($html_loading);
-				$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.sfdc-modal-body').html($html_loading);
-				$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-footer-wrap').html($html_loading);
+				$('#zgpb-modal1')
+					.find('.sfdc-modal-dialog')
+					.find('.zgpb-modal-header-inner')
+					.html($html_loading);
+				$('#zgpb-modal1')
+					.find('.sfdc-modal-dialog')
+					.find('.sfdc-modal-body')
+					.html($html_loading);
+				$('#zgpb-modal1')
+					.find('.sfdc-modal-dialog')
+					.find('.zgpb-modal-footer-wrap')
+					.html($html_loading);
 
-				$('#zgpb-modal1').find('.sfdc-modal-content').resizable({
-				});
-				$('#zgpb-modal1').find('.sfdc-modal-dialog').draggable();
-
-				$('#zgpb-modal1').on('show.bs.sfdc-modal', function () {
-					$(this).find('.modal-body').css({
-						'max-height': '100%'
+				$('#zgpb-modal1')
+					.find('.sfdc-modal-content')
+					.resizable({
 					});
+
+				$('#zgpb-modal1').on('show.bs.sfdc-modal', function() {
+					$(this)
+						.find('.modal-body')
+						.css({
+							'max-height': '100%',
+						});
 				});
 
 				$('#zgpb-modal1').sfdc_modal({
 					show: true,
-					keyboard: true
+					keyboard: true,
 				});
 			};
-			arguments.callee.modal_field_loader = function (status) {
+			arguments.callee.modal_field_loader = function(status) {
 				var mod_body = $('#zgpb-modal1').find('.sfdc-modal-dialog .sfdc-modal-body');
 				if (parseInt(status) === 1) {
 					if (parseInt(mod_body.find('#zgpb-modal-field-loader').length) === 0) {
@@ -14091,7 +14938,7 @@ if (!$uifm.isFunction(rocketform)) {
 				}
 			};
 
-			arguments.callee.check_fieldExist = function (name, index, key) {
+			arguments.callee.check_fieldExist = function(name, index, key) {
 				try {
 					if (typeof mainrformb[name][index][key] != 'undefined') {
 						return true;
@@ -14102,7 +14949,7 @@ if (!$uifm.isFunction(rocketform)) {
 					return false;
 				}
 			};
-			arguments.callee.variables_openModal = function () {
+			arguments.callee.variables_openModal = function() {
 				var id = $('#uifm_frm_main_id').val();
 
 				rocketform.fields_showModalOptions();
@@ -14119,16 +14966,27 @@ if (!$uifm.isFunction(rocketform)) {
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: id,
 						form_data: encodeURIComponent(JSON.stringify(tmp_frm)),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
-						$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-header-inner').html(msg.modal_header);
-						$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.sfdc-modal-body').html(msg.modal_body);
-						$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-footer-wrap').html(msg.modal_footer);
-					}
+					success: function(msg) {
+						$('#zgpb-modal1')
+							.find('.sfdc-modal-dialog')
+							.find('.zgpb-modal-header-inner')
+							.html(msg.modal_header);
+						$('#zgpb-modal1')
+							.find('.sfdc-modal-dialog')
+							.find('.sfdc-modal-body')
+							.html(msg.modal_body);
+						$('#zgpb-modal1')
+							.find('.sfdc-modal-dialog')
+							.find('.zgpb-modal-footer-wrap')
+							.html(msg.modal_footer);
+
+						$('[data-toggle="tooltip"]').tooltip({ container: 'body' });
+					},
 				});
 			};
-			arguments.callee.get_coreData = function () {
+			arguments.callee.get_coreData = function() {
 				return mainrformb;
 			};
 		};
@@ -14136,8 +14994,8 @@ if (!$uifm.isFunction(rocketform)) {
 }
 rocketform();
 
-(function ($) {
-	var zgpbld_gridsystem = function (element, options) {
+(function($) {
+	var zgpbld_gridsystem = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var field_onprocess = false;
@@ -14149,24 +15007,24 @@ rocketform();
 				align: {
 					show_st: 0,
 					max_width: '1200',
-					max_width_st: '1'
+					max_width_st: '1',
 				},
 				margin: {
 					show_st: 1,
 					top: '0',
 					bottom: '0',
 					left: '0',
-					right: '0'
+					right: '0',
 				},
 				padding: {
 					show_st: 1,
 					top: '5',
 					bottom: '5',
 					left: '0',
-					right: '0'
+					right: '0',
 				},
 				text: {
-					color: ''
+					color: '',
 				},
 				background: {
 					show_st: '0',
@@ -14183,7 +15041,7 @@ rocketform();
 					img_overlay_opacity: '',
 					img_size_type: '3',
 					img_size_len: '100% 100%',
-					opacity: '100'
+					opacity: '100',
 				},
 				border: {
 					show_st: '0',
@@ -14191,25 +15049,25 @@ rocketform();
 					color_focus_st: '0',
 					color_focus: '#000',
 					type: '1',
-					width: '1'
+					width: '1',
 				},
 				border_radius: {
 					show_st: '0',
-					size: '17'
+					size: '17',
 				},
 				custom_css: {
 					ctm_id: '',
 					ctm_class: '',
-					ctm_additional: ''
+					ctm_additional: '',
 				},
 				shadow: {
 					show_st: '0',
 					color: '#CCCCCC',
 					h_shadow: '3',
 					v_shadow: '3',
-					blur: '10'
-				}
-			}
+					blur: '10',
+				},
+			},
 		};
 		var defaults = {
 			data: {
@@ -14218,8 +15076,8 @@ rocketform();
 				type_n: 'Grid',
 				field_name: '',
 				main: {},
-				blocks: {}
-			}
+				blocks: {},
+			},
 		};
 
 		var settings = $.extend(true, {}, defaults);
@@ -14228,28 +15086,28 @@ rocketform();
 		var zgpbvariable = [];
 		zgpbvariable.innerVars = {};
 
-		var setInnerVariable = function (name, value) {
+		var setInnerVariable = function(name, value) {
 			zgpbvariable.innerVars[name] = value;
 		};
 
-		var getInnerVariable = function (name) {
+		var getInnerVariable = function(name) {
 			if (zgpbvariable.innerVars[name]) {
 				return zgpbvariable.innerVars[name];
 			} else {
 				return '';
 			}
 		};
-		this.publicMethod = function () {};
-		this.showSettingTab = function (id_element) {
+		this.publicMethod = function() {};
+		this.showSettingTab = function(id_element) {
 		};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
 
-		this.setOptionsToModal = function (vars) {
+		this.setOptionsToModal = function(vars) {
 			var tab = $('#uifm-field-opt-content');
 			var opt1 = vars['opt1'],
 				opt2 = vars['opt2'],
@@ -14317,7 +15175,10 @@ rocketform();
 						case 'text':
 							switch (String(opt3)) {
 								case 'color':
-									tab.find('#zgpb_fld_col_text_color').parent().colorpicker('setValue', opt4);
+									tab
+										.find('#zgpb_fld_col_text_color')
+										.parent()
+										.colorpicker('setValue', opt4);
 									tab.find('#zgpb_fld_col_text_color').val(opt4);
 									break;
 							}
@@ -14348,15 +15209,24 @@ rocketform();
 									}
 									break;
 								case 'cl_start_color':
-									tab.find('#zgpb_fld_col_bg_clstartcolor').parent().colorpicker('setValue', opt4);
+									tab
+										.find('#zgpb_fld_col_bg_clstartcolor')
+										.parent()
+										.colorpicker('setValue', opt4);
 									tab.find('#zgpb_fld_col_bg_clstartcolor').val(opt4);
 									break;
 								case 'cl_end_color':
-									tab.find('#zgpb_fld_col_bg_clendcolor').parent().colorpicker('setValue', opt4);
+									tab
+										.find('#zgpb_fld_col_bg_clendcolor')
+										.parent()
+										.colorpicker('setValue', opt4);
 									tab.find('#zgpb_fld_col_bg_clendcolor').val(opt4);
 									break;
 								case 'cl_solid_color':
-									tab.find('#zgpb_fld_col_bg_clsolidcolor').parent().colorpicker('setValue', opt4);
+									tab
+										.find('#zgpb_fld_col_bg_clsolidcolor')
+										.parent()
+										.colorpicker('setValue', opt4);
 									tab.find('#zgpb_fld_col_bg_clsolidcolor').val(opt4);
 									break;
 								case 'img_source':
@@ -14407,7 +15277,10 @@ rocketform();
 									}
 									break;
 								case 'color':
-									tab.find('#zgpb_fld_col_border_color').parent().colorpicker('setValue', opt4);
+									tab
+										.find('#zgpb_fld_col_border_color')
+										.parent()
+										.colorpicker('setValue', opt4);
 									tab.find('#zgpb_fld_col_border_color').val(opt4);
 									break;
 								case 'width':
@@ -14471,7 +15344,7 @@ rocketform();
 			}
 		};
 
-		this.previewfield_maxwidth = function (f_obj) {
+		this.previewfield_maxwidth = function(f_obj) {
 			var show_st, max_width, max_width_st;
 
 			var cur_el_obj;
@@ -14481,9 +15354,7 @@ rocketform();
 
 			if (cur_blockmain_st) {
 
-				(show_st = settings['data']['main']['skin']['align']['show_st']),
-					(max_width = settings['data']['main']['skin']['align']['max_width']),
-					(max_width_st = settings['data']['main']['skin']['align']['max_width_st']);
+				(show_st = settings['data']['main']['skin']['align']['show_st']), (max_width = settings['data']['main']['skin']['align']['max_width']), (max_width_st = settings['data']['main']['skin']['align']['max_width_st']);
 
 				all_values = settings['data']['main']['skin']['align'];
 
@@ -14514,7 +15385,7 @@ rocketform();
 			}
 		};
 
-		this.setOptionsToPreview = function (vars) {
+		this.setOptionsToPreview = function(vars) {
 			var f_obj = elem;
 			var block = (opt1 = vars['block']),
 				opt1 = vars['opt1'],
@@ -14547,7 +15418,7 @@ rocketform();
 							switch (String(opt3)) {
 								case 'top':
 									if (cur_blockmain_st) {
-										f_obj.find('>.sfdc-container-fluid').attr('style', function (i, s) {
+										f_obj.find('>.sfdc-container-fluid').attr('style', function(i, s) {
 											return (s || '') + `margin-top: ${opt4}px !important;`;
 										});
 									} else {
@@ -14557,7 +15428,7 @@ rocketform();
 									break;
 								case 'bottom':
 									if (cur_blockmain_st) {
-										f_obj.find('>.sfdc-container-fluid').attr('style', function (i, s) {
+										f_obj.find('>.sfdc-container-fluid').attr('style', function(i, s) {
 											return (s || '') + `margin-bottom: ${opt4}px !important;`;
 										});
 									} else {
@@ -14566,7 +15437,7 @@ rocketform();
 									break;
 								case 'left':
 									if (cur_blockmain_st) {
-										f_obj.find('>.sfdc-container-fluid').attr('style', function (i, s) {
+										f_obj.find('>.sfdc-container-fluid').attr('style', function(i, s) {
 											return (s || '') + `margin-left: ${opt4}px !important;`;
 										});
 									} else {
@@ -14575,7 +15446,7 @@ rocketform();
 									break;
 								case 'right':
 									if (cur_blockmain_st) {
-										f_obj.find('>.sfdc-container-fluid').attr('style', function (i, s) {
+										f_obj.find('>.sfdc-container-fluid').attr('style', function(i, s) {
 											return (s || '') + `margin-right: ${opt4}px !important;`;
 										});
 									} else {
@@ -14589,7 +15460,7 @@ rocketform();
 							switch (String(opt3)) {
 								case 'top':
 									if (cur_blockmain_st) {
-										f_obj.find('>.sfdc-container-fluid').attr('style', function (i, s) {
+										f_obj.find('>.sfdc-container-fluid').attr('style', function(i, s) {
 											return (s || '') + `padding-top: ${opt4}px !important;`;
 										});
 									} else {
@@ -14599,7 +15470,7 @@ rocketform();
 									break;
 								case 'bottom':
 									if (cur_blockmain_st) {
-										f_obj.find('>.sfdc-container-fluid').attr('style', function (i, s) {
+										f_obj.find('>.sfdc-container-fluid').attr('style', function(i, s) {
 											return (s || '') + `padding-bottom: ${opt4}px !important;`;
 										});
 									} else {
@@ -14608,7 +15479,7 @@ rocketform();
 									break;
 								case 'left':
 									if (cur_blockmain_st) {
-										f_obj.find('>.sfdc-container-fluid').attr('style', function (i, s) {
+										f_obj.find('>.sfdc-container-fluid').attr('style', function(i, s) {
 											return (s || '') + `padding-left: ${opt4}px !important;`;
 										});
 									} else {
@@ -14617,7 +15488,7 @@ rocketform();
 									break;
 								case 'right':
 									if (cur_blockmain_st) {
-										f_obj.find('>.sfdc-container-fluid').attr('style', function (i, s) {
+										f_obj.find('>.sfdc-container-fluid').attr('style', function(i, s) {
 											return (s || '') + `padding-right: ${opt4}px !important;`;
 										});
 									} else {
@@ -14655,7 +15526,7 @@ rocketform();
 			}
 		};
 
-		var skin_preview_shadow = function (f_obj) {
+		var skin_preview_shadow = function(f_obj) {
 			var show_st, color, h_shadow, v_shadow, blur;
 
 			var cur_el_obj;
@@ -14665,22 +15536,14 @@ rocketform();
 
 			if (cur_blockmain_st) {
 
-				(show_st = settings['data']['main']['skin']['shadow']['show_st']),
-					(color = settings['data']['main']['skin']['shadow']['color']),
-					(h_shadow = settings['data']['main']['skin']['shadow']['h_shadow']),
-					(v_shadow = settings['data']['main']['skin']['shadow']['v_shadow']),
-					(blur = settings['data']['main']['skin']['shadow']['blur']);
+				(show_st = settings['data']['main']['skin']['shadow']['show_st']), (color = settings['data']['main']['skin']['shadow']['color']), (h_shadow = settings['data']['main']['skin']['shadow']['h_shadow']), (v_shadow = settings['data']['main']['skin']['shadow']['v_shadow']), (blur = settings['data']['main']['skin']['shadow']['blur']);
 
 				all_values = settings['data']['main']['skin']['shadow'];
 				cur_el_obj = f_obj.find('.sfdc-container-fluid');
 				cur_el_obj_str = '#' + settings.data.id + ' > .sfdc-container-fluid';
 			} else {
 
-				(show_st = settings['data']['blocks'][cur_block_var]['skin']['shadow']['show_st']),
-					(color = settings['data']['blocks'][cur_block_var]['skin']['shadow']['color']),
-					(h_shadow = settings['data']['blocks'][cur_block_var]['skin']['shadow']['h_shadow']),
-					(v_shadow = settings['data']['blocks'][cur_block_var]['skin']['shadow']['v_shadow']),
-					(blur = settings['data']['blocks'][cur_block_var]['skin']['shadow']['blur']);
+				(show_st = settings['data']['blocks'][cur_block_var]['skin']['shadow']['show_st']), (color = settings['data']['blocks'][cur_block_var]['skin']['shadow']['color']), (h_shadow = settings['data']['blocks'][cur_block_var]['skin']['shadow']['h_shadow']), (v_shadow = settings['data']['blocks'][cur_block_var]['skin']['shadow']['v_shadow']), (blur = settings['data']['blocks'][cur_block_var]['skin']['shadow']['blur']);
 
 				all_values = settings['data']['blocks'][cur_block_var]['skin']['shadow'];
 				cur_el_obj = f_obj.find('.zgpb-fl-gs-block-style[data-zgpb-blocknum="' + cur_block_var + '"] >.zgpb-fl-gs-block-inner');
@@ -14708,7 +15571,7 @@ rocketform();
 			}
 		};
 
-		var skin_preview_border_radius = function (f_obj) {
+		var skin_preview_border_radius = function(f_obj) {
 			var show_st, size;
 
 			var cur_el_obj;
@@ -14751,7 +15614,7 @@ rocketform();
 			}
 		};
 
-		var skin_preview_border = function (f_obj) {
+		var skin_preview_border = function(f_obj) {
 			var show_st, color, color_focus_st, color_focus, type, width;
 
 			var cur_el_obj;
@@ -14762,12 +15625,7 @@ rocketform();
 
 			if (cur_blockmain_st) {
 
-				(show_st = settings['data']['main']['skin']['border']['show_st']),
-					(color = settings['data']['main']['skin']['border']['color']),
-					(color_focus_st = settings['data']['main']['skin']['border']['color_focus_st']),
-					(color_focus = settings['data']['main']['skin']['border']['color_focus']),
-					(type = settings['data']['main']['skin']['border']['type']),
-					(width = settings['data']['main']['skin']['border']['width']);
+				(show_st = settings['data']['main']['skin']['border']['show_st']), (color = settings['data']['main']['skin']['border']['color']), (color_focus_st = settings['data']['main']['skin']['border']['color_focus_st']), (color_focus = settings['data']['main']['skin']['border']['color_focus']), (type = settings['data']['main']['skin']['border']['type']), (width = settings['data']['main']['skin']['border']['width']);
 
 				all_values = settings['data']['main']['skin']['border'];
 				cur_el_obj = f_obj.find('.sfdc-container-fluid');
@@ -14814,22 +15672,8 @@ rocketform();
 			}
 		};
 
-		var skin_preview_background = function (f_obj) {
-			var show_st,
-				type,
-				cl_start_color,
-				cl_end_color,
-				cl_solid_color,
-				img_source,
-				img_repeat,
-				img_position,
-				img_attachment,
-				img_scale,
-				img_overlay_color,
-				img_overlay_opacity,
-				img_size_type,
-				img_size_len,
-				opacity;
+		var skin_preview_background = function(f_obj) {
+			var show_st, type, cl_start_color, cl_end_color, cl_solid_color, img_source, img_repeat, img_position, img_attachment, img_scale, img_overlay_color, img_overlay_opacity, img_size_type, img_size_len, opacity;
 
 			var cur_el_obj;
 			var cur_el_obj_str;
@@ -14973,7 +15817,7 @@ rocketform();
 			}
 		};
 
-		var hash_check = function (opt_str_hash, all_values) {
+		var hash_check = function(opt_str_hash, all_values) {
 			var hash_str_all_values = opt_str_hash;
 
 			var valhash = CryptoJS.MD5(JSON.stringify(all_values));
@@ -14988,32 +15832,32 @@ rocketform();
 			}
 		};
 
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('zgpb-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				this.enableSettingOptions_process(settings.data, false, true, null);
 
 			}
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
 
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2;
 			if (options.hasOwnProperty('data')) {
 				settings2 = $.extend(true, {}, settings, options);
@@ -15025,7 +15869,7 @@ rocketform();
 			settings = settings3;
 		};
 
-		this.createBlockAttributes = function () {
+		this.createBlockAttributes = function() {
 			var num_blocks = settings.data.type;
 
 			var tmp_new_block = {};
@@ -15076,7 +15920,7 @@ rocketform();
 			settings.data.blocks = tmp_new_block;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				block = tmp_vars['block'],
 				f_opt1 = tmp_vars['opt1'],
@@ -15092,7 +15936,7 @@ rocketform();
 			}
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview, addt) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview, addt) {
 			if (update_modal) {
 				var tab = $('#uifm-field-opt-content');
 				rocketform.fields2_events_bswitch(tab);
@@ -15131,15 +15975,15 @@ rocketform();
 				$('#zgfm-field-col-fldname-lbl-bl1').html(fldname + ' - ');
 			}
 
-			$.each(f_data, function (index3, value3) {
+			$.each(f_data, function(index3, value3) {
 				if ($.isPlainObject(value3)) {
-					$.each(value3, function (index4, value4) {
+					$.each(value3, function(index4, value4) {
 						if ($.isPlainObject(value4)) {
-							$.each(value4, function (index5, value5) {
+							$.each(value4, function(index5, value5) {
 								if ($.isPlainObject(value5)) {
-									$.each(value5, function (index6, value6) {
+									$.each(value5, function(index6, value6) {
 										if ($.isPlainObject(value6)) {
-											$.each(value6, function (index7, value7) {
+											$.each(value6, function(index7, value7) {
 												tmp_vars = [];
 
 												if (String(index3) === 'main') {
@@ -15194,16 +16038,16 @@ rocketform();
 
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
 				var clvars = [
 					'.uifm-set-section-fieldname',
 					'.uifm-tab-fld-input',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -15214,7 +16058,7 @@ rocketform();
 
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -15227,17 +16071,17 @@ rocketform();
 			}
 		};
 
-		this.getOnProcessStatus = function () {
+		this.getOnProcessStatus = function() {
 			return field_onprocess;
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 	};
 
-	$.fn.zgpbld_gridsystem = function (options) {
-		return this.each(function () {
+	$.fn.zgpbld_gridsystem = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('zgpbld_gridsystem')) return;
@@ -15249,7 +16093,7 @@ rocketform();
 	};
 })($uifm);
 
-(function ($) {
+(function($) {
 	var d = $(document); 
 	var h = $('head'); 
 	var drag = null; 
@@ -15272,13 +16116,15 @@ rocketform();
 		"<style type='text/css'>  .JColResizer{table-layout:fixed;} .JColResizer td, .JColResizer th{overflow:hidden;padding-left:0!important; padding-right:0!important;}  .JCLRgrips{ height:0px; position:relative;} .JCLRgrip{margin-left:-5px; position:absolute; z-index:5; } .JCLRgrip .JColResizer{position:absolute;background-color:red;filter:alpha(opacity=1);opacity:0;width:10px;height:100%;top:0px} .JCLRLastGrip{position:absolute; width:1px; } .JCLRgripDrag{ border-left:1px dotted black;	}</style>"
 	);
 
-	var init = function (tb, options) {
+	var init = function(tb, options) {
 		var t = $(tb); 
 		if (options.disable) return destroy(t); 
 		var id = (t.id = t.attr(ID) || SIGNATURE + count++); 
 		t.p = options.postbackSafe; 
 		if (!t.is('table') || tables[id]) return; 
-		t.addClass(SIGNATURE).attr(ID, id).before('<div class="JCLRgrips"/>'); 
+		t.addClass(SIGNATURE)
+			.attr(ID, id)
+			.before('<div class="JCLRgrips"/>'); 
 		t.opt = options;
 		t.g = [];
 		t.c = [];
@@ -15292,7 +16138,7 @@ rocketform();
 		createGrips(t); 
 	};
 
-	destroy = function (t) {
+	destroy = function(t) {
 		var id = t.attr(ID),
 			t = tables[id]; 
 		if (!t || !t.is('table')) return; 
@@ -15300,13 +16146,13 @@ rocketform();
 		delete tables[id]; 
 	};
 
-	var createGrips = function (t) {
+	var createGrips = function(t) {
 		var th = t.find('>thead>tr>th,>thead>tr>td'); 
 		if (!th.length) th = t.find('>tbody>tr:first>th,>tr:first>th,>tbody>tr:first>td, >tr:first>td'); 
 		t.cg = t.find('col'); 
 		t.ln = th.length; 
 		if (t.p && S && S[t.id]) memento(t, th); 
-		th.each(function (i) {
+		th.each(function(i) {
 			var c = $(this); 
 			var g = $(t.gc.append('<div class="JCLRgrip"></div>')[0].lastChild); 
 			g.t = t;
@@ -15330,12 +16176,12 @@ rocketform();
 		t.find('td, th')
 			.not(th)
 			.not('table th, table td')
-			.each(function () {
+			.each(function() {
 				$(this).removeAttr('width'); 
 			});
 	};
 
-	var memento = function (t, th) {
+	var memento = function(t, th) {
 		var w,
 			m = 0,
 			i = 0,
@@ -15363,7 +16209,7 @@ rocketform();
 		}
 	};
 
-	var syncGrips = function (t) {
+	var syncGrips = function(t) {
 		var temp_x;
 		t.gc.width(t.w); 
 		for (var i = 0; i < t.ln; i++) {
@@ -15371,12 +16217,12 @@ rocketform();
 			temp_x = c.offset().left - t.offset().left + c.outerWidth() + t.cs / 2;
 			t.g[i].css({
 				left: setcollimits(t, temp_x, i, false) + PX,
-				height: t.opt.headerOnly ? t.c[0].outerHeight() : t.outerHeight()
+				height: t.opt.headerOnly ? t.c[0].outerHeight() : t.outerHeight(),
 			});
 		}
 	};
 
-	var syncCols = function (t, i, isOver) {
+	var syncCols = function(t, i, isOver) {
 		var inc = drag.x - drag.l,
 			c = t.c[i],
 			c2 = t.c[i + 1];
@@ -15395,7 +16241,7 @@ rocketform();
 		}
 	};
 
-	var setboundlimits = function (t, x, flag, drag_i) {
+	var setboundlimits = function(t, x, flag, drag_i) {
 		var temp_total = t.w;
 		var temp_range = Math.round((100 * x) / temp_total);
 
@@ -15404,7 +16250,7 @@ rocketform();
 		var closest = null;
 		var temp_index = null;
 
-		$.each(theArray, function (index, element) {
+		$.each(theArray, function(index, element) {
 			if (closest == null || Math.abs(element - goal) < Math.abs(closest - goal)) {
 				closest = element;
 				temp_index = index;
@@ -15432,14 +16278,14 @@ rocketform();
 		return temp_number;
 	};
 
-	var setcollimits = function (t, x, i, flag) {
+	var setcollimits = function(t, x, i, flag) {
 		var temp_total = t.w;
 		var goal = Math.round((100 * x) / temp_total);
 		var theArray = [0, 8.3, 16.6, 25, 33.3, 41.6, 50, 58.3, 66.6, 75, 83.3, 91.6, 100];
 		var closest = null;
 		var temp_index = null;
 
-		$.each(theArray, function (index, element) {
+		$.each(theArray, function(index, element) {
 			if (closest == null || Math.abs(element - goal) < Math.abs(closest - goal)) {
 				closest = element;
 				temp_index = index;
@@ -15449,7 +16295,7 @@ rocketform();
 		closest = M.max(8.3, M.min(91.6, closest));
 
 		if (flag === true) {
-			var found = $.map(theArray, function (val, index) {
+			var found = $.map(theArray, function(val, index) {
 				return val == closest ? index : null;
 			});
 
@@ -15477,7 +16323,7 @@ rocketform();
 		return temp_number;
 	};
 
-	var onGripDrag = function (e) {
+	var onGripDrag = function(e) {
 		if (!drag) return;
 		var t = drag.t; 
 		var x = e.pageX - drag.ox + drag.l; 
@@ -15508,7 +16354,7 @@ rocketform();
 		return false; 
 	};
 
-	var onGripDragOver = function (e) {
+	var onGripDragOver = function(e) {
 		d.unbind('mousemove.' + SIGNATURE).unbind('mouseup.' + SIGNATURE);
 		$('head :last-child').remove(); 
 		if (!drag) return;
@@ -15527,7 +16373,7 @@ rocketform();
 		drag = null; 
 	};
 
-	var onGripMouseDown = function (e) {
+	var onGripMouseDown = function(e) {
 		var o = $(this).data(SIGNATURE); 
 		var t = tables[o.t],
 			g = t.g[o.i]; 
@@ -15547,7 +16393,7 @@ rocketform();
 		return false; 
 	};
 
-	var onResize = function () {
+	var onResize = function() {
 		for (t in tables) {
 			var t = tables[t],
 				i,
@@ -15564,7 +16410,7 @@ rocketform();
 
 
 	$.fn.extend({
-		colResizable: function (options) {
+		colResizable: function(options) {
 			var defaults = {
 				draggingClass: '', 
 				gripInnerHtml: "<div class='uiform-grip-intersect'></div>", 
@@ -15579,25 +16425,25 @@ rocketform();
 				marginRight: null, 
 				disable: false, 
 				onDrag: null, 
-				onResize: null 
+				onResize: null, 
 			};
 			var node = this;
 			var options = $.extend(defaults, options);
-			return this.each(function () {
+			return this.each(function() {
 				function resize_grid() {
 					onResize();
 				}
 
-				$(window).resize(function () {
+				$(window).resize(function() {
 					resize_grid();
 				});
 				init(this, options);
 			});
-		}
+		},
 	});
 })($uifm);
 
-(function ($) {
+(function($) {
 	var uifm_panels = [];
 	var uifm_width_panel = 0;
 	var uifm_max_width_panel = 0;
@@ -15614,7 +16460,7 @@ rocketform();
 	var uifm_main_height = 0;
 	var uifm_allpanel_height = 0;
 
-	var init = function (tb, options) {
+	var init = function(tb, options) {
 		uipanel_main_content = $('#rocketform-bk-content');
 		uifm_footer_credit = $('#wpfooter') || null;
 		uipanel_object = $(tb);
@@ -15626,7 +16472,7 @@ rocketform();
 
 		calculatePanels();
 	};
-	var onPanelResize = function () {
+	var onPanelResize = function() {
 		uifm_width_panel = $('.uiform-editing-main').width();
 		if (uifm_width_panel >= uifm_max_width_panel) {
 			uifm_max_width_panel = uifm_width_panel;
@@ -15636,7 +16482,7 @@ rocketform();
 
 		calculatePanels();
 	};
-	var calculatePanels = function () {
+	var calculatePanels = function() {
 
 		if ($('#uifm-panel-arrow-left').hasClass('uifm-layout-toggler-open')) {
 			var innerwidthLeft = uifm_panelleft_width;
@@ -15730,7 +16576,9 @@ rocketform();
 		var tmp_height_ret;
 		var tmp_pleft_height;
 		var tmp_diff_inner_h;
-		tmp_menu_height = $('.uiformc-menu-wrap').first().height();
+		tmp_menu_height = $('.uiformc-menu-wrap')
+			.first()
+			.height();
 		tmp_pleft_height = uifm_panels['left'].find('.uiform-builder-fields').height();
 
 		if (tmp_footer_pos_top > tmp_main_pos_bottom) {
@@ -15754,7 +16602,7 @@ rocketform();
 		$('.uiform-builder-maintab-container .uiform-tab-content').height(parseFloat(uifm_allpanel_height - 170));
 	};
 
-	var onTogglerLeftPanel = function () {
+	var onTogglerLeftPanel = function() {
 		var newWidthPanelLeft;
 		var bothWidthPanel;
 		var newWidthPanelCenter;
@@ -15779,8 +16627,12 @@ rocketform();
 
 			uipanel_object.find('.uifm-edit-panel-left').addClass('uifm-panel-tog-left-closed');
 
-			$('#uifm-panel-arrow-left').find('.uifm-arrow-open').css('display', 'none');
-			$('#uifm-panel-arrow-left').find('.uifm-arrow-closed').css('display', 'block');
+			$('#uifm-panel-arrow-left')
+				.find('.uifm-arrow-open')
+				.css('display', 'none');
+			$('#uifm-panel-arrow-left')
+				.find('.uifm-arrow-closed')
+				.css('display', 'block');
 			$('.uiform-editing-main .uiform-builder-fields').hide();
 			$('#uifm-panel-arrow-left').addClass('uifm-layout-toggler-close');
 			$('#uifm-panel-arrow-left').attr('title', 'Open');
@@ -15806,8 +16658,12 @@ rocketform();
 				uipanel_object.find('.uifm-edit-panel-center').css('width', newWidthPanelCenter + 'px');
 			}
 
-			$('#uifm-panel-arrow-left').find('.uifm-arrow-open').css('display', 'block');
-			$('#uifm-panel-arrow-left').find('.uifm-arrow-closed').css('display', 'none');
+			$('#uifm-panel-arrow-left')
+				.find('.uifm-arrow-open')
+				.css('display', 'block');
+			$('#uifm-panel-arrow-left')
+				.find('.uifm-arrow-closed')
+				.css('display', 'none');
 			$('.uiform-editing-main .uiform-builder-fields').show();
 			$('#uifm-panel-arrow-left').addClass('uifm-layout-toggler-open');
 			$('#uifm-panel-arrow-left').attr('title', 'Close');
@@ -15815,7 +16671,7 @@ rocketform();
 		$(window).trigger('resize');
 	};
 
-	var onTogglerRightPanel = function () {
+	var onTogglerRightPanel = function() {
 		var newWidthPanelRight;
 		var bothWidthPanel;
 		var newWidthPanelCenter;
@@ -15832,8 +16688,12 @@ rocketform();
 
 			uipanel_object.find('.uifm-edit-panel-right').addClass('uifm-panel-tog-right-closed');
 
-			$('#uifm-panel-arrow-right').find('.uifm-arrow-open').css('display', 'none');
-			$('#uifm-panel-arrow-right').find('.uifm-arrow-closed').css('display', 'block');
+			$('#uifm-panel-arrow-right')
+				.find('.uifm-arrow-open')
+				.css('display', 'none');
+			$('#uifm-panel-arrow-right')
+				.find('.uifm-arrow-closed')
+				.css('display', 'block');
 			$('.uiform-editing-main .uiform-builder-data').hide();
 			$('#uifm-panel-arrow-right').addClass('uifm-layout-toggler-close');
 			$('#uifm-panel-arrow-right').attr('title', 'Open');
@@ -15847,8 +16707,12 @@ rocketform();
 			uipanel_object.find('.uifm-edit-panel-right').css('width', newWidthPanelRight + '%');
 			uipanel_object.find('.uifm-edit-panel-center').css('width', newWidthPanelCenter + '%');
 
-			$('#uifm-panel-arrow-right').find('.uifm-arrow-open').css('display', 'block');
-			$('#uifm-panel-arrow-right').find('.uifm-arrow-closed').css('display', 'none');
+			$('#uifm-panel-arrow-right')
+				.find('.uifm-arrow-open')
+				.css('display', 'block');
+			$('#uifm-panel-arrow-right')
+				.find('.uifm-arrow-closed')
+				.css('display', 'none');
 			$('.uiform-editing-main .uiform-builder-data').show();
 			$('#uifm-panel-arrow-right').addClass('uifm-layout-toggler-open');
 			$('#uifm-panel-arrow-right').attr('title', 'Close');
@@ -15856,29 +16720,29 @@ rocketform();
 		$(window).trigger('resize');
 	};
 	$.fn.extend({
-		ColumnToggle: function (options) {
+		ColumnToggle: function(options) {
 			var defaults = {
 				draggingClass: '',
-				onResize: null
+				onResize: null,
 			};
 			var node = this;
 			var options = $.extend(defaults, options);
-			return this.each(function () {
+			return this.each(function() {
 				function resize_panel() {
 					onPanelResize();
 				}
-				$(window).resize(function () {
+				$(window).resize(function() {
 					resize_panel();
 				});
-				$('#uifm-panel-arrow-left').click(function () {
+				$('#uifm-panel-arrow-left').click(function() {
 					onTogglerLeftPanel();
 				});
-				$('#uifm-panel-arrow-right').click(function () {
+				$('#uifm-panel-arrow-right').click(function() {
 					onTogglerRightPanel();
 				});
 				init(this, options);
 			});
-		}
+		},
 	});
 })($uifm);
 
@@ -15887,13 +16751,13 @@ if (typeof $uifm === 'undefined') {
 }
 
 var uifmsetting;
-(function ($, window) {
+(function($, window) {
 	window.uifmsetting = uifmsetting =
 		$.uifmsetting ||
-		function () {
+		function() {
 			function initialize() {}
 
-			arguments.callee.redirect = function (redirect) {
+			arguments.callee.redirect = function(redirect) {
 				if (window.event) {
 					window.event.returnValue = false;
 					window.location = redirect;
@@ -15902,89 +16766,101 @@ var uifmsetting;
 				}
 			};
 
-			arguments.callee.settings_saveFormSettings = function () {
+			arguments.callee.settings_saveFormSettings = function() {
 				$('#frmform').validate({
 					errorClass: 'help-inline',
 					errorElement: 'span',
 					rules: {
 						site_title: {
-							required: true
+							required: true,
 						},
 						admin_mail: {
 							required: true,
-							email: true
-						}
+							email: true,
+						},
 					},
 					messages: {
 						site_title: {
-							required: 'Please specify site title'
+							required: 'Please specify site title',
 						},
 						admin_mail: {
-							required: 'We need email address'
-						}
+							required: 'We need email address',
+						},
 					},
-					highlight: function (label) {
-						$(label).closest('.control-group').addClass('error').removeClass('success');
+					highlight: function(label) {
+						$(label)
+							.closest('.control-group')
+							.addClass('error')
+							.removeClass('success');
 					},
-					success: function (label) {
-						$(label).text('').closest('.control-group').addClass('success');
+					success: function(label) {
+						$(label)
+							.text('')
+							.closest('.control-group')
+							.addClass('success');
 					},
-					submitHandler: function (form) {
+					submitHandler: function(form) {
 						form.submit(); 
-					}
+					},
 				});
 				$('#frmform').submit();
 			};
 
-			arguments.callee.user_SaveUser = function () {
+			arguments.callee.user_SaveUser = function() {
 				$('#frmform').validate({
 					errorClass: 'help-inline',
 					errorElement: 'span',
 					rules: {
 						use_login: {
-							required: true
+							required: true,
 						},
 						use_password: {
 							required: true,
-							minlength: 5
+							minlength: 5,
 						},
 						use_password2: {
 							required: true,
 							equalTo: '#use_password',
-							minlength: 5
-						}
+							minlength: 5,
+						},
 					},
 					messages: {
 						nameform: {
-							required: 'Please specify your username'
+							required: 'Please specify your username',
 						},
 						descriptionform: {
-							required: 'We need your email address'
-						}
+							required: 'We need your email address',
+						},
 					},
-					highlight: function (label) {
-						$(label).closest('.control-group').addClass('error').removeClass('success');
+					highlight: function(label) {
+						$(label)
+							.closest('.control-group')
+							.addClass('error')
+							.removeClass('success');
 					},
-					success: function (label) {
-						$(label).text('').closest('.control-group').addClass('success');
+					success: function(label) {
+						$(label)
+							.text('')
+							.closest('.control-group')
+							.addClass('success');
 					},
-					submitHandler: function (form) {
+					submitHandler: function(form) {
 						form.submit(); 
-					}
+					},
 				});
 
 				$('#frmform').submit();
 			};
 
-			arguments.callee.user_CancelUser = function () {
+			arguments.callee.user_CancelUser = function() {
 				this.redirect(uiform_vars.url_admin + 'user/intranet/index');
 			};
 		};
 	uifmsetting();
 })($uifm, window);
 
-(function ($) {
-	var uiformAppetext = function (element, options) {
+(function($) {
+	var uiformAppetext = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -16000,20 +16876,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -16029,7 +16905,7 @@ var uifmsetting;
 					font: '',
 					font_st: 1,
 					val_align: '',
-					append_txt: encodeURIComponent('@')
+					append_txt: encodeURIComponent('@'),
 				},
 				label: {
 					text: 'Text label',
@@ -16044,7 +16920,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -16059,24 +16935,24 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				el_background: {
 					show_st: '1',
 					type: '1',
 					start_color: '',
 					end_color: '',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el_border_radius: {
 					show_st: '1',
-					size: '0'
+					size: '0',
 				},
 				el_border: {
 					show_st: '1',
@@ -16084,14 +16960,14 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '1'
+					width: '1',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -16102,29 +16978,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-password').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -16132,26 +17010,26 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
 
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -16162,7 +17040,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -16171,26 +17049,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -16217,7 +17097,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -16235,11 +17115,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -16248,10 +17128,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -16283,9 +17163,9 @@ var uifmsetting;
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -16296,24 +17176,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -16327,11 +17207,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -16339,8 +17219,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_appetext = function (options) {
-		return this.each(function () {
+	$.fn.uiform_appetext = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_appetext')) return;
@@ -16352,8 +17232,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformCaptcha = function (element, options) {
+(function($) {
+	var uiformCaptcha = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -16369,20 +17249,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -16396,7 +17276,7 @@ var uifmsetting;
 					behind_lines_st: '0',
 					behind_lines: '2',
 					front_lines_st: '0',
-					front_lines: '2'
+					front_lines: '2',
 				},
 				label: {
 					text: 'Text label',
@@ -16411,7 +17291,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -16426,20 +17306,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -16449,30 +17329,32 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-captcha').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -16480,25 +17362,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -16509,7 +17391,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -16518,26 +17400,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -16564,7 +17448,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -16582,11 +17466,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -16595,10 +17479,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -16621,9 +17505,9 @@ var uifmsetting;
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -16634,21 +17518,21 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -16662,10 +17546,10 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -16673,8 +17557,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_captcha = function (options) {
-		return this.each(function () {
+	$.fn.uiform_captcha = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_captcha')) return;
@@ -16686,8 +17570,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformCheckbox = function (element, options) {
+(function($) {
+	var uiformCheckbox = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -16703,20 +17587,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -16737,8 +17621,8 @@ var uifmsetting;
 						bg_color: '#ffffff',
 						icon_color: '#337ab7',
 						icon_mark: 'fa-check',
-						size: '14'
-					}
+						size: '14',
+					},
 				},
 				label: {
 					text: 'Text label',
@@ -16753,7 +17637,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -16768,20 +17652,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -16791,29 +17675,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-checkbox').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -16821,25 +17707,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -16850,7 +17736,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -16859,26 +17745,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -16905,7 +17793,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -16924,11 +17812,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -16937,10 +17825,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -16962,9 +17850,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -16975,23 +17863,23 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -17005,11 +17893,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		this.input2settings_preview_genAllOptions = function () {
+		this.input2settings_preview_genAllOptions = function() {
 
 			var f_id = settings['data']['id'];
 			var obj = $('#' + f_id);
@@ -17037,8 +17925,10 @@ var uifmsetting;
 				switch (parseInt(f_type)) {
 					case 8:
 
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp2_templates').find('.sfdc-radio').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp2_templates')
+								.find('.sfdc-radio')
+								.clone();
 							newoptprev.attr('data-inp2-opt-index', index);
 							newoptprev.find('.uifm-inp2-rdo').prop('checked', parseInt(value['checked']));
 							newoptprev.find('.uifm-inp2-rdo').attr('name', 'uifm_' + f_id + '_opt');
@@ -17054,8 +17944,10 @@ var uifmsetting;
 						}
 						break;
 					case 9:
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp2_templates').find('.sfdc-checkbox').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp2_templates')
+								.find('.sfdc-checkbox')
+								.clone();
 							newoptprev.attr('data-inp2-opt-index', index);
 							newoptprev.find('.uifm-inp2-chk').prop('checked', parseInt(value['checked']));
 							newoptprev.find('.uifm-inp2-chk').attr('name', 'uifm_' + f_id + '_opt');
@@ -17079,7 +17971,7 @@ var uifmsetting;
 						break;
 					case 10:
 						obj.find('.uifm-input2-wrap').append('<select class="sfdc-form-control uifm-input2-opt-main" ></select>');
-						$.each(values, function (index, value) {
+						$.each(values, function(index, value) {
 							newoptprev = '<option data-inp2-opt-index="' + index + '" ';
 
 							if (parseInt(value['checked']) === 1) {
@@ -17091,7 +17983,7 @@ var uifmsetting;
 						break;
 					case 11:
 						obj.find('.uifm-input2-wrap').append('<select class="sfdc-form-control uifm-input2-opt-main" multiple ></select>');
-						$.each(values, function (index, value) {
+						$.each(values, function(index, value) {
 							newoptprev = '<option data-inp2-opt-index="' + index + '" ';
 
 							if (parseInt(value['checked']) === 1) {
@@ -17140,7 +18032,7 @@ var uifmsetting;
 			}
 		};
 
-		this.input2settings_statusRdoOption = function (el) {
+		this.input2settings_statusRdoOption = function(el) {
 			var f_id = settings['data']['id'];
 
 			var opt_index = el.closest('.uifm-fld-inp2-options-row').data('opt-index');
@@ -17158,7 +18050,7 @@ var uifmsetting;
 				case 8:
 				case 10:
 					if (options) {
-						$.each(options, function (index2, value2) {
+						$.each(options, function(index2, value2) {
 							rocketform.setUiData7('steps_src', parseInt(f_step), f_id, 'input2', 'options', index2, 'checked', 0);
 						});
 					}
@@ -17199,9 +18091,15 @@ var uifmsetting;
 
 					if (parseInt(stl1_st) === 1) {
 						if (opt_value === 1) {
-							prev_el_sel.find('input').data('checkradios').form.checkboxEnable(prev_el_sel.find('input'));
+							prev_el_sel
+								.find('input')
+								.data('checkradios')
+								.form.checkboxEnable(prev_el_sel.find('input'));
 						} else {
-							prev_el_sel.find('input').data('checkradios').form.checkboxDisable(prev_el_sel.find('input'));
+							prev_el_sel
+								.find('input')
+								.data('checkradios')
+								.form.checkboxDisable(prev_el_sel.find('input'));
 						}
 					}
 
@@ -17215,7 +18113,7 @@ var uifmsetting;
 			}
 		};
 
-		this.previewfield_input2_stl1 = function () {
+		this.previewfield_input2_stl1 = function() {
 			var f_id = settings['data']['id'];
 			var f_step = $('#' + f_id)
 				.closest('.uiform-step-pane')
@@ -17244,7 +18142,7 @@ var uifmsetting;
 					.removeData();
 
 				var tmp_inp, tmp_wrap;
-				$.each($('#' + f_id).find('.uifm-input2-wrap .sfdc-checkbox'), function (index, value) {
+				$.each($('#' + f_id).find('.uifm-input2-wrap .sfdc-checkbox'), function(index, value) {
 					tmp_inp = $(this).find('.checkradios-checkbox input');
 					tmp_wrap = $(this).find('.checkradios-checkbox');
 					tmp_wrap.replaceWith(tmp_inp);
@@ -17256,11 +18154,11 @@ var uifmsetting;
 						.find('.uifm-input2-wrap input')
 						.checkradios({
 							checkbox: {
-								iconClass: 'fa ' + stl1_icon_mark
+								iconClass: 'fa ' + stl1_icon_mark,
 							},
 							radio: {
-								iconClass: 'fa ' + stl1_icon_mark
-							}
+								iconClass: 'fa ' + stl1_icon_mark,
+							},
 						});
 
 					var str_css = '';
@@ -17289,7 +18187,7 @@ var uifmsetting;
 			}
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -17297,8 +18195,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_checkbox = function (options) {
-		return this.each(function () {
+	$.fn.uiform_checkbox = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_checkbox')) return;
@@ -17310,8 +18208,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformColorpicker = function (element, options) {
+(function($) {
+	var uiformColorpicker = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -17327,26 +18225,26 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
 				type_n: 'colorpicker',
 				input10: {
-					value: ''
+					value: '',
 				},
 				label: {
 					text: 'Text label',
@@ -17361,7 +18259,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -17376,20 +18274,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -17399,30 +18297,32 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-timepicker').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -17430,25 +18330,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -17459,7 +18359,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -17468,26 +18368,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -17514,7 +18416,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -17532,11 +18434,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -17545,10 +18447,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -17567,9 +18469,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -17580,24 +18482,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -17611,11 +18513,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -17623,8 +18525,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_colorpicker = function (options) {
-		return this.each(function () {
+	$.fn.uiform_colorpicker = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_colorpicker')) return;
@@ -17636,8 +18538,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformCustomhtml = function (element, options) {
+(function($) {
+	var uiformCustomhtml = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -17653,20 +18555,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				type_n: 'customhtml',
@@ -17683,7 +18585,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				input3: {
 					text: encodeURIComponent('<div style="border: 1px dotted red;"></br>here goes your custom html</br>&nbsp;</div>'),
@@ -17693,7 +18595,7 @@ var uifmsetting;
 					underline: 0,
 					color: '#000',
 					font: '',
-					font_st: 1
+					font_st: 1,
 				},
 				sublabel: {
 					text: '',
@@ -17708,42 +18610,44 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-customhtml').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -17751,25 +18655,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -17780,7 +18684,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -17789,26 +18693,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -17835,7 +18741,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -17853,11 +18759,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -17866,10 +18772,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -17887,9 +18793,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -17900,21 +18806,21 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -17928,11 +18834,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -17940,8 +18846,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_customhtml = function (options) {
-		return this.each(function () {
+	$.fn.uiform_customhtml = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_customhtml')) return;
@@ -17953,8 +18859,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformDatepicker = function (element, options) {
+(function($) {
+	var uiformDatepicker = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -17970,27 +18876,27 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
 				type_n: 'datepicker',
 				input7: {
 					format: '',
-					language: ''
+					language: '',
 				},
 				label: {
 					text: 'Text label',
@@ -18005,7 +18911,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -18020,20 +18926,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -18043,30 +18949,32 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-datepicker').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -18074,25 +18982,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -18103,7 +19011,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -18112,26 +19020,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -18158,7 +19068,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -18176,11 +19086,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -18189,10 +19099,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -18215,9 +19125,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -18228,24 +19138,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -18259,11 +19169,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -18271,8 +19181,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_datepicker = function (options) {
-		return this.each(function () {
+	$.fn.uiform_datepicker = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_datepicker')) return;
@@ -18284,8 +19194,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uifmFlatPickr = function (element, options) {
+(function($) {
+	var uifmFlatPickr = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -18301,20 +19211,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -18331,7 +19241,7 @@ var uifmsetting;
 					mindate: 'today',
 					maxdate: '',
 					defaultdate: '',
-					inline: '0'
+					inline: '0',
 				},
 				label: {
 					text: 'Text label',
@@ -18346,7 +19256,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -18361,20 +19271,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -18384,30 +19294,32 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-datepicker2').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -18415,25 +19327,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -18444,7 +19356,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -18453,26 +19365,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -18499,7 +19413,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -18517,11 +19431,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -18530,10 +19444,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -18554,9 +19468,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -18567,24 +19481,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -18598,11 +19512,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		this.inputsettings_refresh_Options = function (option, tab, value) {
+		this.inputsettings_refresh_Options = function(option, tab, value) {
 			switch (String(option)) {
 				case 'enabletime':
 					if (parseInt(value) === 1) {
@@ -18660,7 +19574,7 @@ var uifmsetting;
 			}
 		};
 
-		this.inputsettings_preview_genAllOptions = function (obj, section) {
+		this.inputsettings_preview_genAllOptions = function(obj, section) {
 			var f_type = obj.data('typefield');
 			var f_id = obj.attr('id');
 			var f_step = $('#' + f_id)
@@ -18745,7 +19659,7 @@ var uifmsetting;
 			}
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -18753,8 +19667,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uifm_datepickr_flat = function (options) {
-		return this.each(function () {
+	$.fn.uifm_datepickr_flat = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uifm_datepickr_flat')) return;
@@ -18766,8 +19680,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformDatetime = function (element, options) {
+(function($) {
+	var uiformDatetime = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -18783,27 +19697,27 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
 				type_n: 'datetime',
 				input7: {
 					format: '',
-					language: ''
+					language: '',
 				},
 				label: {
 					text: 'Text label',
@@ -18818,7 +19732,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -18833,20 +19747,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -18856,30 +19770,32 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-datetime').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -18887,25 +19803,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -18916,7 +19832,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -18925,26 +19841,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -18971,7 +19889,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -18989,11 +19907,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -19002,10 +19920,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -19028,9 +19946,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -19041,24 +19959,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -19072,11 +19990,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -19084,8 +20002,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_datetime = function (options) {
-		return this.each(function () {
+	$.fn.uiform_datetime = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_datetime')) return;
@@ -19097,8 +20015,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformDivider = function (element, options) {
+(function($) {
+	var uiformDivider = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -19114,20 +20032,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				type_n: 'divider',
@@ -19141,30 +20059,32 @@ var uifmsetting;
 					italic: '0',
 					underline: '0',
 					font: '',
-					font_st: ''
+					font_st: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-divider').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -19172,25 +20092,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -19201,7 +20121,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -19210,26 +20130,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -19256,7 +20178,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -19274,11 +20196,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -19287,19 +20209,19 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
 				var clvars = [
 					'.uifm-tab-fld-input',
 					'.uifm-set-section-input11',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -19310,21 +20232,21 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -19338,11 +20260,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -19350,8 +20272,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_divider = function (options) {
-		return this.each(function () {
+	$.fn.uiform_divider = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_divider')) return;
@@ -19363,8 +20285,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformDyncheckbox = function (element, options) {
+(function($) {
+	var uiformDyncheckbox = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -19380,20 +20302,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -19415,14 +20337,14 @@ var uifmsetting;
 								0: {
 									img_full: '',
 									img_th_150x150: '',
-									title: 'image 1'
-								}
+									title: 'image 1',
+								},
 							},
 							img_list_2: {},
 							qty_st: '0',
-							qty_max: '2'
-						}
-					}
+							qty_max: '2',
+						},
+					},
 				},
 				price: {
 					enable_st: '1',
@@ -19430,7 +20352,7 @@ var uifmsetting;
 					lbl_show_format: '%3Cp%3E(%5Buifm_symbol%5D%20%5Buifm_price%5D%20%5Buifm_currency%5D)%3C%2Fp%3E',
 					color: '#FF0000',
 					font: '{"family":"\'Comic Sans MS\', Arial, sans-serif","name":"Comic Sans MS","classname":"comicsansms"}',
-					font_st: 1
+					font_st: 1,
 				},
 				label: {
 					text: 'Text label',
@@ -19445,7 +20367,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -19460,43 +20382,45 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-dyncheckbox').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -19504,25 +20428,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -19533,7 +20457,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -19542,26 +20466,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -19588,7 +20514,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -19606,11 +20532,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -19619,10 +20545,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -19642,9 +20568,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -19655,24 +20581,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -19686,11 +20612,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -19698,8 +20624,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_dyncheckbox = function (options) {
-		return this.each(function () {
+	$.fn.uiform_dyncheckbox = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_dyncheckbox')) return;
@@ -19711,8 +20637,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformDynradiobtn = function (element, options) {
+(function($) {
+	var uiformDynradiobtn = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -19728,20 +20654,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -19763,14 +20689,14 @@ var uifmsetting;
 								0: {
 									img_full: '',
 									img_th_150x150: '',
-									title: 'image 1'
-								}
+									title: 'image 1',
+								},
 							},
 							img_list_2: {},
 							qty_st: '0',
-							qty_max: '2'
-						}
-					}
+							qty_max: '2',
+						},
+					},
 				},
 				price: {
 					enable_st: '1',
@@ -19778,7 +20704,7 @@ var uifmsetting;
 					lbl_show_format: '%3Cp%3E(%5Buifm_symbol%5D%20%5Buifm_price%5D%20%5Buifm_currency%5D)%3C%2Fp%3E',
 					color: '#FF0000',
 					font: '{"family":"\'Comic Sans MS\', Arial, sans-serif","name":"Comic Sans MS","classname":"comicsansms"}',
-					font_st: 1
+					font_st: 1,
 				},
 				label: {
 					text: 'Text label',
@@ -19793,7 +20719,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -19808,43 +20734,45 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-dynradiobtn').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -19852,25 +20780,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -19881,7 +20809,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -19890,26 +20818,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -19936,7 +20866,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -19954,11 +20884,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -19967,10 +20897,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -19990,9 +20920,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -20003,24 +20933,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -20034,11 +20964,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -20046,8 +20976,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_dynradiobtn = function (options) {
-		return this.each(function () {
+	$.fn.uiform_dynradiobtn = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_dynradiobtn')) return;
@@ -20059,8 +20989,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformFileupload = function (element, options) {
+(function($) {
+	var uiformFileupload = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -20076,20 +21006,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -20101,8 +21031,8 @@ var uifmsetting;
 					stl1: {
 						txt_selimage: 'Select image',
 						txt_change: 'Change',
-						txt_remove: 'Remove'
-					}
+						txt_remove: 'Remove',
+					},
 				},
 				label: {
 					text: 'Text label',
@@ -20117,7 +21047,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -20132,20 +21062,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -20155,29 +21085,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-fileupload').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -20185,25 +21117,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -20214,7 +21146,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -20223,26 +21155,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -20269,7 +21203,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -20287,11 +21221,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -20300,10 +21234,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -20324,9 +21258,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -20337,24 +21271,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -20368,11 +21302,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -20380,8 +21314,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_fileupload = function (options) {
-		return this.each(function () {
+	$.fn.uiform_fileupload = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_fileupload')) return;
@@ -20393,8 +21327,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiform_gridsystem = function (element, options) {
+(function($) {
+	var uiform_gridsystem = function(element, options) {
 		var elem = $(element);
 		var obj = this;
 		var defaults = {
@@ -20407,27 +21341,27 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
-				type_n: 'column4'
-			}
+				type_n: 'column4',
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
-		this.showSettingTab = function (id_element) {
+		this.publicMethod = function() {};
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -20436,7 +21370,7 @@ var uifmsetting;
 			rocketform.checkScrollTab();
 		};
 
-		this.enableSettingOptions = function (id_element) {
+		this.enableSettingOptions = function(id_element) {
 			this.showSettingTab();
 
 			if (rocketform.checkIntegrityDataField(id_element)) {
@@ -20450,35 +21384,35 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
 
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
 
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 	};
 
-	$.fn.uiform_gridsystem = function (options) {
-		return this.each(function () {
+	$.fn.uiform_gridsystem = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_gridsystem')) return;
@@ -20490,8 +21424,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiform_heading = function (element, options) {
+(function($) {
+	var uiform_heading = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -20507,20 +21441,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				type_n: '',
@@ -20534,7 +21468,7 @@ var uifmsetting;
 					font: '',
 					font_st: 1,
 					val_align: '',
-					obj_align: ''
+					obj_align: '',
 				},
 				label: {
 					text: 'Text label',
@@ -20549,7 +21483,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -20564,24 +21498,24 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '0',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				el_background: {
 					show_st: '0',
 					type: '1',
 					start_color: '#55acf8',
 					end_color: '#2d6ca2',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el_border_radius: {
 					show_st: '0',
-					size: '17'
+					size: '17',
 				},
 				el_border: {
 					show_st: '0',
@@ -20589,26 +21523,26 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '0'
+					width: '0',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
-		this.showSettingTab = function (id_element) {
+		this.publicMethod = function() {};
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -20629,9 +21563,9 @@ var uifmsetting;
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -20642,7 +21576,7 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -20653,7 +21587,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -20662,26 +21596,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -20708,7 +21644,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -20726,11 +21662,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -20739,41 +21675,41 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
 
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setToDatalvl2 = function (option, option2, value) {
+		this.setToDatalvl2 = function(option, option2, value) {
 			settings.data[option][option2] = value;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -20787,13 +21723,13 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 	};
 
-	$.fn.uiform_heading = function (options) {
-		return this.each(function () {
+	$.fn.uiform_heading = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_heading')) return;
@@ -20805,8 +21741,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformHiddeninput = function (element, options) {
+(function($) {
+	var uiformHiddeninput = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -20822,42 +21758,44 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				type_n: 'hiddeninput',
 				input8: {
-					value: 'Hidden text'
-				}
-			}
+					value: 'Hidden text',
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-hiddeninput').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -20865,25 +21803,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -20894,7 +21832,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -20903,26 +21841,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -20949,7 +21889,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -20967,11 +21907,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -20980,10 +21920,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -20991,9 +21931,9 @@ var uifmsetting;
 					'.uifm-set-section-fieldname',
 					'.uifm-tab-fld-input',
 					'.uifm-set-section-input8',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -21004,24 +21944,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -21035,11 +21975,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -21047,8 +21987,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_hiddeninput = function (options) {
-		return this.each(function () {
+	$.fn.uiform_hiddeninput = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_hiddeninput')) return;
@@ -21060,8 +22000,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformImageupload = function (element, options) {
+(function($) {
+	var uiformImageupload = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -21077,20 +22017,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -21102,8 +22042,8 @@ var uifmsetting;
 					stl1: {
 						txt_selimage: 'Select image',
 						txt_change: 'Change',
-						txt_remove: 'Remove'
-					}
+						txt_remove: 'Remove',
+					},
 				},
 				label: {
 					text: 'Text label',
@@ -21118,7 +22058,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -21133,20 +22073,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -21156,29 +22096,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-imageupload').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -21186,25 +22128,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -21215,7 +22157,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -21224,26 +22166,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -21270,7 +22214,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -21288,11 +22232,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -21301,10 +22245,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -21325,9 +22269,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -21338,24 +22282,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -21369,11 +22313,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -21381,8 +22325,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_imageupload = function (options) {
-		return this.each(function () {
+	$.fn.uiform_imageupload = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_imageupload')) return;
@@ -21394,8 +22338,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformMultiselect = function (element, options) {
+(function($) {
+	var uiformMultiselect = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -21411,20 +22355,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -21449,8 +22393,8 @@ var uifmsetting;
 						search_st: '0',
 						txt_noselected: 'Nothing selected',
 						txt_noresult: 'No results match',
-						txt_countsel: '{0} of {1} selected'
-					}
+						txt_countsel: '{0} of {1} selected',
+					},
 				},
 				label: {
 					text: 'Text label',
@@ -21465,7 +22409,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -21480,20 +22424,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -21503,29 +22447,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-multiselect').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -21533,25 +22479,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -21562,7 +22508,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -21571,26 +22517,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -21617,7 +22565,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -21635,11 +22583,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -21648,10 +22596,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -21672,9 +22620,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -21685,24 +22633,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -21716,11 +22664,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		this.input2settings_preview_genAllOptions = function () {
+		this.input2settings_preview_genAllOptions = function() {
 
 			var f_id = settings['data']['id'];
 			var obj = $('#' + f_id);
@@ -21748,8 +22696,10 @@ var uifmsetting;
 				switch (parseInt(f_type)) {
 					case 8:
 
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp2_templates').find('.sfdc-radio').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp2_templates')
+								.find('.sfdc-radio')
+								.clone();
 							newoptprev.attr('data-inp2-opt-index', index);
 							newoptprev.find('.uifm-inp2-rdo').prop('checked', parseInt(value['checked']));
 							newoptprev.find('.uifm-inp2-rdo').attr('name', 'uifm_' + f_id + '_opt');
@@ -21765,8 +22715,10 @@ var uifmsetting;
 						}
 						break;
 					case 9:
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp2_templates').find('.sfdc-checkbox').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp2_templates')
+								.find('.sfdc-checkbox')
+								.clone();
 							newoptprev.attr('data-inp2-opt-index', index);
 							newoptprev.find('.uifm-inp2-chk').prop('checked', parseInt(value['checked']));
 							newoptprev.find('.uifm-inp2-chk').attr('name', 'uifm_' + f_id + '_opt');
@@ -21788,7 +22740,7 @@ var uifmsetting;
 						break;
 					case 10:
 						obj.find('.uifm-input2-wrap').append('<select class="sfdc-form-control uifm-input2-opt-main" ></select>');
-						$.each(values, function (index, value) {
+						$.each(values, function(index, value) {
 							newoptprev = '<option data-inp2-opt-index="' + index + '" ';
 
 							if (parseInt(value['checked']) === 1) {
@@ -21805,7 +22757,7 @@ var uifmsetting;
 						break;
 					case 11:
 						obj.find('.uifm-input2-wrap').append('<select class="sfdc-form-control uifm-input2-opt-main" multiple ></select>');
-						$.each(values, function (index, value) {
+						$.each(values, function(index, value) {
 							newoptprev = '<option data-inp2-opt-index="' + index + '" ';
 
 							if (parseInt(value['checked']) === 1) {
@@ -21860,7 +22812,7 @@ var uifmsetting;
 			}
 		};
 
-		this.input2settings_statusRdoOption = function (el) {
+		this.input2settings_statusRdoOption = function(el) {
 			var f_id = settings['data']['id'];
 
 			var opt_index = el.closest('.uifm-fld-inp2-options-row').data('opt-index');
@@ -21878,7 +22830,7 @@ var uifmsetting;
 				case 8:
 				case 10:
 					if (options) {
-						$.each(options, function (index2, value2) {
+						$.each(options, function(index2, value2) {
 							rocketform.setUiData7('steps_src', parseInt(f_step), f_id, 'input2', 'options', index2, 'checked', 0);
 						});
 					}
@@ -21919,9 +22871,15 @@ var uifmsetting;
 
 					if (parseInt(stl1_st) === 1) {
 						if (opt_value === 1) {
-							prev_el_sel.find('input').data('checkradios').form.checkboxEnable(prev_el_sel.find('input'));
+							prev_el_sel
+								.find('input')
+								.data('checkradios')
+								.form.checkboxEnable(prev_el_sel.find('input'));
 						} else {
-							prev_el_sel.find('input').data('checkradios').form.checkboxDisable(prev_el_sel.find('input'));
+							prev_el_sel
+								.find('input')
+								.data('checkradios')
+								.form.checkboxDisable(prev_el_sel.find('input'));
 						}
 					}
 
@@ -21943,7 +22901,7 @@ var uifmsetting;
 			}
 		};
 
-		this.previewfield_input2_stl1 = function () {
+		this.previewfield_input2_stl1 = function() {
 			var f_id = settings['data']['id'];
 			var f_step = $('#' + f_id)
 				.closest('.uiform-step-pane')
@@ -22101,7 +23059,7 @@ var uifmsetting;
 			}
 		};
 
-		this.input2settings_stl1_quickcolor = function (option) {
+		this.input2settings_stl1_quickcolor = function(option) {
 			var f_id = settings['data']['id'];
 			var f_step = $('#' + f_id)
 				.closest('.uiform-step-pane')
@@ -22179,13 +23137,13 @@ var uifmsetting;
 			var obj_field = $('#' + f_id);
 			var f_store_a;
 
-			$.each(data_field, function (index, value) {
+			$.each(data_field, function(index, value) {
 				if ($.isPlainObject(value)) {
-					$.each(value, function (index2, value2) {
+					$.each(value, function(index2, value2) {
 						if ($.isPlainObject(value2)) {
-							$.each(value2, function (index3, value3) {
+							$.each(value2, function(index3, value3) {
 								if ($.isPlainObject(value3)) {
-									$.each(value3, function (index4, value4) {
+									$.each(value3, function(index4, value4) {
 										f_store_a = [];
 										f_store_a.push('input2');
 										f_store_a.push(index);
@@ -22222,7 +23180,7 @@ var uifmsetting;
 			});
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -22230,8 +23188,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_multiselect = function (options) {
-		return this.each(function () {
+	$.fn.uiform_multiselect = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_multiselect')) return;
@@ -22243,8 +23201,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformPanelfld = function (element, options) {
+(function($) {
+	var uiformPanelfld = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -22260,43 +23218,42 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				type_n: 'panel',
 				input18: {
 					text: {
 						show_st: '1',
-						html_cont:
-							'%3Cdiv%20class%3D%22uiform-frm-fld31-txthtml-circle%22%3E1%3C%2Fdiv%3E%0A%3Ch3%20class%3D%22uifm-glb-color-red%22%3EHere%20your%20title%3C%2Fh3%3E%0A%3Cp%3EHere%20description%20of%20this%20section%3A%3C%2Fp%3E',
-						html_pos: '1'
+						html_cont: '%3Cdiv%20class%3D%22uiform-frm-fld31-txthtml-circle%22%3E1%3C%2Fdiv%3E%0A%3Ch3%20class%3D%22uifm-glb-color-red%22%3EHere%20your%20title%3C%2Fh3%3E%0A%3Cp%3EHere%20description%20of%20this%20section%3A%3C%2Fp%3E',
+						html_pos: '1',
 					},
 					pane_margin: {
 						show_st: '0',
 						pos_top: '10',
 						pos_right: '10',
 						pos_bottom: '10',
-						pos_left: '10'
+						pos_left: '10',
 					},
 					pane_padding: {
 						show_st: '1',
 						pos_top: '5',
 						pos_right: '5',
 						pos_bottom: '5',
-						pos_left: '5'
+						pos_left: '5',
 					},
 					pane_background: {
 						show_st: '1',
@@ -22304,49 +23261,51 @@ var uifmsetting;
 						start_color: '#cccccc',
 						end_color: '#ffffff',
 						solid_color: '#cccccc',
-						image: ''
+						image: '',
 					},
 					pane_border_radius: {
 						show_st: '1',
-						size: '5'
+						size: '5',
 					},
 					pane_border: {
 						show_st: '0',
 						color: '#000',
 						style: '1',
-						width: '1'
+						width: '1',
 					},
 					pane_shadow: {
 						show_st: '1',
 						color: '#CCCCCC',
 						h_shadow: '3',
 						v_shadow: '3',
-						blur: '10'
-					}
+						blur: '10',
+					},
 				},
 
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-panelfld').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -22354,25 +23313,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -22383,7 +23342,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -22391,26 +23350,28 @@ var uifmsetting;
 			obj_quick_options = elem.find('.zgpb-fields-quick-options');
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -22437,7 +23398,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -22455,11 +23416,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -22468,10 +23429,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -22479,9 +23440,9 @@ var uifmsetting;
 					'.uifm-tab-fld-input',
 					'.uifm-set-section-input18',
 					'.uifm-tab-fld-logicrls',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -22492,21 +23453,21 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -22520,11 +23481,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -22532,8 +23493,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_panelfld = function (options) {
-		return this.each(function () {
+	$.fn.uiform_panelfld = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_panelfld')) return;
@@ -22545,8 +23506,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformPassword = function (element, options) {
+(function($) {
+	var uiformPassword = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -22562,20 +23523,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -22590,7 +23551,7 @@ var uifmsetting;
 					color: '#000',
 					font: '',
 					font_st: 1,
-					val_align: ''
+					val_align: '',
 				},
 				label: {
 					text: 'Text label',
@@ -22605,7 +23566,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -22620,24 +23581,24 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				el_background: {
 					show_st: '1',
 					type: '1',
 					start_color: '',
 					end_color: '',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el_border_radius: {
 					show_st: '1',
-					size: '0'
+					size: '0',
 				},
 				el_border: {
 					show_st: '1',
@@ -22645,14 +23606,14 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '0'
+					width: '0',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -22663,29 +23624,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-password').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -22693,25 +23656,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -22722,7 +23685,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -22731,26 +23694,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -22777,7 +23742,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -22795,11 +23760,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -22808,10 +23773,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -22834,9 +23799,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -22847,24 +23812,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -22878,11 +23843,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -22890,8 +23855,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_password = function (options) {
-		return this.each(function () {
+	$.fn.uiform_password = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_password')) return;
@@ -22903,8 +23868,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformPrepapptext = function (element, options) {
+(function($) {
+	var uiformPrepapptext = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -22920,20 +23885,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -22950,7 +23915,7 @@ var uifmsetting;
 					font_st: 1,
 					val_align: '',
 					append_txt: encodeURIComponent('@'),
-					prepe_txt: encodeURIComponent('@')
+					prepe_txt: encodeURIComponent('@'),
 				},
 				label: {
 					text: 'Text label',
@@ -22965,7 +23930,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -22980,24 +23945,24 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				el_background: {
 					show_st: '1',
 					type: '1',
 					start_color: '',
 					end_color: '',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el_border_radius: {
 					show_st: '1',
-					size: '0'
+					size: '0',
 				},
 				el_border: {
 					show_st: '1',
@@ -23005,14 +23970,14 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '1'
+					width: '1',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -23023,29 +23988,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-password').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -23053,25 +24020,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -23082,7 +24049,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -23091,26 +24058,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -23137,7 +24106,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -23155,11 +24124,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -23168,10 +24137,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -23204,9 +24173,9 @@ var uifmsetting;
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -23217,24 +24186,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -23248,11 +24217,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -23260,8 +24229,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_prepapptext = function (options) {
-		return this.each(function () {
+	$.fn.uiform_prepapptext = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_prepapptext')) return;
@@ -23273,8 +24242,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformPreptext = function (element, options) {
+(function($) {
+	var uiformPreptext = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -23290,20 +24259,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -23319,7 +24288,7 @@ var uifmsetting;
 					font: '',
 					font_st: 1,
 					val_align: '',
-					prepe_txt: encodeURIComponent('@')
+					prepe_txt: encodeURIComponent('@'),
 				},
 				label: {
 					text: 'Text label',
@@ -23334,7 +24303,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -23349,24 +24318,24 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				el_background: {
 					show_st: '1',
 					type: '1',
 					start_color: '',
 					end_color: '',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el_border_radius: {
 					show_st: '1',
-					size: '0'
+					size: '0',
 				},
 				el_border: {
 					show_st: '1',
@@ -23374,14 +24343,14 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '1'
+					width: '1',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -23392,29 +24361,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-password').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -23422,25 +24393,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -23451,7 +24422,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -23460,26 +24431,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -23506,7 +24479,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -23524,11 +24497,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -23537,10 +24510,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -23572,9 +24545,9 @@ var uifmsetting;
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -23585,24 +24558,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -23616,11 +24589,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -23628,8 +24601,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_preptext = function (options) {
-		return this.each(function () {
+	$.fn.uiform_preptext = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_preptext')) return;
@@ -23641,8 +24614,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformRadiobtn = function (element, options) {
+(function($) {
+	var uiformRadiobtn = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -23658,20 +24631,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -23692,8 +24665,8 @@ var uifmsetting;
 						bg_color: '#ffffff',
 						icon_color: '#337ab7',
 						icon_mark: 'fa-check',
-						size: '14'
-					}
+						size: '14',
+					},
 				},
 				label: {
 					text: 'Text label',
@@ -23708,7 +24681,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -23723,20 +24696,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -23746,29 +24719,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-radiobtn').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -23776,25 +24751,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -23805,7 +24780,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -23814,26 +24789,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -23860,7 +24837,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -23879,11 +24856,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -23892,10 +24869,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -23917,9 +24894,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -23930,24 +24907,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -23961,11 +24938,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		this.input2settings_preview_genAllOptions = function () {
+		this.input2settings_preview_genAllOptions = function() {
 
 			var f_id = settings['data']['id'];
 			var obj = $('#' + f_id);
@@ -23993,8 +24970,10 @@ var uifmsetting;
 				switch (parseInt(f_type)) {
 					case 8:
 
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp2_templates').find('.sfdc-radio').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp2_templates')
+								.find('.sfdc-radio')
+								.clone();
 							newoptprev.attr('data-inp2-opt-index', index);
 							newoptprev.find('.uifm-inp2-rdo').prop('checked', parseInt(value['checked']));
 							newoptprev.find('.uifm-inp2-rdo').attr('name', 'uifm_' + f_id + '_opt');
@@ -24018,8 +24997,10 @@ var uifmsetting;
 
 						break;
 					case 9:
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp2_templates').find('.sfdc-checkbox').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp2_templates')
+								.find('.sfdc-checkbox')
+								.clone();
 							newoptprev.attr('data-inp2-opt-index', index);
 							newoptprev.find('.uifm-inp2-chk').prop('checked', parseInt(value['checked']));
 							newoptprev.find('.uifm-inp2-chk').attr('name', 'uifm_' + f_id + '_opt');
@@ -24043,7 +25024,7 @@ var uifmsetting;
 						break;
 					case 10:
 						obj.find('.uifm-input2-wrap').append('<select class="sfdc-form-control uifm-input2-opt-main" ></select>');
-						$.each(values, function (index, value) {
+						$.each(values, function(index, value) {
 							newoptprev = '<option data-inp2-opt-index="' + index + '" ';
 
 							if (parseInt(value['checked']) === 1) {
@@ -24055,7 +25036,7 @@ var uifmsetting;
 						break;
 					case 11:
 						obj.find('.uifm-input2-wrap').append('<select class="sfdc-form-control uifm-input2-opt-main" multiple ></select>');
-						$.each(values, function (index, value) {
+						$.each(values, function(index, value) {
 							newoptprev = '<option data-inp2-opt-index="' + index + '" ';
 
 							if (parseInt(value['checked']) === 1) {
@@ -24104,7 +25085,7 @@ var uifmsetting;
 			}
 		};
 
-		this.input2settings_statusRdoOption = function (el) {
+		this.input2settings_statusRdoOption = function(el) {
 			var f_id = settings['data']['id'];
 
 			var opt_index = el.closest('.uifm-fld-inp2-options-row').data('opt-index');
@@ -24122,7 +25103,7 @@ var uifmsetting;
 				case 8:
 				case 10:
 					if (options) {
-						$.each(options, function (index2, value2) {
+						$.each(options, function(index2, value2) {
 							rocketform.setUiData7('steps_src', parseInt(f_step), f_id, 'input2', 'options', index2, 'checked', 0);
 						});
 					}
@@ -24162,14 +25143,18 @@ var uifmsetting;
 					prev_el_sel.find('input').prop('checked', opt_value);
 
 					if (parseInt(stl1_st) === 1) {
-
-												$('#' + f_id).find('input.uifm-inp2-rdo').each(function () {
+						$('#' + f_id)
+							.find('input.uifm-inp2-rdo')
+							.each(function() {
 								if ($(this).is(':checked')) {
-									$(this).data('checkradios').form.radioEnable($(this));
+									$(this)
+										.data('checkradios')
+										.form.radioEnable($(this));
 								} else {
-									$(this).data('checkradios').form.radioDisable($(this));
+									$(this)
+										.data('checkradios')
+										.form.radioDisable($(this));
 								}
-
 							});
 					}
 
@@ -24183,7 +25168,7 @@ var uifmsetting;
 			}
 		};
 
-		this.previewfield_input2_stl1 = function () {
+		this.previewfield_input2_stl1 = function() {
 			var f_id = settings['data']['id'];
 			var f_step = $('#' + f_id)
 				.closest('.uiform-step-pane')
@@ -24212,7 +25197,7 @@ var uifmsetting;
 					.removeData();
 
 				var tmp_inp, tmp_wrap;
-				$.each($('#' + f_id).find('.uifm-input2-wrap .sfdc-radio'), function (index, value) {
+				$.each($('#' + f_id).find('.uifm-input2-wrap .sfdc-radio'), function(index, value) {
 					tmp_inp = $(this).find('.checkradios-radio input');
 					tmp_wrap = $(this).find('.checkradios-radio');
 					tmp_wrap.replaceWith(tmp_inp);
@@ -24224,8 +25209,8 @@ var uifmsetting;
 						.find('.uifm-input2-wrap input')
 						.checkradios({
 							radio: {
-								iconClass: 'fa ' + stl1_icon_mark
-							}
+								iconClass: 'fa ' + stl1_icon_mark,
+							},
 						});
 
 					var str_css = '';
@@ -24254,7 +25239,7 @@ var uifmsetting;
 			}
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -24262,8 +25247,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_radiobtn = function (options) {
-		return this.each(function () {
+	$.fn.uiform_radiobtn = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_radiobtn')) return;
@@ -24275,8 +25260,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformRange = function (element, options) {
+(function($) {
+	var uiformRange = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -24292,20 +25277,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -24315,7 +25300,7 @@ var uifmsetting;
 					set_max: '1000',
 					set_step: '1',
 					set_range1: '250',
-					set_range2: '750'
+					set_range2: '750',
 				},
 				label: {
 					text: 'Text label',
@@ -24330,7 +25315,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -24345,43 +25330,45 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-range').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -24389,25 +25376,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -24418,7 +25405,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -24427,26 +25414,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -24473,7 +25462,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -24491,11 +25480,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -24504,10 +25493,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -24527,9 +25516,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -24540,24 +25529,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -24571,11 +25560,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -24583,8 +25572,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_range = function (options) {
-		return this.each(function () {
+	$.fn.uiform_range = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_range')) return;
@@ -24596,8 +25585,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformRatingstar = function (element, options) {
+(function($) {
+	var uiformRatingstar = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -24613,20 +25602,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -24637,7 +25626,7 @@ var uifmsetting;
 					txt_star3: 'ok',
 					txt_star4: 'good',
 					txt_star5: 'Very Good',
-					txt_norate: 'no rated'
+					txt_norate: 'no rated',
 				},
 				label: {
 					text: 'Text label',
@@ -24652,7 +25641,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -24667,43 +25656,45 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '2',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-timepicker').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -24711,25 +25702,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -24740,7 +25731,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -24749,26 +25740,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -24795,7 +25788,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -24813,11 +25806,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -24826,10 +25819,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -24848,9 +25841,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -24861,24 +25854,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -24892,11 +25885,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -24904,8 +25897,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_ratingstar = function (options) {
-		return this.each(function () {
+	$.fn.uiform_ratingstar = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_ratingstar')) return;
@@ -24917,8 +25910,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformRecaptcha = function (element, options) {
+(function($) {
+	var uiformRecaptcha = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -24934,20 +25927,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -24955,7 +25948,7 @@ var uifmsetting;
 				input5: {
 					g_key_public: '',
 					g_key_secret: '',
-					g_theme: '0'
+					g_theme: '0',
 				},
 				label: {
 					text: 'Text label',
@@ -24970,7 +25963,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -24985,20 +25978,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -25008,30 +26001,32 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-recaptcha').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -25039,25 +26034,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -25068,7 +26063,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -25077,26 +26072,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -25123,7 +26120,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -25141,11 +26138,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -25154,10 +26151,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -25178,9 +26175,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -25191,21 +26188,21 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -25219,11 +26216,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -25231,8 +26228,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_recaptcha = function (options) {
-		return this.each(function () {
+	$.fn.uiform_recaptcha = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_recaptcha')) return;
@@ -25244,8 +26241,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformSelect = function (element, options) {
+(function($) {
+	var uiformSelect = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -25261,20 +26258,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -25299,8 +26296,8 @@ var uifmsetting;
 						search_st: '0',
 						txt_noselected: 'Nothing selected',
 						txt_noresult: 'No results match',
-						txt_countsel: '{0} of {1} selected'
-					}
+						txt_countsel: '{0} of {1} selected',
+					},
 				},
 				label: {
 					text: 'Text label',
@@ -25315,7 +26312,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -25330,20 +26327,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -25353,29 +26350,31 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-select').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -25383,25 +26382,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -25412,7 +26411,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -25421,26 +26420,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -25467,7 +26468,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -25485,11 +26486,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -25498,10 +26499,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -25522,9 +26523,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -25535,24 +26536,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -25566,11 +26567,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		this.input2settings_preview_genAllOptions = function () {
+		this.input2settings_preview_genAllOptions = function() {
 
 			var f_id = settings['data']['id'];
 			var obj = $('#' + f_id);
@@ -25598,8 +26599,10 @@ var uifmsetting;
 				switch (parseInt(f_type)) {
 					case 8:
 
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp2_templates').find('.sfdc-radio').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp2_templates')
+								.find('.sfdc-radio')
+								.clone();
 							newoptprev.attr('data-inp2-opt-index', index);
 							newoptprev.find('.uifm-inp2-rdo').prop('checked', parseInt(value['checked']));
 							newoptprev.find('.uifm-inp2-rdo').attr('name', 'uifm_' + f_id + '_opt');
@@ -25615,8 +26618,10 @@ var uifmsetting;
 						}
 						break;
 					case 9:
-						$.each(values, function (index, value) {
-							newoptprev = $('#uifm_frm_inp2_templates').find('.sfdc-checkbox').clone();
+						$.each(values, function(index, value) {
+							newoptprev = $('#uifm_frm_inp2_templates')
+								.find('.sfdc-checkbox')
+								.clone();
 							newoptprev.attr('data-inp2-opt-index', index);
 							newoptprev.find('.uifm-inp2-chk').prop('checked', parseInt(value['checked']));
 							newoptprev.find('.uifm-inp2-chk').attr('name', 'uifm_' + f_id + '_opt');
@@ -25640,7 +26645,7 @@ var uifmsetting;
 						break;
 					case 10:
 						obj.find('.uifm-input2-wrap').append('<select class="sfdc-form-control uifm-input2-opt-main" ></select>');
-						$.each(values, function (index, value) {
+						$.each(values, function(index, value) {
 							newoptprev = '<option data-inp2-opt-index="' + index + '" ';
 
 							if (parseInt(value['checked']) === 1) {
@@ -25657,7 +26662,7 @@ var uifmsetting;
 						break;
 					case 11:
 						obj.find('.uifm-input2-wrap').append('<select class="sfdc-form-control uifm-input2-opt-main" multiple ></select>');
-						$.each(values, function (index, value) {
+						$.each(values, function(index, value) {
 							newoptprev = '<option data-inp2-opt-index="' + index + '" ';
 
 							if (parseInt(value['checked']) === 1) {
@@ -25708,7 +26713,7 @@ var uifmsetting;
 			}
 		};
 
-		this.input2settings_statusRdoOption = function (el) {
+		this.input2settings_statusRdoOption = function(el) {
 			var f_id = settings['data']['id'];
 
 			var opt_index = el.closest('.uifm-fld-inp2-options-row').data('opt-index');
@@ -25726,7 +26731,7 @@ var uifmsetting;
 				case 8:
 				case 10:
 					if (options) {
-						$.each(options, function (index2, value2) {
+						$.each(options, function(index2, value2) {
 							rocketform.setUiData7('steps_src', parseInt(f_step), f_id, 'input2', 'options', index2, 'checked', 0);
 						});
 					}
@@ -25767,9 +26772,15 @@ var uifmsetting;
 
 					if (parseInt(stl1_st) === 1) {
 						if (opt_value === 1) {
-							prev_el_sel.find('input').data('checkradios').form.checkboxEnable(prev_el_sel.find('input'));
+							prev_el_sel
+								.find('input')
+								.data('checkradios')
+								.form.checkboxEnable(prev_el_sel.find('input'));
 						} else {
-							prev_el_sel.find('input').data('checkradios').form.checkboxDisable(prev_el_sel.find('input'));
+							prev_el_sel
+								.find('input')
+								.data('checkradios')
+								.form.checkboxDisable(prev_el_sel.find('input'));
 						}
 					}
 
@@ -25791,7 +26802,7 @@ var uifmsetting;
 			}
 		};
 
-		this.previewfield_input2_stl1 = function () {
+		this.previewfield_input2_stl1 = function() {
 			var f_id = settings['data']['id'];
 			var f_step = $('#' + f_id)
 				.closest('.uiform-step-pane')
@@ -25954,7 +26965,7 @@ var uifmsetting;
 			}
 		};
 
-		this.input2settings_stl1_quickcolor = function (option) {
+		this.input2settings_stl1_quickcolor = function(option) {
 			var f_id = settings['data']['id'];
 			var f_step = $('#' + f_id)
 				.closest('.uiform-step-pane')
@@ -26032,13 +27043,13 @@ var uifmsetting;
 			var obj_field = $('#' + f_id);
 			var f_store_a;
 
-			$.each(data_field, function (index, value) {
+			$.each(data_field, function(index, value) {
 				if ($.isPlainObject(value)) {
-					$.each(value, function (index2, value2) {
+					$.each(value, function(index2, value2) {
 						if ($.isPlainObject(value2)) {
-							$.each(value2, function (index3, value3) {
+							$.each(value2, function(index3, value3) {
 								if ($.isPlainObject(value3)) {
-									$.each(value3, function (index4, value4) {
+									$.each(value3, function(index4, value4) {
 										f_store_a = [];
 										f_store_a.push('input2');
 										f_store_a.push(index);
@@ -26075,7 +27086,7 @@ var uifmsetting;
 			});
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -26083,8 +27094,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_select = function (options) {
-		return this.each(function () {
+	$.fn.uiform_select = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_select')) return;
@@ -26096,8 +27107,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformSlider = function (element, options) {
+(function($) {
+	var uiformSlider = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -26113,20 +27124,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -26135,7 +27146,7 @@ var uifmsetting;
 					set_min: '-5',
 					set_max: '1000',
 					set_default: '500',
-					set_step: '1'
+					set_step: '1',
 				},
 				label: {
 					text: 'Text label',
@@ -26150,7 +27161,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -26165,43 +27176,45 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-slider').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -26209,25 +27222,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -26238,7 +27251,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -26247,26 +27260,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -26293,7 +27308,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -26311,11 +27326,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -26324,10 +27339,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -26347,9 +27362,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -26360,24 +27375,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -26391,11 +27406,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -26403,8 +27418,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_slider = function (options) {
-		return this.each(function () {
+	$.fn.uiform_slider = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_slider')) return;
@@ -26416,8 +27431,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformSpinner = function (element, options) {
+(function($) {
+	var uiformSpinner = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -26433,20 +27448,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -26458,7 +27473,7 @@ var uifmsetting;
 					set_step: '1',
 					set_decimal: '0',
 					skin_maxwidth_st: '1',
-					skin_maxwidth: '200'
+					skin_maxwidth: '200',
 				},
 				label: {
 					text: 'Text label',
@@ -26473,7 +27488,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -26488,43 +27503,45 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-spinner').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -26532,25 +27549,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -26561,7 +27578,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -26570,26 +27587,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -26616,7 +27635,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -26634,11 +27653,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -26647,10 +27666,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -26673,9 +27692,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -26686,23 +27705,23 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -26716,11 +27735,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -26728,8 +27747,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_spinner = function (options) {
-		return this.each(function () {
+	$.fn.uiform_spinner = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_spinner')) return;
@@ -26741,8 +27760,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformSubmitbtn = function (element, options) {
+(function($) {
+	var uiformSubmitbtn = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -26758,20 +27777,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -26786,7 +27805,7 @@ var uifmsetting;
 					font: '',
 					font_st: 1,
 					val_align: '',
-					obj_align: ''
+					obj_align: '',
 				},
 				label: {
 					text: 'Text label',
@@ -26801,7 +27820,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -26816,24 +27835,24 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '0',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				el_background: {
 					show_st: '1',
 					type: '2',
 					start_color: '#55acf8',
 					end_color: '#2d6ca2',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el_border_radius: {
 					show_st: '1',
-					size: '17'
+					size: '17',
 				},
 				el_border: {
 					show_st: '1',
@@ -26841,37 +27860,39 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '0'
+					width: '0',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-submitbtn').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -26879,25 +27900,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -26908,7 +27929,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -26917,26 +27938,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -26963,7 +27986,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -26981,11 +28004,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -26994,10 +28017,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -27019,9 +28042,9 @@ var uifmsetting;
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -27032,21 +28055,21 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -27060,11 +28083,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -27072,8 +28095,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_submitbtn = function (options) {
-		return this.each(function () {
+	$.fn.uiform_submitbtn = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_submitbtn')) return;
@@ -27085,8 +28108,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformSwitch = function (element, options) {
+(function($) {
+	var uiformSwitch = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -27102,27 +28125,27 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
 				type_n: 'switch',
 				input15: {
 					txt_yes: 'Yes',
-					txt_no: 'No'
+					txt_no: 'No',
 				},
 				price: {
 					enable_st: '1',
@@ -27131,7 +28154,7 @@ var uifmsetting;
 					color: '#FF0000',
 					font: '{"family":"\'Comic Sans MS\', Arial, sans-serif","name":"Comic Sans MS","classname":"comicsansms"}',
 					font_st: 1,
-					unit_price: '1'
+					unit_price: '1',
 				},
 				label: {
 					text: 'Text label',
@@ -27146,7 +28169,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -27161,43 +28184,45 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-timepicker').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -27205,25 +28230,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -27234,7 +28259,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -27243,26 +28268,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -27289,7 +28316,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -27307,11 +28334,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -27320,10 +28347,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -27346,9 +28373,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -27359,24 +28386,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -27390,11 +28417,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -27402,8 +28429,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_switch = function (options) {
-		return this.each(function () {
+	$.fn.uiform_switch = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_switch')) return;
@@ -27415,8 +28442,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformTextarea = function (element, options) {
+(function($) {
+	var uiformTextarea = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -27432,20 +28459,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -27460,7 +28487,7 @@ var uifmsetting;
 					color: '#000',
 					font: '',
 					font_st: 1,
-					val_align: ''
+					val_align: '',
 				},
 				label: {
 					text: 'Text label',
@@ -27475,7 +28502,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -27490,24 +28517,24 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				el_background: {
 					show_st: '1',
 					type: '1',
 					start_color: '',
 					end_color: '',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el_border_radius: {
 					show_st: '1',
-					size: '0'
+					size: '0',
 				},
 				el_border: {
 					show_st: '1',
@@ -27515,14 +28542,14 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '1'
+					width: '1',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -27532,22 +28559,22 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -27558,7 +28585,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -27567,26 +28594,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -27613,14 +28642,16 @@ var uifmsetting;
 			}
 		};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-textarea').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -27628,25 +28659,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -27664,11 +28695,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -27677,10 +28708,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -27710,9 +28741,9 @@ var uifmsetting;
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -27723,24 +28754,24 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -27754,11 +28785,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -27766,8 +28797,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_textarea = function (options) {
-		return this.each(function () {
+	$.fn.uiform_textarea = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_textarea')) return;
@@ -27779,8 +28810,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformTextbox = function (element, options) {
+(function($) {
+	var uiformTextbox = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 
@@ -27797,20 +28828,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -27825,7 +28856,7 @@ var uifmsetting;
 					color: '#000',
 					font: '',
 					font_st: 1,
-					val_align: ''
+					val_align: '',
 				},
 				label: {
 					text: 'Text label',
@@ -27840,7 +28871,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -27855,24 +28886,24 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				el_background: {
 					show_st: '1',
 					type: '1',
 					start_color: '',
 					end_color: '',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el_border_radius: {
 					show_st: '1',
-					size: '0'
+					size: '0',
 				},
 				el_border: {
 					show_st: '0',
@@ -27880,14 +28911,14 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '1'
+					width: '1',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -27898,23 +28929,23 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -27925,7 +28956,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -27934,26 +28965,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -27980,14 +29013,16 @@ var uifmsetting;
 			}
 		};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-textbox').clone();
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -27995,25 +29030,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -28032,11 +29067,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -28046,10 +29081,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -28082,9 +29117,9 @@ var uifmsetting;
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-input1-txtvalue',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -28094,25 +29129,25 @@ var uifmsetting;
 			}
 
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
 
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -28126,11 +29161,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -28138,8 +29173,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_textbox = function (options) {
-		return this.each(function () {
+	$.fn.uiform_textbox = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_textbox')) return;
@@ -28151,8 +29186,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformTimepicker = function (element, options) {
+(function($) {
+	var uiformTimepicker = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -28168,26 +29203,26 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
 				type_n: 'timepicker',
 				input7: {
-					format: ''
+					format: '',
 				},
 				label: {
 					text: 'Text label',
@@ -28202,7 +29237,7 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				sublabel: {
 					text: '',
@@ -28217,20 +29252,20 @@ var uifmsetting;
 					shadow_color: '#666',
 					shadow_x: 1,
 					shadow_y: 1,
-					shadow_blur: 3
+					shadow_blur: 3,
 				},
 				txt_block: {
 					block_pos: '1',
 					block_st: '1',
 					block_align: '0',
-					grid_layout: '2'
+					grid_layout: '2',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				validate: {
 					typ_val: '0',
@@ -28240,30 +29275,32 @@ var uifmsetting;
 					tip_bg: '#ffffff',
 					reqicon_st: '0',
 					reqicon_pos: '0',
-					reqicon_img: 'glyphicon-asterisk'
+					reqicon_img: 'glyphicon-asterisk',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-timepicker').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -28271,25 +29308,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -28300,7 +29337,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -28309,26 +29346,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -28355,7 +29394,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -28373,11 +29412,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -28386,10 +29425,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -28410,9 +29449,9 @@ var uifmsetting;
 					'.uifm-set-section-label-lbltxt',
 					'.uifm-set-section-label-sublbltxt',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 
@@ -28423,23 +29462,23 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setFieldName = function (id) {
+		this.setFieldName = function(id) {
 			settings.data['field_name'] = settings.data['type_n'] + id;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -28453,11 +29492,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -28465,8 +29504,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_timepicker = function (options) {
-		return this.each(function () {
+	$.fn.uiform_timepicker = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_timepicker')) return;
@@ -28478,8 +29517,8 @@ var uifmsetting;
 	};
 })($uifm);
 
-(function ($) {
-	var uiformWizardbtn = function (element, options) {
+(function($) {
+	var uiformWizardbtn = function(element, options) {
 		var field_step = null;
 		var field_oncreation = false;
 		var elem = $(element);
@@ -28495,20 +29534,20 @@ var uifmsetting;
 						top: '5',
 						bottom: '5',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					padding: {
 						show_st: 1,
 						top: '0',
 						bottom: '0',
 						left: '0',
-						right: '0'
+						right: '0',
 					},
 					custom_css: {
 						ctm_id: '',
 						ctm_class: '',
-						ctm_additional: ''
-					}
+						ctm_additional: '',
+					},
 				},
 				field_name: '',
 				order_frm: '0',
@@ -28523,7 +29562,7 @@ var uifmsetting;
 					color: '#ffffff',
 					font: '{"family":"\'Comic Sans MS\', Arial, sans-serif","name":"Comic Sans MS","classname":"comicsansms"}',
 					font_st: 1,
-					val_align: ''
+					val_align: '',
 				},
 				input13: {
 					value_lbl: 'Prev',
@@ -28534,32 +29573,32 @@ var uifmsetting;
 					color: '#ffffff',
 					font: '{"family":"\'Comic Sans MS\', Arial, sans-serif","name":"Comic Sans MS","classname":"comicsansms"}',
 					font_st: 1,
-					val_align: ''
+					val_align: '',
 				},
 				input14: {
-					obj_align: '2'
+					obj_align: '2',
 				},
 				el12_background: {
 					show_st: '1',
 					type: '2',
 					start_color: '#55acf8',
 					end_color: '#2d6ca2',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el13_background: {
 					show_st: '1',
 					type: '2',
 					start_color: '#abbac3',
 					end_color: '#899398',
-					solid_color: '#ffffff'
+					solid_color: '#ffffff',
 				},
 				el12_border_radius: {
 					show_st: '0',
-					size: '5'
+					size: '5',
 				},
 				el13_border_radius: {
 					show_st: '0',
-					size: '5'
+					size: '5',
 				},
 				el12_border: {
 					show_st: '0',
@@ -28567,7 +29606,7 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '0'
+					width: '0',
 				},
 				el13_border: {
 					show_st: '0',
@@ -28575,37 +29614,39 @@ var uifmsetting;
 					color_focus_st: '0',
 					color_focus: '#000',
 					style: '1',
-					width: '0'
+					width: '0',
 				},
 				help_block: {
 					text: 'here your content',
 					show_st: '0',
 					font: '',
 					font_st: '0',
-					pos: ''
+					pos: '',
 				},
 				clogic: {
 					show_st: '0',
 					f_show: '1',
 					f_all: '1',
-					list: []
-				}
-			}
+					list: [],
+				},
+			},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		var privateMethod = function () {};
+		var privateMethod = function() {};
 
-		var typeID = function () {
+		var typeID = function() {
 			return field_type;
 		};
-		var getHtmlField = function (element) {
+		var getHtmlField = function(element) {
 			var fieldhtml = $('#uiform-fields-templates .uiform-submitbtn').clone();
 
 			var id = 'ui' + rocketform.generateUniqueID();
 			fieldhtml.attr('id', id);
-			var step_pane = $(element).closest('.uiform-step-pane').data('uifm-step');
+			var step_pane = $(element)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
 
 			var settings = $.extend(true, {}, defaults, options || {});
 			settings.id = id;
@@ -28613,25 +29654,25 @@ var uifmsetting;
 
 			return fieldhtml;
 		};
-		var setData = function (step_index, id_element) {};
+		var setData = function(step_index, id_element) {};
 
-		this.testingdata = function () {
+		this.testingdata = function() {
 			console.log('data from plugin : ' + rocketform.dumpvar2(settings.data));
 		};
-		this.updateVarData = function (id) {
+		this.updateVarData = function(id) {
 			$('#' + id).data('uifm-settings', settings);
 		};
-		this.update_previewfield = function (id_element) {
+		this.update_previewfield = function(id_element) {
 			var obj_field = $('#' + id_element);
 			if (obj_field) {
 				rocketform.loadForm_updatePreviewField(id_element, settings.data);
 			}
 		};
-		this.loadSettingDataTab = function (id_element) {
+		this.loadSettingDataTab = function(id_element) {
 			this.showSettingTab(id_element);
 
 		};
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
@@ -28642,7 +29683,7 @@ var uifmsetting;
 				$(this).append(
 					tmp_tmpl({
 						type: settings.data.type,
-						id: settings.data.id
+						id: settings.data.id,
 					})
 				);
 			}
@@ -28651,26 +29692,28 @@ var uifmsetting;
 			obj_main.refresh_quickopt_position();
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			if (e) {
 				e.stopPropagation();
 				e.preventDefault();
 			}
 			if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-				$(this).find('.zgpb-fields-quick-options2').remove();
+				$(this)
+					.find('.zgpb-fields-quick-options2')
+					.remove();
 			}
 		};
 
-		this.init_events = function () {
+		this.init_events = function() {
 			elem.on('mouseenter', obj_main.onWholeHover);
 			elem.on('mouseleave', obj_main.offWholeHover);
 
-			$(window).scroll(function () {
+			$(window).scroll(function() {
 				obj_main.refresh_quickopt_position();
 			});
 		};
 
-		this.refresh_quickopt_position = function () {
+		this.refresh_quickopt_position = function() {
 			if (obj_quick_options && obj_quick_options.is(':visible')) {
 				var elemTop = $(elem).offset().top || null;
 				var elemBottom = elemTop + $(elem).height();
@@ -28697,7 +29740,7 @@ var uifmsetting;
 			}
 		};
 
-		this.enableSettingOptions = function (f_data, addt) {
+		this.enableSettingOptions = function(f_data, addt) {
 
 			this.showSettingTab();
 
@@ -28715,11 +29758,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setVariables = function ($vars) {
+		this.setVariables = function($vars) {
 			field_oncreation = $vars['oncreation'] || false;
 		};
 
-		this.enableSettingOptions_process = function (f_data, update_modal, update_preview) {
+		this.enableSettingOptions_process = function(f_data, update_modal, update_preview) {
 			var tab = $('#uifm-field-opt-content');
 			rocketform.fields_events_bswitch(tab);
 			rocketform.fields_events_spinner(tab);
@@ -28728,10 +29771,10 @@ var uifmsetting;
 			rocketform.fields_events_cpicker(tab);
 			rocketform.fields_events_slider(tab);
 			rocketform.fields_events_select(tab);
-                        rocketform.fields2_events_txts(tab);
+			rocketform.fields2_events_txts(tab);
 		};
 
-		this.showSettingTab = function (id_element) {
+		this.showSettingTab = function(id_element) {
 			var idselected = $('#uifm-field-selected-id').val();
 			if (String(idselected) != String(id_element)) {
 				rocketform.cleanSettingTab();
@@ -28748,9 +29791,9 @@ var uifmsetting;
 
 					'.uifm-set-section-helpblock',
 					'.uifm-set-section-helpblock-text',
-					'.uifm-tab-fld-moreopt'
+					'.uifm-tab-fld-moreopt',
 				];
-				$.each(clvars, function () {
+				$.each(clvars, function() {
 					$(String(this)).removeClass('uifm-hide');
 				});
 				if ('#uiform-settings-tab-2') {
@@ -28760,21 +29803,21 @@ var uifmsetting;
 
 			rocketform.checkScrollTab();
 		};
-		this.setToDatalvl1 = function (option, value) {
+		this.setToDatalvl1 = function(option, value) {
 			settings.data[option] = value;
 		};
-		this.setDataToCoreStore = function (step_pane, id) {
+		this.setDataToCoreStore = function(step_pane, id) {
 
 			rocketform.setUiData3('steps_src', step_pane, id, settings.data);
 		};
 
-		this.update_settingsData = function (options) {
+		this.update_settingsData = function(options) {
 			var settings2 = $.extend(true, {}, settings, { data: options });
 			var settings3 = uifm_validate_field(settings2, settings);
 			settings = settings3;
 		};
 
-		this.setDataToCore = function (tmp_vars) {
+		this.setDataToCore = function(tmp_vars) {
 			var id = tmp_vars['id'],
 				f_opt1 = tmp_vars['opt1'],
 				f_opt2 = tmp_vars['opt2'],
@@ -28788,11 +29831,11 @@ var uifmsetting;
 			}
 		};
 
-		this.setStep = function (step) {
+		this.setStep = function(step) {
 			field_step = step;
 		};
 
-		var getTestData = function () {
+		var getTestData = function() {
 			var id_element = $('.uiform-items-container .uiform-field:first').attr('id');
 			console.log(id_element);
 			var data = rocketform.getFieldById(id_element);
@@ -28800,8 +29843,8 @@ var uifmsetting;
 		};
 	};
 
-	$.fn.uiform_wizardbtn = function (options) {
-		return this.each(function () {
+	$.fn.uiform_wizardbtn = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('uiform_wizardbtn')) return;
@@ -28818,17 +29861,17 @@ if (typeof $uifm === 'undefined') {
 }
 var zgfm_back_err = zgfm_back_err || null;
 if (!$uifm.isFunction(zgfm_back_err)) {
-	(function ($, window) {
+	(function($, window) {
 		'use strict';
 
-		var zgfm_back_err = function () {
+		var zgfm_back_err = function() {
 			var zgfm_variable = [];
 			zgfm_variable.innerVars = {};
 			zgfm_variable.externalVars = {};
 
-			this.initialize = function () {};
+			this.initialize = function() {};
 
-			this.integrity_check = function () {
+			this.integrity_check = function() {
 				if (this.error_is_found()) {
 					this.error_openModal();
 				} else {
@@ -28836,7 +29879,7 @@ if (!$uifm.isFunction(zgfm_back_err)) {
 			};
 
 
-			this.error_is_found = function () {
+			this.error_is_found = function() {
 				var result;
 				result = false;
 
@@ -28860,7 +29903,7 @@ if (!$uifm.isFunction(zgfm_back_err)) {
 
 				result_err = [];
 				var tmp_arr2 = $('#zgpb-editor-container').find('.uiform-main-form .uiform-items-container .zgpb-field-template');
-				$.each(tmp_arr2, function (index, element) {
+				$.each(tmp_arr2, function(index, element) {
 					if (zgfm_back_err.check_IdIsInArray(tmp_arr, $(element).attr('id'))) {
 					} else {
 						result_err.push($(element).attr('id'));
@@ -28877,7 +29920,7 @@ if (!$uifm.isFunction(zgfm_back_err)) {
 			};
 
 
-			this.check_IdIsInArray = function (tmp_arr, id) {
+			this.check_IdIsInArray = function(tmp_arr, id) {
 				var result = false;
 
 				for (var i in tmp_arr) {
@@ -28894,7 +29937,7 @@ if (!$uifm.isFunction(zgfm_back_err)) {
 			};
 
 
-			this.error_openModal = function () {
+			this.error_openModal = function() {
 				try {
 					rocketform.fields_showModalOptions();
 
@@ -28905,13 +29948,22 @@ if (!$uifm.isFunction(zgfm_back_err)) {
 							action: 'rocket_fbuilder_integrity_openmodal',
 							page: 'zgfm_form_builder',
 							zgfm_security: uiform_vars.ajax_nonce,
-							csrf_field_name: uiform_vars.csrf_field_name
+							csrf_field_name: uiform_vars.csrf_field_name,
 						},
-						success: function (msg) {
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-header-inner').html(msg.modal_header);
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.sfdc-modal-body').html(msg.modal_body);
-							$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-footer-wrap').html(msg.modal_footer);
-						}
+						success: function(msg) {
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.zgpb-modal-header-inner')
+								.html(msg.modal_header);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.sfdc-modal-body')
+								.html(msg.modal_body);
+							$('#zgpb-modal1')
+								.find('.sfdc-modal-dialog')
+								.find('.zgpb-modal-footer-wrap')
+								.html(msg.modal_footer);
+						},
 					});
 				} catch (ex) {
 					console.error('zgfm_back_err error_openModal ', ex.message);
@@ -28927,17 +29979,17 @@ if (typeof $uifm === 'undefined') {
 }
 var zgfm_back_fld_options = zgfm_back_fld_options || null;
 if (!$uifm.isFunction(zgfm_back_fld_options)) {
-	(function ($, window) {
+	(function($, window) {
 		'use strict';
 
-		var zgfm_back_fld_options = function () {
+		var zgfm_back_fld_options = function() {
 			var zgfm_variable = [];
 			zgfm_variable.innerVars = {};
 			zgfm_variable.externalVars = {};
 
-			this.initialize = function () {};
+			this.initialize = function() {};
 
-			this.generate_field_htmldata = function () {
+			this.generate_field_htmldata = function() {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/fields/ajax_dev_genfieldopts',
@@ -28945,16 +29997,33 @@ if (!$uifm.isFunction(zgfm_back_fld_options)) {
 						action: 'rocket_fbuilder_dev_generate_fieldopt',
 						page: 'zgfm_form_builder',
 						zgfm_security: uiform_vars.ajax_nonce,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					beforeSend: function () {},
-					success: function (response) {
+					beforeSend: function() {},
+					success: function(response) {
 						alert('generate field options finished');
-					}
+					},
 				});
 			};
 
-			this.load_on_selecteField = function (tmp_fld_load, msg) {
+			this.generate_dbChecker = function() {
+				$.ajax({
+					type: 'POST',
+					url: rockfm_vars.uifm_siteurl + 'formbuilder/settings/system_gendb_column',
+					data: {
+						action: 'rocket_fbuilder_dev_generate_fieldopt',
+						page: 'zgfm_form_builder',
+						zgfm_security: uiform_vars.ajax_nonce,
+						csrf_field_name: uiform_vars.csrf_field_name,
+					},
+					beforeSend: function() {},
+					success: function(response) {
+						alert('generate DB checker finished');
+					},
+				});
+			};
+
+			this.load_on_selecteField = function(tmp_fld_load, msg) {
 				var block;
 
 				var id = tmp_fld_load['id'];
@@ -28972,18 +30041,30 @@ if (!$uifm.isFunction(zgfm_back_fld_options)) {
 				rocketform.tinymceEvent_removeInst();
 
 				if (false) {
-					$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-header-inner').html(msg.modal_header);
-					$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.sfdc-modal-body').html('');
+					$('#zgpb-modal1')
+						.find('.sfdc-modal-dialog')
+						.find('.zgpb-modal-header-inner')
+						.html(msg.modal_header);
+					$('#zgpb-modal1')
+						.find('.sfdc-modal-dialog')
+						.find('.sfdc-modal-body')
+						.html('');
 					rocketform.modal_field_loader(1);
-					$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.sfdc-modal-body').append(msg.modal_body);
-					$('#zgpb-modal1').find('.sfdc-modal-dialog').find('.zgpb-modal-footer-wrap').html(msg.modal_footer);
+					$('#zgpb-modal1')
+						.find('.sfdc-modal-dialog')
+						.find('.sfdc-modal-body')
+						.append(msg.modal_body);
+					$('#zgpb-modal1')
+						.find('.sfdc-modal-dialog')
+						.find('.zgpb-modal-footer-wrap')
+						.html(msg.modal_footer);
 				} else {
 					$('#uiform-build-field-tab').html(msg.modal_body);
 				}
 
 				$('input,textarea').attr('autocomplete', 'off');
 				$('#zgfm_edit_panel').disableAutoFill({
-					passwordField: '.password'
+					passwordField: '.password',
 				});
 
 				$('#uifm-field-selected-id').val(id);
@@ -29068,7 +30149,7 @@ if (!$uifm.isFunction(zgfm_back_fld_options)) {
 						flag_tinymce_loaded = false;
 						var zgpb_afterdrag_timer_2;
 
-						zgpb_afterdrag_timer_2 = setInterval(function () {
+						zgpb_afterdrag_timer_2 = setInterval(function() {
 							if (rocketform.checkIntegrityTinyMCE(type)) {
 								var tmp_field_inst;
 								switch (parseInt(type)) {
@@ -29199,14 +30280,20 @@ if (!$uifm.isFunction(zgfm_back_fld_options)) {
 				}
 
 				if (false) {
-					$('#zgpb-modal1').find('[data-toggle="tooltip"]').tooltip();
+					$('#zgpb-modal1')
+						.find('[data-toggle="tooltip"]')
+						.tooltip();
 				} else {
-					$('#uiform-build-field-tab').find('[data-toggle="tooltip"]').tooltip();
+					$('#uiform-build-field-tab')
+						.find('[data-toggle="tooltip"]')
+						.tooltip();
 				}
 
 				$('#uifm-field-selected-id').val(id);
 
-				var tmp_height = $('.uiform-builder-maintab-container .uiform-tab-content').first().height();
+				var tmp_height = $('.uiform-builder-maintab-container .uiform-tab-content')
+					.first()
+					.height();
 
 				$('#uifm-field-opt-content .uiform-tab-content').height(tmp_height);
 
@@ -29242,26 +30329,26 @@ if (!$uifm.isFunction(zgfm_back_fld_options)) {
 			};
 
 
-			this.selfld_settings_form_more = function () {
-				$uifm(function ($) {
+			this.selfld_settings_form_more = function() {
+				$uifm(function($) {
 					$('#zgpb_fld_col_ctmid').val('rockfm_' + $('#uifm-field-selected-id').val());
 				});
 			};
 
 
-			this.selfld_field_opt_column = function () {
-				$uifm(function ($) {
-					$('#zgpb_fld_col_bg_type_1').on('click', function () {
+			this.selfld_field_opt_column = function() {
+				$uifm(function($) {
+					$('#zgpb_fld_col_bg_type_1').on('click', function() {
 						$('#zgpb_fld_col_bg_type_1_cont').show();
 						$('#zgpb_fld_col_bg_type_2_cont').hide();
 					});
 
-					$('#zgpb_fld_col_bg_type_2').on('click', function () {
+					$('#zgpb_fld_col_bg_type_2').on('click', function() {
 						$('#zgpb_fld_col_bg_type_1_cont').hide();
 						$('#zgpb_fld_col_bg_type_2_cont').show();
 					});
 
-					$('#zgpb_fld_col_bg_sizetype').on('click', function () {
+					$('#zgpb_fld_col_bg_sizetype').on('click', function() {
 						var sVal = $(this).val();
 						if (parseInt(sVal) === 1 || parseInt(sVal) === 2) {
 							$('#zgpb_fld_col_bg_sizetype_len_wrap').show();
@@ -29271,25 +30358,27 @@ if (!$uifm.isFunction(zgfm_back_fld_options)) {
 					});
 				});
 
-				jQuery(function ($) {
+				jQuery(function($) {
 					$('#zgpb_fld_col_ctmid').val('rockfm_' + $('#uifm-field-selected-id').val());
 				});
 			};
 
 
-			this.selfld_field_opt_text = function () {
-				jQuery(function ($) {
+			this.selfld_field_opt_text = function() {
+				jQuery(function($) {
 					$('#zgpb-field-opt-content')
 						.find('select.sfm')
-						.change(function () {
-							var font_sel = $(this).data('stylesFontMenu').uifm_preview_font_change();
+						.change(function() {
+							var font_sel = $(this)
+								.data('stylesFontMenu')
+								.uifm_preview_font_change();
 							var f_store = $(this).data('field-store');
 							var f_val = JSON.stringify(font_sel);
 							zgpb_core.updateModalFieldCoreAndPreview(f_store, f_val);
 						});
 				});
-				$uifm(function ($) {
-					$('#zgpb-field-opt-content .sfdc-input-group-btn > .sfdc-btn').click(function () {
+				$uifm(function($) {
+					$('#zgpb-field-opt-content .sfdc-input-group-btn > .sfdc-btn').click(function() {
 						var element = $(this),
 							input = element.find('input');
 						if (parseInt(input.val()) === 0) {
@@ -29301,15 +30390,15 @@ if (!$uifm.isFunction(zgfm_back_fld_options)) {
 						}
 					});
 
-					$("#zgpb-field-opt-content .sfdc-btn-group > .sfdc-btn[data-settings-option='group-radiobutton']").click(function () {
+					$("#zgpb-field-opt-content .sfdc-btn-group > .sfdc-btn[data-settings-option='group-radiobutton']").click(function() {
 						var element = $(this),
 							parent = element.parent();
 						parent
 							.children('.sfdc-btn[data-toggle-enable]')
-							.removeClass(function () {
+							.removeClass(function() {
 								return $(this).data('toggle-enable');
 							})
-							.addClass(function () {
+							.addClass(function() {
 								return $(this).data('toggle-disable');
 							})
 							.children('input')
@@ -29329,27 +30418,27 @@ if (typeof $uifm === 'undefined') {
 }
 var zgfm_back_general = zgfm_back_general || null;
 if (!$uifm.isFunction(zgfm_back_general)) {
-	(function ($, window) {
+	(function($, window) {
 		'use strict';
 
-		var zgfm_back_general = function () {
+		var zgfm_back_general = function() {
 			var zgfm_variable = [];
 			zgfm_variable.innerVars = {};
 			zgfm_variable.externalVars = {};
 
-			this.initialize = function () {};
+			this.initialize = function() {};
 
-			this.formslist_search_refresh = function () {
+			this.formslist_search_refresh = function() {
 				this.formslist_search_process(0);
 			};
 
-			this.formslist_search_refresh_save = function () {
+			this.formslist_search_refresh_save = function() {
 				this.formslist_search_process(1);
 
 				alert('Filter paramaters saved');
 			};
 
-			this.invoiceslist_search_process = function () {
+			this.invoiceslist_search_process = function() {
 				var tmp_params = $('#zgfm-listform-filter-panel-form').serialize();
 
 				$.ajax({
@@ -29362,12 +30451,12 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 						data_filter: tmp_params,
 						opt_save: 1,
 						opt_offset: $('#uifm_listform_offset_val').val(),
-						op_is_trash:$('#uifm_listrecord_is_trash').val(),
-						csrf_field_name: uiform_vars.csrf_field_name
+						op_is_trash: $('#uifm_listrecord_is_trash').val(),
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#zgfm-back-listform-maintable-container').html(msg['content']);
-						$('.uiform-confirmation-func-action').click(function (e) {
+						$('.uiform-confirmation-func-action').click(function(e) {
 							e.preventDefault(); 
 							var targetUrl = $(this).attr('href'); 
 							var tmp_callback = $(this).data('dialog-callback');
@@ -29376,25 +30465,25 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 								title: 'Confirmation',
 								modal: true,
 								buttons: {
-									OK: function () {
+									OK: function() {
 										$(this).dialog('close');
 										eval(tmp_callback);
 									},
-									Cancel: function () {
+									Cancel: function() {
 										$(this).dialog('close');
-									}
-								}
+									},
+								},
 							});
 
 							$('#uiform-confirmation-func-action-dialog').dialog('option', 'title', $(this).data('dialog-title'));
 
 							$('#uiform-confirmation-func-action-dialog').dialog('open');
 						});
-					}
+					},
 				});
 			};
 
-			this.recordslist_search_process = function () {
+			this.recordslist_search_process = function() {
 				var tmp_params = $('#zgfm-listform-filter-panel-form').serialize();
 
 				$.ajax({
@@ -29407,12 +30496,12 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 						data_filter: tmp_params,
 						opt_save: 1,
 						opt_offset: $('#uifm_listform_offset_val').val(),
-						op_is_trash:$('#uifm_listrecord_is_trash').val(),
-						csrf_field_name: uiform_vars.csrf_field_name
+						op_is_trash: $('#uifm_listrecord_is_trash').val(),
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#zgfm-back-listform-maintable-container').html(msg['content']);
-						$('.uiform-confirmation-func-action').click(function (e) {
+						$('.uiform-confirmation-func-action').click(function(e) {
 							e.preventDefault(); 
 							var targetUrl = $(this).attr('href'); 
 							var tmp_callback = $(this).data('dialog-callback');
@@ -29421,25 +30510,25 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 								title: 'Confirmation',
 								modal: true,
 								buttons: {
-									OK: function () {
+									OK: function() {
 										$(this).dialog('close');
 										eval(tmp_callback);
 									},
-									Cancel: function () {
+									Cancel: function() {
 										$(this).dialog('close');
-									}
-								}
+									},
+								},
 							});
 
 							$('#uiform-confirmation-func-action-dialog').dialog('option', 'title', $(this).data('dialog-title'));
 
 							$('#uiform-confirmation-func-action-dialog').dialog('open');
 						});
-					}
+					},
 				});
 			};
 
-			this.formslist_trashsearch_process = function () {
+			this.formslist_trashsearch_process = function() {
 				var tmp_params = $('#zgfm-listform-filter-panel-form').serialize();
 
 				$.ajax({
@@ -29452,11 +30541,11 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 						data_filter: tmp_params,
 						opt_save: 1,
 						opt_offset: $('#uifm_listform_offset_val').val(),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#zgfm-back-listform-maintable-container').html(msg['content']);
-						$('.uiform-confirmation-func-action').click(function (e) {
+						$('.uiform-confirmation-func-action').click(function(e) {
 							e.preventDefault(); 
 							var targetUrl = $(this).attr('href'); 
 							var tmp_callback = $(this).data('dialog-callback');
@@ -29465,25 +30554,25 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 								title: 'Confirmation',
 								modal: true,
 								buttons: {
-									OK: function () {
+									OK: function() {
 										$(this).dialog('close');
 										eval(tmp_callback);
 									},
-									Cancel: function () {
+									Cancel: function() {
 										$(this).dialog('close');
-									}
-								}
+									},
+								},
 							});
 
 							$('#uiform-confirmation-func-action-dialog').dialog('option', 'title', $(this).data('dialog-title'));
 
 							$('#uiform-confirmation-func-action-dialog').dialog('open');
 						});
-					}
+					},
 				});
 			};
 
-			this.formslist_search_process = function (opt_save) {
+			this.formslist_search_process = function(opt_save) {
 				var tmp_params = $('#zgfm-listform-filter-panel-form').serialize();
 
 				$.ajax({
@@ -29496,11 +30585,11 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 						data_filter: tmp_params,
 						opt_save: opt_save,
 						opt_offset: $('#uifm_listform_offset_val').val(),
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						$('#zgfm-back-listform-maintable-container').html(msg['content']);
-						$('.uiform-confirmation-func-action').click(function (e) {
+						$('.uiform-confirmation-func-action').click(function(e) {
 							e.preventDefault(); 
 							var targetUrl = $(this).attr('href'); 
 							var tmp_callback = $(this).data('dialog-callback');
@@ -29509,40 +30598,39 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 								title: 'Confirmation',
 								modal: true,
 								buttons: {
-									OK: function () {
+									OK: function() {
 										$(this).dialog('close');
 										eval(tmp_callback);
 									},
-									Cancel: function () {
+									Cancel: function() {
 										$(this).dialog('close');
-									}
-								}
+									},
+								},
 							});
 
 							$('#uiform-confirmation-func-action-dialog').dialog('option', 'title', $(this).data('dialog-title'));
 
 							$('#uiform-confirmation-func-action-dialog').dialog('open');
 						});
-					}
+					},
 				});
 			};
 
-			this.list_records_updateStatus = function (rec_st) {
+			this.list_records_updateStatus = function(rec_st) {
 				if ($('.uiform-listform-chk-id').is(':checked')) {
 					var data = $('#uiform-form-listform').serialize();
-					var is_trash=$('#uifm_listrecord_is_trash').val()||0;
+					var is_trash = $('#uifm_listrecord_is_trash').val() || 0;
 					$.ajax({
 						type: 'POST',
 						url: rockfm_vars.uifm_siteurl + 'formbuilder/records/ajax_list_record_updatest',
-						data: data + '&action=zgfm_fbuilder_list_record_updatest&page=zgfm_cost_estimate&form_st=' + rec_st + '&zgfm_security=' + uiform_vars.ajax_nonce+'&is_trash='+is_trash+'&csrf_field_name='+ uiform_vars.csrf_field_name,
-						success: function (msg) {
-							if(parseInt(is_trash)===0){
+						data: data + '&action=zgfm_fbuilder_list_record_updatest&page=zgfm_cost_estimate&form_st=' + rec_st + '&zgfm_security=' + uiform_vars.ajax_nonce + '&is_trash=' + is_trash + '&csrf_field_name=' + uiform_vars.csrf_field_name,
+						success: function(msg) {
+							if (parseInt(is_trash) === 0) {
 								rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/records/list_records');
-							}else{
+							} else {
 								rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/records/list_trash_records');
 							}
-
-													}
+						},
 					});
 				} else {
 					$('#uifm_modal_msg').sfdc_modal('show');
@@ -29552,23 +30640,21 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 				}
 			};
 
-
-			this.list_invoices_updateStatus = function (rec_st) {
+			this.list_invoices_updateStatus = function(rec_st) {
 				if ($('.uiform-listform-chk-id').is(':checked')) {
 					var data = $('#uiform-form-listform').serialize();
-					var is_trash=$('#uifm_listrecord_is_trash').val()||0;
+					var is_trash = $('#uifm_listrecord_is_trash').val() || 0;
 					$.ajax({
 						type: 'POST',
 						url: rockfm_vars.uifm_siteurl + 'gateways/records/ajax_list_invoice_updatest',
-						data: data + '&action=zgfm_fbuilder_list_invoice_updatest&page=zgfm_cost_estimate&form_st=' + rec_st + '&zgfm_security=' + uiform_vars.ajax_nonce+'&is_trash='+is_trash+'&csrf_field_name='+ uiform_vars.csrf_field_name,
-						success: function (msg) {
-							if(parseInt(is_trash)===0){
+						data: data + '&action=zgfm_fbuilder_list_invoice_updatest&page=zgfm_cost_estimate&form_st=' + rec_st + '&zgfm_security=' + uiform_vars.ajax_nonce + '&is_trash=' + is_trash + '&csrf_field_name=' + uiform_vars.csrf_field_name,
+						success: function(msg) {
+							if (parseInt(is_trash) === 0) {
 								rocketform.redirect_tourl(uiform_vars.url_admin + 'gateways/records/list_records');
-							}else{
+							} else {
 								rocketform.redirect_tourl(uiform_vars.url_admin + 'gateways/records/list_trash_records');
 							}
-
-													}
+						},
 					});
 				} else {
 					$('#uifm_modal_msg').sfdc_modal('show');
@@ -29578,16 +30664,16 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 				}
 			};
 
-			this.list_trashform_updateStatus = function (form_st) {
+			this.list_trashform_updateStatus = function(form_st) {
 				if ($('.uiform-listform-chk-id').is(':checked')) {
 					var data = $('#uiform-form-listform').serialize();
 					$.ajax({
 						type: 'POST',
 						url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/ajax_list_trashform_updatest',
-						data: data + '&action=rocket_fbuilder_list_trashform_updatest&page=zgfm_cost_estimate&form_st=' + form_st + '&zgfm_security=' + uiform_vars.ajax_nonce+'&csrf_field_name='+ uiform_vars.csrf_field_name,
-						success: function (msg) {
+						data: data + '&action=rocket_fbuilder_list_trashform_updatest&page=zgfm_cost_estimate&form_st=' + form_st + '&zgfm_security=' + uiform_vars.ajax_nonce + '&csrf_field_name=' + uiform_vars.csrf_field_name,
+						success: function(msg) {
 							rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/forms/list_trash');
-						}
+						},
 					});
 				} else {
 					$('#uifm_modal_msg').sfdc_modal('show');
@@ -29597,7 +30683,7 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 				}
 			};
 
-			this.listform_deleteTrashFormById = function (idform) {
+			this.listform_deleteTrashFormById = function(idform) {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/ajax_delete_trashform_byid',
@@ -29606,19 +30692,18 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 						page: 'zgfm_cost_estimate',
 						zgfm_security: uiform_vars.ajax_nonce,
 						form_id: idform,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/forms/list_trash');
-					}
+					},
 				});
 			};
 
-			this.listform_deleteRecordById = function (id) {
+			this.listform_deleteRecordById = function(id) {
+				var is_trash = $('#uifm_listrecord_is_trash').val() || 0;
 
-							var is_trash=$('#uifm_listrecord_is_trash').val()||0;
-
-								$.ajax({
+				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/records/ajax_delete_record',
 					data: {
@@ -29627,25 +30712,22 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 						zgfm_security: uiform_vars.ajax_nonce,
 						rec_id: id,
 						is_trash: is_trash,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
-						if(parseInt(is_trash)===0){
+					success: function(msg) {
+						if (parseInt(is_trash) === 0) {
 							rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/records/list_records');
-						}else{
+						} else {
 							rocketform.redirect_tourl(uiform_vars.url_admin + 'formbuilder/records/list_trash_records');
 						}
-
-
-																	}
+					},
 				});
 			};
 
-			this.listform_deleteInvoiceById = function (id) {
+			this.listform_deleteInvoiceById = function(id) {
+				var is_trash = $('#uifm_listrecord_is_trash').val() || 0;
 
-							var is_trash=$('#uifm_listrecord_is_trash').val()||0;
-
-								$.ajax({
+				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'gateways/records/ajax_delete_invoice',
 					data: {
@@ -29654,21 +30736,18 @@ if (!$uifm.isFunction(zgfm_back_general)) {
 						zgfm_security: uiform_vars.ajax_nonce,
 						pgr_id: id,
 						is_trash: is_trash,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
-						if(parseInt(is_trash)===0){
+					success: function(msg) {
+						if (parseInt(is_trash) === 0) {
 							rocketform.redirect_tourl(uiform_vars.url_admin + 'gateways/records/list_records');
-						}else{
+						} else {
 							rocketform.redirect_tourl(uiform_vars.url_admin + 'gateways/records/list_trash_records');
 						}
-
-
-																	}
+					},
 				});
 			};
-
-					};
+		};
 		window.zgfm_back_general = zgfm_back_general = $.zgfm_back_general = new zgfm_back_general();
 	})($uifm, window);
 }
@@ -29678,17 +30757,17 @@ if (typeof $uifm === 'undefined') {
 }
 var zgfm_back_helper = zgfm_back_helper || null;
 if (!$uifm.isFunction(zgfm_back_helper)) {
-	(function ($, window) {
+	(function($, window) {
 		'use strict';
 
-		var zgfm_back_helper = function () {
+		var zgfm_back_helper = function() {
 			var zgfm_variable = [];
 			zgfm_variable.innerVars = {};
 			zgfm_variable.externalVars = {};
 
-			this.initialize = function () {};
+			this.initialize = function() {};
 
-			this.length_obj = function (obj) {
+			this.length_obj = function(obj) {
 				var count = 0;
 				for (var p in obj) {
 					obj.hasOwnProperty(p) && count++;
@@ -29696,14 +30775,14 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 				return count;
 			};
 
-			this.generateUniqueID = function (nrodec) {
+			this.generateUniqueID = function(nrodec) {
 				var number = Math.random(); 
 				number.toString(36); 
 				var id = number.toString(36).substr(2, nrodec); 
 				return id;
 			};
 
-			this.versionCompare = function (v1, v2, options) {
+			this.versionCompare = function(v1, v2, options) {
 
 				var lexicographical = options && options.lexicographical,
 					zeroExtend = options && options.zeroExtend,
@@ -29749,22 +30828,22 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 				return 0;
 			};
 
-			this.getData = function (mainarr, name) {
+			this.getData = function(mainarr, name) {
 				return mainarr[name];
 			};
 
-			this.setData = function (mainarr, name, value) {
+			this.setData = function(mainarr, name, value) {
 				mainarr[name] = value;
 			};
 
-			this.getData2 = function (mainarr, name, index) {
+			this.getData2 = function(mainarr, name, index) {
 				try {
 					return mainarr[name][index];
 				} catch (err) {
 					console.log('error getUiData2: ' + err.message);
 				}
 			};
-			this.setData2 = function (mainarr, name, index, value) {
+			this.setData2 = function(mainarr, name, index, value) {
 				if (!mainarr.hasOwnProperty(name)) {
 					mainarr[name] = {};
 				}
@@ -29773,18 +30852,18 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 				}
 				mainarr[name][index] = value;
 			};
-			this.getData3 = function (mainarr, name, index, key) {
+			this.getData3 = function(mainarr, name, index, key) {
 				try {
 					return mainarr[name][index][key];
 				} catch (err) {
 					console.log('error getUiData3: ' + err.message);
 				}
 			};
-			this.delData3 = function (mainarr, name, index, key) {
+			this.delData3 = function(mainarr, name, index, key) {
 				delete mainarr[name][index][key];
 			};
 
-			this.setData3 = function (mainarr, name, index, key, value) {
+			this.setData3 = function(mainarr, name, index, key, value) {
 				if (!mainarr.hasOwnProperty(name)) {
 					mainarr[name] = {};
 				}
@@ -29794,7 +30873,7 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 
 				mainarr[name][index][key] = value;
 			};
-			this.setData4 = function (mainarr, name, index, key, option, value) {
+			this.setData4 = function(mainarr, name, index, key, option, value) {
 				if (!mainarr.hasOwnProperty(name)) {
 					mainarr[name] = {};
 				}
@@ -29808,14 +30887,14 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 
 				mainarr[name][index][key][option] = value;
 			};
-			this.getData4 = function (mainarr, name, index, key, option) {
+			this.getData4 = function(mainarr, name, index, key, option) {
 				try {
 					return mainarr[name][index][key][option];
 				} catch (err) {
 					console.log('error getUiData4: ' + err.message);
 				}
 			};
-			this.getData5 = function (mainarr, name, index, key, section, option) {
+			this.getData5 = function(mainarr, name, index, key, section, option) {
 				try {
 					if (typeof mainarr[name][index] == 'undefined') {
 						return '';
@@ -29827,7 +30906,7 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 					return '';
 				}
 			};
-			this.setData5 = function (mainarr, name, index, key, section, option, value) {
+			this.setData5 = function(mainarr, name, index, key, section, option, value) {
 				if (!mainarr.hasOwnProperty(name)) {
 					mainarr[name] = {};
 				}
@@ -29845,14 +30924,14 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 
 				mainarr[name][index][key][section][option] = value;
 			};
-			this.addIndexData5 = function (mainarr, name, index, key, section, option, value) {
+			this.addIndexData5 = function(mainarr, name, index, key, section, option, value) {
 				if (typeof mainarr[name][index][key][section][option] == 'undefined') {
 				} else {
 					mainarr[name][index][key][section][option][value] = {};
 				}
 			};
 
-			this.getData6 = function (mainarr, name, index, key, section, option, option2) {
+			this.getData6 = function(mainarr, name, index, key, section, option, option2) {
 				try {
 					if (typeof mainarr[name][index][key][section][option][option2] == 'undefined') {
 						return '';
@@ -29865,7 +30944,7 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 				}
 			};
 
-			this.setData6 = function (mainarr, name, index, key, section, option, option2, value) {
+			this.setData6 = function(mainarr, name, index, key, section, option, option2, value) {
 				if (!mainarr.hasOwnProperty(name)) {
 					mainarr[name] = {};
 				}
@@ -29888,12 +30967,20 @@ if (!$uifm.isFunction(zgfm_back_helper)) {
 				mainarr[name][index][key][section][option][option2] = value;
 			};
 
-			this.delData6 = function (mainarr, name, index, key, section, option, option2) {
+			this.delData6 = function(mainarr, name, index, key, section, option, option2) {
 				delete mainarr[name][index][key][section][option][option2];
 			};
-			this.tooltip_removeall = function () {
-				if ($('body').find('.sfdc-tooltip').length && $('body').find('.sfdc-tooltip').data && $('body').find('.sfdc-tooltip').data('bs.tooltip')) {
-					$('body').find('.sfdc-tooltip').tooltip('hide');
+			this.tooltip_removeall = function() {
+				if (
+					$('body').find('.sfdc-tooltip').length &&
+					$('body').find('.sfdc-tooltip').data &&
+					$('body')
+						.find('.sfdc-tooltip')
+						.data('bs.tooltip')
+				) {
+					$('body')
+						.find('.sfdc-tooltip')
+						.tooltip('hide');
 				}
 			};
 		};
@@ -29906,17 +30993,17 @@ if (typeof $uifm === 'undefined') {
 }
 var zgfm_back_input2 = zgfm_back_input2 || null;
 if (!$uifm.isFunction(zgfm_back_input2)) {
-	(function ($, window) {
+	(function($, window) {
 		'use strict';
 
-		var zgfm_back_input2 = function () {
+		var zgfm_back_input2 = function() {
 			var zgfm_variable = [];
 			zgfm_variable.innerVars = {};
 			zgfm_variable.externalVars = {};
 
-			this.initialize = function () {};
+			this.initialize = function() {};
 
-			this.length_obj = function (obj) {
+			this.length_obj = function(obj) {
 				var count = 0;
 				for (var p in obj) {
 					obj.hasOwnProperty(p) && count++;
@@ -29924,86 +31011,87 @@ if (!$uifm.isFunction(zgfm_back_input2)) {
 				return count;
 			};
 
-			this.generateUniqueID = function (nrodec) {
+			this.generateUniqueID = function(nrodec) {
 				var number = Math.random(); 
 				number.toString(36); 
 				var id = number.toString(36).substr(2, nrodec); 
 				return id;
 			};
 
-
-		    			this.input2settings_refreshSortable = function () {
+			this.input2settings_refreshSortable = function() {
 				$('#uifm-fld-inp2-options-container').sortable({
 					items: '.uifm-fld-inp2-options-row',
 					axis: 'y',
-					start: function (event, ui) {
+					start: function(event, ui) {
 						$(ui.item).data('startindex', ui.item.index());
 					},
-					stop: function (event, ui) {
-					    var startIndex = ui.item.data('startindex');
-					    zgfm_back_input2.input2settings_sortOrder();
-					}
+					stop: function(event, ui) {
+						var startIndex = ui.item.data('startindex');
+						zgfm_back_input2.input2settings_sortOrder();
+					},
 				});
 			};
 
-						this.input2settings_sortOrder = function () {
+			this.input2settings_sortOrder = function() {
 				try {
+					var f_id = $('#uifm-field-selected-id').val();
+					var f_step = $('#' + f_id)
+						.closest('.uiform-step-pane')
+						.data('uifm-step');
+					var f_type = rocketform.getUiData4('steps_src', f_step, f_id, 'type');
+					var field_options = rocketform.getUiData5('steps_src', f_step, f_id, 'input2', 'options');
 
-									var f_id = $('#uifm-field-selected-id').val();
-				var f_step = $('#' + f_id)
-					.closest('.uiform-step-pane')
-					.data('uifm-step');
-				var f_type = rocketform.getUiData4('steps_src', f_step, f_id, 'type');
-				var field_options = rocketform.getUiData5('steps_src', f_step, f_id, 'input2', 'options');
+					var tmp_ul = $('#uifm-fld-inp2-options-container .uifm-fld-inp2-options-row');
 
-				 				var tmp_ul = $('#uifm-fld-inp2-options-container .uifm-fld-inp2-options-row');
+					var tmp_index, tmp_id, tmp_stored;
 
-				var tmp_index, tmp_id, tmp_stored;
+					var tmp_new_index = 0;
+					$.each(tmp_ul, function(index, value) {
+						tmp_index = $(this).data('opt-index');
+						tmp_stored = zgfm_back_input2.search_varId(field_options, tmp_index);
+						if (String(tmp_stored) != '') {
+							rocketform.setUiData7('steps_src', f_step, f_id, 'input2', 'options', tmp_stored['key'], 'order', tmp_new_index);
+						}
 
-				var tmp_new_index=0;
-				$.each(tmp_ul, function (index, value) {
-					tmp_index = $(this).data('opt-index');
-					tmp_stored = zgfm_back_input2.search_varId(field_options, tmp_index);
-					if (String(tmp_stored) != '') {
-						rocketform.setUiData7('steps_src', f_step, f_id, 'input2','options', tmp_stored['key'], 'order', tmp_new_index);
-					}
+						tmp_new_index++;
+					});
 
-										tmp_new_index++;
-				});
+					field_options = rocketform.getUiData5('steps_src', f_step, f_id, 'input2', 'options');
 
-									field_options = rocketform.getUiData5('steps_src', f_step, f_id, 'input2', 'options');
-
-					let new_field_options = Object.keys(field_options).sort(function(a,b){return field_options[a]['order']-field_options[b]['order']}).map(key => field_options[key]);
+					let new_field_options = Object.keys(field_options)
+						.sort(function(a, b) {
+							return field_options[a]['order'] - field_options[b]['order'];
+						})
+						.map(key => field_options[key]);
 
 					var result = zgfm_back_input2.input2settings_ArrayToObject(new_field_options);
 
-					let result2 = Array.from(result).reduce((obj, [key, value]) => (
-						Object.assign(obj, { [key]: value }) 
-					  ), {}); 
+					let result2 = Array.from(result).reduce(
+						(obj, [key, value]) =>
+							Object.assign(obj, { [key]: value }), 
+						{}
+					);
 
-					 					rocketform.setUiData5('steps_src', f_step, f_id, 'input2', 'options',{});
-					rocketform.setUiData5('steps_src', f_step, f_id, 'input2', 'options',result2);
-
-									} catch (error) {
+					rocketform.setUiData5('steps_src', f_step, f_id, 'input2', 'options', {});
+					rocketform.setUiData5('steps_src', f_step, f_id, 'input2', 'options', result2);
+				} catch (error) {
 					console.error(error);
-
-					 				}
+				}
 			};
 
-			this.input2settings_ArrayToObject = function (arr) {
-
+			this.input2settings_ArrayToObject = function(arr) {
 				var myObject = new Map();
 
-				 				for (var i = 0; i < arr.length; i++) {
-						myObject.set(arr[i]['id'], arr[i]);
+				for (var i = 0; i < arr.length; i++) {
+					myObject.set(arr[i]['id'], arr[i]);
 				}
 				return myObject;
 			};
 
-			this.search_varId = function (obj, search) {
+			this.search_varId = function(obj, search) {
 				var returnKey = '';
 				var newobj = {};
-				$.each(obj, function (key, info) {
+				$.each(obj, function(key, info) {
 					if (String(info.id) === String(search)) {
 						newobj['key'] = key;
 						newobj['data'] = info;
@@ -30015,16 +31103,14 @@ if (!$uifm.isFunction(zgfm_back_input2)) {
 				return returnKey;
 			};
 
-			this.convertIDsToIndex = function(options){
-				let new_options=[];
-				$.each(options, function (index, value) {
+			this.convertIDsToIndex = function(options) {
+				let new_options = [];
+				$.each(options, function(index, value) {
 					new_options.push(value);
-
-								});
+				});
 				return new_options;
 			};
-
-					};
+		};
 		window.zgfm_back_input2 = zgfm_back_input2 = $.zgfm_back_input2 = new zgfm_back_input2();
 	})($uifm, window);
 }
@@ -30034,19 +31120,19 @@ if (typeof $uifm === 'undefined') {
 }
 var zgfm_back_tools = zgfm_back_tools || null;
 if (!$uifm.isFunction(zgfm_back_tools)) {
-	(function ($, window) {
+	(function($, window) {
 		'use strict';
 
-		var zgfm_back_tools = function () {
+		var zgfm_back_tools = function() {
 			var zgfm_variable = [];
 			zgfm_variable.innerVars = {};
 			zgfm_variable.externalVars = {};
 
-			this.initialize = function () {};
-			this.setInnerVariable = function (name, value) {
+			this.initialize = function() {};
+			this.setInnerVariable = function(name, value) {
 				zgfm_variable.innerVars[name] = value;
 			};
-			this.getInnerVariable = function (name) {
+			this.getInnerVariable = function(name) {
 				if (zgfm_variable.innerVars[name]) {
 					return zgfm_variable.innerVars[name];
 				} else {
@@ -30055,7 +31141,7 @@ if (!$uifm.isFunction(zgfm_back_tools)) {
 			};
 
 
-			this.pdf_showsample = function (type) {
+			this.pdf_showsample = function(type) {
 				var editor, email_template_pdf_msg;
 				var pdf_fullpage = $('#uifm_frm_main_pdf_htmlfullpage').bootstrapSwitchZgpb('state') ? 1 : 0;
 				var form_id = $('#uifm_frm_main_id').val() ? $('#uifm_frm_main_id').val() : 0;
@@ -30096,7 +31182,7 @@ if (!$uifm.isFunction(zgfm_back_tools)) {
 				this.pdf_processSample(email_template_pdf_msg, pdf_fullpage);
 			};
 
-			this.pdf_processSample = function (message, whole_control) {
+			this.pdf_processSample = function(message, whole_control) {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/ajax_pdf_showsample',
@@ -30107,9 +31193,9 @@ if (!$uifm.isFunction(zgfm_back_tools)) {
 						full_page: whole_control,
 						message: encodeURIComponent(message),
 						csrf_field_name: uiform_vars.csrf_field_name,
-						form_id: zgfm_back_tools.getInnerVariable('form_id')
+						form_id: zgfm_back_tools.getInnerVariable('form_id'),
 					},
-					success: function (msg) {
+					success: function(msg) {
 						try {
 							if (parseInt(msg.status) === 1) {
 								if (msg.pdf_name) {
@@ -30133,11 +31219,11 @@ if (!$uifm.isFunction(zgfm_back_tools)) {
 						} catch (ex) {
 							alert('Error! PDf was not generated');
 						}
-					}
+					},
 				});
 			};
 
-			this.email_sendsample = function (type) {
+			this.email_sendsample = function(type) {
 				var editor, email_template_msg;
 				var html_wholecont = $('#uifm_frm_main_email_htmlfullpage').bootstrapSwitchZgpb('state') ? 1 : 0;
 				var tmp_type;
@@ -30181,7 +31267,7 @@ if (!$uifm.isFunction(zgfm_back_tools)) {
 				this.email_processSample(email_template_msg, html_wholecont, email);
 			};
 
-			this.email_processSample = function (message, whole_control, email_to) {
+			this.email_processSample = function(message, whole_control, email_to) {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/forms/ajax_email_sendsample',
@@ -30192,15 +31278,15 @@ if (!$uifm.isFunction(zgfm_back_tools)) {
 						full_page: whole_control,
 						message: encodeURIComponent(message),
 						email_to: email_to,
-						csrf_field_name: uiform_vars.csrf_field_name
+						csrf_field_name: uiform_vars.csrf_field_name,
 					},
-					success: function (msg) {
+					success: function(msg) {
 						if (parseInt(msg.st_error) === 0) {
 							alert('Email test was sent to : ' + email_to);
 						} else {
 							alert('Error! Email test was not sent because of an error.');
 						}
-					}
+					},
 				});
 			};
 		};
@@ -30213,15 +31299,15 @@ if (typeof $uifm === 'undefined') {
 }
 var zgfm_back_upgrade = zgfm_back_upgrade || null;
 if (!$uifm.isFunction(zgfm_back_upgrade)) {
-	(function ($, window) {
+	(function($, window) {
 		'use strict';
 
-		var zgfm_back_upgrade = function () {
+		var zgfm_back_upgrade = function() {
 			var zgfm_variable = [];
 			zgfm_variable.innerVars = {};
 			zgfm_variable.externalVars = {};
 
-			this.initialize = function () {
+			this.initialize = function() {
 				let cur_core_arr = rocketform.getUiData('app_ver');
 
 				switch (zgfm_back_helper.versionCompare(String(cur_core_arr), '3.4.1')) {
@@ -30234,14 +31320,14 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 			};
 
-			this.upgrade_prev_3_4_1 = function () {};
+			this.upgrade_prev_3_4_1 = function() {};
 		};
 		window.zgfm_back_upgrade = zgfm_back_upgrade = $.zgfm_back_upgrade = new zgfm_back_upgrade();
 	})($uifm, window);
 }
 
-(function ($) {
-	var zgpbld_grid = function (element, options) {
+(function($) {
+	var zgpbld_grid = function(element, options) {
 		var elem = $(element);
 		var obj = this;
 		var drag = null;
@@ -30250,15 +31336,15 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 		var M = Math;
 		var cur_side = null;
 		var defaults = {
-			data: {}
+			data: {},
 		};
 		var settings = $.extend(true, {}, defaults, options);
-		this.publicMethod = function () {};
+		this.publicMethod = function() {};
 
-		this.events_trigger = function () {
+		this.events_trigger = function() {
 		};
 
-		this.drag_init = function (e) {
+		this.drag_init = function(e) {
 			try {
 				var target = $(e.target).closest('.zgpb-fl-gs-block-style');
 
@@ -30268,17 +31354,23 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				g.ox = e.pageX; 
 				g.l = target.position().left; 
 
-				$(e.target).closest('.zgpb-fl-gridsystem-opt').css('display', 'block');
-				$(e.target).closest('.zgpb-fl-gridsystem').find('.zgpb-fl-gd-opt-icon-handler').removeCss('background', '#CEFBF8');
-				$(e.target).closest('.zgpb-fl-gridsystem-opt').find('.zgpb-fl-gd-opt-icon-handler').css('background', '#CEFBF8');
+				$(e.target)
+					.closest('.zgpb-fl-gridsystem-opt')
+					.css('display', 'block');
+				$(e.target)
+					.closest('.zgpb-fl-gridsystem')
+					.find('.zgpb-fl-gd-opt-icon-handler')
+					.removeCss('background', '#CEFBF8');
+				$(e.target)
+					.closest('.zgpb-fl-gridsystem-opt')
+					.find('.zgpb-fl-gd-opt-icon-handler')
+					.css('background', '#CEFBF8');
 
 
 				$(document)
 					.bind('mousemove.' + ID, obj.drag_move)
 					.bind('mouseup.' + ID, obj.drag_over); 
-				$('head').append(
-					"<style id='zgpb-grid-head-css' type='text/css'>*{cursor:e-resize!important;   -webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}</style>"
-				); 
+				$('head').append("<style id='zgpb-grid-head-css' type='text/css'>*{cursor:e-resize!important;   -webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}</style>"); 
 				drag = g;
 
 				paint_variables();
@@ -30287,7 +31379,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 			}
 		};
 
-		this.drag_move = function (e) {
+		this.drag_move = function(e) {
 			try {
 				if (!drag) return;
 				var x = e.pageX - drag.ox + drag.l; 
@@ -30310,7 +31402,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				console.error(' error drag_move ', ex.message);
 			}
 		};
-		var syncCols = function (t, i, right) {
+		var syncCols = function(t, i, right) {
 			try {
 				var inc,
 					possible_index = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
@@ -30383,7 +31475,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 			}
 		};
 
-		this.drag_over = function (e) {
+		this.drag_over = function(e) {
 			try {
 				$(document)
 					.unbind('mousemove.' + ID)
@@ -30393,12 +31485,17 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				drag = null;
 				var c_tmp;
 
-				$.each(t.c, function (index, element) {
+				$.each(t.c, function(index, element) {
 					t.c[index].w = t.c[index].width();
 				});
 
-				$(e.target).closest('.zgpb-fl-gridsystem-opt').removeCss('display');
-				$(e.target).closest('.zgpb-fl-gridsystem-opt').find('.zgpb-fl-gd-opt-icon-handler').removeCss('background', '#CEFBF8');
+				$(e.target)
+					.closest('.zgpb-fl-gridsystem-opt')
+					.removeCss('display');
+				$(e.target)
+					.closest('.zgpb-fl-gridsystem-opt')
+					.find('.zgpb-fl-gd-opt-icon-handler')
+					.removeCss('background', '#CEFBF8');
 
 				paint_variables();
 			} catch (ex) {
@@ -30406,11 +31503,11 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 			}
 		};
 
-		var paint_variables = function () {
+		var paint_variables = function() {
 			try {
 				return;
 				var output = '<ul>';
-				$.each(t.c, function (index, element) {
+				$.each(t.c, function(index, element) {
 					output += '<li>index: ' + index + ' <=> w: ' + t.c[index].w + '</li>';
 				});
 				output += '</ul>';
@@ -30420,16 +31517,20 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 			}
 		};
 
-		this.drag_cancel = function () {};
+		this.drag_cancel = function() {};
 
-		this.onHover = function (e) {
+		this.onHover = function(e) {
 			try {
 				if (e) {
 					e.stopPropagation();
 					e.preventDefault();
 				}
-				var tmp_target_id = $(e.target).closest('.zgpb-field-template').attr('id');
-				var tmp_target_type = $(e.target).closest('.zgpb-field-template').attr('data-typefield');
+				var tmp_target_id = $(e.target)
+					.closest('.zgpb-field-template')
+					.attr('id');
+				var tmp_target_type = $(e.target)
+					.closest('.zgpb-field-template')
+					.attr('data-typefield');
 
 				switch (parseInt(tmp_target_type)) {
 					case 1:
@@ -30445,7 +31546,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 							$(this).append(
 								tmp_tmpl({
 									type: tmp_target_type,
-									id: tmp_target_id
+									id: tmp_target_id,
 								})
 							);
 						}
@@ -30456,7 +31557,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 							$(this).append(
 								tmp_tmpl({
 									type: $('#' + ID).attr('data-typefield'),
-									id: tmp_target_id
+									id: tmp_target_id,
 								})
 							);
 						}
@@ -30473,16 +31574,20 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				if (drag) return;
 
 				if ($('#zgpb-editor-container').find('.zgpb-fl-gs-block-style-hover').length) {
-					$('#zgpb-editor-container').find('.zgpb-fl-gs-block-style-hover').removeClass('zgpb-fl-gs-block-style-hover');
+					$('#zgpb-editor-container')
+						.find('.zgpb-fl-gs-block-style-hover')
+						.removeClass('zgpb-fl-gs-block-style-hover');
 				}
 
-				$(e.target).closest('.zgpb-fl-gs-block-style').addClass('zgpb-fl-gs-block-style-hover');
+				$(e.target)
+					.closest('.zgpb-fl-gs-block-style')
+					.addClass('zgpb-fl-gs-block-style-hover');
 			} catch (ex) {
 				console.error(' error onHover ', ex.message);
 			}
 		};
 
-		this.offHover = function (e) {
+		this.offHover = function(e) {
 			try {
 				if (e) {
 					e.stopPropagation();
@@ -30490,21 +31595,27 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 
 				if (parseInt($(this).find('.zgpb-fields-quick-options').length) > 0) {
-					$(this).find('.zgpb-fields-quick-options').remove();
+					$(this)
+						.find('.zgpb-fields-quick-options')
+						.remove();
 				}
 
 				if (parseInt($(this).find('.zgpb-fields-hover-hlight-box').length) > 0) {
-					$(this).find('.zgpb-fields-hover-hlight-box').remove();
+					$(this)
+						.find('.zgpb-fields-hover-hlight-box')
+						.remove();
 				}
 
 				if (drag) return;
-				$(e.target).closest('.zgpb-fl-gs-block-style').removeClass('zgpb-fl-gs-block-style-hover');
+				$(e.target)
+					.closest('.zgpb-fl-gs-block-style')
+					.removeClass('zgpb-fl-gs-block-style-hover');
 			} catch (ex) {
 				console.error(' error offHover ', ex.message);
 			}
 		};
 
-		this.onWholeHover = function (e) {
+		this.onWholeHover = function(e) {
 
 			try {
 				var tmp_tmpl = wp.template('zgpb-quick-options-2');
@@ -30512,7 +31623,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 					$(this).append(
 						tmp_tmpl({
 							type: $('#' + ID).attr('data-typefield'),
-							id: ID
+							id: ID,
 						})
 					);
 				}
@@ -30521,17 +31632,19 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 			}
 		};
 
-		this.offWholeHover = function (e) {
+		this.offWholeHover = function(e) {
 			try {
 				if (parseInt($(this).find('.zgpb-fields-quick-options2').length) > 0) {
-					$(this).find('.zgpb-fields-quick-options2').remove();
+					$(this)
+						.find('.zgpb-fields-quick-options2')
+						.remove();
 				}
 			} catch (ex) {
 				console.error(' error offWholeHover ', ex.message);
 			}
 		};
 
-		this.init = function () {
+		this.init = function() {
 			this.events_trigger();
 
 			t = elem;
@@ -30542,7 +31655,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 			createGrips();
 		};
 
-		var createGrips = function () {
+		var createGrips = function() {
 			try {
 				var cols = t.find(' .sfdc-row > .zgpb-fl-gs-block-style');
 
@@ -30550,7 +31663,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				t.ln = cols.length;
 
 
-				cols.each(function (i) {
+				cols.each(function(i) {
 					var c = $(this);
 					var g = $(this);
 					g.t = t;
@@ -30568,7 +31681,9 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 					t.c.push(c);
 
 
-					g.find('.zgpb-fl-gd-drag-line').mousedown(obj.drag_init).mouseup(obj.drag_cancel); 
+					g.find('.zgpb-fl-gd-drag-line')
+						.mousedown(obj.drag_init)
+						.mouseup(obj.drag_cancel); 
 					g.data(ID, { i: i, t: t.attr(ID) });
 
 					$(this).on('mouseenter', obj.onHover);
@@ -30582,8 +31697,8 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 		this.init();
 	};
 
-	$.fn.zgpbld_grid = function (options) {
-		return this.each(function () {
+	$.fn.zgpbld_grid = function(options) {
+		return this.each(function() {
 			var element = $(this);
 
 			if (element.data('zgpbld_grid')) return;
@@ -30595,13 +31710,13 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 	};
 })($uifm);
 
-(function () {
+(function() {
 	var __slice = [].slice;
 
-	(function ($, window) {
+	(function($, window) {
 		'use strict';
 		var uiformDCheckbox;
-		uiformDCheckbox = (function () {
+		uiformDCheckbox = (function() {
 			var uifm_dchkbox_var = [];
 			uifm_dchkbox_var.innerVars = {};
 
@@ -30615,20 +31730,38 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 					$.fn.uiformDCheckbox.defaults,
 					{
 						baseGalleryId: this.$element.data('gal-id'),
-						opt_laymode: $(element).parent().attr('data-opt-laymode') || 1,
+						opt_laymode:
+							$(element)
+								.parent()
+								.attr('data-opt-laymode') || 1,
 						opt_checked: this.$element.data('opt-checked'),
 						opt_isradiobtn: this.$element.data('opt-isrdobtn'),
 						opt_qtyMax: this.$element.data('opt-qtymax'),
 						opt_qtySt: this.$element.data('opt-qtyst'),
 						opt_price: this.$element.data('opt-price'),
 						opt_label: this.$element.data('opt-label'),
-						opt_thopt_showhvrtxt: $(element).parent().attr('data-thopt-showhvrtxt') || 0,
-						opt_thopt_showcheckb: $(element).parent().attr('data-thopt-showcheckb') || 0,
-						opt_thopt_zoom: $(element).parent().attr('data-thopt-zoom') || 0,
-						opt_thopt_height: $(element).parent().attr('data-thopt-height') || 100,
-						opt_thopt_width: $(element).parent().attr('data-thopt-width') || 100,
+						opt_thopt_showhvrtxt:
+							$(element)
+								.parent()
+								.attr('data-thopt-showhvrtxt') || 0,
+						opt_thopt_showcheckb:
+							$(element)
+								.parent()
+								.attr('data-thopt-showcheckb') || 0,
+						opt_thopt_zoom:
+							$(element)
+								.parent()
+								.attr('data-thopt-zoom') || 0,
+						opt_thopt_height:
+							$(element)
+								.parent()
+								.attr('data-thopt-height') || 100,
+						opt_thopt_width:
+							$(element)
+								.parent()
+								.attr('data-thopt-width') || 100,
 						backend: this.$element.data('backend'),
-						baseClass: this.$element.data('base-class')
+						baseClass: this.$element.data('base-class'),
 					},
 					options
 				);
@@ -30661,17 +31794,17 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 				this.$element.on(
 					'init.uiformDCheckbox',
-					(function (_this) {
-						return function () {
+					(function(_this) {
+						return function() {
 							return _this.options.onInit.apply(element, arguments);
 						};
 					})(this)
 				);
 
 				if (parseInt(this.options.backend) === 1) {
-					this.$canvas_parent=this.$element.closest('.uifm-input17-wrap').width();
-				}else{
-					this.$canvas_parent=this.$element.closest('.rockfm-input17-wrap').width();
+					this.$canvas_parent = this.$element.closest('.uifm-input17-wrap').width();
+				} else {
+					this.$canvas_parent = this.$element.closest('.rockfm-input17-wrap').width();
 				}
 
 				if (parseInt(this.options.opt_laymode) === 2) {
@@ -30703,8 +31836,8 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 				this.$element.on(
 					'switchChange.uiformDCheckbox',
-					(function (_this) {
-						return function () {
+					(function(_this) {
+						return function() {
 							return _this.options.onSwitchChange.apply(element, arguments);
 						};
 					})(this)
@@ -30722,18 +31855,18 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 				this._get_items();
 				this._refresh();
-			};
+			}
 
 			uiformDCheckbox.prototype._constructor = uiformDCheckbox;
 
-			uiformDCheckbox.prototype._refresh = function () {
-				this.$canvas_parent=this.$element.closest('.rockfm-input17-wrap').width();
+			uiformDCheckbox.prototype._refresh = function() {
+				this.$canvas_parent = this.$element.closest('.rockfm-input17-wrap').width();
 				this._enableCheckboxVal(this.$opt_gal_checkbox, this);
 				this._setValToChkBoxInput(this);
 				this._get_items();
 			};
 
-			uiformDCheckbox.prototype._mod2_initPreview = function () {
+			uiformDCheckbox.prototype._mod2_initPreview = function() {
 				this.$element.find('.uifm-dcheckbox-item-nextimg').hide();
 				this.$element.find('.uifm-dcheckbox-item-previmg').hide();
 				this.$element.find('.uifm-dcheckbox-item-showgallery').hide();
@@ -30745,11 +31878,11 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 			};
 
-			uiformDCheckbox.prototype._get_items = function () {
+			uiformDCheckbox.prototype._get_items = function() {
 				var _this = this;
 				if (this.$element.length) {
 					var tmp_num_elems = this.$element;
-					tmp_num_elems.each(function (i) {
+					tmp_num_elems.each(function(i) {
 						if (parseInt(_this.options.opt_laymode) === 2) {
 							if (parseInt(_this.options.opt_checked) === 1) {
 								_this._mode2_get_img(_this.$element, 0);
@@ -30763,32 +31896,30 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 			};
 
-			uiformDCheckbox.prototype._getImageToCanvas = function (obj, opt, _this) {
+			uiformDCheckbox.prototype._getImageToCanvas = function(obj, opt, _this) {
 				var ctx = obj.find('canvas')[0].getContext('2d');
 				var tmp_can_width = parseInt(this.options.opt_thopt_width);
 				var tmp_can_height = parseInt(this.options.opt_thopt_height);
 
-				var aspectRatio=tmp_can_width/tmp_can_height;
+				var aspectRatio = tmp_can_width / tmp_can_height;
 
-				var closestParentDiv=this.$canvas_parent;
+				var closestParentDiv = this.$canvas_parent;
 
-				 				var new_width, new_height;
-				if(tmp_can_width > closestParentDiv){
-
-					if(parseInt(closestParentDiv)>0){
+				var new_width, new_height;
+				if (tmp_can_width > closestParentDiv) {
+					if (parseInt(closestParentDiv) > 0) {
 						new_width = closestParentDiv;
-					}else{
+					} else {
 						new_width = tmp_can_width;
 					}
-					new_height = new_width/aspectRatio;
-				}else{
+					new_height = new_width / aspectRatio;
+				} else {
 					new_width = tmp_can_width;
 					new_height = tmp_can_height;
 				}
 
-
-												var img = new Image();
-				img.onload = function () {
+				var img = new Image();
+				img.onload = function() {
 					ctx.drawImage(img, 0, 0, new_width, new_height);
 				};
 				var getImgIndex = obj.find('canvas').attr('data-uifm-nro');
@@ -30809,7 +31940,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				this.$element.find('.uifm-dcheckbox-item-viewport').attr('width', new_width);
 			};
 
-			uiformDCheckbox.prototype._getImageGallery = function (obj, _index) {
+			uiformDCheckbox.prototype._getImageGallery = function(obj, _index) {
 				var objimgs = obj.find('.uifm-dcheckbox-item-gal-imgs a img');
 				var objcanvas = obj.find('canvas');
 				if (objimgs.eq(_index).length) {
@@ -30821,7 +31952,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 			};
 
-			uiformDCheckbox.prototype._getPrevImageGallery = function (obj, _index) {
+			uiformDCheckbox.prototype._getPrevImageGallery = function(obj, _index) {
 				var objimgs = obj.find('.uifm-dcheckbox-item-gal-imgs a img');
 				var objcanvas = obj.find('canvas');
 				var newIndex = parseInt(_index) - 1;
@@ -30834,26 +31965,26 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 			};
 
-			uiformDCheckbox.prototype._mode2_get_img = function (obj, _index) {
+			uiformDCheckbox.prototype._mode2_get_img = function(obj, _index) {
 				var ctx = obj.find('canvas')[0].getContext('2d');
 				var tmp_can_width = parseInt(this.options.opt_thopt_width);
 				var tmp_can_height = parseInt(this.options.opt_thopt_height);
 
-				var aspectRatio=tmp_can_width/tmp_can_height;
+				var aspectRatio = tmp_can_width / tmp_can_height;
 
-				var closestParentDiv=this.$canvas_parent;
+				var closestParentDiv = this.$canvas_parent;
 
-				 				var new_width, new_height;
-				if(tmp_can_width > closestParentDiv){
+				var new_width, new_height;
+				if (tmp_can_width > closestParentDiv) {
 					new_width = closestParentDiv;
-					new_height = new_width/aspectRatio;
-				}else{
+					new_height = new_width / aspectRatio;
+				} else {
 					new_width = tmp_can_width;
 					new_height = tmp_can_height;
 				}
 
-								var img = new Image();
-				img.onload = function () {
+				var img = new Image();
+				img.onload = function() {
 					ctx.drawImage(img, 0, 0, new_width, new_height);
 				};
 
@@ -30872,7 +32003,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				this.$element.find('.uifm-dcheckbox-item-viewport').attr('width', new_width);
 			};
 
-			uiformDCheckbox.prototype._getNextImageGallery = function (obj, _index) {
+			uiformDCheckbox.prototype._getNextImageGallery = function(obj, _index) {
 				var objimgs = obj.find('.uifm-dcheckbox-item-gal-imgs a img');
 				var objcanvas = obj.find('canvas');
 				var newIndex = parseInt(_index) + 1;
@@ -30885,42 +32016,42 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 			};
 
-			uiformDCheckbox.prototype._setInnerVariable = function (name, value) {
+			uiformDCheckbox.prototype._setInnerVariable = function(name, value) {
 				uifm_dchkbox_var.innerVars[name] = value;
 			};
-			uiformDCheckbox.prototype._getInnerVariable = function (name) {
+			uiformDCheckbox.prototype._getInnerVariable = function(name) {
 				if (uifm_dchkbox_var.innerVars[name]) {
 					return uifm_dchkbox_var.innerVars[name];
 				} else {
 					return '';
 				}
 			};
-			uiformDCheckbox.prototype.optChecked = function (value) {
+			uiformDCheckbox.prototype.optChecked = function(value) {
 				if (typeof value === 'undefined') {
 					return this.options.opt_checked;
 				}
 				this.options.opt_checked = value;
 				return this.$element;
 			};
-			uiformDCheckbox.prototype.man_optChecked = function (value) {
+			uiformDCheckbox.prototype.man_optChecked = function(value) {
 				this.optChecked(value);
 				this._enableCheckboxVal(this.$opt_gal_checkbox, this);
 				this._setValToChkBoxInput(this);
 				return this.$element;
 			};
 
-			uiformDCheckbox.prototype.man_mod2_refresh = function () {
+			uiformDCheckbox.prototype.man_mod2_refresh = function() {
 				this._mod2_initPreview();
 			};
 
-			uiformDCheckbox.prototype.optQtySt = function (value) {
+			uiformDCheckbox.prototype.optQtySt = function(value) {
 				if (typeof value === 'undefined') {
 					return this.options.opt_qtySt;
 				}
 				this.options.opt_qtySt = value;
 				return this.$element;
 			};
-			uiformDCheckbox.prototype.man_optQtySt = function (value) {
+			uiformDCheckbox.prototype.man_optQtySt = function(value) {
 				this.optQtySt(value);
 				if (value && parseInt(this.options.opt_checked)) {
 					this.$spinner_wrapper.show();
@@ -30929,7 +32060,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 				return this.$element;
 			};
-			uiformDCheckbox.prototype.refreshImgs = function () {
+			uiformDCheckbox.prototype.refreshImgs = function() {
 				if (parseInt(this.options.opt_laymode) === 2) {
 					this._mod2_initPreview();
 				} else {
@@ -30937,20 +32068,20 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 				return this.$element;
 			};
-			uiformDCheckbox.prototype.optQtyMax = function (value) {
+			uiformDCheckbox.prototype.optQtyMax = function(value) {
 				if (typeof value === 'undefined') {
 					return this.options.opt_qtyMax;
 				}
 				this.options.opt_qtyMax = value;
 				return this.$element;
 			};
-			uiformDCheckbox.prototype.man_optQtyMax = function (value) {
+			uiformDCheckbox.prototype.man_optQtyMax = function(value) {
 				this.optQtyMax(value);
 				this.$inp_checkbox_max.val(value);
 
 				return this.$element;
 			};
-			uiformDCheckbox.prototype.onInit = function (value) {
+			uiformDCheckbox.prototype.onInit = function(value) {
 				if (typeof value === 'undefined') {
 					return this.options.onInit;
 				}
@@ -30961,7 +32092,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				return this.$element;
 			};
 
-			uiformDCheckbox.prototype.onSwitchChange = function (value) {
+			uiformDCheckbox.prototype.onSwitchChange = function(value) {
 				if (typeof value === 'undefined') {
 					return this.options.onSwitchChange;
 				}
@@ -30973,66 +32104,73 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				return this.$element;
 			};
 
-			uiformDCheckbox.prototype.get_totalCost = function () {
+			uiformDCheckbox.prototype.get_totalCost = function() {
 				var total;
 				var input_spinner = this.$element.find('.uifm-dcheckbox-item-qty-num');
 				total = parseFloat(input_spinner.val()) * parseFloat(this.options.opt_price);
 				return total;
 			};
-			uiformDCheckbox.prototype.get_labelOpt = function () {
+			uiformDCheckbox.prototype.get_labelOpt = function() {
 				return this.options.opt_label;
 			};
-			uiformDCheckbox.prototype.onCostCalcProcess = function () {
+			uiformDCheckbox.prototype.onCostCalcProcess = function() {
 				var obj_form = this.$element.closest('.rockfm-form');
 				rocketfm.costest_fillSticky(obj_form);
 
 				return this.$element;
 			};
 
-			uiformDCheckbox.prototype.destroy = function () {
+			uiformDCheckbox.prototype.destroy = function() {
 				var $form;
 				$form = this.$element.closest('form');
 				if ($form.length) {
 					$form.off('reset.uiformDCheckbox').removeData('uifm-dynamic-checkbox');
 				}
-				this.$container.children().not(this.$element).remove();
-				this.$element.unwrap().unwrap().off('.uiformDCheckbox').removeData('uifm-dynamic-checkbox');
+				this.$container
+					.children()
+					.not(this.$element)
+					.remove();
+				this.$element
+					.unwrap()
+					.unwrap()
+					.off('.uiformDCheckbox')
+					.removeData('uifm-dynamic-checkbox');
 				return this.$element;
 			};
 
-			uiformDCheckbox.prototype._elementHandlers = function () {
+			uiformDCheckbox.prototype._elementHandlers = function() {
 				return this.$element.on({
-					'change.uiformDCheckbox': (function (_this) {
-						return function (e, checked) {
+					'change.uiformDCheckbox': (function(_this) {
+						return function(e, checked) {
 							e.preventDefault();
 							e.stopImmediatePropagation();
 
 							return _this.$element;
 						};
 					})(this),
-					'hover.uiformDCheckbox': (function (_this) {
-						return function (e) {
+					'hover.uiformDCheckbox': (function(_this) {
+						return function(e) {
 							e.preventDefault();
 						};
 					})(this),
-					'focus.uiformDCheckbox': (function (_this) {
-						return function (e) {
+					'focus.uiformDCheckbox': (function(_this) {
+						return function(e) {
 							e.preventDefault();
 						};
 					})(this),
-					'blur.uiformDCheckbox': (function (_this) {
-						return function (e) {
+					'blur.uiformDCheckbox': (function(_this) {
+						return function(e) {
 							e.preventDefault();
 						};
 					})(this),
-					'keydown.uiformDCheckbox': (function (_this) {})(this)
+					'keydown.uiformDCheckbox': (function(_this) {})(this),
 				});
 			};
 
-			uiformDCheckbox.prototype._elementHandlers2 = function () {
+			uiformDCheckbox.prototype._elementHandlers2 = function() {
 				return this.$element.on({
-					'mouseover.uiformDCheckbox': (function (_this) {
-						return function (e) {
+					'mouseover.uiformDCheckbox': (function(_this) {
+						return function(e) {
 							e.preventDefault();
 
 							if (parseInt(_this.options.opt_laymode) === 2) {
@@ -31042,8 +32180,8 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 							}
 						};
 					})(this),
-					'mouseout.uiformDCheckbox': (function (_this) {
-						return function (e) {
+					'mouseout.uiformDCheckbox': (function(_this) {
+						return function(e) {
 							e.preventDefault();
 
 							if (parseInt(_this.options.opt_laymode) === 2) {
@@ -31054,15 +32192,15 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 								}
 							}
 						};
-					})(this)
+					})(this),
 				});
 			};
 
-			uiformDCheckbox.prototype._galleryHandlers = function () {
+			uiformDCheckbox.prototype._galleryHandlers = function() {
 				this.$opt_gal_next_img.on(
 					'click.uiformDCheckbox',
-					(function (_this) {
-						return function (e) {
+					(function(_this) {
+						return function(e) {
 							e.preventDefault();
 							if (parseInt(_this.options.opt_isradiobtn) === 1) {
 								_this._getImageToCanvas($(this).closest('.uifm-dradiobtn-item'), 2, _this);
@@ -31075,8 +32213,8 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 				this.$opt_gal_prev_img.on(
 					'click.uiformDCheckbox',
-					(function (_this) {
-						return function (e) {
+					(function(_this) {
+						return function(e) {
 							e.preventDefault();
 							if (parseInt(_this.options.opt_isradiobtn) === 1) {
 								_this._getImageToCanvas($(this).closest('.uifm-dradiobtn-item'), 1, _this);
@@ -31088,11 +32226,11 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				);
 			};
 
-			uiformDCheckbox.prototype._handleHandlers = function () {
+			uiformDCheckbox.prototype._handleHandlers = function() {
 				this.$opt_gal_btn_show.on(
 					'click.uiformDCheckbox',
-					(function (_this) {
-						return function (e) {
+					(function(_this) {
+						return function(e) {
 							e.preventDefault();
 
 							var borderless = true;
@@ -31115,17 +32253,19 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 				this.$opt_gal_checkbox.on(
 					'click.uiformDCheckbox',
-					(function (_this) {
-						return function (e) {
+					(function(_this) {
+						return function(e) {
 							e.preventDefault();
 
 							if (parseInt(_this.options.opt_isradiobtn) === 1) {
-								var tmp_index = $(this).closest('.uifm-dradiobtn-item').attr('data-inp17-opt-index');
+								var tmp_index = $(this)
+									.closest('.uifm-dradiobtn-item')
+									.attr('data-inp17-opt-index');
 								var tmp_container = $(this).closest('.rockfm-input17-wrap');
 								var tmp_radiobtn_items = tmp_container.find('.uifm-dradiobtn-item');
 
 								var tmp_item_index;
-								tmp_radiobtn_items.each(function (i) {
+								tmp_radiobtn_items.each(function(i) {
 									tmp_item_index = $(this).attr('data-inp17-opt-index');
 
 									if (parseInt(tmp_item_index) === parseInt(tmp_index)) {
@@ -31151,17 +32291,19 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 				this.$opt_gal_box.on(
 					'click.uiformDCheckbox',
-					(function (_this) {
-						return function (e) {
+					(function(_this) {
+						return function(e) {
 							e.preventDefault();
 
 							if (parseInt(_this.options.opt_isradiobtn) === 1) {
-								var tmp_index = $(this).closest('.uifm-dradiobtn-item').attr('data-inp17-opt-index');
+								var tmp_index = $(this)
+									.closest('.uifm-dradiobtn-item')
+									.attr('data-inp17-opt-index');
 								var tmp_container = $(this).closest('.rockfm-input17-wrap');
 								var tmp_radiobtn_items = tmp_container.find('.uifm-dradiobtn-item');
 
 								var tmp_item_index;
-								tmp_radiobtn_items.each(function (i) {
+								tmp_radiobtn_items.each(function(i) {
 									tmp_item_index = $(this).attr('data-inp17-opt-index');
 
 									if (parseInt(tmp_item_index) === parseInt(tmp_index)) {
@@ -31186,8 +32328,8 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 				this.$inp_checkbox_max.on(
 					'keyup',
-					(function (_this) {
-						return function (e) {
+					(function(_this) {
+						return function(e) {
 							e.preventDefault();
 							_this._setValToChkBoxInput(_this);
 							return _this.$element.trigger('change.uiformDCheckbox');
@@ -31197,8 +32339,8 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 				this.$spinner_buttons.on(
 					'click.uiformDCheckbox',
-					(function (_this) {
-						return function (e) {
+					(function(_this) {
+						return function(e) {
 							e.preventDefault();
 							_this._spinnerCounter(this, _this);
 							_this._setValToChkBoxInput(_this);
@@ -31209,7 +32351,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 			};
 
-			uiformDCheckbox.prototype._spinnerCounter = function (el, _this) {
+			uiformDCheckbox.prototype._spinnerCounter = function(el, _this) {
 				var objbtn = $(el);
 				var input_spinner = _this.$element.find('.uifm-dcheckbox-item-qty-num');
 				if (_this.$element.find('.uifm-dcheckbox-item-qty-wrap button').hasClass('dcheckbox-disabled')) {
@@ -31236,7 +32378,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 					}
 				}
 			};
-			uiformDCheckbox.prototype._gen_optChecked = function (el, _this) {
+			uiformDCheckbox.prototype._gen_optChecked = function(el, _this) {
 				var objbtn = $(el);
 				if (objbtn.hasClass('uifm-dcheckbox-checked')) {
 					_this.optChecked(0);
@@ -31244,10 +32386,10 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 					_this.optChecked(1);
 				}
 			};
-			uiformDCheckbox.prototype._setValToChkBoxInput = function (_this) {
+			uiformDCheckbox.prototype._setValToChkBoxInput = function(_this) {
 				_this.$inp_checkbox.val(_this.$inp_checkbox_max.val());
 			};
-			uiformDCheckbox.prototype._enableCheckboxVal = function (el, _this) {
+			uiformDCheckbox.prototype._enableCheckboxVal = function(el, _this) {
 				var objbtn = $(el);
 				if (parseInt(this.options.opt_checked) === 0) {
 					if (parseInt(this.options.opt_isradiobtn) === 1) {
@@ -31272,7 +32414,7 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 				}
 			};
 
-			uiformDCheckbox.prototype._getClasses = function (classes) {
+			uiformDCheckbox.prototype._getClasses = function(classes) {
 				var c, cls, _i, _len;
 				if (!$.isArray(classes)) {
 					return ['' + this.options.baseClass + '-' + classes];
@@ -31287,11 +32429,11 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 
 			return uiformDCheckbox;
 		})();
-		$.fn.uiformDCheckbox = function () {
+		$.fn.uiformDCheckbox = function() {
 			var args, option, ret;
 			(option = arguments[0]), (args = 2 <= arguments.length ? __slice.call(arguments, 1) : []);
 			ret = this;
-			this.each(function () {
+			this.each(function() {
 				var $this, data;
 				$this = $(this);
 				data = $this.data('uifm-dynamic-checkbox');
@@ -31309,16 +32451,16 @@ if (!$uifm.isFunction(zgfm_back_upgrade)) {
 			backend: '1',
 			opt_isradiobtn: '0',
 			baseClass: 'uifm-dynamic-checkbox',
-			onInit: function () {},
-			onSwitchChange: function () {}
+			onInit: function() {},
+			onSwitchChange: function() {},
 		});
 	})(window.$uifm, window);
 }.call(this));
 
-$uifm(document).ready(function ($) {
-	$.fn.removeCss = function () {
+$uifm(document).ready(function($) {
+	$.fn.removeCss = function() {
 		var removedCss = $.makeArray(arguments);
-		return this.each(function () {
+		return this.each(function() {
 			var e$ = $(this);
 			var style = e$.attr('style');
 			if (typeof style !== 'string') return;
@@ -31348,658 +32490,662 @@ $uifm(document).ready(function ($) {
 });
 
 window.wp = window.wp || {};
-(function ($) {
-	wp.template = _.memoize(function (id) {
+(function($) {
+	wp.template = _.memoize(function(id) {
 		var compiled,
 			options = {
 				evaluate: /<#([\s\S]+?)#>/g,
 				interpolate: /\{\{\{([\s\S]+?)\}\}\}/g,
 				escape: /\{\{([^\}]+?)\}\}(?!\})/g,
-				variable: 'data'
+				variable: 'data',
 			};
 
-		return function (data) {
+		return function(data) {
 			compiled = compiled || _.template($('#tmpl-' + id).html(), options);
 			return compiled(data);
 		};
 	});
 })($uifm);
 
-$uifm(document).ready(function ($) {
-
-
-   $('input,textarea').attr('autocomplete', 'off');
-        $('#zgfm_edit_panel').disableAutoFill({
-         passwordField: '.password'}
-     );
-
-
-    String.prototype.cleanup = function() {
-       return this.toLowerCase().replace(/[^a-zA-Z0-9]+/g, "_");
-    };
-
-
-        var setfield_tab_active;
-
-
-    	        $('.uiform-editing-main').ColumnToggle();
-
-        $('.uiform-builder-data a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function (e) {
-            e.preventDefault();
-        var target = $(e.target).attr("href");
-        });
-
-              function testAnim(target,x,duration) {
-        $(target).addClass(x + ' animated '+duration).one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $(target).removeClass(x + ' animated '+duration);
-        });
-        }  
-     $('[data-toggle="tooltip"]').tooltip({container: "body"});  
-
-     $('.uifm-custom-color').colorpicker(); 
-
-      $("#uifm_frm_wiz_theme_typ").on("change", function(e) {
-            var f_val=$(e.target).val();
-            rocketform.wizardtab_changeTheme(f_val);
-        });
-
-
-
-
-
-
-    $(".chzn-select").chosen({width: "100%",search_contains: true}); 
-
-
-
-       $(".uifm_main_spinner_1").TouchSpin({
-        verticalbuttons: true,
-       min: 0,
-        max: 200,
-        stepinterval: 1,
-        verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-        verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
-    });
-
-
-
-    $(".tooltip-option-enable input").tooltip({
-        title : 'Enable',
-        container: "body"
-    });
-    $(".tooltip-val-demo").tooltip({
-        title : 'Validator text',
-        container: "body"
-    });
-
-
-    $(".autogrow").autogrow();
-    $(".wp-media-buttons").find('#insert-media-button').siblings().hide();
-
-        $( "#uifm-close-setting-tab" ).on( "click", function() {
-    rocketform.closeSettingTab();
-    });
-
-        $(document).on( "click", "a.uiform-fields-qopt-select", function(e) {
-        var tmp_input=$(this).find('input');
-        var id_field=tmp_input.closest('.uiform-field').attr('id');
-        if(e.target.tagName != "INPUT") {
-            if(tmp_input.is(':checked')){
-                tmp_input.prop( "checked",false);
-            }else{
-                tmp_input.prop( "checked",true);
-            }
-        } else {
-
-                    }
-        rocketform.fieldQuickOptions_selectField(id_field);
-    });
-
-
-
-
-    $(document).on( "change keyup focus keypress", ".uifm_frm_skin_tab_title_evt", function(e) {
-        var tabnro = $(e.target).closest('.uifm_frm_skin_tab_content').data('tab-nro');
-        rocketform.wizardtab_changeTabTitle(tabnro);
-    });
-
-
-    var uifm_obj_txtarea_editors = [ 
-                             $('#uifm_frm_summbox_skintxt_txt')
-
-                                                         ];
-
-
-             $(document).on( "keyup focus", uifm_obj_txtarea_editors, function(e) {
-        rocketform.captureEventTinyMCE2(e);
-    });
-
-    $(document).on( "change keyup focus keypress", ".uifm-f-option", function(e) {
-      var pickfield = $(e.target).closest('.uiform-field');
-        var f_step = $(e.target).closest('.uiform-step-pane').data('uifm-step');
-        var store=$( this ).data('field-store');
-        var f_store=store.split("-");
-        var f_sec=f_store[0];
-        var f_opt=f_store[1];
-        var f_val=$( this ).val();
-        var f_id=pickfield.attr("id");
-
-               rocketform.setDataOptToCoreData(f_step,f_id,store,f_val);
-        var idselected= $('#uifm-field-selected-id').val();
-         if(f_id===idselected){
-           var tabobject=$('#uifm-field-selected-id').parent();
-            rocketform.setDataOptToSetTab(tabobject,store,f_val);
-         }
-
-
-             });
-
-    $(document).on( "change keyup focus keypress", "#uifm-popup-setfname", function(e) {
-        var f_val=$( this ).val();
-        $('#uifm_frm_main_title').val(f_val);
-    });
-
-
-           $('.uiform-opt-slider').bootstrapSlider();
-     $(".uifm_frm_form_skin_spinner").on("change", function(e) {
-            var store=$(e.target).data('form-store');
-            var f_store=store.split("-");
-            var f_sec=f_store[0];
-            var f_opt=f_store[1];
-            var f_val=$(e.target).val();
-            rocketform.setUiData3('skin',f_sec,f_opt,f_val);
-            var obj_field= $('.uiform-preview-base');
-            if(obj_field){
-            rocketform.setDataOptToPrevForm(obj_field,'skin',f_sec+'-'+f_opt,f_val);
-            }   
-        });
-
-         $(".uifm_frm_form_skin_spinner").TouchSpin({
-        verticalbuttons: true,
-        min: 0,
-        max: 10000,
-        stepinterval: 1,
-        verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-        verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
-    });
-
-         $(".uifm_frm_form_skin_spinner").TouchSpin({
-        verticalbuttons: true,
-        min: 0,
-        max: 10000,
-        stepinterval: 1,
-        verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
-        verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus'
-    });
-
-    $(document).on( "change", ".uifm-formskin-setoption-st", function(e) {
-        var store=$( this ).data('form-store');
-        var f_store=store.split("-");
-        var f_sec=f_store[0];
-        var f_opt=f_store[1];
-        var f_val=$( this ).filter(':checked').val();
-        f_val=(f_val)?f_val:0;
-        rocketform.setUiData3('skin',f_sec,f_opt,f_val);
-        var obj_field= $('.uiform-preview-base');
-         if(obj_field){
-         rocketform.setDataOptToPrevForm(obj_field,f_sec+'-'+f_opt,f_val);
-         }
-    });
-
-
-    $(document).on( "click", ".uifm-fmskin-setoption-btn", function(e) {
-        var store=$( this ).data('form-store');
-        var f_store=store.split("-");
-        var f_sec=f_store[0];
-        var f_opt=f_store[1];
-        var f_val=$( this ).find('input').val();
-        rocketform.setUiData3('skin',f_sec,f_opt,f_val);
-
-        rocketform.setDataOptToSetFormTab($('#uiform-build-form-tab'),'skin',f_sec+'-'+f_opt,f_val);
-
-                 var obj_field= $('.uiform-preview-base');
-         if(obj_field){
-         rocketform.setDataOptToPrevForm(obj_field,'skin',f_sec+'-'+f_opt,f_val);
-
-                  }
-    });
-
-    $('#uiform-set-form-wizard .uifm-custom-color').colorpicker().on('changeColor', function(ev){
-       rocketform.wizardtab_saveChangesToMdata();
-       rocketform.wizardtab_refreshPreview();
-    });
-
-
-    $('#uiform-settings-tab3-2,#uiform-settings-tab3-4').find('.uifm-custom-color').colorpicker().on('changeColor', function(ev){
-
-               var store=$( this ).data('form-store');
-        var main_sec=$( this ).data('form-msec');
-        var f_store=store.split("-");
-        var f_sec=f_store[0];
-        var f_opt=f_store[1];
-        var f_val=$(this).find('input').val();
-        if(f_val){
-            rocketform.setUiData3(main_sec,f_sec,f_opt,f_val);
-            var obj_field= $('.uiform-preview-base');
-            if(obj_field){
-            rocketform.setDataOptToPrevForm(obj_field,main_sec,f_sec+'-'+f_opt,f_val);
-
-                         } 
-        }
-    });
-
-
-
-    $('#uifm_frm_main_ajaxmode').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
-        var f_val=(state)?1:0;
-       rocketform.setUiData2('main','submit_ajax',f_val);
-    });
-
-   $('.uifm_frm_skin_bgst_event').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
-       rocketform.loadForm_tab_skin_updateBG();
-    });
-    $('.uifm_frm_skin_bgcolor_event').colorpicker().on('changeColor', function(ev){
-      rocketform.loadForm_tab_skin_updateBG();
-    });
-    $('.uifm_frm_wiz_st_event').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
-            rocketform.guidedtour_showTextOnPreviewPane(false);
-       rocketform.wizardtab_enableStatus();
-    });
-
-
-    $('#uiform-settings-tab3-2 .switch-field,#uiform-settings-tab3-4 .switch-field').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
-        var store=$( this ).data('form-store');
-        var main_sec=$( this ).data('form-msec');
-        var f_store=store.split("-");
-        var f_sec=f_store[0];
-        var f_opt=f_store[1];
-        var f_val=(state)?1:0;
-        switch(main_sec){
-            case 'skin':
-                rocketform.setUiData3(main_sec,f_sec,f_opt,f_val);
-                break;
-            case 'summbox':
-                rocketform.setUiData3(main_sec,f_sec,f_opt,f_val);
-                break;
-        }
-
-                var obj_field= $('.uiform-preview-base');
-         if(obj_field){
-         rocketform.setDataOptToPrevForm(obj_field,main_sec,f_sec+'-'+f_opt,f_val);
-         }
-    });
-
-    $('.switch-field').bootstrapSwitchZgpb();
-
-
-    $("#uiform-settings-tab3-2  .uiform-opt-slider").on('slide', function(slideEvt) {
-        var store=$( this ).data('form-store');
-        var main_sec=$( this ).data('form-msec');
-        var f_store=store.split("-");
-        var f_sec=f_store[0];
-        var f_opt=f_store[1];
-        var f_val=slideEvt.value;
-        rocketform.setUiData3(main_sec,f_sec,f_opt,f_val);
-        var obj_field= $('.uiform-preview-base');
-         if(obj_field){
-         rocketform.setDataOptToPrevForm(obj_field,main_sec,f_sec+'-'+f_opt,f_val);
-         }
-    });
-
-    $("#uiform-set-form-summbox  .uiform-opt-slider").on('slide', function(slideEvt) {
-        var store=$( this ).data('form-store');
-        var main_sec=$( this ).data('form-msec');
-        var f_store=store.split("-");
-        var f_sec=f_store[0];
-        var f_opt=f_store[1];
-        var f_val=slideEvt.value;
-        rocketform.setUiData3(main_sec,f_sec,f_opt,f_val);
-        var obj_field= $('.uiform-preview-base');
-         if(obj_field){
-         rocketform.setDataOptToPrevForm(obj_field,main_sec,f_sec+'-'+f_opt,f_val);
-         }
-    });
-
-
-    $('.unknown ul.dropdown-menu.selectpicker li').on('click', function () {
-      var obj_option=$(this).parent().parent().parent().parent().find('select');
-            var selectedValue = $($(obj_option).find('option')[parseInt($(this).index())]).val();
-            var store=obj_option.data('field-store');
-            var f_store=store.split("-");
-                var f_sec=f_store[0];
-                var f_opt=f_store[1];
-            var f_id= $('#uifm-field-selected-id').val();
-      var f_step;
-      var field_Checked=$('.uiform-main-form .uiform-fields-qopt-select input:checked');
-      if(parseInt(field_Checked.length)>1){
-             obj_field= field_Checked.closest('.uiform-field');
-             $.each(obj_field, function(index2, value2) {
-                f_id=$(this).attr('id');
-                f_step=$('#'+f_id).closest('.uiform-step-pane').data('uifm-step');
-                rocketform.setDataOptToCoreData(f_step,f_id,store,selectedValue);
-                if($(this)){
-                rocketform.setDataOptToPrevField($(this),store,selectedValue);
-                } 
-             });
-
-                    }else{
-            f_step=$('#'+f_id).closest('.uiform-step-pane').data('uifm-step');
-            rocketform.setDataOptToCoreData(f_step,f_id,store,selectedValue);
-            var obj_field= $('#'+f_id);
-                if(obj_field){
-                rocketform.setDataOptToPrevField(obj_field,store,selectedValue);
-                }
-        }
-    });
-
-
-
-
-
-
-    $('#uifm_frm_skin_fmbg_type_1').on('click', function () {
-        $('#uifm_frm_skin_fmbg_color_1').closest('.row').show();
-        $('#uifm_frm_skin_fmbg_color_2').closest('.row').hide();
-        $('#uifm_frm_skin_fmbg_color_3').closest('.row').hide();
-    });
-    $('#uifm_frm_skin_fmbg_type_2').on('click', function () {
-        $('#uifm_frm_skin_fmbg_color_1').closest('.row').hide();
-        $('#uifm_frm_skin_fmbg_color_2').closest('.row').show();
-        $('#uifm_frm_skin_fmbg_color_3').closest('.row').show();
-    });
-
-    $('#uifm_frm_inp18_fmbg_type_1').on('click', function () {
-        $('#uifm_frm_inp18_fmbg_color_1').closest('.row').show();
-        $('#uifm_frm_inp18_fmbg_color_2').closest('.row').hide();
-        $('#uifm_frm_inp18_fmbg_color_3').closest('.row').hide();
-    });
-    $('#uifm_frm_inp18_fmbg_type_2').on('click', function () {
-        $('#uifm_frm_inp18_fmbg_color_1').closest('.row').hide();
-        $('#uifm_frm_inp18_fmbg_color_2').closest('.row').show();
-        $('#uifm_frm_inp18_fmbg_color_3').closest('.row').show();
-    });
-
-
-
-
-
-
-                         $('.uiform-set-options-tabs ul.sfdc-nav-tabs').on('shown.bs.sfdc-tab', function (e) {
-        setfield_tab_active = $(e.target).data('uifm-title'); 
-        rocketform.setInnerVariable('setfield_tab_active',setfield_tab_active);
-        rocketform.previewfield_hidePopOver();
-
-        rocketform.previewfield_helpblock_hidetooltip();
-
-                })
-
-          $('.uiformc-menu-wrap ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"],.uiform-set-options-tabs ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function (e) {
-        if(!$(e.target).hasClass('uifm-tab-fld-validation')){
-            $('.sfdc-popover').popover('hide');
-
-                     }
-
-                })
-
-        $('.uiformc-menu-wrap ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"],.uiform-set-options-tabs ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function (e) {
-        setfield_tab_active = $(e.target).data('uifm-title'); 
-
-                 if(String(setfield_tab_active)==='helpb'){
-             rocketform.setInnerVariable('setfield_tab_active',setfield_tab_active);
-
-                          var id=$('#uifm-field-selected-id').val();
-             rocketform.previewfield_elementTextarea($('#'+id),"help_block");
-
-                      }else{
-             zgfm_back_helper.tooltip_removeall();
-         }
-
-                   });
-
-    var formfield;
-	$('#uifm_frm_skin_bg_btnadd').click(function() {
-
-
-                                   rocketform.elfinder_showPopUp({
-                                windowURL:uiform_vars.url_elfinder2,
-                                windowName:'_blank',
-                                height:490,
-                                width:950,
-                                centerScreen:1,
-                                location:0
-                            });
-
-                                        formfield = $('#uifm_frm_skin_bg_imgurl').attr('id');
-
-                        window.processFile = function(file) { 
-                        $('#'+ formfield).val(file.url);
-                        $('#uifm_frm_skin_bg_srcimg_wrap').html('<img class="sfdc-img-thumbnail" src="' + file.url + '" />');
-                        rocketform.loadForm_tab_skin_updateBG();
-                    }
-
-            	    return false;
+$uifm(document).ready(function($) {
+
+	$('input,textarea').attr('autocomplete', 'off');
+	$('#zgfm_edit_panel').disableAutoFill({
+		passwordField: '.password',
 	});
 
-      rocketform.wizardtab_tabManageEvt(); 
+	String.prototype.cleanup = function() {
+		return this.toLowerCase().replace(/[^a-zA-Z0-9]+/g, '_');
+	};
 
 
+	var setfield_tab_active;
 
-       $('.uiform-wrap a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function (e) {
-           rocketform.previewfield_hideAllPopOver();
+	$('.uiform-editing-main').ColumnToggle();
 
-                  });
-       $('.uiform-wrap .uiform-settings-invoice').on('shown.bs.sfdc-tab', function (e) {
-           rocketform.invoiceoptions_genListToIntMem();
+	$('.uiform-builder-data a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function(e) {
+		e.preventDefault();
+		var target = $(e.target).attr('href');
+	});
 
-            }); 
+	function testAnim(target, x, duration) {
+		$(target)
+			.addClass(x + ' animated ' + duration)
+			.one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function() {
+				$(target).removeClass(x + ' animated ' + duration);
+			});
+	}
 
-       $('.uiform-wrap .zgfm_gsettings_additional').on('shown.bs.sfdc-tab', function (e) {
+	$('[data-toggle="tooltip"]').tooltip({ container: 'body' });
 
-                   var cminst = $('#uifm_frm_main_addjs').data('CodeMirrorInstance');  
-             cminst.refresh();
-         cminst = $('#uifm_frm_main_addcss').data('CodeMirrorInstance');  
-             cminst.refresh();  
+	$('.uifm-custom-color').colorpicker();
 
-                   });
 
-       $('#uifm_frm_email_usr_recipient').on('change', function (e) {
-            var optionSelected = $("option:selected", this);
-            var valueSelected = this.value;
-            rocketform.setUiData2('onsubm','mail_recipient',valueSelected);
-        });
-       $('.uifm_frm_inv_to_text_src').on('change', function (e) {
-            var optionSelected = $("option:selected", this);
-            var valueSelected = this.value;
-            var nro = $(this).attr('data-uifm-nro');
-            rocketform.setUiData2('invoice','to_text'+nro,valueSelected);
-        });
+	$('#uifm_frm_wiz_theme_typ').on('change', function(e) {
+		var f_val = $(e.target).val();
+		rocketform.wizardtab_changeTheme(f_val);
+	});
 
-        $("#uiform-clogicgraph").dialog({
-            autoOpen: false, 
-            height: 800,
-            scrollable: true,
-            width: 800,
-            show: {
-                effect: "blind",
-                duration: 1000
-            },
-            hide: {
-                effect: "explode",
-                duration: 1000
-            },buttons: { "OK": function() { $(this).dialog("close"); }}
-        });
+	$('.chzn-select').chosen({ width: '100%', search_contains: true });
 
-        $("#uiform-clogicgraph").dialog({
-            autoOpen: false, 
-            height: 800,
-            scrollable: true,
-            width: 800,
-            show: {
-                effect: "blind",
-                duration: 1000
-            },
-            hide: {
-                effect: "explode",
-                duration: 1000
-            },buttons: { "OK": function() { $(this).dialog("close"); }}
-        });
+	$('.uifm_main_spinner_1').TouchSpin({
+		verticalbuttons: true,
+		min: 0,
+		max: 200,
+		stepinterval: 1,
+		verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
+		verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
+	});
 
-    $(".uiform-confirmation-func-action").click(function (e) {
-        e.preventDefault(); 
-        var targetUrl = $(this).attr("href"); 
-        var tmp_callback =$(this).data('dialog-callback'); 
-        $("#uiform-confirmation-func-action-dialog").dialog({
-            autoOpen: false,
-            title: 'Confirmation',
-            modal: true,
-            buttons: {
-                "OK" : function () {
-                   $(this).dialog("close");
-                   eval(tmp_callback);
+	$('.tooltip-option-enable input').tooltip({
+		title: 'Enable',
+		container: 'body',
+	});
+	$('.tooltip-val-demo').tooltip({
+		title: 'Validator text',
+		container: 'body',
+	});
 
-                                   },
-                "Cancel" : function () {
-                    $(this).dialog("close");
-                }
-            }
-        });
+	$('.autogrow').autogrow();
+	$('.wp-media-buttons')
+		.find('#insert-media-button')
+		.siblings()
+		.hide();
 
-        $("#uiform-confirmation-func-action-dialog").dialog('option', 'title', $(this).data('dialog-title'));
+	$('#uifm-close-setting-tab').on('click', function() {
+		rocketform.closeSettingTab();
+	});
 
-        $("#uiform-confirmation-func-action-dialog").dialog("open");
-    });
+	$(document).on('click', 'a.uiform-fields-qopt-select', function(e) {
+		var tmp_input = $(this).find('input');
+		var id_field = tmp_input.closest('.uiform-field').attr('id');
+		if (e.target.tagName != 'INPUT') {
+			if (tmp_input.is(':checked')) {
+				tmp_input.prop('checked', false);
+			} else {
+				tmp_input.prop('checked', true);
+			}
+		} else {
+		}
+		rocketform.fieldQuickOptions_selectField(id_field);
+	});
 
-   rocketform.backend_init_load();
+
+	$(document).on('change keyup focus keypress', '.uifm_frm_skin_tab_title_evt', function(e) {
+		var tabnro = $(e.target)
+			.closest('.uifm_frm_skin_tab_content')
+			.data('tab-nro');
+		rocketform.wizardtab_changeTabTitle(tabnro);
+	});
+
+	var uifm_obj_txtarea_editors = [$('#uifm_frm_summbox_skintxt_txt')];
+
+	$(document).on('keyup focus', uifm_obj_txtarea_editors, function(e) {
+		rocketform.captureEventTinyMCE2(e);
+	});
+
+	$(document).on('change keyup focus keypress', '.uifm-f-option', function(e) {
+		var pickfield = $(e.target).closest('.uiform-field');
+		var f_step = $(e.target)
+			.closest('.uiform-step-pane')
+			.data('uifm-step');
+		var store = $(this).data('field-store');
+		var f_store = store.split('-');
+		var f_sec = f_store[0];
+		var f_opt = f_store[1];
+		var f_val = $(this).val();
+		var f_id = pickfield.attr('id');
+
+		rocketform.setDataOptToCoreData(f_step, f_id, store, f_val);
+		var idselected = $('#uifm-field-selected-id').val();
+		if (f_id === idselected) {
+			var tabobject = $('#uifm-field-selected-id').parent();
+			rocketform.setDataOptToSetTab(tabobject, store, f_val);
+		}
+
+	});
+
+	$(document).on('change keyup focus keypress', '#uifm-popup-setfname', function(e) {
+		var f_val = $(this).val();
+		$('#uifm_frm_main_title').val(f_val);
+	});
+
+	$('.uiform-opt-slider').bootstrapSlider();
+	$('.uifm_frm_form_skin_spinner').on('change', function(e) {
+		var store = $(e.target).data('form-store');
+		var f_store = store.split('-');
+		var f_sec = f_store[0];
+		var f_opt = f_store[1];
+		var f_val = $(e.target).val();
+		rocketform.setUiData3('skin', f_sec, f_opt, f_val);
+		var obj_field = $('.uiform-preview-base');
+		if (obj_field) {
+			rocketform.setDataOptToPrevForm(obj_field, 'skin', f_sec + '-' + f_opt, f_val);
+		}
+	});
+
+	$('.uifm_frm_form_skin_spinner').TouchSpin({
+		verticalbuttons: true,
+		min: 0,
+		max: 10000,
+		stepinterval: 1,
+		verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
+		verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
+	});
+
+	$('.uifm_frm_form_skin_spinner').TouchSpin({
+		verticalbuttons: true,
+		min: 0,
+		max: 10000,
+		stepinterval: 1,
+		verticalupclass: 'sfdc-glyphicon sfdc-glyphicon-plus',
+		verticaldownclass: 'sfdc-glyphicon sfdc-glyphicon-minus',
+	});
+
+	$(document).on('change', '.uifm-formskin-setoption-st', function(e) {
+		var store = $(this).data('form-store');
+		var f_store = store.split('-');
+		var f_sec = f_store[0];
+		var f_opt = f_store[1];
+		var f_val = $(this)
+			.filter(':checked')
+			.val();
+		f_val = f_val ? f_val : 0;
+		rocketform.setUiData3('skin', f_sec, f_opt, f_val);
+		var obj_field = $('.uiform-preview-base');
+		if (obj_field) {
+			rocketform.setDataOptToPrevForm(obj_field, f_sec + '-' + f_opt, f_val);
+		}
+	});
+
+	$(document).on('click', '.uifm-fmskin-setoption-btn', function(e) {
+		var store = $(this).data('form-store');
+		var f_store = store.split('-');
+		var f_sec = f_store[0];
+		var f_opt = f_store[1];
+		var f_val = $(this)
+			.find('input')
+			.val();
+		rocketform.setUiData3('skin', f_sec, f_opt, f_val);
+
+		rocketform.setDataOptToSetFormTab($('#uiform-build-form-tab'), 'skin', f_sec + '-' + f_opt, f_val);
+
+		var obj_field = $('.uiform-preview-base');
+		if (obj_field) {
+			rocketform.setDataOptToPrevForm(obj_field, 'skin', f_sec + '-' + f_opt, f_val);
+		}
+	});
+
+	$('#uiform-set-form-wizard .uifm-custom-color')
+		.colorpicker()
+		.on('changeColor', function(ev) {
+			rocketform.wizardtab_saveChangesToMdata();
+			rocketform.wizardtab_refreshPreview();
+		});
+
+	$('#uiform-settings-tab3-2,#uiform-settings-tab3-4')
+		.find('.uifm-custom-color')
+		.colorpicker()
+		.on('changeColor', function(ev) {
+			var store = $(this).data('form-store');
+			var main_sec = $(this).data('form-msec');
+			var f_store = store.split('-');
+			var f_sec = f_store[0];
+			var f_opt = f_store[1];
+			var f_val = $(this)
+				.find('input')
+				.val();
+			if (f_val) {
+				rocketform.setUiData3(main_sec, f_sec, f_opt, f_val);
+				var obj_field = $('.uiform-preview-base');
+				if (obj_field) {
+					rocketform.setDataOptToPrevForm(obj_field, main_sec, f_sec + '-' + f_opt, f_val);
+				}
+			}
+		});
+
+	$('#uifm_frm_main_ajaxmode').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
+		var f_val = state ? 1 : 0;
+		rocketform.setUiData2('main', 'submit_ajax', f_val);
+	});
+
+
+	$('.uifm_frm_skin_bgst_event').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
+		rocketform.loadForm_tab_skin_updateBG();
+	});
+	$('.uifm_frm_skin_bgcolor_event')
+		.colorpicker()
+		.on('changeColor', function(ev) {
+			rocketform.loadForm_tab_skin_updateBG();
+		});
+	$('.uifm_frm_wiz_st_event').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
+		rocketform.guidedtour_showTextOnPreviewPane(false);
+		rocketform.wizardtab_enableStatus();
+	});
+
+	$('#uiform-settings-tab3-2 .switch-field,#uiform-settings-tab3-4 .switch-field').on('switchChange.bootstrapSwitchZgpb', function(event, state) {
+		var store = $(this).data('form-store');
+		var main_sec = $(this).data('form-msec');
+		var f_store = store.split('-');
+		var f_sec = f_store[0];
+		var f_opt = f_store[1];
+		var f_val = state ? 1 : 0;
+		switch (main_sec) {
+			case 'skin':
+				rocketform.setUiData3(main_sec, f_sec, f_opt, f_val);
+				break;
+			case 'summbox':
+				rocketform.setUiData3(main_sec, f_sec, f_opt, f_val);
+				break;
+		}
+
+		var obj_field = $('.uiform-preview-base');
+		if (obj_field) {
+			rocketform.setDataOptToPrevForm(obj_field, main_sec, f_sec + '-' + f_opt, f_val);
+		}
+	});
+
+	$('.switch-field').bootstrapSwitchZgpb();
+
+	$('#uiform-settings-tab3-2  .uiform-opt-slider').on('slide', function(slideEvt) {
+		var store = $(this).data('form-store');
+		var main_sec = $(this).data('form-msec');
+		var f_store = store.split('-');
+		var f_sec = f_store[0];
+		var f_opt = f_store[1];
+		var f_val = slideEvt.value;
+		rocketform.setUiData3(main_sec, f_sec, f_opt, f_val);
+		var obj_field = $('.uiform-preview-base');
+		if (obj_field) {
+			rocketform.setDataOptToPrevForm(obj_field, main_sec, f_sec + '-' + f_opt, f_val);
+		}
+	});
+
+	$('#uiform-set-form-summbox  .uiform-opt-slider').on('slide', function(slideEvt) {
+		var store = $(this).data('form-store');
+		var main_sec = $(this).data('form-msec');
+		var f_store = store.split('-');
+		var f_sec = f_store[0];
+		var f_opt = f_store[1];
+		var f_val = slideEvt.value;
+		rocketform.setUiData3(main_sec, f_sec, f_opt, f_val);
+		var obj_field = $('.uiform-preview-base');
+		if (obj_field) {
+			rocketform.setDataOptToPrevForm(obj_field, main_sec, f_sec + '-' + f_opt, f_val);
+		}
+	});
+
+	$('.unknown ul.dropdown-menu.selectpicker li').on('click', function() {
+		var obj_option = $(this)
+			.parent()
+			.parent()
+			.parent()
+			.parent()
+			.find('select');
+		var selectedValue = $($(obj_option).find('option')[parseInt($(this).index())]).val();
+		var store = obj_option.data('field-store');
+		var f_store = store.split('-');
+		var f_sec = f_store[0];
+		var f_opt = f_store[1];
+		var f_id = $('#uifm-field-selected-id').val();
+		var f_step;
+		var field_Checked = $('.uiform-main-form .uiform-fields-qopt-select input:checked');
+		if (parseInt(field_Checked.length) > 1) {
+			obj_field = field_Checked.closest('.uiform-field');
+			$.each(obj_field, function(index2, value2) {
+				f_id = $(this).attr('id');
+				f_step = $('#' + f_id)
+					.closest('.uiform-step-pane')
+					.data('uifm-step');
+				rocketform.setDataOptToCoreData(f_step, f_id, store, selectedValue);
+				if ($(this)) {
+					rocketform.setDataOptToPrevField($(this), store, selectedValue);
+				}
+			});
+		} else {
+			f_step = $('#' + f_id)
+				.closest('.uiform-step-pane')
+				.data('uifm-step');
+			rocketform.setDataOptToCoreData(f_step, f_id, store, selectedValue);
+			var obj_field = $('#' + f_id);
+			if (obj_field) {
+				rocketform.setDataOptToPrevField(obj_field, store, selectedValue);
+			}
+		}
+	});
+
+	$('#uifm_frm_skin_fmbg_type_1').on('click', function() {
+		$('#uifm_frm_skin_fmbg_color_1')
+			.closest('.row')
+			.show();
+		$('#uifm_frm_skin_fmbg_color_2')
+			.closest('.row')
+			.hide();
+		$('#uifm_frm_skin_fmbg_color_3')
+			.closest('.row')
+			.hide();
+	});
+	$('#uifm_frm_skin_fmbg_type_2').on('click', function() {
+		$('#uifm_frm_skin_fmbg_color_1')
+			.closest('.row')
+			.hide();
+		$('#uifm_frm_skin_fmbg_color_2')
+			.closest('.row')
+			.show();
+		$('#uifm_frm_skin_fmbg_color_3')
+			.closest('.row')
+			.show();
+	});
+
+	$('#uifm_frm_inp18_fmbg_type_1').on('click', function() {
+		$('#uifm_frm_inp18_fmbg_color_1')
+			.closest('.row')
+			.show();
+		$('#uifm_frm_inp18_fmbg_color_2')
+			.closest('.row')
+			.hide();
+		$('#uifm_frm_inp18_fmbg_color_3')
+			.closest('.row')
+			.hide();
+	});
+	$('#uifm_frm_inp18_fmbg_type_2').on('click', function() {
+		$('#uifm_frm_inp18_fmbg_color_1')
+			.closest('.row')
+			.hide();
+		$('#uifm_frm_inp18_fmbg_color_2')
+			.closest('.row')
+			.show();
+		$('#uifm_frm_inp18_fmbg_color_3')
+			.closest('.row')
+			.show();
+	});
+
+	$('.uiform-set-options-tabs ul.sfdc-nav-tabs').on('shown.bs.sfdc-tab', function(e) {
+		setfield_tab_active = $(e.target).data('uifm-title');
+		rocketform.setInnerVariable('setfield_tab_active', setfield_tab_active);
+		rocketform.previewfield_hidePopOver();
+
+		rocketform.previewfield_helpblock_hidetooltip();
+	});
+
+	$('.uiformc-menu-wrap ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"],.uiform-set-options-tabs ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function(e) {
+		if (!$(e.target).hasClass('uifm-tab-fld-validation')) {
+			$('.sfdc-popover').popover('hide');
+		}
+	});
+
+	$('.uiformc-menu-wrap ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"],.uiform-set-options-tabs ul.sfdc-nav-tabs a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function(e) {
+		setfield_tab_active = $(e.target).data('uifm-title');
+
+		if (String(setfield_tab_active) === 'helpb') {
+			rocketform.setInnerVariable('setfield_tab_active', setfield_tab_active);
+
+			var id = $('#uifm-field-selected-id').val();
+			rocketform.previewfield_elementTextarea($('#' + id), 'help_block');
+		} else {
+			zgfm_back_helper.tooltip_removeall();
+		}
+	});
+
+	var formfield;
+	$('#uifm_frm_skin_bg_btnadd').click(function() {
+		rocketform.elfinder_showPopUp({
+			windowURL: uiform_vars.url_elfinder2,
+			windowName: '_blank',
+			height: 490,
+			width: 950,
+			centerScreen: 1,
+			location: 0,
+		});
+
+		formfield = $('#uifm_frm_skin_bg_imgurl').attr('id');
+
+		window.processFile = function(file) {
+			$('#' + formfield).val(file.url);
+			$('#uifm_frm_skin_bg_srcimg_wrap').html('<img class="sfdc-img-thumbnail" src="' + file.url + '" />');
+			rocketform.loadForm_tab_skin_updateBG();
+		};
+
+		return false;
+	});
+
+
+	rocketform.wizardtab_tabManageEvt();
+
+
+	$('.uiform-wrap a[data-toggle="sfdc-tab"]').on('shown.bs.sfdc-tab', function(e) {
+		rocketform.previewfield_hideAllPopOver();
+	});
+	$('.uiform-wrap .uiform-settings-invoice').on('shown.bs.sfdc-tab', function(e) {
+		rocketform.invoiceoptions_genListToIntMem();
+	});
+
+	$('.uiform-wrap .zgfm_gsettings_additional').on('shown.bs.sfdc-tab', function(e) {
+		var cminst = $('#uifm_frm_main_addjs').data('CodeMirrorInstance');
+		cminst.refresh();
+		cminst = $('#uifm_frm_main_addcss').data('CodeMirrorInstance');
+		cminst.refresh();
+	});
+
+
+	$('#uifm_frm_email_usr_recipient').on('change', function(e) {
+		var optionSelected = $('option:selected', this);
+		var valueSelected = this.value;
+		rocketform.setUiData2('onsubm', 'mail_recipient', valueSelected);
+	});
+
+	$('.uifm_frm_inv_to_text_src').on('change', function(e) {
+		var optionSelected = $('option:selected', this);
+		var valueSelected = this.value;
+		var nro = $(this).attr('data-uifm-nro');
+		rocketform.setUiData2('invoice', 'to_text' + nro, valueSelected);
+	});
+
+
+	$('#uiform-clogicgraph').dialog({
+		autoOpen: false,
+		height: 800,
+		scrollable: true,
+		width: 800,
+		show: {
+			effect: 'blind',
+			duration: 1000,
+		},
+		hide: {
+			effect: 'explode',
+			duration: 1000,
+		},
+		buttons: {
+			OK: function() {
+				$(this).dialog('close');
+			},
+		},
+	});
+
+
+	$('#uiform-clogicgraph').dialog({
+		autoOpen: false,
+		height: 800,
+		scrollable: true,
+		width: 800,
+		show: {
+			effect: 'blind',
+			duration: 1000,
+		},
+		hide: {
+			effect: 'explode',
+			duration: 1000,
+		},
+		buttons: {
+			OK: function() {
+				$(this).dialog('close');
+			},
+		},
+	});
+
+	$('.uiform-confirmation-func-action').click(function(e) {
+		e.preventDefault(); 
+		var targetUrl = $(this).attr('href'); 
+		var tmp_callback = $(this).data('dialog-callback');
+		$('#uiform-confirmation-func-action-dialog').dialog({
+			autoOpen: false,
+			title: 'Confirmation',
+			modal: true,
+			buttons: {
+				OK: function() {
+					$(this).dialog('close');
+					eval(tmp_callback);
+				},
+				Cancel: function() {
+					$(this).dialog('close');
+				},
+			},
+		});
+
+		$('#uiform-confirmation-func-action-dialog').dialog('option', 'title', $(this).data('dialog-title'));
+
+		$('#uiform-confirmation-func-action-dialog').dialog('open');
+	});
+
+	rocketform.backend_init_load();
 });
 
-jQuery(function($){
-    $.fn.removeCss = function() {
-  var removedCss = $.makeArray(arguments);
-  return this.each(function() {
-    var e$ = $(this);
-    var style = e$.attr('style');
-    if (typeof style !== 'string') return;
-    style = $.trim(style);
-    var styles = style.split(/;+/);
-    var sl = styles.length;
-    for (var l = removedCss.length, i = 0; i < l; i++) {
-      var r = removedCss[i];
-      if (!r) continue;
-      for (var j = 0; j < sl;) {
-        var sp = $.trim(styles[j]);
-        if (!sp || (sp.indexOf(r) === 0 && $.trim(sp.substring(r.length)).indexOf(':') === 0)) {
-          styles.splice(j, 1);
-          sl--;
-        } else {
-          j++;
-        }
-      }
-    }
-    if (styles.length === 0) {
-      e$.removeAttr('style');
-    } else {
-      e$.attr('style', styles.join(';'));
-    }
-  });
-};
+jQuery(function($) {
+	$.fn.removeCss = function() {
+		var removedCss = $.makeArray(arguments);
+		return this.each(function() {
+			var e$ = $(this);
+			var style = e$.attr('style');
+			if (typeof style !== 'string') return;
+			style = $.trim(style);
+			var styles = style.split(/;+/);
+			var sl = styles.length;
+			for (var l = removedCss.length, i = 0; i < l; i++) {
+				var r = removedCss[i];
+				if (!r) continue;
+				for (var j = 0; j < sl; ) {
+					var sp = $.trim(styles[j]);
+					if (!sp || (sp.indexOf(r) === 0 && $.trim(sp.substring(r.length)).indexOf(':') === 0)) {
+						styles.splice(j, 1);
+						sl--;
+					} else {
+						j++;
+					}
+				}
+			}
+			if (styles.length === 0) {
+				e$.removeAttr('style');
+			} else {
+				e$.attr('style', styles.join(';'));
+			}
+		});
+	};
 
+	rocketform.initPanel();
+});
 
-          rocketform.initPanel();
-
-
-
-
-                         });
-
-
-function uiformUpdateFontSelect(id,val){
-    jQuery(function($){
-
-                var objsel=$('#'+id);
-        if(objsel.data('stylesFontMenu')){
-           objsel.data('stylesFontMenu').uifm_load_font(val);
-        objsel.data('selected',val);
-        objsel.chosen().val(val);
-        objsel.chosen().trigger("chosen:updated"); 
-        }
-
-            });
+function uiformUpdateFontSelect(id, val) {
+	jQuery(function($) {
+		var objsel = $('#' + id);
+		if (objsel.data('stylesFontMenu')) {
+			objsel.data('stylesFontMenu').uifm_load_font(val);
+			objsel.data('selected', val);
+			objsel.chosen().val(val);
+			objsel.chosen().trigger('chosen:updated');
+		}
+	});
 }
 
-function uiformRefreshFontMenu(){
+function uiformRefreshFontMenu() {
 
-               jQuery('#uiform-build-field-tab select.sfm').stylesFontMenu();
+	jQuery('#uiform-build-field-tab select.sfm').stylesFontMenu();
 
 }
 
+function zgfm_input17_onChangeLayout() {
+	jQuery(function($) {
+		var f_val = $('#uifm_fld_inp17_thopt_mode').val();
+		rocketform.input17settings_showOptionbyLayMode(f_val);
+		var store = 'input17-thopt_mode';
+		var f_id = $('#uifm-field-selected-id').val();
+		var f_step = $('#' + f_id)
+			.closest('.uiform-step-pane')
+			.data('uifm-step');
 
-function zgfm_input17_onChangeLayout(){
-    jQuery(function($){
-        var f_val=$('#uifm_fld_inp17_thopt_mode').val();
-        rocketform.input17settings_showOptionbyLayMode(f_val);
-        var store = "input17-thopt_mode";
-         var f_id= $('#uifm-field-selected-id').val();
-         var f_step=$('#'+f_id).closest('.uiform-step-pane').data('uifm-step');
+		rocketform.setDataOptToCoreData(f_step, f_id, store, f_val);
 
-                 rocketform.setDataOptToCoreData(f_step,f_id,store,f_val);
-
-                var tabobject=$('#uifm-field-selected-id').parent();
-        rocketform.setDataOptToSetTab(tabobject,store,f_val);
-        rocketform.input17settings_tabeditor_generateAllOptions();
-       rocketform.input17settings_preview_genAllOptions($('#'+f_id),'input17');
-
-
-                   });
+		var tabobject = $('#uifm-field-selected-id').parent();
+		rocketform.setDataOptToSetTab(tabobject, store, f_val);
+		rocketform.input17settings_tabeditor_generateAllOptions();
+		rocketform.input17settings_preview_genAllOptions($('#' + f_id), 'input17');
+	});
 }
 
-function uifm_loadScript(url,id, callback) {
+function uifm_loadScript(url, id, callback) {
+	var script = document.createElement('script');
+	script.type = 'text/javascript';
+	script.id = id;
+	script.async = false;
+	if (script.readyState) {
+		script.onreadystatechange = function() {
+			if (script.readyState == 'loaded' || script.readyState == 'complete') {
+				script.onreadystatechange = null;
+				callback();
+			}
+		};
+	} else {
+		script.onload = function() {
+			callback();
+		};
+	}
 
-        var script = document.createElement("script")
-        script.type = "text/javascript";
-        script.id = id;
-        script.async = false;
-        if (script.readyState) { 
-            script.onreadystatechange = function () {
-                if (script.readyState == "loaded" || script.readyState == "complete") {
-                    script.onreadystatechange = null;
-                    callback();
-                }
-            };
-        } else { 
-            script.onload = function () {
-                callback();
-            };
-        }
+	script.src = url;
+	document.getElementsByTagName('head')[0].appendChild(script);
+}
 
-        script.src = url;
-        document.getElementsByTagName("head")[0].appendChild(script);  
-    }
-
-function uifm_stripHTML(dirtyString){
-
-        var html = dirtyString;
-var div = document.createElement("div");
-div.innerHTML = html;
-    return div.innerText;
+function uifm_stripHTML(dirtyString) {
+	var html = dirtyString;
+	var div = document.createElement('div');
+	div.innerHTML = html;
+	return div.innerText;
 
 }
-function uifm_validate_field(arr1,arr2){
+function uifm_validate_field(arr1, arr2) {
+	var arr3 = {},
+		arr3_2;
 
-        var arr3={},arr3_2;
+	for (var name in arr1) {
+		if (arr1.hasOwnProperty(name)) {
+			arr3_2 = {};
+			for (var name2 in arr1[name]) {
+				if (arr1[name].hasOwnProperty(name2) && arr2[name].hasOwnProperty(name2)) {
+					arr3_2[name2] = arr1[name][name2];
+				}
+			}
+			arr3[name] = arr3_2;
+		} else {
+		}
+	}
 
-        for (var name in arr1) {
-        if (arr1.hasOwnProperty(name)) {
-            arr3_2={}
-            for (var name2 in arr1[name]) {
-                if(arr1[name].hasOwnProperty(name2)  && arr2[name].hasOwnProperty(name2)){
-                     arr3_2[name2] = arr1[name][name2];
-                }
-            }
-            arr3[name] = arr3_2;
-        }else{
-
-                   }
-    }
-
-    return arr3;
+	return arr3;
 }

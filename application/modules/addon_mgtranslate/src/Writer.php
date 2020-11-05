@@ -2,243 +2,232 @@
 
 namespace PoParser;
 
-class Writer
-{
-    /**
-     * @param string $filePath
-     * @param array $entries
-     *
-     * @throws \Exception
-     */
-    public function write($filePath, array $entries)
-    {
-        $handle = $this->openFile($filePath);
+class Writer {
 
-        $entriesCount = count($entries);
-        $counter = 0;
-        foreach ($entries as $entry) {
-            $entryStr = $this->getEntryStr($entry, $counter, $entriesCount);
-            fwrite($handle, $entryStr);
+	/**
+	 * @param string $filePath
+	 * @param array $entries
+	 *
+	 * @throws \Exception
+	 */
+	public function write( $filePath, array $entries ) {
+		$handle = $this->openFile( $filePath );
 
-            $counter++;
-        }
+		$entriesCount = count( $entries );
+		$counter = 0;
+		foreach ( $entries as $entry ) {
+			$entryStr = $this->getEntryStr( $entry, $counter, $entriesCount );
+			fwrite( $handle, $entryStr );
 
-        fclose($handle);
-    }
+			$counter++;
+		}
 
-    /**
-     * @param string $filePath
-     * @throws \Exception
-     * @return resource
-     */
-    protected function openFile($filePath)
-    {
-        if (empty($filePath)) {
-            throw new \Exception('Output file not defined.');
-        }
+		fclose( $handle );
+	}
 
-        $handle = @fopen($filePath, 'wb');
-        if (false === $handle) {
-            throw new \Exception("Unable to open file for writing: {$filePath}");
-        }
+	/**
+	 * @param string $filePath
+	 * @throws \Exception
+	 * @return resource
+	 */
+	protected function openFile( $filePath ) {
+		if ( empty( $filePath ) ) {
+			throw new \Exception( 'Output file not defined.' );
+		}
 
-        return $handle;
-    }
+		$handle = @fopen( $filePath, 'wb' );
+		if ( false === $handle ) {
+			throw new \Exception( "Unable to open file for writing: {$filePath}" );
+		}
 
-    /**
-     * @param array $entry
-     *
-     * @return string
-     */
-    protected function getEntryStr(array $entry, $index, $entriesCount)
-    {
-        $result = '';
-        if ($index > 0) {
-            $result = "\n";
-        }
+		return $handle;
+	}
 
-        $result .= $this->writeComments($entry);
-        $result .= $this->writeReferences($entry);
-        $result .= $this->writeFlags($entry);
-        $result .= $this->writeContext($entry);
-        $result .= $this->writeObsolete($entry);
-        $result .= $this->writeMsgId($entry, 'msgid');
-        $result .= $this->writeMsgId($entry, 'msgid_plural');
-        $result .= $this->writeMsgStr($entry);
+	/**
+	 * @param array $entry
+	 *
+	 * @return string
+	 */
+	protected function getEntryStr( array $entry, $index, $entriesCount ) {
+		 $result = '';
+		if ( $index > 0 ) {
+			$result = "\n";
+		}
 
-        if ($index == $entriesCount - 1) {
-            $result = rtrim($result);
-        }
+		$result .= $this->writeComments( $entry );
+		$result .= $this->writeReferences( $entry );
+		$result .= $this->writeFlags( $entry );
+		$result .= $this->writeContext( $entry );
+		$result .= $this->writeObsolete( $entry );
+		$result .= $this->writeMsgId( $entry, 'msgid' );
+		$result .= $this->writeMsgId( $entry, 'msgid_plural' );
+		$result .= $this->writeMsgStr( $entry );
 
-        return $result;
-    }
+		if ( $index == $entriesCount - 1 ) {
+			$result = rtrim( $result );
+		}
 
-    /**
-     * @param array $entry
-     *
-     * @return string
-     */
-    protected function writeComments(array $entry)
-    {
-        $result = '';
+		return $result;
+	}
 
-        if ($entry['tcomment'] !== '') {
-            $result .= "# " . $entry['tcomment'] . "\n";
-        }
+	/**
+	 * @param array $entry
+	 *
+	 * @return string
+	 */
+	protected function writeComments( array $entry ) {
+		$result = '';
 
-        if ($entry['ccomment'] !== '') {
-            $result .= '#. ' . $entry['ccomment'] . "\n";
-        }
+		if ( $entry['tcomment'] !== '' ) {
+			$result .= '# ' . $entry['tcomment'] . "\n";
+		}
 
-        return $result;
-    }
+		if ( $entry['ccomment'] !== '' ) {
+			$result .= '#. ' . $entry['ccomment'] . "\n";
+		}
 
-    /**
-     * @param array $entry
-     *
-     * @return string
-     */
-    protected function writeFlags(array $entry)
-    {
-        $result = '';
+		return $result;
+	}
 
-        if (count($entry['flags']) > 0) {
-            $result .= "#, " . implode(', ', $entry['flags']) . "\n";
-        }
+	/**
+	 * @param array $entry
+	 *
+	 * @return string
+	 */
+	protected function writeFlags( array $entry ) {
+		 $result = '';
 
-        if (isset($entry['@'])) {
-            $result .= "#@ " . $entry['@'] . "\n";
-        }
+		if ( count( $entry['flags'] ) > 0 ) {
+			$result .= '#, ' . implode( ', ', $entry['flags'] ) . "\n";
+		}
 
-        return $result;
-    }
+		if ( isset( $entry['@'] ) ) {
+			$result .= '#@ ' . $entry['@'] . "\n";
+		}
 
-    /**
-     * @param array $entry
-     *
-     * @return string
-     */
-    protected function writeReferences(array $entry)
-    {
-        $result = '';
+		return $result;
+	}
 
-        if (count($entry['references']) > 0) {
-            foreach ($entry['references'] as $ref) {
-                $result .= '#: ' . $ref . "\n";
-            }
-        }
+	/**
+	 * @param array $entry
+	 *
+	 * @return string
+	 */
+	protected function writeReferences( array $entry ) {
+		$result = '';
 
-        return $result;
-    }
+		if ( count( $entry['references'] ) > 0 ) {
+			foreach ( $entry['references'] as $ref ) {
+				$result .= '#: ' . $ref . "\n";
+			}
+		}
 
-    /**
-     * @param array $entry
-     *
-     * @return string
-     */
-    protected function writeContext(array $entry)
-    {
-        $result = '';
+		return $result;
+	}
 
-        if ($entry['msgctxt'] !== '') {
-            $result .= 'msgctxt ' . $this->cleanExport($entry['msgctxt']) . "\n";
-        }
+	/**
+	 * @param array $entry
+	 *
+	 * @return string
+	 */
+	protected function writeContext( array $entry ) {
+		$result = '';
 
-        return $result;
-    }
+		if ( $entry['msgctxt'] !== '' ) {
+			$result .= 'msgctxt ' . $this->cleanExport( $entry['msgctxt'] ) . "\n";
+		}
 
-    /**
-     * @param array $entry
-     *
-     * @return string
-     */
-    protected function writeObsolete(array $entry)
-    {
-        return ($entry['obsolete']) ? "#~ " : '';
-    }
+		return $result;
+	}
 
-    /**
-     * @param array $entry
-     * @param string $type msgid or msgid_plural
-     *
-     * @return string
-     */
-    protected function writeMsgId(array $entry, $type = 'msgid')
-    {
-        $result = '';
+	/**
+	 * @param array $entry
+	 *
+	 * @return string
+	 */
+	protected function writeObsolete( array $entry ) {
+		return ( $entry['obsolete'] ) ? '#~ ' : '';
+	}
 
-        if (!isset($entry[$type])) {
-            return $result;
-        }
+	/**
+	 * @param array $entry
+	 * @param string $type msgid or msgid_plural
+	 *
+	 * @return string
+	 */
+	protected function writeMsgId( array $entry, $type = 'msgid' ) {
+		$result = '';
 
-        $result .= $type . ' ';
-        if (is_array($entry[$type])) {
-            foreach ($entry[$type] as $id) {
-                $result .= $this->cleanExport($id) . "\n";
-            }
-        } else {
-            $result .= $this->cleanExport($entry[$type]) . "\n";
-        }
+		if ( ! isset( $entry[ $type ] ) ) {
+			return $result;
+		}
 
-        return $result;
-    }
+		$result .= $type . ' ';
+		if ( is_array( $entry[ $type ] ) ) {
+			foreach ( $entry[ $type ] as $id ) {
+				$result .= $this->cleanExport( $id ) . "\n";
+			}
+		} else {
+			$result .= $this->cleanExport( $entry[ $type ] ) . "\n";
+		}
 
-    /**
-     * @param array $entry
-     *
-     * @return string
-     */
-    protected function writeMsgStr(array $entry)
-    {
-        $result = '';
+		return $result;
+	}
 
-        if (!isset($entry['msgstr'])) {
-            return $result;
-        }
+	/**
+	 * @param array $entry
+	 *
+	 * @return string
+	 */
+	protected function writeMsgStr( array $entry ) {
+		$result = '';
 
-        $isPlural = isset($entry['msgid_plural']);
+		if ( ! isset( $entry['msgstr'] ) ) {
+			return $result;
+		}
 
-        foreach ($entry['msgstr'] as $i => $value) {
-            if ($entry['obsolete']) {
-                $result .= "#~ ";
-            }
+		$isPlural = isset( $entry['msgid_plural'] );
 
-            if ($isPlural) {
-                $result .= "msgstr[$i] ";
-            } else {
-                if ($i == 0) {
-                    $result .= 'msgstr ';
-                }
-            }
+		foreach ( $entry['msgstr'] as $i => $value ) {
+			if ( $entry['obsolete'] ) {
+				$result .= '#~ ';
+			}
 
-            $result .= $this->cleanExport($value) . "\n";
-        }
+			if ( $isPlural ) {
+				$result .= "msgstr[$i] ";
+			} else {
+				if ( $i == 0 ) {
+					$result .= 'msgstr ';
+				}
+			}
 
-        return $result;
-    }
+			$result .= $this->cleanExport( $value ) . "\n";
+		}
 
-    /**
-     * @param $string
-     *
-     * @return mixed
-     */
-    protected function cleanExport($string)
-    {
-        $quote = '"';
-        $slash = '\\';
-        $newline = "\n";
+		return $result;
+	}
 
-        $replaces = array(
-            "$slash" => "$slash$slash",
-            "$quote" => "$slash$quote",
-            "\t"     => '\t',
-        );
+	/**
+	 * @param $string
+	 *
+	 * @return mixed
+	 */
+	protected function cleanExport( $string ) {
+		 $quote = '"';
+		$slash = '\\';
+		$newline = "\n";
 
-        $string = str_replace(array_keys($replaces), array_values($replaces), $string);
+		$replaces = array(
+			"$slash" => "$slash$slash",
+			"$quote" => "$slash$quote",
+			"\t"     => '\t',
+		);
 
-        $po = $quote . implode("${slash}n$quote$newline$quote", explode($newline, $string)) . $quote;
+		$string = str_replace( array_keys( $replaces ), array_values( $replaces ), $string );
 
-        // remove empty strings
-        return str_replace("$newline$quote$quote", '', $po);
-    }
+		$po = $quote . implode( "${slash}n$quote$newline$quote", explode( $newline, $string ) ) . $quote;
+
+		// remove empty strings
+		return str_replace( "$newline$quote$quote", '', $po );
+	}
 }

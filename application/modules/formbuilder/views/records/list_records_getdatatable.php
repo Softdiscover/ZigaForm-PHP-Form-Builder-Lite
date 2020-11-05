@@ -34,7 +34,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					<td><?php echo $value2; ?></td>
 				<?php } ?>
 			<?php } ?>
-			<td><?php echo $value['fbh_id'];?></td>
+			<td><?php echo $value['fbh_id']; ?></td>
 			<td>
 				<div class="sfdc-btn-group">
 				<ul class="unstyled">

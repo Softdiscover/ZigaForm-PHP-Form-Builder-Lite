@@ -49,7 +49,7 @@
 }
 
 .sfdc-gly-rotate-90 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+  filter: progid:dximagetransform.microsoft.basicimage(rotation=1);
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
@@ -58,7 +58,7 @@
 }
 
 .sfdc-gly-rotate-180 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+  filter: progid:dximagetransform.microsoft.basicimage(rotation=2);
   -webkit-transform: rotate(180deg);
   -moz-transform: rotate(180deg);
   -ms-transform: rotate(180deg);
@@ -67,7 +67,7 @@
 }
 
 .sfdc-gly-rotate-270 {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+  filter: progid:dximagetransform.microsoft.basicimage(rotation=3);
   -webkit-transform: rotate(270deg);
   -moz-transform: rotate(270deg);
   -ms-transform: rotate(270deg);
@@ -76,7 +76,7 @@
 }
 
 .sfdc-gly-flip-horizontal {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1);
+  filter: progid:dximagetransform.microsoft.basicimage(rotation=0, mirror=1);
   -webkit-transform: scale(-1, 1);
   -moz-transform: scale(-1, 1);
   -ms-transform: scale(-1, 1);
@@ -85,7 +85,7 @@
 }
 
 .sfdc-gly-flip-vertical {
-  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1);
+  filter: progid:dximagetransform.microsoft.basicimage(rotation=2, mirror=1);
   -webkit-transform: scale(1, -1);
   -moz-transform: scale(1, -1);
   -ms-transform: scale(1, -1);
@@ -99,37 +99,37 @@
 }
 
 .uiform-step-content {
-  margin: 0px;
+  margin: 0;
 }
 
 .uiform-step-wizbuttons {
-  padding: 0px;
+  padding: 0;
 }
 
-/*fields*/
+/* fields */
 .rockfm-form-container .rockfm-field {
   margin-bottom: 5px;
 }
 
-/*radio button */
+/* radio button */
 .radio-inline label,
 .checkbox-inline label {
   cursor: pointer;
   font-weight: normal;
 }
 
-/*validation*/
+/* validation */
 .rockfm-form-container .rockfm-val-error {
   border: 1px solid #ff8787 !important;
 }
 
-/* radio button option*/
+/* radio button option */
 .rockfm-form-container .rockfm-input2-wrap .radio:first-child,
 .rockfm-form-container .rockfm-input2-wrap .checkbox:first-child {
-  margin-top: 0px;
+  margin-top: 0;
 }
 
-/*captcha*/
+/* captcha */
 .rockfm-inp6-wrap-imagegen .rockfm-inp6-captcha-img {
   display: inline-block;
 }
@@ -155,7 +155,7 @@
   font-size: 0.7em;
 }
 
-/*buton*/
+/* buton */
 .rockfm-submitbtn .btn {
   -moz-user-select: none;
   background-image: none;
@@ -174,7 +174,7 @@
   padding: 10px 24px 11px;
 }
 
-/*dropdown menu bootstrap for all html*/
+/* dropdown menu bootstrap for all html */
 .rockfm-form-container .dropdown-menu {
   position: absolute;
   top: 100%;
@@ -247,10 +247,10 @@
   cursor: not-allowed;
   background-color: transparent;
   background-image: none;
-  filter: progid:DXImageTransform.Microsoft.gradient(enabled = false);
+  filter: progid:dximagetransform.microsoft.gradient(enabled = false);
 }
 
-/*divider*/
+/* divider */
 .rockfm-divider-bar {
   line-height: 0.1em;
   margin: 10px 0 20px;
@@ -262,7 +262,7 @@
   padding: 0 10px;
 }
 
-/* alerts*/
+/* alerts */
 .rockfm-alert {
   padding: 15px;
   margin-bottom: 20px;
@@ -294,29 +294,29 @@
   border-top-color: #c9e2b3;
 }
 
-/* global*/
-/*bugfix for some containers*/
+/* global */
+/* bugfix for some containers */
 .rockfm-form-container .uiform-wrap .row {
   display: inline-block;
   width: 100%;
 }
 
-/*field label*/
+/* field label */
 .rockfm-form-container .uiform-wrap .control-label i {
   display: inline-block;
 }
 
-/*image field*/
+/* image field */
 .rockfm-inp6-captcha-img {
   padding: 0 !important;
 }
 
-/*recaptcha field*/
+/* recaptcha field */
 .rockfm-input5-wrap {
   display: inline-block;
 }
 
-/*wizard buttons*/
+/* wizard buttons */
 .rockfm-wizardbtn .rockfm-btn-wizprev .rockfm-inp-lbl,
 .rockfm-wizardbtn .rockfm-btn-wiznext .rockfm-inp-lbl {
   display: inline-block;
@@ -326,7 +326,7 @@
   margin-left: 3px;
 }
 
-/*field heading*/
+/* field heading */
 .rockfm-heading h1,
 .rockfm-heading h2,
 .rockfm-heading h3,
@@ -337,17 +337,17 @@
   margin-top: 0;
 }
 
-/*buttons field*/
+/* buttons field */
 button.btn img {
   background: none;
 }
 
-/*modal*/
+/* modal */
 .rockfm-field .modal {
   z-index: 9999 !important;
 }
 
-/* field slider*/
+/* field slider */
 .rockfm-input4-number {
   display: inline-block;
   padding: 5px;
@@ -364,13 +364,13 @@ button.btn img {
   padding-top: 10px;
 }
 
-/*form container*/
+/* form container */
 .rockfm-form-container {
   text-align: left;
   position: relative;
 }
 
-/*summary floating - sticky box*/
+/* summary floating - sticky box */
 .uiform-sticky-sidebar-box {
   display: none;
   padding: 20px;
@@ -386,7 +386,7 @@ button.btn img {
   display: inline-block;
 }
 
-/*price labels*/
+/* price labels */
 .uiform_frm_price_lbl_cont {
   display: inline-block;
 }
@@ -422,7 +422,7 @@ button.btn img {
   text-decoration: underline;
 }
 
-/*fields - price labels*/
+/* fields - price labels */
 .rockfm-inp2-opt-price-lbl,
 .rockfm-inp4-opt-price-lbl {
   display: inline-block;
@@ -436,7 +436,7 @@ button.btn img {
   font-size: 11px;
 }
 
-/*field select */
+/* field select */
 select.uifm-input2-opt-main {
   display: inline-block !important;
 }
@@ -449,13 +449,13 @@ select.uifm-input2-opt-main {
   vertical-align: bottom;
 }
 
-/*custom html*/
+/* custom html */
 .rockfm-input3-customhtml {
   display: block;
   white-space: normal !important;
 }
 
-/*price settings - slider field */
+/* price settings - slider field */
 .rockfm-spinner .rockfm-input4-wrap,
 .rockfm-slider .rockfm-input4-wrap,
 .rockfm-switch .rockfm-input15-wrap {
@@ -468,15 +468,15 @@ select.uifm-input2-opt-main {
 .rockfm-slider .rockfm-inp4-opt-price-lbl,
 .rockfm-switch .rockfm-input15-wrap,
 .rockfm-switch .rockfm-inp15-opt-price-lbl {
-  /*display: inline-block;*/
+  /* display: inline-block; */
 }
 
-/* spinner*/
+/* spinner */
 .rockfm-spinner .rockfm-input4-wrap {
   max-width: 87px;
 }
 
-/*switch field*/
+/* switch field */
 .bootstrap-switch {
   background-clip: padding-box;
   border: 0 none;
@@ -509,8 +509,8 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #e3e3e3;
 }
 
-.bootstrap-switch .bootstrap-switch-label:after {
-  background: none repeat scroll 0 0 #ffffff;
+.bootstrap-switch .bootstrap-switch-label::after {
+  background: none repeat scroll 0 0 #fff;
   border: 3px solid #5bc0de;
   border-radius: 50%;
   content: ' ';
@@ -526,12 +526,12 @@ select.uifm-input2-opt-main {
   min-width: 100px;
 }
 
-.bootstrap-switch.bootstrap-switch-large .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-large .bootstrap-switch-label::after {
   border-width: 4px;
   width: 42px;
 }
 
-.bootstrap-switch.bootstrap-switch-large.bootstrap-switch-on .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-large.bootstrap-switch-on .bootstrap-switch-label::after {
   border-width: 4px;
 }
 
@@ -539,7 +539,7 @@ select.uifm-input2-opt-main {
   min-width: 60px;
 }
 
-.bootstrap-switch.bootstrap-switch-small .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-small .bootstrap-switch-label::after {
   width: 25px;
 }
 
@@ -547,7 +547,7 @@ select.uifm-input2-opt-main {
   min-width: 44px;
 }
 
-.bootstrap-switch.bootstrap-switch-mini .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-mini .bootstrap-switch-label::after {
   width: 18px;
 }
 
@@ -559,7 +559,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #e3e3e3;
 }
 
-.bootstrap-switch.bootstrap-switch-off .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-off .bootstrap-switch-label::after {
   border-color: #e3e3e3;
   left: 0;
 }
@@ -597,7 +597,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #5cb85c;
 }
 
-.bootstrap-switch.bootstrap-switch-onclr-success.bootstrap-switch-on .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-onclr-success.bootstrap-switch-on .bootstrap-switch-label::after {
   border-color: #5cb85c;
 }
 
@@ -613,7 +613,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #5bc0de;
 }
 
-.bootstrap-switch.bootstrap-switch-onclr-info.bootstrap-switch-on .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-onclr-info.bootstrap-switch-on .bootstrap-switch-label::after {
   border-color: #5bc0de;
 }
 
@@ -622,19 +622,19 @@ select.uifm-input2-opt-main {
 }
 
 .bootstrap-switch.bootstrap-switch-onclr-warning.bootstrap-switch-on .bootstrap-switch-handle-on {
-  background: none repeat scroll 0 0 #ff9900;
+  background: none repeat scroll 0 0 #f90;
 }
 
 .bootstrap-switch.bootstrap-switch-onclr-warning.bootstrap-switch-on .bootstrap-switch-label {
-  background: none repeat scroll 0 0 #ff9900;
+  background: none repeat scroll 0 0 #f90;
 }
 
-.bootstrap-switch.bootstrap-switch-onclr-warning.bootstrap-switch-on .bootstrap-switch-label:after {
-  border-color: #ff9900;
+.bootstrap-switch.bootstrap-switch-onclr-warning.bootstrap-switch-on .bootstrap-switch-label::after {
+  border-color: #f90;
 }
 
 .bootstrap-switch.bootstrap-switch-onclr-warning.bootstrap-switch-off .bootstrap-switch-container {
-  background: none repeat scroll 0 0 #ff9900;
+  background: none repeat scroll 0 0 #f90;
 }
 
 .bootstrap-switch.bootstrap-switch-onclr-danger.bootstrap-switch-on .bootstrap-switch-handle-on {
@@ -645,7 +645,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #df4b33;
 }
 
-.bootstrap-switch.bootstrap-switch-onclr-danger.bootstrap-switch-on .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-onclr-danger.bootstrap-switch-on .bootstrap-switch-label::after {
   border-color: #df4b33;
 }
 
@@ -661,7 +661,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #e3e3e3;
 }
 
-.bootstrap-switch.bootstrap-switch-onclr-default.bootstrap-switch-on .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-onclr-default.bootstrap-switch-on .bootstrap-switch-label::after {
   border-color: #e3e3e3;
 }
 
@@ -677,7 +677,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #5bc0de;
 }
 
-.bootstrap-switch.bootstrap-switch-offclr-primary.bootstrap-switch-off .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-offclr-primary.bootstrap-switch-off .bootstrap-switch-label::after {
   border-color: #5bc0de;
 }
 
@@ -693,7 +693,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #5bc0de;
 }
 
-.bootstrap-switch.bootstrap-switch-offclr-info.bootstrap-switch-off .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-offclr-info.bootstrap-switch-off .bootstrap-switch-label::after {
   border-color: #5bc0de;
 }
 
@@ -709,7 +709,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #5cb85c;
 }
 
-.bootstrap-switch.bootstrap-switch-offclr-success.bootstrap-switch-off .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-offclr-success.bootstrap-switch-off .bootstrap-switch-label::after {
   border-color: #5cb85c;
 }
 
@@ -718,19 +718,19 @@ select.uifm-input2-opt-main {
 }
 
 .bootstrap-switch.bootstrap-switch-offclr-warning.bootstrap-switch-off .bootstrap-switch-handle-off {
-  background: none repeat scroll 0 0 #ff9900;
+  background: none repeat scroll 0 0 #f90;
 }
 
 .bootstrap-switch.bootstrap-switch-offclr-warning.bootstrap-switch-off .bootstrap-switch-label {
-  background: none repeat scroll 0 0 #ff9900;
+  background: none repeat scroll 0 0 #f90;
 }
 
-.bootstrap-switch.bootstrap-switch-offclr-warning.bootstrap-switch-off .bootstrap-switch-label:after {
-  border-color: #ff9900;
+.bootstrap-switch.bootstrap-switch-offclr-warning.bootstrap-switch-off .bootstrap-switch-label::after {
+  border-color: #f90;
 }
 
 .bootstrap-switch.bootstrap-switch-offclr-warning.bootstrap-switch-on .bootstrap-switch-container {
-  background: none repeat scroll 0 0 #ff9900;
+  background: none repeat scroll 0 0 #f90;
 }
 
 .bootstrap-switch.bootstrap-switch-offclr-danger.bootstrap-switch-off .bootstrap-switch-handle-off {
@@ -741,7 +741,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #df4b33;
 }
 
-.bootstrap-switch.bootstrap-switch-offclr-danger.bootstrap-switch-off .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-offclr-danger.bootstrap-switch-off .bootstrap-switch-label::after {
   border-color: #df4b33;
 }
 
@@ -757,7 +757,7 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #e3e3e3;
 }
 
-.bootstrap-switch.bootstrap-switch-offclr-default.bootstrap-switch-off .bootstrap-switch-label:after {
+.bootstrap-switch.bootstrap-switch-offclr-default.bootstrap-switch-off .bootstrap-switch-label::after {
   border-color: #e3e3e3;
 }
 
@@ -765,12 +765,12 @@ select.uifm-input2-opt-main {
   background: none repeat scroll 0 0 #e3e3e3;
 }
 
-/*alert section*/
+/* alert section */
 .rockfm-alert-inner .rockfm-alert ul {
   padding-left: 20px;
 }
 
-/*dyn checkbox*/
+/* dyn checkbox */
 .uifm_frm_inp17_opt_imgitem {
   width: 60px;
   position: relative;
@@ -820,7 +820,7 @@ select.uifm-input2-opt-main {
 .uifm_frm_inp17_opt_imgwrap .col-md-3,
 .uifm_frm_inp17_opt_imgwrap .col-md-8,
 .uifm_frm_inp17_opt_imgwrap .col-md-1 {
-  padding: 0px;
+  padding: 0;
 }
 
 .uifm_frm_inp17_opt_imgwrap .uifm_frm_inp17_opt_imgitem_title {
@@ -831,14 +831,14 @@ select.uifm-input2-opt-main {
   border: 1px solid #ccc !important;
   font-size: 14px !important;
   width: 51px !important;
-  padding: 0px !important;
+  padding: 0 !important;
 }
 
 .uifm-dcheckbox-item-viewport {
   cursor: pointer;
 }
 
-/*info record*/
+/* info record */
 .uiform-inforecord-total-amount {
   clear: both;
   float: left;
@@ -860,9 +860,9 @@ select.uifm-input2-opt-main {
   padding-top: 5px;
 }
 
-/*invoice*/
+/* invoice */
 .uifm_invoice_list_from {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
 .uifm_invoice_list_from li {
@@ -870,10 +870,10 @@ select.uifm-input2-opt-main {
   text-decoration: none;
 }
 
-/*slider field*/
+/* slider field */
 .slider.slider-horizontal {
   /* min-width: 137px;
-    width: auto!important;*/
+    width: auto!important; */
   width: 100% !important;
 }
 
@@ -887,22 +887,22 @@ select.uifm-input2-opt-main {
   padding: 5px 0;
 }
 
-/*form*/
+/* form */
 .uiform-main-form {
   position: relative;
 }
 
-/*summary*/
+/* summary */
 .uiform-sbox-summ-fld-row ul {
   padding-left: 15px;
 }
 
-/*field 2 grid*/
+/* field 2 grid */
 .zgpbf-gridsystem-cont .zgpb-fl-gs-block-inner {
-  /*min-height:5px; */
+  /* min-height:5px; */
 }
 
-/*most of fields*/
+/* most of fields */
 .uifm-inp31-txthtml-content h1,
 .uifm-input3-customhtml h1,
 .rockfm-input3-customhtml h1,
@@ -923,9 +923,9 @@ select.uifm-input2-opt-main {
   padding: 0;
 }
 
-/*input2 */
+/* input2 */
 .rockfm-input2-wrap label {
-  /*line-height: 5px;*/
+  /* line-height: 5px; */
 }
 
 .rockfm-input2-wrap label .rockfm-inp2-opt-inp {
@@ -939,36 +939,36 @@ select.uifm-input2-opt-main {
 }
 
 .rockfm-input2-wrap label .rockfm-inp2-opt-price-lbl {
-  /*overflow: hidden;*/
+  /* overflow: hidden; */
   vertical-align: bottom;
 }
 
-/*payment part*/
+/* payment part */
 .uifm-inforecord-box-info {
   padding: 0 20px;
 }
 
 .sfdc-modal-header h4 {
-  padding: 0px;
+  padding: 0;
 }
 
-/*input2*/
+/* input2 */
 .sfdc-wrap .sfdc-radio label,
 .sfdc-wrap .sfdc-checkbox label {
-  padding-left: 0px;
+  padding-left: 0;
 }
 
-/*summary link*/
+/* summary link */
 #rockfm_show_summary_link {
   padding: 0 20px;
 }
 
-/*modal */
+/* modal */
 .sfdc-modal-open .sfdc-modal {
   overflow-y: auto !important;
 }
 
-/*spaces*/
+/* spaces */
 .uiform-wrap .space05 {
   height: 5px;
   border: none;
@@ -1001,7 +1001,7 @@ select.uifm-input2-opt-main {
   clear: both;
 }
 
-/*global settings*/
+/* global settings */
 .sfdc-wrap .sfdc-container-fluid {
   padding: 0 !important;
   margin: 0 !important;
@@ -1012,36 +1012,36 @@ select.uifm-input2-opt-main {
   margin: 0 !important;
 }
 
-/*datepicker*/
-/*it allows to overlay on other fields*/
+/* datepicker */
+/* it allows to overlay on other fields */
 .rockfm-datepicker.rockfm-field {
   z-index: 1;
 }
 
-/* responsive*/
-@media only screen and (min-width: 0px) and (max-width: 410px) {
-  /*menu*/
+/* responsive */
+@media only screen and (min-width: 0) and (max-width: 410px) {
+  /* menu */
   .divider-menu {
     display: none !important;
   }
   .navbar-nav {
-    margin: 0px !important;
+    margin: 0 !important;
   }
   .navbar-default .navbar-nav .open .dropdown-menu > li > a {
-    color: #ffffff;
+    color: #fff;
   }
   .rockfm-wiztheme0 .uifm-title {
     display: none;
   }
   /* layout gridsystem fields */
   .rkfm-row .rkfm-fcontainer-wrap {
-    padding-left: 0px;
+    padding-left: 0;
   }
 }
 
-/*--------------*/
-@media only screen and (min-width: 0px) and (max-width: 410px) {
-  /*divider*/
+/* -------------- */
+@media only screen and (min-width: 0) and (max-width: 410px) {
+  /* divider */
   .rockfm-divider-bar {
     line-height: normal;
   }
@@ -1061,7 +1061,7 @@ select.uifm-input2-opt-main {
   }
 }
 
-/*row settings*/
+/* row settings */
 .uiform-wrap .rkfm-col-xs-1,
 .uiform-wrap .rkfm-col-sm-1,
 .uiform-wrap .rkfm-col-md-1,
@@ -1317,7 +1317,7 @@ select.uifm-input2-opt-main {
   width: 40px;
 }
 
-/*panel field*/
+/* panel field */
 .uifm-inp31-txthtml-content h1,
 .uifm-input3-customhtml h1,
 .rockfm-input3-customhtml h1,
@@ -1333,7 +1333,7 @@ select.uifm-input2-opt-main {
 .uifm-inp31-txthtml-content h5,
 .uifm-input3-customhtml h5,
 .rockfm-input3-customhtml h5 {
-  margin: 0px;
+  margin: 0;
   clear: none !important;
 }
 
@@ -1344,15 +1344,15 @@ select.uifm-input2-opt-main {
 .uifm-dcheckbox-item {
   position: relative;
   display: inline-block;
-  margin: 10px 20px 10px 0px;
+  margin: 10px 20px 10px 0;
 }
 
 .uifm-dcheckbox-item:first-child {
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .uifm-dcheckbox-item:last-child {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 .uifm-dcheckbox-item .uifm-dcheckbox-item-viewport {
@@ -1435,10 +1435,10 @@ select.uifm-input2-opt-main {
   display: block;
 }
 
-/*spinner on top*/
+/* spinner on top */
 .uifm-dcheckbox-item-qty-wrap .btn {
   padding: 4px 8px !important;
-  margin: 0px !important;
+  margin: 0 !important;
   font-size: 10px !important;
 }
 
@@ -1449,8 +1449,8 @@ select.uifm-input2-opt-main {
   height: 24px !important;
   text-align: center;
   width: 50px;
-  margin: 0px !important;
-  background: #ffffff !important;
+  margin: 0 !important;
+  background: #fff !important;
 }
 
 .uifm-dcheckbox-item-qty-wrap .dcheckbox-disabled {
@@ -1464,15 +1464,15 @@ select.uifm-input2-opt-main {
 .uifm-dradiobtn-item {
   position: relative;
   display: inline-block;
-  margin: 10px 20px 10px 0px;
+  margin: 10px 20px 10px 0;
 }
 
 .uifm-dradiobtn-item:first-child {
-  margin-left: 0px;
+  margin-left: 0;
 }
 
 .uifm-dradiobtn-item:last-child {
-  margin-right: 0px;
+  margin-right: 0;
 }
 
 .uifm-dradiobtn-item .uifm-dcheckbox-item-viewport {
@@ -1490,7 +1490,7 @@ select.uifm-input2-opt-main {
 }
 
 
-/* conflict file and image upload*/
+/* conflict file and image upload */
 .uiform-main-form .rockfm-fileupload .fileinput::after,
 .uiform-main-form .rockfm-imageupload .fileinput::after {
   display: none;
@@ -1505,7 +1505,7 @@ select.uifm-input2-opt-main {
   line-height: 21px !important;
 }
 
-/*fix conflicts*/
+/* fix conflicts */
 .rockfm-input2-wrap .filter-option {
   margin: 0 !important;
   font-size: inherit !important;

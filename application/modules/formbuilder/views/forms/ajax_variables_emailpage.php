@@ -66,14 +66,26 @@ ob_start();
 															break;
 
 														case 8:
-														case 9:
 														case 10:
-														case 11:
 															?>
 										<tr>
 											<td><?php echo $value2['field_name']; ?></td>
 											<td><textarea onclick="this.select();" class="uifm_txtarea_var">[uifm_recvar id="<?php echo $value2['id']; ?>" atr1="input" atr2="label"]</textarea></td>
 											<td><textarea onclick="this.select();" class="uifm_txtarea_var">[uifm_recvar id="<?php echo $value2['id']; ?>" atr1="input" atr2="value"]</textarea></td>
+											
+											<td></td>
+											<td><textarea onclick="this.select();" class="uifm_txtarea_var">[uifm_wrap id="<?php echo $value2['id']; ?>"]here goes your content if field have some value. if no value, this will not appear.[/uifm_wrap]</textarea></td>
+										</tr>
+																		<?php
+															break;
+
+														case 9:
+														case 11:
+															?>
+										<tr>
+											<td><?php echo $value2['field_name']; ?></td>
+											<td><textarea onclick="this.select();" class="uifm_txtarea_var">[uifm_recvar id="<?php echo $value2['id']; ?>" atr1="input" atr2="label"]</textarea></td>
+											<td><textarea onclick="this.select();" class="uifm_txtarea_var">[uifm_recvar id="<?php echo $value2['id']; ?>" atr1="input" atr2="value" atr3="format" atr4="comma"]</textarea></td>
 											
 											<td></td>
 											<td><textarea onclick="this.select();" class="uifm_txtarea_var">[uifm_wrap id="<?php echo $value2['id']; ?>"]here goes your content if field have some value. if no value, this will not appear.[/uifm_wrap]</textarea></td>

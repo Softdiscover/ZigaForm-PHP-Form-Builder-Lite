@@ -184,9 +184,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 			href="javascript:void(0);"><?php echo __( 'test', 'FRocket_admin' ); ?> </a></li>
 			<li><a onclick="javascript:rocketform.printmaindata();"
 				href="javascript:void(0);"><?php echo __( 'Show data', 'FRocket_admin' ); ?> </a></li>
-		   <li><a onclick="javascript:zgfm_back_fld_options.generate_field_htmldata();"
+			<li><a onclick="javascript:zgfm_back_fld_options.generate_field_htmldata();"
 				href="javascript:void(0);"><?php echo __( 'Generate field static data', 'FRocket_admin' ); ?> </a></li>
-			
+			<li><a onclick="javascript:zgfm_back_fld_options.generate_dbChecker();"
+				href="javascript:void(0);"> Generate DB checker </a></li>
 			</ul>
 			</div>
 	</div>

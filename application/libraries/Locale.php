@@ -112,15 +112,13 @@ class CI_Locale {
 			   'ru' => 'ru_RU',
 			   'ch' => 'zh_CN',
 		   ); // Languages translated
-		   if ( !empty( $lang_allowed[$lang] ) ) {
-			   $lang_pre = $lang_allowed[$lang];
-			} else if($lang !='') {	   
-				$lang_pre = $lang;
+		   if ( ! empty( $lang_allowed[ $lang ] ) ) {
+			   $lang_pre = $lang_allowed[ $lang ];
+		   } else if ( $lang != '' ) {
+			   $lang_pre = $lang;
 		   } else {
 			   $lang_pre = 'en_US';
 		   }
-
-		 
 
 			// setlocale(LC_ALL, $CI->session->userdata('lang').'_'.strtoupper($CI->session->userdata('lang')).'.UTF-8');
 		   // setlocale(LC_NUMERIC, $CI->session->userdata('lang').'_'.strtoupper($CI->session->userdata('lang')).'.UTF-8');

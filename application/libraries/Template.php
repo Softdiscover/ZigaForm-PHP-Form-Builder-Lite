@@ -86,10 +86,10 @@ class Template {
 	 *
 	 * @return  array
 	 */
-	function loadPartial2( $template = '',  $view_data = array(), $return = false ) {
+	function loadPartial2( $template = '', $view_data = array(), $return = false ) {
 		 $this->set( 'content', $view_data );
 		return $this->template_data['controller']->load->view2( $template, $this->template_data, $return );
-		
+
 	}
 
 }

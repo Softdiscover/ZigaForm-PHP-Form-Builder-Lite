@@ -1,5 +1,5 @@
-# Copyright (C) 2020 Zigaform WP Cost Estimation Form Builder 5.0.9
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.0.9 package.
+# Copyright (C) 2020 Zigaform WP Cost Estimation Form Builder 5.1.4
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.1.4 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -34,7 +34,7 @@ msgstr "Lade..."
 msgid "Saving"
 msgstr "Saving"
 
-#: application/views/footer-global.php:18, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:88, application/modules/formbuilder/views/forms/create_form_modals.php:31, application/modules/formbuilder/views/forms/formhtml_form.php:131, application/modules/formbuilder/views/forms/modal1_footer.php:19, application/modules/formbuilder/views/forms/templates_fields.php:1924, application/modules/formbuilder/views/fields/render_front/block_label.php:88, application/modules/formbuilder/views/fields/templates/prevpanel_main.php:43, application/modules/formbuilder/views/fields/options/select/impbulkdata_footer.php:20
+#: application/views/footer-global.php:18, application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:93, application/modules/formbuilder/views/forms/create_form_modals.php:31, application/modules/formbuilder/views/forms/formhtml_form.php:131, application/modules/formbuilder/views/forms/modal1_footer.php:19, application/modules/formbuilder/views/forms/templates_fields.php:1924, application/modules/formbuilder/views/fields/render_front/block_label.php:88, application/modules/formbuilder/views/fields/templates/prevpanel_main.php:43, application/modules/formbuilder/views/fields/options/select/impbulkdata_footer.php:20
 msgid "Close"
 msgstr "Schliessen"
 
@@ -60,7 +60,7 @@ msgstr "Erfolg! Erfolgreich aktualisiert"
 msgid "Form was created"
 msgstr "Form was created"
 
-#: application/views/footer.php:47, application/modules/formbuilder/controllers/forms.php:658
+#: application/views/footer.php:47, application/modules/formbuilder/controllers/forms.php:656
 msgid ""
 "Success! The form was created. Now just copy and paste the shortcode to "
 "your content"
@@ -288,7 +288,7 @@ msgstr "About"
 msgid "File manager"
 msgstr "File manager"
 
-#: application/views/sidebar.php:37, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:83, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:157, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:256, application/modules/addon_mgtranslate/views/backend/show_list.php:24
+#: application/views/sidebar.php:37, application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:88, application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:154, application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:250, application/modules/addon_mgtranslate/views/backend/show_list.php:24
 msgid "Translation Manager"
 msgstr "Fehlermeldung zu übersetzen"
 
@@ -364,27 +364,27 @@ msgstr "Slide Entrances"
 msgid "Slide Exits"
 msgstr "Slide Exits"
 
-#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:115
+#: application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:116
 msgid "New translation created successfully"
 msgstr "Erfolg! Erfolgreich aktualisiert"
 
-#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:132
+#: application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:132
 msgid "Error! An error ocurred during the process"
 msgstr "Error! An error ocurred during the process"
 
-#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:160
+#: application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:157
 msgid "Create New"
 msgstr "Veröffentlicht am"
 
-#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:257
+#: application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:251
 msgid "Translation saved successfully"
 msgstr "Erfolg! Erfolgreich aktualisiert"
 
-#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:315, application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:315, application/modules/addon_mgtranslate/views/backend/ajax_load_pofile.php:36
+#: application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:307, application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:307, application/modules/addon_mgtranslate/views/backend/ajax_load_pofile.php:36
 msgid "Translation"
 msgstr "Translation"
 
-#: application/modules/addon_mgtranslate/controllers/zfaddn_mgtranslate_back.php:371
+#: application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:359
 msgid ""
 "Extension is not availabe. Go to Extensions Header menu and activate "
 "Translation Manager Add-on"
@@ -412,19 +412,19 @@ msgstr "Benutzerdefinierte Fehlermeldung"
 msgid "Form variables"
 msgstr "Formularname"
 
-#: application/modules/formbuilder/controllers/forms.php:661
+#: application/modules/formbuilder/controllers/forms.php:659
 msgid "Success"
 msgstr "Erfolgsmeldung"
 
-#: application/modules/formbuilder/controllers/forms.php:676, application/modules/formbuilder/controllers/forms.php:2892, application/modules/formbuilder/controllers/forms.php:2952
+#: application/modules/formbuilder/controllers/forms.php:674, application/modules/formbuilder/controllers/forms.php:2887, application/modules/formbuilder/controllers/forms.php:2947
 msgid "Shortcodes"
 msgstr "Shortcode"
 
-#: application/modules/formbuilder/controllers/forms.php:748, application/modules/formbuilder/controllers/forms.php:778
+#: application/modules/formbuilder/controllers/forms.php:746, application/modules/formbuilder/controllers/forms.php:776
 msgid "Error! User has no permission to edit this form"
 msgstr "Error! User has no permission to edit this form"
 
-#: application/modules/formbuilder/controllers/forms.php:2537
+#: application/modules/formbuilder/controllers/forms.php:2535
 msgid "Forms in trash"
 msgstr "Formularname"
 
@@ -440,55 +440,55 @@ msgstr "error found while submitting"
 msgid "Offline success"
 msgstr "Offline success"
 
-#: application/modules/formbuilder/controllers/frontend.php:1337
+#: application/modules/formbuilder/controllers/frontend.php:1398
 msgid "Order summary"
 msgstr "Bestellformular"
 
-#: application/modules/formbuilder/controllers/records.php:405
+#: application/modules/formbuilder/controllers/records.php:400
 msgid "Entry information"
 msgstr "Einreiseinformationen"
 
-#: application/modules/formbuilder/controllers/records.php:406, application/modules/formbuilder/views/records/info_record.php:28
+#: application/modules/formbuilder/controllers/records.php:401, application/modules/formbuilder/views/records/info_record.php:28
 msgid "Submitted form data"
 msgstr "Formulardaten"
 
-#: application/modules/formbuilder/controllers/records.php:407, application/modules/formbuilder/views/records/info_record.php:82
+#: application/modules/formbuilder/controllers/records.php:402, application/modules/formbuilder/views/records/info_record.php:82
 msgid "Additional info"
 msgstr "Weitere Informationen"
 
-#: application/modules/formbuilder/controllers/records.php:408, application/modules/formbuilder/views/forms/fields_available.php:787, application/modules/formbuilder/views/records/info_record.php:85, application/modules/formbuilder/views/records/list_records_getdatatable.php:24, application/modules/formbuilder/views/settings/backup_settings.php:66
+#: application/modules/formbuilder/controllers/records.php:403, application/modules/formbuilder/views/forms/fields_available.php:787, application/modules/formbuilder/views/records/info_record.php:85, application/modules/formbuilder/views/records/list_records_getdatatable.php:24, application/modules/formbuilder/views/settings/backup_settings.php:66
 msgid "Date"
 msgstr "Datum"
 
-#: application/modules/formbuilder/controllers/records.php:409, application/modules/formbuilder/views/records/info_record.php:89
+#: application/modules/formbuilder/controllers/records.php:404, application/modules/formbuilder/views/records/info_record.php:89
 msgid "IP"
 msgstr "IP"
 
-#: application/modules/formbuilder/controllers/records.php:410, application/modules/formbuilder/views/records/info_record.php:93
+#: application/modules/formbuilder/controllers/records.php:405, application/modules/formbuilder/views/records/info_record.php:93
 msgid "Client PC info"
 msgstr "Client-PC info"
 
-#: application/modules/formbuilder/controllers/records.php:411
+#: application/modules/formbuilder/controllers/records.php:406
 msgid "Form URL"
 msgstr "Formular-URL"
 
-#: application/modules/formbuilder/controllers/records.php:412, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:55, application/modules/formbuilder/views/forms/create_form_main.php:88, application/modules/formbuilder/views/forms/create_form_modals.php:114, application/modules/formbuilder/views/forms/settings_form_email.php:562, application/modules/formbuilder/views/records/info_record.php:101
+#: application/modules/formbuilder/controllers/records.php:407, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:55, application/modules/formbuilder/views/forms/create_form_main.php:88, application/modules/formbuilder/views/forms/create_form_modals.php:114, application/modules/formbuilder/views/forms/settings_form_email.php:562, application/modules/formbuilder/views/records/info_record.php:101
 msgid "Form name"
 msgstr "Formularname"
 
-#: application/modules/formbuilder/controllers/records.php:445
+#: application/modules/formbuilder/controllers/records.php:440
 msgid "Records list"
 msgstr "Aufzeichnungen"
 
-#: application/modules/formbuilder/controllers/records.php:478
+#: application/modules/formbuilder/controllers/records.php:473
 msgid "Records in trash"
 msgstr "Aufzeichnungen"
 
-#: application/modules/addon/views/backend/list_extensions.php:64
+#: application/modules/addon/views/backend/list_extensions.php:65
 msgid "locked"
 msgstr "Abweisen"
 
-#: application/modules/addon/views/backend/list_extensions.php:58
+#: application/modules/addon/views/backend/list_extensions.php:59
 msgid ""
 "This addon is not compatible with your site. try to upgrade your site and "
 "fullfil the requirements."
@@ -504,11 +504,11 @@ msgstr "Deaktivieren"
 msgid "Enable"
 msgstr "Aktivieren"
 
-#: application/modules/addon/views/backend/list_extensions.php:77
+#: application/modules/addon/views/backend/list_extensions.php:78
 msgid "Requirements"
 msgstr "Erforderlich"
 
-#: application/modules/addon/views/backend/list_extensions.php:79
+#: application/modules/addon/views/backend/list_extensions.php:80
 msgid "PHP"
 msgstr "PHP"
 
@@ -650,7 +650,7 @@ msgstr "Map URL parameters"
 msgid "To form values"
 msgstr "Neue Formularanfrage"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:93, application/modules/addon_webhook/views/backend/get_content.php:132, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:34, application/modules/formbuilder/views/forms/create_form.php:198, application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/records/list_records_getdatatable.php:26, application/modules/formbuilder/views/settings/backup_settings.php:67, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:114
+#: application/modules/addon_webhook/views/backend/get_content.php:93, application/modules/addon_webhook/views/backend/get_content.php:132, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:34, application/modules/formbuilder/views/forms/create_form.php:199, application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/records/list_records_getdatatable.php:26, application/modules/formbuilder/views/settings/backup_settings.php:67, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:114
 msgid "Options"
 msgstr "Optionen"
 
@@ -936,7 +936,7 @@ msgstr "Namensform"
 msgid "Created"
 msgstr "Veröffentlicht am"
 
-#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:50, application/modules/formbuilder/views/forms/create_form.php:203
+#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:50, application/modules/formbuilder/views/forms/create_form.php:204
 msgid "Rollback"
 msgstr "Rollback"
 
@@ -1074,23 +1074,23 @@ msgstr "Details anzeigen"
 msgid "Generate field static data"
 msgstr "Generate field static data"
 
-#: application/modules/formbuilder/views/forms/create_form.php:205, application/modules/formbuilder/views/forms/settings_form_email.php:501, application/modules/formbuilder/views/forms/settings_form_email.php:508
+#: application/modules/formbuilder/views/forms/create_form.php:206, application/modules/formbuilder/views/forms/settings_form_email.php:501, application/modules/formbuilder/views/forms/settings_form_email.php:508
 msgid "Variables"
 msgstr "Deaktivieren"
 
-#: application/modules/formbuilder/views/forms/create_form.php:208
+#: application/modules/formbuilder/views/forms/create_form.php:209
 msgid "C.Logic Graph"
 msgstr "C.Logic"
 
-#: application/modules/formbuilder/views/forms/create_form.php:211
+#: application/modules/formbuilder/views/forms/create_form.php:212
 msgid "Refresh & Clean Form"
 msgstr "Refresh & Clean Form"
 
-#: application/modules/formbuilder/views/forms/create_form.php:220
+#: application/modules/formbuilder/views/forms/create_form.php:221
 msgid "preview"
 msgstr "Vorschau"
 
-#: application/modules/formbuilder/views/forms/create_form.php:229
+#: application/modules/formbuilder/views/forms/create_form.php:230
 msgid "Save form"
 msgstr "Form speichern"
 

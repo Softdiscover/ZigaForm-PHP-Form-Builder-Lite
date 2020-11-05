@@ -117,7 +117,7 @@ if ( isset( $input18['pane_background']['show_st'] )
 }
 
 
-<?php  include('render_css_front/common_css2.php'); ?>
+<?php include( 'render_css_front/common_css2.php' ); ?>
 <?php // include('formhtml_addon_css.php'); ?>
 <?php
 $cntACmp = ob_get_contents();

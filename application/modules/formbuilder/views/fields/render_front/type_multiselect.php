@@ -47,7 +47,7 @@ foreach ( $input2['options'] as $key => $value ) {
 		?>"
 		data-uifm-inp-val="<?php
 		if ( isset( $value['value'] ) ) {
-			echo Uiform_Form_Helper::sanitizeInput( $value['value'] );
+			echo esc_attr(Uiform_Form_Helper::sanitizeInput( $value['value'] ));
 		}
 		?>"
 		

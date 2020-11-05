@@ -519,19 +519,19 @@ class Forms extends BackendController {
 	}
 
 	public function ajax_list_trashform_updatest() {
-		 
+
 		$list_ids = ( isset( $_POST['id'] ) && $_POST['id'] ) ? array_map( array( 'Uiform_Form_Helper', 'sanitizeRecursive' ), $_POST['id'] ) : array();
 		$form_st  = ( isset( $_POST['form_st'] ) && $_POST['form_st'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['form_st'] ) : '';
 		if ( $list_ids ) {
-		
-			switch (intval($form_st)) {
+
+			switch ( intval( $form_st ) ) {
 				case 1:
-				case 2:	
+				case 2:
 					foreach ( $list_ids as $value ) {
 						$data = array(
 							'flag_status' => intval( $form_st ),
 						);
-		
+
 						$this->db->set( $data );
 						$this->db->where( 'fmb_id', $value );
 						$this->db->update( $this->model_forms->table );
@@ -539,66 +539,64 @@ class Forms extends BackendController {
 					break;
 				case 0:
 					foreach ( $list_ids as $value ) {
-					
-						$this->delete_form_process($value);
-						 
+
+						$this->delete_form_process( $value );
+
 					}
-					
+
 					break;
 				default:
 					# code...
 					break;
 			}
-			
 		}
 	}
-	
-	private function delete_form_process($value){
+
+	private function delete_form_process( $value ) {
 		//remove from log form
-		$this->db->where('log_frm_id', $value);
-		$this->db->delete($this->model_form_log->table);
-		
+		$this->db->where( 'log_frm_id', $value );
+		$this->db->delete( $this->model_form_log->table );
+
 		//remove from fields
-		$this->db->where('form_fmb_id', $value);
-		$this->db->delete($this->model_fields->table);
-		
-		
+		$this->db->where( 'form_fmb_id', $value );
+		$this->db->delete( $this->model_fields->table );
+
 		//remove from addons logs
-		$this->db->where('fmb_id', $value);
-		$this->db->delete($this->model_addon_details_log->table);
-		
-		//remove from addons		
-		$this->db->where('fmb_id', $value);
-		$this->db->delete($this->model_addon_details->table);
-		
+		$this->db->where( 'fmb_id', $value );
+		$this->db->delete( $this->model_addon_details_log->table );
+
+		//remove from addons
+		$this->db->where( 'fmb_id', $value );
+		$this->db->delete( $this->model_addon_details->table );
+
 		//remove pay record logs
-		$this->model_gateways_logs->deleteRecordbyFormId($value);
-		
+		$this->model_gateways_logs->deleteRecordbyFormId( $value );
+
 		//remove pay records
-		$this->model_gateways_records->deleteRecordbyFormId($value);
-		
+		$this->model_gateways_records->deleteRecordbyFormId( $value );
+
 		//remove from records
-		$this->db->where('form_fmb_id', $value);
-		$this->db->delete($this->model_record->table);
-		
+		$this->db->where( 'form_fmb_id', $value );
+		$this->db->delete( $this->model_record->table );
+
 		//remove from form
-		$this->db->where('fmb_id', $value);
-		$this->db->delete($this->model_forms->table);
+		$this->db->where( 'fmb_id', $value );
+		$this->db->delete( $this->model_forms->table );
 	}
-	
-	
+
+
 	/**
 	 * delete trash form by form id
 	 *
 	 * @return void
 	 */
 	public function ajax_delete_trashform_byid() {
- 
+
 		$form_id = ( isset( $_POST['form_id'] ) && $_POST['form_id'] ) ? Uiform_Form_Helper::sanitizeInput( $_POST['form_id'] ) : 0;
-		
-		$this->delete_form_process($form_id);
+
+		$this->delete_form_process( $form_id );
 	}
-	
+
 	/**
 	 * Forms::ajax_delete_form_byid()
 	 *
@@ -2484,7 +2482,7 @@ class Forms extends BackendController {
 	 * @return
 	 */
 	public function list_uiforms( $offset = 0 ) {
-		 
+
 		$filter_data = get_option( 'zgfm_listform_searchfilter', true );
 
 		$data2 = array();
@@ -2500,26 +2498,26 @@ class Forms extends BackendController {
 
 		$offset          = ( isset( $_GET['offset'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_GET['offset'] ) : 0;
 		$data2['offset'] = $offset;
-		
-		$form_data=$this->model_forms->ListTotals();
-		
-		$data2['all']=$form_data->r_all;
-		$data2['trash']=$form_data->r_trash;
-		$data2['subcurrent']=1;
-		$data2['subsubsub'] = List_data::get()->subsubsub($data2);
-		
+
+		$form_data = $this->model_forms->ListTotals();
+
+		$data2['all'] = $form_data->r_all;
+		$data2['trash'] = $form_data->r_trash;
+		$data2['subcurrent'] = 1;
+		$data2['subsubsub'] = List_data::get()->subsubsub( $data2 );
+
 		$this->template->loadPartial( 'layout', 'forms/list_forms', $data2 );
 	}
 
 
 
-    /**
+	/**
 	 * Show trash list
 	 *
 	 * @return void
 	 */
-    public function list_trash(){
-    
+	public function list_trash() {
+
 		$filter_data = get_option( 'zgfm_listform_searchfilter', true );
 		$data2       = array();
 		if ( empty( $filter_data ) ) {
@@ -2532,30 +2530,28 @@ class Forms extends BackendController {
 
 		$offset          = ( isset( $_GET['offset'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_GET['offset'] ) : 0;
 		$data2['offset'] = $offset;
-		
-		$form_data=$this->model_forms->ListTotals();
-		$data2['title']=__( 'Forms in trash', 'FRocket_admin' );
-		$data2['all']=$form_data->r_all;
-		$data2['trash']=$form_data->r_trash;
-		$data2['header_buttons']= List_data::get()->list_detail_form_headerbuttons();
-		$data2['script_trigger']= 'zgfm_back_general.formslist_trashsearch_process();';
-		$data2['subcurrent']= 2;
-		$data2['subsubsub'] = List_data::get()->subsubsub($data2);
-    
-    
-        $content=List_data::get()->show_list($data2);
-        //echo self::loadPartial2( 'layout.php', $content);
-        echo $this->template->loadPartial2( 'layout', $content );
-    }
-    
-    
-    /**
+
+		$form_data = $this->model_forms->ListTotals();
+		$data2['title'] = __( 'Forms in trash', 'FRocket_admin' );
+		$data2['all'] = $form_data->r_all;
+		$data2['trash'] = $form_data->r_trash;
+		$data2['header_buttons'] = List_data::get()->list_detail_form_headerbuttons();
+		$data2['script_trigger'] = 'zgfm_back_general.formslist_trashsearch_process();';
+		$data2['subcurrent'] = 2;
+		$data2['subsubsub'] = List_data::get()->subsubsub( $data2 );
+
+		$content = List_data::get()->show_list( $data2 );
+		//echo self::loadPartial2( 'layout.php', $content);
+		echo $this->template->loadPartial2( 'layout', $content );
+	}
+
+
+	/**
 	 * List trash forms
 	 *
 	 * @return void
 	 */
 	function ajax_trashformlist_sendfilter() {
-		 
 
 		$data_filter = ( isset( $_POST['data_filter'] ) && $_POST['data_filter'] ) ? $_POST['data_filter'] : '';
 
@@ -2577,8 +2573,7 @@ class Forms extends BackendController {
 
 		$data['segment'] = 0;
 		$data['offset']  = $opt_offset;
-		
- 
+
 		$result = $this->ajax_trashformlist_refresh( $data );
 
 		$json            = array();
@@ -2588,8 +2583,8 @@ class Forms extends BackendController {
 		echo json_encode( $json );
 		die();
 	}
-    
-    /**
+
+	/**
 	 * get forms in trash
 	 *
 	 * @param [type] $data
@@ -2604,7 +2599,7 @@ class Forms extends BackendController {
 		// list all forms
 		$config                         = array();
 		$config['base_url']             = site_url() . 'formbuilder/forms/list_trash';
-		
+
 		$tmp = $this->model_forms->ListTotals();
 		$config['total_rows']           = $tmp->r_trash;
 		$config['per_page']             = $data['per_page'];
@@ -2639,15 +2634,15 @@ class Forms extends BackendController {
 		$data2['pagination'] = $this->pagination->create_links();
 		$data2['obj_list_data'] = List_data::get();
 		$data2['is_trash']  = 1;
-		
+
 		//$data2['list_buttons'] = List_data::get()->list_detail_form_buttons();
 		///$content=List_data::get()->list_detail($data3);
-        return List_data::get()->list_detail($data2);
-		
+		return List_data::get()->list_detail( $data2 );
+
 		//return self::render_template( 'formbuilder/views/forms/list_forms_table.php', $data3 );
 	}
-    
-    /**
+
+	/**
 	 * list forms
 	 *
 	 * @return void

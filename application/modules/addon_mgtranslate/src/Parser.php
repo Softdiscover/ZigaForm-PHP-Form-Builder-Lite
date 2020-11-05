@@ -2,567 +2,539 @@
 
 namespace PoParser;
 
-class Parser
-{
-    /**
-     * @var array
-     */
-    protected $headers = array();
+class Parser {
 
-    /**
-     * @var Entry[]
-     */
-    protected $entries = array();
+	/**
+	 * @var array
+	 */
+	protected $headers = array();
 
-    /**
-     * @var array
-     */
-    protected $entriesAsArrays = array();
+	/**
+	 * @var Entry[]
+	 */
+	protected $entries = array();
 
-    /**
-     * @var string
-     */
-    protected $state;
+	/**
+	 * @var array
+	 */
+	protected $entriesAsArrays = array();
 
-    /**
-     * @var array
-     */
-    protected $rawEntries;
+	/**
+	 * @var string
+	 */
+	protected $state;
 
-    /**
-     * @var array
-     */
-    protected $currentEntry;
+	/**
+	 * @var array
+	 */
+	protected $rawEntries;
 
-    /**
-     * @var boolean
-     */
-    protected $justNewEntry;
+	/**
+	 * @var array
+	 */
+	protected $currentEntry;
 
-    /**
-     * @return Entry[]
-     */
-    public function getEntries()
-    {
-        return $this->entries;
-    }
+	/**
+	 * @var boolean
+	 */
+	protected $justNewEntry;
 
-    /**
-     * @return array
-     */
-    public function getEntriesAsArrays()
-    {
-        return $this->entriesAsArrays;
-    }
+	/**
+	 * @return Entry[]
+	 */
+	public function getEntries() {
+		return $this->entries;
+	}
 
-    /**
-     * Reads and parses strings in a .po file.
-     *
-     *  return An array of entries located in the file:
-     *  Format: array(
-     *      'msgid'     => <string> ID of the message.
-     *      'msgctxt'   => <string> Message context.
-     *      'msgstr'    => <string> Message translation.
-     *      'tcomment'  => <string> Comment from translator.
-     *      'ccomment'  => <string> Extracted comments from code.
-     *      'references' => <array> Location of string in code.
-     *      'obsolete'  => <bool> Is the message obsolete?
-     *      'fuzzy'     => <bool> Is the message "fuzzy"?
-     *      'flags'     => <array> Flags of the entry. Internal usage.
-     *  )
-     *
-     *   #~ (old entry)
-     *   # @ default
-     *   #, fuzzy
-     *   #~ msgid "Editar datos"
-     *   #~ msgstr "editar dades"
-     *
-     * @param string $filePath
-     * @throws \Exception
-     * @return array|bool
-     */
-    public function read($filePath)
-    {
-        $this->rawEntries = array();
-        $this->currentEntry = $this->createNewEntryAsArray();
-        $this->state = null;
-        $this->justNewEntry = false;
+	/**
+	 * @return array
+	 */
+	public function getEntriesAsArrays() {
+		return $this->entriesAsArrays;
+	}
 
-        $handle = $this->openFile($filePath);
-        while (!feof($handle)) {
-            $line = trim(fgets($handle));
-            $this->processLine($line);
-        }
-        fclose($handle);
+	/**
+	 * Reads and parses strings in a .po file.
+	 *
+	 *  return An array of entries located in the file:
+	 *  Format: array(
+	 *      'msgid'     => <string> ID of the message.
+	 *      'msgctxt'   => <string> Message context.
+	 *      'msgstr'    => <string> Message translation.
+	 *      'tcomment'  => <string> Comment from translator.
+	 *      'ccomment'  => <string> Extracted comments from code.
+	 *      'references' => <array> Location of string in code.
+	 *      'obsolete'  => <bool> Is the message obsolete?
+	 *      'fuzzy'     => <bool> Is the message "fuzzy"?
+	 *      'flags'     => <array> Flags of the entry. Internal usage.
+	 *  )
+	 *
+	 *   #~ (old entry)
+	 *   # @ default
+	 *   #, fuzzy
+	 *   #~ msgid "Editar datos"
+	 *   #~ msgstr "editar dades"
+	 *
+	 * @param string $filePath
+	 * @throws \Exception
+	 * @return array|bool
+	 */
+	public function read( $filePath ) {
+		 $this->rawEntries = array();
+		$this->currentEntry = $this->createNewEntryAsArray();
+		$this->state = null;
+		$this->justNewEntry = false;
 
-        $this->addFinalEntry();
-        $this->prepareResults();
+		$handle = $this->openFile( $filePath );
+		while ( ! feof( $handle ) ) {
+			$line = trim( fgets( $handle ) );
+			$this->processLine( $line );
+		}
+		fclose( $handle );
 
-        return $this->entriesAsArrays;
-    }
+		$this->addFinalEntry();
+		$this->prepareResults();
 
-    /**
-     * @param string $line
-     *
-     * @throws \Exception
-     */
-    protected function processLine($line)
-    {
-        if ($line === '') {
-            $this->handleBlankLine();
-            return;
-        }
+		return $this->entriesAsArrays;
+	}
 
-        $this->justNewEntry = false;
+	/**
+	 * @param string $line
+	 *
+	 * @throws \Exception
+	 */
+	protected function processLine( $line ) {
+		if ( $line === '' ) {
+			$this->handleBlankLine();
+			return;
+		}
 
-        $data = $this->parseLine($line);
+		$this->justNewEntry = false;
 
-        if ($data['key'][0] === '#') {
-            $this->handleComment($data);
-            return;
-        }
+		$data = $this->parseLine( $line );
 
-        $this->handleOtherCases($data, $line);
-    }
+		if ( $data['key'][0] === '#' ) {
+			$this->handleComment( $data );
+			return;
+		}
 
-    /**
-     *
-     */
-    protected function handleBlankLine()
-    {
-        if ($this->justNewEntry) {
-            // Two consecutive blank lines
-            return;
-        }
+		$this->handleOtherCases( $data, $line );
+	}
 
-        // A new entry is found
-        $this->rawEntries[] = $this->currentEntry;
-        $this->currentEntry = $this->createNewEntryAsArray();
-        $this->state = null;
-        $this->justNewEntry = true;
-    }
+	/**
+	 *
+	 */
+	protected function handleBlankLine() {
+		if ( $this->justNewEntry ) {
+			// Two consecutive blank lines
+			return;
+		}
 
-    /**
-     * @param $line
-     *
-     * @return array
-     */
-    protected function parseLine($line)
-    {
-        $split = preg_split('/\s/', $line, 2);
+		// A new entry is found
+		$this->rawEntries[] = $this->currentEntry;
+		$this->currentEntry = $this->createNewEntryAsArray();
+		$this->state = null;
+		$this->justNewEntry = true;
+	}
 
-        return array(
-            'key' => $split[0],
-            'value' => isset($split[1]) ? $split[1] : null
-        );
-    }
+	/**
+	 * @param $line
+	 *
+	 * @return array
+	 */
+	protected function parseLine( $line ) {
+		 $split = preg_split( '/\s/', $line, 2 );
 
-    /**
-     * @param $data
-     *
-     * @return array
-     */
-    protected function parseFlags($data)
-    {
-        return preg_split('/,\s*/', $data);
-    }
+		return array(
+			'key' => $split[0],
+			'value' => isset( $split[1] ) ? $split[1] : null,
+		);
+	}
 
-    /**
-     * @param $data
-     */
-    protected function handleComment($data)
-    {
-        switch ($data['key']) {
-            case '#:':
-                $this->currentEntry['references'][] = addslashes($data['value']);
-                break;
-            case '#,':
-                //flag
-                $this->currentEntry['flags'] = $this->parseFlags($data['value']);
-                $this->currentEntry['fuzzy'] = in_array('fuzzy', $this->currentEntry['flags'], true);
-                break;
-            case '#':
-                $this->currentEntry['tcomment'] = $data['value'];
-                break;
-            case '#.':
-                $this->currentEntry['ccomment'] = $data['value'];
-                break;
-            case '#|':
-                //msgid previous-untranslated-string
-                // start a new entry
-                break;
-            case '#@':
-                // ignore #@ default
-                $this->currentEntry['@'] = $data['value'];
-                break;
-            case '#~':
-                $this->processObsoleteEntry($data['value']);
-                break;
-            default:
-                break;
-        }
-    }
+	/**
+	 * @param $data
+	 *
+	 * @return array
+	 */
+	protected function parseFlags( $data ) {
+		return preg_split( '/,\s*/', $data );
+	}
 
-    /**
-     * @param $data
-     * @param $rawLine
-     *
-     * @throws \Exception
-     */
-    protected function handleOtherCases($data, $rawLine)
-    {
-        switch ($data['key']) {
-            case 'msgctxt':
-            case 'msgid':
-            case 'msgid_plural':
-            case 'msgstr':
-                $this->state = $data['key'];
-                $this->addEntryData($data['value']);
-                break;
-            default:
-                if (strpos($data['key'], 'msgstr[') !== false) {
-                    // translated plurals
-                    $this->state = 'msgstr';
-                    $this->addEntryData($data['value']);
-                } else {
-                    $this->processContinuedLineInSameState($rawLine);
-                }
-                break;
-        }
-    }
+	/**
+	 * @param $data
+	 */
+	protected function handleComment( $data ) {
+		switch ( $data['key'] ) {
+			case '#:':
+				$this->currentEntry['references'][] = addslashes( $data['value'] );
+				break;
+			case '#,':
+				//flag
+				$this->currentEntry['flags'] = $this->parseFlags( $data['value'] );
+				$this->currentEntry['fuzzy'] = in_array( 'fuzzy', $this->currentEntry['flags'], true );
+				break;
+			case '#':
+				$this->currentEntry['tcomment'] = $data['value'];
+				break;
+			case '#.':
+				$this->currentEntry['ccomment'] = $data['value'];
+				break;
+			case '#|':
+				//msgid previous-untranslated-string
+				// start a new entry
+				break;
+			case '#@':
+				// ignore #@ default
+				$this->currentEntry['@'] = $data['value'];
+				break;
+			case '#~':
+				$this->processObsoleteEntry( $data['value'] );
+				break;
+			default:
+				break;
+		}
+	}
 
-    /**
-     * @param string $line
-     *
-     * @throws \Exception
-     */
-    protected function processContinuedLineInSameState($line)
-    {
-        switch ($this->state) {
-            case 'msgctxt':
-            case 'msgid':
-            case 'msgid_plural':
-                if (is_string($this->currentEntry[$this->state])) {
-                    // Convert it to array
-                    $this->currentEntry[$this->state] = array($this->currentEntry[$this->state]);
-                }
-                $this->currentEntry[$this->state][] = $line;
-                break;
-            case 'msgstr':
-                $this->currentEntry['msgstr'][] = trim($line, '"');
-                break;
-            default:
-                throw new \Exception('Parse error!');
-        }
-    }
+	/**
+	 * @param $data
+	 * @param $rawLine
+	 *
+	 * @throws \Exception
+	 */
+	protected function handleOtherCases( $data, $rawLine ) {
+		switch ( $data['key'] ) {
+			case 'msgctxt':
+			case 'msgid':
+			case 'msgid_plural':
+			case 'msgstr':
+				$this->state = $data['key'];
+				$this->addEntryData( $data['value'] );
+				break;
+			default:
+				if ( strpos( $data['key'], 'msgstr[' ) !== false ) {
+					// translated plurals
+					$this->state = 'msgstr';
+					$this->addEntryData( $data['value'] );
+				} else {
+					$this->processContinuedLineInSameState( $rawLine );
+				}
+				break;
+		}
+	}
 
-    /**
-     * @param $data
-     */
-    protected function processObsoleteEntry($data)
-    {
-        $this->currentEntry['obsolete'] = true;
+	/**
+	 * @param string $line
+	 *
+	 * @throws \Exception
+	 */
+	protected function processContinuedLineInSameState( $line ) {
+		switch ( $this->state ) {
+			case 'msgctxt':
+			case 'msgid':
+			case 'msgid_plural':
+				if ( is_string( $this->currentEntry[ $this->state ] ) ) {
+					// Convert it to array
+					$this->currentEntry[ $this->state ] = array( $this->currentEntry[ $this->state ] );
+				}
+				$this->currentEntry[ $this->state ][] = $line;
+				break;
+			case 'msgstr':
+				$this->currentEntry['msgstr'][] = trim( $line, '"' );
+				break;
+			default:
+				throw new \Exception( 'Parse error!' );
+		}
+	}
 
-        $tmpParts = explode(' ', $data);
-        $tmpKey = $tmpParts[0];
-        $str = implode(' ', array_slice($tmpParts, 1));
+	/**
+	 * @param $data
+	 */
+	protected function processObsoleteEntry( $data ) {
+		$this->currentEntry['obsolete'] = true;
 
-        switch ($tmpKey) {
-            case 'msgid':
-                $this->currentEntry['msgid'] = trim($str, '"');
-                break;
-            case 'msgstr':
-                $this->currentEntry['msgstr'][] = trim($str, '"');
-                break;
-            default:
-                break;
-        }
-    }
+		$tmpParts = explode( ' ', $data );
+		$tmpKey = $tmpParts[0];
+		$str = implode( ' ', array_slice( $tmpParts, 1 ) );
 
-    /**
-     * @param $value
-     */
-    protected function addEntryData($value)
-    {
-        if ($this->state === 'msgstr') {
-            $this->currentEntry[$this->state][] = $value;
-        } else {
-            $this->currentEntry[$this->state] = $value;
-        }
-    }
+		switch ( $tmpKey ) {
+			case 'msgid':
+				$this->currentEntry['msgid'] = trim( $str, '"' );
+				break;
+			case 'msgstr':
+				$this->currentEntry['msgstr'][] = trim( $str, '"' );
+				break;
+			default:
+				break;
+		}
+	}
 
-    /**
-     *
-     */
-    protected function addFinalEntry()
-    {
-        if ($this->state == 'msgstr' || $this->currentEntry['obsolete']) {
-            $this->rawEntries[] = $this->currentEntry;
-        }
-    }
+	/**
+	 * @param $value
+	 */
+	protected function addEntryData( $value ) {
+		if ( $this->state === 'msgstr' ) {
+			$this->currentEntry[ $this->state ][] = $value;
+		} else {
+			$this->currentEntry[ $this->state ] = $value;
+		}
+	}
 
-    /**
-     * Cleanup data, merge multiline entries, reindex hash for ksort
-     *
-     * @return bool
-     */
-    protected function prepareResults()
-    {
-        $this->entriesAsArrays = array();
-        $this->entries = array();
-        $this->headers = array();
+	/**
+	 *
+	 */
+	protected function addFinalEntry() {
+		if ( $this->state == 'msgstr' || $this->currentEntry['obsolete'] ) {
+			$this->rawEntries[] = $this->currentEntry;
+		}
+	}
 
-        $counter = 0;
-        foreach ($this->rawEntries as $entry) {
-            $entry = $this->prepareEntry($entry, $counter);
+	/**
+	 * Cleanup data, merge multiline entries, reindex hash for ksort
+	 *
+	 * @return bool
+	 */
+	protected function prepareResults() {
+		$this->entriesAsArrays = array();
+		$this->entries = array();
+		$this->headers = array();
 
-            $id = $this->getMsgId($entry);
+		$counter = 0;
+		foreach ( $this->rawEntries as $entry ) {
+			$entry = $this->prepareEntry( $entry, $counter );
 
-            $this->entriesAsArrays[$id] = $entry;
-            $this->entries[$id] = new Entry($entry);
+			$id = $this->getMsgId( $entry );
 
-            $counter++;
-        }
+			$this->entriesAsArrays[ $id ] = $entry;
+			$this->entries[ $id ] = new Entry( $entry );
 
-        return true;
-    }
+			$counter++;
+		}
 
-    /**
-     * @param $entry
-     *
-     * @return string
-     */
-    protected function getMsgId($entry)
-    {
-        return is_array($entry['msgid']) ? implode('', $entry['msgid']) : $entry['msgid'];
-    }
+		return true;
+	}
 
-    /**
-     * @param $entry
-     * @param $index
-     *
-     * @return array
-     */
-    protected function prepareEntry($entry, $index)
-    {
-        foreach ($entry as &$fieldValue) {
-            $fieldValue = $this->clean($fieldValue);
-        }
+	/**
+	 * @param $entry
+	 *
+	 * @return string
+	 */
+	protected function getMsgId( $entry ) {
+		 return is_array( $entry['msgid'] ) ? implode( '', $entry['msgid'] ) : $entry['msgid'];
+	}
 
-        $id = $this->getMsgId($entry);
+	/**
+	 * @param $entry
+	 * @param $index
+	 *
+	 * @return array
+	 */
+	protected function prepareEntry( $entry, $index ) {
+		foreach ( $entry as &$fieldValue ) {
+			$fieldValue = $this->clean( $fieldValue );
+		}
 
-        if ($index === 0 && $id === '') {
-            //header entry
-            $entry['header'] = true;
-            $this->setHeaders($this->parseHeaders($entry));
-        }
+		$id = $this->getMsgId( $entry );
 
-        return $entry;
-    }
+		if ( $index === 0 && $id === '' ) {
+			//header entry
+			$entry['header'] = true;
+			$this->setHeaders( $this->parseHeaders( $entry ) );
+		}
 
-    /**
-     * @return array
-     */
-    protected function createNewEntryAsArray()
-    {
-        return array(
-            'msgctxt' => '',
-            'header' => false,
-            'obsolete' => false,
-            'fuzzy' => false,
-            'flags' => array(),
-            'references' => array(),
-            'ccomment' => '',
-            'tcomment' => '',
-        );
-    }
+		return $entry;
+	}
 
-    /**
-     * @param string $filePath
-     *
-     * @throws \Exception
-     * @return resource
-     */
-    protected function openFile($filePath)
-    {
-        if (empty($filePath)) {
-            throw new \Exception('Input file not defined.');
-        } elseif (!file_exists($filePath)) {
-            throw new \Exception("File does not exist: {$filePath}");
-        }
+	/**
+	 * @return array
+	 */
+	protected function createNewEntryAsArray() {
+		return array(
+			'msgctxt' => '',
+			'header' => false,
+			'obsolete' => false,
+			'fuzzy' => false,
+			'flags' => array(),
+			'references' => array(),
+			'ccomment' => '',
+			'tcomment' => '',
+		);
+	}
 
-        $handle = @fopen($filePath, 'r');
-        if (false === $handle) {
-            throw new \Exception("Unable to open file for reading: {$filePath}");
-        }
+	/**
+	 * @param string $filePath
+	 *
+	 * @throws \Exception
+	 * @return resource
+	 */
+	protected function openFile( $filePath ) {
+		if ( empty( $filePath ) ) {
+			throw new \Exception( 'Input file not defined.' );
+		} elseif ( ! file_exists( $filePath ) ) {
+			throw new \Exception( "File does not exist: {$filePath}" );
+		}
 
-        return $handle;
-    }
+		$handle = @fopen( $filePath, 'r' );
+		if ( false === $handle ) {
+			throw new \Exception( "Unable to open file for reading: {$filePath}" );
+		}
 
-    /**
-     * @param array $entry
-     *
-     * @return array
-     */
-    protected function parseHeaders(array $entry)
-    {
-        $headers = array();
+		return $handle;
+	}
 
-        if (!is_array($entry['msgstr'])) {
-            return $headers;
-        }
+	/**
+	 * @param array $entry
+	 *
+	 * @return array
+	 */
+	protected function parseHeaders( array $entry ) {
+		$headers = array();
 
-        foreach ($entry['msgstr'] as $headerRaw) {
-            $parts = explode(':', $headerRaw);
-            if (count($parts) < 2) {
-                continue;
-            }
+		if ( ! is_array( $entry['msgstr'] ) ) {
+			return $headers;
+		}
 
-            $parts[1] = ltrim($parts[1]);
-            $values = array_slice($parts, 1);
-            $headerValue = rtrim(implode(':', $values));
+		foreach ( $entry['msgstr'] as $headerRaw ) {
+			$parts = explode( ':', $headerRaw );
+			if ( count( $parts ) < 2 ) {
+				continue;
+			}
 
-            $headers[$parts[0]] = $headerValue;
-        }
+			$parts[1] = ltrim( $parts[1] );
+			$values = array_slice( $parts, 1 );
+			$headerValue = rtrim( implode( ':', $values ) );
 
-        return $headers;
-    }
+			$headers[ $parts[0] ] = $headerValue;
+		}
 
-    /**
-     * set all entries at once
-     *
-     * @param array $entries
-     */
-    public function setEntries(array $entries)
-    {
-        $this->entriesAsArrays = $entries;
-    }
+		return $headers;
+	}
 
-    /**
-     * Helper for the update-functions by deleting the fuzzy flag
-     *
-     * @param $msgid string msgid of entry
-     *
-     * @throws \Exception
-     */
-    protected function removeFuzzyFlagForMsgId($msgid)
-    {
-        if (!isset($this->entriesAsArrays[$msgid])) {
-            throw new \Exception('Entry does not exist');
-        }
-        if ($this->entriesAsArrays[$msgid]['fuzzy']) {
-            $flags = $this->entriesAsArrays[$msgid]['flags'];
-            unset($flags[array_search('fuzzy', $flags, true)]);
-            $this->entriesAsArrays[$msgid]['flags'] = $flags;
-            $this->entriesAsArrays[$msgid]['fuzzy'] = false;
-        }
-    }
+	/**
+	 * set all entries at once
+	 *
+	 * @param array $entries
+	 */
+	public function setEntries( array $entries ) {
+		$this->entriesAsArrays = $entries;
+	}
 
-    /**
-     * Allows modification of all translations of an entry
-     *
-     * @param $msgid string msgid of the entry which should be updated
-     * @param $translation array of strings new Translation for all msgstr by msgid
-     *
-     * @throws \Exception
-     */
-    public function updateEntries($msgid, $translation)
-    {
-        if (
-            !isset($this->entriesAsArrays[$msgid])
-            || !is_array($translation)
-            || sizeof($translation) != sizeof($this->entriesAsArrays[$msgid]['msgstr'])
-        ) {
-            throw new \Exception('Cannot update entry translation');
-        }
-        $this->removeFuzzyFlagForMsgId($msgid);
-        $this->entriesAsArrays[$msgid]['msgstr'] = $translation;
-    }
+	/**
+	 * Helper for the update-functions by deleting the fuzzy flag
+	 *
+	 * @param $msgid string msgid of entry
+	 *
+	 * @throws \Exception
+	 */
+	protected function removeFuzzyFlagForMsgId( $msgid ) {
+		if ( ! isset( $this->entriesAsArrays[ $msgid ] ) ) {
+			throw new \Exception( 'Entry does not exist' );
+		}
+		if ( $this->entriesAsArrays[ $msgid ]['fuzzy'] ) {
+			$flags = $this->entriesAsArrays[ $msgid ]['flags'];
+			unset( $flags[ array_search( 'fuzzy', $flags, true ) ] );
+			$this->entriesAsArrays[ $msgid ]['flags'] = $flags;
+			$this->entriesAsArrays[ $msgid ]['fuzzy'] = false;
+		}
+	}
 
-    /**
-     * Allows modification of a single translation of an entry
-     *
-     * @param $msgid string msgid of the entry which should be updated
-     * @param $translation string new translation for an msgstr by msgid
-     * @param $positionMsgstr integer spezification which of the msgstr
-     *      should be changed
-     *
-     * @throws \Exception
-     */
-    public function updateEntry($msgid, $translation, $positionMsgstr = 0)
-    {
-        if (
-            !isset($this->entriesAsArrays[$msgid])
-            || !is_string($translation)
-            || !isset($this->entriesAsArrays[$msgid]['msgstr'][$positionMsgstr])
-        ) {
-            throw new \Exception('Cannot update entry translation');
-        }
-        $this->removeFuzzyFlagForMsgId($msgid);
-        $this->entriesAsArrays[$msgid]['msgstr'][$positionMsgstr] = $translation;
-    }
+	/**
+	 * Allows modification of all translations of an entry
+	 *
+	 * @param $msgid string msgid of the entry which should be updated
+	 * @param $translation array of strings new Translation for all msgstr by msgid
+	 *
+	 * @throws \Exception
+	 */
+	public function updateEntries( $msgid, $translation ) {
+		if (
+			! isset( $this->entriesAsArrays[ $msgid ] )
+			|| ! is_array( $translation )
+			|| sizeof( $translation ) != sizeof( $this->entriesAsArrays[ $msgid ]['msgstr'] )
+		) {
+			throw new \Exception( 'Cannot update entry translation' );
+		}
+		$this->removeFuzzyFlagForMsgId( $msgid );
+		$this->entriesAsArrays[ $msgid ]['msgstr'] = $translation;
+	}
 
-    /**
-     * Write entries into the po file.
-     *
-     * @param string $filePath
-     * @throws \Exception
-     */
-    public function write($filePath)
-    {
-        $writer = new Writer();
-        $writer->write($filePath, $this->entriesAsArrays);
-    }
+	/**
+	 * Allows modification of a single translation of an entry
+	 *
+	 * @param $msgid string msgid of the entry which should be updated
+	 * @param $translation string new translation for an msgstr by msgid
+	 * @param $positionMsgstr integer spezification which of the msgstr
+	 *      should be changed
+	 *
+	 * @throws \Exception
+	 */
+	public function updateEntry( $msgid, $translation, $positionMsgstr = 0 ) {
+		if (
+			! isset( $this->entriesAsArrays[ $msgid ] )
+			|| ! is_string( $translation )
+			|| ! isset( $this->entriesAsArrays[ $msgid ]['msgstr'][ $positionMsgstr ] )
+		) {
+			throw new \Exception( 'Cannot update entry translation' );
+		}
+		$this->removeFuzzyFlagForMsgId( $msgid );
+		$this->entriesAsArrays[ $msgid ]['msgstr'][ $positionMsgstr ] = $translation;
+	}
 
-    /**
-     *
-     */
-    public function clearFuzzy()
-    {
-        foreach ($this->entriesAsArrays as &$entry) {
-            if ($entry['fuzzy'] === true) {
-                $flags = $entry['flags'];
-                $entry['flags'] = str_replace('fuzzy', '', $flags);
-                $entry['fuzzy'] = false;
-                $entry['msgstr'] = array('');
-            }
-        }
-    }
+	/**
+	 * Write entries into the po file.
+	 *
+	 * @param string $filePath
+	 * @throws \Exception
+	 */
+	public function write( $filePath ) {
+		$writer = new Writer();
+		$writer->write( $filePath, $this->entriesAsArrays );
+	}
 
-    /**
-     * @param $value
-     *
-     * @return array|string
-     */
-    public function clean($value)
-    {
-        if ($value === true || $value === false) {
-            return $value;
-        } elseif (is_array($value)) {
-            foreach ($value as $k => $v) {
-                $value[$k] = $this->clean($v);
-            }
-        } else {
-            $value = preg_replace('/^\"|\"$/', '', $value);
-            $value = stripcslashes($value);
-        }
+	/**
+	 *
+	 */
+	public function clearFuzzy() {
+		foreach ( $this->entriesAsArrays as &$entry ) {
+			if ( $entry['fuzzy'] === true ) {
+				$flags = $entry['flags'];
+				$entry['flags'] = str_replace( 'fuzzy', '', $flags );
+				$entry['fuzzy'] = false;
+				$entry['msgstr'] = array( '' );
+			}
+		}
+	}
 
-        return $value;
-    }
+	/**
+	 * @param $value
+	 *
+	 * @return array|string
+	 */
+	public function clean( $value ) {
+		if ( $value === true || $value === false ) {
+			return $value;
+		} elseif ( is_array( $value ) ) {
+			foreach ( $value as $k => $v ) {
+				$value[ $k ] = $this->clean( $v );
+			}
+		} else {
+			$value = preg_replace( '/^\"|\"$/', '', $value );
+			$value = stripcslashes( $value );
+		}
 
-    /**
-     * @return array
-     */
-    public function getHeaders()
-    {
-        return $this->headers;
-    }
+		return $value;
+	}
 
-    /**
-     * @param array $headers
-     */
-    public function setHeaders($headers)
-    {
-        $this->headers = $headers;
-    }
+	/**
+	 * @return array
+	 */
+	public function getHeaders() {
+		return $this->headers;
+	}
+
+	/**
+	 * @param array $headers
+	 */
+	public function setHeaders( $headers ) {
+		$this->headers = $headers;
+	}
 }
