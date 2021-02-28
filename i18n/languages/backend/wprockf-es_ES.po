@@ -1,5 +1,5 @@
-# Copyright (C) 2020 Zigaform WP Cost Estimation Form Builder 5.1.4
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.1.4 package.
+# Copyright (C) 2021 Zigaform WP Cost Estimation Form Builder 5.2.6
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.2.6 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: translate to spanish\n"

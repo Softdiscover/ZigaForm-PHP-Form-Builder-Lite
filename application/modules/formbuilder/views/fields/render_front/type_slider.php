@@ -25,6 +25,8 @@ ob_start();
 				data-slider-max="<?php echo floatval( $input4['set_max'] ); ?>"
 				data-slider-step="<?php echo floatval( $input4['set_step'] ); ?>"
 				data-slider-value="<?php echo floatval( $input4['set_default'] ); ?>"
+				data-slider-ticks="[<?php echo floatval( $input4['set_min'] ); ?>, <?php echo floatval( $input4['set_max'] ); ?>]"
+				data-slider-ticks-labels='["<?php echo floatval( $input4['set_min'] ); ?>", "<?php echo floatval( $input4['set_max'] ); ?>"]'
 				value="<?php echo floatval( $input4['set_default'] ); ?>"
 				name="uiform_fields[<?php echo $id; ?>]"
 				/>

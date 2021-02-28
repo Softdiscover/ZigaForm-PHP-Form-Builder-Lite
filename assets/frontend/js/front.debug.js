@@ -2523,11 +2523,12 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 		uiformDCheckbox = (function() {
 			var uifm_dchkbox_var = [];
 			uifm_dchkbox_var.innerVars = {};
-
+			var _this_obj;
 			function uiformDCheckbox(element, options) {
 				if (options == null) {
 					options = {};
 				}
+				  _this_obj=this;
 				this.$element = $(element);
 				this.options = $.extend(
 					{},
@@ -2564,16 +2565,16 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 							$(element)
 								.parent()
 								.attr('data-thopt-width') || 100,
-						backend: this.$element.data('backend'),
+						backend: this.$element.data('backend')||0,
 						baseClass: this.$element.data('base-class'),
 					},
 					options
 				);
 
 
-
 				this.$element.find('.uifm-dcheckbox-item-viewport').attr('height', this.options.opt_thopt_height);
 				this.$element.find('.uifm-dcheckbox-item-viewport').attr('width', this.options.opt_thopt_width);
+
 				this.$opt_gal_btn_show = this.$element.find('.uifm-dcheckbox-item-showgallery');
 
 				this.$opt_gal_links_a = this.$element.find('.uifm-dcheckbox-item-gal-imgs a');
@@ -2605,7 +2606,7 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 					})(this)
 				);
 
-				if (parseInt(this.options.backend) === 1) {
+				if (parseInt(_this_obj.options.backend) === 1) {
 					this.$canvas_parent = this.$element.closest('.uifm-input17-wrap').width();
 				} else {
 					this.$canvas_parent = this.$element.closest('.rockfm-input17-wrap').width();
@@ -2648,7 +2649,7 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 				);
 
 
-				if (parseInt(this.options.backend) === 0) {
+				if (parseInt(_this_obj.options.backend) === 0) {
 					this._elementHandlers();
 					this._handleHandlers();
 				}
@@ -2664,8 +2665,16 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 			uiformDCheckbox.prototype._constructor = uiformDCheckbox;
 
 			uiformDCheckbox.prototype._refresh = function() {
-				this.$canvas_parent = this.$element.closest('.rockfm-input17-wrap').width();
-				this._enableCheckboxVal(this.$opt_gal_checkbox, this);
+
+if (parseInt(_this_obj.options.backend) === 1) {
+				 this.$canvas_parent = this.$element.closest('.uifm-input17-wrap').width();
+				} else {
+					this.$canvas_parent = this.$element.closest('.rockfm-input17-wrap').width();
+				}
+
+
+
+				 				this._enableCheckboxVal(this.$opt_gal_checkbox, this);
 				this._setValToChkBoxInput(this);
 				this._get_items();
 			};
@@ -2716,6 +2725,7 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 					} else {
 						new_width = tmp_can_width;
 					}
+
 					new_height = new_width / aspectRatio;
 				} else {
 					new_width = tmp_can_width;
@@ -2870,6 +2880,7 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 				} else {
 					this._getImageToCanvas(this.$element, 0, this);
 				}
+
 				return this.$element;
 			};
 			uiformDCheckbox.prototype.optQtyMax = function(value) {
@@ -2919,7 +2930,6 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 			};
 			uiformDCheckbox.prototype.onCostCalcProcess = function() {
 				var obj_form = this.$element.closest('.rockfm-form');
-				rocketfm.costest_fillSticky(obj_form);
 
 				return this.$element;
 			};
@@ -2970,7 +2980,6 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 					'keydown.uiformDCheckbox': (function(_this) {})(this),
 				});
 			};
-
 			uiformDCheckbox.prototype._elementHandlers2 = function() {
 				return this.$element.on({
 					'mouseover.uiformDCheckbox': (function(_this) {
@@ -2999,7 +3008,6 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 					})(this),
 				});
 			};
-
 			uiformDCheckbox.prototype._galleryHandlers = function() {
 				this.$opt_gal_next_img.on(
 					'click.uiformDCheckbox',
@@ -3042,7 +3050,6 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 							$('#' + _this.options.baseGalleryId).data('useBootstrapModal', !borderless);
 							$('#' + _this.options.baseGalleryId).data('container', '#' + _this.options.baseGalleryId);
 							$('#' + _this.options.baseGalleryId).toggleClass('blueimp-gallery-controls', borderless);
-
 							var tmp_blueimpgal;
 							try {
 								tmp_blueimpgal = blueimp.Gallery;
@@ -3065,7 +3072,13 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 								var tmp_index = $(this)
 									.closest('.uifm-dradiobtn-item')
 									.attr('data-inp17-opt-index');
-								var tmp_container = $(this).closest('.rockfm-input17-wrap');
+
+								if (parseInt(_this_obj.options.backend) === 1) {
+					var tmp_container = $(this).closest('.uifm-input17-wrap');
+				} else {
+					var tmp_container = $(this).closest('.rockfm-input17-wrap');
+				}
+
 								var tmp_radiobtn_items = tmp_container.find('.uifm-dradiobtn-item');
 
 								var tmp_item_index;
@@ -3073,8 +3086,10 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 									tmp_item_index = $(this).attr('data-inp17-opt-index');
 
 									if (parseInt(tmp_item_index) === parseInt(tmp_index)) {
+
 										$(this).uiformDCheckbox('man_optChecked', 1);
 									} else {
+
 										$(this).uiformDCheckbox('man_optChecked', 0);
 									}
 
@@ -3103,7 +3118,12 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 								var tmp_index = $(this)
 									.closest('.uifm-dradiobtn-item')
 									.attr('data-inp17-opt-index');
-								var tmp_container = $(this).closest('.rockfm-input17-wrap');
+
+								if (parseInt(_this_obj.options.backend) === 1) {
+					var tmp_container = $(this).closest('.uifm-input17-wrap');
+				} else {
+					var tmp_container = $(this).closest('.rockfm-input17-wrap');
+				}
 								var tmp_radiobtn_items = tmp_container.find('.uifm-dradiobtn-item');
 
 								var tmp_item_index;
@@ -3115,6 +3135,7 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 									} else {
 										$(this).uiformDCheckbox('man_optChecked', 0);
 									}
+
 									if (parseInt(_this.options.opt_laymode) === 2) {
 										$(this).uiformDCheckbox('man_mod2_refresh');
 									}

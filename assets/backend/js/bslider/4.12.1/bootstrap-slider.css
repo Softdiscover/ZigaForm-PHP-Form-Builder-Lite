@@ -5,12 +5,12 @@
  * bootstrap-slider.js
  *
  * Maintainers:
- *		Kyle Kemp
- *			- Twitter: @seiyria
- *			- Github:  seiyria
- *		Rohit Kalkur
- *			- Twitter: @Rovolutionary
- *			- Github:  rovolution
+ *    Kyle Kemp
+ *      - Twitter: @seiyria
+ *      - Github:  seiyria
+ *    Rohit Kalkur
+ *      - Twitter: @Rovolutionary
+ *      - Github:  rovolution
  *
  * =========================================================
  *
@@ -52,7 +52,7 @@
 .slider.slider-horizontal .slider-tick,
 .slider.slider-horizontal .slider-handle {
   margin-left: -10px;
-  margin-top: -5px;
+  margin-top: -2px;
 }
 .slider.slider-horizontal .slider-tick.triangle,
 .slider.slider-horizontal .slider-handle.triangle {
@@ -161,11 +161,11 @@
   border-radius: 4px;
 }
 .slider-selection.tick-slider-selection {
-  background-image: -webkit-linear-gradient(top, #89cdef 0%, #81bfde 100%);
+  /*background-image: -webkit-linear-gradient(top, #89cdef 0%, #81bfde 100%);
   background-image: -o-linear-gradient(top, #89cdef 0%, #81bfde 100%);
   background-image: linear-gradient(to bottom, #89cdef 0%, #81bfde 100%);
   background-repeat: repeat-x;
-  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);*/
 }
 .slider-track-low,
 .slider-track-high {
@@ -271,9 +271,9 @@
   color: #726204;
 }
 .slider-tick.in-selection {
-  background-image: -webkit-linear-gradient(top, #89cdef 0%, #81bfde 100%);
-  background-image: -o-linear-gradient(top, #89cdef 0%, #81bfde 100%);
-  background-image: linear-gradient(to bottom, #89cdef 0%, #81bfde 100%);
+  background-image: -webkit-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+  background-image: -o-linear-gradient(top, #eeeeee 0%, #cccccc 100%);
+  background-image: linear-gradient(to bottom, #eeeeee 0%, #cccccc 100%);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff89cdef', endColorstr='#ff81bfde', GradientType=0);
   opacity: 1;

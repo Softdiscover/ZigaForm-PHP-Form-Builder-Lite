@@ -41,7 +41,7 @@ foreach ( $input2['options'] as $key => $value ) {
 	?>
 	<option <?php echo $checked; ?>
 		value="<?php
-		if ( ! empty( $value['value'] ) ) {
+		if ( isset( $value['value'] ) ) {
 			echo $key;
 		}
 		?>"
