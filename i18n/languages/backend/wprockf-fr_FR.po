@@ -1,5 +1,5 @@
-# Copyright (C) 2021 Zigaform WP Cost Estimation Form Builder 5.2.6
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.2.6 package.
+# Copyright (C) 2021 Zigaform WP Cost Estimation Form Builder 5.2.8
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.2.8 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -304,65 +304,385 @@ msgstr "All Rights Reserved."
 msgid "Powered by ZigaForm"
 msgstr "Powered by ZigaForm"
 
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:234
+msgid "None"
+msgstr ""
+
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:238
 msgid "Customs"
 msgstr "CSS personnalisé"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:240
+msgid "Top to Bottom"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:244
+msgid "Bottom to Top"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:248
+msgid "Left to Right"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:252
+msgid "Right to Left"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:256
+msgid "Appear from center"
+msgstr ""
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:263
 msgid "Attention Seekers"
 msgstr "Attention Seekers"
 
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:265
+msgid "bounce"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:269
+msgid "flash"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:273
+msgid "pulse"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:277
+msgid "rubberBand"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:281
+msgid "shake"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:285
+msgid "swing"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:289
+msgid "tada"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:293
+msgid "wobble"
+msgstr ""
+
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:300
 msgid "Bouncing Entrances"
 msgstr "Bouncing Entrances"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:303
+msgid "bounceIn"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:307
+msgid "bounceInDown"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:311
+msgid "bounceInLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:315
+msgid "bounceInRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:319
+msgid "bounceInUp"
+msgstr ""
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:326
 msgid "Bouncing Exits"
 msgstr "Bouncing Exits"
 
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:329
+msgid "bounceOut"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:333
+msgid "bounceOutDown"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:337
+msgid "bounceOutLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:341
+msgid "bounceOutRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:345
+msgid "bounceOutUp"
+msgstr ""
+
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:352
 msgid "Fading Entrances"
 msgstr "Fading Entrances"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:355
+msgid "fadeIn"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:359
+msgid "fadeInDown"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:363
+msgid "fadeInDownBig"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:367
+msgid "fadeInLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:371
+msgid "fadeInLeftBig"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:375
+msgid "fadeInRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:379
+msgid "fadeInRightBig"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:383
+msgid "fadeInUp"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:387
+msgid "fadeInUpBig"
+msgstr ""
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:394
 msgid "Fading Exits"
 msgstr "Padding - Droit"
 
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:396
+msgid "fadeOut"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:400
+msgid "fadeOutDown"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:404
+msgid "fadeOutDownBig"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:408
+msgid "fadeOutLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:412
+msgid "fadeOutLeftBig"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:416
+msgid "fadeOutRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:420
+msgid "fadeOutRightBig"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:424
+msgid "fadeOutUp"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:428
+msgid "fadeOutUpBig"
+msgstr ""
+
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:435
 msgid "Flippers"
 msgstr "Flippers"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:437
+msgid "flip"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:441
+msgid "flipInX"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:445
+msgid "flipInY"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:449
+msgid "flipOutX"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:453
+msgid "flipOutY"
+msgstr ""
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:460
 msgid "Lightspeed"
 msgstr "Clair"
 
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:462
+msgid "lightSpeedIn"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:466
+msgid "lightSpeedOut"
+msgstr ""
+
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:473
 msgid "Rotating Entrances"
 msgstr "Rotating Entrances"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:475
+msgid "rotateIn"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:479
+msgid "rotateInDownLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:483
+msgid "rotateInDownRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:487
+msgid "rotateInUpLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:491
+msgid "rotateInUpRight"
+msgstr ""
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:498
 msgid "Rotating Exits"
 msgstr "Rotating Exits"
 
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:500
+msgid "rotateOut"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:504
+msgid "rotateOutDownLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:508
+msgid "rotateOutDownRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:512
+msgid "rotateOutUpLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:516
+msgid "rotateOutUpRight"
+msgstr ""
+
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:523
 msgid "Specials"
 msgstr "Specials"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:525
+msgid "hinge"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:529
+msgid "rollIn"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:533
+msgid "rollOut"
+msgstr ""
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:540
 msgid "Zoom Entrances"
 msgstr "Zoom Entrances"
 
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:542
+msgid "zoomIn"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:546
+msgid "zoomInDown"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:550
+msgid "zoomInLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:554
+msgid "zoomInRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:558
+msgid "zoomInUp"
+msgstr ""
+
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:565
 msgid "Zoom Exits"
 msgstr "Zoom Exits"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:567
+msgid "zoomOut"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:571
+msgid "zoomOutDown"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:575
+msgid "zoomOutLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:579
+msgid "zoomOutRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:583
+msgid "zoomOutUp"
+msgstr ""
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:590
 msgid "Slide Entrances"
 msgstr "Slide Entrances"
 
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:592
+msgid "slideInDown"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:596
+msgid "slideInLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:600
+msgid "slideInRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:604
+msgid "slideInUp"
+msgstr ""
+
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:611
 msgid "Slide Exits"
 msgstr "Slide Exits"
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:613
+msgid "slideOutDown"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:617
+msgid "slideOutLeft"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:621
+msgid "slideOutRight"
+msgstr ""
+
+#: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:625
+msgid "slideOutUp"
+msgstr ""
 
 #: application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:116
 msgid "New translation created successfully"

@@ -9,7 +9,7 @@
  * Copyright 2012, Leaf Corcoran <leafot@gmail.com>
  * Licensed under MIT or GPLv3, see LICENSE
  */
-if (!defined('ABSPATH')) {
+if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 if (class_exists('lessc')) {

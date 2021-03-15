@@ -2491,9 +2491,9 @@ class Forms extends BackendController {
 			$data2['search_txt'] = '';
 			$data2['orderby']    = 'asc';
 		} else {
-			$data2['per_page']   = intval( $filter_data['per_page'] );
-			$data2['search_txt'] = $filter_data['search_txt'];
-			$data2['orderby']    = $filter_data['orderby'];
+			$data2['per_page']   = isset($filter_data['per_page'])?intval( $filter_data['per_page'] ):'5';
+			$data2['search_txt'] = isset($filter_data['search_txt'])?$filter_data['search_txt']:'';
+			$data2['orderby']    = isset($filter_data['orderby'])?$filter_data['orderby']:'';
 		}
 
 		$offset          = ( isset( $_GET['offset'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_GET['offset'] ) : 0;
