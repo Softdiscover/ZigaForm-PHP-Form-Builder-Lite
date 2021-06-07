@@ -407,7 +407,12 @@ if ( ! defined( 'BASEPATH' ) ) {
  <script type="text/html" id="tmpl-zgfm-frm-wiz-templates">
 	<div data-tab-nro="" class="uifm_frm_skin_tab_content">
 						   <div class="sfdc-row">
-							   <div class="sfdc-col-sm-8">
+						       <div class="sfdc-col-sm-1">
+						        <div class="uifm-wz-opt-sort">
+									<i class="fa fa-sort"></i>
+						        </div>
+						       </div>
+							   <div class="sfdc-col-sm-7">
 								   <div class="sfdc-form-group">
 											<label ><?php echo __( 'Tab', 'FRocket_admin' ); ?> <span>0</span> : </label>
 											<input type="text" 
@@ -422,6 +427,9 @@ if ( ! defined( 'BASEPATH' ) ) {
 										<button onclick="javascript:rocketform.wizardtab_deleteTab(this);"
 												class="sfdc-btn sfdc-btn-sm sfdc-btn-danger"
 												><i class="fa fa-trash-o"></i> <?php echo __( 'Delete', 'FRocket_admin' ); ?></button>
+										<button onclick="javascript:rocketform.wizardtab_duplicateTab(this);"
+												class="sfdc-btn sfdc-btn-sm sfdc-btn-warning uifm-back-wz-dup-btn"
+												><i class="fa fa-trash-o"></i> <?php echo __( 'Duplicate', 'FRocket_admin' ); ?></button>		
 									</div>
 							   </div>
 						   </div>

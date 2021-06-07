@@ -894,7 +894,8 @@ select.uifm-input2-opt-main {
 
 /* summary */
 .uiform-sbox-summ-fld-row ul {
-  padding-left: 15px;
+  padding-left: 0px;
+  margin-left: 22px !important;
 }
 
 /* field 2 grid */

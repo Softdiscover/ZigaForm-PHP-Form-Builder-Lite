@@ -342,7 +342,7 @@
 
 				$checkbox.parent().addClass(settings.checkbox.iconClass);
 				$checkbox.parent().addClass('checked');
-				$checkbox.prop('checked', true).trigger('change');
+				$checkbox.prop('checked', true).trigger('chkrdochange');
 				
 					
 			},
@@ -351,7 +351,7 @@
 				$checkbox.parent().removeClass('checked');
 				$checkbox.parent().removeClass(settings.checkbox.iconClass);
 				$checkbox.parent().addClass('unchecked');
-				$checkbox.prop('checked', false).trigger('change');
+				$checkbox.prop('checked', false).trigger('chkrdochange');
 				
 				
 			},
@@ -363,7 +363,7 @@
 
 				$radio.parent().addClass(settings.radio.iconClass);
 				$radio.parent().addClass('checked');
-				$radio.prop('checked', true).trigger('change');
+				$radio.prop('checked', true).trigger('chkrdochange');
 					
 			},
 
@@ -372,7 +372,7 @@
 				$radio.parent().removeClass('checked');
 				$radio.parent().removeClass(settings.radio.iconClass);
 				$radio.parent().addClass('unchecked');
-				$radio.prop('checked', false).trigger('change');
+				$radio.prop('checked', false).trigger('chkrdochange');
 			}
 		};
                 

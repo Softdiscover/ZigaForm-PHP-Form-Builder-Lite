@@ -11101,6 +11101,21 @@ a:focus {
   margin-top: 5px;
 }
 
+.uifm_frm_skin_tab_content .fa-sort {
+  color: #fff;
+  position: absolute;
+  left: 36%;
+  top: 39%;
+}
+
+.uifm_frm_skin_tab_content .uifm-wz-opt-sort {
+  height: 62px;
+  background-color: #5c76a5;
+  cursor: move;
+  padding: 10px;
+  position: relative;
+}
+
 .uifm_frm_skin_tabs_options .btn-group {
   float: right;
 }
@@ -13125,6 +13140,11 @@ select.uifm-input2-opt-main {
   }
 }
 
+/*wizard*/
+.uifm-back-wz-dup-btn {
+  margin-top: 10px !important;
+}
+
 .uifm-align-center {
   text-align: center;
 }
@@ -13988,7 +14008,8 @@ select.uifm-input2-opt-main {
 
 /* summary */
 .uiform-sbox-summ-fld-row ul {
-  padding-left: 15px;
+  padding-left: 0px;
+  margin-left: 22px !important;
 }
 
 /* field 2 grid */

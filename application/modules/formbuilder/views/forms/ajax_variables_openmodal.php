@@ -60,6 +60,10 @@ ob_start();
 											<td><?php echo __( 'Form record id', 'FRocket_admin' ); ?></td>
 											<td><textarea onclick="this.select();" style="width: 284px;">[uifm_var opt="rec_id"]</textarea></td>
 										</tr>
+										<tr>
+											<td><?php echo __( 'User IP', 'FRocket_admin' ); ?></td>
+											<td><textarea onclick="this.select();">[uifm_var opt="user_ip"]</textarea></td>
+										</tr>
 									</tbody>
 								</table>  
 							 </div>

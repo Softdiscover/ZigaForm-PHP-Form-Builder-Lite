@@ -1,5 +1,5 @@
-# Copyright (C) 2021 Zigaform WP Cost Estimation Form Builder 5.2.8
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.2.8 package.
+# Copyright (C) 2021 Zigaform WP Cost Estimation Form Builder 5.3.5
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.3.5 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -760,7 +760,7 @@ msgstr "error found while submitting"
 msgid "Offline success"
 msgstr "Offline success"
 
-#: application/modules/formbuilder/controllers/frontend.php:1398
+#: application/modules/formbuilder/controllers/frontend.php:1411
 msgid "Order summary"
 msgstr "Bestellformular"
 
@@ -1260,19 +1260,19 @@ msgstr "Veröffentlicht am"
 msgid "Rollback"
 msgstr "Rollback"
 
-#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:24, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:75, application/modules/formbuilder/views/forms/settings_form_email.php:524, application/modules/formbuilder/views/forms/templates_fields.php:91, application/modules/formbuilder/views/forms/templates_fields.php:115
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:24, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:79, application/modules/formbuilder/views/forms/settings_form_email.php:524, application/modules/formbuilder/views/forms/templates_fields.php:91, application/modules/formbuilder/views/forms/templates_fields.php:115
 msgid "Field"
 msgstr "Feldname"
 
-#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:25, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:76, application/modules/formbuilder/views/forms/settings_form_email.php:525
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:25, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:80, application/modules/formbuilder/views/forms/settings_form_email.php:525
 msgid "Codes"
 msgstr "Codes"
 
-#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:28, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:79, application/modules/formbuilder/views/forms/settings_form_email.php:528
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:28, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:83, application/modules/formbuilder/views/forms/settings_form_email.php:528
 msgid "label"
 msgstr "Label"
 
-#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:29, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:80, application/modules/formbuilder/views/forms/settings_form_email.php:529
+#: application/modules/formbuilder/views/forms/ajax_variables_emailpage.php:29, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:84, application/modules/formbuilder/views/forms/settings_form_email.php:529
 msgid "input"
 msgstr "Eingang"
 
@@ -1302,7 +1302,7 @@ msgstr "Hintergrund"
 msgid "Frontend"
 msgstr "Frontend"
 
-#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:32, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:70
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:32, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:74
 msgid "Fields"
 msgstr "Upload Felder"
 
@@ -1329,6 +1329,10 @@ msgstr "Formular-URL"
 #: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:60, application/modules/formbuilder/views/forms/settings_form_email.php:567
 msgid "Form record id"
 msgstr "Form record id"
+
+#: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:64
+msgid "User IP"
+msgstr ""
 
 #: application/modules/formbuilder/views/forms/create_form.php:24
 msgid "Form editor"
@@ -1872,7 +1876,7 @@ msgstr "Move to trash"
 msgid "Duplicate Form"
 msgstr "Duplizieren"
 
-#: application/modules/formbuilder/views/forms/list_forms.php:90, application/modules/formbuilder/views/forms/list_forms.php:79
+#: application/modules/formbuilder/views/forms/list_forms.php:90, application/modules/formbuilder/views/forms/list_forms.php:79, application/modules/formbuilder/views/forms/settings_form_wizard.php:432
 msgid "Duplicate"
 msgstr "Duplizieren"
 
@@ -2528,15 +2532,15 @@ msgstr "Glatt"
 msgid "Add new"
 msgstr "Neu hinzufügen"
 
-#: application/modules/formbuilder/views/forms/settings_form_wizard.php:86, application/modules/formbuilder/views/forms/settings_form_wizard.php:412
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:86, application/modules/formbuilder/views/forms/settings_form_wizard.php:417
 msgid "Tab"
 msgstr "Tablet"
 
-#: application/modules/formbuilder/views/forms/settings_form_wizard.php:91, application/modules/formbuilder/views/forms/settings_form_wizard.php:417
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:91, application/modules/formbuilder/views/forms/settings_form_wizard.php:422
 msgid "Type tab title"
 msgstr "Type Tab-Reiter"
 
-#: application/modules/formbuilder/views/forms/settings_form_wizard.php:98, application/modules/formbuilder/views/forms/settings_form_wizard.php:424, application/modules/formbuilder/views/records/list_records.php:74, application/modules/formbuilder/views/records/list_records.php:77, application/modules/formbuilder/views/settings/backup_settings.php:94, application/modules/user/views/intranet/index.php:90, application/modules/user/views/intranet/index.php:86
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:98, application/modules/formbuilder/views/forms/settings_form_wizard.php:429, application/modules/formbuilder/views/records/list_records.php:74, application/modules/formbuilder/views/records/list_records.php:77, application/modules/formbuilder/views/settings/backup_settings.php:94, application/modules/user/views/intranet/index.php:90, application/modules/user/views/intranet/index.php:86
 msgid "Delete"
 msgstr "Löschen"
 
