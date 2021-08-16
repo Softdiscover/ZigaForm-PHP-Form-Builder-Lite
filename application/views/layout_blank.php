@@ -25,7 +25,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<meta name="robots" content="noindex">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Softdiscover Company">
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/common/img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/backend/images/favicon.ico" type="image/x-icon"/>
 	<!-- jquery ui -->
 	<link href="<?php echo base_url(); ?>assets/common/js/jqueryui/1.10.3/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<!-- bootstrap -->
@@ -49,7 +49,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/backend/js/jscrollpane/jquery.jscrollpane.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/backend/js/jscrollpane/jquery.jscrollpane.lozenge.css" rel="stylesheet">
 	<!-- chosen -->
-	<link href="<?php echo base_url(); ?>assets/backend/js/chosen/chosen.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/backend/js/chosen/1.8.7/chosen.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/backend/js/chosen/style.css" rel="stylesheet">
 	<!-- color picker -->
 	<link href="<?php echo base_url(); ?>assets/backend/js/colorpicker/2.5/css/bootstrap-colorpicker.css" rel="stylesheet">
@@ -64,7 +64,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<!-- bootstrap icon picker -->
 	<link href="<?php echo base_url(); ?>assets/backend/js/biconpicker/1.9.0/css/bootstrap-iconpicker.css" rel="stylesheet">
 	<!-- bootstrap date time picker -->
-	<link href="<?php echo base_url(); ?>assets/backend/js/bdatetime/bootstrap-datetimepicker.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.17.45/bootstrap-datetimepicker.css" rel="stylesheet">
 	<!-- star rating -->
 	<link href="<?php echo base_url(); ?>assets/backend/js/bratestar/star-rating.css" rel="stylesheet">
 	<!-- data tables -->
@@ -93,7 +93,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 		}
 
 		?>
-	<link rel="Favicon Icon" href="favicon.ico">
+	
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -126,7 +126,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/jscrollpane/jquery.mousewheel.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/jscrollpane/jquery.jscrollpane.min.js"></script>
 	<!-- chosen -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/chosen/chosen.jquery.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/chosen/1.8.7/chosen.jquery.min.js"></script>
 	<!-- color picker mode -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/colorpicker/2.5/js/bootstrap-colorpicker.js"></script>
 	<!-- bootstrap select -->
@@ -138,8 +138,8 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<!-- bootstrap touchspin -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/btouchspin/jquery.bootstrap-touchspin.js"></script>
 	<!-- date time -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/moment-with-locales.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.17.45/moment-with-locales.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.17.45/bootstrap-datetimepicker.js"></script>
 	<!-- auto grow -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/jquery.autogrow-textarea.js"></script>
 	<!-- bootstrap iconpicker -->

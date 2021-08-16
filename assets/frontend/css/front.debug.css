@@ -978,7 +978,8 @@ select.uifm-input2-opt-main {
   clear: both;
 }
 
-.uiform-wrap .space10 {
+.uiform-wrap .space10,
+.space10 {
   height: 10px;
   border: none;
   display: block;

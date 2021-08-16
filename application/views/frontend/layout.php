@@ -31,7 +31,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<meta http-equiv="Cache-Control" content="no-store, no-cache, must-revalidate, post-check=0, pre-check=0, private" >
 	<meta http-equiv="Pragma" content="no-cache" >
 	<meta http-equiv="Expires" content="0" >
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/common/img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/backend/images/favicon.ico" type="image/x-icon"/>
 	
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/bootstrap-wrapper.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/bootstrap-theme-wrapper.css" rel="stylesheet">
@@ -58,7 +58,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<script type="text/javascript">
 	var $uifm=jQuery.noConflict();
 	</script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/js/bootstrap.js"></script> 
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
    
   <noscript>
 	   Powered by <a href="https://zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder" >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>

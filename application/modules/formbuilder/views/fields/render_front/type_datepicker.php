@@ -17,7 +17,7 @@ ob_start();
 ?>
  <div class="rockfm-input7-wrap">
 		<div class="sfdc-form-group">
-		<div class="rockfm-input7-datepic sfdc-input-group date"
+		<div class="rockfm-input7-datepic input-group date"
 			 data-rkfm-showformat="<?php echo $input7['format']; ?>"
 				   data-rkfm-language="<?php echo $input7['language']; ?>"
 				   data-uifm-tabnum="<?php echo $tab_num; ?>"
@@ -27,7 +27,7 @@ ob_start();
 				   value=""
 				   name="uiform_fields[<?php echo $id; ?>]"
 				   class="sfdc-form-control">
-			<span class="sfdc-input-group-addon">
+			<span class="input-group-addon">
 				<span class="fa fa-calendar"></span>
 			</span>
 		</div>

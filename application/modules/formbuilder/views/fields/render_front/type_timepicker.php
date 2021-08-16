@@ -17,14 +17,14 @@ ob_start();
 ?>
  <div class="rockfm-input7-wrap">
 		<div class="sfdc-form-group">
-			<div class="rockfm-input7-timepic sfdc-input-group date"
+			<div class="rockfm-input7-timepic input-group date"
 				  data-uifm-tabnum="<?php echo $tab_num; ?>"
 				 >
 				<input type="text"
 						
 						name="uiform_fields[<?php echo $id; ?>]"
 						class="sfdc-form-control">
-				<span class="sfdc-input-group-addon">
+				<span class="input-group-addon">
 					<span class="sfdc-glyphicon sfdc-glyphicon-time"></span>
 				</span>
 			</div>

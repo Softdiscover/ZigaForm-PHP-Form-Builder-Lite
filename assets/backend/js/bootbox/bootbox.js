@@ -589,7 +589,7 @@
       onEscape: options.onEscape
     };
 
-    if ($.fn.modal === undefined) {
+    if ($.fn.sfdc_modal === undefined) {
       throw new Error(
         "$.fn.modal is not defined; please double check you have included " +
         "the Bootstrap JavaScript library. See http://getbootstrap.com/javascript/ " +

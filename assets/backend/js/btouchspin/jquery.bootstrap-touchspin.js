@@ -1,5 +1,6 @@
 /*
- *  Bootstrap TouchSpin - v3.0.1
+ * custom plugin v1.0 - softdiscover
+ *  original author: Bootstrap TouchSpin - v3.0.1
  *  A mobile and touch friendly input spinner component for Bootstrap 3.
  *  http://www.virtuosoft.eu/code/bootstrap-touchspin/
  *

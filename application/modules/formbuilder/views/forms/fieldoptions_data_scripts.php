@@ -1,4 +1,4 @@
-<?php
+		<?php
 		/**
 		 * Intranet
 		 *
@@ -11,9 +11,8 @@
 		 * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
 		 * @link      http://wordpress-form-builder.uiform.com/
 		 */
-if ( ! defined( 'BASEPATH' ) ) {
-	exit( 'No direct script access allowed' );}
-?>
+		if (!defined('BASEPATH')) {exit('No direct script access allowed');}
+		?>
 		<!-- options -->
 		&lt;script type=&quot;text/javascript&quot;&gt;
 zgfm_back_fld_options.selfld_field_opt_column();
@@ -52,10 +51,6 @@ zgfm_back_fld_options.selfld_field_opt_column();
 	
 	
 &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
    
  zgfm_back_fld_options.selfld_settings_form_more();
 
@@ -88,10 +83,6 @@ zgfm_back_fld_options.selfld_field_opt_column();
 	
 	
 &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
    
  zgfm_back_fld_options.selfld_settings_form_more();
 
@@ -124,10 +115,6 @@ zgfm_back_fld_options.selfld_field_opt_column();
 	
 	
 &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
    
  zgfm_back_fld_options.selfld_settings_form_more();
 
@@ -160,10 +147,6 @@ zgfm_back_fld_options.selfld_field_opt_column();
 	
 	
 &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
    
  zgfm_back_fld_options.selfld_settings_form_more();
 
@@ -196,10 +179,6 @@ zgfm_back_fld_options.selfld_field_opt_column();
 	
 	
 &lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;&lt;script type=&quot;text/javascript&quot;&gt;
    
  zgfm_back_fld_options.selfld_settings_form_more();
 

@@ -108,11 +108,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 
 				</div>
 				<div id="uifm-conditional-logic-list"></div>
-<script type="text/javascript">
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					</script>
+ 
 			</div>
 		</div>
 	</div>

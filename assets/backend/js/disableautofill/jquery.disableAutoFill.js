@@ -1,5 +1,6 @@
 /**
- * Jquery - DisableAutoFill plugin
+ * custom plugin v1.0 - softdiscover
+ * original author: Jquery - DisableAutoFill plugin
  * The easiest solution for disabling Google Chrome auto-fill, auto-complete functions.
  *
  * @license MIT
@@ -219,4 +220,4 @@
         },
     };
 
-})(jQuery);
+})($uifm);

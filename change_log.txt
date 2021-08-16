@@ -1,3 +1,14 @@
+version 5.4
+[note] - dompdf can not be upgraded because it requires php version 7.1. and the plugins support from wp 5.0+ and it requires 5.4
+[update] - inline css was removed except for the one that generated dynamically. also inline css was left for mail notification and pdf content.
+[update] - inline javascript was removed except for the ones that are generated dynamically. woocommerce plugin as reference. 
+[update] - all libraries updated.
+[update] - click() is a shorthand for .on( "click", handler ), so there is not need to change it. e.g. woocommerce, wordpress core
+[update] - All JavaScript are written with "use strict" mode on
+[update] - __() are used only for translation, not for scaping. e.g. woocommerce, wordpress core
+[update] - all functions has unique prefixes
+[update] - it is not adding en_US.mo or en_US.po
+-----------------------------------------------------------------------------------------------------------------
 Version 5.3.6
     [fixed] - ip shortcode
 -----------------------------------------------------------------------------------------------------------------

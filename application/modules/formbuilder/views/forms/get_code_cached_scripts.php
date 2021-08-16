@@ -26,7 +26,7 @@ ob_start();
 	<link href="<?php echo base_url(); ?>assets/backend/js/bslider/4.12.1/bootstrap-slider.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/backend/js/btouchspin/jquery.bootstrap-touchspin.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/js/flatpickr/4.6.2/flatpickr.min.css" rel="stylesheet">
-	<link href="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.7.14/bootstrap-datetimepicker.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.17.45/bootstrap-datetimepicker.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/backend/js/colorpicker/2.5/css/bootstrap-colorpicker.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/js/bselect/1.12.4/css/bootstrap-select-mod.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/js/checkradio/2.2.2/css/jquery.checkradios.css" rel="stylesheet">
@@ -64,13 +64,13 @@ ob_start();
 	?>
 		
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/js/bootstrap-sfdc.js"></script> 
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bslider/4.12.1/bootstrap-slider.min.js"></script> 
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bslider/4.12.1/bootstrap-slider.js"></script> 
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/bjasny/jasny-bootstrap.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/btouchspin/jquery.bootstrap-touchspin.js"></script> 
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/flatpickr/4.6.2/flatpickr.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/flatpickr/4.5.2/l10n/all-lang.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.7.14/moment-with-locales.js"></script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.7.14/bootstrap-datetimepicker.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/flatpickr/4.6.2/l10n/all-lang.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.17.45/moment-with-locales.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.17.45/bootstrap-datetimepicker.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bratestar/3.5.7/js/star-rating.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/colorpicker/2.5/js/bootstrap-colorpicker.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/bselect/1.12.4/js/bootstrap-select-mod.js"></script>

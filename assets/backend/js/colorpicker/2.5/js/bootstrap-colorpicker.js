@@ -1,5 +1,6 @@
 /*!
- * Bootstrap Colorpicker v2.5.1
+ * custom plugin v1.0 - softdiscover
+ * original author: Bootstrap Colorpicker v2.5.1
  * https://itsjavi.com/bootstrap-colorpicker/
  *
  * Originally written by (c) 2012 Stefan Petre

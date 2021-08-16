@@ -163,13 +163,6 @@ endforeach;
 		</div>
 	
 </div>
-<script type="text/javascript">
-//<![CDATA[
-jQuery(document).ready(function () {
-	
-});
-//]]>
-</script>
 <div style="display:none;">
 	<input type="hidden" id="uifm_bkp_msg_success_restore" value="<?php echo __( 'Database backup success', 'FRocket_admin' ); ?>" >
 	<input type="hidden" id="uifm_bkp_del_box_title" value="<?php echo __( 'Delete File selected', 'FRocket_admin' ); ?>" >

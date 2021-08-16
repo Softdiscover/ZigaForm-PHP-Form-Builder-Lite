@@ -1,5 +1,6 @@
 /* ===========================================================
- * bootstrap-checkbox - v.1.0.1
+ * custom plugin v1.0 - softdiscover
+ * original author : bootstrap-checkbox - v.1.0.1
  * ===========================================================
  * Copyright 2014 Roberto Montresor
  *
@@ -271,4 +272,4 @@
 	labelClassChecked: "active"
     };
 
-}(window.jQuery);
+}($uifm);

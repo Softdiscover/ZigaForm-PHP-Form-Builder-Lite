@@ -1,4 +1,6 @@
 /*!
+ * custom plugin v1.0 - softdiscover
+ * original author: Kartik Visweswaran
  * @copyright &copy; Kartik Visweswaran, Krajee.com, 2013 - 2015
  * @version 3.5.1
  *
@@ -499,4 +501,4 @@
             $input.rating();
         }
     });
-}(window.jQuery));
+}($uifm));

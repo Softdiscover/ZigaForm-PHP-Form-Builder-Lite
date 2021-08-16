@@ -2742,7 +2742,7 @@ msgstr "there is not backup stored. Create new one"
 msgid "Download"
 msgstr "Download"
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:89, application/modules/formbuilder/views/settings/backup_settings.php:176
+#: application/modules/formbuilder/views/settings/backup_settings.php:89, application/modules/formbuilder/views/settings/backup_settings.php:169
 msgid "Restore Backup"
 msgstr "Restore Backup"
 
@@ -2754,11 +2754,11 @@ msgstr "Upload Backup"
 msgid "Save changes"
 msgstr "Save changes"
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:174
+#: application/modules/formbuilder/views/settings/backup_settings.php:167
 msgid "Database backup success"
 msgstr "Database backup success"
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:175
+#: application/modules/formbuilder/views/settings/backup_settings.php:168
 msgid "Delete File selected"
 msgstr "Delete File selected"
 
@@ -3902,19 +3902,19 @@ msgstr "Add new conditional Logic"
 msgid "Remove all"
 msgstr "Remove all"
 
-#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:140, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:146
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:136, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:142
 msgid "is"
 msgstr "is"
 
-#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:141, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:147
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:137, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:143
 msgid "is not"
 msgstr "is not"
 
-#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:148
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:144
 msgid "greater than"
 msgstr "greater than"
 
-#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:149
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:145
 msgid "less than"
 msgstr "less than"
 

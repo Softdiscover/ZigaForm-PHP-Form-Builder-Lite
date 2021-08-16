@@ -2748,7 +2748,7 @@ msgstr "не существует формы. Добавить новый"
 msgid "Download"
 msgstr "Download"
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:89, application/modules/formbuilder/views/settings/backup_settings.php:176
+#: application/modules/formbuilder/views/settings/backup_settings.php:89, application/modules/formbuilder/views/settings/backup_settings.php:169
 msgid "Restore Backup"
 msgstr "Restore Backup"
 
@@ -2760,11 +2760,11 @@ msgstr "Upload Backup"
 msgid "Save changes"
 msgstr "Сохранить"
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:174
+#: application/modules/formbuilder/views/settings/backup_settings.php:167
 msgid "Database backup success"
 msgstr "Database backup success"
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:175
+#: application/modules/formbuilder/views/settings/backup_settings.php:168
 msgid "Delete File selected"
 msgstr "Удаление выбранного поля"
 
@@ -3910,19 +3910,19 @@ msgstr "Добавление новой условной логики"
 msgid "Remove all"
 msgstr "Удалить все"
 
-#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:140, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:146
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:136, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:142
 msgid "is"
 msgstr "равно"
 
-#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:141, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:147
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:137, application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:143
 msgid "is not"
 msgstr "не равно"
 
-#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:148
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:144
 msgid "greater than"
 msgstr "больше чем"
 
-#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:149
+#: application/modules/formbuilder/views/fields/modal/settings_form_clogic.php:145
 msgid "less than"
 msgstr "меньше чем"
 

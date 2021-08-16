@@ -25,7 +25,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<meta name="robots" content="noindex">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta name="author" content="Softdiscover Company">
-	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/common/img/favicon.ico" type="image/x-icon"/>
+	<link rel="shortcut icon" href="<?php echo base_url(); ?>assets/backend/images/favicon.ico" type="image/x-icon"/>
 	<!-- bootstrap -->
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/bootstrap-theme.css" rel="stylesheet">
@@ -47,7 +47,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/backend/js/jscrollpane/jquery.jscrollpane.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/backend/js/jscrollpane/jquery.jscrollpane.lozenge.css" rel="stylesheet">
 	<!-- chosen -->
-	<link href="<?php echo base_url(); ?>assets/backend/js/chosen/chosen.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/backend/js/chosen/1.8.7/chosen.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/backend/js/chosen/style.css" rel="stylesheet">
 	<!-- color picker -->
 	<link href="<?php echo base_url(); ?>assets/backend/js/colorpicker/2.5/css/bootstrap-colorpicker.css" rel="stylesheet">
@@ -62,7 +62,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<!-- bootstrap icon picker -->
 	<link href="<?php echo base_url(); ?>assets/backend/js/biconpicker/1.9.0/css/bootstrap-iconpicker.css" rel="stylesheet">
 	<!-- bootstrap date time picker -->
-	<link href="<?php echo base_url(); ?>assets/backend/js/bdatetime/bootstrap-datetimepicker.css" rel="stylesheet">
+	<link href="<?php echo base_url(); ?>assets/backend/js/bdatetime/4.17.45/bootstrap-datetimepicker.css" rel="stylesheet">
 	<!-- star rating -->
 	<link href="<?php echo base_url(); ?>assets/backend/js/bratestar/star-rating.css" rel="stylesheet">
 	<!-- data tables -->
@@ -95,7 +95,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>extensions/elfinder2/codemirror/lib/codemirror.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>extensions/elfinder2/codemirror/theme/3024-day.css" rel="stylesheet">
 	
-	<link rel="Favicon Icon" href="favicon.ico">
+	
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>

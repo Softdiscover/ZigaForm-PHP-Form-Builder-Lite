@@ -1,5 +1,6 @@
 /*! =========================================================
- * bootstrap-slider.js
+ * custom plugin v1.0 - softdiscover
+ * original author: bootstrap-slider.js
  *
  * Maintainers:
  *		Kyle Kemp
@@ -483,9 +484,9 @@
 				// Reset classes
 				this._removeClass(this.sliderElem, 'slider-horizontal');
 				this._removeClass(this.sliderElem, 'slider-vertical');
-				this._removeClass(this.tooltip, 'sfdc-hide');
-				this._removeClass(this.tooltip_min, 'sfdc-hide');
-				this._removeClass(this.tooltip_max, 'sfdc-hide');
+				this._removeClass(this.tooltip, 'hide');
+				this._removeClass(this.tooltip_min, 'hide');
+				this._removeClass(this.tooltip_max, 'hide');
 
 				// Undo existing inline styles for track
 				["left", "top", "width", "height"].forEach(function(prop) {
@@ -564,9 +565,9 @@
 			this.trackHigh = sliderTrackHigh || this.trackHigh;
 
 			if (this.options.selection === 'none') {
-				this._addClass(this.trackLow, 'sfdc-hide');
-				this._addClass(this.trackSelection, 'sfdc-hide');
-				this._addClass(this.trackHigh, 'sfdc-hide');
+				this._addClass(this.trackLow, 'hide');
+				this._addClass(this.trackSelection, 'hide');
+				this._addClass(this.trackHigh, 'hide');
 			}
 
 			this.handle1 = sliderMinHandle || this.handle1;
@@ -619,10 +620,10 @@
 
 
 			// Bind tooltip-related handlers
-			if(this.options.tooltip === 'sfdc-hide') {
-				this._addClass(this.tooltip, 'sfdc-hide');
-				this._addClass(this.tooltip_min, 'sfdc-hide');
-				this._addClass(this.tooltip_max, 'sfdc-hide');
+			if(this.options.tooltip === 'hide') {
+				this._addClass(this.tooltip, 'hide');
+				this._addClass(this.tooltip_min, 'hide');
+				this._addClass(this.tooltip_max, 'hide');
 			} else if(this.options.tooltip === 'always') {
 				this._showTooltip();
 				this._alwaysShowTooltip = true;
@@ -1466,7 +1467,8 @@
 
 		*********************************/
 		if($) {
-			var namespace = $.fn.slider ? 'bootstrapSlider' : 'slider';
+			//var namespace = $.fn.slider ? 'bootstrapSlider' : 'slider';
+			namespace='bootstrapSlider';
 			$.bridget(namespace, Slider);
 		}
 

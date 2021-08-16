@@ -11,9 +11,8 @@
 		 * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
 		 * @link      http://wordpress-form-builder.uiform.com/
 		 */
-if ( ! defined( 'BASEPATH' ) ) {
-	exit( 'No direct script access allowed' );}
-?>
+		if (!defined('BASEPATH')) {exit('No direct script access allowed');}
+		?>
 		<!-- options -->
 		<script type="text/html" id="tmpl-zgfm-field-opt-type-1">&lt;div id=&quot;uifm-field-opt-content&quot;&gt;
 	&lt;input type=&quot;hidden&quot; id=&quot;uifm-field-selected-id&quot; value=&quot;&quot;&gt;
@@ -9335,7 +9334,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 					&lt;label class=&quot;sfdc-control-label&quot; for=&quot;&quot;&gt;
 						Help block text					&lt;/label&gt;
 					&lt;div class=&quot;sfdc-controls sfdc-form-group&quot;&gt;
-												  &lt;textarea 
+						 						 &lt;textarea 
 							class=&quot;uifm_tinymce_obj&quot;
 							name=&quot;uifm_fld_msc_text&quot;
 							id=&quot;uifm_fld_msc_text&quot;&gt;&lt;/textarea&gt;
@@ -9933,7 +9932,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 		&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
 			&lt;div class=&quot;sfdc-form-group&quot;&gt;
 				  
-											 &lt;label &gt;Enable Conditional logic&lt;/label&gt;
+					 						&lt;label &gt;Enable Conditional logic&lt;/label&gt;
 						&lt;div class=&quot;&quot;&gt;
 							&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
 								&lt;input 
@@ -9992,11 +9991,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-conditional-logic-list&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;
+ 
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
@@ -15066,7 +15061,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 					&lt;label class=&quot;sfdc-control-label&quot; for=&quot;&quot;&gt;
 						Help block text					&lt;/label&gt;
 					&lt;div class=&quot;sfdc-controls sfdc-form-group&quot;&gt;
-												  &lt;textarea 
+						 						 &lt;textarea 
 							class=&quot;uifm_tinymce_obj&quot;
 							name=&quot;uifm_fld_msc_text&quot;
 							id=&quot;uifm_fld_msc_text&quot;&gt;&lt;/textarea&gt;
@@ -15664,7 +15659,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 		&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
 			&lt;div class=&quot;sfdc-form-group&quot;&gt;
 				  
-											 &lt;label &gt;Enable Conditional logic&lt;/label&gt;
+					 						&lt;label &gt;Enable Conditional logic&lt;/label&gt;
 						&lt;div class=&quot;&quot;&gt;
 							&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
 								&lt;input 
@@ -15723,11 +15718,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-conditional-logic-list&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;
+ 
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
@@ -20797,7 +20788,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 					&lt;label class=&quot;sfdc-control-label&quot; for=&quot;&quot;&gt;
 						Help block text					&lt;/label&gt;
 					&lt;div class=&quot;sfdc-controls sfdc-form-group&quot;&gt;
-												  &lt;textarea 
+						 						 &lt;textarea 
 							class=&quot;uifm_tinymce_obj&quot;
 							name=&quot;uifm_fld_msc_text&quot;
 							id=&quot;uifm_fld_msc_text&quot;&gt;&lt;/textarea&gt;
@@ -21395,7 +21386,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 		&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
 			&lt;div class=&quot;sfdc-form-group&quot;&gt;
 				  
-											 &lt;label &gt;Enable Conditional logic&lt;/label&gt;
+					 						&lt;label &gt;Enable Conditional logic&lt;/label&gt;
 						&lt;div class=&quot;&quot;&gt;
 							&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
 								&lt;input 
@@ -21454,11 +21445,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-conditional-logic-list&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;
+ 
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
@@ -26629,7 +26616,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 					&lt;label class=&quot;sfdc-control-label&quot; for=&quot;&quot;&gt;
 						Help block text					&lt;/label&gt;
 					&lt;div class=&quot;sfdc-controls sfdc-form-group&quot;&gt;
-												  &lt;textarea 
+						 						 &lt;textarea 
 							class=&quot;uifm_tinymce_obj&quot;
 							name=&quot;uifm_fld_msc_text&quot;
 							id=&quot;uifm_fld_msc_text&quot;&gt;&lt;/textarea&gt;
@@ -27227,7 +27214,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 		&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
 			&lt;div class=&quot;sfdc-form-group&quot;&gt;
 				  
-											 &lt;label &gt;Enable Conditional logic&lt;/label&gt;
+					 						&lt;label &gt;Enable Conditional logic&lt;/label&gt;
 						&lt;div class=&quot;&quot;&gt;
 							&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
 								&lt;input 
@@ -27286,11 +27273,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-conditional-logic-list&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;
+ 
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
@@ -32461,7 +32444,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 					&lt;label class=&quot;sfdc-control-label&quot; for=&quot;&quot;&gt;
 						Help block text					&lt;/label&gt;
 					&lt;div class=&quot;sfdc-controls sfdc-form-group&quot;&gt;
-												  &lt;textarea 
+						 						 &lt;textarea 
 							class=&quot;uifm_tinymce_obj&quot;
 							name=&quot;uifm_fld_msc_text&quot;
 							id=&quot;uifm_fld_msc_text&quot;&gt;&lt;/textarea&gt;
@@ -33059,7 +33042,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 		&lt;div class=&quot;sfdc-col-md-12&quot;&gt;
 			&lt;div class=&quot;sfdc-form-group&quot;&gt;
 				  
-											 &lt;label &gt;Enable Conditional logic&lt;/label&gt;
+					 						&lt;label &gt;Enable Conditional logic&lt;/label&gt;
 						&lt;div class=&quot;&quot;&gt;
 							&lt;div class=&quot;sfdc-col-md-6&quot;&gt;
 								&lt;input 
@@ -33118,11 +33101,7 @@ zgfm_back_fld_options.selfld_field_opt_column();
 
 				&lt;/div&gt;
 				&lt;div id=&quot;uifm-conditional-logic-list&quot;&gt;&lt;/div&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
-						/*jQuery(document).ready(function($) {
-							$('.chosen-select').chosen();
-						});*/
-					&lt;/script&gt;
+ 
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;

@@ -1,5 +1,6 @@
 /*!
- * Bootstrap-select v1.5.4 (http://silviomoreto.github.io/bootstrap-select/)
+ * custom plugin v1.0 - softdiscover
+ * original author: Bootstrap-select v1.5.4 (http://silviomoreto.github.io/bootstrap-select/)
  *
  * Copyright 2013-2014 bootstrap-select
  * Licensed under MIT (https://github.com/silviomoreto/bootstrap-select/blob/master/LICENSE)

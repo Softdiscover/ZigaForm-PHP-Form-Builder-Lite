@@ -603,7 +603,7 @@ $default_template = ob_get_clean();
 //<![CDATA[
 
  
-jQuery(document).ready(function ($) {
+$uifm(document).ready(function ($) {
 	
   
 	$('#uifm_frm_email_usr_sendst').on('switchChange.bootstrapSwitchZgpb', function(event, state) {

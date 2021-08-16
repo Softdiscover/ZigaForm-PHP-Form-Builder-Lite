@@ -1,5 +1,8 @@
 /*
-	CHECKRADIOS - jQuery plugin to allow custom styling of checkboxes
+
+ * custom plugin v1.0 - softdiscover
+ 
+	Original author: CHECKRADIOS - jQuery plugin to allow custom styling of checkboxes
 	by Chris McGuckin (https://github.com/cosmicwheels)
 	
 	

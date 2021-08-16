@@ -1,5 +1,6 @@
 /*!========================================================================
-* File: bootstrap-iconpicker.js v1.9.0 by @victor-valencia
+* custom plugin v1.0 - softdiscover
+* original: bootstrap-iconpicker.js v1.9.0 by @victor-valencia
 * https://victor-valencia.github.com/bootstrap-iconpicker
 * ========================================================================
 * Copyright 2013-2017 Victor Valencia Rico.
