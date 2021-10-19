@@ -128,7 +128,11 @@ if (!$uifm.isFunction(rocketform)) {
 				},
 				num_tabs: 1,
 				steps: {
-					tab_title: [],
+					tab_title: [
+						{
+						'title': 'Tab title 1'
+						}
+					],
 					tab_cont: [],
 				},
 				steps_src: [],

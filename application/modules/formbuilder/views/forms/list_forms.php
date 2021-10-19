@@ -95,7 +95,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					<div class="uiform-listform-options-col">
 						<a class="sfdc-btn sfdc-btn-sm sfdc-btn-primary" 
 						   data-target="#zgfm-listform-filter-panel"
-						   data-toggle="collapse"
+						   data-toggle="sfdc-collapse"
 						href="javascript:void(0);">
 							<span class="sfdc-glyphicon sfdc-glyphicon-cog"></span>
 						<?php echo __( 'Advanced Search', 'FRocket_admin' ); ?>
@@ -104,7 +104,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					  
 				</div>
 				<div class="zgfm-listform-searchbox-container">
-					 <div id="zgfm-listform-filter-panel" class="collapse filter-panel">
+					 <div id="zgfm-listform-filter-panel" class="sfdc-collapse filter-panel">
 						<div class="sfdc-panel sfdc-panel-default">
 							<div class="sfdc-panel-body">
 								<form id="zgfm-listform-filter-panel-form" class="sfdc-form-inline" role="form">

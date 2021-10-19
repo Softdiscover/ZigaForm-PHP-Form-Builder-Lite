@@ -86,7 +86,10 @@ ob_start();
 		<?php } ?>
 		<?php if ( intval( $sublabel['bold'] ) === 1 ) { ?>
 			font-weight: bold;
-		<?php } ?>
+		<?php } else { ?>
+			font-weight: normal;
+		<?php } ?>  
+		
 		<?php if ( intval( $sublabel['italic'] ) === 1 ) { ?>
 			font-style:italic;
 		<?php } ?>

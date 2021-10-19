@@ -605,7 +605,7 @@ if (typeof $uifm === 'undefined') {
 
     this.$element
       .removeClass('sfdc-collapse')
-      .addClass('collapsing')[dimension](0)
+      .addClass('sfdc-collapsing')[dimension](0)
       .attr('aria-expanded', true)
 
     this.$trigger
@@ -617,7 +617,7 @@ if (typeof $uifm === 'undefined') {
     var complete = function () {
       this.$element
         .removeClass('sfdc-collapsing')
-        .addClass('sfdc-collapse in')[dimension]('')
+        .addClass('sfdc-collapse sfdc-in')[dimension]('')
       this.transitioning = 0
       this.$element
         .trigger('shown.bs.sfdc-collapse')
@@ -633,7 +633,7 @@ if (typeof $uifm === 'undefined') {
   }
 
   Collapse.prototype.hide = function () {
-    if (this.transitioning || !this.$element.hasClass('in')) return
+    if (this.transitioning || !this.$element.hasClass('sfdc-in')) return
 
     var startEvent = $.Event('hide.bs.sfdc-collapse')
     this.$element.trigger(startEvent)
@@ -685,7 +685,7 @@ if (typeof $uifm === 'undefined') {
   }
 
   Collapse.prototype.addAriaAndCollapsedClass = function ($element, $trigger) {
-    var isOpen = $element.hasClass('in')
+    var isOpen = $element.hasClass('sfdc-in')
 
     $element.attr('aria-expanded', isOpen)
     $trigger

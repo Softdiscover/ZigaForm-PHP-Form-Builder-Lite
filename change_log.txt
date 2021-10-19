@@ -1,3 +1,10 @@
+version 5.5.1
+[fixed] - advanced search fixed
+-----------------------------------------------------------------------------------------------------------------
+version 5.5
+- wizard form creation fixed
+- fixed- Font weight for sub label stuck on bold
+------------------------------------------------------------------------------------------------------------------
 version 5.4
 [note] - dompdf can not be upgraded because it requires php version 7.1. and the plugins support from wp 5.0+ and it requires 5.4
 [update] - inline css was removed except for the one that generated dynamically. also inline css was left for mail notification and pdf content.
