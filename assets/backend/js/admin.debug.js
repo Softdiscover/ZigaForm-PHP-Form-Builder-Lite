@@ -1344,7 +1344,7 @@ if (!$uifm.isFunction(rocketform)) {
 				var obj = $('#' + f_id);
 				if (obj) {
 					var el = obj.find('.uifm-txtbox-inp-val');
-					if (el.data && el.data('bs.popover')) {
+					if (el.data && el.data('bs.sfdc_popover')) {
 						el.popover('destroy');
 					}
 				}
@@ -1353,7 +1353,7 @@ if (!$uifm.isFunction(rocketform)) {
 				var tmp_popover = $('.uiform-main-form [aria-describedby^=popover]');
 				if (tmp_popover) {
 					$.each(tmp_popover, function(index, element) {
-						if ($(element).data && $(element).data('bs.popover')) {
+						if ($(element).data && $(element).data('bs.sfdc_popover')) {
 							$(element).popover('destroy');
 						}
 					});
@@ -1376,7 +1376,7 @@ if (!$uifm.isFunction(rocketform)) {
 						case 'label':
 						case 'input':
 						case 'helpb':
-							if (el.data && el.data('bs.popover')) {
+							if (el.data && el.data('bs.sfdc_popover')) {
 								el.popover('destroy');
 							}
 
@@ -1570,7 +1570,7 @@ if (!$uifm.isFunction(rocketform)) {
 					case 6:
 
 						var id_popover;
-						if (el.data && el.data('bs.popover')) {
+						if (el.data && el.data('bs.sfdc_popover')) {
 							el.popover('destroy');
 						}
 						el.popover({
@@ -1622,7 +1622,7 @@ if (!$uifm.isFunction(rocketform)) {
 						break;
 					default:
 						$('#uifm-custom-val-title-added').hide();
-						if (el.data && el.data('bs.popover')) {
+						if (el.data && el.data('bs.sfdc_popover')) {
 							el.popover('destroy');
 						}
 						break;

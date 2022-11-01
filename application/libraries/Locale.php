@@ -36,7 +36,7 @@ class CI_Locale {
 		$CI->load->library( 'form_validation' );
 		$CI->load->library( 'session' );
 		$CI->form_validation->set_rules( 'lang_select', 'lang_select', 'exact_length[2]' );
-		$this->lang_default = 'en_US';
+		$this->lang_default = 'en';
 
 		if ( $CI->input->post( 'lang_select' ) ) {
 
@@ -60,7 +60,7 @@ class CI_Locale {
 				if ( isset( $_SERVER['HTTP_ACCEPT_LANGUAGE'] ) ) {
 									$this->lang = substr( $_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2 );
 				} else {
-					$this->lang = 'en_US';
+					$this->lang = 'en';
 				}
 
 				if ( array_key_exists( $this->lang, $this->lang_allowed ) ) {

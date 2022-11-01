@@ -18,7 +18,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 
 ?>
 <!DOCTYPE html>
-<html lang="en" class="uiform-wrap">
+<html lang="en">
   <head>
 	<meta charset="utf-8">
 	<title><?php echo model_settings::$db_config['site_title']; ?> </title>
@@ -58,13 +58,12 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<script type="text/javascript">
 	var $uifm=jQuery.noConflict();
 	</script>
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/js/bootstrap.min.js"></script> 
-   
+	 
   <noscript>
 	   Powered by <a href="https://zigaform.com/?uifm_v=<?php echo model_settings::$db_config['version']; ?>" title="PHP Form Builder" >ZigaForm version <?php echo model_settings::$db_config['version']; ?></a>
    </noscript>
   </head>
-  <body class="sfdc-wrap" >
+  <body class="sfdc-wrap" style="margin:0!important;" >
    <div id="wrap" >
    <div class="sfdc-container theme-showcase wrapper wrapper-white">
 		<?php $this->load->view( 'frontend/header' ); ?> 

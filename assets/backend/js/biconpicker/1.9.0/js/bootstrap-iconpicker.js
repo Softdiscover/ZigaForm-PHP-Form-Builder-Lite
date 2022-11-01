@@ -86,7 +86,7 @@
             e.preventDefault();
             el.select($(this).val());
             if(op.inline === false){
-                el.$element.popover('destroy');
+                el.$element.sfdc_popover('destroy');
             }
             else{
                 op.table.find('i.' + $(this).val()).parent().addClass(op.selectedClass);
@@ -477,19 +477,19 @@
                     data.setIconset(op.iconset);
                     $this.on('click', function(e) {
                         e.preventDefault();
-                        $this.popover({
+                        $this.sfdc_popover({
                             animation: false,
                             trigger: 'manual',
                             html: true,
                             content: op.table,
                             container: 'body',
                             placement: op.placement
-                        }).on('shown.bs.popover', function () {
+                        }).on('shown.bs.sfdc_popover', function () {
                             data.switchPage(op.icon);
                             data.bindEvents();
                         });
-                        $this.data('bs.popover').tip().addClass('iconpicker-popover');
-                        $this.popover('show');
+                        $this.data('bs.sfdc_popover').tip().addClass('iconpicker-popover');
+                        $this.sfdc_popover('show');
                     });
                 }
                 else{
@@ -524,7 +524,7 @@
             //the 'is' for buttons that trigger popups
             //the 'has' for icons within a button that triggers a popup
             if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.sfdc-popover').has(e.target).length === 0) {
-                $(this).popover('destroy');
+                $(this).sfdc_popover('destroy');
             }
         });
     });

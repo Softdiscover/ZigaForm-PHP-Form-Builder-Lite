@@ -78,7 +78,7 @@ ob_start();
 			<!-- The container for the modal slides -->
 			<div class="slides"></div>
 			<!-- Controls for the borderless lightbox -->
-			<h3 class="title"></h3>
+			
 			<a class="prev">‹</a>
 			<a class="next">›</a>
 			<a class="close">×</a>

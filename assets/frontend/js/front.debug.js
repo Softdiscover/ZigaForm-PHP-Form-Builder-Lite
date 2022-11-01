@@ -211,7 +211,7 @@ if (!$uifm.isFunction(rocketfm)) {
 							el.removeClass('rockfm-required');
 							field_pop.removeClass('rockfm-val-error');
 
-							field_pop.popover('destroy');
+							field_pop.sfdc_popover('destroy');
 						} else {
 							el.addClass('rockfm-required');
 							if (!field_pop.hasClass('rockfm-val-error')) {
@@ -219,9 +219,9 @@ if (!$uifm.isFunction(rocketfm)) {
 							}
 
 							field_pop
-								.popover('destroy')
-								.popover(this.validate_applyPopOverOpt(el))
-								.popover('show');
+								.sfdc_popover('destroy')
+								.sfdc_popover(this.validate_applyPopOverOpt(el))
+								.sfdc_popover('show');
 						}
 						break;
 					case 8:
@@ -331,7 +331,7 @@ if (!$uifm.isFunction(rocketfm)) {
 								field_pop = el.find('.rockfm-input2-wrap');
 								break;
 							case 10:
-								if (el.find('.rockfm-input2-wrap select option:selected').val().length > 0) {
+								if (el.find('.rockfm-input2-wrap select option:selected').attr('data-uifm-inp-val').length > 0) {
 									field_value = '1';
 								} else {
 									field_value = '';
@@ -339,7 +339,7 @@ if (!$uifm.isFunction(rocketfm)) {
 								field_pop = el.find('.rockfm-input2-wrap');
 								break;
 							case 11:
-								if (el.find('.rockfm-input2-wrap select option:selected').length > 0) {
+								if (el.find('.rockfm-input2-wrap select option:selected').attr('data-uifm-inp-val').length > 0) {
 									field_value = '1';
 								} else {
 									field_value = '';
@@ -388,7 +388,7 @@ if (!$uifm.isFunction(rocketfm)) {
 							el.removeClass('rockfm-required');
 							field_pop.removeClass('rockfm-val-error');
 
-							field_pop.popover('destroy');
+							field_pop.sfdc_popover('destroy');
 						} else {
 
 							el.addClass('rockfm-required');
@@ -397,9 +397,9 @@ if (!$uifm.isFunction(rocketfm)) {
 							}
 
 							field_pop
-								.popover('destroy')
-								.popover(this.validate_applyPopOverOpt(el))
-								.popover('show');
+								.sfdc_popover('destroy')
+								.sfdc_popover(this.validate_applyPopOverOpt(el))
+								.sfdc_popover('show');
 						}
 						break;
 					case 0:
@@ -592,7 +592,7 @@ if (!$uifm.isFunction(rocketfm)) {
 						}
 					}
 
-					$('.popover').popover('hide');
+					$('.popover').sfdc_popover('hide');
 					if ($('.uiform-main-form [data-toggle="tooltip"]').length) {
 						$('.uiform-main-form [data-toggle="tooltip"]').tooltip('destroy');
 					}
@@ -698,13 +698,13 @@ if (!$uifm.isFunction(rocketfm)) {
 				} else {
 					var tmp_captcha = $(temp).find('.rockfm-inp6-captcha-inputcode');
 					var hidePopover = function() {
-						tmp_captcha.popover('hide');
+						tmp_captcha.sfdc_popover('hide');
 					};
 					tmp_captcha
-						.popover('destroy')
-						.popover(rocketfm.validate_applyPopOverOpt(tmp_captcha))
+						.sfdc_popover('destroy')
+						.sfdc_popover(rocketfm.validate_applyPopOverOpt(tmp_captcha))
 						.focus(hidePopover)
-						.popover('show');
+						.sfdc_popover('show');
 
 					if (String(uifmvariable.externalVars['fm_loadmode']) === 'iframe') {
 						if ('parentIFrame' in window) {
@@ -840,13 +840,13 @@ if (!$uifm.isFunction(rocketfm)) {
 				} else {
 					var tmp_captcha = $(temp).find('.rockfm-input5-wrap');
 					var hidePopover = function() {
-						tmp_captcha.popover('hide');
+						tmp_captcha.sfdc_popover('hide');
 					};
 					tmp_captcha
-						.popover('destroy')
-						.popover(rocketfm.validate_applyPopOverOpt(tmp_captcha))
+						.sfdc_popover('destroy')
+						.sfdc_popover(rocketfm.validate_applyPopOverOpt(tmp_captcha))
 						.focus(hidePopover)
-						.popover('show');
+						.sfdc_popover('show');
 
 
 					if (String(uifmvariable.externalVars['fm_loadmode']) === 'iframe') {
@@ -1339,7 +1339,7 @@ if (!$uifm.isFunction(rocketfm)) {
 				var tmp_popover = $('.uiform-main-form [aria-describedby^=popover]');
 				if (tmp_popover) {
 					$.each(tmp_popover, function(index, element) {
-						$(element).popover('destroy');
+						$(element).sfdc_popover('destroy');
 					});
 				}
 			};
@@ -1522,7 +1522,7 @@ if (!$uifm.isFunction(rocketfm)) {
 						parentIFrame.size(); 
 					}
 				}
-				$('.popover').popover('hide');
+				$('.popover').sfdc_popover('hide');
 
 				this.refresh_fields();
 			};

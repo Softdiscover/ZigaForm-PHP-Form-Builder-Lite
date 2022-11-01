@@ -1794,7 +1794,7 @@ if (typeof $uifm === 'undefined') {
   // ===============================
 
   var Popover = function (element, options) {
-    this.init('popover', element, options)
+    this.init('sfdc_popover', element, options)
   }
 
   if (!$.fn.tooltip) throw new Error('Popover requires tooltip.js')
@@ -1862,26 +1862,26 @@ if (typeof $uifm === 'undefined') {
   function Plugin(option) {
     return this.each(function () {
       var $this   = $(this)
-      var data    = $this.data('bs.popover')
+      var data    = $this.data('bs.sfdc_popover')
       var options = typeof option == 'object' && option
 
       if (!data && /destroy|hide/.test(option)) return
-      if (!data) $this.data('bs.popover', (data = new Popover(this, options)))
+      if (!data) $this.data('bs.sfdc_popover', (data = new Popover(this, options)))
       if (typeof option == 'string') data[option]()
     })
   }
 
-  var old = $.fn.popover
+  var old = $.fn.sfdc_popover
 
-  $.fn.popover             = Plugin
-  $.fn.popover.Constructor = Popover
+  $.fn.sfdc_popover             = Plugin
+  $.fn.sfdc_popover.Constructor = Popover
 
 
   // POPOVER NO CONFLICT
   // ===================
 
-  $.fn.popover.noConflict = function () {
-    $.fn.popover = old
+  $.fn.sfdc_popover.noConflict = function () {
+    $.fn.sfdc_popover = old
     return this
   }
 
