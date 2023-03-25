@@ -113,7 +113,7 @@ class Uiform_Form_Helper {
 	 * @return array
 	 */
 	public static function sanitizeInput( $string ) {
-		$string = filter_var( $string, FILTER_SANITIZE_STRING );
+		$string = filter_var( $string, FILTER_SANITIZE_FULL_SPECIAL_CHARS );
 		$string = stripslashes( $string );
 		$string = str_replace( array( '‘', '’', '“', '”' ), array( "'", "'", '"', '"' ), $string );
 		$string = html_entity_decode( $string, ENT_QUOTES, 'UTF-8' );

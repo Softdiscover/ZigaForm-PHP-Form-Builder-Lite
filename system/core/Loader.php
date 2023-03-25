@@ -995,8 +995,10 @@ class CI_Loader {
 					log_message('debug', $class." class already loaded. Second attempt ignored.");
 					return;
 				}
-
+			 
+				
 				include_once($filepath);
+				
 				$this->_ci_loaded_files[] = $filepath;
 				return $this->_ci_init_class($class, '', $params, $object_name);
 			}

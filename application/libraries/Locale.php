@@ -7,10 +7,17 @@ Must be declare in /application/config/autoload.php in the
 $autoload['libraries'] = array('your_other libraires','locale');
 */
 
-require_once APPPATH . 'helpers/Gettext/src/autoloader.php';
+if (version_compare(PHP_VERSION, '8.0.0') >= 0) {
+	require_once APPPATH . 'helpers/Gettext-4.8.8/src/autoloader.php';
+} else{
+	require_once APPPATH . 'helpers/Gettext/src/autoloader.php';
+}
+
 require_once APPPATH . 'helpers/cldr-to-gettext-plural-rules/src/autoloader.php';
 
+
 use Gettext\Translator;
+ 
 
 class CI_Locale {
 

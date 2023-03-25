@@ -272,7 +272,7 @@ class Records extends BackendController {
 						case 12:
 						case 13:
 							// checking if image exists
-							if ( @is_array( getimagesize( $value2 ) ) ) {
+							if ( !empty($value_new) && @is_array( getimagesize( $value2 ) ) ) {
 								 $new_record[ $key ][ $key2 ] = '<img width="100px" src="' . $value2 . '"/>';
 							}
 							break;

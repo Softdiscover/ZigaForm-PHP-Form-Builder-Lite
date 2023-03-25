@@ -326,7 +326,7 @@ $config['csrf_protection']  = true;
 $config['csrf_token_name']  = 'csrf_field_name';
 $config['csrf_cookie_name'] = 'csrfcookiename';
 $config['csrf_expire']      = 7200;
-$config['csrf_ignore']      = array( 'uiformbuilder','addon_mgtranslate' );
+$config['csrf_ignore']      = array( 'uiformbuilder' , 'addon_mgtranslate' );
 /*
 |--------------------------------------------------------------------------
 | Output Compression
@@ -390,7 +390,7 @@ $config['proxy_ips']             = '';
 $config['wysiwyg']               = 'tinymce';
 $config['admin_assets_path']     = $config['base_url'] . 'assets/';
 $config['cmscs_version']         = '1.0.1';
-$config['uiform_url_ssl']        = false;
+$config['uiform_url_ssl']        = TRUE ;
 /*
  End of file config.php */
 /* Location: ./application/config/config.php */
