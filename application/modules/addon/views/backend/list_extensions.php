@@ -44,7 +44,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 														<?php
 														if ( ZIGAFORM_F_LITE === 0 || strval( $value->add_name ) === 'woocommerce' || strval( $value->add_name ) === 'mgtranslate' ) {
 															?>
-															<?php if ( version_compare( PHP_VERSION, $value->required_php, '>=' ) ) { ?>
+															<?php if ( !isset($value->required_wp) || version_compare( PHP_VERSION, $value->required_php, '>=' ) ) { ?>
 																	<?php if ( intval( $value->flag_status ) === 0 ) { ?>
 																	<!-- Indicates a successful or positive action -->
 																			<button data-status='1' onclick="javascript:zgfm_back_addon.listaddon_changeStatus(this);" type="button" class="btn btn-success"><?php echo __( 'Enable', 'FRocket_admin' ); ?></button>

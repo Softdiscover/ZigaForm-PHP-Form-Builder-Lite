@@ -1,5 +1,5 @@
-# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.5.9
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.5.9 package.
+# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.7.0
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.7.0 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -1920,7 +1920,7 @@ msgstr "Имя формы"
 msgid "Copy and paste the shortcode to your desired page"
 msgstr "Скопировать и вставить короткий номер для требуемой страницы"
 
-#: application/modules/formbuilder/views/forms/list_forms_table.php:40, application/modules/formbuilder/views/records/list_records.php:37, application/modules/formbuilder/views/settings/system_check.php:53, application/modules/user/views/intranet/createuser.php:63, application/modules/user/views/intranet/index.php:47
+#: application/modules/formbuilder/views/forms/list_forms_table.php:40, application/modules/formbuilder/views/records/list_records.php:37, application/modules/formbuilder/views/settings/system_check.php:57, application/modules/user/views/intranet/createuser.php:63, application/modules/user/views/intranet/index.php:47
 msgid "Status"
 msgstr "Статус"
 
@@ -2790,19 +2790,19 @@ msgstr "UPGRADE TO PRO VERSION"
 msgid "System check"
 msgstr "System check"
 
-#: application/modules/formbuilder/views/settings/system_check.php:43
+#: application/modules/formbuilder/views/settings/system_check.php:47
 msgid "Database Integrity"
 msgstr "Database Integrity"
 
-#: application/modules/formbuilder/views/settings/system_check.php:99
+#: application/modules/formbuilder/views/settings/system_check.php:103
 msgid "Database is fine"
 msgstr "Database is fine"
 
-#: application/modules/formbuilder/views/settings/system_check.php:52
+#: application/modules/formbuilder/views/settings/system_check.php:56
 msgid "Tables"
 msgstr "Планшет"
 
-#: application/modules/formbuilder/views/settings/system_check.php:90
+#: application/modules/formbuilder/views/settings/system_check.php:94
 msgid ""
 "if you see a red status for any table, it means the software installation "
 "have failed. try making a fresh install or contact developer for support"
@@ -2810,27 +2810,27 @@ msgstr ""
 "if you see a red status for any table, it means the software installation "
 "have failed. try making a fresh install or contact developer for support"
 
-#: application/modules/formbuilder/views/settings/system_check.php:117
+#: application/modules/formbuilder/views/settings/system_check.php:122
 msgid "Directives"
 msgstr "Активировать"
 
-#: application/modules/formbuilder/views/settings/system_check.php:120
+#: application/modules/formbuilder/views/settings/system_check.php:125
 msgid "allow_url_fopen"
 msgstr "allow_url_fopen"
 
-#: application/modules/formbuilder/views/settings/system_check.php:131
+#: application/modules/formbuilder/views/settings/system_check.php:136
 msgid "allow_url_fopen php directive is disabled and Recaptcha will not work"
 msgstr "allow_url_fopen php directive is disabled and Recaptcha will not work"
 
-#: application/modules/formbuilder/views/settings/system_check.php:142
+#: application/modules/formbuilder/views/settings/system_check.php:147
 msgid "PHP Extensions"
 msgstr "PHP Extensions"
 
-#: application/modules/formbuilder/views/settings/system_check.php:145
+#: application/modules/formbuilder/views/settings/system_check.php:150
 msgid "Simple XML"
 msgstr "Simple XML"
 
-#: application/modules/formbuilder/views/settings/system_check.php:156
+#: application/modules/formbuilder/views/settings/system_check.php:161
 msgid ""
 "simplexml extension is important for the software. ask your webhost if this "
 "extension is not installed"

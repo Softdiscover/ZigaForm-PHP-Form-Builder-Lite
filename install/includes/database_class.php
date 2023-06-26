@@ -54,15 +54,20 @@ class Database {
 					   // die('Could not select database: ' . mysql_error());
 					   return false;
 			}
-
+			
+			//get mysql version
+			$mysql_version     = mysql_get_server_version(); // phpcs:ignore
+				
 						  // Temporary variable, used to store current query
 						  $templine = '';
-			if ( ZIGAFORM_F_LITE === 1 ) {
-				$lines = file( 'db/structure_lite.sql' );
-			} else {
+			
+			if ($mysql_version < 80000) {
 				$lines = file( 'db/structure.sql' );
+			}else{
+				$lines = file( 'db/structure_mysql8.sql' );
 			}
-
+			
+			
 						  // Loop through each line
 			foreach ( $lines as $line ) {
 				// Skip it if it's a comment
@@ -90,13 +95,16 @@ class Database {
 			if ( mysqli_connect_errno() ) {
 					return false;
 			}
-
-			if ( ZIGAFORM_F_LITE === 1 ) {
-				$query2 = file_get_contents( 'db/structure_lite.sql' );
-			} else {
+			
+			//get mysqli version
+			$mysql_version     = mysqli_get_server_version( $mysqli );
+			 
+			if ($mysql_version < 80000) {
 				$query2 = file_get_contents( 'db/structure.sql' );
+			}else{
+				$query2 = file_get_contents( 'db/structure_mysql8.sql' );
 			}
-
+			 
 			// Execute a multi query
 			$mysqli->multi_query( $query2 );
 
@@ -108,7 +116,9 @@ class Database {
 		}
 
 	}
-
+	
+ 
+	
 	function save_settings( $data ) {
 		$message = '';
 		$status  = false;

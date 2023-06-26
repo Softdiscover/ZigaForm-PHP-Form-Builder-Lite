@@ -5,24 +5,24 @@ SET FOREIGN_KEY_CHECKS=0;
 -- ----------------------------
 DROP TABLE IF EXISTS `fbcf_uiform_fields`;
 CREATE TABLE `fbcf_uiform_fields` (
-  `fmf_id` int(10) NOT NULL AUTO_INCREMENT,
+  `fmf_id` int NOT NULL AUTO_INCREMENT,
   `fmf_uniqueid` varchar(255) DEFAULT NULL,
   `fmf_data` longtext,
   `fmf_fieldname` varchar(255) DEFAULT NULL,
-  `flag_status` smallint(5) DEFAULT NULL,
+  `flag_status` smallint DEFAULT NULL,
   `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(100) DEFAULT NULL,
   `updated_ip` varchar(100) DEFAULT NULL,
   `created_by` varchar(100) DEFAULT NULL,
   `updated_by` varchar(100) DEFAULT NULL,
-  `fmf_status_qu` smallint(5) NOT NULL DEFAULT '0',
-  `type_fby_id` int(6) NOT NULL,
-  `form_fmb_id` int(10) NOT NULL,
-  `order_frm` smallint(5) DEFAULT NULL,
-  `order_rec` smallint(5) DEFAULT NULL,
+  `fmf_status_qu` smallint NOT NULL DEFAULT '0',
+  `type_fby_id` int NOT NULL,
+  `form_fmb_id` int NOT NULL,
+  `order_frm` smallint DEFAULT NULL,
+  `order_rec` smallint DEFAULT NULL,
   PRIMARY KEY (`fmf_id`,`form_fmb_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of fbcf_uiform_fields
@@ -33,9 +33,9 @@ CREATE TABLE `fbcf_uiform_fields` (
 -- ----------------------------
 DROP TABLE IF EXISTS `fbcf_uiform_fields_type`;
 CREATE TABLE `fbcf_uiform_fields_type` (
-  `fby_id` int(6) NOT NULL AUTO_INCREMENT,
+  `fby_id` int NOT NULL AUTO_INCREMENT,
   `fby_name` varchar(25) DEFAULT NULL,
-  `flag_status` smallint(5) DEFAULT NULL,
+  `flag_status` smallint DEFAULT NULL,
   `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(100) DEFAULT NULL,
@@ -43,7 +43,7 @@ CREATE TABLE `fbcf_uiform_fields_type` (
   `created_by` varchar(100) DEFAULT NULL,
   `updated_by` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`fby_id`)
-) AUTO_INCREMENT=43 DEFAULT CHARSET=utf8;
+) AUTO_INCREMENT=43 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of fbcf_uiform_fields_type
@@ -97,12 +97,12 @@ INSERT INTO `fbcf_uiform_fields_type` VALUES ('43', 'Date 2', '1', '1980-01-01 0
 -- ----------------------------
 DROP TABLE IF EXISTS `fbcf_uiform_form`;
 CREATE TABLE `fbcf_uiform_form` (
-  `fmb_id` int(10) NOT NULL AUTO_INCREMENT,
+  `fmb_id` int NOT NULL AUTO_INCREMENT,
   `fmb_data` longtext,
   `fmb_name` VARCHAR(255) DEFAULT NULL,
   `fmb_html` longtext,
   `fmb_html_backend` longtext,
-  `flag_status` smallint(5) DEFAULT '1',
+  `flag_status` smallint DEFAULT '1',
   `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(100) DEFAULT NULL,
@@ -110,15 +110,15 @@ CREATE TABLE `fbcf_uiform_form` (
   `created_by` varchar(100) DEFAULT NULL,
   `updated_by` varchar(100) DEFAULT NULL,
   `fmb_html_css` longtext,
-  `fmb_default` tinyint(1) DEFAULT '0',
-  `fmb_skin_status` tinyint(1) DEFAULT '0',
+  `fmb_default` tinyint DEFAULT '0',
+  `fmb_skin_status` tinyint DEFAULT '0',
   `fmb_skin_data` longtext,
-  `fmb_skin_type` smallint(5) DEFAULT '1',
+  `fmb_skin_type` smallint DEFAULT '1',
   `fmb_data2` longtext,
-    `fmb_rec_tpl_html` longtext NULL ,
-    `fmb_rec_tpl_st` TINYINT(1) NULL DEFAULT 0 ,
+  `fmb_rec_tpl_html` longtext NULL ,
+  `fmb_rec_tpl_st` tinyint NULL DEFAULT 0 ,
   PRIMARY KEY (`fmb_id`)
-) AUTO_INCREMENT=1 DEFAULT CHARSET=utf8;
+) AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of fbcf_uiform_form
@@ -129,15 +129,15 @@ CREATE TABLE `fbcf_uiform_form` (
 -- ----------------------------
 DROP TABLE IF EXISTS `fbcf_uiform_form_records`;
 CREATE TABLE `fbcf_uiform_form_records` (
-  `fbh_id` int(6) NOT NULL AUTO_INCREMENT,
+  `fbh_id` int NOT NULL AUTO_INCREMENT,
   `fbh_data` longtext,
   `fbh_data_rec` longtext,
   `created_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(100) DEFAULT NULL,
   `created_by` varchar(100) DEFAULT NULL,
-  `flag_status` smallint(5) DEFAULT '1',
+  `flag_status` smallint DEFAULT '1',
   `fbh_data_user` longtext,
-  `form_fmb_id` int(10) NOT NULL,
+  `form_fmb_id` int NOT NULL,
   `fbh_data_rec_xml` longtext,
   `fbh_user_agent` text,
   `fbh_page` text,
@@ -145,7 +145,7 @@ CREATE TABLE `fbcf_uiform_form_records` (
   `fbh_params` longtext,
   `fbh_error` longtext,
   PRIMARY KEY (`fbh_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of fbcf_uiform_form_records
@@ -157,36 +157,36 @@ CREATE TABLE `fbcf_uiform_form_records` (
 DROP TABLE IF EXISTS `fbcf_uiform_settings`;
 CREATE TABLE `fbcf_uiform_settings` (
   `version` varchar(10) DEFAULT NULL,
-  `type_email` smallint(1) DEFAULT NULL,
+  `type_email` smallint DEFAULT NULL,
   `smtp_host` varchar(255) DEFAULT NULL,
-  `smtp_port` smallint(6) DEFAULT NULL,
+  `smtp_port` smallint DEFAULT NULL,
   `smtp_user` varchar(255) DEFAULT NULL,
   `smtp_pass` varchar(255) DEFAULT NULL,
   `smtp_conn` varchar(255) DEFAULT NULL,
   `sendmail_path` varchar(255) DEFAULT NULL,
   `language` varchar(45) DEFAULT NULL,
-  `id` int(1) NOT NULL AUTO_INCREMENT,
+  `id` int NOT NULL AUTO_INCREMENT,
   `site_title` varchar(250) DEFAULT NULL,
   `admin_mail` varchar(250) DEFAULT NULL,
   `created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `updated_date` timestamp NULL DEFAULT '1980-01-01 00:00:01',
   PRIMARY KEY (`id`)
-) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of fbcf_uiform_settings
 -- ----------------------------
-INSERT INTO `fbcf_uiform_settings` VALUES ('5.6.3', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
+INSERT INTO `fbcf_uiform_settings` VALUES ('5.7.0', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
 
 -- ----------------------------
 -- Table structure for `fbcf_uiform_user`
 -- ----------------------------
 DROP TABLE IF EXISTS `fbcf_uiform_user`;
 CREATE TABLE `fbcf_uiform_user` (
-  `use_id` int(6) NOT NULL AUTO_INCREMENT,
+  `use_id` int NOT NULL AUTO_INCREMENT,
   `use_login` varchar(250) DEFAULT NULL,
   `use_password` varchar(32) DEFAULT NULL,
-  `flag_status` smallint(5) DEFAULT NULL,
+  `flag_status` smallint DEFAULT NULL,
   `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(100) DEFAULT NULL,
@@ -196,7 +196,7 @@ CREATE TABLE `fbcf_uiform_user` (
   `use_password_token` varchar(32) DEFAULT NULL,
   `use_mail` varchar(250) DEFAULT NULL,
   PRIMARY KEY (`use_id`)
-) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of fbcf_uiform_user
@@ -208,32 +208,32 @@ INSERT INTO `fbcf_uiform_user` VALUES ('1', 'admin', '21232f297a57a5a743894a0e4a
 -- ----------------------------
 DROP TABLE IF EXISTS `fbcf_uiform_visitor`;
 CREATE TABLE `fbcf_uiform_visitor` (
-  `vis_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `vis_id` bigint NOT NULL AUTO_INCREMENT,
   `vis_uniqueid` varchar(10) DEFAULT NULL,
   `vis_user_agent` varchar(200) DEFAULT NULL,
   `vis_page` text,
   `vis_referer` text,
   `vis_ip` text,
   `vis_last_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `vis_params` text,
-  `vis_error` text,
+  `vis_params` longtext,
+  `vis_error` longtext,
   PRIMARY KEY (`vis_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of fbcf_uiform_visitor
 -- ----------------------------
 DROP TABLE IF EXISTS `fbcf_uiform_form_log`;
 CREATE TABLE `fbcf_uiform_form_log` (
-  `log_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `log_id` bigint NOT NULL AUTO_INCREMENT,
   `log_frm_data` longtext,
   `log_frm_name` varchar(255) DEFAULT NULL,
   `log_frm_html` longtext,
   `log_frm_html_backend` longtext,
   `log_frm_html_css` longtext,
-  `log_frm_id` int(10) NOT NULL,
+  `log_frm_id` int NOT NULL,
   `log_frm_hash` varchar(255) NOT NULL,
-  `flag_status` smallint(5) DEFAULT '1',
+  `flag_status` smallint DEFAULT '1',
   `created_date` timestamp NULL,
   `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `created_ip` varchar(100) DEFAULT NULL,
@@ -241,23 +241,23 @@ CREATE TABLE `fbcf_uiform_form_log` (
   `created_by` varchar(100) DEFAULT NULL,
   `updated_by` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`log_id`)
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `fbcf_uiform_addon`;
 CREATE TABLE `fbcf_uiform_addon` (
     `add_name` varchar(45) NOT NULL DEFAULT '',
     `add_title` text ,
     `add_info` text ,
-    `add_system` smallint(5) DEFAULT NULL,
-    `add_hasconfig` smallint(5) DEFAULT NULL,
+    `add_system` smallint DEFAULT NULL,
+    `add_hasconfig` smallint DEFAULT NULL,
     `add_version` varchar(45)  DEFAULT NULL,
     `add_icon` text ,
-    `add_installed` smallint(5) DEFAULT NULL,
-    `add_order` int(5) DEFAULT NULL,
+    `add_installed` smallint DEFAULT NULL,
+    `add_order` int DEFAULT NULL,
     `add_params` longtext,
     `add_log` longtext,
     `addonscol` varchar(45) DEFAULT NULL,
-    `flag_status` smallint(5)  DEFAULT 1,
+    `flag_status` smallint  DEFAULT 1,
     `created_date` timestamp NULL,
     `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `created_ip` varchar(100)  DEFAULT NULL,
@@ -265,11 +265,11 @@ CREATE TABLE `fbcf_uiform_addon` (
     `created_by` varchar(100) DEFAULT NULL,
     `updated_by` varchar(100) DEFAULT NULL,
     `add_xml` longtext,
-    `add_load_back` smallint(5) DEFAULT NULL,
-    `add_load_front` smallint(5) DEFAULT NULL,
-    `is_field` smallint(5) DEFAULT NULL,
+    `add_load_back` smallint DEFAULT NULL,
+    `add_load_front` smallint DEFAULT NULL,
+    `is_field` smallint DEFAULT NULL,
     PRIMARY KEY (`add_name`) 
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `fbcf_uiform_addon` VALUES ('func_anim', 'Animation effect', 'You can animate your fields adding many animation effects. Also you can set up the delay and other options.', 1, 1, NULL, NULL, 1, 1, NULL, NULL, NULL, 0, '1980-01-01 00:00:01', '2018-01-31 10:35:14', NULL, NULL, NULL, NULL, NULL, 1, 1, 1);
 INSERT INTO `fbcf_uiform_addon` VALUES ('webhook', 'WebHooks Add-On', 'You can use the WebHooks Add-On to send data from your forms to any custom page or script you like. This page can perform integration tasks to transform, parse, manipulate and send your submission data to wherever you choose. If you are developing an application that needs to be updated every time a form is submitted, WebHooks is for you. The advantage of WebHooks is that the passing of data is immediate and you can pass all submitted form data at once. e.g. you can connect with Webhook of Zapier - https%3A%2F%2Fzapier.com%2Fpage%2Fwebhooks%2F', 1, 1, NULL, NULL, 1, 2, NULL, NULL, NULL, 0, '2019-12-30 01:36:23', '2019-12-30 01:34:27', NULL, NULL, NULL, NULL, NULL, 1, 1, 0);
@@ -279,9 +279,9 @@ INSERT INTO `fbcf_uiform_addon` VALUES ('mgtranslate', 'Translation Manager Add-
 DROP TABLE IF EXISTS `fbcf_uiform_addon_details`;
 CREATE TABLE `fbcf_uiform_addon_details` (
     `add_name` varchar(45)  NOT NULL,
-    `fmb_id` int(10) NOT NULL,
+    `fmb_id` int NOT NULL,
     `adet_data` longtext ,
-    `flag_status` smallint(5) DEFAULT 1,
+    `flag_status` smallint DEFAULT 1,
     `created_date` timestamp NULL,
     `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `created_ip` varchar(100) DEFAULT NULL,
@@ -289,32 +289,32 @@ CREATE TABLE `fbcf_uiform_addon_details` (
     `created_by` varchar(100) DEFAULT NULL,
     `updated_by` varchar(100) DEFAULT NULL,
     PRIMARY KEY (`add_name`, `fmb_id`) 
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
 
 
 DROP TABLE IF EXISTS `fbcf_uiform_addon_details_log`;
 CREATE TABLE `fbcf_uiform_addon_details_log` (
-    `add_log_id` bigint(20) NOT NULL AUTO_INCREMENT,
+    `add_log_id` bigint NOT NULL AUTO_INCREMENT,
     `add_name` varchar(45)  NOT NULL,
-    `fmb_id` int(10) NOT NULL,
+    `fmb_id` int NOT NULL,
     `adet_data` longtext  NULL,
-    `flag_status` smallint(5) DEFAULT 1,
+    `flag_status` smallint DEFAULT 1,
     `created_date` timestamp NULL,
     `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
     `created_ip` varchar(100) DEFAULT NULL,
     `updated_ip` varchar(100) DEFAULT NULL,
     `created_by` varchar(100) DEFAULT NULL,
     `updated_by` varchar(100) DEFAULT NULL,
-    `log_id` int(5) NOT NULL,
+    `log_id` int NOT NULL,
     PRIMARY KEY (`add_log_id`) 
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
 
 DROP TABLE IF EXISTS `fbcf_uiform_options`;
 CREATE TABLE `fbcf_uiform_options`  (
-  `option_id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT,
-  `option_name` varchar(191) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT '',
-  `option_value` longtext CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `autoload` varchar(20) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL DEFAULT 'yes',
+  `option_id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
+  `option_name` varchar(191) NOT NULL DEFAULT '',
+  `option_value` longtext  NOT NULL,
+  `autoload` varchar(20) NOT NULL DEFAULT 'yes',
   PRIMARY KEY (`option_id`) USING BTREE,
   UNIQUE INDEX `option_name`(`option_name`) USING BTREE
-) DEFAULT CHARSET=utf8;
+) DEFAULT CHARSET=utf8mb4;
