@@ -115,13 +115,13 @@ class CI_Pagination {
 	function create_links()
 	{
 		// If our item count or per-page total is zero there is no need to continue.
-		if ($this->total_rows == 0 OR $this->per_page == 0)
+		if ((int)$this->total_rows == 0 OR (int)$this->per_page == 0)
 		{
 			return '';
 		}
 
 		// Calculate the total number of pages
-		$num_pages = ceil($this->total_rows / $this->per_page);
+		$num_pages = ceil((int)$this->total_rows / (int)$this->per_page);
 
 		// Is there only one page? Hm... nothing more to do here then.
 		if ($num_pages == 1)

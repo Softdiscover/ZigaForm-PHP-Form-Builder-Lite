@@ -101,7 +101,7 @@ class model_record extends CI_Model {
 
 		$query .= sprintf( ' ORDER BY c.created_date %s ', $orderby );
 
-		if ( $per_page != '' || $segment != '' ) {
+		if ( $per_page != '' && $segment != '' ) {
 			$segment = ( ! empty( $segment ) ) ? $segment : 0;
 			$query  .= sprintf( ' limit %s,%s', (int) $segment, (int) $per_page );
 		}
