@@ -28,7 +28,28 @@
  * @link		http://codeigniter.com/user_guide/general/controllers.html
  */
 class CI_Controller {
-
+	var $benchmark;
+	var $hooks;
+	var $config;
+	var $log;
+	var $utf8;
+	var $uri;
+	var $router;
+	var $output;
+	var $security;
+	var $input;
+	var $lang;
+	var $load;
+	var $hooking;
+	var $session;
+	var $template;
+	var $auth;
+	var $cache;
+	var $form_validation;
+	var $locale;
+	var $addon;
+	var $upload;
+	var $pagination;
 	private static $instance;
 
 	/**

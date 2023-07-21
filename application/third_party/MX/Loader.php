@@ -35,12 +35,12 @@
  * THE SOFTWARE.
  **/
 class MX_Loader extends CI_Loader {
-
+	
 	protected $_module;
 
 	public $_ci_plugins     = array();
 	public $_ci_cached_vars = array();
-
+	var $controller;
 	/** Initialize the loader variables **/
 	public function initialize( $controller = null ) {
 
@@ -164,6 +164,7 @@ class MX_Loader extends CI_Loader {
 		}
 		
 		//( $_alias = strtolower( $object_name ) ) or $_alias = $class;
+
 
 		list($path, $_library) = Modules::find( $library, $this->_module, 'libraries/' );
 

@@ -27,7 +27,7 @@
  * @link		http://codeigniter.com/user_guide/libraries/loader.html
  */
 class CI_Loader {
-
+	
 	// All these are set automatically. Don't mess with them.
 	/**
 	 * Nesting level of the output buffering mechanism
@@ -862,11 +862,9 @@ class CI_Loader {
 		{
 			$buffer = ob_get_contents();
 			@ob_end_clean();
-                        
-                    
 			return $buffer;
 		}
-                
+
 		/*
 		 * Flush the buffer... or buff the flusher?
 		 *
@@ -886,8 +884,6 @@ class CI_Loader {
 			$_ci_CI->output->append_output(ob_get_contents());
 			@ob_end_clean();
 		}
-                
-           
 	}
 
 	// --------------------------------------------------------------------
@@ -995,10 +991,8 @@ class CI_Loader {
 					log_message('debug', $class." class already loaded. Second attempt ignored.");
 					return;
 				}
-			 
-				
+
 				include_once($filepath);
-				
 				$this->_ci_loaded_files[] = $filepath;
 				return $this->_ci_init_class($class, '', $params, $object_name);
 			}

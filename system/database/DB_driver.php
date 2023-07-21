@@ -29,7 +29,7 @@
  * @link		http://codeigniter.com/user_guide/database/
  */
 class CI_DB_driver {
-
+	var $stricton;
 	var $username;
 	var $password;
 	var $hostname;
@@ -909,7 +909,7 @@ class CI_DB_driver {
 			$fields[] = $this->_escape_identifiers($key);
 			$values[] = $this->escape($val);
 		}
-               
+
 		return $this->_insert($this->_protect_identifiers($table, TRUE, NULL, FALSE), $fields, $values);
 	}
 

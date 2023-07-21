@@ -42,7 +42,7 @@ if (class_exists('lessc')) {
  * The `zglessc_formatter` takes a CSS tree, and dumps it to a formatted string,
  * handling things like indentation.
  */
-class lessc {
+class lessc   {
 	static public $VERSION = "v0.4.0";
 	static protected $TRUE = array("keyword", "true");
 	static protected $FALSE = array("keyword", "false");
@@ -70,7 +70,22 @@ class lessc {
 	static public $defaultValue = array("keyword", "");
 
 	static protected $nextImportId = 0; // uniquely identify imports
-
+	
+	public $eatWhiteDefault = '';
+	public $lessc = '';
+	public $sourceName = '';
+	public $writeComments = '';
+	public $parser = '';
+	public $count = '';
+	public $line = '';
+	public $env = '';
+	public $buffer = '';
+	public $seenComments = '';
+	public $inExp = '';
+	public $scope = '';
+	public $indentLevel = '';
+	public $formatter = '';
+	
 	// attempts to find the path of an import url, returns null for css files
 	protected function findImport($url) {
 		foreach ((array)$this->importDir as $dir) {
@@ -82,7 +97,8 @@ class lessc {
 
 		return null;
 	}
-
+	
+	
 	protected function fileExists($name) {
 		return is_file($name);
 	}
@@ -1214,7 +1230,7 @@ class lessc {
 					$name = $name . ": ";
 				}
 
-				$this->throwError("${name}expecting $expectedArgs arguments, got $numValues");
+				$this->throwError(sprintf("%1$s expecting %2$s arguments, got %3$s", $name, $expectedArgs, $numValues ));
 			}
 
 			return $values;
@@ -1559,7 +1575,8 @@ class lessc {
 		}
 
 		// type based operators
-		$fname = "op_${ltype}_${rtype}";
+		$fname = sprintf("op_%1$s_%1$s", $ltype, $rtype );
+		
 		if (is_callable(array($this, $fname))) {
 			$out = $this->$fname($op, $left, $right);
 			if (!is_null($out)) return $out;
@@ -2184,7 +2201,20 @@ class lessc {
 // syntax tree
 class zglessc_parser {
 	static protected $nextBlockId = 0; // used to uniquely identify blocks
-
+	public $eatWhiteDefault = '';
+	public $lessc = '';
+	public $sourceName = '';
+	public $writeComments = '';
+	public $parser = '';
+	public $count = '';
+	public $line = '';
+	public $env = '';
+	public $buffer = '';
+	public $seenComments = '';
+	public $inExp = '';
+	public $scope = '';
+	public $indentLevel = '';
+	public $formatter = '';
 	static protected $precedence = array(
 		'=<' => 0,
 		'>=' => 0,
@@ -3578,7 +3608,9 @@ class zglessc_formatter_classic {
 	public $breakSelectors = false;
 
 	public $compressColors = false;
-
+	
+	public $indentLevel = '';
+	
 	public function __construct() {
 		$this->indentLevel = 0;
 	}

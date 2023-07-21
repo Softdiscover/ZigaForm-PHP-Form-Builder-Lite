@@ -39,7 +39,23 @@ require_once dirname( __FILE__ ) . '/Config.php';
  * THE SOFTWARE.
  **/
 class CI extends CI_Controller {
-
+	var $db;
+	var $model_addon;
+	var $model_settings;
+	var $controller;
+	var $model_user;
+	var $model_forms;
+	var $model_fields;
+	var $model_record;
+	var $model_form_log;
+	var $model_visitor;
+	var $model_addon_details;
+	var $model_addon_details_log;
+	var $model_gateways_logs;
+	var $model_gateways_records;
+	var $model_visitor_error;
+	var $model_gateways;
+	
 	public static $APP;
 
 	public function __construct() {

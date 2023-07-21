@@ -1080,8 +1080,8 @@ class CI_DB_active_record extends CI_DB_driver {
 
 			$sql = $this->_insert_batch($this->_protect_identifiers($table, TRUE, NULL, FALSE), $this->ar_keys, array_slice($this->ar_set, $i, 100));
 
-			//echo $sql;
-
+			 //echo $sql;
+                       
 			$this->query($sql);
 		}
 

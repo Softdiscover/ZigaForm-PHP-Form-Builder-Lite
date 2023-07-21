@@ -57,7 +57,8 @@ class CI_URI {
 	 * @access public
 	 */
 	var $rsegments		= array();
-
+	
+	var $config = '';
 	/**
 	 * Constructor
 	 *

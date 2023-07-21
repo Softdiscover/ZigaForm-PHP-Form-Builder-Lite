@@ -77,7 +77,9 @@ class CI_Router {
 	 * @access public
 	 */
 	var $default_controller;
-
+	
+	
+	var $uri;
 	/**
 	 * Constructor
 	 *

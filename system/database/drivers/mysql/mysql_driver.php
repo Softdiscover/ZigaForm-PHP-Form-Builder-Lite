@@ -585,7 +585,7 @@ class CI_DB_mysql_driver extends CI_DB {
 	 * @return	string
 	 */
 	function _insert_batch($table, $keys, $values)
-	{
+	{  
 		return "INSERT INTO ".$table." (".implode(', ', $keys).") VALUES ".implode(', ', $values);
 	}
 

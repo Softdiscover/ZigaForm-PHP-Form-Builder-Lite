@@ -335,9 +335,6 @@ class CI_Config {
 		}
 		return $base_url.ltrim($this->_uri_string($uri), '/');
 	}
-        
-      
-
 	// -------------------------------------------------------------
 
 	/**
