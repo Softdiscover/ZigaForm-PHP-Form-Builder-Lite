@@ -1,12 +1,12 @@
-# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.7.2
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.7.2 package.
+# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.7.6
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.7.6 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 5.7.2\n"
+"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 5.7.6\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2023-07-21 01:27+0000\n"
+"POT-Creation-Date: 2023-08-31 22:37+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -34,7 +34,7 @@ msgstr ""
 msgid "Saving"
 msgstr ""
 
-#: application/views/footer-global.php:18, application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:93, application/modules/formbuilder/views/forms/create_form_modals.php:31, application/modules/formbuilder/views/forms/formhtml_form.php:131, application/modules/formbuilder/views/forms/modal1_footer.php:19, application/modules/formbuilder/views/forms/templates_fields.php:1924, application/modules/formbuilder/views/fields/render_front/block_label.php:88, application/modules/formbuilder/views/fields/templates/prevpanel_main.php:43, application/modules/formbuilder/views/fields/options/select/impbulkdata_footer.php:20
+#: application/views/footer-global.php:18, application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:93, application/modules/formbuilder/views/forms/create_form_modals.php:31, application/modules/formbuilder/views/forms/formhtml_form.php:134, application/modules/formbuilder/views/forms/modal1_footer.php:19, application/modules/formbuilder/views/forms/templates_fields.php:1924, application/modules/formbuilder/views/fields/render_front/block_label.php:88, application/modules/formbuilder/views/fields/templates/prevpanel_main.php:43, application/modules/formbuilder/views/fields/options/select/impbulkdata_footer.php:20
 msgid "Close"
 msgstr ""
 
@@ -186,7 +186,7 @@ msgstr ""
 msgid "smartphone"
 msgstr ""
 
-#: application/views/header-uiform.php:108, application/modules/formbuilder/views/forms/create_form.php:74
+#: application/views/header-uiform.php:108, application/modules/formbuilder/views/forms/create_form.php:75
 msgid "Records"
 msgstr ""
 
@@ -206,7 +206,7 @@ msgstr ""
 msgid "Custom Report"
 msgstr ""
 
-#: application/views/header-uiform.php:146, application/modules/formbuilder/views/forms/create_form.php:70
+#: application/views/header-uiform.php:146, application/modules/formbuilder/views/forms/create_form.php:71
 msgid "Import"
 msgstr ""
 
@@ -746,7 +746,7 @@ msgstr ""
 msgid "Offline success"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:1411
+#: application/modules/formbuilder/controllers/frontend.php:1417
 msgid "Order summary"
 msgstr ""
 
@@ -930,7 +930,7 @@ msgstr ""
 msgid "To form values"
 msgstr ""
 
-#: application/modules/addon_webhook/views/backend/get_content.php:93, application/modules/addon_webhook/views/backend/get_content.php:132, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:34, application/modules/formbuilder/views/forms/create_form.php:199, application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/records/list_records_getdatatable.php:26, application/modules/formbuilder/views/settings/backup_settings.php:67, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:114
+#: application/modules/addon_webhook/views/backend/get_content.php:93, application/modules/addon_webhook/views/backend/get_content.php:132, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:34, application/modules/formbuilder/views/forms/create_form.php:205, application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/records/list_records_getdatatable.php:26, application/modules/formbuilder/views/settings/backup_settings.php:67, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:114
 msgid "Options"
 msgstr ""
 
@@ -1182,7 +1182,7 @@ msgstr ""
 msgid "Created"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:50, application/modules/formbuilder/views/forms/create_form.php:204
+#: application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:50, application/modules/formbuilder/views/forms/create_form.php:210
 msgid "Rollback"
 msgstr ""
 
@@ -1286,51 +1286,55 @@ msgstr ""
 msgid "Main"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:71, application/modules/formbuilder/views/fields/modal/field_opt_column.php:906, application/modules/formbuilder/views/fields/modal/settings_form_more.php:193
+#: application/modules/formbuilder/views/forms/create_form.php:70
+msgid "Recaptcha v3"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/create_form.php:72, application/modules/formbuilder/views/fields/modal/field_opt_column.php:906, application/modules/formbuilder/views/fields/modal/settings_form_more.php:193
 msgid "Additional"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:72
+#: application/modules/formbuilder/views/forms/create_form.php:73
 msgid "PDF"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:73, application/modules/formbuilder/views/forms/create_form_main.php:128, application/modules/user/views/intranet/createuser.php:45, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:102, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:323
+#: application/modules/formbuilder/views/forms/create_form.php:74, application/modules/formbuilder/views/forms/create_form_main.php:128, application/modules/user/views/intranet/createuser.php:45, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:102, application/modules/formbuilder/views/fields/modal/settings_field_validate.php:323
 msgid "Email"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:179
+#: application/modules/formbuilder/views/forms/create_form.php:185
 msgid "Dev Options"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:184
+#: application/modules/formbuilder/views/forms/create_form.php:190
 msgid "test"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:186
+#: application/modules/formbuilder/views/forms/create_form.php:192
 msgid "Show data"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:188
+#: application/modules/formbuilder/views/forms/create_form.php:194
 msgid "Generate field static data"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:206, application/modules/formbuilder/views/forms/settings_form_email.php:501, application/modules/formbuilder/views/forms/settings_form_email.php:508
+#: application/modules/formbuilder/views/forms/create_form.php:212, application/modules/formbuilder/views/forms/settings_form_email.php:501, application/modules/formbuilder/views/forms/settings_form_email.php:508
 msgid "Variables"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:209
+#: application/modules/formbuilder/views/forms/create_form.php:215
 msgid "C.Logic Graph"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:212
+#: application/modules/formbuilder/views/forms/create_form.php:218
 msgid "Refresh & Clean Form"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:221
+#: application/modules/formbuilder/views/forms/create_form.php:227
 msgid "preview"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/create_form.php:230
+#: application/modules/formbuilder/views/forms/create_form.php:236
 msgid "Save form"
 msgstr ""
 
@@ -1662,11 +1666,15 @@ msgstr ""
 msgid "Panel"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/formhtml_form.php:99, application/modules/formbuilder/views/forms/templates_fields.php:164
+#: application/modules/formbuilder/views/forms/formhtml_form.php:28
+msgid "Recaptcha failed, refresh page and try again"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/formhtml_form.php:102, application/modules/formbuilder/views/forms/templates_fields.php:164
 msgid "Previous"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/formhtml_form.php:102, application/modules/formbuilder/views/forms/templates_fields.php:167, application/modules/formbuilder/views/forms/templates_fields.php:1706, application/modules/formbuilder/views/fields/templates/prevpanel_wizardbtn.php:31
+#: application/modules/formbuilder/views/forms/formhtml_form.php:105, application/modules/formbuilder/views/forms/templates_fields.php:167, application/modules/formbuilder/views/forms/templates_fields.php:1706, application/modules/formbuilder/views/fields/templates/prevpanel_wizardbtn.php:31
 msgid "Next"
 msgstr ""
 
@@ -2180,6 +2188,34 @@ msgstr ""
 
 #: application/modules/formbuilder/views/forms/settings_form_main_pdf.php:138
 msgid "PDF Export"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:25
+msgid "Get keys from Recaptcha page :  "
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:33
+msgid "Enable Recaptcha Version 3"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:42
+msgid "Enable Recaptcha v3"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:52
+msgid "Site Key"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:54
+msgid "This is required. Get Site key from recaptcha site. "
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:72
+msgid "Secret Key"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:74
+msgid "This is required. Get Secret key from recaptcha site. "
 msgstr ""
 
 #: application/modules/formbuilder/views/forms/settings_form_main_record.php:23

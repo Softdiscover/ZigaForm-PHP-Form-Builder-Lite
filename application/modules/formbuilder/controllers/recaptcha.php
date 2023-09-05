@@ -55,7 +55,47 @@ class Recaptcha extends BackendController {
 		$this->template->set( 'controller', $this );
 		$this->load->model( 'model_fields' );
 	}
+	
+	
+		/**
+	 * Recaptcha::front_verify_recaptchav3()
+	 *
+	 * @return
+	 */
+	public function front_verify_recaptchav3() {
 
+		
+		require_once FCPATH . 'libs/recaptcha3/1.3.0/src/autoload.php';
+		
+		$form_id   = ( isset( $_POST['form_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_POST['form_id'] ) : 0;
+		
+		$data_form = $this->model_forms->getAvailableFormById( $form_id );
+		$onsubm = json_decode( $data_form->fmb_data2, true );
+		$secret= $onsubm['main']['recaptchav3_secretkey']??'';
+		$gRecaptchaResponse = ( isset( $_POST['zgfm_token'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_POST['zgfm_token'] ) : '';
+		$recaptcha = new \ReCaptcha\ReCaptcha($secret);
+		$remoteIp = $_SERVER['REMOTE_ADDR'];
+		$success   = false;
+		$errors = [];
+		$resp = $recaptcha->setExpectedHostname($_SERVER['HTTP_HOST'])
+                  ->verify($gRecaptchaResponse, $remoteIp);
+		if ($resp->isSuccess()) {
+		    $success = true;
+		} else {
+			$success = true;
+		    $errors = $resp->getErrorCodes();
+		}
+		
+		
+		$json            = array();
+		$json['success'] = $success;
+		$json['error'] =  $errors;
+		// return data to ajax callback
+		header( 'Content-Type: application/json' );
+		echo json_encode( $json );
+		die();
+	}
+	
 	/**
 	 * Recaptcha::front_verify_recaptcha()
 	 *

@@ -23,6 +23,9 @@ ob_start();
 	  method="post" 
 	  data-zgfm-type="1"
 	  data-zgfm-version="<?php echo UIFORM_VERSION; ?>"
+	  data-zgfm-recaptchav3-active="<?php echo $main['recaptchav3_enable'] ?? 0; ?>"
+	  data-zgfm-recaptchav3-sitekey="<?php echo $main['recaptchav3_sitekey'] ?? ''; ?>"
+	  data-zgfm-recaptchav3-errmsg="<?php echo __('Recaptcha failed, refresh page and try again', 'FRocket_admin'); ?>"
 	  enctype="multipart/form-data" 
 	  id="rockfm_form_<?php echo $form_id; ?>">
  

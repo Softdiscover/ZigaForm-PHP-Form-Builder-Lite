@@ -801,7 +801,13 @@ class Frontend extends FrontendController {
 		modules::run( 'formbuilder/uifmrecaptcha/front_verify_recaptcha', array() );
 
 	}
+	
+	public function ajax_check_recaptchav3() {
 
+		modules::run( 'formbuilder/uifmrecaptcha/front_verify_recaptchav3', array() );
+
+	}
+	
 	/**
 	 * Frontend::process_form()
 	 *

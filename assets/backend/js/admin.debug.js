@@ -3091,6 +3091,15 @@ if (!$uifm.isFunction(rocketform)) {
 							case 'pdf_html_fullpage':
 								$('#uifm_frm_main_pdf_htmlfullpage').val(value);
 								break;
+							case 'recaptchav3_enable':
+								$('#uifm_frm_main_recaptchav3_enable').bootstrapSwitchZgpb('state', parseInt(value) === 1 ? true : false);
+								break;
+							case 'recaptchav3_sitekey':
+								$('#uifm_frm_main_recaptchav3_sitekey').val(value);
+								break;
+							case 'recaptchav3_secretkey':
+								$('#uifm_frm_main_recaptchav3_secretkey').val(value);
+								break;	
 						}
 						break;
 					case 'wizard':
@@ -7340,7 +7349,12 @@ if (!$uifm.isFunction(rocketform)) {
 				this.setUiData2('main', 'onload_scroll', main_onload_scroll);
 				this.setUiData2('main', 'preload_noconflict', main_preload_noconf);
 
-				var main_pdf_onpage = $('#uifm_frm_main_pdf_show_onpage').bootstrapSwitchZgpb('state') ? 1 : 0;
+				let main_recaptchav3_enable = $('#uifm_frm_main_recaptchav3_enable').prop('checked') ? 1 : 0;
+				this.setUiData2('main', 'recaptchav3_enable', main_recaptchav3_enable);
+				this.setUiData2('main', 'recaptchav3_sitekey', $('#uifm_frm_main_recaptchav3_sitekey').val());
+				this.setUiData2('main', 'recaptchav3_secretkey', $('#uifm_frm_main_recaptchav3_secretkey').val());
+
+								var main_pdf_onpage = $('#uifm_frm_main_pdf_show_onpage').bootstrapSwitchZgpb('state') ? 1 : 0;
 				this.setUiData2('main', 'pdf_show_onpage', main_pdf_onpage);
 				this.setUiData2('main', 'pdf_paper_size', $('#uifm_frm_main_pdf_papersize').val());
 

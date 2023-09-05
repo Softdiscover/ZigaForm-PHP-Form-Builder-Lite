@@ -764,6 +764,47 @@ if (!$uifm.isFunction(rocketfm)) {
 				} else {
 				}
 			};
+			arguments.callee.recaptchav3_validate = function() {
+				var form_obj = this.getInnerVariable('val_curform_obj');
+
+								grecaptcha.execute(form_obj.attr('data-zgfm-recaptchav3-sitekey'), { action: 'submit' }).then(function(token) {
+					$.ajax({
+							type: 'POST',
+							url: rockfm_vars.uifm_siteurl + 'uiformbuilder/ajax_check_recaptchav3',
+							dataType: 'json',
+							data: {
+								action: 'rocket_front_checkrecaptchav3',
+								zgfm_security: rockfm_vars.ajax_nonce,
+								zgfm_token: token,
+								form_id: form_obj.find('._rockfm_form_id').val(),
+							},
+							beforeSend: function() {
+								rocketfm.submit_changeModbutton(form_obj, true);
+							},
+							success: function(response) {
+								try {
+									rocketfm.submit_changeModbutton(form_obj, false);
+									if (typeof response == 'object') {
+										if (response.success === true) {
+											rocketfm.recaptchav3_response(true);
+										} else {
+											rocketfm.recaptchav3_response(false);
+										}
+									} else {
+										rocketfm.recaptchav3_response(false);
+									}
+								} catch (ex) {
+									rocketfm.recaptchav3_response(false);
+								}
+							},
+							error: function(jqXHR, textStatus, errorThrown) {
+								rocketfm.recaptchav3_response(false);
+							},
+						});
+
+				});
+
+							};
 
 			arguments.callee.recaptcha_validate = function() {
 				var form_obj = this.getInnerVariable('val_curform_obj');
@@ -965,6 +1006,18 @@ if (!$uifm.isFunction(rocketfm)) {
 								var s = document.getElementsByTagName('script')[0];
 								s.parentNode.insertBefore(rockfm_recaptcha, s);
 							}
+						}
+
+						if (parseInt(obj_form.attr('data-zgfm-recaptchav3-active')) === 1) {
+							let siteKey = obj_form.attr('data-zgfm-recaptchav3-sitekey');
+							var rockfm_recaptcha = document.createElement('script');
+							rockfm_recaptcha.type = 'text/javascript';
+							rockfm_recaptcha.async = true;
+							rockfm_recaptcha.id = 'zgfm_form_lib_recaptchav3';
+							rockfm_recaptcha.defer = 'defer';
+							rockfm_recaptcha.src = 'https://www.google.com/recaptcha/api.js?render='+siteKey;
+							var s = document.getElementsByTagName('script')[0];
+							s.parentNode.insertBefore(rockfm_recaptcha, s);
 						}
 
 						if (obj_form.find('.rockfm-captcha').length) {

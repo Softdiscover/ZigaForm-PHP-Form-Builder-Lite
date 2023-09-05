@@ -1,5 +1,5 @@
-# Copyright (C) 2023 Zigaform PHP Form Builder 5.7.2
-# This file is distributed under the same license as the Zigaform PHP Form Builder 5.7.2 package.
+# Copyright (C) 2023 Zigaform PHP Form Builder 5.7.6
+# This file is distributed under the same license as the Zigaform PHP Form Builder 5.7.6 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -26,15 +26,15 @@ msgstr "warning! Form was not submitted"
 msgid "Success! your form was submitted"
 msgstr "Success! your form was submitted"
 
-#: application/modules/formbuilder/controllers/frontend.php:1001
+#: application/modules/formbuilder/controllers/frontend.php:1007
 msgid "Error! The file exceeds the allowed size of"
 msgstr "Error! The file exceeds the allowed size of"
 
-#: application/modules/formbuilder/controllers/frontend.php:1008
+#: application/modules/formbuilder/controllers/frontend.php:1014
 msgid "Error! Type of file is not allowed to upload"
 msgstr "Error! Type of file is not allowed to upload"
 
-#: application/modules/formbuilder/controllers/frontend.php:1254, application/modules/formbuilder/controllers/frontend.php:1299
+#: application/modules/formbuilder/controllers/frontend.php:1260, application/modules/formbuilder/controllers/frontend.php:1305
 msgid "New form request"
 msgstr "New form request"
 

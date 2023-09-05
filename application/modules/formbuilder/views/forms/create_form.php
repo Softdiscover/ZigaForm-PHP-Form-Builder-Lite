@@ -67,6 +67,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 					<!-- Nav tabs -->
 					<ul class="sfdc-nav sfdc-nav-tabs zgfm-nav-tabs-settings" role="tablist">
 					  <li  class="sfdc-active"><a href="#zgfm-menu-main-tab-1"  role="tab" data-toggle="sfdc-tab"><?php echo __( 'Main', 'FRocket_admin' ); ?></a></li>
+					  <li ><a href="#zgfm-menu-main-tab-8"  role="tab" data-toggle="sfdc-tab"><?php echo __( 'Recaptcha v3', 'FRocket_admin' ); ?></a></li>
 					  <li ><a href="#zgfm-menu-main-tab-2"  role="tab" data-toggle="sfdc-tab"><?php echo __( 'Import', 'FRocket_admin' ); ?></a></li>
 					  <li ><a href="#zgfm-menu-main-tab-4"  class="zgfm_gsettings_additional" role="tab" data-toggle="sfdc-tab"><?php echo __( 'Additional', 'FRocket_admin' ); ?></a></li>
 					  <li ><a href="#zgfm-menu-main-tab-5"  role="tab" data-toggle="sfdc-tab"><?php echo __( 'PDF', 'FRocket_admin' ); ?></a></li>
@@ -78,6 +79,11 @@ if ( ! defined( 'BASEPATH' ) ) {
 					  <div  class="sfdc-tab-pane sfdc-in sfdc-active" id="zgfm-menu-main-tab-1">
 						  <div class="uiformc-tab-content-inner3">
 							<?php require 'settings_form_main.php'; ?>
+						  </div>
+					  </div>
+					  <div  class="sfdc-tab-pane" id="zgfm-menu-main-tab-8">
+						  <div class="uiformc-tab-content-inner3">
+							<?php require 'settings_form_main_recaptcha.php'; ?>
 						  </div>
 					  </div>
 					  <div  class="sfdc-tab-pane" id="zgfm-menu-main-tab-2">
