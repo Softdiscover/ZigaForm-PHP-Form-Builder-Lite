@@ -1,5 +1,5 @@
-# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.7.6
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.7.6 package.
+# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.8.0
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.8.0 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: translate to spanish\n"
@@ -947,11 +947,23 @@ msgstr "Webhook URL"
 msgid "Content Type"
 msgstr "Content Type"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:78
+#: application/modules/addon_webhook/views/backend/get_content.php:75, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:40
+msgid "Format"
+msgstr "Formato"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:78, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:206, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:44
+msgid "Default"
+msgstr "Defecto"
+
+#: application/modules/addon_webhook/views/backend/get_content.php:79
+msgid "Soho"
+msgstr ""
+
+#: application/modules/addon_webhook/views/backend/get_content.php:86
 msgid "Form Fields"
 msgstr "+ Líneas"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:82
+#: application/modules/addon_webhook/views/backend/get_content.php:90
 msgid ""
 "Under this section, choose the fields whose data should be transferred "
 "using Webhooks"
@@ -959,27 +971,27 @@ msgstr ""
 "Under this section, choose the fields whose data should be transferred "
 "using Webhooks"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:85, application/modules/addon_webhook/views/backend/get_content.php:124
+#: application/modules/addon_webhook/views/backend/get_content.php:93, application/modules/addon_webhook/views/backend/get_content.php:132
 msgid "Map URL parameters"
 msgstr "Map URL parameters"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:89
+#: application/modules/addon_webhook/views/backend/get_content.php:97
 msgid "To form values"
 msgstr "Nueva solicitud forma"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:93, application/modules/addon_webhook/views/backend/get_content.php:132, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:34, application/modules/formbuilder/views/forms/create_form.php:205, application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/records/list_records_getdatatable.php:26, application/modules/formbuilder/views/settings/backup_settings.php:67, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:114
+#: application/modules/addon_webhook/views/backend/get_content.php:101, application/modules/addon_webhook/views/backend/get_content.php:140, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:34, application/modules/formbuilder/views/forms/create_form.php:205, application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/records/list_records_getdatatable.php:26, application/modules/formbuilder/views/settings/backup_settings.php:67, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:114
 msgid "Options"
 msgstr "Opciones"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:109
+#: application/modules/addon_webhook/views/backend/get_content.php:117
 msgid "Add New Field Parameter"
 msgstr "Add New Field Parameter"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:117
+#: application/modules/addon_webhook/views/backend/get_content.php:125
 msgid "Additional Parameters"
 msgstr "Css adicional"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:121
+#: application/modules/addon_webhook/views/backend/get_content.php:129
 msgid ""
 "Under this section, you can add additional parameters whose data should be "
 "transferred using Webhooks"
@@ -987,15 +999,15 @@ msgstr ""
 "Under this section, you can add additional parameters whose data should be "
 "transferred using Webhooks"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:128
+#: application/modules/addon_webhook/views/backend/get_content.php:136
 msgid "To custom values"
 msgstr "To custom values"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:146
+#: application/modules/addon_webhook/views/backend/get_content.php:154
 msgid "Add New Custom Parameter"
 msgstr "Add New Custom Parameter"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:173
+#: application/modules/addon_webhook/views/backend/get_content.php:181
 msgid "choose an option"
 msgstr "Eliminar todas las opciones"
 
@@ -3583,10 +3595,6 @@ msgstr "Tema"
 msgid "Choose Theme"
 msgstr "Choose Theme"
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:206, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:44
-msgid "Default"
-msgstr "Defecto"
-
 #: application/modules/formbuilder/views/fields/modal/settings_field_input_3.php:23
 msgid "Custom html content"
 msgstr "Contenido html personalizado"
@@ -3666,10 +3674,6 @@ msgstr "Líneas del frente personalizada"
 #: application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:173
 msgid "Distortion"
 msgstr "Distorsión"
-
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:40
-msgid "Format"
-msgstr "Formato"
 
 #: application/modules/formbuilder/views/fields/modal/settings_field_input_9.php:23
 msgid "Text star 1"
