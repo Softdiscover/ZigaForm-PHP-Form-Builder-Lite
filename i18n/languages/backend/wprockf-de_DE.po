@@ -1,5 +1,5 @@
-# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.8.0
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.8.0 package.
+# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.8.1
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.8.1 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -950,11 +950,11 @@ msgstr "Webhook URL"
 msgid "Content Type"
 msgstr "Content Type"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:75, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:40
+#: application/modules/addon_webhook/views/backend/get_content.php:75, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:41
 msgid "Format"
 msgstr "Format"
 
-#: application/modules/addon_webhook/views/backend/get_content.php:78, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:206, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:44
+#: application/modules/addon_webhook/views/backend/get_content.php:78, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:206, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:45
 msgid "Default"
 msgstr "Standard"
 
@@ -3545,6 +3545,10 @@ msgstr "Russisch"
 #: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:172, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:34
 msgid "Chinese"
 msgstr "Chinesisch"
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:173, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:35
+msgid "German"
+msgstr ""
 
 #: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:186, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:187
 msgid "Minimum date"

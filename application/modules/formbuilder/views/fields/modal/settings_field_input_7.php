@@ -32,6 +32,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 						<option value="pt"><?php echo __( 'Portuguese', 'FRocket_admin' ); ?></option>
 						<option value="ru"><?php echo __( 'Russian', 'FRocket_admin' ); ?></option>
 						<option value="zh-cn"><?php echo __( 'Chinese', 'FRocket_admin' ); ?></option>
+						<option value="de"><?php echo __('German', 'FRocket_admin'); ?></option>
 					</select>
 				</div>
 			</div>
