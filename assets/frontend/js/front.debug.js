@@ -1312,6 +1312,7 @@ if (!$uifm.isFunction(rocketfm)) {
 							}
 						}
 
+
 						zgfm_front_helper.load_form_init_events(obj_form);
 						$(document).trigger('zgfm.form.init_loaded', { form: obj_form });
 

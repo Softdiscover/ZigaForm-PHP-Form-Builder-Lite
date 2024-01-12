@@ -108,6 +108,7 @@ if (!$uifm.isFunction(zgfm_back_addon)) {
 					url: rockfm_vars.uifm_siteurl + 'addon/zfad_backend/listaddon_updateStatus',
 					data: 'action=rocket_fbuilder_addon_status&page=zgfm_form_builder&add_name=' + tmp_addon_name + '&add_status=' + status + '&csrf_field_name=' + uiform_vars.csrf_field_name,
 					success: function(msg) {
+						zgfm_back_fld_options.generate_field_htmldata(false);
 						rocketform.redirect_tourl(uiform_vars.url_admin + 'addon/zfad_backend/list_extensions');
 					},
 				});

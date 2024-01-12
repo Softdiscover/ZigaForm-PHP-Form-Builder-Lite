@@ -292,6 +292,11 @@ if ( ! defined( 'BASEPATH' ) ) {
 	
 	</script>
 	
+	<!-- font menu-->
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/fonts.js"></script>
+	<script type="text/javascript" src="<?php echo base_url(); ?>libs/styles-font-menu/js/styles-font-menu.js"></script>
+	<link href="<?php echo base_url(); ?>libs/styles-font-menu/css/styles-font-menu.css" rel="stylesheet">
+	
 	<?php do_action( 'admin_enqueue_scripts' ); ?>
 	<?php // $this->addon->load_addons_Head(); ?>
 

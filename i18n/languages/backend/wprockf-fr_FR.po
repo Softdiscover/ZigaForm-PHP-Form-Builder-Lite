@@ -1,5 +1,5 @@
-# Copyright (C) 2023 Zigaform WP Cost Estimation Form Builder 5.8.2
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.8.2 package.
+# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 5.8.9
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.8.9 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -712,11 +712,11 @@ msgstr ""
 "Extension is not availabe. Go to Extensions Header menu and activate "
 "Translation Manager Add-on"
 
-#: application/modules/formbuilder/controllers/fields.php:223
+#: application/modules/formbuilder/controllers/fields.php:198
 msgid "Import Bulk Data"
 msgstr "Import Bulk Data"
 
-#: application/modules/formbuilder/controllers/fields.php:286, application/modules/formbuilder/views/forms/templates_fields.php:73
+#: application/modules/formbuilder/controllers/fields.php:261, application/modules/formbuilder/views/forms/templates_fields.php:73
 msgid "Column"
 msgstr "Column"
 
@@ -1832,7 +1832,7 @@ msgstr "Your Form code"
 msgid "Cached Content"
 msgstr "Cached Content"
 
-#: application/modules/formbuilder/views/forms/getcode.php:76, application/modules/formbuilder/views/settings/view_settings.php:92, application/modules/formbuilder/views/fields/options/select/impbulkdata.php:23
+#: application/modules/formbuilder/views/forms/getcode.php:76, application/modules/formbuilder/views/fields/options/select/impbulkdata.php:23
 msgid "Info"
 msgstr "Info"
 
@@ -2814,7 +2814,7 @@ msgstr "Restore Backup"
 msgid "Upload Backup"
 msgstr "Upload Backup"
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:156, application/modules/formbuilder/views/settings/view_settings.php:118, application/modules/formbuilder/views/settings/view_settings.php:109
+#: application/modules/formbuilder/views/settings/backup_settings.php:156, application/modules/formbuilder/views/settings/view_settings.php:140, application/modules/formbuilder/views/settings/view_settings.php:131
 msgid "Save changes"
 msgstr "enregistrer les modifications"
 
@@ -2908,23 +2908,25 @@ msgstr "LANGUAGE"
 msgid "it allows to change the language"
 msgstr "it allows to change the language"
 
-#: application/modules/formbuilder/views/settings/view_settings.php:74
-msgid "FIELDS FAST LOAD"
-msgstr "FIELDS FAST LOAD"
-
-#: application/modules/formbuilder/views/settings/view_settings.php:76
-msgid "it allows to loads field options in a fast way."
-msgstr "it allows to loads field options in a fast way."
-
-#: application/modules/formbuilder/views/settings/view_settings.php:92
-msgid ""
-"This feature is in beta test, so you if you enable option, maybe you could "
-"face some weird issues when loading field options. In case of that, just "
-"disable that option and report this issue at info@softdiscover.com "
+#: application/modules/formbuilder/views/settings/view_settings.php:75
+msgid "DISABLE FIELDS FAST LOAD"
 msgstr ""
-"This feature is in beta test, so you if you enable option, maybe you could "
-"face some weird issues when loading field options. In case of that, just "
-"disable that option and report this issue at info@softdiscover.com "
+
+#: application/modules/formbuilder/views/settings/view_settings.php:77
+msgid "it allows to disable fast loading field."
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/view_settings.php:99
+msgid "Regenerate cache fields"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/view_settings.php:101
+msgid "Generate cache field"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/view_settings.php:110
+msgid "Regeneate cache fields"
+msgstr ""
 
 #: application/modules/user/views/intranet/createuser.php:24
 msgid "User Information"

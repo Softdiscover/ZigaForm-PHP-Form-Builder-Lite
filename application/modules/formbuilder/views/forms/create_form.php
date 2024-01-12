@@ -249,8 +249,16 @@ if ( ! defined( 'BASEPATH' ) ) {
 <!-- modals -->    
 	<?php require 'create_form_modals.php'; ?>
 <!--\ modals -->
-<?php if ( intval( $fields_fastload ) === 1 ) { ?>
+<?php if ( intval( $fields_fastload ) !== 1 ) { ?>
 <!-- modals -->    
-	<?php include 'fieldoptions_data.php'; ?>
+	<?php 
+	for ($i=1; $i <= 11; $i++) {
+		if($i == 7){
+			continue;
+		}
+		include APPPATH .'/modules/formbuilder/views/fields/render_back/fieldoptions_data_'.$i.'.php';
+	}
+
+	?>
 <!--\ modals -->
 <?php } ?>
