@@ -10,7 +10,7 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   CVS: $Id: Auth.php, v2.00 2013-11-30 02:52:40 Softdiscover $
- * @link      http://php-cost-estimator.zigaform.com/
+ * @link      https://softdiscover.com/zigaform/php-cost-estimator/
  */
 
 /**
@@ -22,11 +22,11 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   Release: 1.00
- * @link      http://php-cost-estimator.zigaform.com/
+ * @link      https://softdiscover.com/zigaform/php-cost-estimator/
  */
 class Addon {
 
-	var $CI;
+	public $CI;
 	var $_username;
 
 	/**

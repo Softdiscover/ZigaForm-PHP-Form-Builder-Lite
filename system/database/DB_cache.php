@@ -24,7 +24,7 @@
  */
 class CI_DB_Cache {
 
-	var $CI;
+	public $CI;
 	var $db;	// allows passing of db object so that multiple database connections and returned db objects can be supported
 
 	/**

@@ -10,14 +10,14 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   CVS: $Id: settings.php, v2.00 2013-11-30 02:52:40 Softdiscover $
- * @link      https://php-form-builder.zigaform.com/
+ * @link      https://softdiscover.com/zigaform/php-form-builder/
  */
-if ( ! defined( 'BASEPATH' ) ) {
-	exit( 'No direct script access allowed' );
+if ( ! defined('BASEPATH')) {
+    exit('No direct script access allowed');
 }
 ?>
 
 <div class="zgfm-fmanager-container">
-	<h2><?php echo __( 'File manager', 'FRocket_admin' ); ?></h2>
-	<div id="elfinder"></div>
+    <h2><?php echo __('File manager', 'FRocket_admin'); ?></h2>
+    <div id="elfinder"></div>
 </div>

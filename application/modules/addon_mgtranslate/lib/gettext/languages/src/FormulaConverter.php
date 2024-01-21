@@ -162,7 +162,8 @@ class FormulaConverter
             }
             switch ($op) {
                 case '==':
-                    return '(' . implode(' || ', $chunks) . ')'; break;
+                    return '(' . implode(' || ', $chunks) . ')';
+                break;
                 case '!=':
                     return implode(' && ', $chunks);
             }

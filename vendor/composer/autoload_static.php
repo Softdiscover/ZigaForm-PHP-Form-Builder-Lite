@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit1d4077a5328f204f9b1b4d052397a792
+class ComposerStaticInit802f9daac024d0aa63d6791886285e3e
 {
     public static $files = array (
         '7f55c0c8faca7d96e425512293db1ad1' => __DIR__ . '/../..' . '/includes/wp/wp-includes/formatting.php',
@@ -32,9 +32,9 @@ class ComposerStaticInit1d4077a5328f204f9b1b4d052397a792
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit1d4077a5328f204f9b1b4d052397a792::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit1d4077a5328f204f9b1b4d052397a792::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit1d4077a5328f204f9b1b4d052397a792::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit802f9daac024d0aa63d6791886285e3e::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit802f9daac024d0aa63d6791886285e3e::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit802f9daac024d0aa63d6791886285e3e::$classMap;
 
         }, null, ClassLoader::class);
     }

@@ -31,7 +31,7 @@ class CI_Cart {
 	var $product_name_rules	= '\.\:\-_ a-z0-9'; // alpha-numeric, dashes, underscores, colons or periods
 
 	// Private variables.  Do not change!
-	var $CI;
+	public $CI;
 	var $_cart_contents	= array();
 
 

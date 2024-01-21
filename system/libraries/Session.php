@@ -44,7 +44,7 @@ class CI_Session {
 	var $time_reference				= 'time';
 	var $gc_probability				= 5;
 	var $userdata					= array();
-	var $CI;
+	public $CI;
 	var $now;
 
 	/**

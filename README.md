@@ -21,7 +21,7 @@ https://kb.softdiscover.com/docs/zigaform-php-form-builder/installation/via-wiza
 
 ## Support ##
 
-Please see https://php-form-builder.zigaform.com/#contact for more details.
+Please see https://softdiscover.com/zigaform/php-form-builder/#contact for more details.
 
 ## Features : ## 
 * drag and drop or click to add fields to form
@@ -149,7 +149,7 @@ When creating a form, you want to make sure to only show and only require the ne
 >
 >Try out [Zigaform Form Builder Premium](https://codecanyon.net/item/zigaform-php-form-builder-contact-survey/14889427?ref=softdiscover)
 
-More info in http://www.zigaform.com
+More info in https://softdiscover.com/zigaform
 
 ### features
 

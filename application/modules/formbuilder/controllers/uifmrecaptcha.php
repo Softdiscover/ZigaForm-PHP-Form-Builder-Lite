@@ -11,10 +11,10 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   CVS: $Id: intranet.php, v2.00 2013-11-30 02:52:40 Softdiscover $
- * @link      https://php-form-builder.zigaform.com/
+ * @link      https://softdiscover.com/zigaform/php-form-builder/
  */
-if ( ! defined( 'BASEPATH' ) ) {
-	exit( 'No direct script access allowed' );
+if ( ! defined('BASEPATH')) {
+    exit('No direct script access allowed');
 }
 
 /**
@@ -26,79 +26,78 @@ if ( ! defined( 'BASEPATH' ) ) {
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   Release: 1.00
- * @link      https://php-form-builder.zigaform.com/
+ * @link      https://softdiscover.com/zigaform/php-form-builder/
  */
-class uifmrecaptcha extends FrontendController {
-	/**
-	 * max number of forms in order show by pagination
-	 *
-	 * @var int
-	 */
+class uifmrecaptcha extends FrontendController
+{
+    /**
+     * max number of forms in order show by pagination
+     *
+     * @var int
+     */
 
-	const VERSION = '0.1';
+    const VERSION = '0.1';
 
 
 
-	/**
-	 * Recaptcha::__construct()
-	 *
-	 * @return
-	 */
-	function __construct() {
-		parent::__construct();
-		$this->load->language_alt( model_settings::$db_config['language'] );
-		$this->template->set( 'controller', $this );
-		$this->load->model( 'model_fields' );
-	}
+    /**
+     * Recaptcha::__construct()
+     *
+     * @return
+     */
+    public function __construct()
+    {
+        parent::__construct();
+        $this->load->language_alt(model_settings::$db_config['language']);
+        $this->template->set('controller', $this);
+        $this->load->model('model_fields');
+    }
 
-	/**
-	 * Recaptcha::front_verify_recaptcha()
-	 *
-	 * @return
-	 */
-	public function front_verify_recaptcha() {
+    /**
+     * Recaptcha::front_verify_recaptcha()
+     *
+     * @return
+     */
+    public function front_verify_recaptcha()
+    {
 
-		require_once FCPATH . 'libs/recaptcha2/autoload.php';
+        require_once FCPATH . 'libs/recaptcha2/autoload.php';
 
-		$uid_field = ( isset( $_POST['rockfm-uid-field'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_POST['rockfm-uid-field'] ) : '';
-		$form_id   = ( isset( $_POST['form_id'] ) ) ? Uiform_Form_Helper::sanitizeInput( $_POST['form_id'] ) : 0;
-		$fmf_json  = $this->model_fields->getDataByUniqueId( $uid_field, $form_id );
-		$secret    = '';
-		$success   = false;
-		if ( ! empty( $fmf_json ) ) {
-			$fmf_data = json_decode( $fmf_json->fmf_data, true );
+        $uid_field = ( isset($_POST['rockfm-uid-field']) ) ? Uiform_Form_Helper::sanitizeInput($_POST['rockfm-uid-field']) : '';
+        $form_id   = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
+        $fmf_json  = $this->model_fields->getDataByUniqueId($uid_field, $form_id);
+        $secret    = '';
+        $success   = false;
+        if ( ! empty($fmf_json)) {
+            $fmf_data = json_decode($fmf_json->fmf_data, true);
 
-			$secret  = ( isset( $fmf_data['input5']['g_key_secret'] ) ) ? $fmf_data['input5']['g_key_secret'] : '';
-			$siteKey = ( isset( $fmf_data['input5']['g_key_public'] ) ) ? $fmf_data['input5']['g_key_public'] : '';
+            $secret  = ( isset($fmf_data['input5']['g_key_secret']) ) ? $fmf_data['input5']['g_key_secret'] : '';
+            $siteKey = ( isset($fmf_data['input5']['g_key_public']) ) ? $fmf_data['input5']['g_key_public'] : '';
 
-			if ( $siteKey === '' || $secret === '' ) {
+            if ( $siteKey === '' || $secret === '') {
+            } elseif ( isset($_POST['rockfm-code-recaptcha'])) {
+                if ( is_callable('curl_init')) {
+                    $recaptcha = new \ReCaptcha\ReCaptcha($secret, new \ReCaptcha\RequestMethod\CurlPost());
+                } else {
+                    $recaptcha = new \ReCaptcha\ReCaptcha($secret);
+                }
 
-			} elseif ( isset( $_POST['rockfm-code-recaptcha'] ) ) {
+                $resp = $recaptcha->verify($_POST['rockfm-code-recaptcha'], $_SERVER['REMOTE_ADDR']);
 
-				if ( is_callable( 'curl_init' ) ) {
-					$recaptcha = new \ReCaptcha\ReCaptcha( $secret, new \ReCaptcha\RequestMethod\CurlPost() );
-				} else {
-					$recaptcha = new \ReCaptcha\ReCaptcha( $secret );
-				}
+                if ( $resp->isSuccess()) :
+                    $success = true;
+                else :
+                    $success = false;
+                endif;
+            } else {
+            }
+        }
 
-				$resp = $recaptcha->verify( $_POST['rockfm-code-recaptcha'], $_SERVER['REMOTE_ADDR'] );
-
-				if ( $resp->isSuccess() ) :
-					$success = true;
-				else :
-					$success = false;
-				endif;
-			} else {
-
-			}
-		}
-
-		$json            = array();
-		$json['success'] = $success;
-		// return data to ajax callback
-		header( 'Content-Type: application/json' );
-		echo json_encode( $json );
-		die();
-	}
-
+        $json            = array();
+        $json['success'] = $success;
+        // return data to ajax callback
+        header('Content-Type: application/json');
+        echo json_encode($json);
+        die();
+    }
 }

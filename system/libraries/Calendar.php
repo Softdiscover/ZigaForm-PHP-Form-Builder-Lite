@@ -28,7 +28,7 @@
  */
 class CI_Calendar {
 
-	var $CI;
+	public $CI;
 	var $lang;
 	var $local_time;
 	var $template		= '';

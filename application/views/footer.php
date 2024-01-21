@@ -10,7 +10,7 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   CVS: $Id: footer.php, v2.00 2013-11-30 02:52:40 Softdiscover $
- * @link      https://php-form-builder.zigaform.com/
+ * @link      https://softdiscover.com/zigaform/php-form-builder/
  */
 if ( ! defined( 'BASEPATH' ) ) {
 	exit( 'No direct script access allowed' );

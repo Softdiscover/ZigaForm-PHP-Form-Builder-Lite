@@ -30183,7 +30183,25 @@ if (!$uifm.isFunction(zgfm_back_fld_options)) {
 				});
 			};
 
-			this.generate_dbChecker = function() {
+						this.update_db_structure = function() {
+				$.ajax({
+					type: 'POST',
+					url: rockfm_vars.uifm_siteurl + 'formbuilder/settings/system_update_table',
+					data: {
+						action: 'rocket_fbuilder_update_table_structure',
+						page: 'zgfm_form_builder',
+						zgfm_security: uiform_vars.ajax_nonce,
+						csrf_field_name: uiform_vars.csrf_field_name,
+					},
+					beforeSend: function() {},
+					success: function(response) {
+						alert('DB tables updated. ');
+						window.location.reload();
+					},
+				});
+			};
+
+						this.generate_dbChecker = function() {
 				$.ajax({
 					type: 'POST',
 					url: rockfm_vars.uifm_siteurl + 'formbuilder/settings/system_gendb_column',

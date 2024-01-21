@@ -168,15 +168,15 @@ CREATE TABLE `fbcf_uiform_settings` (
   `id` int NOT NULL AUTO_INCREMENT,
   `site_title` varchar(250) DEFAULT NULL,
   `admin_mail` varchar(250) DEFAULT NULL,
-  `created_date` timestamp NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `updated_date` timestamp NULL DEFAULT '1980-01-01 00:00:01',
+  `created_date` timestamp NULL,
+  `updated_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id`)
 ) AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
 -- Records of fbcf_uiform_settings
 -- ----------------------------
-INSERT INTO `fbcf_uiform_settings` VALUES ('5.8.9', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
+INSERT INTO `fbcf_uiform_settings` VALUES ('5.9.2', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
 
 -- ----------------------------
 -- Table structure for `fbcf_uiform_user`

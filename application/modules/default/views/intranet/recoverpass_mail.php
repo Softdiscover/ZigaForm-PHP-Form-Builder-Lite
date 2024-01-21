@@ -12,11 +12,11 @@
  * @version   CVS: $Id: index.php, v1.20 2014-04-28 02:52:40 Softdiscover $
  * @link      http://universal-form-builder.softdiscover.com/
  */
-if ( ! defined( 'BASEPATH' ) ) {
-	exit( 'No direct script access allowed' );
+if ( ! defined('BASEPATH')) {
+    exit('No direct script access allowed');
 }
 ?>
 hi, copy & paste the url or just click on next:
 
 <a href="<?php echo site_url(); ?>default/intranet/changepassword/<?php echo $token; ?>"><?php echo site_url(); ?>default/intranet/changepassword/<?php echo $token; ?></a> 
-	
+    
