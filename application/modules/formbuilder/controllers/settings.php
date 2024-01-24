@@ -452,12 +452,7 @@ class Settings extends BackendController
             if (isset($tmp_all_db[$table])) {
                 foreach ($row as $key => $value) {
                     if (isset($tmp_all_db[$table][$value->Field])) {
-                        /*
-                              if (($key2 = array_search($value->Field, $tmp_all_db[$table])) !== false) {
-                                      unset($tmp_all_db[$table][$key2]);
-                                  }*/
-
-                        if (strval($value->Type) === strval($tmp_all_db[$table][$value->Field]['type'])) {
+                        if (strpos(strval($value->Type), strval($tmp_all_db[$table][$value->Field]['type'])) !== false) {
                         } else {
                             $err_msgs[] = $value->Field . ' field - ' . $tmp_all_db[$table][$value->Field]['type'] . ' type is missing';
                         }
@@ -469,11 +464,6 @@ class Settings extends BackendController
                 $err_msgs[] = $table . ' table is missing';
             }
         }
-
-        /*
-        foreach ($tmp_all_db[$table] as $value) {
-           $err_msgs[]=$value.' column is missing';
-        }*/
 
         $resultado['err_msgs'] = $err_msgs;
 
