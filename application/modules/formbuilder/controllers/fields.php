@@ -163,7 +163,6 @@ class Fields extends BackendController
                 $js_store .= $value2;
             }
 
-            $value = str_replace($search1, $replace1, $value);
             $value = str_replace($search2, $replace2, $value);
             
             $html_output .= htmlentities($value);

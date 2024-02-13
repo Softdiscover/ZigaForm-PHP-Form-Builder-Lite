@@ -70,7 +70,6 @@ ob_start();
    #rockfm_<?php echo $id; ?> .rockfm-input2-wrap .filter-option {
          <?php if ( ! empty($input2['color'])) { ?>
                  color:<?php echo $input2['color']; ?>!important;
-                 text-shadow:0 1px 0 <?php echo $input2['color']; ?>!important;
          <?php } ?>
          <?php if ( intval($input2['bold']) === 1) { ?>
                  font-weight:bold;

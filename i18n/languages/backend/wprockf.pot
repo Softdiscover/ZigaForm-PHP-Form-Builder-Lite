@@ -1,12 +1,12 @@
-# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 5.9.4
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 5.9.4 package.
+# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 6.0.0
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 6.0.0 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 5.9.4\n"
+"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 6.0.0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-01-24 19:52+0000\n"
+"POT-Creation-Date: 2024-02-13 05:54+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -702,11 +702,11 @@ msgstr ""
 msgid "Webhook logs"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/fields.php:199
+#: application/modules/formbuilder/controllers/fields.php:198
 msgid "Import Bulk Data"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/fields.php:264, application/modules/formbuilder/views/forms/templates_fields.php:74
+#: application/modules/formbuilder/controllers/fields.php:263, application/modules/formbuilder/views/forms/templates_fields.php:74
 msgid "Column"
 msgstr ""
 
@@ -918,11 +918,11 @@ msgstr ""
 msgid "Content Type"
 msgstr ""
 
-#: application/modules/addon_webhook/views/backend/get_content.php:75, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:42
+#: application/modules/addon_webhook/views/backend/get_content.php:75, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:43
 msgid "Format"
 msgstr ""
 
-#: application/modules/addon_webhook/views/backend/get_content.php:78, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:207, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:46
+#: application/modules/addon_webhook/views/backend/get_content.php:78, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:210, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:47
 msgid "Default"
 msgstr ""
 
@@ -946,7 +946,7 @@ msgstr ""
 msgid "To form values"
 msgstr ""
 
-#: application/modules/addon_webhook/views/backend/get_content.php:101, application/modules/addon_webhook/views/backend/get_content.php:140, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:35, application/modules/formbuilder/views/forms/create_form.php:204, application/modules/formbuilder/views/forms/list_forms_table.php:42, application/modules/formbuilder/views/records/list_records.php:39, application/modules/formbuilder/views/records/list_records_getdatatable.php:27, application/modules/formbuilder/views/settings/backup_settings.php:68, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:115
+#: application/modules/addon_webhook/views/backend/get_content.php:101, application/modules/addon_webhook/views/backend/get_content.php:140, application/modules/formbuilder/views/forms/ajax_rollback_openmodal.php:35, application/modules/formbuilder/views/forms/create_form.php:204, application/modules/formbuilder/views/forms/list_forms_table.php:42, application/modules/formbuilder/views/records/list_records.php:39, application/modules/formbuilder/views/records/list_records_getdatatable.php:27, application/modules/formbuilder/views/settings/backup_settings.php:68, application/modules/user/views/intranet/index.php:48, application/modules/formbuilder/views/fields/modal/field_opt_column.php:44, application/modules/formbuilder/views/fields/modal/field_opt_text.php:44, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:118
 msgid "Options"
 msgstr ""
 
@@ -1630,7 +1630,7 @@ msgstr ""
 msgid "Date "
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/fields_available.php:492, application/modules/formbuilder/views/forms/settings_form_skin.php:188, application/modules/formbuilder/views/forms/settings_form_skin.php:342, application/modules/formbuilder/views/forms/settings_form_skin.php:433, application/modules/formbuilder/views/forms/settings_form_submission.php:104, application/modules/formbuilder/views/fields/modal/field_opt_column.php:335, application/modules/formbuilder/views/fields/modal/field_opt_column.php:421, application/modules/formbuilder/views/fields/modal/field_opt_column.php:648, application/modules/formbuilder/views/fields/modal/field_opt_column.php:800, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:312, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:491, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:604, application/modules/formbuilder/views/fields/modal/settings_field_input_11.php:78, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:130, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:309, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:422, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:109, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:288, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:401, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:302, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:445, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:531, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:70, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:37, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:78, application/modules/formbuilder/views/fields/modal/settings_field_label.php:137, application/modules/formbuilder/views/fields/modal/settings_field_label.php:344
+#: application/modules/formbuilder/views/forms/fields_available.php:492, application/modules/formbuilder/views/forms/settings_form_skin.php:188, application/modules/formbuilder/views/forms/settings_form_skin.php:342, application/modules/formbuilder/views/forms/settings_form_skin.php:433, application/modules/formbuilder/views/forms/settings_form_submission.php:104, application/modules/formbuilder/views/fields/modal/field_opt_column.php:335, application/modules/formbuilder/views/fields/modal/field_opt_column.php:421, application/modules/formbuilder/views/fields/modal/field_opt_column.php:648, application/modules/formbuilder/views/fields/modal/field_opt_column.php:800, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:312, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:491, application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:604, application/modules/formbuilder/views/fields/modal/settings_field_input_11.php:78, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:130, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:309, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:422, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:109, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:288, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:401, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:302, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:445, application/modules/formbuilder/views/fields/modal/settings_field_input_18.php:531, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:71, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:37, application/modules/formbuilder/views/fields/modal/settings_field_input_6.php:78, application/modules/formbuilder/views/fields/modal/settings_field_label.php:137, application/modules/formbuilder/views/fields/modal/settings_field_label.php:344
 msgid "Color"
 msgstr ""
 
@@ -2446,11 +2446,11 @@ msgstr ""
 msgid "Skin tab"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/settings_form_wizard.php:124, application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:22, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:22, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:208
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:124, application/modules/formbuilder/views/fields/modal/field_opt_checkbox_extra.php:22, application/modules/formbuilder/views/fields/modal/field_opt_select_extra.php:22, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:211
 msgid "Theme 1"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/settings_form_wizard.php:125
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:125, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:212
 msgid "Theme 2"
 msgstr ""
 
@@ -3086,7 +3086,7 @@ msgstr ""
 msgid "Count selected text"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/field_opt_text.php:68, application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:84, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:146
+#: application/modules/formbuilder/views/fields/modal/field_opt_text.php:68, application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:84, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:149
 msgid "Label"
 msgstr ""
 
@@ -3150,7 +3150,7 @@ msgstr ""
 msgid "Place holder"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:326, application/modules/formbuilder/views/fields/modal/settings_field_input_11.php:92, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:144, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:123, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:84
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_1.php:326, application/modules/formbuilder/views/fields/modal/settings_field_input_11.php:92, application/modules/formbuilder/views/fields/modal/settings_field_input_12.php:144, application/modules/formbuilder/views/fields/modal/settings_field_input_13.php:123, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:85
 msgid "Font family"
 msgstr ""
 
@@ -3274,11 +3274,11 @@ msgstr ""
 msgid "Show Check Box"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:115, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:125
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:115, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:128
 msgid "Add new option"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:118, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:128
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_17.php:118, application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:131
 msgid "Remove all options"
 msgstr ""
 
@@ -3382,55 +3382,59 @@ msgstr ""
 msgid "German"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:187, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:188
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:175, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:37
+msgid "Danish"
+msgstr ""
+
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:188, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:189
 msgid "Minimum date"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:207, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:208
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:208, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:209
 msgid "Maximum date"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:227, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:228
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:228, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:229
 msgid "Default date"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:23
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:24
 msgid "Settings label option"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:131
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:134
 msgid "Copy Label to Value"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:134
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:137
 msgid "Import bulk data"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:141
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:144
 msgid "Check"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:149
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:152
 msgid "Value"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:162, application/modules/formbuilder/views/fields/modal/settings_field_label.php:628
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:165, application/modules/formbuilder/views/fields/modal/settings_field_label.php:628
 msgid "Block alignment"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:173
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:176
 msgid "Block"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:183
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:186
 msgid "Inline"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:196, application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:48
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:199, application/modules/formbuilder/views/fields/modal/settings_field_input_5.php:48
 msgid "Theme"
 msgstr ""
 
-#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:202
+#: application/modules/formbuilder/views/fields/modal/settings_field_input_2.php:205
 msgid "Choose Theme"
 msgstr ""
 

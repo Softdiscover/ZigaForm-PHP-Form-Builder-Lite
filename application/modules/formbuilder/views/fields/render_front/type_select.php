@@ -21,6 +21,9 @@ ob_start();
     if ( intval($input2['style_type']) === 1) {
         $defaul_class = 'rockfm-input2-sel-styl1';
     }
+    if ( intval($input2['style_type']) === 2) {
+        $defaul_class = 'rockfm-input2-sel-styl2';
+    }
     ?>
 <div data-uifm-tabnum="<?php echo $tab_num; ?>"
      data-theme-type="<?php echo $input2['style_type']; ?>"

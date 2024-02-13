@@ -11,10 +11,8 @@
              * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
              * @link      http://wordpress-form-builder.uiform.com/
              */
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
-?>
+            if (!defined('BASEPATH')) {exit('No direct script access allowed');}
+            ?>
             <!-- options -->
             <script type="text/html" id="tmpl-zgfm-field-opt-type-6">
 &lt;div id=&quot;uifm-field-opt-content&quot;&gt;
@@ -220,7 +218,7 @@ if (!defined('BASEPATH')) {
                                                 
 
 &lt;select name=&quot;uifm_fld_lbl_font&quot;id=&quot;uifm_fld_lbl_font&quot;data-field-store=&quot;label-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -459,7 +457,7 @@ if (!defined('BASEPATH')) {
                                                 
 
 &lt;select name=&quot;uifm_fld_sublbl_font&quot;id=&quot;uifm_fld_sublbl_font&quot;data-field-store=&quot;sublabel-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -590,7 +588,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_blo_pos_1&quot; 
                            name=&quot;uifm_fld_lbl_blo_pos&quot;   
-                           value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-hand-o-left&quot;&gt;&lt;/i&gt;Left                  &lt;/label&gt;
+                           value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-hand-o-left&quot;&gt;&lt;/i&gt;Left                    &lt;/label&gt;
                     &lt;label
                         data-field-store=&quot;txt_block-block_pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-primary&quot;
@@ -600,7 +598,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_blo_pos_2&quot; 
                            name=&quot;uifm_fld_lbl_blo_pos&quot; 
-                           value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-hand-o-up&quot;&gt;&lt;/i&gt;Top                 &lt;/label&gt;
+                           value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-hand-o-up&quot;&gt;&lt;/i&gt;Top                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-block_pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-primary&quot;
@@ -640,7 +638,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_1&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;   
-                           value=&quot;1&quot;&gt; 1|11                 &lt;/label&gt;
+                           value=&quot;1&quot;&gt; 1|11                    &lt;/label&gt;
                     &lt;label
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -660,7 +658,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_3&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;3&quot;&gt;  3|9                 &lt;/label&gt;
+                           value=&quot;3&quot;&gt;  3|9                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -670,7 +668,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_4&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;4&quot;&gt;  4|8                 &lt;/label&gt;
+                           value=&quot;4&quot;&gt;  4|8                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -680,7 +678,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_5&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;5&quot;&gt;  5|7                 &lt;/label&gt;
+                           value=&quot;5&quot;&gt;  5|7                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -690,7 +688,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_6&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;6&quot;&gt;  6|6                 &lt;/label&gt;
+                           value=&quot;6&quot;&gt;  6|6                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -700,7 +698,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_7&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;7&quot;&gt;  7|5                 &lt;/label&gt;
+                           value=&quot;7&quot;&gt;  7|5                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -710,7 +708,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_8&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;8&quot;&gt;  8|4                 &lt;/label&gt;
+                           value=&quot;8&quot;&gt;  8|4                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -720,7 +718,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_9&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;9&quot;&gt;  9|3                 &lt;/label&gt;
+                           value=&quot;9&quot;&gt;  9|3                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -730,7 +728,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_10&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;10&quot;&gt;  10|2                   &lt;/label&gt;
+                           value=&quot;10&quot;&gt;  10|2                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-grid_layout&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -740,7 +738,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_lbl_glay_pos_11&quot; 
                            name=&quot;uifm_fld_lbl_glay_pos&quot;  
-                           value=&quot;11&quot;&gt;  11|1                   &lt;/label&gt;
+                           value=&quot;11&quot;&gt;  11|1                    &lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
             
@@ -770,21 +768,21 @@ if (!defined('BASEPATH')) {
                         data-toggle-disable=&quot;sfdc-btn-success&quot;
                         data-settings-option=&quot;group-radiobutton&quot;
                         class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
-                    &lt;input type=&quot;radio&quot;  id=&quot;uifm_fld_lbl_blo_align_1&quot; name=&quot;uifm_fld_lbl_blo_align&quot; value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                   &lt;/label&gt;
+                    &lt;input type=&quot;radio&quot;  id=&quot;uifm_fld_lbl_blo_align_1&quot; name=&quot;uifm_fld_lbl_blo_align&quot; value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-block_align&quot;
                         data-toggle-enable=&quot;sfdc-btn-success&quot;
                         data-toggle-disable=&quot;sfdc-btn-success&quot;
                         data-settings-option=&quot;group-radiobutton&quot;
                         class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
-                    &lt;input type=&quot;radio&quot;  id=&quot;uifm_fld_lbl_blo_align_2&quot; name=&quot;uifm_fld_lbl_blo_align&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                   &lt;/label&gt;
+                    &lt;input type=&quot;radio&quot;  id=&quot;uifm_fld_lbl_blo_align_2&quot; name=&quot;uifm_fld_lbl_blo_align&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;txt_block-block_align&quot;
                         data-toggle-enable=&quot;sfdc-btn-success&quot;
                         data-toggle-disable=&quot;sfdc-btn-success&quot;
                         data-settings-option=&quot;group-radiobutton&quot;
                         class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
-                    &lt;input type=&quot;radio&quot;  id=&quot;uifm_fld_lbl_blo_align_3&quot; name=&quot;uifm_fld_lbl_blo_align&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                 &lt;/label&gt;
+                    &lt;input type=&quot;radio&quot;  id=&quot;uifm_fld_lbl_blo_align_3&quot; name=&quot;uifm_fld_lbl_blo_align&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                    &lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -857,7 +855,7 @@ if (!defined('BASEPATH')) {
                                 data-field-store=&quot;input-prepe_txt&quot;
                                 onclick=&quot;rocketform.inputsettings_addingPrepAppe(this);&quot;
                                 class=&quot;sfdc-btn sfdc-btn-warning&quot;
-                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                          &lt;/button&gt;
+                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                            &lt;/button&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -882,7 +880,7 @@ if (!defined('BASEPATH')) {
                                 data-field-store=&quot;input-prepe_txt&quot;
                                 onclick=&quot;rocketform.inputsettings_addingPrepAppe(this);&quot;
                                 class=&quot;sfdc-btn sfdc-btn-warning&quot;
-                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                          &lt;/button&gt;
+                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                            &lt;/button&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -905,7 +903,7 @@ if (!defined('BASEPATH')) {
                                 data-field-store=&quot;input-prepe_txt&quot;
                                 onclick=&quot;rocketform.inputsettings_addingPrepAppe(this);&quot;
                                 class=&quot;sfdc-btn sfdc-btn-warning&quot;
-                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                          &lt;/button&gt;
+                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                            &lt;/button&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -957,7 +955,7 @@ if (!defined('BASEPATH')) {
                                 data-field-store=&quot;input-append_txt&quot;
                                 onclick=&quot;rocketform.inputsettings_addingPrepAppe(this);&quot;
                                 class=&quot;sfdc-btn sfdc-btn-warning&quot;
-                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                          &lt;/button&gt;
+                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                            &lt;/button&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -982,7 +980,7 @@ if (!defined('BASEPATH')) {
                                 data-field-store=&quot;input-append_txt&quot;
                                 onclick=&quot;rocketform.inputsettings_addingPrepAppe(this);&quot;
                                 class=&quot;sfdc-btn sfdc-btn-warning&quot;
-                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                          &lt;/button&gt;
+                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                            &lt;/button&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1005,7 +1003,7 @@ if (!defined('BASEPATH')) {
                                 data-field-store=&quot;input-append_txt&quot;
                                 onclick=&quot;rocketform.inputsettings_addingPrepAppe(this);&quot;
                                 class=&quot;sfdc-btn sfdc-btn-warning&quot;
-                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                          &lt;/button&gt;
+                                    type=&quot;button&quot;&gt;&lt;i class=&quot;fa fa-plus-square&quot;&gt;&lt;/i&gt; Add                            &lt;/button&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1170,7 +1168,7 @@ if (!defined('BASEPATH')) {
                                                 
 
 &lt;select name=&quot;uifm_fld_inp_font&quot;id=&quot;uifm_fld_inp_font&quot;data-field-store=&quot;input-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -1204,7 +1202,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp_align_1&quot;
-                                    name=&quot;uifm_fld_inp_align_1&quot;   value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                             &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp_align_1&quot;   value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input-val_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -1213,7 +1211,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp_align_2&quot;
-                                    name=&quot;uifm_fld_inp_align_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                               &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp_align_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input-val_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -1222,7 +1220,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp_align_3&quot; 
-                                    name=&quot;uifm_fld_inp_align_3&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                             &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp_align_3&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                                &lt;/label&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -1242,7 +1240,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp_objalign_1&quot;
-                                    name=&quot;uifm_fld_inp_objalign_1&quot;   value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                              &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp_objalign_1&quot;   value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input-obj_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -1260,7 +1258,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp_objalign_3&quot; 
-                                    name=&quot;uifm_fld_inp_objalign_3&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                              &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp_objalign_3&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                                &lt;/label&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -1313,7 +1311,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbg_type_2&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                              &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                                &lt;/label&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -1491,7 +1489,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbor_style_1&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;1&quot; checked&gt;Solid                                              &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;1&quot; checked&gt;Solid                                                &lt;/label&gt;
                                                 &lt;label 
                                                     data-field-store=&quot;el_border-style&quot;
                                                     data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -1499,7 +1497,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbor_style_2&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot;&gt;  Dotted                                               &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot;&gt;  Dotted                                                &lt;/label&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -1532,6 +1530,7 @@ if (!defined('BASEPATH')) {
         &lt;!--container for options ,.. --&gt;    
             
 &lt;div class=&quot;uifm-set-section-input2&quot;&gt;
+    &lt;div id=&quot;uifm-section-input2-custom-opts-theme1&quot;&gt;
     &lt;div class=&quot;sfdc-row&quot;&gt;
             &lt;div class=&quot;sfdc-col-sm-12&quot;&gt;
                 &lt;div class=&quot;sfdc-form-group&quot;&gt;
@@ -1635,7 +1634,7 @@ if (!defined('BASEPATH')) {
                                                 
 
 &lt;select name=&quot;uifm_fld_inp2_font&quot;id=&quot;uifm_fld_inp2_font&quot;data-field-store=&quot;input2-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -1654,6 +1653,8 @@ if (!defined('BASEPATH')) {
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
+    
+    &lt;/div&gt;
     &lt;div class=&quot;space20&quot;&gt;&lt;/div&gt;
     &lt;div class=&quot;sfdc-row&quot;&gt;
         &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
@@ -1726,7 +1727,7 @@ if (!defined('BASEPATH')) {
                             class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                         &lt;input type=&quot;radio&quot;  
                             id=&quot;uifm_fld_inp2_blo_align_2&quot;
-                            value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Inline                     &lt;/label&gt;
+                            value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Inline                        &lt;/label&gt;
 
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -1751,6 +1752,7 @@ if (!defined('BASEPATH')) {
                         id=&quot;uifm_fld_inp2_style_type&quot;&gt;
                     &lt;option value=&quot;0&quot;&gt;Default&lt;/option&gt;
                     &lt;option value=&quot;1&quot;&gt;Theme 1&lt;/option&gt;
+                    &lt;option value=&quot;2&quot;&gt;Theme 2&lt;/option&gt;
                 &lt;/select&gt;
             &lt;/div&gt;
         &lt;/div&gt; 
@@ -1770,7 +1772,7 @@ if (!defined('BASEPATH')) {
             &lt;div class=&quot;sfdc-col-sm-12&quot;&gt;
                 &lt;div class=&quot;sfdc-form-group&quot;&gt;
                 &lt;label class=&quot;sfdc-control-label&quot; for=&quot;&quot;&gt;
-                    Custom html content             &lt;/label&gt;
+                    Custom html content                &lt;/label&gt;
                 &lt;div class=&quot;sfdc-controls sfdc-form-group&quot;&gt;
                                         &lt;textarea 
                             class=&quot;uifm_tinymce_obj&quot;
@@ -1976,7 +1978,7 @@ if (!defined('BASEPATH')) {
                         data-settings-option=&quot;group-radiobutton&quot;
                         id=&quot;uifm_fld_inp5_theme_1&quot; 
                         class=&quot;sfdc-btn sfdc-btn-default uifm-f-setoption-btn&quot; &gt;
-                    &lt;input type=&quot;radio&quot;  value=&quot;0&quot;&gt;   Light                   &lt;/label&gt;
+                    &lt;input type=&quot;radio&quot;  value=&quot;0&quot;&gt;   Light                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;input5-g_theme&quot;
                         data-toggle-enable=&quot;sfdc-btn-default&quot;
@@ -2199,6 +2201,7 @@ if (!defined('BASEPATH')) {
                         &lt;option value=&quot;ru&quot;&gt;Russian&lt;/option&gt;
                         &lt;option value=&quot;zh-cn&quot;&gt;Chinese&lt;/option&gt;
                         &lt;option value=&quot;de&quot;&gt;German&lt;/option&gt;
+                        &lt;option value=&quot;da&quot;&gt;Danish&lt;/option&gt;
                     &lt;/select&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
@@ -2436,7 +2439,7 @@ if (!defined('BASEPATH')) {
                                                 
 
 &lt;select name=&quot;uifm_fld_input11_font&quot;id=&quot;uifm_fld_input11_font&quot;data-field-store=&quot;input11-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -2517,7 +2520,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp14_objalign_2&quot;
-                                    name=&quot;uifm_fld_inp14_objalign_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                              &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp14_objalign_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input14-obj_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -2640,7 +2643,7 @@ if (!defined('BASEPATH')) {
        &lt;div class=&quot;sfdc-row&quot;&gt;
             &lt;div class=&quot;sfdc-col-sm-12&quot;&gt;
                 &lt;div class=&quot;sfdc-form-group&quot;&gt;
-                    &lt;label&gt;Text for last button                   &lt;a href=&quot;javascript:void(0);&quot;
+                    &lt;label&gt;Text for last button                    &lt;a href=&quot;javascript:void(0);&quot;
                        data-toggle=&quot;tooltip&quot; data-placement=&quot;right&quot; 
                        data-original-title=&quot;you can check this on frontend page or preview&quot;
                        &gt;&lt;span class=&quot;fa fa-question-circle&quot;&gt;&lt;/span&gt;&lt;/a&gt;
@@ -2699,7 +2702,7 @@ if (!defined('BASEPATH')) {
                                                 
 
 &lt;select name=&quot;uifm_fld_inp12_font&quot;id=&quot;uifm_fld_inp12_font&quot;data-field-store=&quot;input12-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -2733,7 +2736,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp12_align_1&quot;
-                                    name=&quot;uifm_fld_inp12_align_1&quot;   value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                               &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp12_align_1&quot;   value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input12-val_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -2742,7 +2745,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp12_align_2&quot;
-                                    name=&quot;uifm_fld_inp12_align_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                             &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp12_align_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input12-val_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -2751,7 +2754,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp12_align_3&quot; 
-                                    name=&quot;uifm_fld_inp12_align_3&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                               &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp12_align_3&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                                &lt;/label&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -2780,7 +2783,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp12_objalign_2&quot;
-                                    name=&quot;uifm_fld_inp12_objalign_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                              &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp12_objalign_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input12-obj_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -2842,7 +2845,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbg12_type_2&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                              &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                                &lt;/label&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -3020,7 +3023,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbor12_style_1&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;1&quot; checked&gt;Solid                                              &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;1&quot; checked&gt;Solid                                                &lt;/label&gt;
                                                 &lt;label 
                                                     data-field-store=&quot;el12_border-style&quot;
                                                     data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -3028,7 +3031,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbor12_style_2&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot;&gt;  Dotted                                               &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot;&gt;  Dotted                                                &lt;/label&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -3203,7 +3206,7 @@ if (!defined('BASEPATH')) {
                                                 
 
 &lt;select name=&quot;uifm_fld_inp13_font&quot;id=&quot;uifm_fld_inp13_font&quot;data-field-store=&quot;input13-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -3237,7 +3240,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp13_align_1&quot;
-                                    name=&quot;uifm_fld_inp13_align_1&quot;   value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                               &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp13_align_1&quot;   value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-align-left&quot;&gt;&lt;/i&gt; Left                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input13-val_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -3246,7 +3249,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp13_align_2&quot;
-                                    name=&quot;uifm_fld_inp13_align_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                             &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp13_align_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input13-val_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -3255,7 +3258,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp13_align_3&quot; 
-                                    name=&quot;uifm_fld_inp13_align_3&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                               &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp13_align_3&quot; value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-align-right&quot;&gt;&lt;/i&gt; Right                                &lt;/label&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                     &lt;/div&gt;
@@ -3284,7 +3287,7 @@ if (!defined('BASEPATH')) {
                                     class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
                                 &lt;input type=&quot;radio&quot; 
                                     id=&quot;uifm_fld_inp13_objalign_2&quot;
-                                    name=&quot;uifm_fld_inp13_objalign_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                              &lt;/label&gt;
+                                    name=&quot;uifm_fld_inp13_objalign_2&quot; value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-align-center&quot;&gt;&lt;/i&gt; Center                                &lt;/label&gt;
                                 &lt;label 
                                     data-field-store=&quot;input13-obj_align&quot;
                                     data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -3346,7 +3349,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbg13_type_2&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                              &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                                &lt;/label&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -3524,7 +3527,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbor13_style_1&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;1&quot; checked&gt;Solid                                              &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;1&quot; checked&gt;Solid                                                &lt;/label&gt;
                                                 &lt;label 
                                                     data-field-store=&quot;el13_border-style&quot;
                                                     data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -3532,7 +3535,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_fld_elbor13_style_2&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot;&gt;  Dotted                                               &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot;&gt;  Dotted                                                &lt;/label&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -3844,7 +3847,7 @@ if (!defined('BASEPATH')) {
                 &lt;div class=&quot;sfdc-col-sm-12&quot;&gt;
                     &lt;div class=&quot;sfdc-form-group&quot;&gt;
                     &lt;label class=&quot;sfdc-control-label&quot; for=&quot;&quot;&gt;
-                        Custom text                 &lt;/label&gt;
+                        Custom text                    &lt;/label&gt;
                     &lt;div class=&quot;sfdc-controls sfdc-form-group&quot;&gt;
                                                 &lt;textarea 
                             class=&quot;uifm_tinymce_obj&quot;
@@ -3884,7 +3887,7 @@ if (!defined('BASEPATH')) {
                         &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_inp18_txt_pos_1&quot; 
                            name=&quot;uifm_fld_inp18_txt_pos&quot;   
-                           value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-hand-o-down&quot;&gt;&lt;/i&gt; Top                  &lt;/label&gt;
+                           value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-hand-o-down&quot;&gt;&lt;/i&gt; Top                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;input18-text-html_pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -3894,7 +3897,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_inp18_txt_pos_2&quot; 
                            name=&quot;uifm_fld_inp18_txt_pos&quot;   
-                           value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-hand-o-up&quot;&gt;&lt;/i&gt; Right                  &lt;/label&gt;
+                           value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-hand-o-up&quot;&gt;&lt;/i&gt; Right                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;input18-text-html_pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -3904,7 +3907,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_inp18_txt_pos_3&quot; 
                            name=&quot;uifm_fld_inp18_txt_pos&quot;   
-                           value=&quot;3&quot;&gt; &lt;i class=&quot;fa fa-question-circle&quot;&gt;&lt;/i&gt; bottom                   &lt;/label&gt;
+                           value=&quot;3&quot;&gt; &lt;i class=&quot;fa fa-question-circle&quot;&gt;&lt;/i&gt; bottom                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;input18-text-html_pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -3914,7 +3917,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_inp18_txt_pos_4&quot; 
                            name=&quot;uifm_fld_inp18_txt_pos&quot;   
-                           value=&quot;0&quot;&gt;&lt;i class=&quot;fa fa-question-circle&quot;&gt;&lt;/i&gt; left                  &lt;/label&gt;
+                           value=&quot;0&quot;&gt;&lt;i class=&quot;fa fa-question-circle&quot;&gt;&lt;/i&gt; left                    &lt;/label&gt;
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -4099,7 +4102,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_frm_inp18_fmbg_type_2&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                              &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                                &lt;/label&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -4281,7 +4284,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_frm_inp18_fmbor_style_1&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;1&quot; checked&gt;Solid                                              &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;1&quot; checked&gt;Solid                                                &lt;/label&gt;
                                                 &lt;label 
                                                     data-field-store=&quot;input18-pane_border-style&quot;
                                                     data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -4289,7 +4292,7 @@ if (!defined('BASEPATH')) {
                                                     data-settings-option=&quot;group-radiobutton&quot;
                                                     id=&quot;uifm_frm_inp18_fmbor_style_2&quot;
                                                     class=&quot;sfdc-btn sfdc-btn-warning uifm-f-setoption-btn&quot; &gt;
-                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot;&gt;  Dotted                                               &lt;/label&gt;
+                                                &lt;input type=&quot;radio&quot;  value=&quot;2&quot;&gt;  Dotted                                                &lt;/label&gt;
                                             &lt;/div&gt;
                                         &lt;/div&gt;
                                     &lt;/div&gt;
@@ -4568,6 +4571,7 @@ if (!defined('BASEPATH')) {
                                             &lt;option value=&quot;ru&quot;&gt;Russian&lt;/option&gt;
                                             &lt;option value=&quot;zh&quot;&gt;Chinese&lt;/option&gt;
                                             &lt;option value=&quot;de&quot;&gt;German&lt;/option&gt;
+                                            &lt;option value=&quot;da&quot;&gt;Danish&lt;/option&gt;
                                         &lt;/select&gt;
                                         
                                        
@@ -4657,9 +4661,9 @@ if (!defined('BASEPATH')) {
                 &lt;div class=&quot;sfdc-col-sm-12&quot;&gt;
                     &lt;div class=&quot;sfdc-form-group&quot;&gt;
                     &lt;label class=&quot;sfdc-control-label&quot; for=&quot;&quot;&gt;
-                        Help block text                 &lt;/label&gt;
+                        Help block text                    &lt;/label&gt;
                     &lt;div class=&quot;sfdc-controls sfdc-form-group&quot;&gt;
-                                                 &lt;textarea 
+                                                  &lt;textarea 
                             class=&quot;uifm_tinymce_obj&quot;
                             name=&quot;uifm_fld_msc_text&quot;
                             id=&quot;uifm_fld_msc_text&quot;&gt;&lt;/textarea&gt;
@@ -4694,7 +4698,7 @@ if (!defined('BASEPATH')) {
                                                 
 
 &lt;select name=&quot;uifm_fld_hblock_font&quot;id=&quot;uifm_fld_hblock_font&quot;data-field-store=&quot;help_block-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -4736,7 +4740,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_hblock_pos_2&quot; 
                            name=&quot;uifm_fld_hblock_pos&quot;   
-                           value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-hand-o-up&quot;&gt;&lt;/i&gt; At Top                 &lt;/label&gt;
+                           value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-hand-o-up&quot;&gt;&lt;/i&gt; At Top                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;help_block-pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -4746,7 +4750,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;  
                            id=&quot;uifm_fld_hblock_pos_3&quot; 
                            name=&quot;uifm_fld_hblock_pos&quot;   
-                           value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-question-circle&quot;&gt;&lt;/i&gt; Tooltip                  &lt;/label&gt;
+                           value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-question-circle&quot;&gt;&lt;/i&gt; Tooltip                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;help_block-pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-warning&quot;
@@ -4794,7 +4798,7 @@ if (!defined('BASEPATH')) {
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary tooltip-val-demo uifm-f-setoption-gchecks&quot;  &gt;
-                                     Required                           &lt;/label&gt;
+                                     Required                            &lt;/label&gt;
                             &lt;!--/ validetor button --&gt;
                             &lt;label 
                                 id=&quot;uifm-custom-val-regex-btn&quot;
@@ -4805,7 +4809,7 @@ if (!defined('BASEPATH')) {
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary tooltip-val-demo uifm-f-setoption-gchecks zgfm-set-section-custominput-box&quot;  &gt;
-                                     Custom                         &lt;/label&gt;
+                                     Custom                            &lt;/label&gt;
                           &lt;/div&gt;
                         &lt;div class=&quot; sfdc-btn-group sfdc-btn-group-justified&quot; data-toggle=&quot;buttons&quot;&gt;
                             &lt;!-- validetor button --&gt;
@@ -4829,7 +4833,7 @@ if (!defined('BASEPATH')) {
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary uifm-f-setoption-gchecks&quot; &gt;
-                                 Letter &amp; Numbers                           &lt;/label&gt;
+                                 Letter &amp; Numbers                            &lt;/label&gt;
                           &lt;/div&gt;
                          &lt;div class=&quot; sfdc-btn-group sfdc-btn-group-justified&quot; data-toggle=&quot;buttons&quot;&gt;   
                             &lt;label 
@@ -4841,7 +4845,7 @@ if (!defined('BASEPATH')) {
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary uifm-f-setoption-gchecks&quot; &gt;
-                                  Only numbers                          &lt;/label&gt;
+                                  Only numbers                            &lt;/label&gt;
                             &lt;label 
                                 id=&quot;uifm-custom-val-mail-btn&quot;
                                 data-field-store=&quot;validate-typ_val&quot;
@@ -4851,7 +4855,7 @@ if (!defined('BASEPATH')) {
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary uifm-f-setoption-gchecks&quot; &gt;
-                                 Email                          &lt;/label&gt;
+                                 Email                            &lt;/label&gt;
                         &lt;/div&gt;
                 &lt;/div&gt;
                 
@@ -4860,22 +4864,22 @@ if (!defined('BASEPATH')) {
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary&quot; &gt;
-                            &lt;input type=&quot;checkbox&quot;  value=&quot;0&quot;&gt; Greater than                           &lt;/label&gt;
+                            &lt;input type=&quot;checkbox&quot;  value=&quot;0&quot;&gt; Greater than                            &lt;/label&gt;
                             &lt;label data-toggle-enable=&quot;sfdc-btn-primary&quot;
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary&quot; &gt;
-                            &lt;input type=&quot;checkbox&quot;  value=&quot;0&quot;&gt; Identical                          &lt;/label&gt;
+                            &lt;input type=&quot;checkbox&quot;  value=&quot;0&quot;&gt; Identical                            &lt;/label&gt;
                             &lt;label data-toggle-enable=&quot;sfdc-btn-primary&quot;
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary&quot; &gt;
-                                &lt;input type=&quot;checkbox&quot;  value=&quot;0&quot;&gt; Less than                          &lt;/label&gt;
+                                &lt;input type=&quot;checkbox&quot;  value=&quot;0&quot;&gt; Less than                            &lt;/label&gt;
                             &lt;label data-toggle-enable=&quot;sfdc-btn-primary&quot;
                                 data-toggle-disable=&quot;sfdc-btn-primary&quot;
                                 data-settings-option=&quot;group-checkboxes&quot;
                                 class=&quot;sfdc-btn sfdc-btn-primary&quot; &gt;
-                                &lt;input type=&quot;checkbox&quot;  value=&quot;0&quot;&gt; Length                         &lt;/label&gt;
+                                &lt;input type=&quot;checkbox&quot;  value=&quot;0&quot;&gt; Length                            &lt;/label&gt;
                        &lt;/div&gt;--&gt;
             &lt;/div&gt;
         &lt;/div&gt;
@@ -4883,7 +4887,7 @@ if (!defined('BASEPATH')) {
     
         &lt;div class=&quot;sfdc-row&quot; id=&quot;uifm-custom-val-title-added&quot; style=&quot;display:none;&quot;&gt;
             &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
-                &lt;label &gt;Validator:            &lt;/div&gt;
+                &lt;label &gt;Validator:             &lt;/div&gt;
         &lt;/div&gt;
         &lt;div class=&quot;uifm-custom-wrap-validators&quot;&gt;
             &lt;!-- Required --&gt;
@@ -4928,7 +4932,7 @@ if (!defined('BASEPATH')) {
                             &lt;div class=&quot;sfdc-form-group&quot;&gt;
                                     &lt;label &gt;Custom validation&lt;/label&gt;
                                     &lt;div class=&quot;sfdc-alert sfdc-alert-warning&quot;&gt;
-                                        &lt;strong&gt;Info!&lt;/strong&gt; Validation using a character pattern or regular expression                                       e.g. &lt;code&gt;^[a-zA-Zа-яА-ЯёЁ&#039;][a-zA-Z-а-яА-ЯёЁ&#039; ]+[a-zA-Zа-яА-ЯёЁ&#039;]?$&lt;/code&gt;
+                                        &lt;strong&gt;Info!&lt;/strong&gt; Validation using a character pattern or regular expression                                        e.g. &lt;code&gt;^[a-zA-Zа-яА-ЯёЁ&#039;][a-zA-Z-а-яА-ЯёЁ&#039; ]+[a-zA-Zа-яА-ЯёЁ&#039;]?$&lt;/code&gt;
                                     &lt;/div&gt;
                             &lt;/div&gt;
                             &lt;div class=&quot;sfdc-form-group&quot;&gt;
@@ -4965,7 +4969,7 @@ if (!defined('BASEPATH')) {
                                        value=&quot;Required only letters&quot;
                                        &gt;
                                 &lt;div&gt;
-                                    Required only letters                               &lt;/div&gt;
+                                    Required only letters                                &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
@@ -5003,7 +5007,7 @@ if (!defined('BASEPATH')) {
                                        value=&quot;Required only Letters and Numbers&quot;
                                        &gt;
                                 &lt;div&gt;
-                                    Required only Letters and Numbers                               &lt;/div&gt;
+                                    Required only Letters and Numbers                                &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
@@ -5041,7 +5045,7 @@ if (!defined('BASEPATH')) {
                                        value=&quot;Required only numbers&quot;
                                        &gt;
                                 &lt;div&gt;
-                                    Required only numbers                               &lt;/div&gt;
+                                    Required only numbers                                &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
@@ -5079,7 +5083,7 @@ if (!defined('BASEPATH')) {
                                        value=&quot;Required a valid mail&quot;
                                        &gt;
                                 &lt;div&gt;
-                                    Required a valid mail                               &lt;/div&gt;
+                                    Required a valid mail                                &lt;/div&gt;
                             &lt;/div&gt;
                         &lt;/div&gt;
                         &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
@@ -5121,7 +5125,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;
                            id=&quot;uifm_fld_val_pos_2&quot; 
                            name=&quot;uifm_fld_val_pos&quot;
-                           value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-hand-o-right&quot;&gt;&lt;/i&gt; Right                   &lt;/label&gt;
+                           value=&quot;1&quot;&gt; &lt;i class=&quot;fa fa-hand-o-right&quot;&gt;&lt;/i&gt; Right                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;validate-pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -5131,7 +5135,7 @@ if (!defined('BASEPATH')) {
                     &lt;input type=&quot;radio&quot;
                            id=&quot;uifm_fld_val_pos_3&quot; 
                            name=&quot;uifm_fld_val_pos&quot;
-                           value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-hand-o-down&quot;&gt;&lt;/i&gt; Bottom                   &lt;/label&gt;
+                           value=&quot;2&quot;&gt; &lt;i class=&quot;fa fa-hand-o-down&quot;&gt;&lt;/i&gt; Bottom                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;validate-pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -5229,7 +5233,7 @@ if (!defined('BASEPATH')) {
                         id=&quot;uifm_fld_val_reqicon_pos_1&quot; 
                         name=&quot;uifm_fld_val_reqicon_pos_1&quot;
                         class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
-                    &lt;input type=&quot;radio&quot;  value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-asterisk&quot;&gt;&lt;/i&gt; Before label                 &lt;/label&gt;
+                    &lt;input type=&quot;radio&quot;  value=&quot;0&quot;&gt; &lt;i class=&quot;fa fa-asterisk&quot;&gt;&lt;/i&gt; Before label                    &lt;/label&gt;
                     &lt;label 
                         data-field-store=&quot;validate-reqicon_pos&quot;
                         data-toggle-enable=&quot;sfdc-btn-success&quot;
@@ -5238,7 +5242,7 @@ if (!defined('BASEPATH')) {
                         id=&quot;uifm_fld_val_reqicon_pos_2&quot; 
                         name=&quot;uifm_fld_val_reqicon_pos_2&quot;
                         class=&quot;sfdc-btn sfdc-btn-success uifm-f-setoption-btn&quot; &gt;
-                    &lt;input type=&quot;radio&quot;  value=&quot;1&quot;&gt;&lt;i class=&quot;fa fa-asterisk&quot;&gt;&lt;/i&gt; After label                   &lt;/label&gt;
+                    &lt;input type=&quot;radio&quot;  value=&quot;1&quot;&gt;&lt;i class=&quot;fa fa-asterisk&quot;&gt;&lt;/i&gt; After label                    &lt;/label&gt;
                 &lt;/div&gt;
                     &lt;/div&gt;
                 &lt;/div&gt;
@@ -5258,7 +5262,7 @@ if (!defined('BASEPATH')) {
         &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
             &lt;div class=&quot;sfdc-form-group&quot;&gt;
                   
-                                            &lt;label &gt;Enable Conditional logic&lt;/label&gt;
+                                             &lt;label &gt;Enable Conditional logic&lt;/label&gt;
                         &lt;div class=&quot;&quot;&gt;
                             &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
                                 &lt;input 
@@ -5270,7 +5274,7 @@ if (!defined('BASEPATH')) {
 
                         &lt;/div&gt;
                 
-                                        
+                                         
                 &lt;/div&gt;
         &lt;/div&gt;
         
@@ -5309,7 +5313,7 @@ if (!defined('BASEPATH')) {
                     &lt;div class=&quot;sfdc-form-group&quot;&gt;
                         &lt;button onclick=&quot;javascript:rocketform.clogic_addNewConditional();&quot; 
                                 class=&quot;sfdc-btn sfdc-btn-primary&quot; type=&quot;button&quot;&gt;
-                            Add new conditional Logic                       &lt;/button&gt;
+                            Add new conditional Logic                        &lt;/button&gt;
                         &lt;button class=&quot;sfdc-btn sfdc-btn-sm sfdc-btn-danger&quot; onclick=&quot;javascript:rocketform.clogic_removeAll();&quot;&gt;
              &lt;i class=&quot;fa fa-trash-o&quot;&gt;&lt;/i&gt; Remove all&lt;/button&gt;
                     &lt;/div&gt;

@@ -21,13 +21,16 @@ ob_start();
     if ( intval($input2['style_type']) === 1) {
         $defaul_class = 'rockfm-input2-sel-styl1';
     }
+    if ( intval($input2['style_type']) === 2) {
+        $defaul_class = 'rockfm-input2-sel-styl2';
+    }
     ?>
 <div data-uifm-tabnum="<?php echo $tab_num; ?>"
      data-theme-type="<?php echo $input2['style_type']; ?>"
      data-theme-stl1-txtnosel="<?php echo isset($input2['stl1']['txt_noselected']) ? $input2['stl1']['txt_noselected'] : ''; ?>"
      data-theme-stl1-txtnomatch="<?php echo isset($input2['stl1']['txt_noresult']) ? $input2['stl1']['txt_noresult'] : ''; ?>"
      data-theme-stl1-txtcountsel="<?php echo isset($input2['stl1']['txt_countsel']) ? $input2['stl1']['txt_countsel'] : ''; ?>"
-     class="rockfm-input2-wrap"> 
+     class="rockfm-input2-wrap" > 
     <select class="<?php echo $defaul_class; ?>"
             name="uiform_fields[<?php echo $id; ?>][]"
              multiple

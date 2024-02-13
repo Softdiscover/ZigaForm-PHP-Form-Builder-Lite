@@ -17,6 +17,7 @@ if ( ! defined('BASEPATH')) {
 ?>
 
 <div class="uifm-set-section-input2">
+    <div id="uifm-section-input2-custom-opts-theme1">
     <div class="sfdc-row">
             <div class="sfdc-col-sm-12">
                 <div class="sfdc-form-group">
@@ -107,6 +108,8 @@ if ( ! defined('BASEPATH')) {
                 </div>
             </div>
         </div>
+    
+    </div>
     <div class="space20"></div>
     <div class="sfdc-row">
         <div class="sfdc-col-md-12">
@@ -206,6 +209,7 @@ if ( ! defined('BASEPATH')) {
                         id="uifm_fld_inp2_style_type">
                     <option value="0"><?php echo __('Default', 'FRocket_admin'); ?></option>
                     <option value="1"><?php echo __('Theme 1', 'FRocket_admin'); ?></option>
+                    <option value="2"><?php echo __('Theme 2', 'FRocket_admin'); ?></option>
                 </select>
             </div>
         </div> 

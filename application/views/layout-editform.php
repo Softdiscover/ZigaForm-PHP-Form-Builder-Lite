@@ -59,6 +59,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/backend/js/colorpicker/2.5/css/bootstrap-colorpicker.css" rel="stylesheet">
 	<!-- bootstrap select -->
 	<link href="<?php echo base_url(); ?>assets/common/js/bselect/1.12.4/css/bootstrap-select-mod.css" rel="stylesheet">
+	
+	<!-- bootstrap select2 -->
+	<link href="<?php echo base_url(); ?>/assets/common/js/select2/4.0.13/css/select2.min.css" rel="stylesheet">
+	
 	<!-- bootstrap switch -->
 	<link href="<?php echo base_url(); ?>assets/backend/js/bswitch/bootstrap-switch.css" rel="stylesheet">
 	<!-- bootstrap slider -->
@@ -146,6 +150,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/colorpicker/2.5/js/bootstrap-colorpicker_mod.js"></script>
 	<!-- bootstrap select -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/bselect/1.12.4/js/bootstrap-select-mod.js"></script>
+	
+	<!-- bootstrap select2 -->
+	<script type="text/javascript" src="<?php echo base_url(); ?>/assets/common/js/select2/4.0.13/js/select2.full.min.js"></script>
+	
 	<!-- bootstrap switch -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bswitch/bootstrap-switch.js"></script>
 	<!-- bootstrap slider -->

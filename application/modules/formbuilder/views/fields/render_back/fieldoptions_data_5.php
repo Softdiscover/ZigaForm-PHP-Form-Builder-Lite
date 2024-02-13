@@ -11,10 +11,8 @@
              * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
              * @link      http://wordpress-form-builder.uiform.com/
              */
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
-?>
+            if (!defined('BASEPATH')) {exit('No direct script access allowed');}
+            ?>
             <!-- options -->
             <script type="text/html" id="tmpl-zgfm-field-opt-type-5">&lt;div id=&quot;uifm-field-opt-content&quot;&gt;
     &lt;input type=&quot;hidden&quot; id=&quot;uifm-field-selected-id&quot; value=&quot;&quot;&gt;
@@ -387,7 +385,7 @@ if (!defined('BASEPATH')) {
                                                                 data-settings-option=&quot;sfdc-group-radiobutton&quot;
                                                                 id=&quot;zgpb_fld_col_bg_type_2&quot;
                                                                 class=&quot;sfdc-btn sfdc-btn-warning zgpb-col-setoption-btn&quot; &gt;
-                                                            &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                                          &lt;/label&gt;
+                                                            &lt;input type=&quot;radio&quot;  value=&quot;2&quot; checked&gt; Gradient                                                            &lt;/label&gt;
                                                         &lt;/div&gt;
                                                     &lt;/div&gt;
                                                 &lt;/div&gt;
