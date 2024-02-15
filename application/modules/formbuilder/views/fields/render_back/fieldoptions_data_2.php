@@ -11,10 +11,8 @@
              * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
              * @link      http://wordpress-form-builder.uiform.com/
              */
-if (!defined('BASEPATH')) {
-    exit('No direct script access allowed');
-}
-?>
+            if (!defined('BASEPATH')) {exit('No direct script access allowed');}
+            ?>
             <!-- options -->
             <script type="text/html" id="tmpl-zgfm-field-opt-type-2">&lt;div id=&quot;uifm-field-opt-content&quot;&gt;
     &lt;input type=&quot;hidden&quot; id=&quot;uifm-field-selected-id&quot; value=&quot;&quot;&gt;
@@ -132,7 +130,35 @@ if (!defined('BASEPATH')) {
                                     &lt;div class=&quot;space5&quot;&gt;&lt;/div&gt;
                                 &lt;/div&gt;
                      &lt;/fieldset&gt;
+                     &lt;fieldset&gt;
+                                &lt;legend&gt;Mobile &lt;/legend&gt;
+                                &lt;div class=&quot;zgpb-modal-body-tab-inner&quot;&gt;
+                                    &lt;div class=&quot;sfdc-row &quot;&gt;
+                                        &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
+                                            &lt;div class=&quot;sfdc-form-group&quot;&gt;
+                                                &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                                    &lt;label for=&quot;&quot;&gt;Keep grid&lt;/label&gt; 
+                                                    &lt;a data-original-title=&quot;Keep grid&quot; 
+                                                       data-placement=&quot;right&quot; 
+                                                       data-toggle=&quot;tooltip&quot; 
+                                                       href=&quot;javascript:void(0);&quot;&gt;&lt;span class=&quot;fa fa-question-circle&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                                                &lt;/div&gt;
+                                                &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                                     &lt;input class=&quot;zgpb-switch-field&quot;
+                                                        data-field-store=&quot;skin-mobile-keep_grid_st&quot;
+                                                        id=&quot;zgpb_fld_keep_grid_st&quot;
+                                                        name=&quot;zgpb_fld_keep_grid_st&quot;
+                                                        type=&quot;checkbox&quot;/&gt;
 
+                                                &lt;/div&gt;    
+                                            &lt;/div&gt;
+                                        &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    
+                                    &lt;div class=&quot;space5&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                     &lt;/fieldset&gt;
+                     
                       &lt;/div&gt;
 
 

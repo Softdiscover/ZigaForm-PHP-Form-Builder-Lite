@@ -15251,6 +15251,9 @@ rocketform();
 					v_shadow: '3',
 					blur: '10',
 				},
+				mobile: {
+					keep_grid_st: '0',
+				},
 			},
 		};
 		var defaults = {
@@ -15321,6 +15324,17 @@ rocketform();
 									break;
 							}
 
+							break;
+						case 'mobile':
+							switch (String(opt3)) {
+								case 'keep_grid_st':
+									if (parseInt(opt4) === 1) {
+										tab.find('#zgpb_fld_keep_grid_st').bootstrapSwitchZgpb('state', true);
+									} else {
+										tab.find('#zgpb_fld_keep_grid_st').bootstrapSwitchZgpb('state', false);
+									}
+									break;
+							}
 							break;
 						case 'margin':
 							switch (String(opt3)) {

@@ -148,7 +148,35 @@ ob_start();
                                     <div class="space5"></div>
                                 </div>
                      </fieldset>
+                     <fieldset>
+                                <legend><?php echo __('Mobile', 'FRocket_admin'); ?> </legend>
+                                <div class="zgpb-modal-body-tab-inner">
+                                    <div class="sfdc-row ">
+                                        <div class="sfdc-col-md-12">
+                                            <div class="sfdc-form-group">
+                                                <div class="sfdc-col-md-6">
+                                                    <label for=""><?php echo __('Keep grid', 'FRocket_admin'); ?></label> 
+                                                    <a data-original-title="<?php echo __('Keep grid', 'FRocket_admin'); ?>" 
+                                                       data-placement="right" 
+                                                       data-toggle="tooltip" 
+                                                       href="javascript:void(0);"><span class="fa fa-question-circle"></span></a>
+                                                </div>
+                                                <div class="sfdc-col-md-6">
+                                                     <input class="zgpb-switch-field"
+                                                        data-field-store="skin-mobile-keep_grid_st"
+                                                        id="zgpb_fld_keep_grid_st"
+                                                        name="zgpb_fld_keep_grid_st"
+                                                        type="checkbox"/>
 
+                                                </div>    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="space5"></div>
+                                </div>
+                     </fieldset>
+                     
                       </div>
 
 

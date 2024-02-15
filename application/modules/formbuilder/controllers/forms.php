@@ -1730,6 +1730,9 @@ class Forms extends BackendController
             case 3:
             case 4:
             case 5:
+                $data          = array();
+                $data          = $this->gen_post_src[$child_field['num_tab']][$child_field['id']];
+                
                 if (intval($child_field['count_children']) >= 0) {
                     $str_output .= '<div id="zgfb_' . $child_field['id'] . '" class="zgpbf-gridsystem-cont">';
                     $str_output .= '<div class="sfdc-container-fluid">';
@@ -1737,7 +1740,16 @@ class Forms extends BackendController
                     $count_str   = 0;
                     if (isset($child_field['inner'])) {
                         foreach ($child_field['inner'] as $key => $value) {
-                            $str_output .= '<div data-zgpb-blocknum="' . $value['num_tab'] . '" class="zgpb-fl-gs-block-style sfdc-col-xs-' . $value['cols'] . ' sfdc-col-sm-' . $value['cols'] . '">';
+                            
+                            // generate class
+                            $tmpMobileClass = '';
+                            if (isset($data['main']['skin']['mobile']['keep_grid_st'])) {
+                                $tmpKeepGrid= $data['main']['skin']['mobile']['keep_grid_st'];
+                                $tmpMobileClass = (intval($tmpKeepGrid)=== 1)?'sfdc-col-xs-'. $value['cols']:'';
+                            }
+                            
+                            $str_output .= '<div data-zgpb-blocknum="' . $value['num_tab'] . '" class="zgpb-fl-gs-block-style ' . $tmpMobileClass . ' sfdc-col-sm-' . $value['cols'] . '">';
+
                             if ($count_str === $key) {
                                 $str_output .= '<div class="zgpb-fl-gs-block-inner">';
                             } else {
@@ -1769,8 +1781,7 @@ class Forms extends BackendController
                     $str_output .= '</div>';
                 }
 
-                $data          = array();
-                $data          = $this->gen_post_src[$child_field['num_tab']][$child_field['id']];
+                
                 $str_output_2 .= modules::run('formbuilder/fields/posthtml_gridsystem_css', $data);
 
                 break;
