@@ -1207,7 +1207,7 @@ if (!$uifm.isFunction(rocketfm)) {
 							});
 						}
 
-												if (obj_form.find('.rockfm-input2-sel-styl2').length) {
+						if (obj_form.find('.rockfm-input2-sel-styl2').length) {
 							tmp_load_obj = obj_form.find('.rockfm-input2-sel-styl2');
 							tmp_load_obj.each(function(i) {
 								$(this).select2({
@@ -1903,7 +1903,7 @@ if (!$uifm.isFunction(rocketfm)) {
 								tempvar = getrow.find('.rockfm-input2-sel-styl2');
 								response['value_field'] = tempvar.val();
 								response['input_field'] = input;
-								break;	
+								break;
 							default:
 								tempvar = getrow.find('.uifm-input2-opt-main');
 								response['value_field'] = tempvar.val();
@@ -1929,7 +1929,7 @@ if (!$uifm.isFunction(rocketfm)) {
 
 								response['value_field'] = searchInput;
 								response['input_field'] = input;
-								break;	
+								break;
 							default:
 								searchInput = $.map(getrow.find('.uifm-input2-opt-main option:selected'), function(elem) {
 									return $(elem).attr('value');
@@ -2357,9 +2357,9 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 									case 1:
 										tmp_field_inp = tmp_field.find('.rockfm-input2-sel-styl1');
 										break;
-										case 2:
-											tmp_field_inp = tmp_field.find('.rockfm-input2-sel-styl2');
-											break;	
+									case 2:
+										tmp_field_inp = tmp_field.find('.rockfm-input2-sel-styl2');
+										break;
 									default:
 										tmp_field_inp = tmp_field.find('.uifm-input2-opt-main');
 										break;

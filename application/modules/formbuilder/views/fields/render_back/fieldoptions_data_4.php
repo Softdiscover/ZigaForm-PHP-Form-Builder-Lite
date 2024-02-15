@@ -11,8 +11,10 @@
              * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
              * @link      http://wordpress-form-builder.uiform.com/
              */
-            if (!defined('BASEPATH')) {exit('No direct script access allowed');}
-            ?>
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
+?>
             <!-- options -->
             <script type="text/html" id="tmpl-zgfm-field-opt-type-4">&lt;div id=&quot;uifm-field-opt-content&quot;&gt;
     &lt;input type=&quot;hidden&quot; id=&quot;uifm-field-selected-id&quot; value=&quot;&quot;&gt;

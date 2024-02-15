@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Intranet
  *
@@ -12,7 +13,7 @@
  * @version   CVS: $Id: intranet.php, v2.00 2013-11-30 02:52:40 Softdiscover $
  * @link      https://softdiscover.com/zigaform/php-form-builder/
  */
-if ( ! defined('BASEPATH')) {
+if (!defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 
@@ -60,7 +61,7 @@ class Forms extends BackendController
     private $saveform_clogic       = array();
 
 
-     public $gen_post_src;
+    public $gen_post_src;
 
     /**
      * Forms::__construct()
@@ -85,9 +86,9 @@ class Forms extends BackendController
     public function ajax_pdf_showsample()
     {
 
-        $full_page = ( isset($_POST['full_page']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['full_page'])) : '';
-        $form_id   = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
-        $message   = ( isset($_POST['message']) ) ? Uiform_Form_Helper::sanitizeInput_html($_POST['message']) : '';
+        $full_page = (isset($_POST['full_page'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['full_page'])) : '';
+        $form_id   = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $message   = (isset($_POST['message'])) ? Uiform_Form_Helper::sanitizeInput_html($_POST['message']) : '';
         $message   = urldecode($message);
 
         $data2 = array();
@@ -95,13 +96,13 @@ class Forms extends BackendController
         $pdf_paper_size = 'a4';
         $pdf_paper_orie = 'landscape';
 
-        if ( intval($form_id) > 0) {
+        if (intval($form_id) > 0) {
             $form_data        = $this->model_forms->getFormById_2($form_id);
             $form_data_onsubm = json_decode($form_data->fmb_data2, true);
-            $pdf_charset      = ( isset($form_data_onsubm['main']['pdf_charset']) ) ? $form_data_onsubm['main']['pdf_charset'] : '';
-            $pdf_font         = ( isset($form_data_onsubm['main']['pdf_font']) ) ? urldecode($form_data_onsubm['main']['pdf_font']) : '';
-            $pdf_paper_size   = ( isset($form_data_onsubm['main']['pdf_paper_size']) ) ? $form_data_onsubm['main']['pdf_paper_size'] : 'a4';
-            $pdf_paper_orie   = ( isset($form_data_onsubm['main']['pdf_paper_orie']) ) ? $form_data_onsubm['main']['pdf_paper_orie'] : 'landscape';
+            $pdf_charset      = (isset($form_data_onsubm['main']['pdf_charset'])) ? $form_data_onsubm['main']['pdf_charset'] : '';
+            $pdf_font         = (isset($form_data_onsubm['main']['pdf_font'])) ? urldecode($form_data_onsubm['main']['pdf_font']) : '';
+            $pdf_paper_size   = (isset($form_data_onsubm['main']['pdf_paper_size'])) ? $form_data_onsubm['main']['pdf_paper_size'] : 'a4';
+            $pdf_paper_orie   = (isset($form_data_onsubm['main']['pdf_paper_orie'])) ? $form_data_onsubm['main']['pdf_paper_orie'] : 'landscape';
 
             $data2['font']    = $pdf_font;
             $data2['charset'] = $pdf_charset;
@@ -116,7 +117,7 @@ class Forms extends BackendController
         $pos  = strpos($message, '</body>');
         $pos2 = strpos($message, '</html>');
 
-        if ( $pos === false && $pos2 === false) {
+        if ($pos === false && $pos2 === false) {
             $full_page = 0;
         } else {
             $full_page = 1;
@@ -128,12 +129,12 @@ class Forms extends BackendController
 
         $file_name = 'zgfm_pdf_sample';
 
-         // remove previous pdf sample
+        // remove previous pdf sample
         @unlink(FCPATH . 'temp/' . $file_name . '.pdf');
 
         $output = generate_pdf($content, $file_name, $pdf_paper_size, $pdf_paper_orie, false);
         $status = '0';
-        if ( file_exists($output)) {
+        if (file_exists($output)) {
             $status = '1';
         } else {
             $status = '0';
@@ -155,10 +156,10 @@ class Forms extends BackendController
     public function ajax_email_sendsample()
     {
 
-        $full_page = ( isset($_POST['full_page']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['full_page'])) : '';
-        $message   = ( isset($_POST['message']) ) ? Uiform_Form_Helper::sanitizeInput_html($_POST['message']) : '';
+        $full_page = (isset($_POST['full_page'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['full_page'])) : '';
+        $message   = (isset($_POST['message'])) ? Uiform_Form_Helper::sanitizeInput_html($_POST['message']) : '';
         $message   = urldecode($message);
-        $email_to  = ( isset($_POST['email_to']) ) ? Uiform_Form_Helper::sanitizeInput($_POST['email_to']) : '';
+        $email_to  = (isset($_POST['email_to'])) ? Uiform_Form_Helper::sanitizeInput($_POST['email_to']) : '';
 
         $mail_template_msg = $this->load->view(
             'formbuilder/frontend/mail_global_template',
@@ -184,7 +185,7 @@ class Forms extends BackendController
         $mail_errors = modules::run('formbuilder/frontend/process_mail', $data_mail);
 
         $json             = array();
-        $json['st_error'] = ( $mail_errors === true ) ? 1 : 0;
+        $json['st_error'] = ($mail_errors === true) ? 1 : 0;
 
         // return data to ajax callback
         header('Content-Type: application/json');
@@ -198,7 +199,7 @@ class Forms extends BackendController
 
         // check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
 
-        $log_id = ( isset($_POST['log_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['log_id'])) : '';
+        $log_id = (isset($_POST['log_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['log_id'])) : '';
 
         $query_obj = $this->model_form_log->getLogById($log_id);
 
@@ -228,14 +229,14 @@ class Forms extends BackendController
 
         // check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
 
-        $form_id = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
 
         $data = array();
 
         $query_obj = $this->model_form_log->getAvailableLogById($form_id);
 
         $log_array = array();
-        foreach ( $query_obj as $key => $value) {
+        foreach ($query_obj as $key => $value) {
             $temp                 = array();
             $temp['form_name']    = $value->log_frm_name;
             $temp['created_date'] = date('d-m-Y h:m:s', strtotime($value->updated_date));
@@ -253,7 +254,7 @@ class Forms extends BackendController
         // return data to ajax callback
         header('Content-Type: application/json');
         echo json_encode($json);
-         die();
+        die();
     }
 
     public function ajax_integrity_openmodal()
@@ -261,7 +262,7 @@ class Forms extends BackendController
 
         // check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
 
-        $form_id = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
 
         $data = array();
 
@@ -281,11 +282,11 @@ class Forms extends BackendController
     {
 
         $data                 = array();
-        $form_id              = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
-        $fmb_data             = ( isset($_POST['form_data']) ) ? $_POST['form_data'] : '';
+        $form_id              = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $fmb_data             = (isset($_POST['form_data'])) ? $_POST['form_data'] : '';
         $fmb_data             = urldecode($fmb_data);
-        $fmb_data             = ( isset($fmb_data) && $fmb_data ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode($fmb_data, true)) : array();
-            $data['fmb_data'] = $fmb_data;
+        $fmb_data             = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
+        $data['fmb_data'] = $fmb_data;
 
         $json                 = array();
         $json['modal_header'] = '<h3>' . __('Form variables', 'FRocket_admin') . '</h3>';
@@ -302,12 +303,12 @@ class Forms extends BackendController
     {
 
         $data     = array();
-        $form_id  = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
-        $fmb_data = ( isset($_POST['form_data']) ) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['form_data'])) : '';
-        if ( ! empty($fmb_data)) {
-            $fmb_data = ( isset($fmb_data) && $fmb_data ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode($fmb_data, true)) : array();
+        $form_id  = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $fmb_data = (isset($_POST['form_data'])) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['form_data'])) : '';
+        if (!empty($fmb_data)) {
+            $fmb_data = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
         }
-            $data['fmb_data'] = $fmb_data;
+        $data['fmb_data'] = $fmb_data;
 
         $json            = array();
         $json['message'] = $this->load->view('formbuilder/forms/ajax_variables_emailpage', $data, true);
@@ -325,7 +326,7 @@ class Forms extends BackendController
      */
     public function ajax_load_templateform()
     {
-        $number        = ( $_POST['number'] ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['number'])) : '';
+        $number        = ($_POST['number']) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['number'])) : '';
         $fallback_file = file_get_contents(FCPATH . '/assets/backend/json/template_' . $number . '.json');
         header('Content-Type: application/json');
         echo $fallback_file;
@@ -341,11 +342,11 @@ class Forms extends BackendController
     {
         // this function is disabled
         return;
-        $id_img            = ( $_POST['img_id'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['img_id']) : '';
-        $img_full          = ( $_POST['img_src_full'] ) ? Uiform_Form_Helper::sanitizeInput_html($_POST['img_src_full']) : '';
+        $id_img            = ($_POST['img_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['img_id']) : '';
+        $img_full          = ($_POST['img_src_full']) ? Uiform_Form_Helper::sanitizeInput_html($_POST['img_src_full']) : '';
         $json              = array();
         $json['img_full']  = $img_full;
-        $json['img_thumb'] = ( ! empty($thumb[0]) ) ? $thumb[0] : $img_full;
+        $json['img_thumb'] = (!empty($thumb[0])) ? $thumb[0] : $img_full;
         header('Content-Type: application/json');
         echo json_encode($json);
         die();
@@ -358,7 +359,7 @@ class Forms extends BackendController
      */
     public function ajax_load_import_form()
     {
-        $imp_form = ( isset($_POST['importcode']) && $_POST['importcode'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['importcode']) : '';
+        $imp_form = (isset($_POST['importcode']) && $_POST['importcode']) ? Uiform_Form_Helper::sanitizeInput($_POST['importcode']) : '';
 
         $dump_form                     = unserialize(Uiform_Form_Helper::base64url_decode($imp_form));
         $data_form                     = array();
@@ -380,18 +381,18 @@ class Forms extends BackendController
 
         $saveform_clogic = array();
 
-        $fmb_data = ( ! empty($_POST['form_data']) ) ? $_POST['form_data'] : '';
-        $fmb_data = ( ! empty($fmb_data) ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode($fmb_data, true)) : array();
+        $fmb_data = (!empty($_POST['form_data'])) ? $_POST['form_data'] : '';
+        $fmb_data = (!empty($fmb_data)) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
 
         // creating again
         $steps_src        = $fmb_data['steps_src'];
         $tmp_var_typename = array();
         $tmp_var_fname    = array();
         $tmp_var_fstep    = array();
-        if ( ! empty($steps_src)) {
-            foreach ( $steps_src as $tabindex => $fields) {
-                if ( ! empty($fields)) {
-                    foreach ( $fields as $key => $value) {
+        if (!empty($steps_src)) {
+            foreach ($steps_src as $tabindex => $fields) {
+                if (!empty($fields)) {
+                    foreach ($fields as $key => $value) {
                         $data                 = array();
                         $data['fmf_uniqueid'] = $value['id'];
 
@@ -400,11 +401,11 @@ class Forms extends BackendController
 
                         $data['type_fby_id'] = $value['type'];
 
-                        $tmp_var_typename[ $value['id'] ] = $data['fmf_type_n'];
-                        $tmp_var_fname[ $value['id'] ]    = $data['fmf_fieldname'];
-                        $tmp_var_fstep[ $value['id'] ]    = intval($tabindex) + 1;
+                        $tmp_var_typename[$value['id']] = $data['fmf_type_n'];
+                        $tmp_var_fname[$value['id']]    = $data['fmf_fieldname'];
+                        $tmp_var_fstep[$value['id']]    = intval($tabindex) + 1;
 
-                        if ( isset($value['clogic']) && intval($value['clogic']['show_st']) === 1) {
+                        if (isset($value['clogic']) && intval($value['clogic']['show_st']) === 1) {
                             $tmp_clogic                     = array();
                             $tmp_clogic['field_cond']       = $value['id'];
                             $tmp_clogic['field_cond_fname'] = $data['fmf_fieldname'];
@@ -412,13 +413,13 @@ class Forms extends BackendController
 
                             $tmp_clogic['action'] = $value['clogic']['f_show'];
 
-                            foreach ( $value['clogic']['list'] as $key2 => $value2) {
-                                if ( empty($value2)) {
-                                    unset($value['clogic']['list'][ $key2 ]);
+                            foreach ($value['clogic']['list'] as $key2 => $value2) {
+                                if (empty($value2)) {
+                                    unset($value['clogic']['list'][$key2]);
                                 }
                             }
                             $tmp_clogic['list']        = array_filter($value['clogic']['list']);
-                            $tmp_clogic['req_match']   = ( intval($value['clogic']['f_all']) === 1 ) ? count($value['clogic']['list']) : 1;
+                            $tmp_clogic['req_match']   = (intval($value['clogic']['f_all']) === 1) ? count($value['clogic']['list']) : 1;
                             $saveform_clogic['cond'][] = $tmp_clogic;
                         }
                     }
@@ -427,41 +428,41 @@ class Forms extends BackendController
         }
 
         $clogic_src = $saveform_clogic;
-        if ( ! empty($clogic_src)) {
+        if (!empty($clogic_src)) {
             // get fires
             $fields_fire = array();
-            foreach ( $clogic_src['cond'] as $key => $value) {
-                foreach ( $value['list'] as $key2 => $value2) {
-                    if ( ! empty($value2)) {
-                        if ( ! isset($fields_fire[ $value2['field_fire'] ]['list'][ $value['field_cond'] ])) {
-                            $fields_fire[ $value2['field_fire'] ]['list'][] = $value['field_cond'];
+            foreach ($clogic_src['cond'] as $key => $value) {
+                foreach ($value['list'] as $key2 => $value2) {
+                    if (!empty($value2)) {
+                        if (!isset($fields_fire[$value2['field_fire']]['list'][$value['field_cond']])) {
+                            $fields_fire[$value2['field_fire']]['list'][] = $value['field_cond'];
                         }
                     } else {
-                        unset($clogic_src['cond'][ $key ]['list'][ $key2 ]);
+                        unset($clogic_src['cond'][$key]['list'][$key2]);
                     }
                 }
             }
             $saveform_clogic = $clogic_src;
             // field fires
             $logic_field_fire = array();
-            foreach ( $fields_fire as $key => $value) {
+            foreach ($fields_fire as $key => $value) {
                 $temp_logic                     = array();
                 $temp_logic['field_fire']       = $key;
-                $temp_logic['field_fire_typen'] = isset($tmp_var_typename[ $key ]) ? $tmp_var_typename[ $key ] : 'undefined';
-                $temp_logic['field_fire_fname'] = isset($tmp_var_fname[ $key ]) ? $tmp_var_fname[ $key ] : 'undefined';
-                $temp_logic['field_fire_fstep'] = isset($tmp_var_fstep[ $key ]) ? $tmp_var_fstep[ $key ] : 'undefined';
+                $temp_logic['field_fire_typen'] = isset($tmp_var_typename[$key]) ? $tmp_var_typename[$key] : 'undefined';
+                $temp_logic['field_fire_fname'] = isset($tmp_var_fname[$key]) ? $tmp_var_fname[$key] : 'undefined';
+                $temp_logic['field_fire_fstep'] = isset($tmp_var_fstep[$key]) ? $tmp_var_fstep[$key] : 'undefined';
 
                 $tmp_list = array();
-                foreach ( $value['list'] as $value2) {
+                foreach ($value['list'] as $value2) {
                     $tmp_list[] = array(
                         'field_cond'       => $value2,
-                        'field_cond_typen' => isset($tmp_var_typename[ $value2 ]) ? $tmp_var_typename[ $value2 ] : 'undefined',
-                        'field_cond_fname' => isset($tmp_var_fname[ $value2 ]) ? $tmp_var_fname[ $value2 ] : 'undefined',
-                        'field_cond_fstep' => isset($tmp_var_fstep[ $value2 ]) ? $tmp_var_fstep[ $value2 ] : 'undefined',
+                        'field_cond_typen' => isset($tmp_var_typename[$value2]) ? $tmp_var_typename[$value2] : 'undefined',
+                        'field_cond_fname' => isset($tmp_var_fname[$value2]) ? $tmp_var_fname[$value2] : 'undefined',
+                        'field_cond_fstep' => isset($tmp_var_fstep[$value2]) ? $tmp_var_fstep[$value2] : 'undefined',
                     );
                 }
                 $temp_logic['list']       = $tmp_list;
-                $logic_field_fire[ $key ] = $temp_logic;
+                $logic_field_fire[$key] = $temp_logic;
             }
 
             $clogic_src['fire'] = $logic_field_fire;
@@ -487,10 +488,10 @@ class Forms extends BackendController
      */
     public function ajax_listform_duplicate()
     {
-        $list_ids = ( isset($_POST['id']) && $_POST['id'] ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive' ), $_POST['id']) : array();
+        $list_ids = (isset($_POST['id']) && $_POST['id']) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive'), $_POST['id']) : array();
 
-        if ( $list_ids) {
-            foreach ( $list_ids as $value) {
+        if ($list_ids) {
+            foreach ($list_ids as $value) {
                 $data_form                = $this->model_forms->getFormById($value);
                 $data                     = array();
                 $data['fmb_data']         = $data_form->fmb_data;
@@ -515,10 +516,10 @@ class Forms extends BackendController
      */
     public function ajax_listform_updatest()
     {
-        $list_ids = ( isset($_POST['id']) && $_POST['id'] ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive' ), $_POST['id']) : array();
-        $form_st  = ( isset($_POST['form_st']) && $_POST['form_st'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['form_st']) : '';
-        if ( $list_ids) {
-            foreach ( $list_ids as $value) {
+        $list_ids = (isset($_POST['id']) && $_POST['id']) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive'), $_POST['id']) : array();
+        $form_st  = (isset($_POST['form_st']) && $_POST['form_st']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_st']) : '';
+        if ($list_ids) {
+            foreach ($list_ids as $value) {
                 $data = array(
                     'flag_status' => intval($form_st),
                 );
@@ -533,13 +534,13 @@ class Forms extends BackendController
     public function ajax_list_trashform_updatest()
     {
 
-        $list_ids = ( isset($_POST['id']) && $_POST['id'] ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive' ), $_POST['id']) : array();
-        $form_st  = ( isset($_POST['form_st']) && $_POST['form_st'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['form_st']) : '';
-        if ( $list_ids) {
-            switch ( intval($form_st)) {
+        $list_ids = (isset($_POST['id']) && $_POST['id']) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive'), $_POST['id']) : array();
+        $form_st  = (isset($_POST['form_st']) && $_POST['form_st']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_st']) : '';
+        if ($list_ids) {
+            switch (intval($form_st)) {
                 case 1:
                 case 2:
-                    foreach ( $list_ids as $value) {
+                    foreach ($list_ids as $value) {
                         $data = array(
                             'flag_status' => intval($form_st),
                         );
@@ -550,7 +551,7 @@ class Forms extends BackendController
                     }
                     break;
                 case 0:
-                    foreach ( $list_ids as $value) {
+                    foreach ($list_ids as $value) {
                         $this->delete_form_process($value);
                     }
 
@@ -604,7 +605,7 @@ class Forms extends BackendController
     public function ajax_delete_trashform_byid()
     {
 
-        $form_id = ( isset($_POST['form_id']) && $_POST['form_id'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
+        $form_id = (isset($_POST['form_id']) && $_POST['form_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
 
         $this->delete_form_process($form_id);
     }
@@ -616,7 +617,7 @@ class Forms extends BackendController
      */
     public function ajax_delete_form_byid()
     {
-        $form_id = ( isset($_POST['form_id']) && $_POST['form_id'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
+        $form_id = (isset($_POST['form_id']) && $_POST['form_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
 
         $data = array(
             'flag_status' => 0,
@@ -635,25 +636,25 @@ class Forms extends BackendController
     public function ajax_load_preview_form()
     {
 
-        $form_id = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
         header('Content-type: text/html');
 
         $data            = array();
         $content         = '';
-            $content     = site_url() . 'formbuilder/frontend/viewform/?form=' . $form_id;
-            $data['url'] = escape_text($content);
+        $content     = site_url() . 'formbuilder/frontend/viewform/?form=' . $form_id;
+        $data['url'] = escape_text($content);
 
-            $temp             = array();
-            $temp['url_form'] = $data['url'] . '&lmode=1';
-            $temp['base_url'] = base_url();
-            $temp['form_id']  = $form_id;
+        $temp             = array();
+        $temp['url_form'] = $data['url'] . '&lmode=1';
+        $temp['base_url'] = base_url();
+        $temp['form_id']  = $form_id;
 
-            $data['iframe'] = $this->load->view('formbuilder/forms/get_code_iframe', $temp, true);
+        $data['iframe'] = $this->load->view('formbuilder/forms/get_code_iframe', $temp, true);
         ob_start();
-            echo $data['iframe'];
+        echo $data['iframe'];
         ?>
-             
-        
+
+
         <?php
         $output = ob_get_clean();
         echo $output;
@@ -665,7 +666,7 @@ class Forms extends BackendController
     public function ajax_modal_form_showmodalsuccess()
     {
 
-        $form_id             = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $form_id             = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
         $data                = array();
         $data['content_top'] = __('Success! The form was created. Now just copy and paste the shortcode to your content', 'FRocket_admin');
         $data['form_id']     = $form_id;
@@ -682,7 +683,7 @@ class Forms extends BackendController
     public function ajax_modal_form_getshorcodes()
     {
 
-        $form_id            = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $form_id            = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
         $data               = array();
         $data['form_id']    = $form_id;
         $json               = array();
@@ -704,16 +705,16 @@ class Forms extends BackendController
     {
 
         $data     = array();
-        $fmb_data = ( isset($_POST['form_data']) ) ? $_POST['form_data'] : '';
+        $fmb_data = (isset($_POST['form_data'])) ? $_POST['form_data'] : '';
         $fmb_data = urldecode($fmb_data);
-        $fmb_data = ( isset($fmb_data) && $fmb_data ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode($fmb_data, true)) : array();
+        $fmb_data = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
 
         $data['fmb_data'] = $fmb_data;
-        $data['fmb_name'] = ( ! empty($_POST['uifm_frm_main_title']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
+        $data['fmb_name'] = (!empty($_POST['uifm_frm_main_title'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
 
         // in case title is empty
-        if ( empty($data['fmb_name']) && ! empty($_POST['uifm_frm_main_id']) && intval($_POST['uifm_frm_main_id']) > 0) {
-            $tmp_form_id      = ( ! empty($_POST['uifm_frm_main_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_id'])) : '';
+        if (empty($data['fmb_name']) && !empty($_POST['uifm_frm_main_id']) && intval($_POST['uifm_frm_main_id']) > 0) {
+            $tmp_form_id      = (!empty($_POST['uifm_frm_main_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_id'])) : '';
             $tmp_form_title   = $this->model_forms->getTitleFormById($tmp_form_id);
             $data['fmb_name'] = $tmp_form_title->fmb_name;
         }
@@ -736,10 +737,10 @@ class Forms extends BackendController
     public function ajax_save_form_updateopts()
     {
         $data                     = array();
-        $fmb_id                   = ( $_POST['uifm_frm_main_id'] ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_id'])) : 0;
-        $data['fmb_html_backend'] = ( $_POST['form_html_backend'] ) ? Uiform_Form_Helper::sanitizeInput_html($_POST['form_html_backend']) : '';
+        $fmb_id                   = ($_POST['uifm_frm_main_id']) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_id'])) : 0;
+        $data['fmb_html_backend'] = ($_POST['form_html_backend']) ? Uiform_Form_Helper::sanitizeInput_html($_POST['form_html_backend']) : '';
         $json                     = array();
-        if ( intval($fmb_id) > 0) {
+        if (intval($fmb_id) > 0) {
             $this->db->set($data);
             $this->db->where('fmb_id', $fmb_id);
             $this->db->update($this->model_forms->table);
@@ -758,11 +759,11 @@ class Forms extends BackendController
 
         $json = array();
         try {
-            if ( ! Uiform_Form_Helper::check_User_Access()) {
+            if (!Uiform_Form_Helper::check_User_Access()) {
                 throw new Exception(__('Error! User has no permission to edit this form', 'FRocket_admin'));
             }
             $data             = array();
-            $data['fmb_name'] = ( ! empty($_POST['uifm_frm_main_title']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
+            $data['fmb_name'] = (!empty($_POST['uifm_frm_main_title'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
             $this->db->set($data);
             $this->db->insert($this->model_forms->table);
 
@@ -770,7 +771,7 @@ class Forms extends BackendController
 
             $json['status'] = 'created';
             $json['id']     = $idActivate;
-        } catch ( Exception $e) {
+        } catch (Exception $e) {
         }
         // return data to ajax callback
         header('Content-Type: application/json');
@@ -786,50 +787,50 @@ class Forms extends BackendController
     public function ajax_save_form()
     {
         try {
-            if ( ! Uiform_Form_Helper::check_User_Access()) {
+            if (!Uiform_Form_Helper::check_User_Access()) {
                 throw new Exception(__('Error! User has no permission to edit this form', 'FRocket_admin'));
             }
 
             ob_start();
             $data = array();
 
-            $fmb_data = ( isset($_POST['form_data']) ) ? $_POST['form_data'] : '';
+            $fmb_data = (isset($_POST['form_data'])) ? $_POST['form_data'] : '';
             $fmb_data = urldecode($fmb_data);
-            $fmb_data = ( isset($fmb_data) && $fmb_data ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode($fmb_data, true)) : array();
+            $fmb_data = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
 
             // here a message should be sent
-            if ( empty($fmb_data)) {
+            if (empty($fmb_data)) {
                 return false;
             }
 
             // addon data
-            $fmb_addon_data = ( isset($_POST['addon_data']) ) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['addon_data'])) : '';
-            $fmb_addon_data = ( isset($fmb_addon_data) && $fmb_addon_data ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), json_decode($fmb_addon_data, true)) : array();
+            $fmb_addon_data = (isset($_POST['addon_data'])) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['addon_data'])) : '';
+            $fmb_addon_data = (isset($fmb_addon_data) && $fmb_addon_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_addon_data, true)) : array();
 
             // form_inputs
-            $fmb_data['fm_inputs'] = ( isset($_POST['form_inputs']) ) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['form_inputs'])) : '';
+            $fmb_data['fm_inputs'] = (isset($_POST['form_inputs'])) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['form_inputs'])) : '';
 
             // more options
-            $data['fmb_rec_tpl_html'] = ( isset($_POST['uifm_frm_rec_tpl_html']) ) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['uifm_frm_rec_tpl_html'])) : '';
-            $data['fmb_rec_tpl_st']   = ( isset($_POST['uifm_frm_rec_tpl_st']) ) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['uifm_frm_rec_tpl_st'])) : '';
+            $data['fmb_rec_tpl_html'] = (isset($_POST['uifm_frm_rec_tpl_html'])) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['uifm_frm_rec_tpl_html'])) : '';
+            $data['fmb_rec_tpl_st']   = (isset($_POST['uifm_frm_rec_tpl_st'])) ? urldecode(Uiform_Form_Helper::sanitizeInput_html($_POST['uifm_frm_rec_tpl_st'])) : '';
 
             $data['fmb_data']     = json_encode($fmb_data);
             $tmp_data2            = array();
             $tmp_data2['onsubm']  = isset($fmb_data['onsubm']) ? $fmb_data['onsubm'] : '';
             $tmp_data2['main']    = isset($fmb_data['main']) ? $fmb_data['main'] : '';
-            $data['fmb_data2']    = ! empty($tmp_data2) ? json_encode($tmp_data2) : '';
-            $data['fmb_name']     = ( ! empty($_POST['uifm_frm_main_title']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
+            $data['fmb_data2']    = !empty($tmp_data2) ? json_encode($tmp_data2) : '';
+            $data['fmb_name']     = (!empty($_POST['uifm_frm_main_title'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
             $data['created_ip']   = $_SERVER['REMOTE_ADDR'];
             $data['created_by']   = 1;
             $data['created_date'] = date('Y-m-d h:i:s');
-            $fmb_id               = ( isset($_POST['uifm_frm_main_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_id'])) : 0;
+            $fmb_id               = (isset($_POST['uifm_frm_main_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_id'])) : 0;
 
             /* global for fonts */
             global $global_fonts_stored;
             $global_fonts_stored = array();
 
             $json = array();
-            if ( intval($fmb_id) > 0) {
+            if (intval($fmb_id) > 0) {
                 $this->db->set($data);
                 $this->db->where('fmb_id', $fmb_id);
                 $this->db->update($this->model_forms->table);
@@ -851,148 +852,151 @@ class Forms extends BackendController
             // all data fields
             $fmb_data['addons'] = $fmb_addon_data;
 
-            if ( intval($json['id']) === 0) {
-                            throw new Exception('Form id error');
+            if (intval($json['id']) === 0) {
+                throw new Exception('Form id error');
             }
-                $where = array(
-                    'fmb_id' => $json['id'],
-                );
+            $where = array(
+                'fmb_id' => $json['id'],
+            );
 
-                 // process addons
-                if ( ! empty(self::$_addons_actions)) {
-                    foreach ( self::$_addons_actions as $zkey => $zvalue) {
-                        if ( strval($zkey) === 'saveForm_store') {
-                            foreach ( $zvalue as $zkey2 => $zvalue2) {
-                                foreach ( $zvalue2 as $zkey3 => $zvalue3) {
-                                    // call_user_func(array(self::$_addons[$zkey3][$zvalue3['controller']], $zvalue3['function']),$json['id'], $value['data'],$fmb_data);
+            // process addons
+            if (!empty(self::$_addons_actions)) {
+                foreach (self::$_addons_actions as $zkey => $zvalue) {
+                    if (strval($zkey) === 'saveForm_store') {
+                        foreach ($zvalue as $zkey2 => $zvalue2) {
+                            foreach ($zvalue2 as $zkey3 => $zvalue3) {
+                                // call_user_func(array(self::$_addons[$zkey3][$zvalue3['controller']], $zvalue3['function']),$json['id'], $value['data'],$fmb_data);
 
-                                    self::$_addons[ $zkey3 ][ $zvalue3['controller'] ]->saveData($json['id'], $fmb_data);
-                                }
+                                self::$_addons[$zkey3][$zvalue3['controller']]->saveData($json['id'], $fmb_data);
                             }
                         }
-                        /*
-                        if(isset(self::$_addons[$key][$value['controller']])){
-                            //call_user_func(array(self::$_addons[$key][$value['controller']] , 'saveData'));
-                            self::$_addons[$key][$value['controller']]->saveData($json['id'], $value['data'],$fmb_data);
-
-
-                        }*/
                     }
                 }
+            }
 
-                // all data fields
-                $this->current_data_addon    = $fmb_data['addons'];
-                $this->current_data_form     = $fmb_data['steps_src'];
-                $this->current_data_num_tabs = $fmb_data['num_tabs'];
-                $this->current_data_tab_cont = $fmb_data['steps']['tab_cont'];
-                $this->current_data_steps    = $fmb_data['steps'];
-                $this->current_data_skin     = $fmb_data['skin'];
-                $this->current_data_wizard   = ( $fmb_data['wizard'] ) ? $fmb_data['wizard'] : array();
-                $this->current_data_onsubm   = ( $fmb_data['onsubm'] ) ? $fmb_data['onsubm'] : array();
-                $this->current_data_main     = ( $fmb_data['main'] ) ? $fmb_data['main'] : array();
+            // all data fields
+            $this->current_data_addon    = $fmb_data['addons'];
+            $this->current_data_form     = $fmb_data['steps_src'];
+            $this->current_data_num_tabs = $fmb_data['num_tabs'];
+            $this->current_data_tab_cont = $fmb_data['steps']['tab_cont'];
+            $this->current_data_steps    = $fmb_data['steps'];
+            $this->current_data_skin     = $fmb_data['skin'];
+            $this->current_data_wizard   = ($fmb_data['wizard']) ? $fmb_data['wizard'] : array();
+            $this->current_data_onsubm   = ($fmb_data['onsubm']) ? $fmb_data['onsubm'] : array();
+            $this->current_data_main     = ($fmb_data['main']) ? $fmb_data['main'] : array();
 
-                // save fields to table
-                $this->saved_form_id = $json['id'];
-                $this->save_data_fields($json['id']);
-                // save fields to table
-                $this->save_form_clogic();
+            // save fields to table
+            $this->saved_form_id = $json['id'];
+            $this->save_data_fields($json['id']);
+            // save fields to table
+            $this->save_form_clogic();
 
-                // generate form html
-                $gen_return                = $this->generate_form_html($json['id']);
-                $data4                     = array();
-                $data4['fmb_html']         = $gen_return['output_html'];
-                $data4['fmb_html_backend'] = $this->generate_admin_form_html($json['id']);
+            // generate form html
+            $gen_return                = $this->generate_form_html($json['id']);
+            $data4                     = array();
+            $data4['fmb_html']         = $gen_return['output_html'];
+            $data4['fmb_html_backend'] = $this->generate_admin_form_html($json['id']);
 
-                // get global style
-                $data2                     = array();
-                $data2['idform']           = $json['id'];
-                $data2['addition_css']     = $this->current_data_main['add_css'];
-                $data2['skin']             = $this->current_data_skin;
-                $gen_return['output_css'] .= $this->load->view('formbuilder/forms/formhtml_css_global', $data2, true);
+            // get global style
+            $data2                     = array();
+            $data2['idform']           = $json['id'];
+            $data2['addition_css']     = $this->current_data_main['add_css'];
+            $data2['skin']             = $this->current_data_skin;
+            $gen_return['output_css'] .= $this->load->view('formbuilder/forms/formhtml_css_global', $data2, true);
 
-                $data3                    = array();
-                $data3['fonts']           = $global_fonts_stored;
-                $gen_return['output_css'] = $this->load->view('formbuilder/forms/formhtml_css_init', $data3, true) . $gen_return['output_css'];
-                $data4['fmb_html_css']    = $gen_return['output_css'];
-                $this->db->set($data4);
-                $this->db->where('fmb_id', $json['id']);
-                $this->db->update($this->model_forms->table);
+            $data3                    = array();
+            $data3['fonts']           = $global_fonts_stored;
+            $gen_return['output_css'] = $this->load->view('formbuilder/forms/formhtml_css_init', $data3, true) . $gen_return['output_css'];
+            $data4['fmb_html_css']    = $gen_return['output_css'];
+            $this->db->set($data4);
+            $this->db->where('fmb_id', $json['id']);
+            $this->db->update($this->model_forms->table);
 
-                // generate form css
-                ob_start();
-                $pathCssFile = FCPATH . '/assets/frontend/css/rockfm_form' . $json['id'] . '.css';
-                $f           = fopen($pathCssFile, 'w');
-                fwrite($f, $gen_return['output_css']);
-                fclose($f);
-                ob_end_clean();
 
-                // add to log
-                $save_log_st   = false;
-                $count_log_rec = $this->model_form_log->CountLogsByFormId($json['id']);
+            if ($this->createCustomFolder()) {
+                $newPublicDir = FCPATH . '/uploads/form-styles';
+            } else {
+                $newPublicDir = FCPATH . '/assets/frontend/css/';
+            }
 
-                if ( intval($count_log_rec) > 0) {
-                    $last_rec = $this->model_form_log->getLastLogById($json['id']);
-                    $new_hash = md5($data_form->fmb_data);
-                    $old_hash = $last_rec->log_frm_hash;
-                    if ( $new_hash != $old_hash) {
-                        $save_log_st = true;
-                    }
-                } else {
+
+            // generate form css
+            ob_start();
+
+            $pathCssFile = $newPublicDir . '/rockfm_form' . $json['id'] . '.css';
+
+            $f           = fopen($pathCssFile, 'w');
+            fwrite($f, $gen_return['output_css']);
+            fclose($f);
+            ob_end_clean();
+
+            // add to log
+            $save_log_st   = false;
+            $count_log_rec = $this->model_form_log->CountLogsByFormId($json['id']);
+
+            if (intval($count_log_rec) > 0) {
+                $last_rec = $this->model_form_log->getLastLogById($json['id']);
+                $new_hash = md5($data_form->fmb_data);
+                $old_hash = $last_rec->log_frm_hash;
+                if ($new_hash != $old_hash) {
                     $save_log_st = true;
                 }
+            } else {
+                $save_log_st = true;
+            }
 
-                $log_lastid = 0;
+            $log_lastid = 0;
 
-                if ( $save_log_st) {
-                    $data5                         = array();
-                    $data5['log_frm_data']         = $data['fmb_data'];
-                    $data5['log_frm_name']         = $data['fmb_name'];
-                    $data5['log_frm_html']         = '';
-                    $data5['log_frm_html_backend'] = $data4['fmb_html_backend'];
-                    $data5['log_frm_html_css']     = '';
-                    $data5['log_frm_id']           = $json['id'];
-                    $data5['log_frm_hash']         = md5($data_form->fmb_data);
-                    $data5['created_ip']           = $_SERVER['REMOTE_ADDR'];
-                    $data5['created_by']           = 1;
-                    $data5['created_date']         = date('Y-m-d h:i:s');
+            if ($save_log_st) {
+                $data5                         = array();
+                $data5['log_frm_data']         = $data['fmb_data'];
+                $data5['log_frm_name']         = $data['fmb_name'];
+                $data5['log_frm_html']         = '';
+                $data5['log_frm_html_backend'] = $data4['fmb_html_backend'];
+                $data5['log_frm_html_css']     = '';
+                $data5['log_frm_id']           = $json['id'];
+                $data5['log_frm_hash']         = md5($data_form->fmb_data);
+                $data5['created_ip']           = $_SERVER['REMOTE_ADDR'];
+                $data5['created_by']           = 1;
+                $data5['created_date']         = date('Y-m-d h:i:s');
 
-                    // $this->wpdb->insert($this->model_form_log->table, $data5);
-                     $this->db->set($data5);
-                     $this->db->insert($this->model_form_log->table);
-                     $log_lastid = $this->db->insert_id();
+                // $this->wpdb->insert($this->model_form_log->table, $data5);
+                $this->db->set($data5);
+                $this->db->insert($this->model_form_log->table);
+                $log_lastid = $this->db->insert_id();
 
-                     // remove oldest if limit is exceeded
-                    if ( intval($count_log_rec) > 50) {
-                        $tmp_log = $this->model_form_log->getOldLogById($json['id']);
+                // remove oldest if limit is exceeded
+                if (intval($count_log_rec) > 50) {
+                    $tmp_log = $this->model_form_log->getOldLogById($json['id']);
 
-                        $this->db->where('log_id', $tmp_log->log_id)->delete($this->model_form_log->table);
-                    }
+                    $this->db->where('log_id', $tmp_log->log_id)->delete($this->model_form_log->table);
                 }
+            }
 
-                // process addons
-                if ( ! empty(self::$_addons_actions)) {
-                    foreach ( self::$_addons_actions as $zkey => $zvalue) {
-                        if ( strval($zkey) === 'OnSaveForm_saveLog') {
-                            foreach ( $zvalue as $zkey2 => $zvalue2) {
-                                foreach ( $zvalue2 as $zkey3 => $zvalue3) {
-                                    if ( isset($this->current_data_addon[ $zkey3 ]['data'])) {
-                                        self::$_addons[ $zkey3 ][ $zvalue3['controller'] ]->saveLog($json['id'], $save_log_st, $log_lastid, $this->current_data_addon[ $zkey3 ]['data']);
-                                    }
+            // process addons
+            if (!empty(self::$_addons_actions)) {
+                foreach (self::$_addons_actions as $zkey => $zvalue) {
+                    if (strval($zkey) === 'OnSaveForm_saveLog') {
+                        foreach ($zvalue as $zkey2 => $zvalue2) {
+                            foreach ($zvalue2 as $zkey3 => $zvalue3) {
+                                if (isset($this->current_data_addon[$zkey3]['data'])) {
+                                    self::$_addons[$zkey3][$zvalue3['controller']]->saveLog($json['id'], $save_log_st, $log_lastid, $this->current_data_addon[$zkey3]['data']);
                                 }
                             }
                         }
                     }
                 }
+            }
 
-                // checking errors
-                $output_error = ob_get_contents();
-                if ( ob_get_length()) {
-                    ob_end_clean();
-                }
-                if ( ! empty($output_error)) {
-                    throw new Exception($output_error);
-                }
-        } catch ( Exception $e) {
+            // checking errors
+            $output_error = ob_get_contents();
+            if (ob_get_length()) {
+                ob_end_clean();
+            }
+            if (!empty($output_error)) {
+                throw new Exception($output_error);
+            }
+        } catch (Exception $e) {
             $json            = array();
             $json['status']  = 'failed';
             $json['Message'] = $e->getMessage();
@@ -1002,6 +1006,22 @@ class Forms extends BackendController
         echo json_encode($json);
         die();
     }
+
+    protected function createCustomFolder()
+    {
+        $folderPath = FCPATH . '/uploads/form-styles';
+        if (!file_exists($folderPath)) {
+            mkdir($folderPath, 0755, true);
+        }
+
+
+        if (file_exists($folderPath)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
 
     /**
      * Forms::generate_form_getField()
@@ -1014,24 +1034,24 @@ class Forms extends BackendController
         $str_output_3 = '';
 
         $data = array();
-        $data = $this->current_data_form[ intval($child_field['num_tab']) ][ $child_field['id'] ];
+        $data = $this->current_data_form[intval($child_field['num_tab'])][$child_field['id']];
 
         $data['addon_extraclass'] = '';
 
         // process addons
-        if ( ! empty(self::$_addons_actions)) {
-            foreach ( self::$_addons_actions as $zkey => $zvalue) {
-                if ( strval($zkey) === 'field_addon_extraclass') {
-                    foreach ( $zvalue as $zkey2 => $zvalue2) {
-                        foreach ( $zvalue2 as $zkey3 => $zvalue3) {
-                                      self::$_addons[ $zkey3 ][ $zvalue3['controller'] ]->getExtraDataField($data);
+        if (!empty(self::$_addons_actions)) {
+            foreach (self::$_addons_actions as $zkey => $zvalue) {
+                if (strval($zkey) === 'field_addon_extraclass') {
+                    foreach ($zvalue as $zkey2 => $zvalue2) {
+                        foreach ($zvalue2 as $zkey3 => $zvalue3) {
+                            self::$_addons[$zkey3][$zvalue3['controller']]->getExtraDataField($data);
                         }
                     }
                 }
             }
         }
 
-        switch ( intval($child_field['type'])) {
+        switch (intval($child_field['type'])) {
             case 6:
                 // textbox
 
@@ -1235,12 +1255,12 @@ class Forms extends BackendController
         $return['output_html'] = $str_output;
 
         // add css inside namespace of the form
-            require_once FCPATH . '/libs/lesslib/lessc.inc.php';
-            $less      = new lessc();
-            $css_store = '';
+        require_once FCPATH . '/libs/lesslib/lessc.inc.php';
+        $less      = new lessc();
+        $css_store = '';
         try {
             $css_store = $less->compile('#rockfm_form_' . $this->saved_form_id . ' {' . $str_output_3 . '}');
-        } catch ( exception $e) {
+        } catch (exception $e) {
             $css_store = $str_output_3;
         }
 
@@ -1255,9 +1275,9 @@ class Forms extends BackendController
     private function isField_OnCoreData($core_data, $field_search)
     {
 
-        foreach ( $core_data as $key => $field) {
-            if ( isset($core_data[ $key ][ $field_search ]) && ! empty($core_data[ $key ][ $field_search ])) {
-                   return $core_data[ $key ][ $field_search ];
+        foreach ($core_data as $key => $field) {
+            if (isset($core_data[$key][$field_search]) && !empty($core_data[$key][$field_search])) {
+                return $core_data[$key][$field_search];
             }
         }
 
@@ -1274,9 +1294,9 @@ class Forms extends BackendController
 
         $data = array();
 
-        if ( empty($this->current_data_form[ intval($child_field['num_tab']) ][ $child_field['id'] ])) {
+        if (empty($this->current_data_form[intval($child_field['num_tab'])][$child_field['id']])) {
             $tmp_data = $this->isField_OnCoreData($this->current_data_form, $child_field['id']);
-            if ( $tmp_data) {
+            if ($tmp_data) {
                 $data = $tmp_data;
             } else {
                 $return                = array();
@@ -1284,11 +1304,11 @@ class Forms extends BackendController
                 return $return;
             }
         } else {
-            $data = $this->current_data_form[ intval($child_field['num_tab']) ][ $child_field['id'] ];
+            $data = $this->current_data_form[intval($child_field['num_tab'])][$child_field['id']];
         }
 
         $data['quick_options'] = $this->load->view('formbuilder/fields/templates/prevpanel_quickopts', $data, true);
-        switch ( intval($child_field['type'])) {
+        switch (intval($child_field['type'])) {
             case 6:
                 // textbox
                 $str_output .= $this->load->view('formbuilder/fields/templates/prevpanel_textbox', $data, true);
@@ -1455,14 +1475,14 @@ class Forms extends BackendController
     {
 
         $str_output = '';
-        switch ( intval($type)) {
+        switch (intval($type)) {
             case 1:
                 ob_start();
                 ?>
-                <td  data-maxpercent="100" data-blocks="12" width="100%">
+                <td data-maxpercent="100" data-blocks="12" width="100%">
                     <div class="uiform-items-container uiform-grid-inner-col">
                     </div>
-                </td> 
+                </td>
                 <?php
                 $str_output .= ob_get_contents();
                 ob_end_clean();
@@ -1470,12 +1490,12 @@ class Forms extends BackendController
             case 2:
                 ob_start();
                 ?>
-                <td  data-maxpercent="50" data-blocks="6" width="50%">
+                <td data-maxpercent="50" data-blocks="6" width="50%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
                 </td>
-                <td  data-maxpercent="100" data-blocks="6" width="50%">
+                <td data-maxpercent="100" data-blocks="6" width="50%">
                     <div class="uiform-items-container uiform-grid-inner-col">
 
                     </div>
@@ -1487,17 +1507,17 @@ class Forms extends BackendController
             case 3:
                 ob_start();
                 ?>
-                <td  data-maxpercent="33.3" data-blocks="4" width="33.3%">
+                <td data-maxpercent="33.3" data-blocks="4" width="33.3%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
                 </td>
-                <td  data-maxpercent="66.6" data-blocks="4" width="33.3%">
+                <td data-maxpercent="66.6" data-blocks="4" width="33.3%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
                 </td>
-                <td  data-maxpercent="100" data-blocks="4" width="33.3%">
+                <td data-maxpercent="100" data-blocks="4" width="33.3%">
                     <div class="uiform-items-container uiform-grid-inner-col">
 
                     </div>
@@ -1514,7 +1534,7 @@ class Forms extends BackendController
 
                     </div>
                 </td>
-                <td  data-maxpercent="50" data-blocks="3" width="25%">
+                <td data-maxpercent="50" data-blocks="3" width="25%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
@@ -1524,7 +1544,7 @@ class Forms extends BackendController
 
                     </div>
                 </td>
-                <td  data-maxpercent="100" data-blocks="3" width="25%">
+                <td data-maxpercent="100" data-blocks="3" width="25%">
                     <div class="uiform-items-container uiform-grid-inner-col">
 
                     </div>
@@ -1536,32 +1556,32 @@ class Forms extends BackendController
             case 5:
                 ob_start();
                 ?>
-                <td  data-maxpercent="16.6" data-blocks="2" width="16.6%">
+                <td data-maxpercent="16.6" data-blocks="2" width="16.6%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
                 </td>
-                <td  data-maxpercent="33.3" data-blocks="2" width="16.6%">
+                <td data-maxpercent="33.3" data-blocks="2" width="16.6%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
                 </td>
-                <td  data-maxpercent="50" data-blocks="2" width="16.6%">
+                <td data-maxpercent="50" data-blocks="2" width="16.6%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
                 </td>
-                <td  data-maxpercent="66.6" data-blocks="2" width="16.6%">
+                <td data-maxpercent="66.6" data-blocks="2" width="16.6%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
                 </td>
-                <td  data-maxpercent="83.3" data-blocks="2" width="16.6%">
+                <td data-maxpercent="83.3" data-blocks="2" width="16.6%">
                     <div class="uiform-items-container uiform-grid-inner-col rkfm-bend-fcontainer-wrap">
 
                     </div>
                 </td>
-                <td  data-maxpercent="100" data-blocks="2" width="16.6%">
+                <td data-maxpercent="100" data-blocks="2" width="16.6%">
                     <div class="uiform-items-container uiform-grid-inner-col">
 
                     </div>
@@ -1583,9 +1603,9 @@ class Forms extends BackendController
     {
         $content = '';
         /* grid type */
-        switch ( intval($type)) {
+        switch (intval($type)) {
             case 1:
-                switch ( intval($key)) {
+                switch (intval($key)) {
                     case 0:
                         $grid_maxpercent = '100';
                         $grid_blocks     = '12';
@@ -1594,7 +1614,7 @@ class Forms extends BackendController
                 }
                 break;
             case 2:
-                switch ( intval($key)) {
+                switch (intval($key)) {
                     case 0:
                         $grid_maxpercent = '50';
                         $grid_blocks     = '6';
@@ -1608,7 +1628,7 @@ class Forms extends BackendController
                 }
                 break;
             case 3:
-                switch ( intval($key)) {
+                switch (intval($key)) {
                     case 0:
                         $grid_maxpercent = '33.3';
                         $grid_blocks     = '4';
@@ -1627,7 +1647,7 @@ class Forms extends BackendController
                 }
                 break;
             case 4:
-                switch ( intval($key)) {
+                switch (intval($key)) {
                     case 0:
                         $grid_maxpercent = '25';
                         $grid_blocks     = '3';
@@ -1651,7 +1671,7 @@ class Forms extends BackendController
                 }
                 break;
             case 5:
-                switch ( intval($key)) {
+                switch (intval($key)) {
                     case 0:
                         $grid_maxpercent = '16.6';
                         $grid_blocks     = '2';
@@ -1688,12 +1708,12 @@ class Forms extends BackendController
 
         ob_start();
         ?>
-        <td  data-maxpercent="<?php echo $grid_maxpercent; ?>" data-blocks="<?php echo $grid_blocks; ?>" width="<?php echo $grid_width; ?>">
-        <?php
-        $content .= ob_get_contents();
-        ob_end_clean();
+        <td data-maxpercent="<?php echo $grid_maxpercent; ?>" data-blocks="<?php echo $grid_blocks; ?>" width="<?php echo $grid_width; ?>">
+            <?php
+            $content .= ob_get_contents();
+            ob_end_clean();
 
-        return $content;
+            return $content;
     }
 
     protected function generate_previewpanel_getChildren($child_field)
@@ -1704,31 +1724,31 @@ class Forms extends BackendController
     {
         $str_output   = '';
         $str_output_2 = '';
-        switch ( intval($child_field['type'])) {
+        switch (intval($child_field['type'])) {
             case 1:
             case 2:
             case 3:
             case 4:
             case 5:
-                if ( intval($child_field['count_children']) >= 0) {
+                if (intval($child_field['count_children']) >= 0) {
                     $str_output .= '<div id="zgfb_' . $child_field['id'] . '" class="zgpbf-gridsystem-cont">';
                     $str_output .= '<div class="sfdc-container-fluid">';
                     $str_output .= '<div class="sfdc-row">';
                     $count_str   = 0;
-                    if ( isset($child_field['inner'])) {
-                        foreach ( $child_field['inner'] as $key => $value) {
-                            $str_output .= '<div data-zgpb-blocknum="' . $value['num_tab'] . '" class="zgpb-fl-gs-block-style sfdc-col-sm-' . $value['cols'] . '">';
-                            if ( $count_str === $key) {
+                    if (isset($child_field['inner'])) {
+                        foreach ($child_field['inner'] as $key => $value) {
+                            $str_output .= '<div data-zgpb-blocknum="' . $value['num_tab'] . '" class="zgpb-fl-gs-block-style sfdc-col-xs-' . $value['cols'] . ' sfdc-col-sm-' . $value['cols'] . '">';
+                            if ($count_str === $key) {
                                 $str_output .= '<div class="zgpb-fl-gs-block-inner">';
                             } else {
                                 $str_output .= '<div class="zgpb-fl-gs-block-inner">';
                             }
-                            if ( ! empty($value['children'])) {
-                                foreach ( $value['children'] as $key2 => $value2) {
+                            if (!empty($value['children'])) {
+                                foreach ($value['children'] as $key2 => $value2) {
                                     // get field
                                     $get_data    = array();
                                     $str_output .= '<div class="">';
-                                    if ( isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
+                                    if (isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
                                         $get_data      = $this->generate_form_getChildren($value2);
                                         $str_output   .= $get_data['output_html'];
                                         $str_output_2 .= $get_data['output_css'];
@@ -1750,23 +1770,23 @@ class Forms extends BackendController
                 }
 
                 $data          = array();
-                $data          = $this->gen_post_src[ $child_field['num_tab'] ][ $child_field['id'] ];
+                $data          = $this->gen_post_src[$child_field['num_tab']][$child_field['id']];
                 $str_output_2 .= modules::run('formbuilder/fields/posthtml_gridsystem_css', $data);
 
                 break;
             case 31:
                 /*panel*/
                 $temp_str_output = '';
-                if ( isset($child_field['count_children']) && intval($child_field['count_children']) > 0) {
+                if (isset($child_field['count_children']) && intval($child_field['count_children']) > 0) {
                     $count_str = 0;
-                    if ( isset($child_field['inner'])) {
-                        foreach ( $child_field['inner'] as $key => $value) {
-                            if ( ! empty($value['children'])) {
-                                foreach ( $value['children'] as $key2 => $value2) {
+                    if (isset($child_field['inner'])) {
+                        foreach ($child_field['inner'] as $key => $value) {
+                            if (!empty($value['children'])) {
+                                foreach ($value['children'] as $key2 => $value2) {
                                     // get field
                                     $get_data = array();
 
-                                    if ( isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
+                                    if (isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
                                         $get_data         = $this->generate_form_getChildren($value2);
                                         $temp_str_output .= $get_data['output_html'];
                                         $str_output_2    .= $get_data['output_css'];
@@ -1782,11 +1802,11 @@ class Forms extends BackendController
                 }
 
                 $temp_content      = '';
-                    $data_tmp      = array();
-                    $data_tmp      = $this->current_data_form[ intval($child_field['num_tab']) ][ $child_field['id'] ];
-                    $temp_content  = $this->load->view('formbuilder/fields/formhtml_panelfld', $data_tmp, true);
-                    $str_output   .= str_replace('[[%%fields%%]]', $temp_str_output, $temp_content);
-                    $str_output_2 .= $this->load->view('formbuilder/fields/formhtml_panelfld_css', $data_tmp, true);
+                $data_tmp      = array();
+                $data_tmp      = $this->current_data_form[intval($child_field['num_tab'])][$child_field['id']];
+                $temp_content  = $this->load->view('formbuilder/fields/formhtml_panelfld', $data_tmp, true);
+                $str_output   .= str_replace('[[%%fields%%]]', $temp_str_output, $temp_content);
+                $str_output_2 .= $this->load->view('formbuilder/fields/formhtml_panelfld_css', $data_tmp, true);
                 break;
             default:
                 break;
@@ -1812,150 +1832,150 @@ class Forms extends BackendController
             6 => 'six',
         );
 
-        switch ( intval($child_field['type'])) {
+        switch (intval($child_field['type'])) {
             case 1:
             case 2:
             case 3:
             case 4:
             case 5:
-                if ( intval($child_field['count_children']) >= 0) {
+                if (intval($child_field['count_children']) >= 0) {
                     ob_start();
                     ?>
-                    <div id="<?php echo $child_field['id']; ?>" data-typefield="<?php echo intval($child_field['type']); ?>" data-iscontainer="1"  class="zgpb-gridsytem-box zgpb-field-template uiform-field zgpb-gridsystem-<?php echo $grid_order[ intval($child_field['type']) ]; ?>">
-                        <div class="sfdc-container-fluid">
-                            <div class="sfdc-row">
+                        <div id="<?php echo $child_field['id']; ?>" data-typefield="<?php echo intval($child_field['type']); ?>" data-iscontainer="1" class="zgpb-gridsytem-box zgpb-field-template uiform-field zgpb-gridsystem-<?php echo $grid_order[intval($child_field['type'])]; ?>">
+                            <div class="sfdc-container-fluid">
+                                <div class="sfdc-row">
+                                <?php
+                                $str_output .= ob_get_contents();
+                                ob_end_clean();
+                                if (isset($child_field['inner'])) {
+                                    $count_str   = 1;
+                                    $count_total = count($child_field['inner']);
+
+                                    $tmp_col_rest = 12;
+
+                                    foreach ($child_field['inner'] as $key => $value) {
+                                        // controling 12 cols
+                                        $tmp_col_rest2 = $tmp_col_rest - abs($value['cols']);
+                                        if ($tmp_col_rest2 < 12 && $tmp_col_rest2 > 0) {
+                                            $tmp_col      = abs($value['cols']);
+                                            $tmp_col_rest = $tmp_col_rest2;
+                                        } else {
+                                            $tmp_col = $tmp_col_rest;
+                                        }
+
+                                        $str_output .= '<div class="zgpb-fl-gs-block-style sfdc-col-xs-' . $tmp_col . ' sfdc-col-sm-' . $tmp_col . '" data-zgpb-blocknum="' . $value['num_tab'] . '" data-zgpb-width="" data-zgpb-blockcol="' . $tmp_col . '">';
+                                        $str_output .= '<div class="uiform-items-container zgpb-fl-gs-block-inner">';
+
+                                        if (!empty($value['children'])) {
+                                            foreach ($value['children'] as $key2 => $value2) {
+                                                // get field
+                                                $get_data = array();
+
+                                                if (isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
+                                                    $get_data    = $this->generate_admin_form_getChildren($value2);
+                                                    $str_output .= $get_data['output_html'];
+                                                } else {
+                                                    $get_data    = $this->generate_previewpanel_getField($value2);
+                                                    $str_output .= $get_data['output_html'];
+                                                }
+                                            }
+                                        }
+
+                                        $str_output .= '</div>';
+
+                                        if ($count_str < $count_total) {
+                                            ob_start();
+                                            ?>
+                                                <div class="zgpb-fl-gridsystem-opt">
+                                                    <div data-zgpb-side="1" class="zgpb-fl-gd-drag-line zgpb-fl-gd-drag-line-right">
+                                                        <div class="zgpb-fl-gd-opt-icon-handler"></div>
+                                                    </div>
+                                                </div>
+                                            <?php
+                                            $str_output .= ob_get_contents();
+                                            ob_end_clean();
+                                        } else {
+                                            ob_start();
+                                            ?>
+                                                <div class="zgpb-fl-gridsystem-opt"></div>
+                                            <?php
+                                            $str_output .= ob_get_contents();
+                                            ob_end_clean();
+                                        }
+
+                                        $str_output .= '</div>';
+                                        $count_str++;
+                                    }
+                                }
+
+                                ob_start();
+                                ?>
+                                </div>
+                            </div>
+                        </div>
                     <?php
                     $str_output .= ob_get_contents();
                     ob_end_clean();
-                    if ( isset($child_field['inner'])) {
-                        $count_str   = 1;
-                        $count_total = count($child_field['inner']);
-
-                        $tmp_col_rest = 12;
-
-                        foreach ( $child_field['inner'] as $key => $value) {
-                            // controling 12 cols
-                            $tmp_col_rest2 = $tmp_col_rest - abs($value['cols']);
-                            if ( $tmp_col_rest2 < 12 && $tmp_col_rest2 > 0) {
-                                $tmp_col      = abs($value['cols']);
-                                $tmp_col_rest = $tmp_col_rest2;
-                            } else {
-                                $tmp_col = $tmp_col_rest;
-                            }
-
-                            $str_output .= '<div class="zgpb-fl-gs-block-style sfdc-col-sm-' . $tmp_col . '" data-zgpb-blocknum="' . $value['num_tab'] . '" data-zgpb-width="" data-zgpb-blockcol="' . $tmp_col . '">';
-                            $str_output .= '<div class="uiform-items-container zgpb-fl-gs-block-inner">';
-
-                            if ( ! empty($value['children'])) {
-                                foreach ( $value['children'] as $key2 => $value2) {
-                                    // get field
-                                    $get_data = array();
-
-                                    if ( isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
-                                        $get_data    = $this->generate_admin_form_getChildren($value2);
-                                        $str_output .= $get_data['output_html'];
-                                    } else {
-                                        $get_data    = $this->generate_previewpanel_getField($value2);
-                                        $str_output .= $get_data['output_html'];
-                                    }
-                                }
-                            }
-
-                            $str_output .= '</div>';
-
-                            if ( $count_str < $count_total) {
-                                ob_start();
-                                ?>
-                                            <div class="zgpb-fl-gridsystem-opt">
-                                                <div data-zgpb-side="1" class="zgpb-fl-gd-drag-line zgpb-fl-gd-drag-line-right">
-                                                    <div class="zgpb-fl-gd-opt-icon-handler"></div>
-                                                </div>
-                                            </div>
-                                <?php
-                                $str_output .= ob_get_contents();
-                                ob_end_clean();
-                            } else {
-                                ob_start();
-                                ?>
-                                            <div class="zgpb-fl-gridsystem-opt"></div>
-                                <?php
-                                $str_output .= ob_get_contents();
-                                ob_end_clean();
-                            }
-
-                            $str_output .= '</div>';
-                            $count_str++;
-                        }
-                    }
-
-                    ob_start();
-                    ?>
-                            </div>
-                        </div>
-                    </div>
-                                <?php
-                                $str_output .= ob_get_contents();
-                                ob_end_clean();
                 }
                 break;
             case 31:
                 /*panel*/
-                 ob_start();
+                ob_start();
                 ?>
-                    <div id="<?php echo $child_field['id']; ?>"  data-typefield="31" data-iscontainer="1" class="uiform-panelfld uiform-field  uiform-field-childs zgpb-field-template">
-            <div class="uiform-field-wrap">
-                 <div class="uifm-input31-wrap">
+                    <div id="<?php echo $child_field['id']; ?>" data-typefield="31" data-iscontainer="1" class="uiform-panelfld uiform-field  uiform-field-childs zgpb-field-template">
+                        <div class="uiform-field-wrap">
+                            <div class="uifm-input31-wrap">
                                 <div class="uifm-input31-container">
-                                     <div class="rkfm-inp18-row">
-                                         <div class="rkfm-inp18-col-sm-2">
-                                             <div class="uifm-inp31-txthtml-content"></div>
-                                         </div>
-                                         <div class="rkfm-inp18-col-sm-10">
-                                             <div class="uifm-input31-main-wrap">
-                                                 <div class="uiform-items-container uiform-grid-inner-col zgpb-fl-gs-block-inner">
-                                                   
-                    <?php
-                    $str_output .= ob_get_contents();
-                    ob_end_clean();
-                    if ( isset($child_field['inner'])) {
-                        $count_str   = 0;
-                        $count_total = count($child_field['inner']);
-                        if ( isset($child_field['inner'])) {
-                            foreach ( $child_field['inner'] as $key => $value) {
-                                if ( ! empty($value['children'])) {
-                                    foreach ( $value['children'] as $key2 => $value2) {
-                                        // get field
-                                        $get_data = array();
+                                    <div class="rkfm-inp18-row">
+                                        <div class="rkfm-inp18-col-sm-2">
+                                            <div class="uifm-inp31-txthtml-content"></div>
+                                        </div>
+                                        <div class="rkfm-inp18-col-sm-10">
+                                            <div class="uifm-input31-main-wrap">
+                                                <div class="uiform-items-container uiform-grid-inner-col zgpb-fl-gs-block-inner">
 
-                                        if ( isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
-                                            $get_data    = $this->generate_admin_form_getChildren($value2);
-                                            $str_output .= $get_data['output_html'];
-                                        } else {
-                                            $get_data    = $this->generate_previewpanel_getField($value2);
-                                            $str_output .= $get_data['output_html'];
-                                        }
-                                    }
-                                }
+                                                <?php
+                                                $str_output .= ob_get_contents();
+                                                ob_end_clean();
+                                                if (isset($child_field['inner'])) {
+                                                    $count_str   = 0;
+                                                    $count_total = count($child_field['inner']);
+                                                    if (isset($child_field['inner'])) {
+                                                        foreach ($child_field['inner'] as $key => $value) {
+                                                            if (!empty($value['children'])) {
+                                                                foreach ($value['children'] as $key2 => $value2) {
+                                                                    // get field
+                                                                    $get_data = array();
 
-                                $count_str++;
-                            }
-                        }
-                    }
-                    ob_start();
-                    ?>
-                                                        </div>
-                                                 
-                                                        </div>
-                                                    </div>
+                                                                    if (isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
+                                                                        $get_data    = $this->generate_admin_form_getChildren($value2);
+                                                                        $str_output .= $get_data['output_html'];
+                                                                    } else {
+                                                                        $get_data    = $this->generate_previewpanel_getField($value2);
+                                                                        $str_output .= $get_data['output_html'];
+                                                                    }
+                                                                }
+                                                            }
+
+                                                            $count_str++;
+                                                        }
+                                                    }
+                                                }
+                                                ob_start();
+                                                ?>
                                                 </div>
-                                           </div>
-                                       </div>
-                           
-                       </div>
-                   </div>
-                    <?php
-                    $str_output .= ob_get_contents();
-                    ob_end_clean();
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                <?php
+                $str_output .= ob_get_contents();
+                ob_end_clean();
 
                 break;
             default:
@@ -1967,15 +1987,15 @@ class Forms extends BackendController
         return $return;
     }
 
-     /**
-      * Forms::generate_form_container()
-      *
-      * @return
-      */
+        /**
+         * Forms::generate_form_container()
+         *
+         * @return
+         */
     public function generate_form_container($id, $numtab, $str_output)
     {
         $data = array();
-        if ( intval($numtab) > 1) {
+        if (intval($numtab) > 1) {
             $data1                   = array();
             $data1['tab_title']      = $this->current_data_steps['tab_title'];
             $data1['tab_theme']      = $this->current_data_wizard;
@@ -2001,7 +2021,7 @@ class Forms extends BackendController
     public function generate_previewpanel_container($id, $numtab, $str_output)
     {
         $data = array();
-        if ( intval($numtab) > 1) {
+        if (intval($numtab) > 1) {
             $data1                   = array();
             $data1['tab_title']      = $this->current_data_steps['tab_title'];
             $data1['tab_theme']      = $this->current_data_wizard;
@@ -2019,11 +2039,11 @@ class Forms extends BackendController
         return $this->load->view('formbuilder/forms/previewpanel_form', $data, true);
     }
 
-    /**
-     * Forms::generate_previewpanel_tabContent()
-     *
-     * @return
-     */
+        /**
+         * Forms::generate_previewpanel_tabContent()
+         *
+         * @return
+         */
     public function generate_previewpanel_tabContent($tab_cont_num, $tabindex, $str_output)
     {
         $output                  = '';
@@ -2034,24 +2054,24 @@ class Forms extends BackendController
         // apply function
         $output .= $this->load->view('formbuilder/forms/previewpanel_tabcontainer', $data, true);
         /*
-         } else {
-          $output.=$str_output;
-          } */
+     } else {
+      $output.=$str_output;
+      } */
         return $output;
     }
 
-    /**
-     * Forms::generate_form_tabContent()
-     *
-     * @return
-     */
+        /**
+         * Forms::generate_form_tabContent()
+         *
+         * @return
+         */
     public function generate_form_tabContent($tab_cont_num, $tabindex, $str_output)
     {
         $output                  = '';
         $data                    = array();
         $data['tabindex']        = $tabindex;
         $data['tab_html_fields'] = $str_output;
-        if ( intval($tab_cont_num) > 1) {
+        if (intval($tab_cont_num) > 1) {
             // apply function
             $output .= $this->load->view('formbuilder/forms/formhtml_tabcontainer', $data, true);
         } else {
@@ -2060,40 +2080,40 @@ class Forms extends BackendController
         return $output;
     }
 
-    /**
-     * Forms::save_form_clogic()
-     *
-     * @return
-     */
+        /**
+         * Forms::save_form_clogic()
+         *
+         * @return
+         */
     public function save_form_clogic()
     {
         $clogic_src = $this->saveform_clogic;
-        if ( ! empty($clogic_src)) {
+        if (!empty($clogic_src)) {
             // get fires
             $fields_fire = array();
-            foreach ( $clogic_src['cond'] as $key => $value) {
-                foreach ( $value['list'] as $key2 => $value2) {
-                    if ( ! empty($value2)) {
-                        if ( ! isset($fields_fire[ $value2['field_fire'] ]['list'][ $value['field_cond'] ])) {
-                            $fields_fire[ $value2['field_fire'] ]['list'][] = $value['field_cond'];
+            foreach ($clogic_src['cond'] as $key => $value) {
+                foreach ($value['list'] as $key2 => $value2) {
+                    if (!empty($value2)) {
+                        if (!isset($fields_fire[$value2['field_fire']]['list'][$value['field_cond']])) {
+                            $fields_fire[$value2['field_fire']]['list'][] = $value['field_cond'];
                         }
                     } else {
-                        unset($clogic_src['cond'][ $key ]['list'][ $key2 ]);
+                        unset($clogic_src['cond'][$key]['list'][$key2]);
                     }
                 }
             }
             $this->saveform_clogic = $clogic_src;
             // field fires
             $logic_field_fire = array();
-            foreach ( $fields_fire as $key => $value) {
+            foreach ($fields_fire as $key => $value) {
                 $temp_logic               = array();
                 $temp_logic['field_fire'] = $key;
                 $tmp_list                 = array();
-                foreach ( $value['list'] as $value2) {
-                    $tmp_list[] = array( 'field_cond' => $value2 );
+                foreach ($value['list'] as $value2) {
+                    $tmp_list[] = array('field_cond' => $value2);
                 }
                 $temp_logic['list']       = $tmp_list;
-                $logic_field_fire[ $key ] = $temp_logic;
+                $logic_field_fire[$key] = $temp_logic;
             }
 
             $clogic_src['fire']    = $logic_field_fire;
@@ -2101,28 +2121,28 @@ class Forms extends BackendController
         }
     }
 
-    /**
-     * Forms::save_data_fields()
-     *
-     * @return
-     */
+        /**
+         * Forms::save_data_fields()
+         *
+         * @return
+         */
     public function save_data_fields($form_id = null)
     {
 
         /* check for enabled field for reports */
         $check_rec_querys = $this->model_fields->queryGetQtyFieldsEnabled($form_id);
-        if ( intval($check_rec_querys) === 1) {
+        if (intval($check_rec_querys) === 1) {
             // getting ones enabled for showing on list records
             $tmp_query_list  = array();
             $rec_querys_list = $this->model_fields->queryGetListFieldsEnabled($form_id);
-            foreach ( $rec_querys_list as $value) {
+            foreach ($rec_querys_list as $value) {
                 $tmp_query_list[] = $value->fmf_uniqueid;
             }
             // storing rec orders
             $tmp_recorder_list = array();
             $rec_querys_list   = $this->model_fields->queryGetListFieldsById($form_id);
-            foreach ( $rec_querys_list as $value) {
-                $tmp_recorder_list[ $value->fmf_uniqueid ] = $value->order_rec;
+            foreach ($rec_querys_list as $value) {
+                $tmp_recorder_list[$value->fmf_uniqueid] = $value->order_rec;
             }
         }
 
@@ -2135,13 +2155,13 @@ class Forms extends BackendController
         $steps_src = $fmb_data['steps_src'];
 
         $set_rec_querys = 0;
-        if ( ! empty($steps_src)) {
-            foreach ( $steps_src as $tabindex => $fields) {
-                if ( ! empty($fields)) {
-                    foreach ( $fields as $key => $value) {
+        if (!empty($steps_src)) {
+            foreach ($steps_src as $tabindex => $fields) {
+                if (!empty($fields)) {
+                    foreach ($fields as $key => $value) {
                         $data                 = array();
                         $data['fmf_uniqueid'] = $value['id'];
-                        switch ( intval($value['type'])) {
+                        switch (intval($value['type'])) {
                             case 6:
                             case 7:
                             case 8:
@@ -2166,20 +2186,20 @@ class Forms extends BackendController
                             case 40:
                             case 41:
                             case 42:
-                                                        // assign selected fields to the report
-                                if ( intval($check_rec_querys) === 0 && $set_rec_querys < 5) {
+                                // assign selected fields to the report
+                                if (intval($check_rec_querys) === 0 && $set_rec_querys < 5) {
                                     $data['fmf_status_qu'] = 1;
                                     $set_rec_querys++;
-                                } elseif ( intval($check_rec_querys) === 1) {
-                                    if ( in_array($value['id'], $tmp_query_list)) {
-                                                            $data['fmf_status_qu'] = 1;
+                                } elseif (intval($check_rec_querys) === 1) {
+                                    if (in_array($value['id'], $tmp_query_list)) {
+                                        $data['fmf_status_qu'] = 1;
                                     }
                                 }
-                                        $data['fmf_fieldname'] = $value['field_name'];
-                                        $data['order_frm']     = $value['order_frm'];
+                                $data['fmf_fieldname'] = $value['field_name'];
+                                $data['order_frm']     = $value['order_frm'];
 
-                                if ( isset($tmp_recorder_list[ $value['id'] ]) && intval($tmp_recorder_list[ $value['id'] ]) > 0) {
-                                    $data['order_rec'] = $tmp_recorder_list[ $value['id'] ];
+                                if (isset($tmp_recorder_list[$value['id']]) && intval($tmp_recorder_list[$value['id']]) > 0) {
+                                    $data['order_rec'] = $tmp_recorder_list[$value['id']];
                                 } else {
                                     $data['order_rec'] = $value['order_frm'];
                                 }
@@ -2187,8 +2207,8 @@ class Forms extends BackendController
                             case 19:
                             case 20:
                             case 27:
-                                    // asigning order to fields
-                                    $data['order_frm'] = $value['order_frm'];
+                                // asigning order to fields
+                                $data['order_frm'] = $value['order_frm'];
                                 break;
                         }
 
@@ -2200,18 +2220,18 @@ class Forms extends BackendController
                         $this->db->set($data);
                         $this->db->insert($this->model_fields->table);
 
-                        if ( isset($value['clogic']) && intval($value['clogic']['show_st']) === 1) {
+                        if (isset($value['clogic']) && intval($value['clogic']['show_st']) === 1) {
                             $tmp_clogic               = array();
                             $tmp_clogic['field_cond'] = $value['id'];
                             $tmp_clogic['action']     = $value['clogic']['f_show'];
 
-                            foreach ( $value['clogic']['list'] as $key2 => $value2) {
-                                if ( empty($value2)) {
-                                    unset($value['clogic']['list'][ $key2 ]);
+                            foreach ($value['clogic']['list'] as $key2 => $value2) {
+                                if (empty($value2)) {
+                                    unset($value['clogic']['list'][$key2]);
                                 }
                             }
                             $tmp_clogic['list']              = array_filter($value['clogic']['list']);
-                            $tmp_clogic['req_match']         = ( intval($value['clogic']['f_all']) === 1 ) ? count($value['clogic']['list']) : 1;
+                            $tmp_clogic['req_match']         = (intval($value['clogic']['f_all']) === 1) ? count($value['clogic']['list']) : 1;
                             $this->saveform_clogic['cond'][] = $tmp_clogic;
                         }
                     }
@@ -2220,11 +2240,11 @@ class Forms extends BackendController
         }
     }
 
-    /**
-     * Forms::generate_form_html()
-     *
-     * @return
-     */
+        /**
+         * Forms::generate_form_html()
+         *
+         * @return
+         */
     public function generate_form_html($form_id = null)
     {
         /*
@@ -2239,15 +2259,15 @@ class Forms extends BackendController
         $str_output_2   = '';
         $str_output_tab = '';
 
-        foreach ( $tab_cont as $key => $value) {
+        foreach ($tab_cont as $key => $value) {
             // tabs
             $str_output = '';
-            if ( ! empty($value['content'])) {
-                foreach ( $value['content'] as $key2 => $value2) {
+            if (!empty($value['content'])) {
+                foreach ($value['content'] as $key2 => $value2) {
                     $get_data = array();
 
                     // fields
-                    if ( isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
+                    if (isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
                         $get_data      = $this->generate_form_getChildren($value2);
                         $str_output   .= $get_data['output_html'];
                         $str_output_2 .= $get_data['output_css'];
@@ -2262,14 +2282,14 @@ class Forms extends BackendController
             // set tab container
             $str_output_tab .= $this->generate_form_tabContent($tab_cont_num, $key, $str_output);
             // jump if it is one
-            if ( intval($tab_cont_num) === 1) {
+            if (intval($tab_cont_num) === 1) {
                 break 1;
             }
         }
 
         // generate form css
         $str_output_2 .= $this->generate_form_css($form_id);
-        if ( $tab_cont_num > 1) {
+        if ($tab_cont_num > 1) {
             $str_output_2 .= $this->generate_form_tab_css($form_id);
         }
 
@@ -2284,7 +2304,7 @@ class Forms extends BackendController
     public function generate_admin_form_html($form_id = null)
     {
         $data_form = $this->model_forms->getFormById($form_id);
-        if ( empty($data_form)) {
+        if (empty($data_form)) {
             return;
         }
         $fmb_data = json_decode($data_form->fmb_data, true);
@@ -2296,16 +2316,16 @@ class Forms extends BackendController
         $str_output_tab = '';
         $tab_cont_num   = $fmb_data['num_tabs'];
 
-        if ( ! empty($tab_cont)) {
-            foreach ( $tab_cont as $key => $value) {
+        if (!empty($tab_cont)) {
+            foreach ($tab_cont as $key => $value) {
                 // tabs
                 $str_output = '';
-                if ( ! empty($value['content'])) {
-                    foreach ( $value['content'] as $key2 => $value2) {
+                if (!empty($value['content'])) {
+                    foreach ($value['content'] as $key2 => $value2) {
                         $get_data = array();
 
                         // fields
-                        if ( isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
+                        if (isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
                             $get_data    = $this->generate_admin_form_getChildren($value2);
                             $str_output .= $get_data['output_html'];
                         } else {
@@ -2318,13 +2338,13 @@ class Forms extends BackendController
                 // set tab container
                 $str_output_tab .= $this->generate_previewpanel_tabContent($tab_cont_num, $key, $str_output);
                 // jump if it is one
-                if ( intval($tab_cont_num) === 1) {
+                if (intval($tab_cont_num) === 1) {
                     break 1;
                 }
             }
         } else {
             // set tab container
-                $str_output_tab .= $this->generate_previewpanel_tabContent(0, 0, '');
+            $str_output_tab .= $this->generate_previewpanel_tabContent(0, 0, '');
         }
 
         $return                = array();
@@ -2335,11 +2355,11 @@ class Forms extends BackendController
 
 
 
-    /**
-     * Forms::generate_previewpanel_html()
-     *
-     * @return
-     */
+        /**
+         * Forms::generate_previewpanel_html()
+         *
+         * @return
+         */
     public function generate_previewpanel_html($data)
     {
         $fmb_data = $data['fmb_data'];
@@ -2350,23 +2370,23 @@ class Forms extends BackendController
         $this->current_data_form   = $steps_src;
         $this->current_data_steps  = $fmb_data['steps'];
         $this->current_data_skin   = $fmb_data['skin'];
-        $this->current_data_wizard = ( $fmb_data['wizard'] ) ? $fmb_data['wizard'] : array();
-        $this->current_data_onsubm = ( $fmb_data['onsubm'] ) ? $fmb_data['onsubm'] : array();
-        $this->current_data_main   = ( $fmb_data['main'] ) ? $fmb_data['main'] : array();
+        $this->current_data_wizard = ($fmb_data['wizard']) ? $fmb_data['wizard'] : array();
+        $this->current_data_onsubm = ($fmb_data['onsubm']) ? $fmb_data['onsubm'] : array();
+        $this->current_data_main   = ($fmb_data['main']) ? $fmb_data['main'] : array();
         // generating
 
         $str_output_tab = '';
         $tab_cont_num   = $fmb_data['num_tabs'];
 
-        if ( ! empty($tab_cont)) {
-            foreach ( $tab_cont as $key => $value) {
+        if (!empty($tab_cont)) {
+            foreach ($tab_cont as $key => $value) {
                 // tabs
                 $str_output = '';
-                if ( ! empty($value['content'])) {
-                    foreach ( $value['content'] as $key2 => $value2) {
+                if (!empty($value['content'])) {
+                    foreach ($value['content'] as $key2 => $value2) {
                         $get_data = array();
                         // fields
-                        if ( isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
+                        if (isset($value2['iscontainer']) && intval($value2['iscontainer']) === 1) {
                             // $get_data = $this->generate_previewpanel_getChildren($value2);
 
                             $get_data = $this->generate_admin_form_getChildren($value2);
@@ -2382,14 +2402,14 @@ class Forms extends BackendController
                 // set tab container
                 $str_output_tab .= $this->generate_previewpanel_tabContent($tab_cont_num, $key, $str_output);
                 // jump if it is one
-                if ( intval($tab_cont_num) === 1) {
+                if (intval($tab_cont_num) === 1) {
                     break 1;
                 }
             }
         } else {
             // there nos data
-             // set tab container
-                $str_output_tab .= $this->generate_previewpanel_tabContent(0, 0, '');
+            // set tab container
+            $str_output_tab .= $this->generate_previewpanel_tabContent(0, 0, '');
         }
 
         $return                = array();
@@ -2398,11 +2418,11 @@ class Forms extends BackendController
         return $return;
     }
 
-    /**
-     * Forms::export_form()
-     *
-     * @return
-     */
+        /**
+         * Forms::export_form()
+         *
+         * @return
+         */
     public function export_form()
     {
         $data               = array();
@@ -2410,14 +2430,14 @@ class Forms extends BackendController
         $this->template->loadPartial('layout', 'forms/export_form', $data);
     }
 
-    /**
-     * Forms::ajax_load_export_form()
-     *
-     * @return
-     */
+        /**
+         * Forms::ajax_load_export_form()
+         *
+         * @return
+         */
     public function ajax_load_export_form()
     {
-        $form_id                      = ( isset($_POST['form_id']) && $_POST['form_id'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
+        $form_id                      = (isset($_POST['form_id']) && $_POST['form_id']) ? Uiform_Form_Helper::sanitizeInput($_POST['form_id']) : 0;
         $data_form                    = $this->model_forms->getFormById($form_id);
         $data_exp                     = array();
         $data_exp['fmb_data']         = $data_form->fmb_data;
@@ -2430,11 +2450,11 @@ class Forms extends BackendController
         die();
     }
 
-    /**
-     * Forms::generate_form_css()
-     *
-     * @return
-     */
+        /**
+         * Forms::generate_form_css()
+         *
+         * @return
+         */
     public function generate_form_css($form_id = null)
     {
         $data           = array();
@@ -2443,11 +2463,11 @@ class Forms extends BackendController
         return $this->load->view('formbuilder/forms/formhtml_css_form', $data, true);
     }
 
-    /**
-     * Forms::generate_form_tab_css()
-     *
-     * @return
-     */
+        /**
+         * Forms::generate_form_tab_css()
+         *
+         * @return
+         */
     public function generate_form_tab_css($form_id = null)
     {
         $data           = array();
@@ -2456,28 +2476,28 @@ class Forms extends BackendController
         return $this->load->view('formbuilder/forms/formhtml_css_wizard', $data, true);
     }
 
-    /**
-     * Forms::ajax_load_form()
-     *
-     * @return
-     */
+        /**
+         * Forms::ajax_load_form()
+         *
+         * @return
+         */
     public function ajax_load_form()
     {
         $json    = array();
-        $form_id = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $form_id = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
 
         $data_form           = $this->model_forms->getFormById($form_id);
         $data_form->fmb_data = json_decode($data_form->fmb_data);
         $json['data']        = $data_form;
-         // temp
+        // temp
         $tmp_addon_names = $this->model_addon->getActiveAddonsNamesOnBack($form_id);
 
         $tmp_addon = array();
 
-        foreach ( $tmp_addon_names as $key => $value) {
+        foreach ($tmp_addon_names as $key => $value) {
             $tmp_data = $this->model_addon_details->getAddonDataByForm($value, $form_id);
-            if ( ! empty($tmp_data)) {
-                $tmp_addon[ $value ] = json_decode($tmp_data->adet_data, true);
+            if (!empty($tmp_data)) {
+                $tmp_addon[$value] = json_decode($tmp_data->adet_data, true);
             }
         }
 
@@ -2487,28 +2507,28 @@ class Forms extends BackendController
         die();
     }
 
-    /**
-     * Forms::list_uiforms()
-     *
-     * @return
-     */
+        /**
+         * Forms::list_uiforms()
+         *
+         * @return
+         */
     public function list_uiforms($offset = 0)
     {
 
         $filter_data = get_option('zgfm_listform_searchfilter', true);
 
         $data2 = array();
-        if ( empty($filter_data)) {
+        if (empty($filter_data)) {
             $data2['per_page']   = intval($this->per_page);
             $data2['search_txt'] = '';
             $data2['orderby']    = 'asc';
         } else {
-            $data2['per_page']   = isset($filter_data['per_page'])?intval($filter_data['per_page']):'5';
-            $data2['search_txt'] = isset($filter_data['search_txt'])?$filter_data['search_txt']:'';
-            $data2['orderby']    = isset($filter_data['orderby'])?$filter_data['orderby']:'';
+            $data2['per_page']   = isset($filter_data['per_page']) ? intval($filter_data['per_page']) : '5';
+            $data2['search_txt'] = isset($filter_data['search_txt']) ? $filter_data['search_txt'] : '';
+            $data2['orderby']    = isset($filter_data['orderby']) ? $filter_data['orderby'] : '';
         }
 
-        $offset          = ( isset($_GET['offset']) ) ? Uiform_Form_Helper::sanitizeInput($_GET['offset']) : 0;
+        $offset          = (isset($_GET['offset'])) ? Uiform_Form_Helper::sanitizeInput($_GET['offset']) : 0;
         $data2['offset'] = $offset;
 
         $form_data = $this->model_forms->ListTotals();
@@ -2523,25 +2543,25 @@ class Forms extends BackendController
 
 
 
-    /**
-     * Show trash list
-     *
-     * @return void
-     */
+        /**
+         * Show trash list
+         *
+         * @return void
+         */
     public function list_trash()
     {
 
         $filter_data = get_option('zgfm_listform_searchfilter', true);
         $data2       = array();
-        if ( empty($filter_data)) {
+        if (empty($filter_data)) {
             $data2['per_page']   = intval($this->per_page);
             $data2['orderby']    = 'asc';
         } else {
-            $data2['per_page']   = intval($filter_data['per_page']??'');
-            $data2['orderby']    = $filter_data['orderby']??'';
+            $data2['per_page']   = intval($filter_data['per_page'] ?? '');
+            $data2['orderby']    = $filter_data['orderby'] ?? '';
         }
 
-        $offset          = ( isset($_GET['offset']) ) ? Uiform_Form_Helper::sanitizeInput($_GET['offset']) : 0;
+        $offset          = (isset($_GET['offset'])) ? Uiform_Form_Helper::sanitizeInput($_GET['offset']) : 0;
         $data2['offset'] = $offset;
 
         $form_data = $this->model_forms->ListTotals();
@@ -2559,18 +2579,18 @@ class Forms extends BackendController
     }
 
 
-    /**
-     * List trash forms
-     *
-     * @return void
-     */
+        /**
+         * List trash forms
+         *
+         * @return void
+         */
     public function ajax_trashformlist_sendfilter()
     {
 
-        $data_filter = ( isset($_POST['data_filter']) && $_POST['data_filter'] ) ? $_POST['data_filter'] : '';
+        $data_filter = (isset($_POST['data_filter']) && $_POST['data_filter']) ? $_POST['data_filter'] : '';
 
-        $opt_save   = ( isset($_POST['opt_save']) && $_POST['opt_save'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['opt_save']) : 0;
-        $opt_offset = ( isset($_POST['opt_offset']) && $_POST['opt_offset'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['opt_offset']) : 0;
+        $opt_save   = (isset($_POST['opt_save']) && $_POST['opt_save']) ? Uiform_Form_Helper::sanitizeInput($_POST['opt_save']) : 0;
+        $opt_offset = (isset($_POST['opt_offset']) && $_POST['opt_offset']) ? Uiform_Form_Helper::sanitizeInput($_POST['opt_offset']) : 0;
 
         parse_str($data_filter, $data_filter_arr);
 
@@ -2581,7 +2601,7 @@ class Forms extends BackendController
         $data['per_page']   = $per_page;
         $data['orderby']    = $orderby;
 
-        if ( intval($opt_save) === 1) {
+        if (intval($opt_save) === 1) {
             update_option('zgfm_listform_trash', $data);
         }
 
@@ -2598,12 +2618,12 @@ class Forms extends BackendController
         die();
     }
 
-    /**
-     * get forms in trash
-     *
-     * @param [type] $data
-     * @return void
-     */
+        /**
+         * get forms in trash
+         *
+         * @param [type] $data
+         * @return void
+         */
     public function ajax_trashformlist_refresh($data)
     {
 
@@ -2657,18 +2677,18 @@ class Forms extends BackendController
         //return self::render_template( 'formbuilder/views/forms/list_forms_table.php', $data3 );
     }
 
-    /**
-     * list forms
-     *
-     * @return void
-     */
+        /**
+         * list forms
+         *
+         * @return void
+         */
     public function ajax_formlist_sendfilter()
     {
 
-        $data_filter = ( isset($_POST['data_filter']) && $_POST['data_filter'] ) ? $_POST['data_filter'] : '';
+        $data_filter = (isset($_POST['data_filter']) && $_POST['data_filter']) ? $_POST['data_filter'] : '';
 
-        $opt_save   = ( isset($_POST['opt_save']) && $_POST['opt_save'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['opt_save']) : 0;
-        $opt_offset = ( isset($_POST['opt_offset']) && $_POST['opt_offset'] ) ? Uiform_Form_Helper::sanitizeInput($_POST['opt_offset']) : 0;
+        $opt_save   = (isset($_POST['opt_save']) && $_POST['opt_save']) ? Uiform_Form_Helper::sanitizeInput($_POST['opt_save']) : 0;
+        $opt_offset = (isset($_POST['opt_offset']) && $_POST['opt_offset']) ? Uiform_Form_Helper::sanitizeInput($_POST['opt_offset']) : 0;
 
         parse_str($data_filter, $data_filter_arr);
 
@@ -2681,7 +2701,7 @@ class Forms extends BackendController
         $data['search_txt'] = $search_txt;
         $data['orderby']    = $orderby;
 
-        if ( intval($opt_save) === 1) {
+        if (intval($opt_save) === 1) {
             update_option('zgfm_listform_searchfilter', $data);
         }
 
@@ -2748,97 +2768,97 @@ class Forms extends BackendController
     }
 
 
-    /**
-     * Forms::edit_uiform()
-     *
-     * @return
-     */
+        /**
+         * Forms::edit_uiform()
+         *
+         * @return
+         */
     public function edit_uiform()
     {
         $data = array();
         echo $this->load->view('formbuilder/forms/edit_form', $data, true);
     }
 
-    /**
-     * Forms::create_uiform()
-     *
-     * @return
-     */
+        /**
+         * Forms::create_uiform()
+         *
+         * @return
+         */
     public function create_uiform()
     {
 
         $data            = array();
-        $data['form_id'] = ( isset($_GET['form_id']) && $_GET['form_id'] ) ? Uiform_Form_Helper::sanitizeInput(trim($_GET['form_id'])) : 0;
+        $data['form_id'] = (isset($_GET['form_id']) && $_GET['form_id']) ? Uiform_Form_Helper::sanitizeInput(trim($_GET['form_id'])) : 0;
         $data['action']  = 'create_uiform';
         $data['obj_sfm'] = Uiform_Form_Helper::get_font_library();
 
-        if ( intval($data['form_id']) > 0) {
+        if (intval($data['form_id']) > 0) {
             $formdata = $this->model_forms->getFormById($data['form_id']);
             /*
-             * delete after a month
+         * delete after a month
             $data['uifm_frm_record_tpl_enable']=$formdata->fmb_rec_tpl_st;
             $data['uifm_frm_record_tpl_content']=$formdata->fmb_rec_tpl_html;*/
         }
         $data['addons_actions'] = self::$_addons_actions;
 
         $pdf_paper_size         = array(
-            '4a0'                      => array( 0, 0, 4767.87, 6740.79 ),
-            '2a0'                      => array( 0, 0, 3370.39, 4767.87 ),
-            'a0'                       => array( 0, 0, 2383.94, 3370.39 ),
-            'a1'                       => array( 0, 0, 1683.78, 2383.94 ),
-            'a2'                       => array( 0, 0, 1190.55, 1683.78 ),
-            'a3'                       => array( 0, 0, 841.89, 1190.55 ),
-            'a4'                       => array( 0, 0, 595.28, 841.89 ),
-            'a5'                       => array( 0, 0, 419.53, 595.28 ),
-            'a6'                       => array( 0, 0, 297.64, 419.53 ),
-            'a7'                       => array( 0, 0, 209.76, 297.64 ),
-            'a8'                       => array( 0, 0, 147.40, 209.76 ),
-            'a9'                       => array( 0, 0, 104.88, 147.40 ),
-            'a10'                      => array( 0, 0, 73.70, 104.88 ),
-            'b0'                       => array( 0, 0, 2834.65, 4008.19 ),
-            'b1'                       => array( 0, 0, 2004.09, 2834.65 ),
-            'b2'                       => array( 0, 0, 1417.32, 2004.09 ),
-            'b3'                       => array( 0, 0, 1000.63, 1417.32 ),
-            'b4'                       => array( 0, 0, 708.66, 1000.63 ),
-            'b5'                       => array( 0, 0, 498.90, 708.66 ),
-            'b6'                       => array( 0, 0, 354.33, 498.90 ),
-            'b7'                       => array( 0, 0, 249.45, 354.33 ),
-            'b8'                       => array( 0, 0, 175.75, 249.45 ),
-            'b9'                       => array( 0, 0, 124.72, 175.75 ),
-            'b10'                      => array( 0, 0, 87.87, 124.72 ),
-            'c0'                       => array( 0, 0, 2599.37, 3676.54 ),
-            'c1'                       => array( 0, 0, 1836.85, 2599.37 ),
-            'c2'                       => array( 0, 0, 1298.27, 1836.85 ),
-            'c3'                       => array( 0, 0, 918.43, 1298.27 ),
-            'c4'                       => array( 0, 0, 649.13, 918.43 ),
-            'c5'                       => array( 0, 0, 459.21, 649.13 ),
-            'c6'                       => array( 0, 0, 323.15, 459.21 ),
-            'c7'                       => array( 0, 0, 229.61, 323.15 ),
-            'c8'                       => array( 0, 0, 161.57, 229.61 ),
-            'c9'                       => array( 0, 0, 113.39, 161.57 ),
-            'c10'                      => array( 0, 0, 79.37, 113.39 ),
-            'ra0'                      => array( 0, 0, 2437.80, 3458.27 ),
-            'ra1'                      => array( 0, 0, 1729.13, 2437.80 ),
-            'ra2'                      => array( 0, 0, 1218.90, 1729.13 ),
-            'ra3'                      => array( 0, 0, 864.57, 1218.90 ),
-            'ra4'                      => array( 0, 0, 609.45, 864.57 ),
-            'sra0'                     => array( 0, 0, 2551.18, 3628.35 ),
-            'sra1'                     => array( 0, 0, 1814.17, 2551.18 ),
-            'sra2'                     => array( 0, 0, 1275.59, 1814.17 ),
-            'sra3'                     => array( 0, 0, 907.09, 1275.59 ),
-            'sra4'                     => array( 0, 0, 637.80, 907.09 ),
-            'letter'                   => array( 0, 0, 612.00, 792.00 ),
-            'half-letter'              => array( 0, 0, 396.00, 612.00 ),
-            'legal'                    => array( 0, 0, 612.00, 1008.00 ),
-            'ledger'                   => array( 0, 0, 1224.00, 792.00 ),
-            'tabloid'                  => array( 0, 0, 792.00, 1224.00 ),
-            'executive'                => array( 0, 0, 521.86, 756.00 ),
-            'folio'                    => array( 0, 0, 612.00, 936.00 ),
-            'commercial #10 envelope'  => array( 0, 0, 684, 297 ),
-            'catalog #10 1/2 envelope' => array( 0, 0, 648, 864 ),
-            '8.5x11'                   => array( 0, 0, 612.00, 792.00 ),
-            '8.5x14'                   => array( 0, 0, 612.00, 1008.0 ),
-            '11x17'                    => array( 0, 0, 792.00, 1224.00 ),
+            '4a0'                      => array(0, 0, 4767.87, 6740.79),
+            '2a0'                      => array(0, 0, 3370.39, 4767.87),
+            'a0'                       => array(0, 0, 2383.94, 3370.39),
+            'a1'                       => array(0, 0, 1683.78, 2383.94),
+            'a2'                       => array(0, 0, 1190.55, 1683.78),
+            'a3'                       => array(0, 0, 841.89, 1190.55),
+            'a4'                       => array(0, 0, 595.28, 841.89),
+            'a5'                       => array(0, 0, 419.53, 595.28),
+            'a6'                       => array(0, 0, 297.64, 419.53),
+            'a7'                       => array(0, 0, 209.76, 297.64),
+            'a8'                       => array(0, 0, 147.40, 209.76),
+            'a9'                       => array(0, 0, 104.88, 147.40),
+            'a10'                      => array(0, 0, 73.70, 104.88),
+            'b0'                       => array(0, 0, 2834.65, 4008.19),
+            'b1'                       => array(0, 0, 2004.09, 2834.65),
+            'b2'                       => array(0, 0, 1417.32, 2004.09),
+            'b3'                       => array(0, 0, 1000.63, 1417.32),
+            'b4'                       => array(0, 0, 708.66, 1000.63),
+            'b5'                       => array(0, 0, 498.90, 708.66),
+            'b6'                       => array(0, 0, 354.33, 498.90),
+            'b7'                       => array(0, 0, 249.45, 354.33),
+            'b8'                       => array(0, 0, 175.75, 249.45),
+            'b9'                       => array(0, 0, 124.72, 175.75),
+            'b10'                      => array(0, 0, 87.87, 124.72),
+            'c0'                       => array(0, 0, 2599.37, 3676.54),
+            'c1'                       => array(0, 0, 1836.85, 2599.37),
+            'c2'                       => array(0, 0, 1298.27, 1836.85),
+            'c3'                       => array(0, 0, 918.43, 1298.27),
+            'c4'                       => array(0, 0, 649.13, 918.43),
+            'c5'                       => array(0, 0, 459.21, 649.13),
+            'c6'                       => array(0, 0, 323.15, 459.21),
+            'c7'                       => array(0, 0, 229.61, 323.15),
+            'c8'                       => array(0, 0, 161.57, 229.61),
+            'c9'                       => array(0, 0, 113.39, 161.57),
+            'c10'                      => array(0, 0, 79.37, 113.39),
+            'ra0'                      => array(0, 0, 2437.80, 3458.27),
+            'ra1'                      => array(0, 0, 1729.13, 2437.80),
+            'ra2'                      => array(0, 0, 1218.90, 1729.13),
+            'ra3'                      => array(0, 0, 864.57, 1218.90),
+            'ra4'                      => array(0, 0, 609.45, 864.57),
+            'sra0'                     => array(0, 0, 2551.18, 3628.35),
+            'sra1'                     => array(0, 0, 1814.17, 2551.18),
+            'sra2'                     => array(0, 0, 1275.59, 1814.17),
+            'sra3'                     => array(0, 0, 907.09, 1275.59),
+            'sra4'                     => array(0, 0, 637.80, 907.09),
+            'letter'                   => array(0, 0, 612.00, 792.00),
+            'half-letter'              => array(0, 0, 396.00, 612.00),
+            'legal'                    => array(0, 0, 612.00, 1008.00),
+            'ledger'                   => array(0, 0, 1224.00, 792.00),
+            'tabloid'                  => array(0, 0, 792.00, 1224.00),
+            'executive'                => array(0, 0, 521.86, 756.00),
+            'folio'                    => array(0, 0, 612.00, 936.00),
+            'commercial #10 envelope'  => array(0, 0, 684, 297),
+            'catalog #10 1/2 envelope' => array(0, 0, 648, 864),
+            '8.5x11'                   => array(0, 0, 612.00, 792.00),
+            '8.5x14'                   => array(0, 0, 612.00, 1008.0),
+            '11x17'                    => array(0, 0, 792.00, 1224.00),
         );
         $data['pdf_paper_size'] = $pdf_paper_size;
 
@@ -2851,38 +2871,38 @@ class Forms extends BackendController
         $this->template->loadPartial('layout-editform', 'forms/create_form', $data);
     }
 
-    /**
-     * Forms::preview_fields()
-     *
-     * @return
-     */
+        /**
+         * Forms::preview_fields()
+         *
+         * @return
+         */
     public function preview_fields()
     {
         $data = array();
         echo $this->load->view('formbuilder/forms/preview_fields', $data, true);
     }
 
-    /**
-     * Forms::getcode()
-     *
-     * @return
-     */
+        /**
+         * Forms::getcode()
+         *
+         * @return
+         */
     public function getcode()
     {
         $data = array();
 
-        $id_form = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
-        $query   = $this->db->get_where($this->model_forms->table, array( 'fmb_id' => $id_form ), 1);
-        if ( $query->num_rows() === 1) {
+        $id_form = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $query   = $this->db->get_where($this->model_forms->table, array('fmb_id' => $id_form), 1);
+        if ($query->num_rows() === 1) {
             $data = array();
 
             // get data from form
             $form_data        = $this->model_forms->getFormById_2($id_form);
             $form_data_onsubm = json_decode($form_data->fmb_data2, true);
 
-            $onload_scroll = ( isset($form_data_onsubm['main']['onload_scroll']) ) ? $form_data_onsubm['main']['onload_scroll'] : '1';
+            $onload_scroll = (isset($form_data_onsubm['main']['onload_scroll'])) ? $form_data_onsubm['main']['onload_scroll'] : '1';
 
-            $preload_noconflict = ( isset($form_data_onsubm['main']['preload_noconflict']) ) ? $form_data_onsubm['main']['preload_noconflict'] : '1';
+            $preload_noconflict = (isset($form_data_onsubm['main']['preload_noconflict'])) ? $form_data_onsubm['main']['preload_noconflict'] : '1';
 
             $temp             = array();
             $temp['id_form']  = $id_form;
@@ -2918,27 +2938,27 @@ class Forms extends BackendController
         }
     }
 
-    /**
-     * Forms::form_success()
-     *
-     * @return
-     */
+        /**
+         * Forms::form_success()
+         *
+         * @return
+         */
     public function form_success()
     {
 
         $data    = array();
-        $id_form = ( isset($_POST['form_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
+        $id_form = (isset($_POST['form_id'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['form_id'])) : '';
 
-        $query = $this->db->get_where($this->model_forms->table, array( 'fmb_id' => $id_form ), 1);
-        if ( $query->num_rows() === 1) {
+        $query = $this->db->get_where($this->model_forms->table, array('fmb_id' => $id_form), 1);
+        if ($query->num_rows() === 1) {
             $data = array();
             // get data from form
             $form_data        = $this->model_forms->getFormById_2($id_form);
             $form_data_onsubm = json_decode($form_data->fmb_data2, true);
 
-            $onload_scroll = ( isset($form_data_onsubm['main']['onload_scroll']) ) ? $form_data_onsubm['main']['onload_scroll'] : '1';
+            $onload_scroll = (isset($form_data_onsubm['main']['onload_scroll'])) ? $form_data_onsubm['main']['onload_scroll'] : '1';
 
-            $preload_noconflict = ( isset($form_data_onsubm['main']['preload_noconflict']) ) ? $form_data_onsubm['main']['preload_noconflict'] : '1';
+            $preload_noconflict = (isset($form_data_onsubm['main']['preload_noconflict'])) ? $form_data_onsubm['main']['preload_noconflict'] : '1';
 
             $temp                       = array();
             $temp['id_form']            = $id_form;
@@ -2960,7 +2980,7 @@ class Forms extends BackendController
 
             $data['iframe'] = escape_text($this->load->view('formbuilder/forms/get_code_iframe', $temp, true));
 
-             // echo $this->load->view('formbuilder/forms/form_success', $data, true);
+            // echo $this->load->view('formbuilder/forms/form_success', $data, true);
 
             $json               = array();
             $json['html_title'] = __('Shortcodes', 'FRocket_admin');
@@ -2974,4 +2994,3 @@ class Forms extends BackendController
         }
     }
 }
-

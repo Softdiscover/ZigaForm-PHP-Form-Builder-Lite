@@ -1,5 +1,5 @@
-# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 6.0.0
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 6.0.0 package.
+# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 6.0.2
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 6.0.2 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -58,7 +58,7 @@ msgstr "Успех! Успешно обновлен"
 msgid "Form was created"
 msgstr "Form was created"
 
-#: application/views/footer.php:47, application/modules/formbuilder/controllers/forms.php:670
+#: application/views/footer.php:47, application/modules/formbuilder/controllers/forms.php:671
 msgid ""
 "Success! The form was created. Now just copy and paste the shortcode to "
 "your content"
@@ -722,31 +722,31 @@ msgstr "Import Bulk Data"
 msgid "Column"
 msgstr "Column"
 
-#: application/modules/formbuilder/controllers/forms.php:249
+#: application/modules/formbuilder/controllers/forms.php:250
 msgid "Rollback Form"
 msgstr "Rollback Form"
 
-#: application/modules/formbuilder/controllers/forms.php:269
+#: application/modules/formbuilder/controllers/forms.php:270
 msgid "Error message"
 msgstr "Настраиваемое сообщение об ошибке"
 
-#: application/modules/formbuilder/controllers/forms.php:291
+#: application/modules/formbuilder/controllers/forms.php:292
 msgid "Form variables"
 msgstr "Название формы"
 
-#: application/modules/formbuilder/controllers/forms.php:673
+#: application/modules/formbuilder/controllers/forms.php:674
 msgid "Success"
 msgstr "Сообщение об успешном действии"
 
-#: application/modules/formbuilder/controllers/forms.php:689, application/modules/formbuilder/controllers/forms.php:2906, application/modules/formbuilder/controllers/forms.php:2966
+#: application/modules/formbuilder/controllers/forms.php:690, application/modules/formbuilder/controllers/forms.php:2926, application/modules/formbuilder/controllers/forms.php:2986
 msgid "Shortcodes"
 msgstr "Shortcode"
 
-#: application/modules/formbuilder/controllers/forms.php:762, application/modules/formbuilder/controllers/forms.php:790
+#: application/modules/formbuilder/controllers/forms.php:763, application/modules/formbuilder/controllers/forms.php:791
 msgid "Error! User has no permission to edit this form"
 msgstr "Error! User has no permission to edit this form"
 
-#: application/modules/formbuilder/controllers/forms.php:2548
+#: application/modules/formbuilder/controllers/forms.php:2568
 msgid "Forms in trash"
 msgstr "Название формы"
 

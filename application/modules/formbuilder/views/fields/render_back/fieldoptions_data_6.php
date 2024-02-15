@@ -11,8 +11,10 @@
              * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
              * @link      http://wordpress-form-builder.uiform.com/
              */
-            if (!defined('BASEPATH')) {exit('No direct script access allowed');}
-            ?>
+if (!defined('BASEPATH')) {
+    exit('No direct script access allowed');
+}
+?>
             <!-- options -->
             <script type="text/html" id="tmpl-zgfm-field-opt-type-6">
 &lt;div id=&quot;uifm-field-opt-content&quot;&gt;
@@ -218,7 +220,7 @@
                                                 
 
 &lt;select name=&quot;uifm_fld_lbl_font&quot;id=&quot;uifm_fld_lbl_font&quot;data-field-store=&quot;label-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -457,7 +459,7 @@
                                                 
 
 &lt;select name=&quot;uifm_fld_sublbl_font&quot;id=&quot;uifm_fld_sublbl_font&quot;data-field-store=&quot;sublabel-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -1168,7 +1170,7 @@
                                                 
 
 &lt;select name=&quot;uifm_fld_inp_font&quot;id=&quot;uifm_fld_inp_font&quot;data-field-store=&quot;input-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -1634,7 +1636,7 @@
                                                 
 
 &lt;select name=&quot;uifm_fld_inp2_font&quot;id=&quot;uifm_fld_inp2_font&quot;data-field-store=&quot;input2-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -2439,7 +2441,7 @@
                                                 
 
 &lt;select name=&quot;uifm_fld_input11_font&quot;id=&quot;uifm_fld_input11_font&quot;data-field-store=&quot;input11-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -2702,7 +2704,7 @@
                                                 
 
 &lt;select name=&quot;uifm_fld_inp12_font&quot;id=&quot;uifm_fld_inp12_font&quot;data-field-store=&quot;input12-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -3206,7 +3208,7 @@
                                                 
 
 &lt;select name=&quot;uifm_fld_inp13_font&quot;id=&quot;uifm_fld_inp13_font&quot;data-field-store=&quot;input13-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;
@@ -4698,7 +4700,7 @@
                                                 
 
 &lt;select name=&quot;uifm_fld_hblock_font&quot;id=&quot;uifm_fld_hblock_font&quot;data-field-store=&quot;help_block-font&quot; class=&quot;sfm&quot; data-selected=&quot;{&amp;quot;family&amp;quot;:&amp;quot;Arial, Helvetica, sans-serif&amp;quot;,&amp;quot;name&amp;quot;:&amp;quot;Arial&amp;quot;,&amp;quot;classname&amp;quot;:&amp;quot;arial&amp;quot;}&quot; data-placeholder=&quot;Select a Font...&quot;&gt;
-	&lt;option value=&quot;&quot;&gt;&lt;/option&gt;
+    &lt;option value=&quot;&quot;&gt;&lt;/option&gt;
 
 
 &lt;/select&gt;

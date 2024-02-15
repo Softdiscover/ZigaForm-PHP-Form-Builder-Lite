@@ -412,7 +412,7 @@ function uifm_load_cssfiles() {
 		if (parseInt(tmp_fmid) > 0) {
 			tmp_element = {
 				id: 'uifm_css_' + _uifmvar.fm_ids[i][0],
-				href: UIFORM_SRC + 'assets/frontend/css/rockfm_form' + _uifmvar.fm_ids[i][0] + '.css?' + Math.round(+new Date() / 1000),
+				href: UIFORM_SRC + 'uploads/form-styles/rockfm_form' + _uifmvar.fm_ids[i][0] + '.css?' + Math.round(+new Date() / 1000),
 			};
 			uifm_cssFiles.push(tmp_element);
 		}
