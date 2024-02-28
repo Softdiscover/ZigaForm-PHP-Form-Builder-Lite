@@ -3273,12 +3273,14 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 			uiformDCheckbox.prototype._spinnerCounter = function(el, _this) {
 				var objbtn = $(el);
 				var input_spinner = _this.$element.find('.uifm-dcheckbox-item-qty-num');
+				var input_visible_spinner = _this.$element.find('.uifm-dfield-input');
 				if (_this.$element.find('.uifm-dcheckbox-item-qty-wrap button').hasClass('dcheckbox-disabled')) {
 					_this.$element.find('.uifm-dcheckbox-item-qty-wrap button').removeClass('dcheckbox-disabled');
 				}
 
 				if (objbtn.attr('data-value') == 'increase') {
 					if (input_spinner.attr('data-max') == undefined || parseInt(input_spinner.val()) < parseInt(input_spinner.attr('data-max'))) {
+						input_visible_spinner.text(parseInt(input_spinner.val()) + 1);
 						input_spinner.val(parseInt(input_spinner.val()) + 1);
 						if (parseInt(input_spinner.val()) === parseInt(input_spinner.attr('data-max'))) {
 							objbtn.addClass('dcheckbox-disabled');
@@ -3288,6 +3290,7 @@ if (!$uifm.isFunction(zgfm_front_helper)) {
 					}
 				} else {
 					if (input_spinner.attr('data-min') == undefined || parseInt(input_spinner.val()) > parseInt(input_spinner.attr('data-min'))) {
+						input_visible_spinner.text(parseInt(input_spinner.val()) - 1);
 						input_spinner.val(parseInt(input_spinner.val()) - 1);
 						if (parseInt(input_spinner.val()) === parseInt(input_spinner.attr('data-min'))) {
 							objbtn.addClass('dcheckbox-disabled');

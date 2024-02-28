@@ -317,7 +317,8 @@ if ( ! defined( 'BASEPATH' ) ) {
 		 <div id="rocketform-bk-dashboard" class="sfdc-wrap"  >
 
 			<div id="rocketform-bk-header">
-				<?php require 'header-uiform.php'; ?>
+				&nbsp;
+				<?php //require 'header.php'; ?>
 			</div>
 			<div id="rocketform-bk-content">
 				<div style="display:none;" id="uiform-panel-loadingst">

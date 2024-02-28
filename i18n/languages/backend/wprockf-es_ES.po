@@ -1,5 +1,5 @@
-# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 6.0.3
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 6.0.3 package.
+# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 6.0.6
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 6.0.6 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: translate to spanish\n"
@@ -2591,7 +2591,7 @@ msgstr "Gestión Tabs"
 msgid "Clean Tabs"
 msgstr "Limpio"
 
-#: application/modules/formbuilder/views/forms/settings_form_wizard.php:74, application/modules/formbuilder/views/forms/templates_fields.php:2087
+#: application/modules/formbuilder/views/forms/settings_form_wizard.php:74, application/modules/formbuilder/views/forms/templates_fields.php:2107
 msgid "Add new"
 msgstr "Añadir nuevo"
 
@@ -2739,7 +2739,15 @@ msgstr "Placa de tipos"
 msgid "Type value"
 msgstr "Placa de tipos"
 
-#: application/modules/formbuilder/views/forms/templates_fields.php:2084, application/modules/formbuilder/views/forms/templates_fields.php:2098
+#: application/modules/formbuilder/views/forms/templates_fields.php:2083
+msgid "Enable quantity"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:2092
+msgid "Maximum quantity"
+msgstr ""
+
+#: application/modules/formbuilder/views/forms/templates_fields.php:2104, application/modules/formbuilder/views/forms/templates_fields.php:2118
 msgid "Images"
 msgstr "Imágenes"
 

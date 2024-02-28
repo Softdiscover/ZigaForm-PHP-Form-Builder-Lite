@@ -60,23 +60,14 @@ foreach ( $input17['options'] as $key => $value) {
             </div>
             
             <div style="display:none" class="uifm-dcheckbox-item-qty-wrap">
-                <div class="sfdc-input-group">
-                    <span class="sfdc-input-group-btn">
-                        <button type="button" class="sfdc-btn sfdc-btn-default" data-value="decrease">
-                            <span class="sfdc-glyphicon sfdc-glyphicon-minus"></span>
-                        </button>
-                    </span>
-                    <span class="sfdc-input-group-btn">
-                        <input type="text" 
+                <div class="uifm-dfield-spinner">
+                  <button class="uifm-dfield-minus sfdc-btn sfdc-btn-default" data-value="decrease">-</button>
+                  <input type="hidden" 
                                 data-max="<?php echo $value['qty_max']; ?>"
                                 data-min="1"
-                                class="uifm-dcheckbox-item-qty-num" value="1">   
-                    </span>
-                    <span class="sfdc-input-group-btn">
-                        <button type="button" class="sfdc-btn sfdc-btn-default" data-value="increase">
-                            <span class="sfdc-glyphicon sfdc-glyphicon-plus"></span>
-                        </button>
-                    </span>
+                                class="uifm-dcheckbox-item-qty-num" value="1">
+                  <div class="uifm-dfield-input " contenteditable="true">1</div>
+                  <button class="uifm-dfield-plus sfdc-btn sfdc-btn-default" data-value="increase">+</button>
                 </div>
             </div>
             <?php if ( isset($input17['thopt_zoom']) && intval($input17['thopt_zoom']) === 1 && $layout_type != 2) { ?>

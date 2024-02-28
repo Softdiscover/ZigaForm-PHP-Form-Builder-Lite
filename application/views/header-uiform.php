@@ -3,20 +3,20 @@ if ( ! defined( 'BASEPATH' ) ) {
 	exit( 'No direct script access allowed' );}
 ?>
 <div class="uiform-editing-header">
-   <nav class="navbar navbar-default" role="navigation">
-  <div class="navbar-inner">
-<div class="navbar-header">
+   <nav class="sfdc-navbar sfdc-navbar-default" role="navigation">
+  <div class="sfdc-navbar-inner">
+<div class="sfdc-navbar-header">
 		  <button data-target="#bs-example-navbar-collapse-1" data-toggle="collapse" class="navbar-toggle collapsed" type="button">
 			<span class="sr-only"><?php echo __( 'Toggle navigation', 'FRocket_admin' ); ?></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 			<span class="icon-bar"></span>
 		  </button>
-		  <a href="javascript:void(0);" class="navbar-brand"><img title="Rocket Form" src="<?php echo base_url(); ?>assets/backend/image/rockfm-logo-header.png"></a>
+		  <a href="javascript:location.reload();" class="navbar-brand"><img title="Rocket Form" src="<?php echo base_url(); ?>assets/backend/image/rockfm-logo-header.png"></a>
 		</div>
 	<!-- Collect the nav links, forms, and other content for toggling -->
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-	  <ul class="nav navbar-nav">
+	  <ul class="sfdc-nav sfdc-navbar-nav">
 		  <li class="divider-menu"></li>
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="fa fa-file"></span> <?php echo __( 'Forms', 'FRocket_admin' ); ?><span class="caret"></span></a>
