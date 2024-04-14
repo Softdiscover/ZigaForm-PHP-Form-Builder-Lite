@@ -32,7 +32,7 @@ class MySQLDump {
 	 *
 	 * @param  mysqli connection
 	 */
-	public function __construct( mysqli $connection, $charset = 'utf8', $customTables ) {
+	public function __construct( mysqli $connection, $charset = 'utf8', $customTables = [] ) {
 		$this->connection = $connection;
 
 		if ( $connection->connect_errno ) {

@@ -21,6 +21,7 @@ class ComposerStaticInitb8e04c4c5aeff5414f3a2b4e7dfad8b2
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Get2text\\Comments' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Comments.php',
         'Get2text\\Flags' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Flags.php',
         'Get2text\\Generator\\Generator' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Generator/Generator.php',
@@ -32,6 +33,7 @@ class ComposerStaticInitb8e04c4c5aeff5414f3a2b4e7dfad8b2
         'Get2text\\Loader\\LoaderInterface' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Loader/LoaderInterface.php',
         'Get2text\\Loader\\MoLoader' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Loader/MoLoader.php',
         'Get2text\\Loader\\PoLoader' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Loader/PoLoader.php',
+        'Get2text\\Loader\\StrictPoLoader' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Loader/StrictPoLoader.php',
         'Get2text\\Merge' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Merge.php',
         'Get2text\\References' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/References.php',
         'Get2text\\Scanner\\CodeScanner' => __DIR__ . '/../..' . '/lib/gettext/gettext/src/Scanner/CodeScanner.php',

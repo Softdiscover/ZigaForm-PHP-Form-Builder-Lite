@@ -5,7 +5,6 @@ namespace Get2text\Scanner;
 
 use Exception;
 use Get2text\Translation;
-use Get2text\Translations;
 
 /**
  * Base class with common functions to scan files with code and get gettext translations.
@@ -104,6 +103,19 @@ abstract class CodeScanner extends Scanner
             if ($this->checkComment($comment)) {
                 $translation->getExtractedComments()->add($comment);
             }
+        }
+
+        return $translation;
+    }
+
+    protected function addFlags(ParsedFunction $function, ?Translation $translation): ?Translation
+    {
+        if (empty($translation)) {
+            return $translation;
+        }
+
+        foreach ($function->getFlags() as $flag) {
+            $translation->getFlags()->add($flag);
         }
 
         return $translation;

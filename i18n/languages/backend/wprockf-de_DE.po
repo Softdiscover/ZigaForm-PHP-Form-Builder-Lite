@@ -1,5 +1,4 @@
-# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 6.0.9
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 6.0.9 package.
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 6.1.1 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -306,7 +305,7 @@ msgstr "Powered by ZigaForm"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:236
 msgid "None"
-msgstr ""
+msgstr "None"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:240
 msgid "Customs"
@@ -314,23 +313,23 @@ msgstr "Benutzerdefinierte CSS"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:242
 msgid "Top to Bottom"
-msgstr ""
+msgstr "Top to Bottom"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:246
 msgid "Bottom to Top"
-msgstr ""
+msgstr "Bottom to Top"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:250
 msgid "Left to Right"
-msgstr ""
+msgstr "Left to Right"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:254
 msgid "Right to Left"
-msgstr ""
+msgstr "Right to Left"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:258
 msgid "Appear from center"
-msgstr ""
+msgstr "Appear from center"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:265
 msgid "Attention Seekers"
@@ -338,35 +337,35 @@ msgstr "Attention Seekers"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:267
 msgid "bounce"
-msgstr ""
+msgstr "bounce"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:271
 msgid "flash"
-msgstr ""
+msgstr "flash"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:275
 msgid "pulse"
-msgstr ""
+msgstr "pulse"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:279
 msgid "rubberBand"
-msgstr ""
+msgstr "rubberBand"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:283
 msgid "shake"
-msgstr ""
+msgstr "shake"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:287
 msgid "swing"
-msgstr ""
+msgstr "swing"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:291
 msgid "tada"
-msgstr ""
+msgstr "tada"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:295
 msgid "wobble"
-msgstr ""
+msgstr "wobble"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:302
 msgid "Bouncing Entrances"
@@ -374,23 +373,23 @@ msgstr "Bouncing Entrances"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:305
 msgid "bounceIn"
-msgstr ""
+msgstr "bounceIn"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:309
 msgid "bounceInDown"
-msgstr ""
+msgstr "bounceInDown"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:313
 msgid "bounceInLeft"
-msgstr ""
+msgstr "bounceInLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:317
 msgid "bounceInRight"
-msgstr ""
+msgstr "bounceInRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:321
 msgid "bounceInUp"
-msgstr ""
+msgstr "bounceInUp"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:328
 msgid "Bouncing Exits"
@@ -398,23 +397,23 @@ msgstr "Bouncing Exits"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:331
 msgid "bounceOut"
-msgstr ""
+msgstr "bounceOut"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:335
 msgid "bounceOutDown"
-msgstr ""
+msgstr "bounceOutDown"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:339
 msgid "bounceOutLeft"
-msgstr ""
+msgstr "bounceOutLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:343
 msgid "bounceOutRight"
-msgstr ""
+msgstr "bounceOutRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:347
 msgid "bounceOutUp"
-msgstr ""
+msgstr "bounceOutUp"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:354
 msgid "Fading Entrances"
@@ -422,39 +421,39 @@ msgstr "Fading Entrances"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:357
 msgid "fadeIn"
-msgstr ""
+msgstr "fadeIn"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:361
 msgid "fadeInDown"
-msgstr ""
+msgstr "fadeInDown"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:365
 msgid "fadeInDownBig"
-msgstr ""
+msgstr "fadeInDownBig"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:369
 msgid "fadeInLeft"
-msgstr ""
+msgstr "fadeInLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:373
 msgid "fadeInLeftBig"
-msgstr ""
+msgstr "fadeInLeftBig"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:377
 msgid "fadeInRight"
-msgstr ""
+msgstr "fadeInRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:381
 msgid "fadeInRightBig"
-msgstr ""
+msgstr "fadeInRightBig"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:385
 msgid "fadeInUp"
-msgstr ""
+msgstr "fadeInUp"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:389
 msgid "fadeInUpBig"
-msgstr ""
+msgstr "fadeInUpBig"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:396
 msgid "Fading Exits"
@@ -462,39 +461,39 @@ msgstr "Innenabstand Rechts"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:398
 msgid "fadeOut"
-msgstr ""
+msgstr "fadeOut"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:402
 msgid "fadeOutDown"
-msgstr ""
+msgstr "fadeOutDown"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:406
 msgid "fadeOutDownBig"
-msgstr ""
+msgstr "fadeOutDownBig"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:410
 msgid "fadeOutLeft"
-msgstr ""
+msgstr "fadeOutLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:414
 msgid "fadeOutLeftBig"
-msgstr ""
+msgstr "fadeOutLeftBig"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:418
 msgid "fadeOutRight"
-msgstr ""
+msgstr "fadeOutRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:422
 msgid "fadeOutRightBig"
-msgstr ""
+msgstr "fadeOutRightBig"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:426
 msgid "fadeOutUp"
-msgstr ""
+msgstr "fadeOutUp"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:430
 msgid "fadeOutUpBig"
-msgstr ""
+msgstr "fadeOutUpBig"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:437
 msgid "Flippers"
@@ -502,23 +501,23 @@ msgstr "Flippers"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:439
 msgid "flip"
-msgstr ""
+msgstr "flip"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:443
 msgid "flipInX"
-msgstr ""
+msgstr "flipInX"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:447
 msgid "flipInY"
-msgstr ""
+msgstr "flipInY"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:451
 msgid "flipOutX"
-msgstr ""
+msgstr "flipOutX"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:455
 msgid "flipOutY"
-msgstr ""
+msgstr "flipOutY"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:462
 msgid "Lightspeed"
@@ -526,11 +525,11 @@ msgstr "Hell"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:464
 msgid "lightSpeedIn"
-msgstr ""
+msgstr "lightSpeedIn"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:468
 msgid "lightSpeedOut"
-msgstr ""
+msgstr "lightSpeedOut"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:475
 msgid "Rotating Entrances"
@@ -538,23 +537,23 @@ msgstr "Rotating Entrances"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:477
 msgid "rotateIn"
-msgstr ""
+msgstr "rotateIn"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:481
 msgid "rotateInDownLeft"
-msgstr ""
+msgstr "rotateInDownLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:485
 msgid "rotateInDownRight"
-msgstr ""
+msgstr "rotateInDownRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:489
 msgid "rotateInUpLeft"
-msgstr ""
+msgstr "rotateInUpLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:493
 msgid "rotateInUpRight"
-msgstr ""
+msgstr "rotateInUpRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:500
 msgid "Rotating Exits"
@@ -562,23 +561,23 @@ msgstr "Rotating Exits"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:502
 msgid "rotateOut"
-msgstr ""
+msgstr "rotateOut"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:506
 msgid "rotateOutDownLeft"
-msgstr ""
+msgstr "rotateOutDownLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:510
 msgid "rotateOutDownRight"
-msgstr ""
+msgstr "rotateOutDownRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:514
 msgid "rotateOutUpLeft"
-msgstr ""
+msgstr "rotateOutUpLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:518
 msgid "rotateOutUpRight"
-msgstr ""
+msgstr "rotateOutUpRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:525
 msgid "Specials"
@@ -586,15 +585,15 @@ msgstr "Specials"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:527
 msgid "hinge"
-msgstr ""
+msgstr "hinge"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:531
 msgid "rollIn"
-msgstr ""
+msgstr "rollIn"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:535
 msgid "rollOut"
-msgstr ""
+msgstr "rollOut"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:542
 msgid "Zoom Entrances"
@@ -602,23 +601,23 @@ msgstr "Zoom Entrances"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:544
 msgid "zoomIn"
-msgstr ""
+msgstr "zoomIn"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:548
 msgid "zoomInDown"
-msgstr ""
+msgstr "zoomInDown"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:552
 msgid "zoomInLeft"
-msgstr ""
+msgstr "zoomInLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:556
 msgid "zoomInRight"
-msgstr ""
+msgstr "zoomInRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:560
 msgid "zoomInUp"
-msgstr ""
+msgstr "zoomInUp"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:567
 msgid "Zoom Exits"
@@ -626,23 +625,23 @@ msgstr "Zoom Exits"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:569
 msgid "zoomOut"
-msgstr ""
+msgstr "zoomOut"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:573
 msgid "zoomOutDown"
-msgstr ""
+msgstr "zoomOutDown"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:577
 msgid "zoomOutLeft"
-msgstr ""
+msgstr "zoomOutLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:581
 msgid "zoomOutRight"
-msgstr ""
+msgstr "zoomOutRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:585
 msgid "zoomOutUp"
-msgstr ""
+msgstr "zoomOutUp"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:592
 msgid "Slide Entrances"
@@ -650,19 +649,19 @@ msgstr "Slide Entrances"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:594
 msgid "slideInDown"
-msgstr ""
+msgstr "slideInDown"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:598
 msgid "slideInLeft"
-msgstr ""
+msgstr "slideInLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:602
 msgid "slideInRight"
-msgstr ""
+msgstr "slideInRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:606
 msgid "slideInUp"
-msgstr ""
+msgstr "slideInUp"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:613
 msgid "Slide Exits"
@@ -670,19 +669,19 @@ msgstr "Slide Exits"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:615
 msgid "slideOutDown"
-msgstr ""
+msgstr "slideOutDown"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:619
 msgid "slideOutLeft"
-msgstr ""
+msgstr "slideOutLeft"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:623
 msgid "slideOutRight"
-msgstr ""
+msgstr "slideOutRight"
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:627
 msgid "slideOutUp"
-msgstr ""
+msgstr "slideOutUp"
 
 #: application/modules/addon_mgtranslate/controllers/zfad_mgtranslate_back.php:118
 msgid "New translation created successfully"
@@ -714,7 +713,7 @@ msgstr ""
 
 #: application/modules/addon_webhook/controllers/zfad_webhook_back.php:162
 msgid "Webhook logs"
-msgstr ""
+msgstr "Webhook logs"
 
 #: application/modules/formbuilder/controllers/fields.php:198
 msgid "Import Bulk Data"
@@ -964,7 +963,7 @@ msgstr "Standard"
 
 #: application/modules/addon_webhook/views/backend/get_content.php:79
 msgid "Soho"
-msgstr ""
+msgstr "Soho"
 
 #: application/modules/addon_webhook/views/backend/get_content.php:86
 msgid "Form Fields"
@@ -1016,15 +1015,15 @@ msgstr "Add New Custom Parameter"
 
 #: application/modules/addon_webhook/views/backend/get_content.php:163, application/modules/addon_webhook/views/backend/get_content.php:172
 msgid "Logs"
-msgstr ""
+msgstr "Logs"
 
 #: application/modules/addon_webhook/views/backend/get_content.php:167
 msgid "Under this section, you can see webhook logs"
-msgstr ""
+msgstr "Under this section, you can see webhook logs"
 
 #: application/modules/addon_webhook/views/backend/get_content.php:186
 msgid "Show logs"
-msgstr ""
+msgstr "Show logs"
 
 #: application/modules/addon_webhook/views/backend/get_content.php:207
 msgid "choose an option"
@@ -1036,7 +1035,7 @@ msgstr "Feldname"
 
 #: application/modules/addon_webhook/views/backend/logs.php:25
 msgid "Content"
-msgstr ""
+msgstr "Content"
 
 #: application/modules/default/views/intranet/about.php:27
 msgid "ABOUT"
@@ -1368,7 +1367,7 @@ msgstr "Form record id"
 
 #: application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:65
 msgid "User IP"
-msgstr ""
+msgstr "User IP"
 
 #: application/modules/formbuilder/views/forms/create_form.php:25
 msgid "Form editor"
@@ -1408,7 +1407,7 @@ msgstr "Main"
 
 #: application/modules/formbuilder/views/forms/create_form.php:70
 msgid "Recaptcha v3"
-msgstr ""
+msgstr "Recaptcha v3"
 
 #: application/modules/formbuilder/views/forms/create_form.php:72, application/modules/formbuilder/views/fields/modal/field_opt_column.php:933, application/modules/formbuilder/views/fields/modal/settings_form_more.php:194
 msgid "Additional"
@@ -1804,7 +1803,7 @@ msgstr "Panel"
 
 #: application/modules/formbuilder/views/forms/formhtml_form.php:29
 msgid "Recaptcha failed, refresh page and try again"
-msgstr ""
+msgstr "Recaptcha failed, refresh page and try again"
 
 #: application/modules/formbuilder/views/forms/formhtml_form.php:103, application/modules/formbuilder/views/forms/templates_fields.php:165
 msgid "Previous"
@@ -2390,31 +2389,31 @@ msgstr "Exportieren"
 
 #: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:26
 msgid "Get keys from Recaptcha page :  "
-msgstr ""
+msgstr "Get keys from Recaptcha page : "
 
 #: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:34
 msgid "Enable Recaptcha Version 3"
-msgstr ""
+msgstr "Enable Recaptcha Version 3"
 
 #: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:43
 msgid "Enable Recaptcha v3"
-msgstr ""
+msgstr "Enable Recaptcha v3"
 
 #: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:53
 msgid "Site Key"
-msgstr ""
+msgstr "Site Key"
 
 #: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:55
 msgid "This is required. Get Site key from recaptcha site. "
-msgstr ""
+msgstr "This is required. Get Site key from recaptcha site. "
 
 #: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:73
 msgid "Secret Key"
-msgstr ""
+msgstr "Secret Key"
 
 #: application/modules/formbuilder/views/forms/settings_form_main_recaptcha.php:75
 msgid "This is required. Get Secret key from recaptcha site. "
-msgstr ""
+msgstr "This is required. Get Secret key from recaptcha site. "
 
 #: application/modules/formbuilder/views/forms/settings_form_main_record.php:24
 msgid "Summary"
@@ -2746,11 +2745,11 @@ msgstr "Typenschild"
 
 #: application/modules/formbuilder/views/forms/templates_fields.php:2083
 msgid "Enable quantity"
-msgstr ""
+msgstr "Enable quantity"
 
 #: application/modules/formbuilder/views/forms/templates_fields.php:2092
 msgid "Maximum quantity"
-msgstr ""
+msgstr "Maximum quantity"
 
 #: application/modules/formbuilder/views/forms/templates_fields.php:2104, application/modules/formbuilder/views/forms/templates_fields.php:2118
 msgid "Images"
@@ -2844,7 +2843,7 @@ msgstr "Restore Backup"
 msgid "Upload Backup"
 msgstr "Upload Backup"
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:156, application/modules/formbuilder/views/settings/view_settings.php:140, application/modules/formbuilder/views/settings/view_settings.php:132
+#: application/modules/formbuilder/views/settings/backup_settings.php:156, application/modules/formbuilder/views/settings/view_settings.php:154, application/modules/formbuilder/views/settings/view_settings.php:146
 msgid "Save changes"
 msgstr "Änderungen speichern"
 
@@ -2894,11 +2893,11 @@ msgstr "Tablet"
 msgid ""
 "If you see a red status for any table, it means the plugin installation "
 "have failed. Press fix button below."
-msgstr ""
+msgstr "If you see a red status for any table, it means the plugin installation have failed. Press fix button below."
 
 #: application/modules/formbuilder/views/settings/system_check.php:98
 msgid "Fix"
-msgstr ""
+msgstr "Fix"
 
 #: application/modules/formbuilder/views/settings/system_check.php:122
 msgid "Directives"
@@ -2942,23 +2941,35 @@ msgstr "it allows to change the language"
 
 #: application/modules/formbuilder/views/settings/view_settings.php:76
 msgid "DISABLE FIELDS FAST LOAD"
-msgstr ""
+msgstr "DISABLE FIELDS FAST LOAD"
 
 #: application/modules/formbuilder/views/settings/view_settings.php:78
 msgid "it allows to disable fast loading field."
-msgstr ""
+msgstr "it allows to disable fast loading field."
 
 #: application/modules/formbuilder/views/settings/view_settings.php:100
 msgid "Regenerate cache fields"
-msgstr ""
+msgstr "Regenerate cache fields"
 
 #: application/modules/formbuilder/views/settings/view_settings.php:102
 msgid "Generate cache field"
-msgstr ""
+msgstr "Generate cache field"
 
 #: application/modules/formbuilder/views/settings/view_settings.php:111
 msgid "Regeneate cache fields"
-msgstr ""
+msgstr "Regeneate cache fields"
+
+#: application/modules/formbuilder/views/settings/view_settings.php:123
+msgid "Custom delimiter for multiple options when exporting records"
+msgstr "Custom delimiter for multiple options when exporting records"
+
+#: application/modules/formbuilder/views/settings/view_settings.php:124
+msgid "Custome delimiter"
+msgstr "Custome delimiter"
+
+#: application/modules/formbuilder/views/settings/view_settings.php:128
+msgid "Add your delimiter"
+msgstr "Add your delimiter"
 
 #: application/modules/user/views/intranet/createuser.php:24
 msgid "User Information"
@@ -3060,11 +3071,11 @@ msgstr "Aktivieren"
 
 #: application/modules/formbuilder/views/fields/modal/field_opt_column.php:152
 msgid "Mobile"
-msgstr ""
+msgstr "Mobile"
 
 #: application/modules/formbuilder/views/fields/modal/field_opt_column.php:158, application/modules/formbuilder/views/fields/modal/field_opt_column.php:159
 msgid "Keep grid"
-msgstr ""
+msgstr "Keep grid"
 
 #: application/modules/formbuilder/views/fields/modal/field_opt_column.php:184, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:22, application/modules/formbuilder/views/fields/modal/settings_form_more.php:22
 msgid "Margin"
@@ -3588,11 +3599,11 @@ msgstr "Chinesisch"
 
 #: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:174, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:36
 msgid "German"
-msgstr ""
+msgstr "German"
 
 #: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:175, application/modules/formbuilder/views/fields/modal/settings_field_input_7.php:37
 msgid "Danish"
-msgstr ""
+msgstr "Danish"
 
 #: application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:188, application/modules/formbuilder/views/fields/modal/settings_field_input_19.php:189
 msgid "Minimum date"

@@ -784,7 +784,7 @@ if ( ! defined('BASEPATH')) {
                                         <span class="sfdc-btn1-icon-left"> 
                                                        <span class="sfdc-glyphicon sfdc-glyphicon-move"></span> 
                                                    </span>
-                                                   <span class="sfdc-btn1-text"> <?php echo __('Date', 'FRocket_admin'); ?>   <span style="color:red;">beta</span>
+                                                   <span class="sfdc-btn1-text"> <?php echo __('Date', 'FRocket_admin'); ?>   <span style="color:red;">new</span>
                                                    </span>
                                         
                                         

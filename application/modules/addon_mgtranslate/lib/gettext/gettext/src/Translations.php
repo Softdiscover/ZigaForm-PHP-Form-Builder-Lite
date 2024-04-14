@@ -8,6 +8,7 @@ use Countable;
 use Get2text\Languages\Language;
 use InvalidArgumentException;
 use IteratorAggregate;
+use ReturnTypeWillChange;
 
 /**
  * Class to manage a collection of translations under the same domain.
@@ -81,6 +82,7 @@ class Translations implements Countable, IteratorAggregate
         ];
     }
 
+    #[ReturnTypeWillChange]
     public function getIterator()
     {
         return new ArrayIterator($this->translations);
@@ -123,11 +125,7 @@ class Translations implements Countable, IteratorAggregate
 
     public function remove(Translation $translation): self
     {
-        $key = array_search($translation, $this->translations);
-
-        if ($key !== false) {
-            unset($this->translations[$key]);
-        }
+        unset($this->translations[$translation->getId()]);
 
         return $this;
     }
@@ -166,13 +164,12 @@ class Translations implements Countable, IteratorAggregate
 
     public function find(?string $context, string $original): ?Translation
     {
-        foreach ($this->translations as $translation) {
-            if ($translation->getContext() === $context && $translation->getOriginal() === $original) {
-                return $translation;
-            }
-        }
+        return $this->translations[(Translation::create($context, $original))->getId()] ?? null;
+    }
 
-        return null;
+    public function has(Translation $translation): bool
+    {
+        return (bool) ($this->translations[$translation->getId()] ?? false);
     }
 
     public function mergeWith(Translations $translations, int $strategy = 0): Translations

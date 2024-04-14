@@ -115,7 +115,21 @@ if ( ! defined('BASEPATH')) {
                                 </div>
                                  
                             </div>
-                            
+                            <div class="space10 zgfm-opt-divider-stl1"></div>
+                            <div class="sfdc-col-md-12">
+                                                    <div class="sfdc-form-group">
+
+                                                        <div class="sfdc-col-sm-4">
+                                                            <label for=""><?php echo __('Custom delimiter for multiple options when exporting records', 'FRocket_admin'); ?><span style="color:red;"></span></label>
+                                                            <a href="javascript:void(0);" data-toggle="tooltip" data-placement="right" data-original-title="<?php echo __('Custome delimiter', 'FRocket_admin'); ?>">
+                                                            <span class="fa fa-question-circle"></span></a>
+                                                        </div>
+                                                        <div class="sfdc-col-sm-8">
+                                                            <input class="sfdc-form-control" value="<?php echo esc_attr($zgfm_frm_main_recexpdelimiter); ?>" id="uifm_frm_main_recordexpsetting" name="uifm_frm_main_recordexpsetting" type="text" placeholder="<?php echo __('Add your delimiter', 'FRocket_admin'); ?>">
+                                                        </div>
+                                                    </div>
+
+                                                </div>
                         </div>
                    </form>
                </div>

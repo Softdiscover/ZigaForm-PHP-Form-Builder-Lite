@@ -1,4 +1,4 @@
-Contributing to Get2text
+Contributing to Gettext
 =======================
 
 Looking to contribute something to this library? Here's how you can help.

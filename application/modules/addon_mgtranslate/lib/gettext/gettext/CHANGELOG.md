@@ -5,7 +5,40 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/)
 and this project adheres to [Semantic Versioning](http://semver.org/).
 
-Previous releases are documented in [github releases](https://github.com/oscarotero/Get2text/releases)
+Previous releases are documented in [github releases](https://github.com/oscarotero/Gettext/releases)
+
+## [5.7.0] - 2022-07-27
+### Added
+- StrictPoLoader, a stricter PO loader more aligned with the syntax of the GNU gettext tooling [#282].
+- Previous attributes (msgctxt, msgid, msgid_plural) to the Translation class and the PO generator [#282].
+
+### Changed
+- Minor performance improvements to the Translations class [#282].
+
+## [5.6.1] - 2021-12-04
+### Fixed
+- PHP 8.1 support [#278].
+
+## [5.6.0] - 2021-11-05
+### Added
+- New method `addFlag` to `ParsedFunction`, that allows to assign flags by scanners.
+- The `FunctionsHandlersTrait` has an abstract `addFlags` method.
+
+### Fixed
+- Subsequent load file fails [#257] [#276]
+- Upgraded some dependencies in `dev`.
+
+## [5.5.4] - 2020-12-20
+### Fixed
+- TypeError in which numeric entries were converted to integers [#265]
+
+## [5.5.3] - 2020-12-01
+### Fixed
+- Add PHP 8 to composer.json
+
+## [5.5.2] - 2020-11-17
+### Fixed
+- Parse of multiline disabled translations [#262] [#263]
 
 ## [5.5.1] - 2020-06-08
 ### Fixed
@@ -48,7 +81,7 @@ Previous releases are documented in [github releases](https://github.com/oscarot
 ### Added
 - New function `CodeScanner::ignoreInvalidFunctions()` to ignore invalid functions instead throw an exception
 
-## 5.0.0 - 2019-11-04
+## [5.0.0] - 2019-11-04
 ### Added
 - New interfaces: `ScannerInterface` and `FunctionsScannerInterface`.
 
@@ -74,20 +107,34 @@ Previous releases are documented in [github releases](https://github.com/oscarot
 - The library is easier to extend
 - Translation id can be independent of the context + original values, in order to be more compatible with Xliff format.
 
-[#244]: https://github.com/php-gettext/Get2text/issues/244
-[#246]: https://github.com/php-gettext/Get2text/issues/246
-[#247]: https://github.com/php-gettext/Get2text/issues/247
-[#251]: https://github.com/php-gettext/Get2text/issues/251
-[#253]: https://github.com/php-gettext/Get2text/issues/253
-[#258]: https://github.com/php-gettext/Get2text/issues/258
-[#260]: https://github.com/php-gettext/Get2text/issues/260
+[#244]: https://github.com/php-gettext/Gettext/issues/244
+[#246]: https://github.com/php-gettext/Gettext/issues/246
+[#247]: https://github.com/php-gettext/Gettext/issues/247
+[#251]: https://github.com/php-gettext/Gettext/issues/251
+[#253]: https://github.com/php-gettext/Gettext/issues/253
+[#257]: https://github.com/php-gettext/Gettext/issues/257
+[#258]: https://github.com/php-gettext/Gettext/issues/258
+[#260]: https://github.com/php-gettext/Gettext/issues/260
+[#262]: https://github.com/php-gettext/Gettext/issues/262
+[#263]: https://github.com/php-gettext/Gettext/issues/263
+[#265]: https://github.com/php-gettext/Gettext/issues/265
+[#276]: https://github.com/php-gettext/Gettext/issues/276
+[#278]: https://github.com/php-gettext/Gettext/issues/278
+[#282]: https://github.com/php-gettext/Gettext/issues/282
 
-[5.5.1]: https://github.com/php-gettext/Get2text/compare/v5.5.0...v5.5.1
-[5.5.0]: https://github.com/php-gettext/Get2text/compare/v5.4.1...v5.5.0
-[5.4.1]: https://github.com/php-gettext/Get2text/compare/v5.4.0...v5.4.1
-[5.4.0]: https://github.com/php-gettext/Get2text/compare/v5.3.0...v5.4.0
-[5.3.0]: https://github.com/php-gettext/Get2text/compare/v5.2.2...v5.3.0
-[5.2.2]: https://github.com/php-gettext/Get2text/compare/v5.2.1...v5.2.2
-[5.2.1]: https://github.com/php-gettext/Get2text/compare/v5.2.0...v5.2.1
-[5.2.0]: https://github.com/php-gettext/Get2text/compare/v5.1.0...v5.2.0
-[5.1.0]: https://github.com/php-gettext/Get2text/compare/v5.0.0...v5.1.0
+[5.7.0]: https://github.com/php-gettext/Gettext/compare/v5.6.1...v5.7.0
+[5.6.1]: https://github.com/php-gettext/Gettext/compare/v5.6.0...v5.6.1
+[5.6.0]: https://github.com/php-gettext/Gettext/compare/v5.5.4...v5.6.0
+[5.5.4]: https://github.com/php-gettext/Gettext/compare/v5.5.3...v5.5.4
+[5.5.3]: https://github.com/php-gettext/Gettext/compare/v5.5.2...v5.5.3
+[5.5.2]: https://github.com/php-gettext/Gettext/compare/v5.5.1...v5.5.2
+[5.5.1]: https://github.com/php-gettext/Gettext/compare/v5.5.0...v5.5.1
+[5.5.0]: https://github.com/php-gettext/Gettext/compare/v5.4.1...v5.5.0
+[5.4.1]: https://github.com/php-gettext/Gettext/compare/v5.4.0...v5.4.1
+[5.4.0]: https://github.com/php-gettext/Gettext/compare/v5.3.0...v5.4.0
+[5.3.0]: https://github.com/php-gettext/Gettext/compare/v5.2.2...v5.3.0
+[5.2.2]: https://github.com/php-gettext/Gettext/compare/v5.2.1...v5.2.2
+[5.2.1]: https://github.com/php-gettext/Gettext/compare/v5.2.0...v5.2.1
+[5.2.0]: https://github.com/php-gettext/Gettext/compare/v5.1.0...v5.2.0
+[5.1.0]: https://github.com/php-gettext/Gettext/compare/v5.0.0...v5.1.0
+[5.0.0]: https://github.com/php-gettext/Gettext/releases/tag/v5.0.0

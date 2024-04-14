@@ -633,12 +633,16 @@ class Records extends BackendController
             $tmp_ar[] = $value->fieldname;
         }
         $data[] = $tmp_ar;
-
+        $recordDelimiter = get_option('zgfm_frm_main_recexpdelimiter', '');
         foreach ( $tmp_data['datatable_body'] as $key => $value) {
             $tmp_ar = array();
             foreach ( $value as $key => $value2) {
                 //if ( $key != 'fbh_id' ) {
+                if ($recordDelimiter !== '' && strpos($value2, '^,^') !== false) {
+                    $tmp_ar[] = str_replace('^,^', $recordDelimiter, $value2);
+                } else {
                     $tmp_ar[] = $value2;
+                }
                 //}
             }
             $data[] = $tmp_ar;

@@ -8,15 +8,16 @@ use Countable;
 use InvalidArgumentException;
 use IteratorAggregate;
 use JsonSerializable;
+use ReturnTypeWillChange;
 
 /**
  * Class to manage the headers of translations.
  */
 class Headers implements JsonSerializable, Countable, IteratorAggregate
 {
-    const HEADER_LANGUAGE = 'Language';
-    const HEADER_PLURAL = 'Plural-Forms';
-    const HEADER_DOMAIN = 'X-Domain';
+    public const HEADER_LANGUAGE = 'Language';
+    public const HEADER_PLURAL = 'Plural-Forms';
+    public const HEADER_DOMAIN = 'X-Domain';
 
     protected $headers = [];
 
@@ -63,11 +64,13 @@ class Headers implements JsonSerializable, Countable, IteratorAggregate
         return $this;
     }
 
+    #[ReturnTypeWillChange]
     public function jsonSerialize()
     {
         return $this->toArray();
     }
 
+    #[ReturnTypeWillChange]
     public function getIterator()
     {
         return new ArrayIterator($this->toArray());
