@@ -148,7 +148,7 @@ if (!$uifm.isFunction(rocketform)) {
 			};
 
 			function enableDraggableItems() {
-				$('ul.uiform-list-fields a')
+				$('ul.sfdc-two-column-list a')
 					.draggable({
 						connectToSortable: '.uiform-items-container',
 						helper: 'clone',

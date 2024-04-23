@@ -27,11 +27,11 @@ if ( ! defined('BASEPATH')) {
       <div class="uiform-tab-content">
           <!-- Standard fields -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Standard Fields', 'FRocket_admin'); ?> </legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     
                                     <a href="javascript:void(0);" 
@@ -168,11 +168,11 @@ if ( ! defined('BASEPATH')) {
           </div>
           <!-- Grid System -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Grid System', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     <a class="uiform-draggable-field uiform-button3 uiform-column1" 
                                        data-type="1" 
@@ -246,11 +246,11 @@ if ( ! defined('BASEPATH')) {
           </div>
           <!-- Aditional Fields -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Additional Fields', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     <a class="uiform-draggable-field uiform-button3 uiform-ratingstar" 
                                        data-type="22" 
@@ -369,11 +369,11 @@ if ( ! defined('BASEPATH')) {
           </div>
           <!-- Layout Elements -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Layout Elements', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <!--<li>
                                   <a class="uiform-draggable-field uiform-button3" href="javascript:addFieldToForm(1);">
                                     Group
@@ -417,11 +417,11 @@ if ( ! defined('BASEPATH')) {
           </div>
           <!-- Uploads Fields -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Upload Fields', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     <a class="uiform-draggable-field uiform-button3 uiform-fileupload" 
                                        data-type="12" 
@@ -462,11 +462,11 @@ if ( ! defined('BASEPATH')) {
            
           <!-- Picker Fields -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Picker Fields', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     <a class="uiform-draggable-field uiform-button3 uiform-datepicker" 
                                        data-type="24" 
@@ -521,6 +521,21 @@ if ( ! defined('BASEPATH')) {
                                           
                                     </a>
                                 </li>
+                                <li>
+                                    <a class="uiform-draggable-field uiform-button3 uiform-panelfld" 
+                                       data-type="43" 
+                                       onclick="javascript:rocketform.mainfields_addFieldToForm(this,43);"
+                                       href="javascript:void(0);">
+                                        
+                                        <span class="sfdc-btn1-icon-left"> 
+                                                       <span class="sfdc-glyphicon sfdc-glyphicon-move"></span> 
+                                                   </span>
+                                                   <span class="sfdc-btn1-text"> <?php echo __('Date', 'FRocket_admin'); ?>   <span style="color:red;">new</span>
+                                                   </span>
+                                        
+                                        
+                                    </a>
+                                </li>
                             </ul>
                         </div>
                         
@@ -530,11 +545,11 @@ if ( ! defined('BASEPATH')) {
           </div>
           <!-- Prepend/Append Fields -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Prepend/Append Fields - Text Box', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     <a class="uiform-draggable-field uiform-button3 uiform-customhtml" 
                                        data-type="28" 
@@ -587,11 +602,11 @@ if ( ! defined('BASEPATH')) {
           </div>
           <!-- Headings -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Headings', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     <a class="uiform-draggable-field uiform-button3 uiform-heading1" 
                                        data-type="33" 
@@ -680,11 +695,11 @@ if ( ! defined('BASEPATH')) {
             <?php } else { ?>
                                                <!-- Wizard elements -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Wizard elements', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     
                                      <a class="uiform-draggable-field uiform-button3 uiform-wizardbtn" 
@@ -712,11 +727,11 @@ if ( ! defined('BASEPATH')) {
        
           <!-- Others -->
           <div class="uiform-fields-group uiform-enable-fieldset">
-              <fieldset>
+              <fieldset class="sfdc-fieldset-list" >
                     <legend><?php echo __('Others', 'FRocket_admin'); ?></legend>
-                    <div class="uiform-fieldset-inner">
-                        <div class="sfdc-row">
-                            <ul class="uiform-list-fields">
+                    <div >
+                        <div >
+                            <ul class="sfdc-two-column-list">
                                 <li>
                                     <a class="uiform-draggable-field uiform-button3 uiform-switch" 
                                        data-type="40" 
@@ -775,21 +790,7 @@ if ( ! defined('BASEPATH')) {
                                         
                                     </a>
                                 </li>
-                                <li>
-                                    <a class="uiform-draggable-field uiform-button3 uiform-panelfld" 
-                                       data-type="43" 
-                                       onclick="javascript:rocketform.mainfields_addFieldToForm(this,43);"
-                                       href="javascript:void(0);">
-                                        
-                                        <span class="sfdc-btn1-icon-left"> 
-                                                       <span class="sfdc-glyphicon sfdc-glyphicon-move"></span> 
-                                                   </span>
-                                                   <span class="sfdc-btn1-text"> <?php echo __('Date', 'FRocket_admin'); ?>   <span style="color:red;">new</span>
-                                                   </span>
-                                        
-                                        
-                                    </a>
-                                </li>
+                                
                             </ul>
                         </div>
                     </div>

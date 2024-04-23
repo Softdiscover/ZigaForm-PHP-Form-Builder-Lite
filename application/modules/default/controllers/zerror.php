@@ -10,7 +10,7 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   CVS: $Id: frontend.php, v2.00 2013-11-30 02:52:40 Softdiscover $
- * @link      https://softdiscover.com/zigaform/php-form-builder/
+ * @link      https://php-form-builder.zigaform.com/
  */
 
 if ( ! defined('BASEPATH')) {
@@ -26,7 +26,7 @@ if ( ! defined('BASEPATH')) {
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   Release: 1.00
- * @link      https://softdiscover.com/zigaform/php-form-builder/
+ * @link      https://php-form-builder.zigaform.com/
  */
 class Zerror extends MX_Controller
 {

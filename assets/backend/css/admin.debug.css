@@ -9605,8 +9605,8 @@ a:focus {
 
 .uiform-fields-group fieldset {
   border: 1px solid #666b75 !important;
-  margin: 7px 2px 2px;
-  padding: 10px 10px 0;
+  margin: 5px 0 !important;
+  padding: 3px 0 0 !important;
   position: relative;
 }
 
@@ -12491,7 +12491,7 @@ select.uifm-input2-opt-main {
   display: block;
   font-size: 12px;
   font-weight: 700;
-  margin-left: 21px;
+  margin-left: 22px;
   padding-top: 5px;
   text-shadow: 0 1px 1px rgba(255, 255, 255, 0.3);
   white-space: nowrap;
@@ -12503,8 +12503,9 @@ select.uifm-input2-opt-main {
   left: 1px;
   position: absolute;
   top: 0;
-  width: 27px;
+  width: 25px;
   cursor: move;
+  padding: 8px 0 8px 0px;
 }
 
 .sfdc-btn1-icon-left span {
@@ -12636,11 +12637,11 @@ select.uifm-input2-opt-main {
   display: block;
   font-family: fontawesome;
   left: 0;
-  padding: 8px 0 4px;
+  padding: 5px 0px 10px 0px;
   position: absolute;
   text-align: center;
   top: 0;
-  width: 30px;
+  width: 24px;
   content: '\f047';
 }
 
@@ -12648,7 +12649,7 @@ select.uifm-input2-opt-main {
   /* overflow:hidden; */
   position: relative;
   outline: 0;
-  padding: 5px 12px;
+  padding: 5px;
   display: block;
   color: #9fa8b0 !important;
   font-weight: bold;
@@ -12748,7 +12749,6 @@ select.uifm-input2-opt-main {
 .uiform-draggable-field {
   cursor: pointer;
   min-height: 30px !important;
-  width: 117px !important;
 }
 
 /* parent hierarchy */
@@ -12986,6 +12986,52 @@ select.uifm-input2-opt-main {
   -webkit-font-variant-ligatures: contextual !important;
   font-variant-ligatures: contextual !important;
   padding: 0 !important;
+}
+
+/**/
+.sfdc-fieldset-list {
+  border: 1px solid #ccc;
+  /* Customize the border as needed */
+  padding: 10px;
+  /* Adds padding around the contents */
+  margin: 20px 0;
+  /* Space around the fieldset */
+}
+
+.sfdc-fieldset-list legend {
+  padding: 0 5px;
+  /* Padding inside legend for better appearance */
+  width: auto;
+  /* Ensures legend only takes as much width as it needs */
+}
+
+.sfdc-two-column-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  /* Removes default margin to align better within the fieldset */
+}
+
+.sfdc-two-column-list li {
+  flex: 1 1 50%;
+  /* Keeps the two-column layout */
+  box-sizing: border-box;
+  padding: 3px;
+  margin: 0px;
+}
+
+.sfdc-two-column-list li.sfdc-flex-wide {
+  flex-basis: 100%;
+  /* Full width for specific items */
+}
+
+@media (max-width: 600px) {
+  .sfdc-two-column-list li, .sfdc-two-column-list li.sfdc-flex-wide {
+    flex-basis: 100%;
+    /* Switch to a single column layout on small screens */
+  }
 }
 
 .uifm-sublabel {

@@ -10,7 +10,7 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   CVS: $Id: settings.php, v2.00 2013-11-30 02:52:40 Softdiscover $
- * @link      https://softdiscover.com/zigaform/php-form-builder/
+ * @link      https://php-form-builder.zigaform.com/
  */
 if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
@@ -64,7 +64,7 @@ if ( ! defined('BASEPATH')) {
                                         <h4><?php echo __('Get help from professionals', 'FRocket_admin'); ?></h4>
                                         <p>
                                            <a target="_blank"
-                                               href="https://softdiscover.com/zigaform/php-form-builder/#contact"
+                                               href="https://php-form-builder.zigaform.com/#contact"
                                                class="btn btn-info btn-lg">
                                               <?php echo __('Get support', 'FRocket_admin'); ?>
                                             </a>

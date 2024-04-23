@@ -10,7 +10,7 @@
  * @copyright 2013 Softdiscover
  * @license   http://www.php.net/license/3_01.txt  PHP License 3.01
  * @version   CVS: $Id: index.php, v1.00 2014-01-15 02:52:40 Softdiscover $
- * @link      https://softdiscover.com/zigaform/php-form-builder/
+ * @link      https://php-form-builder.zigaform.com/
  */
 ?>
 <?php
