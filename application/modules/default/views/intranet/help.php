@@ -40,7 +40,7 @@ if ( ! defined('BASEPATH')) {
                                         <h4><?php echo __('Online documentation', 'FRocket_admin'); ?></h4>
                                         <p>
                                            <a target="_blank"
-                                               href="https://kb.softdiscover.com/docs/zigaform-php-form-builder/"
+                                               href="https://php-form-builder.zigaform.com/docs"
                                                class="btn btn-info btn-lg">
                                               <?php echo __('User guide', 'FRocket_admin'); ?>
                                             </a>

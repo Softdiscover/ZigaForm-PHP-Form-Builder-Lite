@@ -15,6 +15,7 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
  <div class="rockfm-input15-wrap">
         <input class="rockfm-input15-switch" 
@@ -23,7 +24,7 @@ ob_start();
                 data-uifm-tabnum="<?php echo $tab_num; ?>"
                 data-uifm-txt-yes="<?php echo $input15['txt_yes']; ?>" 
                 data-uifm-txt-no="<?php echo $input15['txt_no']; ?>"
-                name="uiform_fields[<?php echo $id; ?>]"
+                name="<?php echo $nameField; ?>"
                 />
         
     </div>

@@ -1,12 +1,12 @@
-# Copyright (C) 2024 Zigaform PHP Form Builder 6.1.2
-# This file is distributed under the same license as the Zigaform PHP Form Builder 6.1.2 package.
+# Copyright (C) 2024 Zigaform PHP Form Builder 7.0.0
+# This file is distributed under the same license as the Zigaform PHP Form Builder 7.0.0 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zigaform PHP Form Builder 6.1.2\n"
+"Project-Id-Version: Zigaform PHP Form Builder 7.0.0\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-04-23 03:28+0000\n"
+"POT-Creation-Date: 2024-08-06 06:38+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -18,23 +18,23 @@ msgstr ""
 msgid "Form"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:716
+#: application/modules/formbuilder/controllers/frontend.php:723, application/modules/formbuilder/controllers/frontend.php:748
 msgid "warning! Form was not submitted"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:713
+#: application/modules/formbuilder/controllers/frontend.php:720, application/modules/formbuilder/controllers/frontend.php:745
 msgid "Success! your form was submitted"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:1012
+#: application/modules/formbuilder/controllers/frontend.php:1008
 msgid "Error! The file exceeds the allowed size of"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:1019
+#: application/modules/formbuilder/controllers/frontend.php:1015
 msgid "Error! Type of file is not allowed to upload"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:1261, application/modules/formbuilder/controllers/frontend.php:1306
+#: application/modules/formbuilder/controllers/frontend.php:1349, application/modules/formbuilder/controllers/frontend.php:1394
 msgid "New form request"
 msgstr ""
 

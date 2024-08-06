@@ -167,6 +167,9 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<!-- disable autofill-->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/disableautofill/jquery.disableAutoFill.js"></script>
 	
+	<!-- gsap-->
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/gsap/3.12.5/gsap.min.js"></script>
+	
 	<script type='text/javascript'>
 	var rockfm_vars={"ajaxurl":"",
 		"uifm_baseurl":"<?php echo base_url(); ?>",

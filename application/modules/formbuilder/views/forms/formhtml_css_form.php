@@ -36,13 +36,13 @@ if ( isset($skin['form_background']['show_st'])
                      // gradient
             if ( ! empty($skin['form_background']['start_color']) && ! empty($skin['form_background']['end_color'])) {
                 ?>
-                                background: <?php echo $skin['form_background']['start_color']; ?>;
-                                background-image: -webkit-linear-gradient(top, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
-                                background-image: -moz-linear-gradient(top, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
-                                background-image: -ms-linear-gradient(top, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
-                                background-image: -o-linear-gradient(top, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
-                                background-image: linear-gradient(to bottom, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
-                        <?php
+                                 background: <?php echo $skin['form_background']['start_color']; ?>;
+                                background-image: -webkit-linear-gradient(<?php echo $skin['form_background']['angle']; ?>deg, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
+                                background-image: -moz-linear-gradient(<?php echo $skin['form_background']['angle']; ?>deg, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
+                                background-image: -ms-linear-gradient(<?php echo $skin['form_background']['angle']; ?>deg, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
+                                background-image: -o-linear-gradient(<?php echo $skin['form_background']['angle']; ?>deg, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
+                                background-image: linear-gradient(<?php echo $skin['form_background']['angle']; ?>deg, <?php echo $skin['form_background']['start_color']; ?>, <?php echo $skin['form_background']['end_color']; ?>);
+                       <?php
             }
             break;
     }

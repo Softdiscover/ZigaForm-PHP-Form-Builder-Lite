@@ -5665,6 +5665,10 @@ S2.define('select2/core',[
       if (!self.isOpen()) {
         self.trigger('open', {});
       }
+      
+      if (this.dataAdapter == null) { 
+        return;
+      }
 
       this.dataAdapter.query(params, function (data) {
         self.trigger('results:all', {

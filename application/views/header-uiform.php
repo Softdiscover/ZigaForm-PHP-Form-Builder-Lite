@@ -21,10 +21,8 @@ if ( ! defined( 'BASEPATH' ) ) {
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="fa fa-file"></span> <?php echo __( 'Forms', 'FRocket_admin' ); ?><span class="caret"></span></a>
 		  <ul class="dropdown-menu" role="menu">
-			<li><a href="<?php echo site_url() . 'formbuilder/forms/create_uiform'; ?>"><?php echo __( 'New', 'FRocket_admin' ); ?></a></li>
-			<?php if ( isset( $action ) && Uiform_Form_Helper::sanitizeInput( $action ) === 'create_uiform' ) { ?>
-			<li><a href="javascript:void(0);" onclick="javascript:rocketform.saveForm();"><?php echo __( 'Save', 'FRocket_admin' ); ?></a></li>
-			<?php } ?>
+			<li><a href="<?php echo site_url() . 'formbuilder/forms/choose_mode'; ?>"><?php echo __( 'New', 'FRocket_admin' ); ?></a></li>
+			 
 			<li class="divider"></li>
 			<li><a href="<?php echo site_url() . 'formbuilder/forms/list_uiforms'; ?>"><?php echo __( 'List forms', 'FRocket_admin' ); ?></a></li>
 		  </ul>
@@ -33,58 +31,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 		$action = $this->uri->segment( '3' );
 		if ( isset( $action ) && Uiform_Form_Helper::sanitizeInput( $action ) === 'create_uiform' ) {
 			?>
-		<li class="divider-menu"></li>
-		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="fa fa-file-text-o"></span> <?php echo __( 'Templates', 'FRocket_admin' ); ?> <span class="caret"></span></a>
-		  <ul class="dropdown-menu" role="menu">
-			  <li><a onclick="javascript:rocketform.templates_load(1);" 
-				   href="javascript:void(0);"><?php echo __( 'Contact us', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(2);" 
-				   href="javascript:void(0);"><?php echo __( 'Newsletter', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(3);" 
-				   href="javascript:void(0);"><?php echo __( 'Survey Questionnaire', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(4);" 
-				   href="javascript:void(0);"><?php echo __( 'Online event registration', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(5);" 
-				   href="javascript:void(0);"><?php echo __( 'Reservation Request', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(6);" 
-				   href="javascript:void(0);"><?php echo __( 'Purchase Order - Point Of Sale', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(7);" 
-				   href="javascript:void(0);"><?php echo __( 'Website Design Request', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(8);" 
-				   href="javascript:void(0);"><?php echo __( 'Job Application', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(9);" 
-				   href="javascript:void(0);"><?php echo __( 'CV Submission', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(10);" 
-				   href="javascript:void(0);"><?php echo __( 'Order form', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <?php if ( ZIGAFORM_F_LITE == 1 ) { ?>
-			   
-				<?php } else { ?>
-					  <li><a onclick="javascript:rocketform.templates_load(11);" 
-						   href="javascript:void(0);"><?php echo __( 'wizard form', 'FRocket_admin' ); ?></a>
-					  </li>
-				<?php } ?>
-			  <li><a onclick="javascript:rocketform.templates_load(12);" 
-				   href="javascript:void(0);"><?php echo __( 'All fields', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(13);" 
-				   href="javascript:void(0);"><?php echo __( 'Conditional Logic', 'FRocket_admin' ); ?></a>
-			  </li>
-			  <li><a onclick="javascript:rocketform.templates_load(14);" 
-				   href="javascript:void(0);"><?php echo __( 'Custom skin', 'FRocket_admin' ); ?></a>
-			  </li>
-		  </ul>
-		</li>
+		 
 		<li class="divider-menu"></li>
 		<li class="dropdown">
 		  <a href="#" class="dropdown-toggle" 
@@ -142,7 +89,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 		</li>
 		<li class="divider-menu"></li>
 		<li >
-			<a href="<?php echo site_url() . 'formbuilder/forms/create_uiform?opt=import'; ?>">
+			<a href="<?php echo site_url() . 'formbuilder/forms/import_form'; ?>">
 				<i class="fa fa-reply"></i> <?php echo __( 'Import', 'FRocket_admin' ); ?></a></li>
 		<li class="divider-menu"></li>
 		<li ><a href="<?php echo site_url() . 'formbuilder/forms/export_form'; ?>">
@@ -177,7 +124,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
 			  <span class="fa fa-life-ring"></span> <?php echo __( 'Help', 'FRocket_admin' ); ?><span class="caret"></span></a>
 		  <ul class="dropdown-menu" role="menu">
-			<li><a href="https://kb.softdiscover.com/docs/zigaform-php-form-builder/" target="_blank">
+			<li><a href="https://php-form-builder.zigaform.com/docs/" target="_blank">
 				<?php echo __( 'Documentation', 'FRocket_admin' ); ?>
 				</a>
 			</li>

@@ -17,7 +17,9 @@ if ( ! defined('BASEPATH')) {
 ob_start();
 ?>
 <div class="rockfm-form-container uiform-wrap sfdc-wrap">
+        <div class="rockfm_form_hook_outertop"></div>
     <div class="uiform-main-form">
+        <div class="rockfm_form_hook_innertop"></div>
         <div class="uiform-step-list uiform-wiztheme0" style="display:none;">
                         <ul class="uiform-steps">
                             <li class="uifm-current">

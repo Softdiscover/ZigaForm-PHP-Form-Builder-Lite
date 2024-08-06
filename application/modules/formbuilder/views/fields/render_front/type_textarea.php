@@ -15,11 +15,12 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
 <textarea placeholder="<?php echo htmlentities($input['placeholder'], ENT_QUOTES, 'UTF-8'); ?>"
                             class="rockfm-txtbox-inp-val sfdc-form-control"
                             data-uifm-tabnum="<?php echo $tab_num; ?>"
-                            name="uiform_fields[<?php echo $id; ?>]"
+                            name="<?php echo $nameField; ?>"
                             ><?php echo $input['value']; ?></textarea>
 <?php
 $cntACmp = ob_get_contents();

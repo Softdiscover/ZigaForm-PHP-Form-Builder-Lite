@@ -15,16 +15,7 @@ class Zigaform_b_notice {
 	 * @mvc Controller
 	 */
 	public function __construct() {
-		// global $wpdb;
-		// $this->wpdb = $wpdb;
-
-		// admin notice
-		// add_action( 'admin_notices',                  array( $this, 'notice_add' ) );
-		// add_action( 'wp_ajax_zgfm_f_notice_dismiss', array( $this, 'notice_dismiss' ) );
-		// add_action( 'wp_ajax_zgfm_f_notice_rated', array( $this, 'notice_rated' ) );
-
-		// footer
-		// add_filter( 'admin_footer_text', array( $this, 'notice_footer' ), 1, 2 );
+		 
 	}
 
 

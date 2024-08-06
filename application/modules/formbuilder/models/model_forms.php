@@ -62,10 +62,10 @@ class model_forms extends CI_Model
 
         $query = sprintf(
             '
-            select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date,
-                uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2
-            from %s uf
-            where uf.flag_status>0 ',
+			select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date,
+				uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2, uf.fmb_type
+			from %s uf
+			where uf.flag_status>0 and uf.fmb_type in (0,1)',
             $this->table
         );
 
@@ -107,7 +107,7 @@ class model_forms extends CI_Model
 			select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date,
 				uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2
 			from %s uf
-			where uf.flag_status=0 ',
+			where uf.flag_status=0 and uf.fmb_type in (0,1)',
             $this->table
         );
 
@@ -140,7 +140,7 @@ class model_forms extends CI_Model
             select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date,
                 uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2
             from %s uf
-            where uf.flag_status>0 
+            where uf.flag_status>0  and uf.fmb_type in (0,1)
             ORDER BY uf.updated_date desc
             ',
             $this->table
@@ -159,13 +159,13 @@ class model_forms extends CI_Model
     {
         $query = sprintf(
             '
-            select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date,
-                uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2,fmb_rec_tpl_html,fmb_rec_tpl_st
+            select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date, uf.fmb_parent,
+                uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2,uf.fmb_rec_tpl_html,uf.fmb_rec_tpl_st, uf.fmb_type, uf.fmb_parent
             from %s uf
-            where uf.fmb_id=%s
+            where uf.fmb_id=%s  
             ',
             $this->table,
-            (int) $id
+            $id
         );
 
         $query2 = $this->db->query($query);
@@ -208,12 +208,29 @@ class model_forms extends CI_Model
         $query2 = $this->db->query($query);
         return $query2->row();
     }
+    public function getChildFormByParentId($id)
+    {
+        $query = sprintf(
+            '
+            select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date,
+                uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2, uf.fmb_rec_tpl_html, uf.fmb_rec_tpl_st, uf.fmb_type, uf.fmb_parent
+            from %s uf
+            where 
+            uf.flag_status=1 and
+            uf.fmb_parent=%s
+            ',
+            $this->table,
+            $id
+        );
 
+        $query2 = $this->db->query($query);
+        return $query2->result();
+    }
     public function getFormById_2($id)
     {
         $query = sprintf(
             '
-            select uf.fmb_data2,uf.fmb_name
+            select uf.fmb_data2,uf.fmb_name, uf.fmb_type
             from %s uf
             where uf.fmb_id=%s
             ',
@@ -231,7 +248,7 @@ class model_forms extends CI_Model
             '
             select COUNT(*) AS counted
             from %s c
-            where c.flag_status=1 
+            where c.flag_status>0  and c.fmb_type in (0,1)
             ORDER BY c.updated_date desc
             ',
             $this->table
@@ -245,7 +262,24 @@ class model_forms extends CI_Model
             return 0;
         }
     }
+    
+    public function CountFormsByParent($parent)
+    {
+        $query  = sprintf(
+            'SELECT COUNT(*)  AS counted FROM %s WHERE fmb_parent = %s',
+            $this->table,
+            $parent
+        );
+        $query2 = $this->db->query($query);
 
+        $row = $query2->row();
+        if ( isset($row->counted)) {
+            return $row->counted;
+        } else {
+            return 0;
+        }
+    }
+    
     /**
      * model_forms::getFormDefault()
      * Get form estimator by default
@@ -256,7 +290,9 @@ class model_forms extends CI_Model
     {
          $this->db->select('c.*');
         $this->db->from('{PRE}uiform_form c');
-        $this->db->where(array( 'c.fmb_default' => 1 ));
+        $this->db->where(array( 'c.flag_status' => 1 ));
+        $this->db->where_in('c.fmb_type', array(0, 1));
+         
         $this->db->limit(1);
         return $this->db->get()->row();
     }
@@ -273,7 +309,9 @@ class model_forms extends CI_Model
          $this->db->select('c.fmb_id, c.fmb_name, c.updated_date, c.created_date, c.flag_status');
         $this->db->from('{PRE}uiform_form c');
         $this->db->where(array( 'c.flag_status' => 1 ));
+        $this->db->where_in('c.fmb_type', array(0, 1));
         $this->db->order_by('c.updated_date desc');
+         
         return $this->db->get()->result();
     }
 
@@ -287,7 +325,8 @@ class model_forms extends CI_Model
 			SELECT 
 			  SUM(CASE WHEN flag_status = 0 THEN 1 ELSE 0 END) AS r_trash,
 			  SUM(CASE WHEN flag_status != 0 THEN 1 ELSE 0 END) AS r_all
-			FROM %s
+			FROM %s 
+			WHERE fmb_type in (0,1)
 			',
             $this->table
         );

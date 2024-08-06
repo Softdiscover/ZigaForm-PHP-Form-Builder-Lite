@@ -15,7 +15,58 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ?>
-
+ <div class="uifm-set-section-input-wizard-options">
+ <div class="sfdc-row">
+        <div class="sfdc-col-md-12">
+            <div class="divider2">
+            <div class="mask"></div>
+            <span><i><?php echo __('Navigation', 'FRocket_admin'); ?></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="space10"></div>
+    <div class="sfdc-row">
+        <div class="sfdc-col-md-3">
+            <label><?php echo __('Choose Action ', 'FRocket_admin'); ?></label>
+        </div>
+        <div class="sfdc-col-md-9">
+        <select id="zgfm-f-input-wizard-orientation" class="sfdc-form-select uifm-f-setoption zgfm-f-input-level-select" data-field-store="input-ms_action"  >
+                          <option value="next"><?php echo __('Next', 'FRocket_admin'); ?></option>
+                          <option value="previous"><?php echo __('Previous', 'FRocket_admin'); ?></option>
+        </select>
+            
+        </div>
+    </div>
+    <div class="space10"></div>
+ </div>
+ <div class="uifm-set-section-inputheading">
+ <div class="sfdc-row">
+        <div class="sfdc-col-md-12">
+            <div class="divider2">
+            <div class="mask"></div>
+            <span><i><?php echo __('Level', 'FRocket_admin'); ?></i></span>
+            </div>
+        </div>
+    </div>
+    <div class="space10"></div>
+    <div class="sfdc-row">
+        <div class="sfdc-col-md-3">
+            <label><?php echo __('Choose Level', 'FRocket_admin'); ?></label>
+        </div>
+        <div class="sfdc-col-md-9">
+        <select id="zgfm-f-input-level-selectel" class="sfdc-form-select uifm-f-setoption zgfm-f-input-level-select" data-field-store="input-levels"  >
+                          <option value="1"><?php echo __('Heading 1', 'FRocket_admin'); ?></option>
+                          <option value="2"><?php echo __('Heading 2', 'FRocket_admin'); ?></option>
+                          <option value="3"><?php echo __('Heading 3', 'FRocket_admin'); ?></option>
+                          <option value="4"><?php echo __('Heading 4', 'FRocket_admin'); ?></option>
+                          <option value="5"><?php echo __('Heading 5', 'FRocket_admin'); ?></option>
+                          <option value="6"><?php echo __('Heading 6', 'FRocket_admin'); ?></option>
+                        </select>
+            
+        </div>
+    </div>
+    <div class="space10"></div>
+ </div>
 <div class="uifm-set-section-inputprepend">
     <div class="sfdc-row">
         <div class="sfdc-col-md-12">
@@ -434,6 +485,95 @@ if ( ! defined('BASEPATH')) {
         </div>
         
     </div>
+    <div class="uifm-set-section-input20">
+
+<fieldset>
+                    <legend><?php echo __('Padding', 'FRocket_admin'); ?> </legend>
+                    <div class="zgpb-modal-body-tab-inner">
+                        <div class="sfdc-row ">
+                            <div class="sfdc-col-md-12">
+                                <div class="sfdc-form-group">
+                                    <div class="sfdc-col-md-6">
+                                        <label for=""><?php echo __('Top', 'FRocket_admin'); ?></label> 
+                                        <a data-original-title="<?php echo __('Top margin (px)', 'FRocket_admin'); ?>" data-placement="right" data-toggle="tooltip" href="javascript:void(0);"><span class="fa fa-question-circle"></span></a>
+                                    </div>
+                                    <div class="sfdc-col-md-6">
+                                        <input  
+                                                id="uifm_fld_input20_padding_top"
+                                                class="zgpb_fld_settings_spinner" 
+                                                data-field-store="input-padding-top"
+                                                type="text" >
+                                          
+                                    </div>    
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zgpb-opt-divider-stl1"></div>
+                         <div class="sfdc-row ">
+                            <div class="sfdc-col-md-12">
+                                <div class="sfdc-form-group">
+                                    <div class="sfdc-col-md-6">
+                                        <label for=""><?php echo __('Bottom', 'FRocket_admin'); ?></label> 
+                                        <a data-original-title="<?php echo __('Bottom margin (px)', 'FRocket_admin'); ?>" data-placement="right" data-toggle="tooltip" href="javascript:void(0);"><span class="fa fa-question-circle"></span></a>
+                                    </div>
+                                    <div class="sfdc-col-md-6">
+                                        <input  
+                                                id="uifm_fld_input20_padding_bottom"
+                                                class="zgpb_fld_settings_spinner" 
+                                                data-field-store="input-padding-bottom"
+                                                type="text" >
+                                          
+                                    </div>    
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zgpb-opt-divider-stl1"></div>
+                        <div class="sfdc-row ">
+                            <div class="sfdc-col-md-12">
+                                <div class="sfdc-form-group">
+                                    <div class="sfdc-col-md-6">
+                                        <label for=""><?php echo __('left', 'FRocket_admin'); ?></label> 
+                                        <a data-original-title="<?php echo __('Left margin (px)', 'FRocket_admin'); ?>" data-placement="right" data-toggle="tooltip" href="javascript:void(0);"><span class="fa fa-question-circle"></span></a>
+                                    </div>
+                                    <div class="sfdc-col-md-6">
+                                        <input  
+                                                id="uifm_fld_input20_padding_left"
+                                                class="zgpb_fld_settings_spinner" 
+                                                data-field-store="input-padding-left"
+                                                type="text" >
+                                          
+                                    </div>    
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="zgpb-opt-divider-stl1"></div>
+                        <div class="sfdc-row ">
+                            <div class="sfdc-col-md-12">
+                                <div class="sfdc-form-group">
+                                    <div class="sfdc-col-md-6">
+                                        <label for=""><?php echo __('right', 'FRocket_admin'); ?></label> 
+                                        <a data-original-title="<?php echo __('Right margin (px)', 'FRocket_admin'); ?>" data-placement="right" data-toggle="tooltip" href="javascript:void(0);"><span class="fa fa-question-circle"></span></a>
+                                    </div>
+                                    <div class="sfdc-col-md-6">
+                                        <input  
+                                                id="uifm_fld_input20_padding_right"
+                                                class="zgpb_fld_settings_spinner" 
+                                                data-field-store="input-padding-right"
+                                                type="text" >
+                                          
+                                    </div>    
+
+                                </div>
+                            </div>
+                        </div>
+                       <div class="space5"></div>
+                    </div>
+         </fieldset> 
+
+</div>
     <div class="uifm-set-section-inputboxbg">
     <div class="sfdc-row">
         <div class="sfdc-col-md-12">

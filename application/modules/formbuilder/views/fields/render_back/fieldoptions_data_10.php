@@ -827,7 +827,58 @@
                                                                           &lt;!--container --&gt;  
                                                                         &lt;div class=&quot;uiform-set-field-wrap&quot; id=&quot;uiform-set-field-input-panel&quot;&gt;
      &lt;!--container for text box, textarea ,.. --&gt;    
+             &lt;div class=&quot;uifm-set-section-input-wizard-options&quot;&gt;
+ &lt;div class=&quot;sfdc-row&quot;&gt;
+        &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
+            &lt;div class=&quot;divider2&quot;&gt;
+            &lt;div class=&quot;mask&quot;&gt;&lt;/div&gt;
+            &lt;span&gt;&lt;i&gt;Navigation&lt;/i&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;space10&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;sfdc-row&quot;&gt;
+        &lt;div class=&quot;sfdc-col-md-3&quot;&gt;
+            &lt;label&gt;Choose Action &lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;sfdc-col-md-9&quot;&gt;
+        &lt;select id=&quot;zgfm-f-input-wizard-orientation&quot; class=&quot;sfdc-form-select uifm-f-setoption zgfm-f-input-level-select&quot; data-field-store=&quot;input-ms_action&quot;  &gt;
+                          &lt;option value=&quot;next&quot;&gt;Next&lt;/option&gt;
+                          &lt;option value=&quot;previous&quot;&gt;Previous&lt;/option&gt;
+        &lt;/select&gt;
             
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;space10&quot;&gt;&lt;/div&gt;
+ &lt;/div&gt;
+ &lt;div class=&quot;uifm-set-section-inputheading&quot;&gt;
+ &lt;div class=&quot;sfdc-row&quot;&gt;
+        &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
+            &lt;div class=&quot;divider2&quot;&gt;
+            &lt;div class=&quot;mask&quot;&gt;&lt;/div&gt;
+            &lt;span&gt;&lt;i&gt;Level&lt;/i&gt;&lt;/span&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;space10&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;sfdc-row&quot;&gt;
+        &lt;div class=&quot;sfdc-col-md-3&quot;&gt;
+            &lt;label&gt;Choose Level&lt;/label&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;sfdc-col-md-9&quot;&gt;
+        &lt;select id=&quot;zgfm-f-input-level-selectel&quot; class=&quot;sfdc-form-select uifm-f-setoption zgfm-f-input-level-select&quot; data-field-store=&quot;input-levels&quot;  &gt;
+                          &lt;option value=&quot;1&quot;&gt;Heading 1&lt;/option&gt;
+                          &lt;option value=&quot;2&quot;&gt;Heading 2&lt;/option&gt;
+                          &lt;option value=&quot;3&quot;&gt;Heading 3&lt;/option&gt;
+                          &lt;option value=&quot;4&quot;&gt;Heading 4&lt;/option&gt;
+                          &lt;option value=&quot;5&quot;&gt;Heading 5&lt;/option&gt;
+                          &lt;option value=&quot;6&quot;&gt;Heading 6&lt;/option&gt;
+                        &lt;/select&gt;
+            
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class=&quot;space10&quot;&gt;&lt;/div&gt;
+ &lt;/div&gt;
 &lt;div class=&quot;uifm-set-section-inputprepend&quot;&gt;
     &lt;div class=&quot;sfdc-row&quot;&gt;
         &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
@@ -1266,6 +1317,95 @@
         &lt;/div&gt;
         
     &lt;/div&gt;
+    &lt;div class=&quot;uifm-set-section-input20&quot;&gt;
+
+&lt;fieldset&gt;
+                    &lt;legend&gt;Padding &lt;/legend&gt;
+                    &lt;div class=&quot;zgpb-modal-body-tab-inner&quot;&gt;
+                        &lt;div class=&quot;sfdc-row &quot;&gt;
+                            &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
+                                &lt;div class=&quot;sfdc-form-group&quot;&gt;
+                                    &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                        &lt;label for=&quot;&quot;&gt;Top&lt;/label&gt; 
+                                        &lt;a data-original-title=&quot;Top margin (px)&quot; data-placement=&quot;right&quot; data-toggle=&quot;tooltip&quot; href=&quot;javascript:void(0);&quot;&gt;&lt;span class=&quot;fa fa-question-circle&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                        &lt;input  
+                                                id=&quot;uifm_fld_input20_padding_top&quot;
+                                                class=&quot;zgpb_fld_settings_spinner&quot; 
+                                                data-field-store=&quot;input-padding-top&quot;
+                                                type=&quot;text&quot; &gt;
+                                          
+                                    &lt;/div&gt;    
+
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;zgpb-opt-divider-stl1&quot;&gt;&lt;/div&gt;
+                         &lt;div class=&quot;sfdc-row &quot;&gt;
+                            &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
+                                &lt;div class=&quot;sfdc-form-group&quot;&gt;
+                                    &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                        &lt;label for=&quot;&quot;&gt;Bottom&lt;/label&gt; 
+                                        &lt;a data-original-title=&quot;Bottom margin (px)&quot; data-placement=&quot;right&quot; data-toggle=&quot;tooltip&quot; href=&quot;javascript:void(0);&quot;&gt;&lt;span class=&quot;fa fa-question-circle&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                        &lt;input  
+                                                id=&quot;uifm_fld_input20_padding_bottom&quot;
+                                                class=&quot;zgpb_fld_settings_spinner&quot; 
+                                                data-field-store=&quot;input-padding-bottom&quot;
+                                                type=&quot;text&quot; &gt;
+                                          
+                                    &lt;/div&gt;    
+
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;zgpb-opt-divider-stl1&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;sfdc-row &quot;&gt;
+                            &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
+                                &lt;div class=&quot;sfdc-form-group&quot;&gt;
+                                    &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                        &lt;label for=&quot;&quot;&gt;left&lt;/label&gt; 
+                                        &lt;a data-original-title=&quot;Left margin (px)&quot; data-placement=&quot;right&quot; data-toggle=&quot;tooltip&quot; href=&quot;javascript:void(0);&quot;&gt;&lt;span class=&quot;fa fa-question-circle&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                        &lt;input  
+                                                id=&quot;uifm_fld_input20_padding_left&quot;
+                                                class=&quot;zgpb_fld_settings_spinner&quot; 
+                                                data-field-store=&quot;input-padding-left&quot;
+                                                type=&quot;text&quot; &gt;
+                                          
+                                    &lt;/div&gt;    
+
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                        &lt;div class=&quot;zgpb-opt-divider-stl1&quot;&gt;&lt;/div&gt;
+                        &lt;div class=&quot;sfdc-row &quot;&gt;
+                            &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
+                                &lt;div class=&quot;sfdc-form-group&quot;&gt;
+                                    &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                        &lt;label for=&quot;&quot;&gt;right&lt;/label&gt; 
+                                        &lt;a data-original-title=&quot;Right margin (px)&quot; data-placement=&quot;right&quot; data-toggle=&quot;tooltip&quot; href=&quot;javascript:void(0);&quot;&gt;&lt;span class=&quot;fa fa-question-circle&quot;&gt;&lt;/span&gt;&lt;/a&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;sfdc-col-md-6&quot;&gt;
+                                        &lt;input  
+                                                id=&quot;uifm_fld_input20_padding_right&quot;
+                                                class=&quot;zgpb_fld_settings_spinner&quot; 
+                                                data-field-store=&quot;input-padding-right&quot;
+                                                type=&quot;text&quot; &gt;
+                                          
+                                    &lt;/div&gt;    
+
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                       &lt;div class=&quot;space5&quot;&gt;&lt;/div&gt;
+                    &lt;/div&gt;
+         &lt;/fieldset&gt; 
+
+&lt;/div&gt;
     &lt;div class=&quot;uifm-set-section-inputboxbg&quot;&gt;
     &lt;div class=&quot;sfdc-row&quot;&gt;
         &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
@@ -4876,7 +5016,22 @@
                 &lt;/div&gt;
             &lt;/div&gt;
         &lt;/div&gt;
-        
+        &lt;div class=&quot;sfdc-row&quot;&gt;
+            &lt;div class=&quot;sfdc-col-md-4&quot;&gt;
+               &lt;div class=&quot;sfdc-form-group&quot;&gt;
+                    &lt;label &gt;Color&lt;/label&gt;
+                    &lt;div data-field-store=&quot;help_block-color&quot; class=&quot;sfdc-input-group uifm-custom-color&quot;&gt;
+                        &lt;input 
+                            type=&quot;text&quot; 
+                            value=&quot;&quot; 
+                            id=&quot;uifm_fld_lbl_color&quot; 
+                            name=&quot;uifm_fld_lbl_color&quot; class=&quot;sfdc-form-control&quot; /&gt;
+                        &lt;span class=&quot;sfdc-input-group-addon&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;
+                    &lt;/div&gt;
+
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;      
         
     &lt;div class=&quot;sfdc-row&quot;&gt;
             &lt;div class=&quot;sfdc-col-md-4&quot;&gt;
@@ -5562,7 +5717,7 @@
     &lt;/select&gt;
     
     &lt;div data-row-index=&quot;0&quot;
-                        class=&quot;uifm-conditional-row&quot;&gt;
+                        class=&quot;uifm-conditional-row clearfix&quot;&gt;
                         &lt;div class=&quot;&quot;&gt;
                             &lt;div  class=&quot;uifm_clogic_deloption&quot;&gt;
                                 
@@ -5832,7 +5987,7 @@
                     &lt;/div&gt;
          &lt;/fieldset&gt;
     &lt;!-- load modules --&gt;
-            
+         &lt;a href=&quot;javascript:void(0);&quot; onclick=&quot;javascript:zgfm_back_addon_anim.dev_show_vars();&quot; class=&quot;sfdc-btn sfdc-btn-primary&quot;&gt; &lt;span class=&quot;fa fa-desktop&quot;&gt;&lt;/span&gt; show data&lt;/a&gt; &lt;fieldset &gt; &lt;legend&gt;Animation &lt;/legend&gt; &lt;div class=&quot;zgpb-modal-body-tab-inner&quot;&gt; &lt;div class=&quot;sfdc-row &quot;&gt; &lt;div class=&quot;sfdc-col-md-12&quot;&gt; &lt;div class=&quot;sfdc-form-group&quot;&gt; &lt;div class=&quot;sfdc-col-md-4&quot;&gt; &lt;label for=&quot;&quot;&gt;Choose animation&lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;sfdc-col-md-8&quot;&gt; &lt;select id=&quot;zgfm_fld_addn_anim_select&quot; data-addn-field=&quot;type&quot; class=&quot;selectpicker&quot;&gt; &lt;option value=&quot;none&quot;&gt;None&lt;/option&gt; &lt;optgroup label=&quot;Customs&quot;&gt; &lt;option value=&quot;zgfm-anim-top-to-bottom&quot;&gt;Top to Bottom&lt;/option&gt; &lt;option value=&quot;zgfm-anim-bottom-to-top&quot;&gt;Bottom to Top&lt;/option&gt; &lt;option value=&quot;zgfm-anim-left-to-right&quot;&gt;Left to Right&lt;/option&gt; &lt;option value=&quot;zgfm-anim-right-to-left&quot;&gt;Right to Left&lt;/option&gt; &lt;option value=&quot;zgfm-anim-from-center&quot;&gt;Appear from center&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Attention Seekers&quot;&gt; &lt;option value=&quot;bounce&quot;&gt;bounce&lt;/option&gt; &lt;option value=&quot;flash&quot;&gt;flash&lt;/option&gt; &lt;option value=&quot;pulse&quot;&gt;pulse&lt;/option&gt; &lt;option value=&quot;rubberBand&quot;&gt;rubberBand&lt;/option&gt; &lt;option value=&quot;shake&quot;&gt;shake&lt;/option&gt; &lt;option value=&quot;swing&quot;&gt;swing&lt;/option&gt; &lt;option value=&quot;tada&quot;&gt;tada&lt;/option&gt; &lt;option value=&quot;wobble&quot;&gt;wobble&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Bouncing Entrances&quot;&gt; &lt;option value=&quot;bounceIn&quot;&gt;bounceIn&lt;/option&gt; &lt;option value=&quot;bounceInDown&quot;&gt;bounceInDown&lt;/option&gt; &lt;option value=&quot;bounceInLeft&quot;&gt;bounceInLeft&lt;/option&gt; &lt;option value=&quot;bounceInRight&quot;&gt;bounceInRight&lt;/option&gt; &lt;option value=&quot;bounceInUp&quot;&gt;bounceInUp&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Bouncing Exits&quot;&gt; &lt;option value=&quot;bounceOut&quot;&gt;bounceOut&lt;/option&gt; &lt;option value=&quot;bounceOutDown&quot;&gt;bounceOutDown&lt;/option&gt; &lt;option value=&quot;bounceOutLeft&quot;&gt;bounceOutLeft&lt;/option&gt; &lt;option value=&quot;bounceOutRight&quot;&gt;bounceOutRight&lt;/option&gt; &lt;option value=&quot;bounceOutUp&quot;&gt;bounceOutUp&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Fading Entrances&quot;&gt; &lt;option value=&quot;fadeIn&quot;&gt;fadeIn&lt;/option&gt; &lt;option value=&quot;fadeInDown&quot;&gt;fadeInDown&lt;/option&gt; &lt;option value=&quot;fadeInDownBig&quot;&gt;fadeInDownBig&lt;/option&gt; &lt;option value=&quot;fadeInLeft&quot;&gt;fadeInLeft&lt;/option&gt; &lt;option value=&quot;fadeInLeftBig&quot;&gt;fadeInLeftBig&lt;/option&gt; &lt;option value=&quot;fadeInRight&quot;&gt;fadeInRight&lt;/option&gt; &lt;option value=&quot;fadeInRightBig&quot;&gt;fadeInRightBig&lt;/option&gt; &lt;option value=&quot;fadeInUp&quot;&gt;fadeInUp&lt;/option&gt; &lt;option value=&quot;fadeInUpBig&quot;&gt;fadeInUpBig&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Fading Exits&quot;&gt; &lt;option value=&quot;fadeOut&quot;&gt;fadeOut&lt;/option&gt; &lt;option value=&quot;fadeOutDown&quot;&gt;fadeOutDown&lt;/option&gt; &lt;option value=&quot;fadeOutDownBig&quot;&gt;fadeOutDownBig&lt;/option&gt; &lt;option value=&quot;fadeOutLeft&quot;&gt;fadeOutLeft&lt;/option&gt; &lt;option value=&quot;fadeOutLeftBig&quot;&gt;fadeOutLeftBig&lt;/option&gt; &lt;option value=&quot;fadeOutRight&quot;&gt;fadeOutRight&lt;/option&gt; &lt;option value=&quot;fadeOutRightBig&quot;&gt;fadeOutRightBig&lt;/option&gt; &lt;option value=&quot;fadeOutUp&quot;&gt;fadeOutUp&lt;/option&gt; &lt;option value=&quot;fadeOutUpBig&quot;&gt;fadeOutUpBig&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Flippers&quot;&gt; &lt;option value=&quot;flip&quot;&gt;flip&lt;/option&gt; &lt;option value=&quot;flipInX&quot;&gt;flipInX&lt;/option&gt; &lt;option value=&quot;flipInY&quot;&gt;flipInY&lt;/option&gt; &lt;option value=&quot;flipOutX&quot;&gt;flipOutX&lt;/option&gt; &lt;option value=&quot;flipOutY&quot;&gt;flipOutY&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Lightspeed&quot;&gt; &lt;option value=&quot;lightSpeedIn&quot;&gt;lightSpeedIn&lt;/option&gt; &lt;option value=&quot;lightSpeedOut&quot;&gt;lightSpeedOut&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Rotating Entrances&quot;&gt; &lt;option value=&quot;rotateIn&quot;&gt;rotateIn&lt;/option&gt; &lt;option value=&quot;rotateInDownLeft&quot;&gt;rotateInDownLeft&lt;/option&gt; &lt;option value=&quot;rotateInDownRight&quot;&gt;rotateInDownRight&lt;/option&gt; &lt;option value=&quot;rotateInUpLeft&quot;&gt;rotateInUpLeft&lt;/option&gt; &lt;option value=&quot;rotateInUpRight&quot;&gt;rotateInUpRight&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Rotating Exits&quot;&gt; &lt;option value=&quot;rotateOut&quot;&gt;rotateOut&lt;/option&gt; &lt;option value=&quot;rotateOutDownLeft&quot;&gt;rotateOutDownLeft&lt;/option&gt; &lt;option value=&quot;rotateOutDownRight&quot;&gt;rotateOutDownRight&lt;/option&gt; &lt;option value=&quot;rotateOutUpLeft&quot;&gt;rotateOutUpLeft&lt;/option&gt; &lt;option value=&quot;rotateOutUpRight&quot;&gt;rotateOutUpRight&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Specials&quot;&gt; &lt;option value=&quot;hinge&quot;&gt;hinge&lt;/option&gt; &lt;option value=&quot;rollIn&quot;&gt;rollIn&lt;/option&gt; &lt;option value=&quot;rollOut&quot;&gt;rollOut&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Zoom Entrances&quot;&gt; &lt;option value=&quot;zoomIn&quot;&gt;zoomIn&lt;/option&gt; &lt;option value=&quot;zoomInDown&quot;&gt;zoomInDown&lt;/option&gt; &lt;option value=&quot;zoomInLeft&quot;&gt;zoomInLeft&lt;/option&gt; &lt;option value=&quot;zoomInRight&quot;&gt;zoomInRight&lt;/option&gt; &lt;option value=&quot;zoomInUp&quot;&gt;zoomInUp&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Zoom Exits&quot;&gt; &lt;option value=&quot;zoomOut&quot;&gt;zoomOut&lt;/option&gt; &lt;option value=&quot;zoomOutDown&quot;&gt;zoomOutDown&lt;/option&gt; &lt;option value=&quot;zoomOutLeft&quot;&gt;zoomOutLeft&lt;/option&gt; &lt;option value=&quot;zoomOutRight&quot;&gt;zoomOutRight&lt;/option&gt; &lt;option value=&quot;zoomOutUp&quot;&gt;zoomOutUp&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Slide Entrances&quot;&gt; &lt;option value=&quot;slideInDown&quot;&gt;slideInDown&lt;/option&gt; &lt;option value=&quot;slideInLeft&quot;&gt;slideInLeft&lt;/option&gt; &lt;option value=&quot;slideInRight&quot;&gt;slideInRight&lt;/option&gt; &lt;option value=&quot;slideInUp&quot;&gt;slideInUp&lt;/option&gt; &lt;/optgroup&gt; &lt;optgroup label=&quot;Slide Exits&quot;&gt; &lt;option value=&quot;slideOutDown&quot;&gt;slideOutDown&lt;/option&gt; &lt;option value=&quot;slideOutLeft&quot;&gt;slideOutLeft&lt;/option&gt; &lt;option value=&quot;slideOutRight&quot;&gt;slideOutRight&lt;/option&gt; &lt;option value=&quot;slideOutUp&quot;&gt;slideOutUp&lt;/option&gt; &lt;/optgroup&gt; &lt;/select&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;zgpb-opt-divider-stl1&quot;&gt;&lt;/div&gt; &lt;div class=&quot;sfdc-row &quot;&gt; &lt;div class=&quot;sfdc-col-md-12&quot;&gt; &lt;div class=&quot;sfdc-form-group&quot;&gt; &lt;div class=&quot;sfdc-col-md-4&quot;&gt; &lt;button type=&quot;button&quot; id=&quot;zgfm-back-addon-anim-opt-animate&quot; class=&quot;sfdc-btn sfdc-btn-info&quot;&gt;Show animation&lt;/button&gt; &lt;/div&gt; &lt;div class=&quot;sfdc-col-md-8&quot;&gt; &lt;div id=&quot;zgfm-back-addon-anim-opt-preview&quot;&gt; &lt;div id=&quot;zfaddn_anim_sample_obj&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;zgpb-opt-divider-stl1&quot;&gt;&lt;/div&gt; &lt;div class=&quot;sfdc-row &quot;&gt; &lt;div class=&quot;sfdc-col-md-12&quot;&gt; &lt;div class=&quot;sfdc-form-group&quot;&gt; &lt;div class=&quot;sfdc-col-md-4&quot;&gt; &lt;label for=&quot;&quot;&gt;Animation delay&lt;/label&gt; &lt;/div&gt; &lt;div class=&quot;sfdc-col-md-8&quot;&gt; &lt;input id=&quot;zgfm-back-addon-anim-opt-delay&quot; class=&quot;zgpb_back_anim_spinner&quot; data-addn-field=&quot;delay&quot; type=&quot;text&quot; &gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;/div&gt; &lt;div class=&quot;zgpb-opt-divider-stl1&quot;&gt;&lt;/div&gt; &lt;div class=&quot;space5&quot;&gt;&lt;/div&gt; &lt;/div&gt; &lt;/fieldset&gt;     
     &lt;!--/ load modules --&gt;
     
 &lt;/div&gt;

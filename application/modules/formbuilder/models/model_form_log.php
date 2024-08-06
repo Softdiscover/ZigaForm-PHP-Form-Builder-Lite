@@ -93,7 +93,23 @@ class model_form_log extends CI_Model
 
         return $query2->row();
     }
-
+    public function getLogChildrenByParentId($id)
+    {
+        $query = sprintf(
+            '
+            select uf.log_id,uf.log_frm_data,uf.log_frm_name,uf.log_frm_html,uf.log_frm_html_backend,uf.log_frm_html_css,uf.log_frm_id,uf.log_frm_hash,uf.flag_status,uf.created_date,uf.updated_date
+            from %s uf
+            where 
+            uf.flag_status=1 and
+            uf.log_frm_parent=%s
+            ',
+            $this->table,
+            $id
+        );
+        
+        $query2 = $this->db->query($query);
+        return $query2->result();
+    }
 
     public function getAvailableLogById($id)
     {

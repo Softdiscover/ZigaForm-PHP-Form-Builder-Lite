@@ -33,22 +33,23 @@ if ( intval($input2['style_type']) === 1) {
      data-theme-type="<?php echo $input2['style_type']; ?>"
      class="rockfm-input2-wrap">    
 <?php
-
+usort($input2['options'], ['Uiform_Form_Helper', 'compareByOrder']);
 foreach ( $input2['options'] as $key => $value) {
     $checked = '';
+    $nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."][".$value['id']."]", $id, $type, $value['id']);
     if ( isset($value['checked']) && intval($value['checked']) === 1) {
         $checked = 'checked="checked"';
     }
     ?>
     <div 
-        data-opt-index="<?php echo $key; ?>" 
+        data-opt-index="<?php echo $value['id']; ?>" 
         class="<?php echo $opt_class; ?>">
         <label>
             <span class="rockfm-inp2-opt-inp">
                  <input type="checkbox"
                    <?php echo $checked; ?>
                    data-chk-icon="<?php echo ( ! empty($input2['stl1']['icon_mark']) ) ? 'fa ' . $input2['stl1']['icon_mark'] : 'fa fa-check'; ?>"
-                   value="<?php echo $key; ?>"
+                   value="<?php echo $value['id']; ?>"
                    data-uifm-inp-val="<?php
                     if ( isset($value['value'])) {
                         echo esc_attr(Uiform_Form_Helper::sanitizeInput($value['value']));
@@ -60,7 +61,7 @@ foreach ( $input2['options'] as $key => $value) {
                     }
                     ?>"
                     
-                   name="uiform_fields[<?php echo $id; ?>][<?php echo $key; ?>]"
+                   name="<?php echo $nameField; ?>"
                    class="<?php echo $defaul_class; ?>"> 
             </span>
            

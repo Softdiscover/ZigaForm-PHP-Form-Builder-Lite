@@ -80,7 +80,7 @@ class SFM_Single_Google extends SFM_Single_Standard {
 		if ( ! $variant_name ) {
 			// Requested a variant, but none found
 			$variants = implode( '</li><li>', array_keys( (array) $this->variants ) );
-			wp_die( 'Variant not found. Variants: <ul><li>' . $variants . '</li></ul>' );
+			die( 'Variant not found. Variants: <ul><li>' . $variants . '</li></ul>' );
 		}
 
 		// Variant meta
@@ -223,7 +223,7 @@ class SFM_Single_Google extends SFM_Single_Standard {
 		// Create cache directory
 		$dir = dirname( $this->get_ttf_path() );
 		if ( ! is_dir( $dir ) && ! wp_mkdir_p( $dir ) ) {
-			wp_die( "Please check permissions. Could not create directory $dir" );
+			die( "Please check permissions. Could not create directory $dir" );
 		}
 
 		// Cache remote TTF to filesystem
@@ -235,7 +235,7 @@ class SFM_Single_Google extends SFM_Single_Standard {
 
 		// Check file saved
 		if ( ! $ttf_file_path ) {
-			wp_die( "Please check permissions. Could not write font to $dir" );
+			die( "Please check permissions. Could not write font to $dir" );
 		}
 
 		return $this->get_ttf_path();
@@ -248,13 +248,13 @@ class SFM_Single_Google extends SFM_Single_Standard {
 		$ttf_url = $this->get_ttf_url();
 
 		if ( empty( $ttf_url ) ) {
-			wp_die( 'Font URL not set.' );
+			die( 'Font URL not set.' );
 		}
 
 		$response = wp_remote_get( $ttf_url );
 
 		if ( is_a( $response, 'WP_Error' ) ) {
-			wp_die( "Attempt to get remote font returned an error.<br/>$ttf_url" );
+			die( "Attempt to get remote font returned an error.<br/>$ttf_url" );
 		}
 
 		return $response['body'];

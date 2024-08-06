@@ -15,6 +15,7 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
  <input class="rockfm-input-ratingstar"
        data-uifm-tabnum="<?php echo $tab_num; ?>"
@@ -24,7 +25,7 @@ ob_start();
        data-uifm-txt-star4="<?php echo $input9['txt_star4']; ?>"
        data-uifm-txt-star5="<?php echo $input9['txt_star5']; ?>"
        data-uifm-txt-norate="<?php echo $input9['txt_norate']; ?>"
-       name="uiform_fields[<?php echo $id; ?>]"
+       name="<?php echo $nameField; ?>"
                                      data-min="1" 
                                      data-max="5" 
                                      data-step="1">

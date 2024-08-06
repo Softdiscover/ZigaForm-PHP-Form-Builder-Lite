@@ -59,7 +59,12 @@ ob_start();
                 ?>
             <?php } ?>
         <?php } ?>
-        
+        <?php
+            // padding
+        ?>
+            <?php if (! empty($input['padding'])) { ?>
+                padding: <?php echo $input['padding']['top']; ?>px <?php echo $input['padding']['right']; ?>px <?php echo $input['padding']['bottom']; ?>px <?php echo $input['padding']['left']; ?>px;
+            <?php } ?>
          <?php
             // el_background
             if ( isset($el_background['show_st']) && intval($el_background['show_st']) === 1) {

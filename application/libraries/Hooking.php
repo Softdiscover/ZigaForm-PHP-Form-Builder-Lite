@@ -82,7 +82,7 @@ class Hooking {
 	 */
 	public function do_action( $name, $args = array() ) {
 		if ( isset( $this->_actions[ $name ] ) && is_array( $this->_actions[ $name ] ) ) {
-			foreach ( $this->_actions[ $name ] as $key => $action ) {
+			foreach ( $this->_actions[ $name ] as $action ) {
 				call_user_func_array( $action['callback'], $args );
 			}
 		}
@@ -145,11 +145,11 @@ class Hooking {
 	 * @param array  $args The list of parameters to pass on to the action (optional)
 	 * @return string
 	 */
-	public function do_filter( $name, $value = '' ) {
+	public function do_filter( $name, $value, $args = array() ) {
 		$result = $value;
 		if ( isset( $this->_filters[ $name ] ) && is_array( $this->_filters[ $name ] ) ) {
-			foreach ( $this->_filters[ $name ] as $key => $filter ) {
-				$result = call_user_func( $filter['callback'], $result );
+			foreach ( $this->_filters[ $name ] as $filter ) {
+				$result = call_user_func_array( $filter['callback'], array_merge(array($result), $args));
 			}
 		}
 		return $result;

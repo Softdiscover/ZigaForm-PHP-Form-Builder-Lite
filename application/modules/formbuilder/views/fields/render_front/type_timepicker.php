@@ -15,6 +15,7 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
  <div class="rockfm-input7-wrap">
         <div class="sfdc-form-group">
@@ -23,7 +24,7 @@ ob_start();
                  >
                 <input type="text"
                         
-                        name="uiform_fields[<?php echo $id; ?>]"
+                        name="<?php echo $nameField; ?>"
                         class="sfdc-form-control">
                 <span class="input-group-addon">
                     <span class="sfdc-glyphicon sfdc-glyphicon-time"></span>

@@ -38,7 +38,7 @@ class SFM_Image_Preview {
 		$this->font = $plugin->google_fonts->get_font_by_name( $font_family );
 
 		if ( ! $this->font ) {
-			wp_die( 'Font not found: ' . $this->font_family );
+			die( 'Font not found: ' . $this->font_family );
 		}
 
 		// Output PNG URL
@@ -65,7 +65,7 @@ class SFM_Image_Preview {
 
 		$ttf_path = $this->font->maybe_get_remote_ttf();
 		if ( ! file_exists( $ttf_path ) ) {
-			wp_die( 'Could not load $ttf_path: ' . $ttf_path );
+			die( 'Could not load $ttf_path: ' . $ttf_path );
 		}
 
 		// Text
@@ -135,13 +135,13 @@ class SFM_Image_Preview {
 		$dir = dirname( $this->font->get_png_cache_path() );
 
 		if ( ! is_dir( $dir ) && ! wp_mkdir_p( $dir ) ) {
-			wp_die( "Please check permissions. Could not create directory $dir" );
+			die( "Please check permissions. Could not create directory $dir" );
 		}
 
 		$image_file = $wp_filesystem->put_contents( $this->font->get_png_cache_path(), $image, FS_CHMOD_FILE ); // predefined mode settings for WP files
 
 		if ( ! $image_file ) {
-			wp_die( "Please check permissions. Could not write image to $dir" );
+			die( "Please check permissions. Could not write image to $dir" );
 		}
 	}
 

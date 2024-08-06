@@ -23,7 +23,7 @@ if ( ! function_exists( 'remove_action' ) ) {
 }
 
 if ( ! function_exists( 'do_action' ) ) {
-	function do_action( $name, $args = array() ) {
+	function do_action( $name, ...$args ) {
 
 		get_hooking_instance()->do_action( $name, $args );
 	}
@@ -42,8 +42,8 @@ if ( ! function_exists( 'remove_filter' ) ) {
 }
 
 if ( ! function_exists( 'do_filter' ) ) {
-	function do_filter( $name, $value ) {
-		return get_hooking_instance()->do_filter( $name, $value );
+	function do_filter( $name, $value , ...$args) {
+		return get_hooking_instance()->do_filter( $name, $value, $args );
 	}
 }
 

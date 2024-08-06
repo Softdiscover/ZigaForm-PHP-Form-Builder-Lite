@@ -15,10 +15,11 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
  <div class="rockfm-input4-wrap">
     <input class="rockfm-input4-spinner"
-           name="uiform_fields[<?php echo $id; ?>]"
+           name="<?php echo $nameField; ?>"
             
            data-uifm-tabnum="<?php echo $tab_num; ?>"
                 data-rockfm-min="<?php echo floatval($input4['set_min']); ?>" 

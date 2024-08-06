@@ -15,6 +15,7 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
  <div class="sfdc-input-group">
         <div class="sfdc-input-group-addon rockfm-inp-preptxt"><?php echo urldecode($input['prepe_txt']); ?></div>
@@ -22,7 +23,7 @@ ob_start();
             class="rockfm-txtbox-inp-val sfdc-form-control"
             type="text" 
             data-uifm-tabnum="<?php echo $tab_num; ?>"
-            name="uiform_fields[<?php echo $id; ?>]"
+            name="<?php echo $nameField; ?>"
             value="<?php echo $input['value']; ?>">
         <div class="sfdc-input-group-addon rockfm-inp-apptxt"><?php echo urldecode($input['append_txt']); ?></div>
     </div>

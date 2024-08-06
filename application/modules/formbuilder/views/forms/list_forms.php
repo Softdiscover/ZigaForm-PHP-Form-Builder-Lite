@@ -34,7 +34,7 @@ if ( ! defined('BASEPATH')) {
                 <div id="uiform-listform-options">
                     <div class="uiform-listform-options-col">
                            <a class="sfdc-btn sfdc-btn-sm sfdc-btn-primary" 
-                       href="<?php echo site_url() . 'formbuilder/forms/create_uiform'; ?>">
+                       href="<?php echo site_url() . 'formbuilder/forms/choose_mode'; ?>">
                         <i class="fa fa-plus">
                         </i>
                         <?php echo __('Add new form', 'FRocket_admin'); ?>

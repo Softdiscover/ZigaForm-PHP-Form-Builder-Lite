@@ -15,6 +15,7 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
  <div data-uifm-tabnum="<?php echo $tab_num; ?>"
      class="rockfm-fileupload-wrap">
@@ -24,11 +25,11 @@ ob_start();
         <span class="sfdc-input-group-addon sfdc-btn sfdc-btn-default btn-file">
             <span class="fileinput-new"><?php echo isset($input16['stl1']['txt_selimage']) ? $input16['stl1']['txt_selimage'] : __('Select file', 'FRocket_admin'); ?></span>
             <span class="fileinput-exists"><?php echo isset($input16['stl1']['txt_change']) ? $input16['stl1']['txt_change'] : __('Change', 'FRocket_admin'); ?></span>
-            <input name="uiform_fields[<?php echo $id; ?>]" type="file" name="..."></span>
+            <input name="<?php echo $nameField; ?>"  type="file" name="..."></span>
         <a href="#" class="sfdc-input-group-addon sfdc-btn sfdc-btn-default fileinput-exists" 
             data-dismiss="fileinput"><?php echo isset($input16['stl1']['txt_remove']) ? $input16['stl1']['txt_remove'] : __('Remove', 'FRocket_admin'); ?></a>
     </div>
-    <input type="hidden" name="uiform_fields[<?php echo $id; ?>]" value="uifm_fileinput">
+    <input type="hidden" name="<?php echo $nameField; ?>"  value="uifm_fileinput">
 </div>
 <?php
 $cntACmp = ob_get_contents();

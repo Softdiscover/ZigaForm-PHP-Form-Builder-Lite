@@ -147,7 +147,7 @@ class model_settings extends CI_Model
 
     public function getAllDatabases()
     {
-        // return $this->wpdb->get_results("SHOW TABLES", ARRAY_N);
+        
         return (array) $this->db->list_tables();
     }
 

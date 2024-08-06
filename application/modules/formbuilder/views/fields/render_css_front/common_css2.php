@@ -21,7 +21,7 @@ ob_start();
          // padding
         if ( isset($skin['padding']['show_st']) && intval($skin['padding']['show_st']) === 1) {
             ?>
-             padding: <?php echo $skin['padding']['top']; ?>px <?php echo $skin['padding']['right']; ?>px <?php echo $skin['padding']['bottom']; ?>px <?php echo $skin['padding']['left']; ?>px;
+             padding: <?php echo $skin['padding']['top']; ?>px <?php echo $skin['padding']['right']; ?>px <?php echo $skin['padding']['bottom']; ?>px <?php echo $skin['padding']['left']; ?>px!important;
                 
             <?php
         } else {
@@ -32,7 +32,7 @@ ob_start();
          // margin
         if ( isset($skin['margin']['show_st']) && intval($skin['margin']['show_st']) === 1) {
             ?>
-             margin: <?php echo $skin['margin']['top']; ?>px <?php echo $skin['margin']['right']; ?>px <?php echo $skin['margin']['bottom']; ?>px <?php echo $skin['margin']['left']; ?>px;
+             margin: <?php echo $skin['margin']['top']; ?>px <?php echo $skin['margin']['right']; ?>px <?php echo $skin['margin']['bottom']; ?>px <?php echo $skin['margin']['left']; ?>px!important;
                 
             <?php
         } else {

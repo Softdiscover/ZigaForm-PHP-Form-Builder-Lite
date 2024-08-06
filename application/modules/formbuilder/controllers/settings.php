@@ -110,7 +110,7 @@ class Settings extends BackendController
 
     public function ajax_blocked_getmessage()
     {
-        // check_ajax_referer( 'zgfm_ajax_nonce', 'zgfm_security' );
+         
         $message = (isset($_POST['message']) && $_POST['message']) ? Uiform_Form_Helper::sanitizeInput($_POST['message']) : '';
 
         $data            = array();

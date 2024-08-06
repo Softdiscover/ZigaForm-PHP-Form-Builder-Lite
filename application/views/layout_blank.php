@@ -29,6 +29,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<!-- jquery ui -->
 	<link href="<?php echo base_url(); ?>assets/common/js/jqueryui/1.10.3/themes/start/jquery-ui.min.css" rel="stylesheet">
 	<!-- bootstrap -->
+	<link href="<?php echo base_url(); ?>assets/common/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
 	 <link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/bootstrap-theme.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/bootstrap-sfdc.css" rel="stylesheet">

@@ -117,6 +117,8 @@ CREATE TABLE `fbcf_uiform_form` (
   `fmb_data2` longtext,
   `fmb_rec_tpl_html` longtext NULL ,
   `fmb_rec_tpl_st` tinyint NULL DEFAULT 0 ,
+  `fmb_type` TINYINT NULL DEFAULT 0 ,
+			`fmb_parent` BIGINT DEFAULT 0 ,
   PRIMARY KEY (`fmb_id`)
 ) AUTO_INCREMENT=1 DEFAULT CHARSET=utf8mb4;
 
@@ -176,7 +178,7 @@ CREATE TABLE `fbcf_uiform_settings` (
 -- ----------------------------
 -- Records of fbcf_uiform_settings
 -- ----------------------------
-INSERT INTO `fbcf_uiform_settings` VALUES ('6.1.2', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
+INSERT INTO `fbcf_uiform_settings` VALUES ('7.0.0', '1', '', '0', '', '','', '/usr/sbin/sendmail', 'en', '1', 'Company name', 'user@testexample.com', '2016-02-09 00:38:01', '1980-01-01 00:00:01');
 
 -- ----------------------------
 -- Table structure for `fbcf_uiform_user`
@@ -240,6 +242,7 @@ CREATE TABLE `fbcf_uiform_form_log` (
   `updated_ip` varchar(100) DEFAULT NULL,
   `created_by` varchar(100) DEFAULT NULL,
   `updated_by` varchar(100) DEFAULT NULL,
+  `log_frm_parent` BIGINT DEFAULT 0,
   PRIMARY KEY (`log_id`)
 ) DEFAULT CHARSET=utf8mb4;
 

@@ -81,11 +81,21 @@ if ( ! defined('BASEPATH')) {
                             <td>
                                 <div class="sfdc-btn-group">
                                     <ul class="unstyled">
-                                    <li><a 
+                                    <li>
+                                    <?php if ( intval($row->fmb_type) === 0) { ?>
+                                    <a 
                                             class="guidetour-flist-edit sfdc-btn sfdc-btn-sm sfdc-btn-info"
                                             data-intro="<?php echo __('Edit and load your custom form', 'FRocket_admin'); ?>"
-                                           href="<?php echo site_url() . 'formbuilder/forms/create_uiform?form_id=' . $row->fmb_id; ?>">
-                                            <i class="fa fa-pencil-square-o"></i> <?php echo __('Edit', 'FRocket_admin'); ?></a></li>
+                                            href="<?php echo site_url() . 'formbuilder/forms/create_uiform?form_id=' . $row->fmb_id; ?>">
+                                            <i class="fa fa-pencil-square-o"></i> <?php echo __('Edit', 'FRocket_admin'); ?></a>
+                                    <?php } elseif (intval($row->fmb_type) === 1) {?>        
+                                    <a 
+                                            class="guidetour-flist-edit sfdc-btn sfdc-btn-sm sfdc-btn-info"
+                                            data-intro="<?php echo __('Edit and load your custom form', 'FRocket_admin'); ?>"
+                                            href="<?php echo site_url() . 'formbuilder/forms/create_uiform?is_multistep=yes&form_id=' . $row->fmb_id; ?>">
+                                            <i class="fa fa-pencil-square-o"></i> <?php echo __('Edit', 'FRocket_admin'); ?></a>
+                                    <?php } ?>
+                                            </li>
                                     <li><a 
                                            class="guidetour-flist-del sfdc-btn sfdc-btn-sm sfdc-btn-danger uiform-confirmation-func-action"
                                             data-intro="<?php echo __('Move to trash', 'FRocket_admin'); ?>"

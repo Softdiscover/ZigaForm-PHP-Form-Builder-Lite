@@ -192,6 +192,9 @@ ob_start();
         <?php } ?>
             
    <?php } ?>
+   <?php if (! empty($help_block['color'])) { ?>
+            color:<?php echo $help_block['color'] ?>;
+   <?php } ?>
    }
    /*popover custom*/
    .popover_<?php echo $id; ?> { 

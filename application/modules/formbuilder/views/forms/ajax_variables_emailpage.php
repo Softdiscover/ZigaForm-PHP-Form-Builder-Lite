@@ -38,6 +38,9 @@ ob_start();
 
                                         if ( ! empty($fmb_data)) {
                                             foreach ( $fmb_data['steps_src'] as $key => $value) {
+                                                if (is_string($value)) {
+                                                    continue;
+                                                }
                                                 foreach ( $value as $key2 => $value2) {
                                                     switch ( intval($value2['type'])) {
                                                         case 6:

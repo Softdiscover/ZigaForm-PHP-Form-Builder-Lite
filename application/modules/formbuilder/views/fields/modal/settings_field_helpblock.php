@@ -45,7 +45,22 @@ if ( ! defined('BASEPATH')) {
                 </div>
             </div>
         </div>
-        
+        <div class="sfdc-row">
+            <div class="sfdc-col-md-4">
+               <div class="sfdc-form-group">
+                    <label ><?php echo __('Color', 'FRocket_admin'); ?></label>
+                    <div data-field-store="help_block-color" class="sfdc-input-group uifm-custom-color">
+                        <input 
+                            type="text" 
+                            value="" 
+                            id="uifm_fld_lbl_color" 
+                            name="uifm_fld_lbl_color" class="sfdc-form-control" />
+                        <span class="sfdc-input-group-addon"><i></i></span>
+                    </div>
+
+                </div>
+            </div>
+        </div>      
         
     <div class="sfdc-row">
             <div class="sfdc-col-md-4">

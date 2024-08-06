@@ -6,7 +6,7 @@ License URI: http://www.gnu.org/licenses/gpl.html
 Tags: calculator, form builder, estimation, calculated, form,  estimate, estimation, estimator, cost estimation, calculation, price calculator, wizard, bootstrap, AJAX, contact, contact form, email, feedback, multilingual
 Requires at least: 3.6
 Tested up to: 5.4
-Stable tag: 6.1.2
+Stable tag: 7.0.0
 
 Create estimation forms using this powerful drag and drop estimation form builder which makes you to build estimation forms on few minutes
 
@@ -262,57 +262,6 @@ Their support is immaculate and the zigaform is one of the best you’ll find fo
 * It saves your time and increases form completions by preloading data in your forms. 	
 * Build complex forms with conditional logic. You can automatically hide or show fields or entire pages in your form based on selections your users make. [PRO VERSION]
 
-  
-
-= Calculated "hidden" Fields =
-
-The calculated fields can be "hidden" fields. This way the calculated values of those "hidden" fields won't be displayed in the form. This is useful for using intermediate calculated values or for showing the calculated values only into the email.
-
-
-= Equations / formulas Format =
-
-Here are some sample formulas that can be used in the math formula feature:
-
-* With simple mathematical operations:
-
-
-    `fieldname1 + fieldname2`
-
-    `fieldname1 * fieldname2`
-
-    `fieldname1 / fieldname2`
-
-    `fieldname1 - fieldname2`
-
-
-
-* With multiple fields and fields grouping included:
-
-
-    `fieldname1 * ( fieldname2 + fieldname3 )`
-
-
- 
-
-
-* There is a huge number of equations that can't be recreated with simple mathematical operators, or the operations listed above, requiring "IF" conditions, here is a sample of the formula that can be used in that case:
-
-    ```
-            if(fieldname3 > 100) return fieldname1+fieldname2;
-            if(fieldname3 <= 100) return fieldname1*fieldname2;
-    ```
-
-
-* For complex equations where is required to define blocks of JavaScript code, you should use the following format:
-
- 
-        `    var calculatedValue = 0;`
-        `    //Your code here`
-        `    return calculatedValue;`
- 
-
-
-.... and note that the **return** value of that function will be the value assigned to the calculated field. More info here: https://kb.softdiscover.com/docs/zigaform-wordpress-cost-estimator/create-form/math-calculation/
 
 
 == Installation ==
@@ -394,7 +343,7 @@ https://www.youtube.com/watch?v=XcLBt94ZRZ8&w=532&rel=0
  *added custom reply to mail messages
 = 3.9.2.8 = 
 * minor changes
-= 6.1.2 = 
+= 7.0.0 = 
  * minor changes
 
 == Upgrade Notice ==
@@ -435,5 +384,5 @@ https://www.youtube.com/watch?v=XcLBt94ZRZ8&w=532&rel=0
  *added custom reply to mail messages
 = 3.9.2.8 = 
 * minor changes
-= 6.1.2 = 
+= 7.0.0 = 
  * minor changes

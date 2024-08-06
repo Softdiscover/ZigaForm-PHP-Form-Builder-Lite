@@ -147,7 +147,7 @@ if ( ! defined('BASEPATH')) {
     </select>
     
     <div data-row-index="0"
-                        class="uifm-conditional-row">
+                        class="uifm-conditional-row clearfix">
                         <div class="">
                             <div  class="uifm_clogic_deloption">
                                 

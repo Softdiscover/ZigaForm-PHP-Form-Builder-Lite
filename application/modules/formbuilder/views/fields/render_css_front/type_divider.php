@@ -45,45 +45,7 @@ ob_start();
         <?php } ?> 
          margin: 0 1em;
           
-                     <?php
-                        if ( isset($form_skin['form_background']['show_st'])
-                        && intval($form_skin['form_background']['show_st']) === 1) {
-                            ?>
-
-                            <?php
-                            // el_background
-
-                            switch ( intval($form_skin['form_background']['type'])) {
-                                case 1:
-                                    // solid
-                                    if ( ! empty($form_skin['form_background']['solid_color'])) {
-                                        ?>
-                                background:<?php echo $form_skin['form_background']['solid_color']; ?>;
-                                        <?php
-                                    }
-                                    break;
-                                case 2:
-                                    // gradient
-                                    if ( ! empty($form_skin['form_background']['start_color']) && ! empty($form_skin['form_background']['end_color'])) {
-                                        ?>
-                                background: <?php echo $form_skin['form_background']['start_color']; ?>;
-                                background-image: -webkit-linear-gradient(top, <?php echo $form_skin['form_background']['start_color']; ?>, <?php echo $form_skin['form_background']['end_color']; ?>);
-                                background-image: -moz-linear-gradient(top, <?php echo $form_skin['form_background']['start_color']; ?>, <?php echo $form_skin['form_background']['end_color']; ?>);
-                                background-image: -ms-linear-gradient(top, <?php echo $form_skin['form_background']['start_color']; ?>, <?php echo $form_skin['form_background']['end_color']; ?>);
-                                background-image: -o-linear-gradient(top, <?php echo $form_skin['form_background']['start_color']; ?>, <?php echo $form_skin['form_background']['end_color']; ?>);
-                                background-image: linear-gradient(to bottom, <?php echo $form_skin['form_background']['start_color']; ?>, <?php echo $form_skin['form_background']['end_color']; ?>);
-                                        <?php
-                                    }
-                                    break;
-                            }
-                            ?>
-                            <?php if ( isset($form_skin['form_background']['image']) && ! empty($form_skin['form_background']['image'])) { ?>
-                    background-image:url("<?php echo $form_skin['form_background']['image']; ?>");
-                    background-repeat:repeat;
-                            <?php } ?>
-                        <?php } else { ?>
-    padding:10px;
-                        <?php } ?> 
+         background:transparent;
           
     }
     

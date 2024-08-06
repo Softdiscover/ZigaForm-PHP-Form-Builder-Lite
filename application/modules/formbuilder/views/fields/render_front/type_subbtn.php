@@ -19,9 +19,10 @@ ob_start();
  <button data-uifm-tabnum="<?php echo $tab_num; ?>"
        class="rockfm-txtbox-inp-val sfdc-btn"
             type="button"
+            data-ms-action="<?php echo $input['ms_action']??''; ?>" 
             data-val-btn="<?php echo $input['value']; ?>"
             data-val-subm="<?php echo __('Sending', 'FRocket_admin'); ?>"
-            
+            onclick="rocketfm.common_submitbtn_click_event(this)"
              ><?php echo $input['value']; ?></button>
 <?php
 $cntACmp = ob_get_contents();

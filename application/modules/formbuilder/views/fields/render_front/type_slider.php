@@ -15,6 +15,7 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
  <div class="rockfm-input4-wrap">
     
@@ -29,7 +30,7 @@ ob_start();
                 data-slider-ticks="[<?php echo floatval($input4['set_min']); ?>, <?php echo floatval($input4['set_max']); ?>]"
                 data-slider-ticks-labels='["<?php echo floatval($input4['set_min']); ?>", "<?php echo floatval($input4['set_max']); ?>"]'
                 value="<?php echo floatval($input4['set_default']); ?>"
-                name="uiform_fields[<?php echo $id; ?>]"
+                name="<?php echo $nameField; ?>"
                 />
         <div class="rockfm-input4-output">
             <div class="rockfm-input4-number"><?php echo floatval($input4['set_default']); ?></div>

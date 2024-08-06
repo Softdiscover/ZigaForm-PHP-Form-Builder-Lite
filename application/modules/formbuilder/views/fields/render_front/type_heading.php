@@ -16,49 +16,83 @@ if ( ! defined('BASEPATH')) {
 }
 ob_start();
 ?>
- <div 
- <?php
-    if ( isset($input['font_st']) && intval($input['font_st']) === 1) {
-        if ( ! empty($input['font']) && isset($font_tmp['import_family'])) {
-            $font_tmp = json_decode($input['font'], true);
-            ?>
-                                        data-rockfm-gfont="<?php echo $font_tmp['import_family']; ?>"
-                                    <?php
-        }
+<div <?php
+if (isset($input['font_st']) && intval($input['font_st']) === 1) {
+    if (!empty($input['font']) && isset($font_tmp['import_family'])) {
+        $font_tmp = json_decode($input['font'], true);
+        ?> data-rockfm-gfont="<?php echo $font_tmp['import_family']; ?>" <?php
     }
-    ?>
-                                ></div>
+}
+?>></div>
 <?php
-switch ( intval($type)) {
+switch (intval($type)) {
     case 33:
+        switch (intval($input['levels'])) {
+            case 1:
+                ?>
+                <h1 class="rockfm-heading"><?php echo $input['value']; ?></h1>
+                <?php
+                break;
+            case 2:
+                ?>
+                <h2 class="rockfm-heading"><?php echo $input['value']; ?></h2>
+                <?php
+                break;
+            case 3:
+                ?>
+                <h3 class="rockfm-heading"><?php echo $input['value']; ?></h3>
+                <?php
+                break;
+            case 4:
+                ?>
+                <h4 class="rockfm-heading"><?php echo $input['value']; ?></h4>
+                <?php
+                break;
+            case 5:
+                ?>
+                <h5 class="rockfm-heading"><?php echo $input['value']; ?></h5>
+                <?php
+                break;
+            case 6:
+                ?>
+                <h6 class="rockfm-heading"><?php echo $input['value']; ?></h6>
+                <?php
+                break;
+            
+            default:
+                # code...
+                break;
+        }
+
+
         ?>
-             <h1 class="rockfm-heading"><?php echo $input['value']; ?></h1>
-            <?php
+        
+        <?php
         break;
     case 34:
         ?>
-             <h2 class="rockfm-heading"><?php echo $input['value']; ?></h2>
-            <?php
+        <h2 class="rockfm-heading"><?php echo $input['value']; ?></h2>
+        <?php
         break;
     case 35:
         ?>
-             <h3 class="rockfm-heading"><?php echo $input['value']; ?></h3>
-            <?php
+        <h3 class="rockfm-heading"><?php echo $input['value']; ?></h3>
+        <?php
         break;
     case 36:
         ?>
-             <h4 class="rockfm-heading"><?php echo $input['value']; ?></h4>
-            <?php
+        <h4 class="rockfm-heading"><?php echo $input['value']; ?></h4>
+        <?php
         break;
     case 37:
         ?>
-             <h5 class="rockfm-heading"><?php echo $input['value']; ?></h5>
-            <?php
+        <h5 class="rockfm-heading"><?php echo $input['value']; ?></h5>
+        <?php
         break;
     case 38:
         ?>
-             <h6 class="rockfm-heading"><?php echo $input['value']; ?></h6>
-            <?php
+        <h6 class="rockfm-heading"><?php echo $input['value']; ?></h6>
+        <?php
         break;
 }
 ?>

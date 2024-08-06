@@ -15,12 +15,13 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
+$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", $id, $type);
 ?>
  <div class="sfdc-input-group rockfm-colorpicker-wrap"
       data-uifm-tabnum="<?php echo $tab_num; ?>"
      >
         <input type="text" value="" 
-               name="uiform_fields[<?php echo $id; ?>]"
+               name="<?php echo $nameField; ?>"
                     class="sfdc-form-control" />
         <span class="sfdc-input-group-addon"><i></i></span>
     </div>

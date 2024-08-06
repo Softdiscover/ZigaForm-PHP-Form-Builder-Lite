@@ -151,8 +151,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<!-- bootstrap select -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/bselect/1.12.4/js/bootstrap-select-mod.js"></script>
 	
-	<!-- bootstrap select2 -->
-	<script type="text/javascript" src="<?php echo base_url(); ?>/assets/common/js/select2/4.0.13/js/select2.full.min.js"></script>
+	
 	
 	<!-- bootstrap switch -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bswitch/bootstrap-switch.js"></script>
@@ -224,7 +223,9 @@ if ( ! defined( 'BASEPATH' ) ) {
 		'zgfm_back_filter_globalvars',
 		array(
 			'fields_fastload' => $fields_fastload,
+			'url_site'       => site_url() ,
 			'url_admin'       => site_url() . 'admin',
+			'is_debug'        => UIFORM_DEBUG,
 			'url_plugin'      => '',
 			'url_elfinder1'   => $file1,
 			'url_elfinder2'   => $file2,
@@ -245,12 +246,20 @@ if ( ! defined( 'BASEPATH' ) ) {
 		<?php
 		if ( UIFORM_DEBUG === 1 ) {
 			?>
-
+<!-- bootstrap select2 -->
+<script type="text/javascript" src="<?php echo base_url(); ?>/assets/common/js/select2/4.0.13/js/select2.full.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.debug.js?v=<?php echo date( 'YmdHis' ); ?>"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/multistep/multistep.debug.js?v=<?php echo date( 'YmdHis' ); ?>"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/multistep/multistepmanager.debug.js?v=<?php echo date( 'YmdHis' ); ?>"></script>
 			<?php
 		} else {
 			?>
+			
+			<!-- bootstrap select2 -->
+	<script type="text/javascript" src="<?php echo base_url(); ?>/assets/common/js/select2/4.0.13/js/select2.full.min.js"></script>
 		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/admin.min.js"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/multistep/multistep.min.js?v=<?php echo UIFORM_VERSION; ?>"></script>
+		<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/multistep/multistepmanager.min.js?v=<?php echo UIFORM_VERSION; ?>"></script>
 			<?php
 		}
 
@@ -304,7 +313,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/fonts.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>libs/styles-font-menu/js/styles-font-menu.js"></script>
 	<link href="<?php echo base_url(); ?>libs/styles-font-menu/css/styles-font-menu.css" rel="stylesheet">
-	
+	 
 	<?php do_action( 'admin_enqueue_scripts' ); ?>
 	<?php // $this->addon->load_addons_Head(); ?>
 

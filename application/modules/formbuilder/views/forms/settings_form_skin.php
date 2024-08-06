@@ -242,6 +242,21 @@ if ( ! defined('BASEPATH')) {
                                                 </div>
                                             </div>
                                     </div>
+                                    <div class="sfdc-row">
+                                        <div class="sfdc-col-md-3">
+                                           <label ><?php echo __('Angle', 'FRocket_admin'); ?></label>
+                                        </div>
+                                        <div class="sfdc-col-sm-9">
+                                                <div class="sfdc-form-group">
+                                                <input  
+                                                    id="uifm_frm_skin_fmbg_angle"
+                                                class="uifm_frm_form_skin_spinner"
+                                                data-form-msec="skin"
+                                                data-form-store="form_background-angle"
+                                                type="text" >
+                                                </div>
+                                            </div>
+                                    </div>
                             </div>
                             
                             

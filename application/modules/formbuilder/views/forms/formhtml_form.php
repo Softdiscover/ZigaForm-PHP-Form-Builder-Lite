@@ -27,6 +27,7 @@ ob_start();
       data-zgfm-recaptchav3-active="<?php echo $main['recaptchav3_enable'] ?? 0; ?>"
       data-zgfm-recaptchav3-sitekey="<?php echo $main['recaptchav3_sitekey'] ?? ''; ?>"
       data-zgfm-recaptchav3-errmsg="<?php echo __('Recaptcha failed, refresh page and try again', 'FRocket_admin'); ?>"
+      data-zgfm-is-ms="0"
       enctype="multipart/form-data" 
       id="rockfm_form_<?php echo $form_id; ?>">
  

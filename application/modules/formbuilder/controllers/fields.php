@@ -45,7 +45,7 @@ class Fields extends BackendController
      */
     private $table    = '';
     private $per_page = 10;
-
+    private $back_cache_tab_more='';
     /**
      * Fields::__construct()
      *
@@ -70,7 +70,7 @@ class Fields extends BackendController
     {
 
         $data_render = array();
-
+        $this->back_cache_tab_more = do_filter('zgfm_back_field_opt_more', array());
         $array = array( 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 );
         foreach ( $array as $type) {
             switch ( intval($type)) {
@@ -212,9 +212,7 @@ class Fields extends BackendController
         */
     public function ajax_field_option()
     {
-
-        // check_ajax_referer('zgfm_ajax_nonce', 'zgfm_security');
-
+ 
         $id          = ( isset($_POST['field_id']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['field_id'])) : '';
         $type        = ( isset($_POST['field_type']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['field_type'])) : '';
         $field_block = ( isset($_POST['field_block']) ) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['field_block'])) : '';
@@ -290,7 +288,11 @@ class Fields extends BackendController
                         break;
                 }
 
-                $data['modules_field_more'] = modules::run('addon/zfad_backend/addons_doActions', 'back_field_opt_more');
+                if (intval(get_option('zgfm_fields_fastload', 0)) === 0) {
+                    $data['modules_field_more'] = $this->back_cache_tab_more;
+                } else {
+                    $data['modules_field_more'] = do_filter('zgfm_back_field_opt_more', '');
+                }
                 $data['obj_sfm']            = Uiform_Form_Helper::get_font_library();
                     $output                .= $this->load->view('formbuilder/fields/modal/field_opt_text', $data, true);
                 break;
