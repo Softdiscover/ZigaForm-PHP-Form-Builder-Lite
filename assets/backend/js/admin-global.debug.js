@@ -1,1 +1,0 @@
-$uifm(document).ready(function($) {});
