@@ -3971,6 +3971,7 @@ class Forms extends BackendController
             $data['cached_content'] = escape_text($cached_content['html']);
 
             $json['html'] = $this->load->view('formbuilder/forms/getcode', $data, true);
+            
             // return data to ajax callback
             header('Content-type: text/html');
             echo json_encode($json);

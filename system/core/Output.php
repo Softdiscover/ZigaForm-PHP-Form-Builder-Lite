@@ -323,6 +323,8 @@ class CI_Output {
 	 */
 	function _display($output = '')
 	{
+	 
+	
 		// Note:  We use globals because we can't use $CI =& get_instance()
 		// since this function is sometimes called by the caching mechanism,
 		// which happens before the CI super object is available.
@@ -362,7 +364,9 @@ class CI_Output {
 		if ($this->parse_exec_vars === TRUE)
 		{
 			$memory	 = ( ! function_exists('memory_get_usage')) ? '0' : round(memory_get_usage()/1024/1024, 2).'MB';
-
+			if($output ==''){
+				return '';
+			}
 			$output = str_replace('{elapsed_time}', $elapsed, $output);
 			$output = str_replace('{memory_usage}', $memory, $output);
 		}
