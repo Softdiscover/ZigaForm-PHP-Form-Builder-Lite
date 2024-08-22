@@ -107,9 +107,9 @@ For more information, visit [Softdiscover Zigaform](https://softdiscover.com/zig
 2. Enter the title of your form in the pop-up that appears.
 3. Drag and drop form elements into the form.
 4. Customize the options and click "Save Form".
-5. Copy the shortcode provided and paste it into your post or page.
+5. Copy the widget code provided and paste it into your post or page.
 
-[Watch the tutorial](https://www.youtube.com/watch?v=qGuDnjnBa2w&w=532&rel=0)
+[![Watch the tutorial video](https://img.youtube.com/vi/hf7jq4Zo-gg/0.jpg)](https://www.youtube.com/watch?v=hf7jq4Zo-gg)
 
 
 ## License
