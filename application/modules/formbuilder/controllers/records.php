@@ -342,12 +342,29 @@ class Records extends BackendController
     {
 
         $id_rec        = ( isset($_GET['id_rec']) && $_GET['id_rec'] ) ? Uiform_Form_Helper::sanitizeInput($_GET['id_rec']) : 0;
-        $name_fields   = $this->model_record->getNameField($id_rec);
+        
         $form_rec_data = $this->model_record->getFormDataById($id_rec);
-
+        $name_fields = [];
+        if(intval($form_rec_data->fmb_type) === 1){
+            $children = $this->model_forms->getChildFormByParentId($form_rec_data->form_fmb_id);
+            foreach ($children as $key => $value) {
+                $name_fields = array_merge($name_fields, $this->model_forms->getFieldsById($value->fmb_id));
+            }
+        }else{
+            $name_fields   = $this->model_record->getNameField($id_rec);
+        }
+        
+        
+        
         $name_fields_check = array();
         foreach ( $name_fields as $value) {
-            $name_fields_check[ $value->fmf_uniqueid ] = $value->fieldname;
+            if(intval($form_rec_data->fmb_type) === 1){
+                $name_fields_check[$value->fmf_uniqueid.'_'.$value->fmb_id] = $value->fieldname;
+                $fields_type_check[$value->fmf_uniqueid.'_'.$value->fmb_id] = $value->type_fby_id;
+            }else{
+                $name_fields_check[$value->fmf_uniqueid] = $value->fieldname;
+                $fields_type_check[$value->fmf_uniqueid] = $value->type_fby_id;
+            }
         }
         $data_record     = $this->model_record->getRecordById($id_rec);
         $record_user     = json_decode($data_record->fbh_data, true);

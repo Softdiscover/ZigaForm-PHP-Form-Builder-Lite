@@ -31,7 +31,8 @@ class model_forms extends CI_Model
 
 
     public $table = '';
-
+    public $tbformtype = '';
+    public $tbformfields = '';
     /**
      * model_forms::__construct()
      *
@@ -41,6 +42,8 @@ class model_forms extends CI_Model
     {
         parent::__construct();
         $this->table = $this->db->dbprefix . 'uiform_form';
+        $this->tbformtype   = $this->db->dbprefix . 'uiform_fields_type';
+        $this->tbformfields = $this->db->dbprefix . 'uiform_fields';
     }
 
      /**
@@ -226,6 +229,36 @@ class model_forms extends CI_Model
         $query2 = $this->db->query($query);
         return $query2->result();
     }
+    
+    public function getFieldsById($id)
+    {
+        $query = sprintf(
+            '
+            select
+            	f.fmf_uniqueid,
+            	f.fmf_id,
+            	coalesce(NULLIF(f.fmf_fieldname, ""), CONCAT(t.fby_name, f.fmf_id)) as fieldname ,
+            	f.type_fby_id,
+            	f.fmf_data,
+            	fm.fmb_id
+            from
+            	%s f
+            join %s t on
+            	f.type_fby_id = t.fby_id
+            join %s fm on
+            	fm.fmb_id = f.form_fmb_id
+            where fm.fmb_id = %s
+            ',
+            $this->tbformfields,
+            $this->tbformtype,
+            $this->table,
+            $id
+        );
+
+        $query2 = $this->db->query($query);
+        return $query2->result();
+    }
+    
     public function getFormById_2($id)
     {
         $query = sprintf(

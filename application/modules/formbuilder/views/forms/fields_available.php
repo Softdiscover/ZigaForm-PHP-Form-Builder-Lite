@@ -605,7 +605,7 @@ if ( ! defined('BASEPATH')) {
             <?php if ( ZIGAFORM_F_LITE == 1) { ?>
             <?php } else { ?>
                                                <!-- Wizard elements -->
-                                               <?php if ( $is_multistep !== 'yes') { ?>
+                                                
             <!-- Wizard elements -->
 <div class="uiform-fields-group uiform-enable-fieldset zgfm-fields-wizard-buttons">
 <fieldset class="sfdc-fieldset-list">
@@ -634,7 +634,7 @@ if ( ! defined('BASEPATH')) {
 
 </fieldset>
 </div>
-                                               <?php } ?>
+                                               
 
             <?php } ?>
            

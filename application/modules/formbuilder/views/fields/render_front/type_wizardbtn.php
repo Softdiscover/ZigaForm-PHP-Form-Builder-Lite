@@ -21,10 +21,7 @@ ob_start();
     disabled="disabled"
     data-val-btn="<?php echo $input13['value_lbl']; ?>"
     type="button" 
-    <?php if ( isset($form_wizard['enable_st']) && intval($form_wizard['enable_st']) === 1 && count($tab_count['tab_title']) > 1) { ?>
     onclick="javascript:rocketfm.wizard_prevButton(this);return false;"
-    <?php } else { ?>
-    <?php } ?>
     class="sfdc-btn rockfm-btn-wizprev">
         <i class="fa fa-arrow-left"></i>
         <div class="rockfm-inp-lbl"><?php echo $input13['value_lbl']; ?></div>
@@ -33,14 +30,9 @@ ob_start();
     data-uifm-tabnum="<?php echo $tab_num; ?>"
     data-value-last="<?php echo $input12['value_lbl_last']; ?>"
     data-value-next="<?php echo $input12['value_lbl']; ?>"
-    type="button" 
-    <?php if ( isset($form_wizard['enable_st']) && intval($form_wizard['enable_st']) === 1 && count($tab_count['tab_title']) > 1) { ?>
-    onclick="javascript:rocketfm.wizard_nextButton(this);return false;"
-    <?php } else { ?>
-    type="submit"
     data-val-subm="<?php echo __('Sending', 'FRocket_admin'); ?>"
-    onclick="javascript:rocketfm.submitForm(this);return false;"
-    <?php } ?>
+    type="button" 
+    onclick="javascript:rocketfm.wizard_nextButton(this);return false;"
     class="sfdc-btn rockfm-btn-wiznext">
         <div class="rockfm-inp-lbl"><?php echo $input12['value_lbl']; ?></div>
         <i class="fa fa-arrow-right"></i>
