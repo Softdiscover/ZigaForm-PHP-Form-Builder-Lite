@@ -304,7 +304,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface {
 		$x          = ( $width - $textWidth ) / 2;
 		$y          = ( $height - $textHeight ) / 2 + $size;
 
-		if ( ! count( $this->textColor ) ) {
+		if (!isset($this->textColor)) {
 			$textColor = array( $this->rand( 0, 150 ), $this->rand( 0, 150 ), $this->rand( 0, 150 ) );
 		} else {
 			$textColor = $this->textColor;
