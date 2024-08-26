@@ -1,12 +1,12 @@
-# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 7.0.7
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 7.0.7 package.
+# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 7.0.8
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 7.0.8 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 7.0.7\n"
+"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 7.0.8\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-08-22 23:55+0000\n"
+"POT-Creation-Date: 2024-08-26 22:26+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -662,35 +662,35 @@ msgstr ""
 msgid "Form variables"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/forms.php:1112, application/modules/formbuilder/controllers/forms.php:4036
+#: application/modules/formbuilder/controllers/forms.php:1112, application/modules/formbuilder/controllers/forms.php:4034
 msgid "Success"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/forms.php:1114, application/modules/formbuilder/controllers/forms.php:4038
+#: application/modules/formbuilder/controllers/forms.php:1114, application/modules/formbuilder/controllers/forms.php:4036
 msgid "Go to List"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/forms.php:1114, application/modules/formbuilder/controllers/forms.php:4038
+#: application/modules/formbuilder/controllers/forms.php:1114, application/modules/formbuilder/controllers/forms.php:4036
 msgid "Back to Form"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/forms.php:1128, application/modules/formbuilder/controllers/forms.php:3966
+#: application/modules/formbuilder/controllers/forms.php:1128, application/modules/formbuilder/controllers/forms.php:3964
 msgid "Shortcodes"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/forms.php:1201, application/modules/formbuilder/controllers/forms.php:1240, application/modules/formbuilder/controllers/forms.php:1392, application/modules/formbuilder/controllers/forms.php:1561, application/modules/formbuilder/controllers/forms.php:1729, application/modules/multistep/controllers/dashboard.php:106
+#: application/modules/formbuilder/controllers/forms.php:1201, application/modules/formbuilder/controllers/forms.php:1238, application/modules/formbuilder/controllers/forms.php:1390, application/modules/formbuilder/controllers/forms.php:1559, application/modules/formbuilder/controllers/forms.php:1727, application/modules/multistep/controllers/dashboard.php:106
 msgid "Error! User has no permission to edit this form"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/forms.php:1246
+#: application/modules/formbuilder/controllers/forms.php:1244
 msgid "form id not found"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/forms.php:1335, application/modules/formbuilder/controllers/forms.php:1544, application/modules/formbuilder/controllers/forms.php:1709
+#: application/modules/formbuilder/controllers/forms.php:1333, application/modules/formbuilder/controllers/forms.php:1542, application/modules/formbuilder/controllers/forms.php:1707
 msgid "Error on saving form"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/forms.php:3597
+#: application/modules/formbuilder/controllers/forms.php:3595
 msgid "Forms in trash"
 msgstr ""
 

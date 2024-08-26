@@ -1204,12 +1204,10 @@ class Forms extends BackendController
             $data['fmb_name'] = (!empty($_POST['uifm_frm_main_title'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_title'])) : '';
             $isMultiStep = (!empty($_POST['uifm_frm_main_ismultistep'])) ? Uiform_Form_Helper::sanitizeInput(trim($_POST['uifm_frm_main_ismultistep'])) : '';
 
-            $fmb_data = (isset($_POST['form_data'])) ? urldecode(Uiform_Form_Helper::sanitizeInput_data_html($_POST['form_data'])) : '';
+            $fmb_data = (isset($_POST['form_data'])) ? Uiform_Form_Helper::sanitizeInput_data_html($_POST['form_data']) : '';
             
             $fmb_data         = (isset($fmb_data) && $fmb_data) ? array_map(array('Uiform_Form_Helper', 'sanitizeRecursive_html'), json_decode($fmb_data, true)) : array();
             $data['fmb_data'] = json_encode($fmb_data);
-
-
 
             if ($isMultiStep === 'yes') {
                 $fmb_data = (isset($_POST['form_data2'])) ? urldecode(Uiform_Form_Helper::sanitizeInput_data_html($_POST['form_data2'])) : '';
