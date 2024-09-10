@@ -131,7 +131,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 			 <li><a href="https://github.com/Softdiscover/ZigaForm-PHP-Form-Builder-Lite/issues" target="_blank">
 				   <?php echo __( 'Forum', 'FRocket_admin' ); ?></a>
 			 </li>
-			 <li><a href="https://www.fb.com/groups/zigaforms" target="_blank">
+			 <li><a href="https://www.fb.com/groups/zigaform" target="_blank">
 				   <?php echo __( 'Zigaform Community', 'FRocket_admin' ); ?></a>
 			 </li>
 		  </ul>
