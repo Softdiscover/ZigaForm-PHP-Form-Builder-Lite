@@ -26,13 +26,13 @@ ob_start();
       data-zgfm-version="<?php echo UIFORM_VERSION; ?>"
       data-zgfm-recaptchav3-active="<?php echo $main['recaptchav3_enable'] ?? 0; ?>"
       data-zgfm-recaptchav3-sitekey="<?php echo $main['recaptchav3_sitekey'] ?? ''; ?>"
-      data-zgfm-recaptchav3-errmsg="<?php echo __('Recaptcha failed, refresh page and try again', 'FRocket_admin'); ?>"
+      data-zgfm-recaptchav3-errmsg="<?php echo esc_attr(__('Recaptcha failed, refresh page and try again', 'FRocket_admin')); ?>"
       data-zgfm-is-ms="0"
       enctype="multipart/form-data" 
       id="rockfm_form_<?php echo $form_id; ?>">
  
     
-    <input type="hidden" value="<?php echo $form_id; ?>" class="_rockfm_form_id" name="_rockfm_form_id">
+    <input type="hidden" value="<?php echo esc_attr($form_id); ?>" class="_rockfm_form_id" name="_rockfm_form_id">
     <?php
     if ( isset($wizard['enable_st'])
             && intval($wizard['enable_st']) === 1
@@ -43,7 +43,7 @@ ob_start();
     <?php } else { ?>
         <input type="hidden" value="0" class="_rockfm_wizard_st" >
     <?php } ?>
-    <input type="hidden" value="<?php echo Uiform_Form_Helper::base64url_encode(urldecode($onsubm['sm_successtext'])); ?>" name="_rockfm_onsubm_smsg" class="_rockfm_onsubm_smsg" >
+    <input type="hidden" value="<?php echo esc_attr(Uiform_Form_Helper::base64url_encode(urldecode($onsubm['sm_successtext']))); ?>" name="_rockfm_onsubm_smsg" class="_rockfm_onsubm_smsg" >
     <!--- ajax or post --->
     <?php if ( isset($main['submit_ajax']) && intval($main['submit_ajax']) === 1) { ?>
         <input type="hidden" value="1" class="_rockfm_type_submit" name="_rockfm_type_submit">
@@ -73,10 +73,10 @@ ob_start();
        
     </div>
     <?php if ( ! empty($clogic)) { ?>
-        <input type="hidden" class="rockfm_clogic_data" value="<?php echo htmlentities(Uiform_Form_Helper::raw_json_encode($clogic), ENT_QUOTES, 'UTF-8'); ?>">
+        <textarea hidden="hidden" class="rockfm_clogic_data" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode($clogic), ENT_QUOTES, 'UTF-8')); ?></textarea>
     <?php } ?>
-        <input type="hidden" class="rockfm_main_data" value="<?php echo htmlentities(Uiform_Form_Helper::raw_json_encode($main), ENT_QUOTES, 'UTF-8'); ?>">
-   
+        <textarea hidden="hidden" class="rockfm_main_data" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode($main), ENT_QUOTES, 'UTF-8')); ?></textarea>
+        
     <div class="space10"></div>
     <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
         <div id="blueimp-gallery<?php echo $form_id; ?>" class="blueimp-gallery">

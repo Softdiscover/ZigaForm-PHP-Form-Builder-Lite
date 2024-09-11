@@ -26,14 +26,14 @@ ob_start();
       data-zgfm-version="<?php echo UIFORM_VERSION; ?>" 
       data-zgfm-recaptchav3-active="<?php echo $main['recaptchav3_enable'] ?? 0; ?>"
       data-zgfm-recaptchav3-sitekey="<?php echo $main['recaptchav3_sitekey'] ?? ''; ?>"
-      data-zgfm-recaptchav3-errmsg="<?php echo __('Recaptcha failed, refresh page and try again', 'FRocket_admin'); ?>"
+      data-zgfm-recaptchav3-errmsg="<?php echo esc_attr(__('Recaptcha failed, refresh page and try again', 'FRocket_admin')); ?>"
       data-zgfm-is-ms="1"
       enctype="multipart/form-data" 
       id="rockfm_form_<?php echo $form_id; ?>">
  
-    <input type="hidden" value="<?php echo $form_id; ?>" class="_rockfm_form_parent_id" name="_rockfm_form_parent_id">
+    <input type="hidden" value="<?php echo esc_attr($form_id); ?>" class="_rockfm_form_parent_id" name="_rockfm_form_parent_id">
      
-    <input type="hidden" value="<?php echo Uiform_Form_Helper::base64url_encode(urldecode($onsubm['sm_successtext'])); ?>" name="_rockfm_onsubm_smsg" class="_rockfm_onsubm_smsg" >
+    <input type="hidden" value="<?php echo esc_attr(Uiform_Form_Helper::base64url_encode(urldecode($onsubm['sm_successtext']))); ?>" name="_rockfm_onsubm_smsg" class="_rockfm_onsubm_smsg" >
     <!--- ajax  --->
      
         <input type="hidden" value="1" class="_rockfm_type_submit" name="_rockfm_type_submit">
@@ -45,10 +45,10 @@ ob_start();
            <?php echo $formInitHtml; ?>
     </div>
      
-        <input type="hidden" class="rockfm_main_data" value="<?php echo htmlentities(Uiform_Form_Helper::raw_json_encode($main), ENT_QUOTES, 'UTF-8'); ?>">
-        <input type="hidden" class="rockfm_connection_data" value="<?php echo htmlentities(Uiform_Form_Helper::raw_json_encode($connections), ENT_QUOTES, 'UTF-8'); ?>">
-        <input type="hidden" class="rockfm_connection_extra" value="<?php echo htmlentities(Uiform_Form_Helper::raw_json_encode(do_filter('zgfm_front_ms_aditional_js', [])), ENT_QUOTES, 'UTF-8'); ?>">
-        <input type="hidden" class="rockfm_data_initform" value="<?php echo $formInit; ?>">
+    <textarea hidden="hidden" class="rockfm_main_data" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode($main), ENT_QUOTES, 'UTF-8')); ?></textarea>
+        <textarea hidden="hidden" class="rockfm_connection_data" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode($connections), ENT_QUOTES, 'UTF-8')); ?></textarea>
+        <textarea hidden="hidden" class="rockfm_connection_extra" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode(apply_filters('zgfm_front_ms_aditional_js', [])), ENT_QUOTES, 'UTF-8')); ?></textarea>
+        <textarea hidden="hidden" class="rockfm_data_initform" style="display:none"><?php echo esc_html($formInit); ?></textarea>
         
     <div class="space10"></div>
     <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->

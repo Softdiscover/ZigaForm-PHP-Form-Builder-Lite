@@ -7,7 +7,7 @@ Tags: form, forms, contact form, custom form, form builder, form creator, form m
 Requires at least: 5.0  
 Tested up to: 6.6.1  
 Requires PHP: 5.4  
-Stable tag: 7.0.9  
+Stable tag: 7.1.2  
 
 Create forms with total control using this powerful drag-and-drop form builder, allowing you to build contact forms or any custom forms in minutes.
 

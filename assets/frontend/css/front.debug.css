@@ -1020,6 +1020,33 @@ select.uifm-input2-opt-main {
   z-index: 1;
 }
 
+/* effects placeholder*/
+.rockfm-appetext input::placeholder,
+.rockfm-textbox input::placeholder,
+.rockfm-preptext input::placeholder {
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* Smooth fade and translate effect */
+}
+
+.rockfm-textarea textarea::placeholder {
+  opacity: 1;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  /* Smooth fade and translate effect */
+}
+
+.rockfm-appetext input.placeholder-hidden::placeholder,
+.rockfm-textbox input.placeholder-hidden::placeholder,
+.rockfm-preptext input.placeholder-hidden::placeholder {
+  opacity: 0;
+  transform: translateX(20%);
+  /* Move placeholder to the right */
+}
+
+.rockfm-textarea textarea.placeholder-hidden::placeholder {
+  opacity: 0;
+}
+
 /* responsive */
 @media only screen and (min-width: 0) and (max-width: 410px) {
   /* menu */
