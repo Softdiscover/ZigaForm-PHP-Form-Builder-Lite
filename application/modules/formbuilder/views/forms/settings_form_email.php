@@ -551,7 +551,17 @@ $default_template = ob_get_clean();
                                                 <tbody>
                                                     <tr>
                                                         <td><?php echo __('Summary of submitted data', 'FRocket_admin'); ?></td>
-                                                        <td><textarea style="width:298px;" onclick="this.select();">[uifm_var opt="rec_summ"]</textarea></td>
+                                                        <td>
+                                                            <p><?php echo __('Default, it shows units and total price', 'FRocket_admin'); ?></p>
+                                                            <textarea style="width:298px;" onclick="this.select();">[uifm_var opt="rec_summ"]</textarea>
+                                                            
+                                                            <p><?php echo __('it shows without units', 'FRocket_admin'); ?></p>
+                                                            <textarea style="width:298px;" onclick="this.select();">[uifm_var opt="rec_summ" atr2="show_only_value" ]</textarea>
+                                                            
+                                                            <p><?php echo __('it shows without units and total', 'FRocket_admin'); ?></p>
+                                                            <textarea style="width:100%;" onclick="this.select();">[uifm_var opt="rec_summ" atr2="show_only_value" atr3="hide_total" ]</textarea>
+                                                            
+                                                        </td>
                                                     </tr>
                                                     <tr>
                                                         <td><?php echo __('Form Url', 'FRocket_admin'); ?></td>
