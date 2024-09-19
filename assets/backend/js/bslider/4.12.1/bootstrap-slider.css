@@ -26,7 +26,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  * ========================================================= */
-.slider {
+ .slider {
   display: inline-block;
   vertical-align: middle;
   position: relative;
@@ -125,9 +125,33 @@
 .slider input {
   display: none;
 }
+
+.slider .sfdc-tooltip{
+ 
+}
+
 .slider .sfdc-tooltip.sfdc-top {
   margin-top: -36px;
 }
+
+
+.slider .sfdc-tooltip.sfdc-top .sfdc-tooltip-inner{
+  background-color: #626266!important;
+}
+
+.slider .sfdc-tooltip.sfdc-top .sfdc-tooltip-arrow{
+  border-top-color:#626266!important;
+}
+
+
+.slider .sfdc-tooltip.sfdc-in-move .sfdc-tooltip-inner{
+  background-color: #000!important;
+}
+
+.slider .sfdc-tooltip.sfdc-in-move .sfdc-tooltip-arrow{
+  border-top-color:#000!important;
+}
+
 .slider .tooltip-inner {
   white-space: nowrap;
 }

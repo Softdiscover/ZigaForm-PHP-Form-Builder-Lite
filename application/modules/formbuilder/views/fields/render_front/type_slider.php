@@ -32,10 +32,7 @@ $nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."]", 
                 value="<?php echo floatval($input4['set_default']); ?>"
                 name="<?php echo $nameField; ?>"
                 />
-        <div class="rockfm-input4-output">
-            <div class="rockfm-input4-number"><?php echo floatval($input4['set_default']); ?></div>
-        
-     </div>
+       
     </div>        
 <?php
 $cntACmp = ob_get_contents();

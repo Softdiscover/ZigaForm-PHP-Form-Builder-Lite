@@ -19,7 +19,21 @@ if (!defined('BASEPATH')) {
 
 class Uiform_Form_Helper
 {
+	
+	public static function createCustomFolder()
+    {
+        $folderPath = FCPATH . '/uploads/form-styles';
+        if (!file_exists($folderPath)) {
+            mkdir($folderPath, 0755, true);
+        }
 
+        if (file_exists($folderPath)) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+	
 	public static function isJson($string)
 	{
 		try {

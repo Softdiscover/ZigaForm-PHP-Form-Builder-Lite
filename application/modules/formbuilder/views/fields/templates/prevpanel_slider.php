@@ -50,7 +50,7 @@ $id_field = ( ! empty($id) ) ? $id : '';
                                            data-check-hash=""
                                            />
                                     <div class="uifm-inp4-output">
-                                        <div class="uifm-inp4-number"></div>
+                                         
                                     </div>
                                 </div>
                         </div>
