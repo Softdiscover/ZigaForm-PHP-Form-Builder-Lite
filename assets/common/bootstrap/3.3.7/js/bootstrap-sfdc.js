@@ -984,7 +984,7 @@ if (typeof $uifm === 'undefined') {
     this.escape()
     this.resize()
 
-    this.$element.on('click.dismiss.bs.sfdc-modal', '[data-dismiss="modal"]', $.proxy(this.hide, this))
+    this.$element.on('click.dismiss.bs.sfdc-modal', '[data-dismiss="sfdc-modal"]', $.proxy(this.hide, this))
 
     this.$dialog.on('mousedown.dismiss.bs.sfdc-modal', function () {
       that.$element.one('mouseup.dismiss.bs.sfdc-modal', function (e) {
@@ -1047,12 +1047,16 @@ if (typeof $uifm === 'undefined') {
       .off('mouseup.dismiss.bs.sfdc-modal')
 
     this.$dialog.off('mousedown.dismiss.bs.sfdc-modal')
-
-    $.support.transition && this.$element.hasClass('sfdc-fade') ?
+    
+    if ( $.support.transition && this.$element.hasClass('sfdc-fade')) {
       this.$element
         .one('bsTransitionEnd', $.proxy(this.hideModal, this))
-        .emulateTransitionEnd(Modal.TRANSITION_DURATION) :
+        .emulateTransitionEnd(Modal.TRANSITION_DURATION)
+    } else { 
       this.hideModal()
+    }
+    
+    
   }
 
   Modal.prototype.enforceFocus = function () {

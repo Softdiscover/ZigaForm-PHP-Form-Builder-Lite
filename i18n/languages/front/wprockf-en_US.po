@@ -1,5 +1,5 @@
-# Copyright (C) 2024 Zigaform PHP Form Builder 7.2.0
-# This file is distributed under the same license as the Zigaform PHP Form Builder 7.2.0 package.
+# Copyright (C) 2024 Zigaform PHP Form Builder 7.2.2
+# This file is distributed under the same license as the Zigaform PHP Form Builder 7.2.2 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"

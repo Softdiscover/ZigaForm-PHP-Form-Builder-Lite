@@ -1,3 +1,5 @@
+Version 3.4
+   [fixed] - modal not closing
 Version 3.3
    [fixed] - conflict with accordion
 Version 3.2
