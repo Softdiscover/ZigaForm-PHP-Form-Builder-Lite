@@ -984,7 +984,7 @@ if (typeof $uifm === 'undefined') {
     this.escape()
     this.resize()
 
-    this.$element.on('click.dismiss.bs.sfdc-modal', '[data-dismiss="sfdc-modal"]', $.proxy(this.hide, this))
+    this.$element.on('click.dismiss.bs.sfdc-modal', '[data-dismiss="modal"]', '[data-dismiss="sfdc-modal"]', $.proxy(this.hide, this))
 
     this.$dialog.on('mousedown.dismiss.bs.sfdc-modal', function () {
       that.$element.one('mouseup.dismiss.bs.sfdc-modal', function (e) {

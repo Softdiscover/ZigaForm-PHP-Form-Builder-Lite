@@ -47,7 +47,7 @@ ob_start();
      
     <textarea hidden="hidden" class="rockfm_main_data" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode($main), ENT_QUOTES, 'UTF-8')); ?></textarea>
         <textarea hidden="hidden" class="rockfm_connection_data" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode($connections), ENT_QUOTES, 'UTF-8')); ?></textarea>
-        <textarea hidden="hidden" class="rockfm_connection_extra" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode(apply_filters('zgfm_front_ms_aditional_js', [])), ENT_QUOTES, 'UTF-8')); ?></textarea>
+        <textarea hidden="hidden" class="rockfm_connection_extra" style="display:none"><?php echo esc_html(htmlentities(Uiform_Form_Helper::raw_json_encode(do_filter('zgfm_front_ms_aditional_js', [])), ENT_QUOTES, 'UTF-8')); ?></textarea>
         <textarea hidden="hidden" class="rockfm_data_initform" style="display:none"><?php echo esc_html($formInit); ?></textarea>
         
     <div class="space10"></div>
