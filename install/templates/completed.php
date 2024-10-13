@@ -51,7 +51,7 @@
 	<ol>
 		<li>Please delete the install directory (/install) <a onclick="deleteInstallDir(this);" href="javascript:void(0);" class="btn btn-danger ">Delete Install dir</a></li>
 	</ol>
-	<p>Thank you for choosing UIFORM - FORM BUILDER & CONTACT FORM.<p>
+	<p>Thank you for choosing ZIGAFORM - PHP FORM BUILDER<p>
 		<h3>BACKEND</h3>
 		<p><a href="<?php echo $url; ?>/index.php/admin" target="_blank"><?php echo $url; ?>/index.php/admin</a></p>
 		<h3>FRONTEND</h3>

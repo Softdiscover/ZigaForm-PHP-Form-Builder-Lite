@@ -388,10 +388,67 @@ class Settings extends BackendController
         }
 
         $data['database_int'] = $uiform_tbs_tmp;
-
+        $manifestData = $this->manifestIsOk();
+        $data['manifestStatus'] = $manifestData['status'];
+        $data['manifestFailed']= $manifestData['failed'];
+        
         $this->template->loadPartial('layout', 'formbuilder/settings/system_check', $data);
     }
-
+    private function calculateChecksum($filePath) {
+        return hash_file('md5', $filePath);
+    }
+    private function manifestIsOk(){
+        $status = true; 
+            // Load the manifest file
+            $cur = dirname(APPPATH).'/';
+            $manifestPath = $cur.'assets/backend/json/manifest.json';
+            
+            if(!file_exists($manifestPath)){
+                return [
+                    'status'=> $status,
+                    'failed'=>[]
+                    ];
+            }
+            
+            $manifest = json_decode(file_get_contents($manifestPath), true);
+            
+            // Function to calculate checksum of a file
+            
+            $failed=[];
+            // Check the integrity of the uploaded files
+            foreach ($manifest as $file => $expectedChecksum) {
+                if(in_array($file, ['assets/backend/json/manifest.json'
+                ,'index.php'
+                ,'application/config/constants.php'
+                ,'application/config/database.php'
+                ,'application/config/config.php'
+                ,'application/modules/formbuilder/views/forms/verify_pcode.php'
+                ])){
+                    continue;
+                }
+                
+                if (strpos($file, "i18n/languages/") === 0) {
+                    continue;
+                }
+                
+                if (file_exists($cur.$file)) {
+                    $actualChecksum = $this->calculateChecksum($cur.$file);
+                    if ($actualChecksum !== $expectedChecksum) {
+                        
+                        $failed[]= $cur.$file;
+                        $status = false;
+                    }  
+                } else{
+                    $failed[]= $cur.$file;
+                    $status = false;
+                } 
+            }
+            
+            return [
+            'status'=> $status,
+            'failed'=>$failed
+            ];
+        }
     public function system_gendb_column()
     {
 

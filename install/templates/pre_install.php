@@ -140,6 +140,8 @@ if ( extension_loaded( 'mysql' ) ) {
 $pathDBconfigFile = '../application/config/database.php';
 $pathrouteFile    = '../application/config/routes.php';
 $pathconfigFile   = '../application/config/config.php';
+$pathCacheFile   = '../application/cache/';
+$pathLogsFile   = '../application/logs/';
 ?>
 <table class="table">
 	<thead>
@@ -184,6 +186,77 @@ $pathconfigFile   = '../application/config/config.php';
 			<td><?php echo ( is_writeable( $pathhtaccessFile ) ) ? 'Writeable' : 'Unwriteable'; ?></td>
 			<td>Writeable</td>
 			<td><?php echo ( is_writeable( $pathhtaccessFile ) ) ? '<i class="fa fa-thumbs-up"></i>' : '<i class="fa fa-exclamation-triangle"></i>'; ?></td>
+		</tr>
+		<tr 
+		<?php
+	 
+		if ( is_writeable( $pathCacheFile ) ) {
+			$message = 'success';
+		} else {
+			$message = 'danger';
+			$error   = true;
+		}
+		?>
+			class="<?php echo $message; ?>"
+			>
+			<td>Cache</td>
+			<td><?php echo ( is_writeable( $pathCacheFile ) ) ? 'Writeable' : 'Unwriteable'; ?></td>
+			<td>Writeable</td>
+			<td><?php echo ( is_writeable( $pathCacheFile ) ) ? '<i class="fa fa-thumbs-up"></i>' : '<i class="fa fa-exclamation-triangle"></i>'; ?></td>
+		</tr>
+		<tr
+		<?php
+	 
+		if ( is_writeable( $pathLogsFile ) ) {
+			$message = 'success';
+		} else {
+			$message = 'danger';
+			$error   = true;
+		}
+		?>
+			class="<?php echo $message; ?>"
+			>
+			<td>Logs</td>
+			<td><?php echo ( is_writeable( $pathLogsFile ) ) ? 'Writeable' : 'Unwriteable'; ?></td>
+			<td>Writeable</td>
+			<td><?php echo ( is_writeable( $pathLogsFile ) ) ? '<i class="fa fa-thumbs-up"></i>' : '<i class="fa fa-exclamation-triangle"></i>'; ?></td>
+		</tr>
+		<tr
+		<?php
+		$manifestData = manifestIsOk();
+	    $manifestStatus = $manifestData['status'];
+	    
+		if ( $manifestStatus === true ) {
+			$message = 'success';
+		} else {
+			$message = 'danger';
+			$error   = true;
+		}
+		?>
+			class="<?php echo $message; ?>"
+			>
+			<td>Integrity Check</td>
+			<td><?php echo ( $manifestStatus === true  ) ? 'Complete' : 'Uncompleted, Files are missing or were modified. Make sure to upload it properly. you can compress and uncompress in your web host for fast way.'; ?>
+			<?php  
+			if(!empty($manifestData['failed'])){
+			?>
+			<ul>
+			<?php
+				foreach ($manifestData['failed'] as $key => $value) {
+					?>
+					<li><?php echo $value;?></li>
+			<?php
+				}
+			?>
+				
+			</ul>	
+			<?php
+			}
+			?>
+			
+			</td>
+			<td>Complete</td>
+			<td><?php echo ( $manifestStatus === true ) ? '<i class="fa fa-thumbs-up"></i>' : '<i class="fa fa-exclamation-triangle"></i>'; ?></td>
 		</tr>
 	</tbody>
 </table>

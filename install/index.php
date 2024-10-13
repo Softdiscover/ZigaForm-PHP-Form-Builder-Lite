@@ -194,7 +194,7 @@ if ( $_POST ) {
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="">
 		<meta name="author" content="">
-		<title>INSTALLING UIFORM - FORM BUILDER & CONTACT FORM</title>
+		<title>INSTALLING ZIGAFORM - PHP FORM BUILDER</title>
 		<script type="text/javascript"  src="assets/js/jquery.min.js"></script>
 		<script type="text/javascript" src="assets/js/jquery.validate.min.js"></script>
 		<script type="text/javascript" src="assets/js/global.js"></script>
@@ -210,46 +210,26 @@ if ( $_POST ) {
 	<body>
 		<div class="container">
 			<div class="logo"> 
-				<img alt="uiForm - FORM BUILDER & CONTACT FORM" src="assets/img/logo-uiform-black.png">          
+				<img alt="ZIGAFORM - PHP FORM BUILDER" src="assets/img/logo-uiform-black.png">          
 			</div>
 			<div class="box-install clearfix">
 <?php
 
-if ( ZIGAFORM_F_LITE === 1 ) {
-	switch ( $step ) {
-		default:
-			include 'templates/pre_install.php';
-			break;
-		case 1:
-			$step = 2;
-		case 2:
-			include 'templates/database_config.php';
-			break;
-		case 3:
-			include 'templates/data_config.php';
-			break;
-		case 5:
-			include 'templates/completed.php';
-			break;
-	}
-} else {
-	switch ( $step ) {
-		default:
-			include 'templates/pre_install.php';
-			break;
-		case 1:
-			include 'templates/licence.php';
-			break;
-		case 2:
-			include 'templates/database_config.php';
-			break;
-		case 3:
-			include 'templates/data_config.php';
-			break;
-		case 5:
-			include 'templates/completed.php';
-			break;
-	}
+switch ( $step ) {
+	default:
+		include 'templates/pre_install.php';
+		break;
+	case 1:
+		$step = 2;
+	case 2:
+		include 'templates/database_config.php';
+		break;
+	case 3:
+		include 'templates/data_config.php';
+		break;
+	case 5:
+		include 'templates/completed.php';
+		break;
 }
 
 

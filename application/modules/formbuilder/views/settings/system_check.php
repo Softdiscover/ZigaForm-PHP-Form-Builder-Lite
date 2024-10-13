@@ -168,7 +168,49 @@ if ( ! defined('BASEPATH')) {
                             </div>
                         </div>
                 </div>
-                
+                <div class="space20"></div>
+                <h3><?php echo __('Files integrity', 'FRocket_admin'); ?></h3>
+                <div class="uiform-systemcheck-directive-container">
+                    <div class="sfdc-form-group">
+                            <label class="sfdc-col-sm-2 control-label"><?php echo __('Status', 'FRocket_admin'); ?> </label>
+                            <div class="sfdc-col-sm-10">
+                                <div class="span4">
+                                     <?php
+                                        if ( $manifestStatus === true) {
+                                            ?>
+                                                        <i class="fa fa-thumbs-up"></i>
+                                                        <?php
+                                        } else {
+                                            ?>
+                                                      <i class="fa fa-exclamation-triangle"></i>  <div class="sfdc-alert sfdc-alert-danger">
+                                            <?php echo __('Files are missing or modified. it is just informative.', 'FRocket_admin'); ?>
+                                                </div>
+                                                
+                                                <?php  
+			if(!empty($manifestFailed)){
+			?>
+			<ul>
+			<?php
+				foreach ($manifestFailed as $key => $value) {
+					?>
+					<li><?php echo $value;?></li>
+			<?php
+				}
+			?>
+				
+			</ul>	
+			<?php
+			}
+			?>
+                                                
+                                             <?php
+                                        }
+
+                                        ?>
+                                </div>
+                            </div>
+                        </div>
+                </div>
                 
                 <div class="clear"></div>
             </div>

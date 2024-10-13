@@ -63,16 +63,19 @@
 				<input type="text" class="form-control" name="mysqldbname" id="inputDBname" placeholder="" value="<?php echo isset( $_POST['mysqldbname'] ) ? cleanhtml( $_POST['mysqldbname'] ) : ''; ?>">
 			</div>
 		</div>
-		<div class="form-group">
-			<label   class="col-lg-4 control-label">SSL and HTTPS:</label>
-			<div class="col-lg-8">
-				 <input type="checkbox" value="1" name="ssloption">
-				 <div class="alert alert-info">
-  if your site is using SSL and HTTPS, check this option
-</div>
-			</div>
-			
-		</div>
+		<?php 
+		$ssloption = 0;
+		if (isset($_SERVER['SERVER_PORT']) && $_SERVER['SERVER_PORT'] == 443) {
+			$ssloption = 1;
+		}?>
+		<input type="hidden" value="<?php echo $ssloption;?>" id="inputssloption" name="ssloption">
+		<script>
+$(document).ready(function() {
+    if (window.location.protocol === "https:") {
+        $('#inputssloption').val(1);
+    }
+});
+</script>
 		<div class="form-group">
 			<label   class="col-lg-4 control-label">Driver:</label>
 			<div class="col-lg-8">
