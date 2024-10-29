@@ -403,7 +403,7 @@ class Settings extends BackendController
             $cur = dirname(APPPATH).'/';
             $manifestPath = $cur.'assets/backend/json/manifest.json';
             
-            if(!file_exists($manifestPath)){
+            if(!file_exists($manifestPath) || empty(file_get_contents($manifestPath))){
                 return [
                     'status'=> $status,
                     'failed'=>[]
@@ -426,7 +426,9 @@ class Settings extends BackendController
                 ])){
                     continue;
                 }
-                
+                if (strpos($file, "install/") === 0) {
+                    continue;
+                }
                 if (strpos($file, "i18n/languages/") === 0) {
                     continue;
                 }

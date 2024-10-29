@@ -126,7 +126,7 @@ class model_settings extends CI_Model
                 self::$db_config['smtp_conn']     = $row->smtp_conn;
                 self::$db_config['sendmail_path'] = $row->sendmail_path;
                 self::$db_config['language']      = $row->language;
-                self::$db_config['version']       = $row->version;
+                self::$db_config['version']       = UIFORM_VERSION;
 
                 $this->cache->write(self::$db_config, 'settings');
             }
@@ -141,7 +141,7 @@ class model_settings extends CI_Model
             self::$db_config['smtp_conn']     = $data['smtp_conn'];
             self::$db_config['sendmail_path'] = $data['sendmail_path'];
             self::$db_config['language']      = $data['language'];
-            self::$db_config['version']       = ( isset($data['version']) ) ? $data['version'] : 0;
+            self::$db_config['version']       = UIFORM_VERSION;
         }
     }
 

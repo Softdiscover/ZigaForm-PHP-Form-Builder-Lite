@@ -132,6 +132,11 @@ if (! defined('BASEPATH')) {
                                                                 data-intro="<?php echo __('skin section. you can change skin options of your form', 'FRocket_admin'); ?>"
                                                                 href="#uiform-settings-tab3-2" data-toggle="sfdc-tab" ><?php echo __('Skin', 'FRocket_admin'); ?></a>
                                                         </li>
+                                                        <li ><a 
+                                                                class="uiform-settings-globalconfig"
+                                                                data-intro="<?php echo __('Global settings', 'FRocket_admin'); ?>"
+                                                                href="#uiform-settings-tab3-4" data-toggle="sfdc-tab" ><?php echo __('Global', 'FRocket_admin'); ?></a>
+                                                        </li>
                                                         <?php if ( $is_multistep === 'yes') {?>
                                                         <li>
                                                             <a 
@@ -172,6 +177,15 @@ if (! defined('BASEPATH')) {
                                                                     </div>
                                                                 </div>
                                                             </div>
+                                                            <div class="sfdc-tab-pane" id="uiform-settings-tab3-4">
+                                                                <div class="uiform-tab-content  scroll-pane-arrows">
+                                                                    <div class="uiform-tab-content-inner">
+                                                                     <!--container -->
+                                                                        <?php require 'settings_form_global.php'; ?>
+                                                                    <!--\end container -->
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                             <?php if ( $is_multistep !== 'yes') {?>
                                                         <div class="sfdc-tab-pane" id="uiform-settings-tab3-3">
                                                                 <div class="uiform-tab-content  scroll-pane-arrows">
@@ -194,13 +208,7 @@ if (! defined('BASEPATH')) {
                                                                 </div>
                                                             </div> 
                                                             <?php } ?>
-                                                      <!--  <div class="sfdc-tab-pane" id="uiform-settings-tab3-4">
-                                                                <div class="uiform-tab-content  scroll-pane-arrows">
-                                                                    <div class="uiform-tab-content-inner">
-                                                                       
-                                                                    </div>
-                                                                </div>
-                                                            </div> --> 
+                                                     
                                                         <!--<div class="sfdc-tab-pane" id="uiform-settings-tab3-5">
                                                                 <div class="uiform-tab-content  scroll-pane-arrows">
                                                                     <div class="uiform-tab-content-inner">

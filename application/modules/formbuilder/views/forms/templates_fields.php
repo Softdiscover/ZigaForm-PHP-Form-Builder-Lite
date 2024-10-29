@@ -1174,7 +1174,7 @@ if ( ! defined('BASEPATH')) {
                                     class="sfdc-form-control uifm-inp6-captcha-inputcode">
                                 <label for="rockfm-inp6-captcha-inputcode" 
                                     class="rockfm-inp6-captcha-label"><?php echo __('CAPTCHA Code', 'FRocket_admin'); ?></label>
-                                <span ><i class="sfdc-glyphicon sfdc-glyphicon-asterisk"></i></span>
+                                 
                             </div>
                             </div>
                         </div>

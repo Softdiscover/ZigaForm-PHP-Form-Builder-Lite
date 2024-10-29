@@ -20,6 +20,14 @@ if (!defined('BASEPATH')) {
 class Uiform_Form_Helper
 {
 	
+	public static function urlIsValid( $url ){
+		$headers = @get_headers($url);
+		if($headers){
+			return true;
+		}
+		return false;
+	}
+	
 	public static function createCustomFolder()
     {
         $folderPath = FCPATH . '/uploads/form-styles';

@@ -27,7 +27,9 @@ class CaptchaBuilder implements CaptchaBuilderInterface {
 	 * @var array
 	 */
 	protected $textColor = null;
-
+	
+	private $background;
+	
 	/**
 	 * @var array
 	 */
@@ -318,7 +320,7 @@ class CaptchaBuilder implements CaptchaBuilderInterface {
 			$w      = $box[2] - $box[0];
 			$angle  = $this->rand( -$this->maxAngle, $this->maxAngle );
 			$offset = $this->rand( -$this->maxOffset, $this->maxOffset );
-			imagettftext( $image, $size, $angle, $x, $y + $offset, $col, $font, $phrase[ $i ] );
+			imagettftext( $image,(int) $size, (int) $angle, (int) $x,(int) ($y + $offset), $col, $font, $phrase[ $i ] );
 			$x += $w;
 		}
 

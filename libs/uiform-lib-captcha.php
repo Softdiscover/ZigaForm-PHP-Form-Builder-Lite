@@ -1,6 +1,17 @@
 <?php
 if ( isset( $_GET['rkver'] ) ) {
 
+$debug= false;
+if($debug){
+
+	error_reporting( E_ALL );
+	ini_set( 'display_errors', 1 );
+	ini_set( 'log_errors', 1 );
+	ini_set('error_log', __DIR__ . '/../debug.log'); 
+
+}
+
+
 	if ( ! defined( 'BASEPATH' ) ) {
 		define( 'BASEPATH', dirname( __FILE__ ) . '/' );
 	}
@@ -9,11 +20,12 @@ if ( isset( $_GET['rkver'] ) ) {
 	require_once BASEPATH . 'captcha/PhraseBuilderInterface.php';
 	require_once BASEPATH . 'captcha/CaptchaBuilder.php';
 	require_once BASEPATH . 'captcha/PhraseBuilder.php';
-
+	
 	if ( isset( $_GET['rkver'] ) ) {
 		$captcha_opts     = Uiform_Form_Helper::sanitizeInput_html( $_GET['rkver'] );
 		$captcha_opts_dec = Uiform_Form_Helper::base64url_decode( $captcha_opts );
 		$cap_arr          = json_decode( $captcha_opts_dec, true );
+		
 		header( 'Content-type: image/jpeg' );
 		if ( isset( $cap_arr['ca_txt_gen'] ) && ! empty( $cap_arr['ca_txt_gen'] ) ) {
 			$captcha = new CaptchaBuilder( $cap_arr['ca_txt_gen'] );

@@ -3880,7 +3880,7 @@ class Forms extends BackendController
         $data['pdf_paper_size'] = $pdf_paper_size;
 
         $data['fields_fastload'] = get_option('zgfm_fields_fastload', 0);
-
+        $data['obj_sfm']            = Uiform_Form_Helper::get_font_library();
         // $data['modules_tab_extension']= self::$_modules['addon']['backend']->addons_doActions('back_exttab_block');
 
         $data['modules_tab_extension'] = modules::run('addon/zfad_backend/addons_doActions', 'back_exttab_block', true);

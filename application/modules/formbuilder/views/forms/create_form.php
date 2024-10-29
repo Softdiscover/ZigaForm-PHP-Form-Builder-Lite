@@ -44,7 +44,7 @@ if ( ! defined('BASEPATH')) {
         <li><a data-toggle="sfdc-tab" class="uiform-settings-subm zgfm_thirdPanel zgfm_tabAnchor" data-color="#ff6a16" data-intro="<?php echo __('submission section. you can modify the success message and other messages', 'FRocket_admin'); ?>" href="#uiformc-menu-sec3"><?php echo __('On Submission', 'FRocket_admin'); ?></a></li>
         <li><a data-toggle="sfdc-tab" class="uiform-settings-main zgfm_fourthPanel zgfm_tabAnchor" data-color="#fca901" data-intro="<?php echo __('main settings', 'FRocket_admin'); ?>" href="#uiformc-menu-sec5"><?php echo __('Global settings', 'FRocket_admin'); ?></a></li>
         <?php if (!empty($modules_tab_extension)) { ?>
-          <li><a data-toggle="sfdc-tab" class="uiform-settings-extensions zgfm_fifthPanel zgfm_tabAnchor" data-color="#333333" data-intro="<?php echo __('Extensions', 'FRocket_admin'); ?>" href="#uiformc-menu-sec7"><?php echo __('Extensions', 'FRocket_admin'); ?></a>
+          <li><a data-toggle="sfdc-tab" class="uiform-settings-extensions zgfm_fifthPanel zgfm_tabAnchor" data-color="#00748A" data-intro="<?php echo __('Extensions', 'FRocket_admin'); ?>" href="#uiformc-menu-sec7"><?php echo __('Extensions', 'FRocket_admin'); ?></a>
           </li>
         <?php } ?>
 

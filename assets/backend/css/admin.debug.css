@@ -17320,7 +17320,7 @@ body {
 #zgfm_tab_flat_style .sfdc-nav-tabs li.sfdc-active a.fifthPanel,
 #zgfm_tab_flat_style .sfdc-nav-tabs li.sfdc-active a.fifthPanel:focus,
 #zgfm_tab_flat_style .sfdc-nav-tabs li.sfdc-active a.fifthPanel:hover {
-  background: #333333;
+  background: #00748A;
 }
 
 #zgfm_tab_flat_style .fifthPanel:hover,
@@ -17328,7 +17328,7 @@ body {
 #zgfm_tab_flat_style .sfdc-nav-tabs li.sfdc-active a.fifthPanel:hover,
 #zgfm_tab_flat_style .sfdc-nav-tabs li.sfdc-active a.fifthPanel:focus:hover,
 #zgfm_tab_flat_style .sfdc-nav-tabs li.sfdc-active a.fifthPanel:hover:hover {
-  background: rgba(51, 51, 51, 0.85);
+  background: #00748A;
 }
 
 #zgfm_tab_flat_style .zgfmyourselectedform,
@@ -17584,7 +17584,7 @@ body {
 .uiform-editing-dashboard .sfdc-nav-tabs li.sfdc-active a.zgfm_fifthPanel,
 .uiform-editing-dashboard .sfdc-nav-tabs li.sfdc-active a.zgfm_fifthPanel:focus,
 .uiform-editing-dashboard .sfdc-nav-tabs li.sfdc-active a.zgfm_fifthPanel:hover {
-  background: #333333;
+  background: #00748A;
 }
 
 .uiform-editing-dashboard .zgfm_fifthPanel:hover,
@@ -17592,7 +17592,7 @@ body {
 .uiform-editing-dashboard .sfdc-nav-tabs li.sfdc-active a.zgfm_fifthPanel:hover,
 .uiform-editing-dashboard .sfdc-nav-tabs li.sfdc-active a.zgfm_fifthPanel:focus:hover,
 .uiform-editing-dashboard .sfdc-nav-tabs li.sfdc-active a.zgfm_fifthPanel:hover:hover {
-  background: rgba(51, 51, 51, 0.85);
+  background: #00748A;
 }
 
 .uiform-editing-dashboard .zgfmyourselectedform,
@@ -17816,6 +17816,10 @@ body {
 .zgfm-page-exporting #container-exporting-code #import .disabled {
   cursor: not-allowed;
   opacity: 0.5;
+}
+
+.uiform-systemcheck-inner-box .sfdc-form-group {
+  clear: both;
 }
 
 .uiform-wrap {

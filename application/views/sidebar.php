@@ -20,7 +20,14 @@ if ( ! defined( 'BASEPATH' ) ) {
    <ul class="nav navbar-nav side-nav">
 	<li class="nav-profile">
 		<div class="user_profile clearfix">
-		<img alt="" src="https://www.gravatar.com/avatar/<?php echo md5( strtolower( trim( model_settings::$db_config['admin_mail'] ) ) ); ?>?s=50">
+		<?php
+		$gravatar = 'https://www.gravatar.com/avatar/'.md5( strtolower( trim( model_settings::$db_config['admin_mail'] ) ) ).'?s=50';
+		if(Uiform_Form_Helper::urlIsValid($gravatar)){
+			?>
+			<img alt="" src="<?php echo $gravatar; ?>">
+			<?php
+		}
+		?>	
 		<h5><?php echo $this->session->userdata( 'use_login' ); ?></h5>
 	</div>
 	</li>
