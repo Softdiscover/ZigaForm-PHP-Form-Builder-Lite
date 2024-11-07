@@ -849,11 +849,7 @@ function time_stamp($session_time)
 		}
 	}
 }
-
-function uifm_do_shortcode()
-{
-}
-
+ 
 /**
  * Returns the viewer's IP address
  * Deals with transparent proxies

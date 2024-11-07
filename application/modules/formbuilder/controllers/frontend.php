@@ -794,7 +794,7 @@ class Frontend extends FrontendController
 
         $data_form = $this->model_forms->getFormById($form_child_id);
 
-        $resp['html'] = $data_form->fmb_html;
+        $resp['html'] = do_shortcode($data_form->fmb_html);
 
         // return data to ajax callback
         header('Content-Type: text/html; charset=UTF-8');
