@@ -237,7 +237,7 @@ class model_addon extends CI_Model
             $this->table
         );
 
-        if ( $per_page != '' || $segment != '') {
+        if ( (int) $per_page > 0) {
             $segment = ( ! empty($segment) ) ? $segment : 0;
             $query  .= sprintf(' limit %s,%s', (int) $segment, (int) $per_page);
         }

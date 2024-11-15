@@ -5164,8 +5164,8 @@
                         &lt;input 
                             type=&quot;text&quot; 
                             value=&quot;&quot; 
-                            id=&quot;uifm_fld_lbl_color&quot; 
-                            name=&quot;uifm_fld_lbl_color&quot; class=&quot;sfdc-form-control&quot; /&gt;
+                            id=&quot;uifm_fld_hblock_color&quot; 
+                            name=&quot;uifm_fld_hblock_color&quot; class=&quot;sfdc-form-control&quot; /&gt;
                         &lt;span class=&quot;sfdc-input-group-addon&quot;&gt;&lt;i&gt;&lt;/i&gt;&lt;/span&gt;
                     &lt;/div&gt;
 

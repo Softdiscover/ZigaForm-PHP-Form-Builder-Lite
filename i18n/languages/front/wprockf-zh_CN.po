@@ -1,5 +1,5 @@
-# Copyright (C) 2024 Zigaform PHP Form Builder 7.3.1
-# This file is distributed under the same license as the Zigaform PHP Form Builder 7.3.1 package.
+# Copyright (C) 2024 Zigaform PHP Form Builder 7.3.9
+# This file is distributed under the same license as the Zigaform PHP Form Builder 7.3.9 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -18,23 +18,23 @@ msgstr ""
 msgid "Form"
 msgstr "Form"
 
-#: application/modules/formbuilder/controllers/frontend.php:723, application/modules/formbuilder/controllers/frontend.php:748
+#: application/modules/formbuilder/controllers/frontend.php:725, application/modules/formbuilder/controllers/frontend.php:750
 msgid "warning! Form was not submitted"
 msgstr "警告 ！不提交表单"
 
-#: application/modules/formbuilder/controllers/frontend.php:720, application/modules/formbuilder/controllers/frontend.php:745
+#: application/modules/formbuilder/controllers/frontend.php:722, application/modules/formbuilder/controllers/frontend.php:747
 msgid "Success! your form was submitted"
 msgstr "成功 ！提交您的窗体"
 
-#: application/modules/formbuilder/controllers/frontend.php:1010
+#: application/modules/formbuilder/controllers/frontend.php:1012
 msgid "Error! The file exceeds the allowed size of"
 msgstr "Error! The file exceeds the allowed size of"
 
-#: application/modules/formbuilder/controllers/frontend.php:1017
+#: application/modules/formbuilder/controllers/frontend.php:1019
 msgid "Error! Type of file is not allowed to upload"
 msgstr "Error! Type of file is not allowed to upload"
 
-#: application/modules/formbuilder/controllers/frontend.php:1351, application/modules/formbuilder/controllers/frontend.php:1396
+#: application/modules/formbuilder/controllers/frontend.php:1353, application/modules/formbuilder/controllers/frontend.php:1398
 msgid "New form request"
 msgstr "新的形式要求"
 

@@ -38,7 +38,9 @@ class Frontend extends FrontendController
     private $form_rec_msg_summ = '';
     private $form_email_err    = array();
     private $current_form_id = '';
-
+    private $form_cur;
+    private $form_cur_data2    = array();
+    
     const PREFIX = 'wprofmr_';
 
     /**
@@ -1506,9 +1508,9 @@ class Frontend extends FrontendController
                     <h1><?php echo $form_data->fmb_name; ?></h1>
                     <h4><?php echo __('Order summary', 'FRocket_admin'); ?></h4>
                   
-                  <?php
-                    echo modules::run('formbuilder/frontend/get_summaryRecord', $rec_id);
-                    ?>
+            <?php
+            echo $this->get_summaryRecord($rec_id);
+            ?>
                 
             <?php
             $content = ob_get_contents();

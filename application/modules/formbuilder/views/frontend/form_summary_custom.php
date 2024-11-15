@@ -30,12 +30,14 @@ ob_start();
                     
                     document.getElementById("zgfm-iframe-<?php echo $form_id; ?>-rec-showrecsumm").onload = function() {
         document.getElementById("uifm_frm_modal_html_loader").style.display = 'none';
-         iFrameResize({
+        setTimeout(function() {
+            iFrameResize({
                                                     log                     : false,
                                                     onScroll: function (coords) {
                                                         /*console.log("[OVERRIDE] overrode scrollCallback x: " + coords.x + " y: " + coords.y);*/
                                                     }
                                             },'#zgfm-iframe-<?php echo $form_id; ?>-rec-showrecsumm');
+}, 500);
     };
           </script> 
             </div>

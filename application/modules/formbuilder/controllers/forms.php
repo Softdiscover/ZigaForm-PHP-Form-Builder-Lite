@@ -1072,7 +1072,7 @@ class Forms extends BackendController
         $temp['base_url'] = base_url();
         $temp['form_id']  = $form_id;
 
-        $data['iframe'] = $this->load->view('formbuilder/forms/get_code_iframe', $temp, true);
+        $data['iframe'] = $this->load->view('formbuilder/forms/get_preview', $temp, true);
         ob_start();
         echo $data['iframe'];
         ?>

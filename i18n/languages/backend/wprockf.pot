@@ -1,12 +1,12 @@
-# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 7.3.1
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 7.3.1 package.
+# Copyright (C) 2024 Zigaform WP Cost Estimation Form Builder 7.3.9
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 7.3.9 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 7.3.1\n"
+"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 7.3.9\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2024-11-07 19:17+0000\n"
+"POT-Creation-Date: 2024-11-15 01:58+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -694,19 +694,19 @@ msgstr ""
 msgid "Forms in trash"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:152
+#: application/modules/formbuilder/controllers/frontend.php:154
 msgid "paypal success message"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:155
+#: application/modules/formbuilder/controllers/frontend.php:157
 msgid "error found while submitting"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:158
+#: application/modules/formbuilder/controllers/frontend.php:160
 msgid "Offline success"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/frontend.php:1507
+#: application/modules/formbuilder/controllers/frontend.php:1509
 msgid "Order summary"
 msgstr ""
 
@@ -718,19 +718,19 @@ msgstr ""
 msgid "Submitted form data"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:422, application/modules/formbuilder/views/records/info_record.php:79
+#: application/modules/formbuilder/controllers/records.php:422, application/modules/formbuilder/views/records/info_record.php:113
 msgid "Additional info"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:423, application/modules/formbuilder/views/records/info_record.php:82, application/modules/formbuilder/views/records/list_records_getdatatable.php:25, application/modules/formbuilder/views/settings/backup_settings.php:67
+#: application/modules/formbuilder/controllers/records.php:423, application/modules/formbuilder/views/records/info_record.php:116, application/modules/formbuilder/views/records/list_records_getdatatable.php:25, application/modules/formbuilder/views/settings/backup_settings.php:67
 msgid "Date"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:424, application/modules/formbuilder/views/records/info_record.php:86
+#: application/modules/formbuilder/controllers/records.php:424, application/modules/formbuilder/views/records/info_record.php:120
 msgid "IP"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:425, application/modules/formbuilder/views/records/info_record.php:90
+#: application/modules/formbuilder/controllers/records.php:425, application/modules/formbuilder/views/records/info_record.php:124
 msgid "Client PC info"
 msgstr ""
 
@@ -738,7 +738,7 @@ msgstr ""
 msgid "Form URL"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:427, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:66, application/modules/formbuilder/views/forms/create_form_main.php:103, application/modules/formbuilder/views/forms/create_form_modals.php:97, application/modules/formbuilder/views/forms/create_form_modals.php:131, application/modules/formbuilder/views/forms/settings_form_email.php:571, application/modules/formbuilder/views/records/info_record.php:98
+#: application/modules/formbuilder/controllers/records.php:427, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:66, application/modules/formbuilder/views/forms/create_form_main.php:103, application/modules/formbuilder/views/forms/create_form_modals.php:97, application/modules/formbuilder/views/forms/create_form_modals.php:131, application/modules/formbuilder/views/forms/settings_form_email.php:571, application/modules/formbuilder/views/records/info_record.php:132
 msgid "Form name"
 msgstr ""
 
@@ -1954,7 +1954,7 @@ msgstr ""
 msgid "Copy and paste the shortcode to your desired page"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/settings/system_check.php:58, application/modules/formbuilder/views/settings/system_check.php:221, application/modules/user/views/intranet/createuser.php:63, application/modules/user/views/intranet/index.php:47
+#: application/modules/formbuilder/views/forms/list_forms_table.php:41, application/modules/formbuilder/views/records/list_records.php:38, application/modules/formbuilder/views/settings/system_check.php:58, application/modules/formbuilder/views/settings/system_check.php:272, application/modules/user/views/intranet/createuser.php:63, application/modules/user/views/intranet/index.php:47
 msgid "Status"
 msgstr ""
 
@@ -2383,7 +2383,7 @@ msgid "Summary"
 msgstr ""
 
 #: application/modules/formbuilder/views/forms/settings_form_main_record.php:28
-msgid "you information is shown on next:"
+msgid "you information is shown on next"
 msgstr ""
 
 #: application/modules/formbuilder/views/forms/settings_form_main_record.php:52
@@ -2746,27 +2746,27 @@ msgstr ""
 msgid "Images"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/verify_pcode.php:22
+#: application/modules/formbuilder/views/forms/verify_pcode.php:21
 msgid "License Validation"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/verify_pcode.php:29
+#: application/modules/formbuilder/views/forms/verify_pcode.php:28
 msgid "To ensure you have a valid license, please enter your purchase code in the field below. You can find your purchase code by following the instructions provided"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/verify_pcode.php:30
+#: application/modules/formbuilder/views/forms/verify_pcode.php:29
 msgid "here."
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/verify_pcode.php:36
+#: application/modules/formbuilder/views/forms/verify_pcode.php:33
 msgid "Purchase Code"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/verify_pcode.php:40
+#: application/modules/formbuilder/views/forms/verify_pcode.php:37
 msgid "Send"
 msgstr ""
 
-#: application/modules/formbuilder/views/frontend/form_summary.php:40, application/modules/formbuilder/views/records/info_record.php:46, application/modules/formbuilder/views/records/info_record_topdf.php:59
+#: application/modules/formbuilder/views/frontend/form_summary.php:58, application/modules/formbuilder/views/frontend/form_summary.php:38, application/modules/formbuilder/views/records/info_record.php:65, application/modules/formbuilder/views/records/info_record.php:45, application/modules/formbuilder/views/records/info_record_topdf.php:59
 msgid "Units"
 msgstr ""
 
@@ -2786,11 +2786,11 @@ msgstr ""
 msgid "Order"
 msgstr ""
 
-#: application/modules/formbuilder/views/records/info_record.php:94
+#: application/modules/formbuilder/views/records/info_record.php:128
 msgid "URL page"
 msgstr ""
 
-#: application/modules/formbuilder/views/records/info_record.php:123, application/modules/formbuilder/views/records/info_record.php:117
+#: application/modules/formbuilder/views/records/info_record.php:155, application/modules/formbuilder/views/records/info_record.php:149
 msgid "Export to PDF"
 msgstr ""
 
@@ -2910,39 +2910,59 @@ msgstr ""
 msgid "allow_url_fopen php directive is disabled and Recaptcha will not work"
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/system_check.php:144
-msgid "PHP Extensions"
+#: application/modules/formbuilder/views/settings/system_check.php:143
+msgid "Information"
 msgstr ""
 
 #: application/modules/formbuilder/views/settings/system_check.php:147
+msgid "PHP Version"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/system_check.php:160
+msgid "Your PHP version is outdated. Consider updating."
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/system_check.php:171
+msgid "MySQL Version"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/system_check.php:185
+msgid "Your MySQL version is outdated. Consider updating."
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/system_check.php:195
+msgid "PHP Extensions"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/system_check.php:198
 msgid "Simple XML"
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/system_check.php:158
+#: application/modules/formbuilder/views/settings/system_check.php:209
 msgid "simplexml extension is important for the software. ask your webhost if this extension is not installed"
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/system_check.php:168
+#: application/modules/formbuilder/views/settings/system_check.php:219
 msgid "GD"
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/system_check.php:180
+#: application/modules/formbuilder/views/settings/system_check.php:231
 msgid "GD extension is important for generating images in Captcha field. Ask your webhost if this extension is not installed. "
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/system_check.php:194
+#: application/modules/formbuilder/views/settings/system_check.php:245
 msgid "FreeType"
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/system_check.php:206
+#: application/modules/formbuilder/views/settings/system_check.php:257
 msgid "FreeType support is not enabled. Ask your webhost if this extension is not installed."
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/system_check.php:218
+#: application/modules/formbuilder/views/settings/system_check.php:269
 msgid "Files integrity"
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/system_check.php:232
+#: application/modules/formbuilder/views/settings/system_check.php:283
 msgid "Files are missing or modified. it is just informative."
 msgstr ""
 

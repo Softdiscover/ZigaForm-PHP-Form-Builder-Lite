@@ -16,7 +16,7 @@ if ( ! defined('BASEPATH')) {
 }
 ob_start();
 ?>
-<div class="rockfm-form-container uiform-wrap sfdc-wrap">
+<div class="rockfm-form-container rockfm-form-container-single uiform-wrap sfdc-wrap">
 <div class="rockfm-alert-container" style="display:none;"></div>
 <form class="rockfm-form" 
       action="javascript:void(0);" 

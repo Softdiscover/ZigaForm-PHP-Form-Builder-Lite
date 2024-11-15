@@ -80,7 +80,7 @@ class model_forms extends CI_Model
 
         $query .= sprintf(' ORDER BY uf.updated_date %s ', $orderby);
 
-        if ( $per_page != '' || $segment != '') {
+        if ( (int) $per_page > 0) {
             $segment = ( ! empty($segment) ) ? $segment : 0;
             $query  .= sprintf(' limit %s,%s', (int) $segment, (int) $per_page);
         }
@@ -118,7 +118,7 @@ class model_forms extends CI_Model
 
         $query .= sprintf(' ORDER BY uf.updated_date %s ', $orderby);
 
-        if ( $per_page != '' || $segment != '') {
+        if ( (int) $per_page > 0) {
             $segment = ( ! empty($segment) ) ? $segment : 0;
             $query  .= sprintf(' limit %s,%s', (int) $segment, (int) $per_page);
         }
@@ -149,7 +149,7 @@ class model_forms extends CI_Model
             $this->table
         );
 
-        if ( $per_page != '' || $segment != '') {
+        if ( (int) $per_page > 0) {
             $segment = ( ! empty($segment) ) ? $segment : 0;
             $query  .= sprintf(' limit %s,%s', (int) $segment, (int) $per_page);
         }
@@ -259,11 +259,28 @@ class model_forms extends CI_Model
         return $query2->result();
     }
     
+    public function getFieldNamesById($id_form)
+    {
+        $query  = sprintf(
+            'select f.fmf_uniqueid,f.fmf_id, fm.fmb_type, coalesce(NULLIF(f.fmf_fieldname,""),CONCAT(t.fby_name,f.fmf_id)) as fieldname 
+        from %s f 
+        join %s t on f.type_fby_id=t.fby_id 
+        join %s fm on fm.fmb_id=f.form_fmb_id
+        where fm.fmb_id=%s and t.fby_id in (8,9,10,11,16,18,39,40,41,42)',
+            $this->tbformfields,
+            $this->tbformtype,
+            $this->table,
+            (int) $id_form
+        );
+        $query2 = $this->db->query($query);
+        return $query2->result();
+    }
+    
     public function getFormById_2($id)
     {
         $query = sprintf(
             '
-            select uf.fmb_data2,uf.fmb_name, uf.fmb_type
+            select uf.fmb_data2,uf.fmb_name, uf.fmb_type, uf.fmb_rec_tpl_st
             from %s uf
             where uf.fmb_id=%s
             ',

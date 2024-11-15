@@ -323,7 +323,9 @@ if ( ! defined( 'BASEPATH' ) ) {
 	$fontLib = new SFM_Plugin();
 	$fontLib->print_scripts();
 	?>
-
+	
+	<!-- iframe -->
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/frontend/js/iframe/4.1.1/iframeResizer.min.js"></script>
   </head>
    <body class="tundra ">
 	

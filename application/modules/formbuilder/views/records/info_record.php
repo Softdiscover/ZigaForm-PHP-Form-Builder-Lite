@@ -17,49 +17,83 @@ if ( ! defined('BASEPATH')) {
 ?>
 <div id="uiform-container" class="uiform-wrap uiform-page_records">
     <input type="hidden" id="rec_id" value="<?php echo $record_id; ?>">
-    
+      
     <div id="uiform-inforecord-container">
          <div class="space20"></div>
     <div class="sfdc-row">
         <div class="sfdc-col-md-8">
 
-            <?php if ( isset($fmb_rec_tpl_st) && intval($fmb_rec_tpl_st) === 0) { ?>
+            <?php if (isset($fmb_rec_tpl_st) && intval($fmb_rec_tpl_st) === 0) { ?>  
             <div class="uifm-inforecord-box-info sfdc-clearfix">
-                 <h1><?php echo $form_name; ?></h1>
+                <h1><?php echo $form_name; ?></h1>
                 <h4 class="zgfm-no-margin zgfm-margin-bottom-20"><?php echo __('Submitted form data', 'FRocket_admin'); ?></h4>
-                
                 <ul>
                 <?php
-                foreach ( $record_info as $value) {
+                foreach ($record_info as $value) {
                     ?>
-                    <?php if ( is_array($value['value'])) { ?>   
+                    <?php if (is_array($value['value'])) { ?>   
                  <li><b><?php echo $value['field']; ?></b> 
                      <ul>
                          <?php
-                            foreach ( $value['value'] as $key2 => $value2) {
+                         
+                            if(isset($value['value']['qty']) || isset($value['value']['label'])){
                                 ?>
-                         <li>
-                                <?php
-
-                                echo $value2['label'];
-                                if ( isset($value2['qty']) && floatval($value2['qty']) > 0) {
-                                    echo ' - ' . $value2['qty'] . ' ' . __('Units', 'FRocket_admin') . ' - ';
-                                }
-
-                                if ( isset($value2['qty']) && floatval($value2['qty']) > 0 && ! empty($value2['label'])) {
-                                } elseif ( ! empty($value2['label'])) {
-                                    echo ' : ';
-                                } else {
-                                }
-                                ?>
+                                <li>
+                                       <?php
+        
+                                       if (isset($value['value']['qty']) && floatval($value['value']['qty']) > 0) {
+                                           echo  $value['value']['qty'] . ' ' . __('Units', 'FRocket_admin');
+                                       }elseif (isset($value['value']['label']) ) {
+                                            echo  $value['value']['label'];
+                                       }
+       
+                                       
+                                       ?>
+                                   
+                                </li>
+                               
+                               
+                               <?php
+                            }else{
+                                foreach ($value['value'] as $key2 => $value2) {
+                                    ?>
+                             <li>
+                                    <?php
+    
+                                    echo $value2['label']??'';
+                                    if (isset($value2['qty']) && floatval($value2['qty']) > 0) {
+                                        echo ' - ' . $value2['qty'] . ' ' . __('Units', 'FRocket_admin') ;
+                                    }
+     
+                                    ?>
+                                
+                             </li>
                             
-                         </li>
-                          
-                            <?php } ?>
+                            
+                            <?php
+                            }
+                            
+                            } ?>
                      </ul>
                  </li>
                     <?php } else { ?>
-                 <li><b><?php echo $value['field']; ?></b> : <?php echo $value['value']; ?></li>
+                        <li>
+                            <b><?php echo $value['field']; ?></b> :
+                            <?php 
+                                if (strpos($value['value'], "^,^") !== false) {
+                                    // Explode the string by "^,^" delimiter
+                                    $options = explode("^,^", $value['value']);
+                                    echo "<ul class='records-option-list'>";
+                                    foreach ($options as $option) {
+                                        echo "<li><i class='fa fa-check-circle'></i> " . htmlspecialchars($option) . "</li>";
+                                    }
+                                    echo "</ul>";
+                                } else {
+                                    // If no "^,^", output the value directly
+                                    echo htmlspecialchars($value['value']);
+                                }
+                            ?>
+                        </li>
                     <?php } ?>
                       <?php
                 }
@@ -72,7 +106,7 @@ if ( ! defined('BASEPATH')) {
                 echo $custom_template;
             }
             ?>
-
+            
         </div>
         <div class="sfdc-col-md-4">
             <div class="uifm-inforecord-box-info2">
@@ -103,13 +137,11 @@ if ( ! defined('BASEPATH')) {
         </div>
     </div>
     </div>
-    
-     
-    
+            
     <div class="space10"></div>
    <div class="sfdc-row">
        <div class="sfdc-col-md-12">
-         <?php if ( ZIGAFORM_F_LITE == 1) { ?>
+         <?php if (ZIGAFORM_F_LITE === 1) { ?>
        <a 
     onclick="javascript:rocketform.showFeatureLocked(this);"
                   data-blocked-feature="PDF export"

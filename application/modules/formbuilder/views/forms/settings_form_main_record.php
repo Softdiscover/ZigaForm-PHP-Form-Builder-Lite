@@ -18,14 +18,14 @@ $default_template = '';
 ob_start();
 ?>
 <div >
-  <table width="600" cellspacing="5" cellpadding="5" border="0" style="background: #daf1f8; border: 1px solid #000000;">
+<table  cellspacing="5" cellpadding="5" border="0" style="background: #daf1f8; border: 1px solid #000000;">
     <tbody>
       <tr>
         <th style="background-color: #91c5f2;"><?php echo __('Summary', 'FRocket_admin'); ?><br />
           </th>
       </tr>
       <tr>
-        <td valign="top" style="text-align: left;"><?php echo __('you information is shown on next:', 'FRocket_admin'); ?>:<br />
+      <td valign="top" style="text-align: left;"><?php echo __('you information is shown on next', 'FRocket_admin'); ?>:<br />
           <br />
           [uifm_var opt="rec_summ"]<br />
           <br />

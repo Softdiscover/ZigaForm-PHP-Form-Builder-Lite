@@ -66,7 +66,7 @@ class model_form_log extends CI_Model
             $this->table
         );
 
-        if ( $per_page != '' || $segment != '') {
+        if ( (int) $per_page > 0) {
             $segment = ( ! empty($segment) ) ? $segment : 0;
             $query  .= sprintf(' limit %s,%s', $segment, $per_page);
         }

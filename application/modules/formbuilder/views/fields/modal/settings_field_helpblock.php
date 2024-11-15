@@ -53,8 +53,8 @@ if ( ! defined('BASEPATH')) {
                         <input 
                             type="text" 
                             value="" 
-                            id="uifm_fld_lbl_color" 
-                            name="uifm_fld_lbl_color" class="sfdc-form-control" />
+                            id="uifm_fld_hblock_color" 
+                            name="uifm_fld_hblock_color" class="sfdc-form-control" />
                         <span class="sfdc-input-group-addon"><i></i></span>
                     </div>
 

@@ -3249,9 +3249,9 @@
 .sfdc-wrap .sfdc-radio-inline input[type="radio"],
 .sfdc-wrap .sfdc-checkbox input[type="checkbox"],
 .sfdc-wrap .sfdc-checkbox-inline input[type="checkbox"] {
-  position: absolute;
-  margin-top: 4px \9;
-  margin-left: -20px;
+  /*position: absolute;*/
+  /*margin-top: 4px \9;
+  margin-left: -20px;*/
 }
 
 .sfdc-wrap .sfdc-radio + .sfdc-radio,
@@ -11418,11 +11418,6 @@ a:focus {
   display: inline-block;
 }
 
-/* records page */
-.uiform-page_records {
-  margin-bottom: 40px;
-}
-
 /* form container */
 .uiform-tab-container {
   /* padding: 15px 15px 20px 15px; */
@@ -11630,7 +11625,7 @@ a:focus {
 .uiformc-tab-content-inner3 {
   background: #f9f9f9;
   position: relative;
-  padding: 20px 0;
+  padding: 20px;
 }
 
 /* field select */
@@ -17714,6 +17709,33 @@ body {
 
 #zgfm-back-listform-maintable-container {
   clear: both;
+}
+
+.uiform-page_records {
+  margin-bottom: 40px;
+}
+
+.uiform-page_records .records-option-list {
+  list-style-type: none;
+  /* Remove default bullets */
+  padding: 0 0 0 20px;
+  margin: 10px 0;
+}
+
+.uiform-page_records .records-option-list li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #333;
+  /* Text color */
+  padding: 5px 0;
+}
+
+.uiform-page_records .records-option-list li i {
+  color: #4caf50;
+  /* Icon color */
+  margin-right: 8px;
+  /* Space between icon and text */
 }
 
 .zgfm-page-exporting #container-exporting-code {

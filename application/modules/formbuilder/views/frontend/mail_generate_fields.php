@@ -17,7 +17,7 @@ if (!defined('BASEPATH')) {
 }
 ob_start();
 ?>
-<table class="zgfm-mail-tmp-table" cellpadding="0" cellspacing="0">
+<table class="zgfm-mail-tmp-table" style="width:100%;" cellpadding="0" cellspacing="0">
 
     <?php
     if (!empty($data)) {

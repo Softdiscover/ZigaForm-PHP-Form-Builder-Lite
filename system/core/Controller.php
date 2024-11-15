@@ -50,6 +50,7 @@ class CI_Controller {
 	var $addon;
 	var $upload;
 	var $pagination;
+	var $curl;
 	private static $instance;
 
 	/**

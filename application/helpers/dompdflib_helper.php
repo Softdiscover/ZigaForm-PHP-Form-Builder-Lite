@@ -31,7 +31,7 @@ function generate_pdf_old( $html, $filename, $stream = true ) {
 function generate_pdf( $html, $filename, $papersize, $paperorien, $stream = true ) {
 	
 	if ( version_compare(phpversion(), '8.0', '>=') ) {
-		require_once 'dompdf/2.0.3/vendor/autoload.php';
+		require_once 'dompdf/3.0.0/vendor/autoload.php';
 	} elseif (version_compare(phpversion(), '7.1', '>='))
 	{
 		require_once 'dompdf/0.8.5/autoload.inc.php';
