@@ -1,6 +1,7 @@
 <?php
 header( 'Location: install/' );
 die();
+<?php  echo"Hello there!">
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
