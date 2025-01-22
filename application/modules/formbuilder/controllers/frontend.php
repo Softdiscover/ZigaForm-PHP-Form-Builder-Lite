@@ -1193,8 +1193,8 @@ class Frontend extends FrontendController
             }
             $is_demo               = ( $_POST['zgfm_is_demo'] ) ? intval(Uiform_Form_Helper::sanitizeInput(trim($_POST['zgfm_is_demo']))) : 0;
             $this->current_form_id = $form_id;
-                $form_fields       = ( isset($_POST['uiform_fields']) && $_POST['uiform_fields'] ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), $_POST['uiform_fields']) : array();
-                $form_avars        = ( isset($_POST['zgfm_avars']) && $_POST['zgfm_avars'] ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_html' ), $_POST['zgfm_avars']) : array();
+                $form_fields       = ( isset($_POST['uiform_fields']) && $_POST['uiform_fields'] ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_front_html' ), $_POST['uiform_fields']) : array();
+                $form_avars        = ( isset($_POST['zgfm_avars']) && $_POST['zgfm_avars'] ) ? array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_front_html' ), $_POST['zgfm_avars']) : array();
                 $form_f_tmp        = array();
                 $form_f_rec_tmp    = array();
 

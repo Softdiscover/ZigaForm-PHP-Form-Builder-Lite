@@ -191,6 +191,34 @@ class Uiform_Form_Helper
 		return $string;
 	}
 
+	public static function sanitizeInput_front_html($string)
+    {
+        if (!is_string($string)) {
+            return $string;
+        }
+
+        // Decode existing entities to prevent double encoding
+        $string = html_entity_decode($string, ENT_QUOTES, 'UTF-8');
+
+        // Strip slashes added by magic quotes or manual escaping
+        $string = stripslashes($string);
+
+        // Strip potential dangerous tags and attributes
+        $string = strip_tags($string, '<a><b><i><strong><em><ul><li><ol>'); // Allow only safe tags
+
+        // Encode special characters to prevent HTML injection
+        $string = htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
+
+        // Remove dangerous JavaScript attributes
+        $string = preg_replace('/(on\w*|style)=["\'].*?["\']/i', '', $string);
+
+        // Normalize whitespaces and trim
+        $string = preg_replace('/[\n\r\t]+/', ' ', $string);
+        $string = trim($string);
+
+        return $string;
+    }
+
 
 	public static function sanitizeInput_data_html($string)
 	{
@@ -284,6 +312,22 @@ class Uiform_Form_Helper
 			return self::sanitizeInput_html($data);
 		}
 	}
+
+    /**
+     * Sanitize recursive
+     *
+     * @param string $data array
+     *
+     * @return array
+     */
+    public static function sanitizeRecursive_front_html($data)
+    {
+        if ( is_array($data)) {
+            return array_map(array( 'Uiform_Form_Helper', 'sanitizeRecursive_front_html' ), $data);
+        } else {
+            return self::sanitizeInput_front_html($data);
+        }
+    }
 
 
 	public static function data_encrypt($string, $key)
