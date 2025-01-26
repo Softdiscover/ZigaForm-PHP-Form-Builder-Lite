@@ -1,3 +1,6 @@
+version 7.4.4
+[fix] - error on uploading file
+-----------------------------------------------------------------------------------------------------------------
 version 7.4.3
 [update] - Implemented a critical security patch to address potential vulnerabilities and enhance system protection.
 -----------------------------------------------------------------------------------------------------------------

@@ -867,6 +867,16 @@ class Frontend extends FrontendController
     }
     public function process_form_fields($form_fields, $form_id)
     {
+    
+     // upload an image and document options
+			$config                  = array();
+			$config['upload_path']   = FCPATH . 'uploads';
+			$config['allowed_types'] = 'jpg|png|gif|jpeg|JPG|PNG|GIF|JPEG|pdf|doc|docx|xls|xlsx|zip|rar';
+			$config['max_size']      = '2097152'; // 0 = no file size limit
+			$config['overwrite']     = false;
+			$config['remove_spaces'] = true;
+			$this->load->library( 'upload', $config );
+    
         $form_f_tmp            = array();
         $form_f_rec_tmp        = array();
         $form_errors    = array();
@@ -988,67 +998,70 @@ class Frontend extends FrontendController
                         break;
                     case 12:
                         /*file input field*/
-                    case 13:
-                        /*image upload*/
-                        $tmp_fdata = json_decode($tmp_field_name->data, true);
-
-                        $tmp_options                     = array();
-                        $tmp_field_label                 = (!empty($tmp_fdata['label']['text'])) ? $tmp_fdata['label']['text'] : $tmp_field_name->fieldname;
-                        $form_f_tmp[$key]['type']      = $tmp_field_name->type;
-                        $form_f_tmp[$key]['fieldname'] = $tmp_field_name->fieldname;
-                        $form_f_tmp[$key]['label']     = $tmp_field_label;
-
-                        $allowedext_default = array('aaaa', 'png', 'doc', 'docx', 'xls', 'xlsx', 'csv', 'txt', 'rtf', 'zip', 'mp3', 'wma', 'wmv', 'mpg', 'flv', 'avi', 'jpg', 'jpeg', 'png', 'gif', 'ods', 'rar', 'ppt', 'tif', 'wav', 'mov', 'psd', 'eps', 'sit', 'sitx', 'cdr', 'ai', 'mp4', 'm4a', 'bmp', 'pps', 'aif', 'pdf');
-                        $custom_allowedext  = (!empty($tmp_fdata['input16']['extallowed'])) ? array_map('trim', explode(',', $tmp_fdata['input16']['extallowed'])) : $allowedext_default;
-                        $custom_maxsize     = (!empty($tmp_fdata['input16']['maxsize'])) ? floatval($tmp_fdata['input16']['maxsize']) : 5;
-                        $custom_attach_st   = (isset($tmp_fdata['input16']['attach_st'])) ? intval($tmp_fdata['input16']['attach_st']) : 0;
-
-                        if (
-                            isset($_FILES['uiform_fields']['name'][$key])
-                            && !empty($_FILES['uiform_fields']['name'][$key])
-                        ) {
-                            $fileSize = $_FILES['uiform_fields']['size'][$key];
-                            if (floatval($fileSize) > $custom_maxsize * 1024 * 1024) {
-                                $form_errors[] = __('Error! The file exceeds the allowed size of', 'frocket_front') . ' ' . $custom_maxsize . ' MB';
-                            }
-                            /*find attachment max size found*/
-                            $attachment_status = ($attachment_status < $custom_attach_st) ? $custom_attach_st : $attachment_status;
-
-                            $ext = strtolower(substr($_FILES['uiform_fields']['name'][$key], strrpos($_FILES['uiform_fields']['name'][$key], '.') + 1));
-                            if (!in_array($ext, $custom_allowedext)) {
-                                $form_errors[] = __('Error! Type of file is not allowed to upload', 'frocket_front');
-                            }
-                            if (empty($form_errors)) {
-                                $upload_data   = wp_upload_dir();  // look for this function in WordPress documentation at codex
-                                $upload_dir    = $upload_data['path'];
-                                $upload_dirurl = $upload_data['baseurl'];
-                                $upload_subdir = $upload_data['subdir'];
-                                $rename        = 'file_' . md5(uniqid($_FILES['uiform_fields']['name'][$key], true));
-
-                                $_FILES['uiform_fields']['name'][$key] = $rename . '.' . strtolower($ext);
-
-                                $form_f_tmp[$key]['input'] = $upload_dirurl . $upload_subdir . '/' . $_FILES['uiform_fields']['name'][$key];
-                                $form_f_rec_tmp[$key]      = $upload_dirurl . $upload_subdir . '/' . $_FILES['uiform_fields']['name'][$key];
-                                $form_fields[$key]         = $upload_dirurl . $upload_subdir . '/' . $_FILES['uiform_fields']['name'][$key];
-
-                                // attachment
-
-                                if ($_FILES['uiform_fields']['error'][$key] == UPLOAD_ERR_OK) {
-                                    $tmp_name = $_FILES['uiform_fields']['tmp_name'][$key]; // Get temp name of uploaded file
-                                    $name     = $_FILES['uiform_fields']['name'][$key];  // rename it to whatever
-                                    move_uploaded_file($tmp_name, "$upload_dir/$name"); // move file to new location
-                                    if (intval($custom_attach_st) === 1) {
-                                        $attachments[] = "$upload_dir/$name";  // push the new uploaded file in attachment array
+                        case 13:
+                            /*image upload*/
+                            $tmp_fdata = json_decode($tmp_field_name->data, true);
+    
+                            $tmp_options                     = array();
+                            $tmp_field_label                 = (!empty($tmp_fdata['label']['text'])) ? $tmp_fdata['label']['text'] : $tmp_field_name->fieldname;
+                            $form_f_tmp[$key]['type']      = $tmp_field_name->type;
+                            $form_f_tmp[$key]['fieldname'] = $tmp_field_name->fieldname;
+                            $form_f_tmp[$key]['label']     = $tmp_field_label;
+    
+                            $allowedext_default = array('aaaa', 'png', 'doc', 'docx', 'xls', 'xlsx', 'csv', 'txt', 'rtf', 'zip', 'mp3', 'wma', 'wmv', 'mpg', 'flv', 'avi', 'jpg', 'jpeg', 'png', 'gif', 'ods', 'rar', 'ppt', 'tif', 'wav', 'mov', 'psd', 'eps', 'sit', 'sitx', 'cdr', 'ai', 'mp4', 'm4a', 'bmp', 'pps', 'aif', 'pdf');
+                            $custom_allowedext  = (!empty($tmp_fdata['input16']['extallowed'])) ? array_map('trim', explode(',', $tmp_fdata['input16']['extallowed'])) : $allowedext_default;
+                            $custom_maxsize     = (!empty($tmp_fdata['input16']['maxsize'])) ? floatval($tmp_fdata['input16']['maxsize']) : 5;
+                            $custom_attach_st   = (isset($tmp_fdata['input16']['attach_st'])) ? intval($tmp_fdata['input16']['attach_st']) : 0;
+    
+                            if (
+                                isset($_FILES['uiform_fields']['name'][$key])
+                                && !empty($_FILES['uiform_fields']['name'][$key])
+                            ) {
+                                $fileSize = $_FILES['uiform_fields']['size'][$key];
+                                if (floatval($fileSize) > $custom_maxsize * 1024 * 1024) {
+                                    $form_errors[] = __('Error! The file exceeds the allowed size of', 'frocket_front') . ' ' . $custom_maxsize . ' MB';
+                                }
+                                /*find attachment max size found*/
+                                $attachment_status = ($attachment_status < $custom_attach_st) ? $custom_attach_st : $attachment_status;
+    
+                                $ext = strtolower(substr($_FILES['uiform_fields']['name'][$key], strrpos($_FILES['uiform_fields']['name'][$key], '.') + 1));
+                                if (!in_array($ext, $custom_allowedext)) {
+                                    $form_errors[] = __('Error! Type of file is not allowed to upload', 'frocket_front');
+                                }
+                                if ( empty( $form_errors ) ) {
+                                    $config['allowed_types'] = '*';
+                                    $config['max_size']      = $custom_maxsize * 1024 * 1024; // 0 = no file size limit
+                                    $this->upload->initialize( $config );
+    
+                                    $rename = 'file_' . md5( uniqid( $_FILES['uiform_fields']['name'][ $key ], true ) );
+    
+                                    $_FILES['uiform_fields']['name'][ $key ] = $rename . '.' . strtolower( $ext );
+    
+                                    // attachment
+    
+                                    if ( ! $this->upload->do_upload2( $key ) ) {
+                                        $form_errors[] = __( 'Error! File not uploaded - ' . $this->upload->display_errors( '<span>', '</span>' ), 'frocket_front' );
+                                    } else {
+                                        $data_upload_files = $this->upload->data();
+                                        $image             = base_url() . 'uploads/' . $data_upload_files['file_name'];
+                                        // getting image uploaed
+                                        if ( intval( $custom_attach_st ) === 1 ) {
+                                            $attachments[] = $data_upload_files['file_path'] . $data_upload_files['file_name'];
+                                        }
+    
+                                        $form_f_tmp[ $key ]['input'] = $image;
+                                        $form_f_rec_tmp[ $key ]      = $image;
+                                        $form_fields[ $key ]         = $image;
+    
                                     }
                                 }
+                            } else {
+                                unset($form_fields[$key]);
+                                $form_f_tmp[$key]['input'] = '';
+                                $form_f_rec_tmp[$key]      = '';
                             }
-                        } else {
-                            unset($form_fields[$key]);
-                            $form_f_tmp[$key]['input'] = '';
-                            $form_f_rec_tmp[$key]      = '';
-                        }
-
-                        break;
+    
+                            break;
                     case 16:
                         /*slider*/
                     case 18:
