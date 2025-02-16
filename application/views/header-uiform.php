@@ -18,9 +18,9 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 	  <ul class="sfdc-nav sfdc-navbar-nav">
 		  <li class="divider-menu"></li>
-		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown"> <span class="fa fa-file"></span> <?php echo __( 'Forms', 'FRocket_admin' ); ?><span class="caret"></span></a>
-		  <ul class="dropdown-menu" role="menu">
+		<li class="sfdc-dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="sfdc-dropdown"> <span class="fa fa-file"></span> <?php echo __( 'Forms', 'FRocket_admin' ); ?><span class="caret"></span></a>
+		  <ul class="sfdc-dropdown-menu" role="menu">
 			<li><a href="<?php echo site_url() . 'formbuilder/forms/choose_mode'; ?>"><?php echo __( 'New', 'FRocket_admin' ); ?></a></li>
 			 
 			<li class="divider"></li>
@@ -33,10 +33,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 			?>
 		 
 		<li class="divider-menu"></li>
-		<li class="dropdown">
+		<li class="sfdc-dropdown">
 		  <a href="#" class="dropdown-toggle" 
-			 data-toggle="dropdown"><span class="fa fa-desktop"></span> <?php echo __( 'Preview', 'FRocket_admin' ); ?> <span class="caret"></span></a>
-		  <ul class="dropdown-menu" role="menu">
+			 data-toggle="sfdc-dropdown"><span class="fa fa-desktop"></span> <?php echo __( 'Preview', 'FRocket_admin' ); ?> <span class="caret"></span></a>
+		  <ul class="sfdc-dropdown-menu" role="menu">
 			<li><a onclick="javascript:rocketform.previewform_showForm(1);" 
 				   href="javascript:void(0);">
 					   <?php echo __( 'desktop', 'FRocket_admin' ); ?></a></li>
@@ -50,10 +50,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 		</li>
 		<?php } ?>
 		<li class="divider-menu"></li>
-		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		<li class="sfdc-dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="sfdc-dropdown">
 			  <span class="fa fa-question-circle"></span> <?php echo __( 'Records', 'FRocket_admin' ); ?><span class="caret"></span></a>
-		  <ul class="dropdown-menu" role="menu">
+		  <ul class="sfdc-dropdown-menu" role="menu">
 			<li><a href="<?php echo site_url() . 'formbuilder/records/list_records'; ?>">
 				<?php echo __( 'List all Forms', 'FRocket_admin' ); ?>
 				</a>
@@ -120,10 +120,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 			</a>
 		</li>
 		<li class="divider-menu"></li>
-		<li class="dropdown">
-		  <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+		<li class="sfdc-dropdown">
+		  <a href="#" class="dropdown-toggle" data-toggle="sfdc-dropdown">
 			  <span class="fa fa-life-ring"></span> <?php echo __( 'Help', 'FRocket_admin' ); ?><span class="caret"></span></a>
-		  <ul class="dropdown-menu" role="menu">
+		  <ul class="sfdc-dropdown-menu" role="menu">
 			<li><a href="https://php-form-builder.zigaform.com/docs/" target="_blank">
 				<?php echo __( 'Documentation', 'FRocket_admin' ); ?>
 				</a>

@@ -404,6 +404,11 @@ class Frontend extends FrontendController
             $atts
         );
 
+// Automatically sanitize & validate each attribute.
+$vars = array_map(function($v) {
+    return sanitize_text_field($v);
+}, $vars);
+
         $result = '';
         $output = '';
 
@@ -458,6 +463,12 @@ class Frontend extends FrontendController
             ),
             $atts
         );
+        
+        // Automatically sanitize & validate each attribute.
+        $vars = array_map(function($v) {
+            return sanitize_text_field($v);
+        }, $vars);
+        
         if (strpos($vars['id'], '_') !== false) {
             $tmpResult = explode('_', $vars['id']);
             $f_data = $this->model_record->getFieldDataByIdOnMultistep($this->flag_submitted, $tmpResult[0], $tmpResult[1]);
@@ -537,7 +548,12 @@ class Frontend extends FrontendController
             ),
             $atts
         );
-
+        
+        // Automatically sanitize & validate each attribute.
+        $vars = array_map(function($v) {
+            return sanitize_text_field($v);
+        }, $vars);
+        
         switch ( strval($vars['atr1'])) {
             case 'label':
                 ob_start();
@@ -591,6 +607,12 @@ class Frontend extends FrontendController
             ),
             $atts
         );
+        
+        // Automatically sanitize & validate each attribute.
+        $vars = array_map(function($v) {
+            return sanitize_text_field($v);
+        }, $vars);
+        
         $output = '';
 
         if ( ! empty($vars['opt'])) {
@@ -667,6 +689,12 @@ class Frontend extends FrontendController
             ),
             $atts
         );
+        
+        // Automatically sanitize & validate each attribute.
+        $vars = array_map(function($v) {
+            return sanitize_text_field($v);
+        }, $vars);
+        
         $output = '';
 
         $rec_id = $this->flag_submitted;
