@@ -12729,7 +12729,7 @@ body {
 
 #zgfm_form_mode_choose .template-selector .tiny-card {
   cursor: pointer;
-  width: 100px;
+  width: 200px;
   height: 150px;
   overflow: hidden;
   border-radius: 8px;
@@ -12737,26 +12737,29 @@ body {
   display: flex;
   flex-direction: column;
   transition: transform 0.3s ease-in-out;
+  background-color: #f0f0f0;
+  padding: 5px;
 }
 
 #zgfm_form_mode_choose .template-selector .tiny-card:hover {
   transform: scale(1.05);
   border-color: #4991c6;
+  background-color: #fff;
 }
 
 #zgfm_form_mode_choose .template-selector .tiny-card .zgfm-thumbnail {
   flex: 1;
+  height: 65px;
 }
 
 #zgfm_form_mode_choose .template-selector .tiny-card .zgfm-thumbnail img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 #zgfm_form_mode_choose .template-selector .tiny-card .title {
   padding: 16px;
-  background-color: #f0f0f0;
   text-align: center;
 }
 
@@ -16323,12 +16326,16 @@ button {
   float: right;
 }
 
+.uiform-set-panel-header-fldnme {
+  display: flex;
+}
+
 .uiform-set-panel-header-fldnme label {
-  float: left;
+  width: 100px;
 }
 
 .uiform-set-panel-header-fldnme input {
-  width: 149px !important;
+  flex: 1;
 }
 
 .uiform_popover_frontend {
