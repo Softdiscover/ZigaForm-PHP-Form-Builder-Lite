@@ -135,17 +135,17 @@ class Hooking {
 	}
 
 	/**
-	 * Hooking::do_filter()
+	 * Hooking::apply_filters()
 	 *
 	 * Calls the actual filter (usually placed in a view)
 	 * e.g.
-	 * <h1><?php echo do_filter('welcome_title', 'Welcome to Codeigniter'); ?></h1>
+	 * <h1><?php echo apply_filters('welcome_title', 'Welcome to Codeigniter'); ?></h1>
 	 *
 	 * @param string $name The name of the action to execute
 	 * @param array  $args The list of parameters to pass on to the action (optional)
 	 * @return string
 	 */
-	public function do_filter( $name, $value, $args = array() ) {
+	public function apply_filters( $name, $value, $args = array() ) {
 		$result = $value;
 		if ( isset( $this->_filters[ $name ] ) && is_array( $this->_filters[ $name ] ) ) {
 			foreach ( $this->_filters[ $name ] as $filter ) {

@@ -70,7 +70,7 @@ class Fields extends BackendController
     {
 
         $data_render = array();
-        $this->back_cache_tab_more = do_filter('zgfm_back_field_opt_more', array());
+        $this->back_cache_tab_more = apply_filters('zgfm_back_field_opt_more', array());
         $array = array( 1, 2, 3, 4, 5, 6, 8, 9, 10, 11 );
         foreach ( $array as $type) {
             switch ( intval($type)) {
@@ -291,7 +291,7 @@ class Fields extends BackendController
                 if (intval(get_option('zgfm_fields_fastload', 0)) === 0) {
                     $data['modules_field_more'] = $this->back_cache_tab_more;
                 } else {
-                    $data['modules_field_more'] = do_filter('zgfm_back_field_opt_more', '');
+                    $data['modules_field_more'] = apply_filters('zgfm_back_field_opt_more', '');
                 }
                 $data['obj_sfm']            = Uiform_Form_Helper::get_font_library();
                     $output                .= $this->load->view('formbuilder/fields/modal/field_opt_text', $data, true);

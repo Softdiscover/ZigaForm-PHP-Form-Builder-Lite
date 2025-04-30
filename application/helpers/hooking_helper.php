@@ -41,9 +41,9 @@ if ( ! function_exists( 'remove_filter' ) ) {
 	}
 }
 
-if ( ! function_exists( 'do_filter' ) ) {
-	function do_filter( $name, $value , ...$args) {
-		return get_hooking_instance()->do_filter( $name, $value, $args );
+if ( ! function_exists( 'apply_filters' ) ) {
+	function apply_filters( $name, $value , ...$args) {
+		return get_hooking_instance()->apply_filters( $name, $value, $args );
 	}
 }
 

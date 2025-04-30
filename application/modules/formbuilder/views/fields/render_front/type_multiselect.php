@@ -15,7 +15,7 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ob_start();
-$nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."][]", $id, $type);
+$nameField =  apply_filters('uifm_ms_render_field_front', "uiform_fields[".$id."][]", $id, $type);
 ?>
  <?php
     $defaul_class = 'sfdc-form-control uifm-input2-opt-main ';

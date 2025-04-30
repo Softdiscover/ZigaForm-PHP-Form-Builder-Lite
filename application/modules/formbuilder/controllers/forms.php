@@ -1353,7 +1353,7 @@ class Forms extends BackendController
         $str_output_2 .= $this->generate_form_css($form_id);
 
         //generate css hook
-        $str_output_2 .= do_filter('zgfm_front_ms_aditional_css', $form_id);
+        $str_output_2 .= apply_filters('zgfm_front_ms_aditional_css', $form_id);
 
         $return                = array();
         $return['output_html'] = $this->generate_form_container_multistep($form_id);
@@ -1373,8 +1373,8 @@ class Forms extends BackendController
         $data['onsubm']       = $this->current_data_onsubm;
         $data['main']         = $this->current_data_main;
         $data['connections'] = $this->current_data_conn;
-        $data['outertop'] = do_filter('zgfm_front_ms_form_outertop', '');
-        $data['innertop'] = do_filter('zgfm_front_ms_form_innertop', '');
+        $data['outertop'] = apply_filters('zgfm_front_ms_form_outertop', '');
+        $data['innertop'] = apply_filters('zgfm_front_ms_form_innertop', '');
         return $this->load->view('formbuilder/forms/formhtml_form_parent', $data, true);
     }
 
@@ -1609,7 +1609,7 @@ class Forms extends BackendController
 
 
             // addon data
-            $fmb_addon_data =  do_filter('zgfm_back_addon_obtain_data', [], $data_form->fmb_parent);
+            $fmb_addon_data =  apply_filters('zgfm_back_addon_obtain_data', [], $data_form->fmb_parent);
 
             // all data fields
             $fmb_data['addons'] = $fmb_addon_data;
@@ -1626,7 +1626,7 @@ class Forms extends BackendController
             );
 
             // process addons
-            $fmb_data = do_filter('zgfm_back_animtocore', $fmb_data, $json['id']);
+            $fmb_data = apply_filters('zgfm_back_animtocore', $fmb_data, $json['id']);
 
             // all data fields
             //$this->current_data_addon    = $fmb_data['addons'];
@@ -1787,7 +1787,7 @@ class Forms extends BackendController
             );
 
             // process addons
-            $fmb_data = do_filter('zgfm_saveForm_store', $fmb_data, $json['id']);
+            $fmb_data = apply_filters('zgfm_saveForm_store', $fmb_data, $json['id']);
 
             // all data fields
             $this->current_data_addon    = $fmb_data['addons'];
@@ -1942,7 +1942,7 @@ class Forms extends BackendController
         $data['addon_extraclass'] = '';
         
         // process addons
-        $data = do_filter('zgfm_field_addon_extraclass', $data);
+        $data = apply_filters('zgfm_field_addon_extraclass', $data);
         // process addons
         /*if (!empty(self::$_addons_actions)) {
             foreach (self::$_addons_actions as $zkey => $zvalue) {

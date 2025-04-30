@@ -219,7 +219,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	$file1 = base_url() . 'extensions/elfinder2/elfinder.php?XSRFToken=' . getXSRFToken( 'elFinder' );
 	$file2 = base_url() . 'extensions/elfinder2/elfinder2.php?XSRFToken=' . getXSRFToken( 'elFinder' );
 
-	$tmp_uiform_vars = do_filter(
+	$tmp_uiform_vars = apply_filters(
 		'zgfm_back_filter_globalvars',
 		array(
 			'fields_fastload' => $fields_fastload,

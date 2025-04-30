@@ -200,7 +200,7 @@ class Frontend extends FrontendController
             $form_variables['_uifmvar']['is_dev']  = 0;
             $form_variables['onload_scroll']       = $onload_scroll;
             $form_variables['preload_noconflict']  = $preload_noconflict;
-            $enqueue_scripts                       = do_filter('zgfm_front_enqueue_scripts', array());
+            $enqueue_scripts                       = apply_filters('zgfm_front_enqueue_scripts', array());
 
             $data_scripts = array();
             $data_styles  = array();
@@ -312,7 +312,7 @@ class Frontend extends FrontendController
             $form_variables['_uifmvar']['is_dev']  = 0;
             $form_variables['onload_scroll']       = $onload_scroll;
             $form_variables['preload_noconflict']  = $preload_noconflict;
-            $form_variables['enqueue_scripts']     = do_filter('zgfm_front_enqueue_scripts', array());
+            $form_variables['enqueue_scripts']     = apply_filters('zgfm_front_enqueue_scripts', array());
             $form_variables['ajaxurl']             = '';
             $form_variables['uifm_baseurl']        = base_url();
             $form_variables['uifm_siteurl']        = site_url();

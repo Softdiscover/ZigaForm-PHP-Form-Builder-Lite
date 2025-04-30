@@ -4481,7 +4481,7 @@ function esc_html( $text ) {
 	 * @param string $safe_text The text after it has been escaped.
 	 * @param string $text      The text prior to being escaped.
 	 */
-	return do_filter( 'esc_html', $safe_text, $text );
+	return apply_filters( 'esc_html', $safe_text, $text );
 }
 
 /**

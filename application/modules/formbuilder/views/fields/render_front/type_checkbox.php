@@ -36,7 +36,7 @@ if ( intval($input2['style_type']) === 1) {
 usort($input2['options'], ['Uiform_Form_Helper', 'compareByOrder']);
 foreach ( $input2['options'] as $key => $value) {
     $checked = '';
-    $nameField =  do_filter('uifm_ms_render_field_front', "uiform_fields[".$id."][".$value['id']."]", $id, $type, $value['id']);
+    $nameField =  apply_filters('uifm_ms_render_field_front', "uiform_fields[".$id."][".$value['id']."]", $id, $type, $value['id']);
     if ( isset($value['checked']) && intval($value['checked']) === 1) {
         $checked = 'checked="checked"';
     }
