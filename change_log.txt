@@ -1,3 +1,9 @@
+version 7.5.4
+[update] - improve style of form, records page
+-----------------------------------------------------------------------------------------------------------------
+version 7.5.2
+[new] - allow to hide forms from frontend
+-----------------------------------------------------------------------------------------------------------------
 version 7.5.0
 [fix] - form not submitting
 -----------------------------------------------------------------------------------------------------------------
@@ -85,7 +91,7 @@ version 7.1.2
 [new] - placeholder efect on textbox and textarea
 -----------------------------------------------------------------------------------------------------------------
 version 7.1.1
-[update] - minor change 
+[update] - minor change
 -----------------------------------------------------------------------------------------------------------------
 version 7.1.0
 [fix] - minor change
@@ -256,7 +262,7 @@ version 5.5
 version 5.4
 [note] - dompdf can not be upgraded because it requires php version 7.1. and the plugins support from wp 5.0+ and it requires 5.4
 [update] - inline css was removed except for the one that generated dynamically. also inline css was left for mail notification and pdf content.
-[update] - inline javascript was removed except for the ones that are generated dynamically. woocommerce plugin as reference. 
+[update] - inline javascript was removed except for the ones that are generated dynamically. woocommerce plugin as reference.
 [update] - all libraries updated.
 [update] - click() is a shorthand for .on( "click", handler ), so there is not need to change it. e.g. woocommerce, wordpress core
 [update] - All JavaScript are written with "use strict" mode on
@@ -341,7 +347,7 @@ Version 4.9.4
     [fixed] - issue on conditional logic
 -----------------------------------------------------------------------------------------------------------------
 Version 4.9.3
-    [fixed] - select list field issue & addons not activating 
+    [fixed] - select list field issue & addons not activating
 -----------------------------------------------------------------------------------------------------------------
 Version 4.9.2
     [fixed] - adding decimals to spinner
@@ -360,11 +366,11 @@ Version 4.8.7
 -----------------------------------------------------------------------------------------------------------------
 Version 4.8.6
     [fixed] - font issue
------------------------------------------------------------------------------------------------------------------    
+-----------------------------------------------------------------------------------------------------------------
 Version 4.8.5
     [fixed] - pdf issue
     [fixed] - preview mode
------------------------------------------------------------------------------------------------------------------    
+-----------------------------------------------------------------------------------------------------------------
 Version 4.8.3
     [fixed] - minor changes
 -----------------------------------------------------------------------------------------------------------------
@@ -458,13 +464,13 @@ Version 4.5.4
 Version 4.5.3
    [update] -  improving system check feature
    [fixed] - lessc issue
-   [new] - webhook extension 
+   [new] - webhook extension
 -----------------------------------------------------------------------------------------------------------------
 Version 4.5
    [fixed] -  smtp settings
 -----------------------------------------------------------------------------------------------------------------
 Version 4.4
-   [fixed] -  fast load issue 
+   [fixed] -  fast load issue
 -----------------------------------------------------------------------------------------------------------------
 Version 4.3
    [fixed] -  adding SMTP Connection Security
@@ -476,7 +482,7 @@ Version 3.9.9.9.9
    [fixed] -  calc variables issue
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.9.9.8
-   [fixed] -  small slider 
+   [fixed] -  small slider
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.9.9.7
    [fixed] -  minor issue
@@ -532,7 +538,7 @@ Version 3.9.9.8
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.9.7.9
    [fixed] -  issue on summary shortcode
-   [fixed] -  showing euro symbol 
+   [fixed] -  showing euro symbol
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.9.7.8
    [fixed] -  preview issue
@@ -542,7 +548,7 @@ Version 3.9.9.7.7
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.9.7.5
    [fixed] -  issue on updating custom invoice
-   [fixed] -  export issue, custom invoice and record included 
+   [fixed] -  export issue, custom invoice and record included
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.9.7.3
    [fixed] -  issue on checkbox and radio button
@@ -623,17 +629,17 @@ Version 3.9.8.9.6
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.8.9.5
    [fixed] - backup issue
-   [fixed] - conditional logic 
+   [fixed] - conditional logic
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.8.9.4
    [added] - db issues
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.8.9.3
-   [added] - minor changes 
+   [added] - minor changes
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.8.9.2
    [fixed] - scrolldown on wizard button
-   [added] - minor changes 
+   [added] - minor changes
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.8.9.1
    [fixed] - backup issue
@@ -647,7 +653,7 @@ Version 3.9.8.8
 Version 3.9.8.7
    [added] - fast load on fields
    [added] - added alert on error when saving form
-   [fixed] - minor issues 
+   [fixed] - minor issues
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.8.4
    [fixed] - issue with sub grids
@@ -669,7 +675,7 @@ Version 3.9.7.9
    [update] - minor issues - fix popovers tooltip closings
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.7.8
-   [update] - fix font library 
+   [update] - fix font library
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.7.7
    [fixed] - php scripts - upgrade iframe library
@@ -761,7 +767,7 @@ Version 3.9.1.9
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.1.8
    [fixed] -  minor changes
-   [new] - added thumbnails to image field 
+   [new] - added thumbnails to image field
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.1.7.1
    [fixed] -  recaptcha and captcha issue
@@ -777,7 +783,7 @@ Version 3.9.1.5
    [fixed] -  tinymce allow empty tags
    [fixed] -  variable input for select, checkbox not working
 -----------------------------------------------------------------------------------------------------------------
-Version 3.9.1.4 
+Version 3.9.1.4
    [fixed] -  only php versions - update wizard installer
 -----------------------------------------------------------------------------------------------------------------
 Version 3.9.1.3
@@ -817,7 +823,7 @@ Version 3.8.9.4
    [fixed] - only php estimator - wizard issue
 -----------------------------------------------------------------------------------------------------------------
 Version 3.8.9.3
-   [fixed] - modifying text on panel field 
+   [fixed] - modifying text on panel field
 -----------------------------------------------------------------------------------------------------------------
 Version 3.8.9.2
    [fixed] - conflict with accordion
@@ -833,7 +839,7 @@ Version 3.8.7
 -----------------------------------------------------------------------------------------------------------------
 Version 3.8.6
    [fixed] - image background was not working on column field
-   [fixed] - only calculators - calculation event on spinner keyup 
+   [fixed] - only calculators - calculation event on spinner keyup
 -----------------------------------------------------------------------------------------------------------------
 Version 3.8.5
    [fixed] - add search filder to forms list
@@ -883,7 +889,7 @@ Version 3.7.8
 -----------------------------------------------------------------------------------------------------------------
 Version 3.7.7
    [fixed] - checkbox and radibutton not working on mobile
-   [update] - optimization changes 
+   [update] - optimization changes
    [new] - add custom class and id
 -----------------------------------------------------------------------------------------------------------------
 Version 3.7.6.6
@@ -894,7 +900,7 @@ Version 3.7.6.5
 -----------------------------------------------------------------------------------------------------------------
 Version 3.7.6.4
    [update] - updating support urls
-   [fixed] - minor changes 
+   [fixed] - minor changes
 -----------------------------------------------------------------------------------------------------------------
 Version 3.7.6.3
    [fixed] - db correction
@@ -914,7 +920,7 @@ Version 3.7.5.2
 Version 3.7.4
    [new] - adding whole control of html mail notification content
    [new] - adding whole control of html for pdf generation
-   [new] - option to preview email template and pdf  
+   [new] - option to preview email template and pdf
 -----------------------------------------------------------------------------------------------------------------
 Version 3.7.3
    [fixed] - issue with modal loader
@@ -938,9 +944,9 @@ Version 3.6.4.2
 -----------------------------------------------------------------------------------------------------------------
 Version 3.6.4.1
    [fixed] - missed update modal mode variable
-   [fixed] - some adjustments to math calculation 
+   [fixed] - some adjustments to math calculation
    [fixed] - issue select list
-   [fixed] - invoice format when math calc enabled 
+   [fixed] - invoice format when math calc enabled
 -----------------------------------------------------------------------------------------------------------------
 Version 3.6.4
    [fixed] - somes customizations on backend
@@ -992,11 +998,11 @@ Version 3.3.2
 Version 3.3.1
    [fixed] - background image problem on column field
    [fixed] - compress html when storing on database
-   [fixed] - only estimators - record info 
+   [fixed] - only estimators - record info
 -----------------------------------------------------------------------------------------------------------------
 Version 3.3
    [fixed] - update html, js, css minifier
-   [fixed] - placeholder on internet explorer was not working 
+   [fixed] - placeholder on internet explorer was not working
 -----------------------------------------------------------------------------------------------------------------
 Version 3.2.3
    [fixed] - format shortcode summary for mail notification
@@ -1010,7 +1016,7 @@ Version 3.2.1
 -----------------------------------------------------------------------------------------------------------------
 Version 3.2
    [update] - fix backup
-   [update] - fix issue related to panel field 
+   [update] - fix issue related to panel field
 -----------------------------------------------------------------------------------------------------------------
 Version 3.1.7
    [fixed] - issue showing header menu
@@ -1042,7 +1048,7 @@ Version 3
    [new] - custom checkbox, radiobutton, select
    [new] - rollback option
    [new] - new grid system
-   [new] - new better skin panel 
+   [new] - new better skin panel
 -----------------------------------------------------------------------------------------------------------------
 Version 2.9.8.3
    [update] - migrating to sfdc namespace
@@ -1086,7 +1092,7 @@ Version 2.9.6.8
    [fixed] - sql injection on models
 -----------------------------------------------------------------------------------------------------------------
 Version 2.9.6.7
-   [fixed] - related to dyncheckbox and edition panels 
+   [fixed] - related to dyncheckbox and edition panels
 -----------------------------------------------------------------------------------------------------------------
 Version 2.9.6.6
    [fixed] - support to php7
@@ -1127,7 +1133,7 @@ Version 2.9.6.4
    [fixed] - wizard buttons were not working fine when two forms are used in the same page
 ------------------------------------------------------------------------------------------------------------------
 Version 2.9.6.3
-   [fixed] - error on function 
+   [fixed] - error on function
 ------------------------------------------------------------------------------------------------------------------
 Version 2.9.6.2
    [fixed] - wizard installer was setting bad writting permision
@@ -1142,10 +1148,10 @@ Version 2.9.5
    [fixed] - wizard form issue when clicking on tab
 -------------------------------------------------------------------------------------------------------------------
 Version 2.9.4
-   [added] - mysqli backup option 
+   [added] - mysqli backup option
 -------------------------------------------------------------------------------------------------------------------
 Version 2.9.3
-   [fixed] - pdf feature was not working fine because of temp folder issue 
+   [fixed] - pdf feature was not working fine because of temp folder issue
    [fixed] - placeholder text issue when using quotes
 -------------------------------------------------------------------------------------------------------------------
 Version 2.9.2
@@ -1254,7 +1260,7 @@ Version 1.4
     [new] - option to email to customer
     [new] - options to configure the mail notification for customers
     [new] - dyn checkbox and radio button added to conditional logic
-    [new] - form variables in order to customize message of mail notification 
+    [new] - form variables in order to customize message of mail notification
 ------------------------------------------------------------------------------------------------------------------
 -------------------------------------------------------------------------------------------------------------------
 Version 1.3.6

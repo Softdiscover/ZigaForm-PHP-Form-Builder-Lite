@@ -47,7 +47,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 			<?php } ?>
 		  </ul> 
 	<div id="zgfm-sidebar-show-ver">
-		Zigaform Version <?php echo model_settings::$db_config['version']; ?>
+		Zigaform Version <?php echo model_settings::$db_config['version']; ?> <?php echo (ZIGAFORM_F_LITE)?'Free':'Pro'; ?>
 	</div>
 </div>
 

@@ -1,5 +1,5 @@
-# Copyright (C) 2025 Zigaform PHP Form Builder 7.5.0
-# This file is distributed under the same license as the Zigaform PHP Form Builder 7.5.0 package.
+# Copyright (C) 2025 Zigaform PHP Form Builder 7.5.4
+# This file is distributed under the same license as the Zigaform PHP Form Builder 7.5.4 package.
 msgid ""
 msgstr ""
 "Project-Id-Version: Rocket form\n"
@@ -38,11 +38,11 @@ msgstr "Error! Type of file is not allowed to upload"
 msgid "New form request"
 msgstr "Новый запрос форма"
 
-#: application/modules/formbuilder/controllers/records.php:416
+#: application/modules/formbuilder/controllers/records.php:417
 msgid " , version : "
 msgstr " , version : "
 
-#: application/modules/formbuilder/controllers/records.php:416
+#: application/modules/formbuilder/controllers/records.php:417
 msgid " , platform : "
 msgstr " , platform : "
 

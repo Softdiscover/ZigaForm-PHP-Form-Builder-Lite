@@ -75,7 +75,7 @@ if ( ! defined('BASEPATH')) {
                                                          <?php } ?> 
                                                 </div>
                                                 <div class="space10"></div>
-                                                <button type="submit" class="btn sfdc-btn-large sfdc-btn-primary"><?php echo __('Sign in', 'FRocket_admin'); ?></button>
+                                                <button type="submit" class="sfdc-btn sfdc-btn-large sfdc-btn-primary"><?php echo __('Sign in', 'FRocket_admin'); ?></button>
                                                 <?php
                                                 echo form_close();
                                                 ?>

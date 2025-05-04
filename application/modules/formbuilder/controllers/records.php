@@ -330,6 +330,7 @@ class Records extends BackendController
 
         $data               = array();
         $data['list_forms'] = $this->model_forms->getListForms();
+        $data['chosen_form'] = isset($_GET['form_id'])?(int)$_GET['form_id']:0;
         $this->template->loadPartial('layout', 'records/list_records_byforms', $data);
     }
 

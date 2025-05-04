@@ -110,7 +110,7 @@ class Settings extends BackendController
 
     public function ajax_blocked_getmessage()
     {
-         
+
         $message = (isset($_POST['message']) && $_POST['message']) ? Uiform_Form_Helper::sanitizeInput($_POST['message']) : '';
 
         $data            = array();
@@ -254,13 +254,20 @@ class Settings extends BackendController
             update_option('zgfm_fields_fastload', 0);
         }
 
+        $uifm_frm_forms_front_hide = (isset($_POST['uifm_frm_forms_front_hide']) && $_POST['uifm_frm_forms_front_hide']) ? Uiform_Form_Helper::sanitizeInput($_POST['uifm_frm_forms_front_hide']) : 0;
+        if ((string) $uifm_frm_forms_front_hide === 'on') {
+            update_option('uifm_frm_forms_front_hide', 1);
+        } else {
+            update_option('uifm_frm_forms_front_hide', 0);
+        }
+
         $recordexpsetting = (isset($_POST['uifm_frm_main_recordexpsetting']) && $_POST['uifm_frm_main_recordexpsetting']) ? filter_var($_POST['uifm_frm_main_recordexpsetting'], FILTER_SANITIZE_FULL_SPECIAL_CHARS) : '';
         if ($recordexpsetting !== '') {
             update_option('zgfm_frm_main_recexpdelimiter', $recordexpsetting);
         } else {
             update_option('zgfm_frm_main_recexpdelimiter', '');
         }
-        
+
         $this->db->set($data);
         $this->db->where($where);
         $this->db->update($this->model_settings->table);
@@ -293,6 +300,7 @@ class Settings extends BackendController
         $data['lang_list']       = Uiform_Form_Helper::getLanguageList($pofilespath);
         $data['zgfm_frm_main_recexpdelimiter']       = get_option('zgfm_frm_main_recexpdelimiter', '');
         $data['fields_fastload'] = get_option('zgfm_fields_fastload', 0);
+        $data['uifm_frm_forms_front_hide'] = get_option('uifm_frm_forms_front_hide', 0);
 
         $this->template->loadPartial('layout', 'settings/view_settings', $data);
     }
@@ -391,29 +399,29 @@ class Settings extends BackendController
         $manifestData = $this->manifestIsOk();
         $data['manifestStatus'] = $manifestData['status'];
         $data['manifestFailed']= $manifestData['failed'];
-        
+
         $this->template->loadPartial('layout', 'formbuilder/settings/system_check', $data);
     }
     private function calculateChecksum($filePath) {
         return hash_file('md5', $filePath);
     }
     private function manifestIsOk(){
-        $status = true; 
+        $status = true;
             // Load the manifest file
             $cur = dirname(APPPATH).'/';
             $manifestPath = $cur.'assets/backend/json/manifest.json';
-            
+
             if(!file_exists($manifestPath) || empty(file_get_contents($manifestPath))){
                 return [
                     'status'=> $status,
                     'failed'=>[]
                     ];
             }
-            
+
             $manifest = json_decode(file_get_contents($manifestPath), true);
-            
+
             // Function to calculate checksum of a file
-            
+
             $failed=[];
             // Check the integrity of the uploaded files
             foreach ($manifest as $file => $expectedChecksum) {
@@ -432,20 +440,20 @@ class Settings extends BackendController
                 if (strpos($file, "i18n/languages/") === 0) {
                     continue;
                 }
-                
+
                 if (file_exists($cur.$file)) {
                     $actualChecksum = $this->calculateChecksum($cur.$file);
                     if ($actualChecksum !== $expectedChecksum) {
-                        
+
                         $failed[]= $cur.$file;
                         $status = false;
-                    }  
+                    }
                 } else{
                     $failed[]= $cur.$file;
                     $status = false;
-                } 
+                }
             }
-            
+
             return [
             'status'=> $status,
             'failed'=>$failed

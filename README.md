@@ -95,7 +95,7 @@ Send personalized emails to users after they submit a form. These emails can inc
 5. Extended HTML documentation
 6. Priority support and upgrades
 
-**Try out [Zigaform Form Builder Premium](https://codecanyon.net/item/zigaform-php-form-builder-contact-survey/14889427?ref=softdiscover)**
+**Try out [Zigaform Form Builder Premium](https://shop.softdiscover.com/downloads/zigaform-php-form-builder-contact-survey/?utm_source=github&utm_medium=referral)**
 
 For more information, visit [Softdiscover Zigaform](https://softdiscover.com/zigaform).
 

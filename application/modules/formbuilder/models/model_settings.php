@@ -108,7 +108,8 @@ class model_settings extends CI_Model
     {
          $this->load->library('cache');
         $data = $this->cache->get('settings');
-        if ( empty($data)) {
+
+        if ( empty($data) ) {
             $this->db->select('site_title, admin_mail, type_email,smtp_host,smtp_port,smtp_user,smtp_pass,smtp_conn,sendmail_path,language,version');
             $this->db->from('{PRE}uiform_settings');
             $this->db->where(array( 'id' => 1 ));
@@ -128,8 +129,14 @@ class model_settings extends CI_Model
                 self::$db_config['language']      = $row->language;
                 self::$db_config['version']       = UIFORM_VERSION;
 
+                self::$db_config['opt_hide_form_front'] = get_option('uifm_frm_forms_front_hide', 0);
+
+
                 $this->cache->write(self::$db_config, 'settings');
             }
+
+
+
         } else {
             self::$db_config['site_title']    = $data['site_title'];
             self::$db_config['admin_mail']    = $data['admin_mail'];
@@ -141,13 +148,14 @@ class model_settings extends CI_Model
             self::$db_config['smtp_conn']     = $data['smtp_conn'];
             self::$db_config['sendmail_path'] = $data['sendmail_path'];
             self::$db_config['language']      = $data['language'];
+            self::$db_config['opt_hide_form_front'] = isset($data['opt_hide_form_front'])?$data['opt_hide_form_front']:0;
             self::$db_config['version']       = UIFORM_VERSION;
         }
     }
 
     public function getAllDatabases()
     {
-        
+
         return (array) $this->db->list_tables();
     }
 

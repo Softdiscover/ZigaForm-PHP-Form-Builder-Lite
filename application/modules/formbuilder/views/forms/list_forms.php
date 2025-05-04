@@ -15,7 +15,7 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ?>
-<div id="uiform-container" data-uiform-page="form_list" class="sfdc-wrap uiform-wrap">
+<div id="uiform-container" data-uiform-page="form_list" class="sfdc-wrap uiform-wrap zgfm_page_list_forms">
     <div class="space20"></div>
     <div class="sfdc-row">
         <div class="col-lg-12">
@@ -23,7 +23,7 @@ if ( ! defined('BASEPATH')) {
             <div class="widget-header">
                 <i class="fa fa-list-alt"></i>
                 <h5>
-                <?php echo __('List forms.', 'FRocket_admin'); ?>
+                <?php echo __('Form List', 'FRocket_admin'); ?>
                 </h5>
                 <div class="widget-buttons">
                     

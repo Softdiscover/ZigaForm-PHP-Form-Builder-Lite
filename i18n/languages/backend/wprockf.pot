@@ -1,12 +1,12 @@
-# Copyright (C) 2025 Zigaform WP Cost Estimation Form Builder 7.5.0
-# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 7.5.0 package.
+# Copyright (C) 2025 Zigaform WP Cost Estimation Form Builder 7.5.4
+# This file is distributed under the same license as the Zigaform WP Cost Estimation Form Builder 7.5.4 package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 7.5.0\n"
+"Project-Id-Version: Zigaform WP Cost Estimation Form Builder 7.5.4\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2025-04-30 16:40+0000\n"
+"POT-Creation-Date: 2025-05-04 08:20+0000\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -122,7 +122,7 @@ msgstr ""
 msgid "smartphone"
 msgstr ""
 
-#: application/views/header-uiform.php:55, application/modules/formbuilder/views/forms/create_form.php:172
+#: application/views/header-uiform.php:55, application/modules/formbuilder/views/forms/create_form.php:172, application/modules/formbuilder/views/forms/list_forms_table.php:102
 msgid "Records"
 msgstr ""
 
@@ -158,7 +158,7 @@ msgstr ""
 msgid "Form Settings"
 msgstr ""
 
-#: application/views/header-uiform.php:109, application/modules/default/views/intranet/gopro.php:83, application/modules/formbuilder/views/settings/backup_settings.php:30
+#: application/views/header-uiform.php:109, application/modules/formbuilder/views/settings/backup_settings.php:30
 msgid "Backup"
 msgstr ""
 
@@ -228,6 +228,14 @@ msgstr ""
 
 #: application/views/frontend/footer.php:26
 msgid "Powered by ZigaForm"
+msgstr ""
+
+#: application/views/frontend/layout.php:79
+msgid "No public forms available"
+msgstr ""
+
+#: application/views/frontend/layout.php:80
+msgid "Forms have been hidden by the site administrator."
 msgstr ""
 
 #: application/modules/addon_func_anim/controllers/zfad_anim_back_lib.php:236
@@ -710,43 +718,43 @@ msgstr ""
 msgid "Order summary"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:420
+#: application/modules/formbuilder/controllers/records.php:421
 msgid "Entry information"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:421, application/modules/formbuilder/views/records/info_record.php:29
+#: application/modules/formbuilder/controllers/records.php:422, application/modules/formbuilder/views/records/info_record.php:29
 msgid "Submitted form data"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:422, application/modules/formbuilder/views/records/info_record.php:113
+#: application/modules/formbuilder/controllers/records.php:423, application/modules/formbuilder/views/records/info_record.php:113
 msgid "Additional info"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:423, application/modules/formbuilder/views/records/info_record.php:116, application/modules/formbuilder/views/records/list_records_getdatatable.php:25, application/modules/formbuilder/views/settings/backup_settings.php:67
+#: application/modules/formbuilder/controllers/records.php:424, application/modules/formbuilder/views/records/info_record.php:116, application/modules/formbuilder/views/records/list_records_getdatatable.php:25, application/modules/formbuilder/views/settings/backup_settings.php:67
 msgid "Date"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:424, application/modules/formbuilder/views/records/info_record.php:120
+#: application/modules/formbuilder/controllers/records.php:425, application/modules/formbuilder/views/records/info_record.php:120
 msgid "IP"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:425, application/modules/formbuilder/views/records/info_record.php:124
+#: application/modules/formbuilder/controllers/records.php:426, application/modules/formbuilder/views/records/info_record.php:124
 msgid "Client PC info"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:426
+#: application/modules/formbuilder/controllers/records.php:427
 msgid "Form URL"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:427, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:66, application/modules/formbuilder/views/forms/create_form_main.php:103, application/modules/formbuilder/views/forms/create_form_modals.php:97, application/modules/formbuilder/views/forms/create_form_modals.php:131, application/modules/formbuilder/views/forms/settings_form_email.php:571, application/modules/formbuilder/views/records/info_record.php:132
+#: application/modules/formbuilder/controllers/records.php:428, application/modules/formbuilder/views/forms/ajax_variables_openmodal.php:66, application/modules/formbuilder/views/forms/create_form_main.php:103, application/modules/formbuilder/views/forms/create_form_modals.php:97, application/modules/formbuilder/views/forms/create_form_modals.php:131, application/modules/formbuilder/views/forms/settings_form_email.php:571, application/modules/formbuilder/views/records/info_record.php:132
 msgid "Form name"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:461
+#: application/modules/formbuilder/controllers/records.php:462
 msgid "Records list"
 msgstr ""
 
-#: application/modules/formbuilder/controllers/records.php:495
+#: application/modules/formbuilder/controllers/records.php:496
 msgid "Records in trash"
 msgstr ""
 
@@ -954,35 +962,35 @@ msgstr ""
 msgid "Content"
 msgstr ""
 
-#: application/modules/default/views/intranet/about.php:27
+#: application/modules/default/views/intranet/about.php:122
 msgid "ABOUT"
 msgstr ""
 
-#: application/modules/default/views/intranet/about.php:29
+#: application/modules/default/views/intranet/about.php:125
 msgid "Zigaform is a drag and drop form builder with live preview which makes you to build your forms on few easy steps. Also it provides an advanced grid system and skin live customizer that makes you to build amazing forms."
 msgstr ""
 
-#: application/modules/default/views/intranet/about.php:36
+#: application/modules/default/views/intranet/about.php:132
 msgid "Rate Zigaform"
 msgstr ""
 
-#: application/modules/default/views/intranet/about.php:66, application/modules/default/views/intranet/about.php:51
+#: application/modules/default/views/intranet/about.php:151, application/modules/default/views/intranet/about.php:142
 msgid "Leave 5 Stars"
 msgstr ""
 
-#: application/modules/default/views/intranet/about.php:72
+#: application/modules/default/views/intranet/about.php:156
 msgid "Please leave 5 stars if you like the software and I’ll keep rolling new updates and cool features."
 msgstr ""
 
-#: application/modules/default/views/intranet/about.php:82
+#: application/modules/default/views/intranet/about.php:166
 msgid "Spread the Word"
 msgstr ""
 
-#: application/modules/default/views/intranet/about.php:89
+#: application/modules/default/views/intranet/about.php:172
 msgid "Create amazing forms with Zigaform"
 msgstr ""
 
-#: application/modules/default/views/intranet/about.php:90
+#: application/modules/default/views/intranet/about.php:173
 msgid "Ultimate PHP Form Builder by zigaform.com"
 msgstr ""
 
@@ -998,127 +1006,59 @@ msgstr ""
 msgid "Update password"
 msgstr ""
 
-#: application/modules/default/views/intranet/gopro.php:22
+#: application/modules/default/views/intranet/gopro.php:117
 msgid "Upgrade from Lite to PRO"
 msgstr ""
 
-#: application/modules/default/views/intranet/gopro.php:34
+#: application/modules/default/views/intranet/gopro.php:126
 msgid "Features"
 msgstr ""
 
-#: application/modules/default/views/intranet/gopro.php:35
+#: application/modules/default/views/intranet/gopro.php:127
 msgid "Lite"
 msgstr ""
 
-#: application/modules/default/views/intranet/gopro.php:36
+#: application/modules/default/views/intranet/gopro.php:128
 msgid "PRO"
 msgstr ""
 
-#: application/modules/default/views/intranet/gopro.php:42
-msgid "Drag and drop builder"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:48
-msgid "Grid system"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:56
-msgid "Skin customizer"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:62
-msgid "Graphic chart"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:68
-msgid "Form validation"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:73
-msgid "Duplicate fields"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:78
-msgid "42 form elements"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:88
-msgid "Export & Import forms"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:93
-msgid "Export Form records"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:98
-msgid "Wizard forms"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:103
-msgid "Conditional Logic"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:108
-msgid "Animated effects"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:113
-msgid "Filter and search submitted data"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:118
-msgid "Duplication form"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:123
-msgid "PDF feature"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:128
-msgid "Priority Support"
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:133
-msgid "Plus Many Other Features..."
-msgstr ""
-
-#: application/modules/default/views/intranet/gopro.php:150
+#: application/modules/default/views/intranet/gopro.php:172
 msgid "DOWNLOAD"
 msgstr ""
 
-#: application/modules/default/views/intranet/gopro.php:154
+#: application/modules/default/views/intranet/gopro.php:178
 msgid "GET STARTED"
 msgstr ""
 
-#: application/modules/default/views/intranet/help.php:20
+#: application/modules/default/views/intranet/help.php:103
 msgid "HELP"
 msgstr ""
 
-#: application/modules/default/views/intranet/help.php:25
+#: application/modules/default/views/intranet/help.php:107
 msgid "Creating forms is a complex process and the logic to make all the magic happen smoothly may not work quickly with every site. With over a lot of softwares and a very complex server eco-system some forms may run into issues. This is why zigaform includes a detailed knowledge base that can help with many common issues. Resources to additional support to fit your needs can be found below. "
 msgstr ""
 
-#: application/modules/default/views/intranet/help.php:34
+#: application/modules/default/views/intranet/help.php:116
 msgid "Knowledgebase"
 msgstr ""
 
-#: application/modules/default/views/intranet/help.php:40
+#: application/modules/default/views/intranet/help.php:122
 msgid "Online documentation"
 msgstr ""
 
-#: application/modules/default/views/intranet/help.php:45
+#: application/modules/default/views/intranet/help.php:127
 msgid "User guide"
 msgstr ""
 
-#: application/modules/default/views/intranet/help.php:58
+#: application/modules/default/views/intranet/help.php:141
 msgid "Online Support"
 msgstr ""
 
-#: application/modules/default/views/intranet/help.php:64
+#: application/modules/default/views/intranet/help.php:147
 msgid "Get help from professionals"
 msgstr ""
 
-#: application/modules/default/views/intranet/help.php:69
+#: application/modules/default/views/intranet/help.php:152
 msgid "Get support"
 msgstr ""
 
@@ -1875,7 +1815,7 @@ msgid "Success! Redirecting..."
 msgstr ""
 
 #: application/modules/formbuilder/views/forms/list_forms.php:26
-msgid "List forms."
+msgid "Form List"
 msgstr ""
 
 #: application/modules/formbuilder/views/forms/list_forms.php:40
@@ -1890,7 +1830,7 @@ msgstr ""
 msgid "Enable Form"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/list_forms.php:63, application/modules/formbuilder/views/forms/list_forms.php:67, application/modules/formbuilder/views/forms/list_forms_table.php:101, application/modules/formbuilder/views/forms/list_forms_table.php:102
+#: application/modules/formbuilder/views/forms/list_forms.php:63, application/modules/formbuilder/views/forms/list_forms.php:67, application/modules/formbuilder/views/forms/list_forms_table.php:105, application/modules/formbuilder/views/forms/list_forms_table.php:106
 msgid "Move to trash"
 msgstr ""
 
@@ -1958,7 +1898,7 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/list_forms_table.php:115, application/modules/formbuilder/views/records/list_records.php:89
+#: application/modules/formbuilder/views/forms/list_forms_table.php:119, application/modules/formbuilder/views/records/list_records.php:89
 msgid "there is not forms. Add new one"
 msgstr ""
 
@@ -1982,7 +1922,7 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: application/modules/formbuilder/views/forms/list_forms_table.php:104
+#: application/modules/formbuilder/views/forms/list_forms_table.php:108
 msgid "Move to Trash "
 msgstr ""
 
@@ -2802,8 +2742,12 @@ msgstr ""
 msgid "Show"
 msgstr ""
 
-#: application/modules/formbuilder/views/records/list_records_byforms.php:33
+#: application/modules/formbuilder/views/records/list_records_byforms.php:43, application/modules/formbuilder/views/records/list_records_byforms.php:36
 msgid "Export to csv"
+msgstr ""
+
+#: application/modules/formbuilder/views/records/list_records_byforms.php:34
+msgid "Export Records"
 msgstr ""
 
 #: application/modules/formbuilder/views/records/list_records_getdatatable.php:45
@@ -2850,7 +2794,7 @@ msgstr ""
 msgid "Upload Backup"
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/backup_settings.php:156, application/modules/formbuilder/views/settings/view_settings.php:154, application/modules/formbuilder/views/settings/view_settings.php:146
+#: application/modules/formbuilder/views/settings/backup_settings.php:156, application/modules/formbuilder/views/settings/view_settings.php:178, application/modules/formbuilder/views/settings/view_settings.php:170
 msgid "Save changes"
 msgstr ""
 
@@ -2979,7 +2923,7 @@ msgid "it allows to change the language"
 msgstr ""
 
 #: application/modules/formbuilder/views/settings/view_settings.php:76
-msgid "DISABLE FIELDS FAST LOAD"
+msgid "Disable Fast Load for Fields"
 msgstr ""
 
 #: application/modules/formbuilder/views/settings/view_settings.php:78
@@ -2987,26 +2931,34 @@ msgid "it allows to disable fast loading field."
 msgstr ""
 
 #: application/modules/formbuilder/views/settings/view_settings.php:100
-msgid "Regenerate cache fields"
+msgid "Hide forms from frontend"
 msgstr ""
 
 #: application/modules/formbuilder/views/settings/view_settings.php:102
-msgid "Generate cache field"
-msgstr ""
-
-#: application/modules/formbuilder/views/settings/view_settings.php:111
-msgid "Regeneate cache fields"
-msgstr ""
-
-#: application/modules/formbuilder/views/settings/view_settings.php:123
-msgid "Custom delimiter for multiple options when exporting records"
+msgid "it will hide all forms from public site."
 msgstr ""
 
 #: application/modules/formbuilder/views/settings/view_settings.php:124
+msgid "Regenerate cache fields"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/view_settings.php:126
+msgid "Generate cache field"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/view_settings.php:135
+msgid "Regeneate cache fields"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/view_settings.php:147
+msgid "Custom delimiter for multiple options when exporting records"
+msgstr ""
+
+#: application/modules/formbuilder/views/settings/view_settings.php:148
 msgid "Custome delimiter"
 msgstr ""
 
-#: application/modules/formbuilder/views/settings/view_settings.php:128
+#: application/modules/formbuilder/views/settings/view_settings.php:152
 msgid "Add your delimiter"
 msgstr ""
 

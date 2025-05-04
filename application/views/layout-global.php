@@ -37,10 +37,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/modals-sfdc.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/popovers-sfdc.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/css/tooltip-sfdc.css" rel="stylesheet">
-	
-	
+
+
 	<link href="<?php echo base_url(); ?>assets/common/bootstrap/4.3.1/css/bootstrap.css" rel="stylesheet">
-	
+
 	<!-- font awesome -->
 	<link href="<?php echo base_url(); ?>assets/common/css/fontawesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 	<!-- Custom fonts -->
@@ -67,7 +67,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/backend/js/btouchspin/jquery.bootstrap-touchspin.css" rel="stylesheet">
 	<!-- bootstrap icon picker -->
 	<link href="<?php echo base_url(); ?>assets/backend/js/biconpicker/1.9.0/css/bootstrap-iconpicker.css" rel="stylesheet">
-	
+
 		<!-- bootstrap date 2 -->
 	<link href="<?php echo base_url(); ?>assets/common/js/flatpickr/4.6.2/flatpickr.min.css" rel="stylesheet">
 	<!-- star rating -->
@@ -84,8 +84,8 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<link href="<?php echo base_url(); ?>assets/common/js/bgallery/3.1.3/css/bootstrap-image-gallery.css" rel="stylesheet">
 	<!-- checkradio -->
 	<link href="<?php echo base_url(); ?>assets/common/js/checkradio/2.2.2/css/jquery.checkradios.css" rel="stylesheet">
-   
-	
+
+
 	<?php
 	if ( UIFORM_DEBUG === 1 ) {
 		?>
@@ -101,31 +101,31 @@ if ( ! defined( 'BASEPATH' ) ) {
 	}
 
 	?>
-	
-	
+
+
 	 <!-- codemirror -->
 	<link href="<?php echo base_url(); ?>assets/common/js/codemirror/codemirror.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/js/codemirror/addon/fold/foldgutter.css" rel="stylesheet">
 	<link href="<?php echo base_url(); ?>assets/common/js/codemirror/theme/monokai.css" rel="stylesheet">
-	 
+
 	<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 	<!--[if lt IE 9]>
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
-	
-	
-	
+
+
+
 	<script type="text/javascript"  src="<?php echo base_url(); ?>assets/common/js/jquery/1.11.3/jquery.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/jqueryui/1.11.4/jquery-ui.min.js"></script>
-	
+
 	<script type="text/javascript"  src="<?php echo base_url(); ?>assets/backend/js/underscore-min.js"></script>
-	
+
 	<script type="text/javascript">
 	var $uifm=jQuery.noConflict();
 	</script>
-	
+
 	<!-- Bootstrap -->
- 
+
 	<!-- jasny bootstrap -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/bjasny/jasny-bootstrap.js"></script>
 	<!-- md5 -->
@@ -150,11 +150,11 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/bslider/4.12.1/bootstrap-slider.js"></script>
 	<!-- bootstrap touchspin -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/btouchspin/jquery.bootstrap-touchspin.js"></script>
-	 
+
 	<!-- date time 2 -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/flatpickr/4.6.2/flatpickr.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/flatpickr/4.6.2/l10n/all-lang.js"></script>
-	
+
 	<!-- auto grow -->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/jquery.autogrow-textarea.js"></script>
 	<!-- bootstrap iconpicker -->
@@ -176,10 +176,10 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/lzstring/lz-string.min.js"></script>
 	<!-- tiny mce-->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/tinymce/4.3.3/tinymce.min.js"></script>
-	
+
 	<!-- checkradios-->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/checkradio/2.2.2/js/jquery.checkradios.js"></script>
-	
+
 	<!-- codemirror-->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/codemirror.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/fold/foldcode.js"></script>
@@ -187,18 +187,18 @@ if ( ! defined( 'BASEPATH' ) ) {
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/mode/javascript/javascript.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/mode/xml/xml.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/mode/css/css.js"></script>
-	
+
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/keymap/sublime.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/edit/closebrackets.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/edit/matchbrackets.js"></script>
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/js/codemirror/addon/display/autorefresh.js"></script>
-	
+
 	<!-- disable autofill-->
 	<script type="text/javascript" src="<?php echo base_url(); ?>assets/backend/js/disableautofill/jquery.disableAutoFill.js"></script>
-	
+
 	<!-- Bootstrap 3.3.7-->
-	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/js/bootstrap-sfdc.js"></script> 
-	
+	<script type="text/javascript" src="<?php echo base_url(); ?>assets/common/bootstrap/3.3.7/js/bootstrap-sfdc.js"></script>
+
 	<script type='text/javascript'>
 	var rockfm_vars={"ajaxurl":"",
 		"uifm_baseurl":"<?php echo base_url(); ?>",
@@ -225,12 +225,12 @@ if ( ! defined( 'BASEPATH' ) ) {
 		)
 	);
 	?>
-	
-	 var uiform_vars = <?php echo Uiform_Form_Helper::_format_json( json_encode( $tmp_uiform_vars ) ); ?>;  
-	   
+
+	 var uiform_vars = <?php echo Uiform_Form_Helper::_format_json( json_encode( $tmp_uiform_vars ) ); ?>;
+
 
 	</script>
-	
+
 
 	<?php
 	if ( UIFORM_DEBUG === 1 ) {
@@ -248,15 +248,15 @@ if ( ! defined( 'BASEPATH' ) ) {
 
 
 
-   
+
   <!--- frontend -->
-  
+
 	 <?php
 		elFinder_tinymce();
 		?>
 	<script type="text/javascript">
- 
-	   
+
+
 	   tinymce.init({
 				selector: '.uifm_tinymce_obj',
 				theme: "modern",
@@ -287,30 +287,30 @@ if ( ! defined( 'BASEPATH' ) ) {
 						});
 					}
 				});
-			  
-	   
-				 
-	
+
+
+
+
 	</script>
-	
+
 	<?php do_action( 'admin_enqueue_scripts' ); ?>
 	<?php // $this->addon->load_addons_Head(); ?>
- 
+
   </head>
    <body class="tundra sfdc-wrap">
-	
+
 	<div id="wrapper">
 		<form id="zgfm_edit_panel"
 		  onsubmit="return false;"
-		  enctype="multipart/form-data" 
-		  action="" 
-		  accept-charset="UTF-8" 
-		  name="" 
-		  method="post" 
+		  enctype="multipart/form-data"
+		  action=""
+		  accept-charset="UTF-8"
+		  name=""
+		  method="post"
 		  autocomplete="off">
 	  <!-- Sidebar -->
 	  <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
-		<?php $this->load->view( 'header' ); ?>   
+		<?php $this->load->view( 'header' ); ?>
 	  </nav>
 
 	  <div id="page-wrapper">
@@ -334,12 +334,12 @@ if ( ! defined( 'BASEPATH' ) ) {
 				<?php require 'footer.php'; ?>
 			</div>
 			 <?php require 'notice_footer.php'; ?>
-			 
+
 		</div>
-		<?php require 'captions.php'; ?> 
+		<?php require 'captions.php'; ?>
 
 	  </div><!-- /#page-wrapper -->
-	  </form> 
+	  </form>
 	</div><!-- /#wrapper -->
 
   </body>

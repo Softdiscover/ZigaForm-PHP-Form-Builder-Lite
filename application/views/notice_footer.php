@@ -19,11 +19,11 @@ if ( ! defined( 'BASEPATH' ) ) {
 <div id="wpfooter">
 				<?php
 				if ( ZIGAFORM_F_LITE ) {
-						$url  = 'https://codecanyon.net/item/zigaform-php-form-builder-contact-survey/reviews/14889427';
-						$text = __( 'Please rate <strong>Zigaform</strong> <a href="' . $url . '" target="_blank" rel="noopener" > &#9733;&#9733;&#9733;&#9733;&#9733; </a> on <a href="' . $url . '" target="_blank">Codecanyon.net</a> to help us spread the word. Thank you from the Zigaform team!', 'FRocket_admin' );
+						$url  = 'https://shop.softdiscover.com/downloads/zigaform-php-form-builder-contact-survey/?utm_source=installed&utm_medium=referral';
+						$text = __( 'Please rate <strong>Zigaform</strong> <a href="' . $url . '" target="_blank" rel="noopener" > &#9733;&#9733;&#9733;&#9733;&#9733; </a>  to help us spread the word. Thank you from the Zigaform team!', 'FRocket_admin' );
 				} else {
-					$url  = 'https://codecanyon.net/item/zigaform-php-form-builder-contact-survey/reviews/14889427';
-					$text = __( 'Please rate <strong>Zigaform</strong> <a href="' . $url . '" target="_blank" rel="noopener" > &#9733;&#9733;&#9733;&#9733;&#9733; </a> on <a href="' . $url . '" target="_blank">Codecanyon.net</a> to help us spread the word. Thank you from the Zigaform team!', 'FRocket_admin' );
+					$url  = 'https://shop.softdiscover.com/downloads/zigaform-php-form-builder-contact-survey/?utm_source=installed&utm_medium=referral';
+					$text = __( 'Please rate <strong>Zigaform</strong> <a href="' . $url . '" target="_blank" rel="noopener" > &#9733;&#9733;&#9733;&#9733;&#9733; </a>  to help us spread the word. Thank you from the Zigaform team!', 'FRocket_admin' );
 				}
 					echo $text;
 				?>

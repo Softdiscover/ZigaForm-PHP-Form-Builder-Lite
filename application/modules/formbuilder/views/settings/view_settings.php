@@ -19,7 +19,7 @@ if ( ! defined('BASEPATH')) {
         <div class="sfdc-col-md-12">
             <div class="space20"></div>
             <div class="uifm-settings-response"></div>
-            
+
             <div class="uiform-settings-inner-box">
                 <div class="sfdc-row">
         <div class="col-lg-12">
@@ -29,11 +29,11 @@ if ( ! defined('BASEPATH')) {
                 <h5>
                 <?php echo __('Global Settings', 'FRocket_admin'); ?>
                 </h5>
-                
-            </div>  
+
+            </div>
             <div class="widget-body">
                <div class="widget-forms sfdc-clearfix">
-                   <form 
+                   <form
                        id="uifrm-setting-form"
                        chartset="utf-8"
                        name="frmform"
@@ -41,14 +41,14 @@ if ( ! defined('BASEPATH')) {
                        <div id="uiform-settings-inner-body">
                        <!--<div class="sfdc-col-md-12">
                                 <div class="sfdc-form-group">
-                                    
+
                                     <div class="sfdc-col-sm-4">
                                          <label for=""><?php echo __('LANGUAGE', 'FRocket_admin'); ?></label>  <a href="javascript:void(0);"
-                                           data-toggle="tooltip" data-placement="right" 
+                                           data-toggle="tooltip" data-placement="right"
                                            data-original-title="<?php echo __('it allows to change the language', 'FRocket_admin'); ?>"
                                            ><span class="fa fa-question-circle"></span></a>
                                      </div>
-                                    
+
                                     <div class="sfdc-col-sm-8">
                                        <select class="sfdc-form-control input-sm" name="language"  id="language" data-placeholder="Select here.." >
                                     <?php
@@ -63,57 +63,81 @@ if ( ! defined('BASEPATH')) {
                                     ?>
                                     <?php unset($frow); ?>
                                     </select>
-                                        
+
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                             <div class="space10 zgfm-opt-divider-stl1"></div> -->
                             <div class="space10 zgfm-opt-divider-stl1"></div>
                             <div class="sfdc-col-md-12">
                                 <div class="sfdc-form-group">
-                                    
+
                                     <div class="sfdc-col-sm-4">
-                                        <label for=""><?php echo __('DISABLE FIELDS FAST LOAD', 'FRocket_admin'); ?><span style="color:red;"></span></label> <a href="javascript:void(0);"
-                                           data-toggle="tooltip" data-placement="right" 
+                                        <label for=""><?php echo __('Disable Fast Load for Fields', 'FRocket_admin'); ?><span style="color:red;"></span></label> <a href="javascript:void(0);"
+                                           data-toggle="tooltip" data-placement="right"
                                            data-original-title="<?php echo __('it allows to disable fast loading field.', 'FRocket_admin'); ?>"
                                            ><span class="fa fa-question-circle"></span></a>
-                                            
-                                            
+
+
                                      </div>
-                                    
+
                                     <div class="sfdc-col-sm-8">
                                         <input class="switch-field"
                                                        id="uifm_frm_fields_fastload"
                                                        name="uifm_frm_fields_fastload"
                                                        type="checkbox"/>
-                                          
+
                                     </div>
-                                    
+
                                 </div>
-                                 
+
                             </div>
+                         <div class="space10 zgfm-opt-divider-stl1"></div>
+                         <div class="sfdc-col-md-12">
+                           <div class="sfdc-form-group">
+
+                             <div class="sfdc-col-sm-4">
+                               <label for=""><?php echo __('Hide forms from frontend', 'FRocket_admin'); ?><span style="color:red;"></span></label> <a href="javascript:void(0);"
+                                                                                                                                                       data-toggle="tooltip" data-placement="right"
+                                                                                                                                                       data-original-title="<?php echo __('it will hide all forms from public site.', 'FRocket_admin'); ?>"
+                               ><span class="fa fa-question-circle"></span></a>
+
+
+                             </div>
+
+                             <div class="sfdc-col-sm-8">
+                               <input class="switch-field"
+                                      id="uifm_frm_forms_front_hide"
+                                      name="uifm_frm_forms_front_hide"
+                                      type="checkbox"/>
+
+                             </div>
+
+                           </div>
+
+                         </div>
                             <div class="space10 zgfm-opt-divider-stl1"></div>
                             <div class="sfdc-col-md-12">
                                 <div class="sfdc-form-group">
-                                    
+
                                     <div class="sfdc-col-sm-4">
                                         <label for=""><?php echo __('Regenerate cache fields', 'FRocket_admin'); ?><span style="color:red;"></span></label> <a href="javascript:void(0);"
-                                           data-toggle="tooltip" data-placement="right" 
+                                           data-toggle="tooltip" data-placement="right"
                                            data-original-title="<?php echo __('Generate cache field', 'FRocket_admin'); ?>"
                                            ><span class="fa fa-question-circle"></span></a>
-                                            
-                                            
+
+
                                      </div>
-                                    
+
                                     <div class="sfdc-col-sm-8">
                                     <a class="sfdc-btn sfdc-btn-sm sfdc-btn-warning" href="javascript:void(0);" onclick="javascript:zgfm_back_fld_options.generate_field_htmldata();">
                             <i class="fa fa-floppy-o"></i>
                             <?php echo __('Regeneate cache fields', 'FRocket_admin'); ?>                  </a>
-                                          
+
                                     </div>
-                                    
+
                                 </div>
-                                 
+
                             </div>
                             <div class="space10 zgfm-opt-divider-stl1"></div>
                             <div class="sfdc-col-md-12">
@@ -133,40 +157,42 @@ if ( ! defined('BASEPATH')) {
                         </div>
                    </form>
                </div>
-                
+
                 <div class="clear"></div>
             </div>
             <div class="widget-footer">
-                <?php if ( UIFORM_DEMO === 1) { ?> 
-                  <a class="sfdc-btn sfdc-btn-sm sfdc-btn-primary" 
+                <?php if ( UIFORM_DEMO === 1) { ?>
+                  <a class="sfdc-btn sfdc-btn-sm sfdc-btn-primary"
                             href="javascript:void(0);"
                             onclick="alert('this feature disabled on this demo');"
                             >
                             <i class="fa fa-floppy-o"></i>
                         <?php echo __('Save changes', 'FRocket_admin'); ?>
                         </a>
-                <?php } else { ?> 
-                  <a class="sfdc-btn sfdc-btn-sm sfdc-btn-primary" 
+                <?php } else { ?>
+                  <a class="sfdc-btn sfdc-btn-sm sfdc-btn-primary"
                             href="javascript:void(0);"
                             onclick="rocketform.globalsettings_saveOptions();"
                             >
                             <i class="fa fa-floppy-o"></i>
                         <?php echo __('Save changes', 'FRocket_admin'); ?>
                         </a>
-                <?php } ?> 
+                <?php } ?>
         </div>
-        </div> 
+        </div>
     </div>
     </div>
             </div>
         </div>
-    
+
 </div>
 <script type="text/javascript">
 //<![CDATA[
 $uifm(document).ready(function ($) {
-        set_modalmode=(parseInt(<?php echo $fields_fastload; ?>)===1)?true:false;
+       var set_modalmode=(parseInt(<?php echo $fields_fastload; ?>)===1)?true:false;
     $('#uifm_frm_fields_fastload').bootstrapSwitchZgpb('state',set_modalmode);
+  var uifm_frm_forms_front_hide=(parseInt(<?php echo $uifm_frm_forms_front_hide; ?>)===1)?true:false;
+  $('#uifm_frm_forms_front_hide').bootstrapSwitchZgpb('state',uifm_frm_forms_front_hide);
 });
 //]]>
 </script>
