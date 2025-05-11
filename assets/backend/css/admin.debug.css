@@ -11984,13 +11984,7 @@ table.tablesorter thead tr th:hover {
 
 @charset "UTF-8";
 .sfdc-wrap {
-  /*
-	* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	  }*/
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .sfdc-wrap a {
@@ -14056,21 +14050,6 @@ body {
   margin: 5% auto;
   max-width: 360px;
   width: 95%;
-}
-
-.box-login {
-  background-color: #fff !important;
-  background-image: none !important;
-  margin: 0 auto;
-  max-width: 430px;
-  padding: 15px;
-}
-
-.login-page {
-  background-color: #fff !important;
-  background-image: none !important;
-  margin: 0 auto;
-  padding: 15px;
 }
 
 .widget {
@@ -16200,7 +16179,7 @@ button {
 }
 
 .uiform-editing-header .sfdc-nav > li > a {
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   box-sizing: border-box;
@@ -16290,7 +16269,6 @@ button {
 }
 
 .sfdc-wrap .sfdc-dropdown-menu {
-  background-color: #272729 !important;
   padding: 0px;
 }
 
@@ -18832,7 +18810,7 @@ div.CodeMirror .cm-operator {
 
 #uiform-container.zgfm_page_list_forms a {
   text-decoration: none !important;
-  font-size: 15px !important;
+  font-size: 13px !important;
 }
 
 #uiform-container.zgfm_page_list_forms .widget {
@@ -19108,6 +19086,117 @@ div.CodeMirror .cm-operator {
 
 .zgfm_page_records_byform .dataTable .sfdc-btn-group ul li .sfdc-btn:hover {
   background-color: #f97342;
+}
+
+.login-page-upper {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#141e30, #243b55);
+  background-size: cover;
+  background-position: center;
+  color: #ffffff;
+}
+
+.login-page-upper * {
+  box-sizing: border-box;
+}
+
+.login-page-upper .box-login {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  padding: 40px;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.5);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+}
+
+.login-page-upper .logo img {
+  max-width: 140px;
+  margin: 0 auto 30px;
+  display: block;
+}
+
+.login-page-upper .widget-header {
+  text-align: center;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.login-page-upper .widget-header i {
+  font-size: 28px;
+  color: #03e9f4;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.login-page-upper .widget-header h5 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  text-shadow: none !important;
+}
+
+.login-page-upper input.sfdc-form-control {
+  background: transparent;
+  border: none;
+  border-bottom: 1px solid #fff;
+  color: #ffffff;
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 30px;
+  font-size: 16px;
+}
+
+.login-page-upper input.sfdc-form-control::placeholder {
+  color: #bbb;
+}
+
+.login-page-upper input.sfdc-form-control:focus {
+  outline: none;
+  border-bottom: 1px solid #03e9f4;
+}
+
+.login-page-upper .login-page-forgot-pass {
+  text-align: right;
+  font-size: 12px;
+}
+
+.login-page-upper .login-page-forgot-pass a {
+  color: #03e9f4;
+  text-decoration: none;
+}
+
+.login-page-upper .login-page-forgot-pass a:hover {
+  text-decoration: underline;
+}
+
+.login-page-upper .sfdc-alert {
+  background: blueviolet;
+}
+
+.login-page-upper .sfdc-btn-primary {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  color: #03e9f4;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  letter-spacing: 2px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.login-page-upper .sfdc-btn-primary span {
+  position: absolute;
+  display: block;
 }
 
 /*# sourceMappingURL=admin.debug.css.map */

@@ -17,7 +17,7 @@ if ( ! defined( 'BASEPATH' ) ) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en" class="uiform-wrap sfdc-wrap">
+<html lang="en" class="uiform-wrap sfdc-wrap login-page-upper">
   <head>
 	<meta charset="utf-8">
 	<title><?php echo model_settings::$db_config['site_title']; ?> </title>

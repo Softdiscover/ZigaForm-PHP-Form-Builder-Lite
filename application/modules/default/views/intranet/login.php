@@ -26,7 +26,7 @@ if ( ! defined('BASEPATH')) {
             <div class="row">
                 <div class="sfdc-col-md-12">
                         <div class="row">
-                                        <div class="widget form-signin">
+                                        <div class=" form-signin">
                                                 <div class="widget-header">
                                                         <i class="fa fa-user"></i>
                                                         <h5><?php echo __('Enter your username and password', 'FRocket_admin'); ?> </h5>
