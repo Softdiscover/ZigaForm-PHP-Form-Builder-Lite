@@ -963,17 +963,24 @@ function prefix($tablename = null)
  */
 function getXSRFToken($action)
 {
+	// Always start session
+	if (session_status() !== PHP_SESSION_ACTIVE) {
+		session_start();
+	}
+
 	if (isset($_SESSION['all_data'])) {
 		$sesdata = $_SESSION['all_data'];
 	} else {
-		$ci      = &get_instance();
-		$sesdata = $ci->session->all_userdata();
+		// fallback
+		$sesdata = [];
 	}
-	unset($sesdata['session_id']);
-	unset($sesdata['last_activity']);
+
+	unset($sesdata['session_id'], $sesdata['last_activity']);
 
 	return sha1($action . prefix(getUserIP()) . serialize($sesdata));
 }
+
+
 
 
 /**
