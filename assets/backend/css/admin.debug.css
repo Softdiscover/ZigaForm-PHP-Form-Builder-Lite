@@ -16658,6 +16658,10 @@ button {
   float: right;
 }
 
+.uiform-set-panel-header-opts span {
+  color: #fff;
+}
+
 .uiform-set-panel-header-fldnme {
   display: flex;
 }
@@ -17884,6 +17888,61 @@ select.uifm-input2-opt-main {
   text-shadow: 1px 1px 1px #333;
   top: -17px;
   width: auto !important;
+}
+
+#uifm-field-opt-content fieldset .copy-field-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+#uifm-field-opt-content fieldset .copy-field-wrapper .copy-target {
+  background-color: #ccc;
+  width: 100%;
+  padding: 10px 40px 10px 12px;
+  border: 1px solid #cdd3d8;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color .2s;
+}
+
+#uifm-field-opt-content fieldset .copy-field-wrapper .copy-target:hover {
+  border-color: #8c98a4;
+  cursor: pointer;
+}
+
+#uifm-field-opt-content fieldset .copy-field-wrapper .copy-btn {
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: #6c757d;
+  cursor: pointer;
+  transition: color .2s;
+}
+
+#uifm-field-opt-content fieldset .copy-field-wrapper .copy-btn:hover {
+  color: #212529;
+}
+
+#uifm-field-opt-content fieldset .copy-field-wrapper .copy-feedback {
+  position: absolute;
+  top: -30px;
+  right: 12px;
+  padding: 4px 8px;
+  font-size: 12px;
+  color: #fff;
+  background: #28a745;
+  border-radius: 4px;
+  opacity: 0;
+  transform: translateY(-8px);
+  transition: opacity .3s, transform .3s;
+  pointer-events: none;
+}
+
+#uifm-field-opt-content fieldset .copy-field-wrapper .copy-feedback.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .zgpb-opt-divider-stl1 {

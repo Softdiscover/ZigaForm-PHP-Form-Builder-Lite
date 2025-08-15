@@ -685,6 +685,7 @@ $vars = array_map(function($v) {
                 'atr2' => '',
                 'atr3' => '',
                 'atr4' => '',
+                'hide_fields' => '',
                 'opt'  => '', // quick option
             ),
             $atts
@@ -708,6 +709,7 @@ $vars = array_map(function($v) {
                     $data2         = array();
                     $data2['data'] = $tmp_data;
                     $data2['show_only_value'] = ($vars['atr2'] === 'show_only_value')?'yes':'no';
+                    $data2['hide_fields_ids'] = !empty($vars['hide_fields'])? explode(',', $vars['hide_fields']):[];
                     $output        = $this->load->view('formbuilder/frontend/mail_generate_fields', $data2, true);
                     break;
                 case 'rec_url_fm':

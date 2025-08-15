@@ -37,6 +37,7 @@ if ( ! defined('BASEPATH')) {
                                 id="guidetour-flist-shortcode"
                                 data-intro="<?php echo __('Copy and paste the shortcode to your desired page', 'FRocket_admin'); ?>"
                                 ><?php echo __('Shortcode', 'FRocket_admin'); ?></th>
+                                <th><?php echo __('ID', 'FRocket_admin'); ?></th>
                             <th><?php echo __('Created', 'FRocket_admin'); ?></th>
                             <th><?php echo __('Status', 'FRocket_admin'); ?></th>
                             <th><?php echo __('Options', 'FRocket_admin'); ?></th>
@@ -59,6 +60,7 @@ if ( ! defined('BASEPATH')) {
                                 <?php echo __('Get shortcode', 'FRocket_admin'); ?></a>
                               
                             </td>
+                            <td><?php echo $row->fmb_id; ?></td>
                             <td><?php echo $row->created_date; ?></td>
                             <td>
                                 <?php

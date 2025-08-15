@@ -22,6 +22,11 @@ ob_start();
     <?php
     if (!empty($data)) {
         foreach ($data as $key => $value) {
+        
+        if( !empty($hide_fields_ids) && in_array($key, $hide_fields_ids, true) ){
+                continue;
+            }
+        
             if (!empty($value['input'])) {
                 ?>
 

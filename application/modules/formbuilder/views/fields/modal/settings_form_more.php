@@ -254,6 +254,40 @@ if ( ! defined('BASEPATH')) {
                        <div class="space5"></div>
                     </div>
          </fieldset>
+          <fieldset  >
+                    <legend><?php echo __('For summary shortcode', 'FRocket_admin'); ?> </legend>
+                    <div class="zgpb-modal-body-tab-inner" >
+                        
+                        <div class="sfdc-row ">
+                            <div class="sfdc-col-md-12">
+                                <div class="sfdc-form-group">
+                                    <div class="sfdc-col-md-6">
+                                        <label for=""><?php echo __('ID', 'FRocket_admin'); ?></label> 
+                                        <a data-original-title="<?php echo __('It can be used for summary shortcode in backend', 'FRocket_admin'); ?>" data-placement="right" data-toggle="tooltip" href="javascript:void(0);"><span class="fa fa-question-circle"></span></a>
+                                    </div>
+                                    <div class="sfdc-col-md-6 copy-field-wrapper">
+                                    	<input
+                                    		class="sfdc-form-control copy-target"
+                                    		value="<?php echo esc_attr( $field_id ); ?>"
+                                    		readonly
+                                    		onclick="rocketform.copyToClipboard(this)"
+                                    	/>
+                                    
+                                    	<i class="fa fa-clipboard copy-btn"
+                                    	   title="<?php esc_attr_e( 'Copy to clipboard', 'FRocket_admin' ); ?>"
+                                    	   onclick="rocketform.copyToClipboard(jQuery(this).siblings('.copy-target'))">
+                                    	</i>
+                                    
+                                    	<div class="copy-feedback">Copied!</div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                  
+                       <div class="space5"></div>
+                    </div>
+         </fieldset>
     <!-- load modules -->
         <?php echo $modules_field_more; ?>
     

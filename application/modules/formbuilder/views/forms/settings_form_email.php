@@ -560,7 +560,14 @@ $default_template = ob_get_clean();
                                                             
                                                             <p><?php echo __('it shows without units and total', 'FRocket_admin'); ?></p>
                                                             <textarea style="width:100%;" onclick="this.select();">[uifm_var opt="rec_summ" atr2="show_only_value" atr3="hide_total" ]</textarea>
-                                                            
+                                                            <p>
+                                                            <?php echo __(
+                                                                'To hide specific fields in the summary shortcode, use their field IDs. For example, <code>uiytnx07yvp</code> is a field ID. You can find the field ID by editing the field, going to the "More" tab, and checking the bottom section labeled "For summary shortcode."  
+                                                            You can hide multiple fields by separating their IDs with commas.',
+                                                                'FRocket_admin'
+                                                            ); ?>
+                                                            </p>
+                                                            <textarea style="width:100%;" onclick="this.select();">[uifm_var opt="rec_summ" hide_fields="uiytnx07yvp,uiytnx07yvp"]</textarea>
                                                         </td>
                                                     </tr>
                                                     <tr>
