@@ -117,7 +117,7 @@ if ( ! defined('BASEPATH')) {
                             ?>
                         <?php } else { ?>
                         <tr>
-                            <td colspan="6">
+                            <td colspan="7">
                             <div class="sfdc-alert sfdc-alert-info"><i class="fa fa-exclamation-triangle"></i> <?php echo __('there is not forms. Add new one', 'FRocket_admin'); ?></div>
                             </td>
                         </tr>
