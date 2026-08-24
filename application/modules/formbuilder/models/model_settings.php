@@ -58,13 +58,12 @@ class model_settings extends CI_Model
             '
             select uf.version,uf.type_email,uf.smtp_host,uf.smtp_port,uf.smtp_user,uf.smtp_pass,uf.smtp_conn,uf.sendmail_path,uf.language
             from %s uf
-            where uf.id=%s
+            where uf.id=?
             ',
-            $this->table,
-            1
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array(1));
         return $query2->row();
     }
 
@@ -74,13 +73,12 @@ class model_settings extends CI_Model
             '
             select uf.language
             from %s uf
-            where uf.id=%s
+            where uf.id=?
             ',
-            $this->table,
-            1
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array(1));
         return $query2->row();
     }
 
@@ -107,7 +105,8 @@ class model_settings extends CI_Model
     protected function loadSettings()
     {
          $this->load->library('cache');
-        $data = $this->cache->get('settings');
+        $cache_key = 'settings_' . md5($this->db->hostname . '|' . $this->db->database . '|' . $this->db->dbprefix);
+        $data = $this->cache->get($cache_key);
 
         if ( empty($data) ) {
             $this->db->select('site_title, admin_mail, type_email,smtp_host,smtp_port,smtp_user,smtp_pass,smtp_conn,sendmail_path,language,version');
@@ -132,7 +131,7 @@ class model_settings extends CI_Model
                 self::$db_config['opt_hide_form_front'] = get_option('uifm_frm_forms_front_hide', 0);
 
 
-                $this->cache->write(self::$db_config, 'settings');
+                $this->cache->write(self::$db_config, $cache_key);
             }
 
 

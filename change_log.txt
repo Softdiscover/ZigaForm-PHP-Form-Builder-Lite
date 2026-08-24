@@ -1,3 +1,78 @@
+version 7.7.20
+[fix] - the installer could create only part of the database, leaving tables missing and the version stuck on the previous install
+[fix] - saving a brand new multi-step form no longer reports "Error on saving form"; steps added right after the first save are now attached to it
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.19
+[update] - redesigned the sign-in, password recovery and change password screens; the username and password you type are now clearly readable
+[new] - a show/hide button on every password field, so you can check what you typed before submitting
+[fix] - a browser-autofilled username no longer rendered as an empty white box
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.18
+[fix] - the package no longer ships a cached settings file from the build machine, which could make the admin report the wrong version
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.17
+[fix] - steps could not be added to a multi-step form right after creating it; the step is now attached correctly
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.16
+[fix] - the debug stylesheets and scripts are no longer included in the package; they could never load in a release build
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.15
+[fix] - the bundled integrity manifest listed checksums for files that are no longer part of the package
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.14
+[fix] - the two choices in a row of option buttons (Validators tab and similar) had no visible boundary between them; a divider separates them again
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.13
+[fix] - stacked option buttons in the field settings tabs (Validators, and anywhere else showing several rows of choices) ran together into one block; each row is separated again
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.12
+[fix] - signing in no longer shows "The action you have requested is not allowed" when the login page had been left open or restored from the browser cache; the form is reloaded with an explanation instead
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.11
+[fix] - the selected option in a grouped radio or checkbox setting looked identical to the unselected ones
+[update] - grouped option buttons now sit flush against each other as one segmented control instead of separate buttons
+[fix] - grouped option buttons in the field settings panel rendered as overlapping slivers instead of equal segments
+[fix] - bold/italic/underline buttons were shorter than the text input and font-size dropdown beside them
+[fix] - text inputs in the field settings panel were taller than their buttons in the WordPress products
+[update] - redesigned the range sliders in the editor panels: thinner track, visible fill, bigger handle, and a readable value bubble that no longer sits on top of the handle
+[update] - the sub label options now use the same wording as the label options
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.10
+[fix] - header dropdown panel rendered blue in the WordPress products; the menu now uses the intended white panel in all four
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.9
+[fix] - admin header dropdown menus rendered as solid blue blocks; menu items now use the intended white panel
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.8
+[new] - `npm test` runs typecheck plus the cross-product parity, field-catalog and architecture contract suites
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.7
+[update] - local development now uses a gitignored zgfm-local.php override instead of rewriting tracked files; `npm run dev` and `npm run build` no longer leave the repository modified
+[update] - index.php, database.php and constants.php ship unchanged and fall back to shipping behaviour when no override is present
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.6
+[update] - codebase alignment across the four products; no functional change in this product
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.5
+[update] - build scripts use `composer install` instead of `composer update`, so a build no longer rewrites composer.lock
+[update] - build:complete uses `npm ci` and keeps package-lock.json instead of deleting it
+[fix] - build scripts call the local gulp binary rather than a global one
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.4
+[update] - modernized the admin header and form list: flat header bar, pill filter tabs, clearer table and buttons
+[new] - shared admin design tokens in abstracts/_zgfm-tokens.scss, identical across all four products
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.3
+[fix] - release packaging: manifest tasks no longer fail on a missing or empty manifest.json
+[fix] - builds/ is cleared before packaging so stale zips cannot corrupt the detected version
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.2
+[update] - added no-op field addon hooks so cost-estimation field extensions stay outside the plain builder base
+[update] - added the disabled cost-estimation addon build flag so plain form builder bundles keep estimator assets out
+-----------------------------------------------------------------------------------------------------------------
+version 7.7.0
+[update] - security hardening, WordPress standards cleanup, and smoke test coverage
+-----------------------------------------------------------------------------------------------------------------
 version 7.6.9
 [update] - minor issue
 -----------------------------------------------------------------------------------------------------------------

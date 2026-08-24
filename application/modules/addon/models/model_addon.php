@@ -151,17 +151,16 @@ class model_addon extends CI_Model
             '
             select c.add_name
             from %s c
-	    left join %s ad on ad.add_name = c.add_name
-            where c.flag_status=1 and ad.fmb_id=%s
+		    left join %s ad on ad.add_name = c.add_name
+            where c.flag_status=1 and ad.fmb_id=?
             and c.add_load_back=1
             ORDER BY c.add_order desc
             ',
             $this->table,
-            $this->tbaddon_details,
-            $idform
+            $this->tbaddon_details
         );
 
-        $query2     = $this->db->query($query);
+        $query2     = $this->db->query($query, array((int) $idform));
         $tmp_result = $query2->result();
 
         $result = array();
@@ -203,14 +202,13 @@ class model_addon extends CI_Model
                     ,c.is_field
             from %s c
             where c.flag_status=1 
-            and c.add_section="%s"
+            and c.add_section=?
             ORDER BY c.add_section_order desc
             ',
-            $this->table,
-            $section
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array($section));
         return $query2->result();
     }
 
@@ -251,11 +249,10 @@ class model_addon extends CI_Model
             'select 
                 COUNT(*) as count
                 from %s ad
-                where ad.add_name ="%s" ',
-            $this->table,
-            $addon_name
+                where ad.add_name =? ',
+            $this->table
         );
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array($addon_name));
 
         $row = $query2->row();
         if ( intval($row->count) > 0) {

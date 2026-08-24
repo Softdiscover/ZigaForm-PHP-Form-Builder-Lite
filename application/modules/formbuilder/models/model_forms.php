@@ -165,13 +165,12 @@ class model_forms extends CI_Model
             select uf.fmb_id,uf.fmb_data,uf.fmb_name,uf.fmb_html,uf.fmb_html_backend,uf.flag_status,uf.created_date,uf.updated_date, uf.fmb_parent,
                 uf.fmb_html_css,uf.fmb_default,uf.fmb_skin_status,uf.fmb_skin_data,uf.fmb_skin_type,uf.fmb_data2,uf.fmb_rec_tpl_html,uf.fmb_rec_tpl_st, uf.fmb_type, uf.fmb_parent
             from %s uf
-            where uf.fmb_id=%s  
+            where uf.fmb_id=?
             ',
-            $this->table,
-            $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
 
         return $query2->row();
     }
@@ -182,13 +181,12 @@ class model_forms extends CI_Model
             '
             select uf.fmb_name
             from %s uf
-            where uf.fmb_id=%s
+            where uf.fmb_id=?
             ',
-            $this->table,
-            (int) $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
 
         return $query2->row();
     }
@@ -202,13 +200,12 @@ class model_forms extends CI_Model
             from %s uf
             where 
             uf.flag_status=1 and
-            uf.fmb_id=%s
+            uf.fmb_id=?
             ',
-            $this->table,
-            (int) $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
         return $query2->row();
     }
     public function getChildFormByParentId($id)
@@ -220,13 +217,12 @@ class model_forms extends CI_Model
             from %s uf
             where 
             uf.flag_status=1 and
-            uf.fmb_parent=%s
+            uf.fmb_parent=?
             ',
-            $this->table,
-            $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
         return $query2->result();
     }
     
@@ -247,15 +243,14 @@ class model_forms extends CI_Model
             	f.type_fby_id = t.fby_id
             join %s fm on
             	fm.fmb_id = f.form_fmb_id
-            where fm.fmb_id = %s
+            where fm.fmb_id = ?
             ',
             $this->tbformfields,
             $this->tbformtype,
-            $this->table,
-            $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
         return $query2->result();
     }
     
@@ -266,13 +261,12 @@ class model_forms extends CI_Model
         from %s f 
         join %s t on f.type_fby_id=t.fby_id 
         join %s fm on fm.fmb_id=f.form_fmb_id
-        where fm.fmb_id=%s and t.fby_id in (8,9,10,11,16,18,39,40,41,42)',
+        where fm.fmb_id=? and t.fby_id in (8,9,10,11,16,18,39,40,41,42)',
             $this->tbformfields,
             $this->tbformtype,
-            $this->table,
-            (int) $id_form
+            $this->table
         );
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id_form));
         return $query2->result();
     }
     
@@ -282,13 +276,12 @@ class model_forms extends CI_Model
             '
             select uf.fmb_data2,uf.fmb_name, uf.fmb_type, uf.fmb_rec_tpl_st
             from %s uf
-            where uf.fmb_id=%s
+            where uf.fmb_id=?
             ',
-            $this->table,
-            (int) $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
         return $query2->row();
     }
 

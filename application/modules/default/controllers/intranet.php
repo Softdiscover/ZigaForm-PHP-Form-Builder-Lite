@@ -69,8 +69,30 @@ class Intranet extends CommonController
      */
     public function login()
     {
+        $this->_no_store();
 
         $this->template->loadPartial('layout-login', 'intranet/login');
+    }
+
+    /**
+     * Intranet::_no_store()
+     * Stop the browser reusing a cached copy of an auth page.
+     *
+     * The CSRF token is embedded in the form while its cookie lives for
+     * csrf_expire seconds. A page restored from the back/forward cache, from
+     * session restore, or simply left open past that window posts a token the
+     * cookie no longer matches, and CodeIgniter answers with a bare
+     * "The action you have requested is not allowed." Retrying always worked,
+     * which is exactly what a stale cached form looks like.
+     *
+     * @return void
+     */
+    private function _no_store()
+    {
+        $this->output
+            ->set_header('Cache-Control: no-store, no-cache, must-revalidate, max-age=0')
+            ->set_header('Pragma: no-cache')
+            ->set_header('Expires: 0');
     }
 
     /**
@@ -293,6 +315,8 @@ class Intranet extends CommonController
      */
     public function authenticate()
     {
+        $this->_no_store();
+
         $redirect_to = $this->config->item('site_url') . 'default/intranet/dashboard';
         if ( $this->auth->loggedIn() == false) {
             $data          = array();

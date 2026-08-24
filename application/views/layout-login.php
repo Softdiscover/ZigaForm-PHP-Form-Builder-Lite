@@ -174,8 +174,30 @@ if ( ! defined( 'BASEPATH' ) ) {
 		?>
   </head>
   <body class="login-page" >
-	
+
 <?php echo $content; ?>
 
+	<script type="text/javascript">
+	// Reveal/hide a password field. Delegated so it covers the sign-in and the
+	// change-password forms without either view carrying its own script.
+	document.addEventListener('click', function (event) {
+		var toggle = event.target.closest ? event.target.closest('[data-zgfm-toggle-pass]') : null;
+		if ( ! toggle) {
+			return;
+		}
+		var field = document.getElementById(toggle.getAttribute('data-zgfm-toggle-pass'));
+		if ( ! field) {
+			return;
+		}
+		var reveal = field.type === 'password';
+		field.type = reveal ? 'text' : 'password';
+		toggle.setAttribute('aria-pressed', reveal ? 'true' : 'false');
+		toggle.setAttribute('aria-label', toggle.getAttribute(reveal ? 'data-label-hide' : 'data-label-show') || toggle.getAttribute('aria-label'));
+		var icon = toggle.querySelector('i');
+		if (icon) {
+			icon.className = reveal ? 'fa fa-eye-slash' : 'fa fa-eye';
+		}
+	});
+	</script>
   </body>
 </html>

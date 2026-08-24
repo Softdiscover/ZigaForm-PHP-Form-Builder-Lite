@@ -16,21 +16,18 @@ if ( ! defined('BASEPATH')) {
     exit('No direct script access allowed');
 }
 ?>
-<div class="box-login">
-    <div class="logo" style="float:none;text-align: center;"> 
-        <img src="
-        <?php
-        echo base_url();
-        ?>assets/backend/img/logo-uiform.png" alt="uiForm - Universal Form Builder">          
-    </div>
-            <div class="row">
-                <div class="sfdc-col-md-12">
-                        <div class="row">
-                                     <div class="recpass-message-txt">
-                                         <?php echo $message; ?>
-                                     </div>
-                        </div>
-                </div>
-            </div>
+<main class="zgfm-login">
+    <div class="zgfm-login__card">
+        <div class="zgfm-login__logo">
+            <img src="<?php echo base_url(); ?>assets/backend/img/logo-uiform.png" alt="uiForm - Universal Form Builder">
         </div>
-    
+
+        <h1 class="zgfm-login__title"><?php echo __('Password recovery', 'FRocket_admin'); ?></h1>
+
+        <p class="zgfm-login__message"><?php echo $message; ?></p>
+
+        <p class="zgfm-login__back">
+            <a href="<?php echo site_url(); ?>admin"><?php echo __('Back to sign in', 'FRocket_admin'); ?></a>
+        </p>
+    </div>
+</main>

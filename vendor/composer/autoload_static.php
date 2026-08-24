@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit3d9ed0539742283643092a88dbd2daf8
+class ComposerStaticInit560797ec1d8985ccd9d3495cc95571a7
 {
     public static $files = array (
         '7f55c0c8faca7d96e425512293db1ad1' => __DIR__ . '/../..' . '/includes/wp/wp-includes/formatting.php',
@@ -25,6 +25,7 @@ class ComposerStaticInit3d9ed0539742283643092a88dbd2daf8
     );
 
     public static $classMap = array (
+        'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Zigaform\\Admin\\List_data' => __DIR__ . '/../..' . '/includes/admin/class-admin-list.php',
         'Zigaform\\Template' => __DIR__ . '/../..' . '/includes/class-template.php',
     );
@@ -32,9 +33,9 @@ class ComposerStaticInit3d9ed0539742283643092a88dbd2daf8
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit3d9ed0539742283643092a88dbd2daf8::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit3d9ed0539742283643092a88dbd2daf8::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit3d9ed0539742283643092a88dbd2daf8::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit560797ec1d8985ccd9d3495cc95571a7::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit560797ec1d8985ccd9d3495cc95571a7::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit560797ec1d8985ccd9d3495cc95571a7::$classMap;
 
         }, null, ClassLoader::class);
     }

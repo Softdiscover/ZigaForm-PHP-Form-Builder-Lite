@@ -175,10 +175,10 @@ class model_record extends CI_Model
             $temp[] = 'r.created_date';
             $sql   .= implode(',', $temp) . ' from %1$s r';
             $sql   .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                where r.flag_status>0 and r.form_fmb_id=%3$s';
-            $query  = sprintf($sql, $this->table, $this->tbform, (int) $form_id);
+                where r.flag_status>0 and r.form_fmb_id=?';
+            $query  = sprintf($sql, $this->table, $this->tbform);
 
-            $query2 = $this->db->query($query);
+            $query2 = $this->db->query($query, array((int) $form_id));
             return $query2->result();
         } else {
             return array();
@@ -210,19 +210,19 @@ class model_record extends CI_Model
                     $sql       = "select extractvalue(fbh_data_rec_xml,'/params/child::" . $tmp_str . "') AS uifmoptvalue,";
                         $sql  .= 'r.fbh_id,r.created_date';
                         $sql  .= ' from %1$s r';
-                        $sql  .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                            where r.flag_status>0 and r.fbh_id=%3$s';
-                        $query = sprintf($sql, $this->table, $this->tbform, (int) $rec_id);
+	                        $sql  .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
+	                            where r.flag_status>0 and r.fbh_id=?';
+	                        $query = sprintf($sql, $this->table, $this->tbform);
 
                     if ( false) {
                         // not tested yet
                         $sql     = "select extractvalue(fbh_data_rec_xml,'/params/child::" . $f_id . "_chosen') AS uifmoptvalue,";
                         $sql    .= 'r.fbh_id,r.created_date';
                         $sql    .= ' from %1$s r';
-                        $sql    .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                            where r.flag_status>0 and r.fbh_id=%3$s';
-                        $query   = sprintf($sql, $this->table, $this->tbform, (int) $rec_id);
-                         $query2 = $this->db->query($query);
+	                        $sql    .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
+	                            where r.flag_status>0 and r.fbh_id=?';
+	                        $query   = sprintf($sql, $this->table, $this->tbform);
+	                         $query2 = $this->db->query($query, array((int) $rec_id));
 
                         $row = $query2->row();
 
@@ -234,12 +234,12 @@ class model_record extends CI_Model
                         $temp[] = 'r.fbh_id';
                         $temp[] = 'r.created_date';
                         $sql   .= implode(',', $temp) . ' from %1$s r';
-                        $sql   .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                            where r.flag_status>0 and r.fbh_id=%3$s';
-                        $query  = sprintf($sql, $this->table, $this->tbform, (int) $rec_id);
+	                        $sql   .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
+	                            where r.flag_status>0 and r.fbh_id=?';
+	                        $query  = sprintf($sql, $this->table, $this->tbform);
                     }
 
-                    $query2 = $this->db->query($query);
+	                    $query2 = $this->db->query($query, array((int) $rec_id));
 
                     $row = $query2->row();
                     if ( isset($row->uifmoptvalue)) {
@@ -267,11 +267,11 @@ class model_record extends CI_Model
                     $sql   = "select extractvalue(fbh_data_rec_xml,'/params/child::" . $tmp_str . "') AS uifmoptvalue,";
                     $sql  .= 'r.fbh_id,r.created_date';
                     $sql  .= ' from %1$s r';
-                    $sql  .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                        where r.flag_status>0 and r.fbh_id=%3$s';
-                    $query = sprintf($sql, $this->table, $this->tbform, (int) $rec_id);
+	                    $sql  .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
+	                        where r.flag_status>0 and r.fbh_id=?';
+	                    $query = sprintf($sql, $this->table, $this->tbform);
 
-                    $query2 = $this->db->query($query);
+	                    $query2 = $this->db->query($query, array((int) $rec_id));
 
                     $row = $query2->row();
                     if ( isset($row->uifmoptvalue)) {
@@ -293,11 +293,11 @@ class model_record extends CI_Model
                     $sql   = "select extractvalue(fbh_data_rec_xml,'/params/child::" . $tmp_flag . "') AS uifmoptvalue,";
                     $sql  .= 'r.fbh_id,r.created_date';
                     $sql  .= ' from %1$s r';
-                    $sql  .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                        where r.flag_status>0 and r.fbh_id=%3$s';
-                    $query = sprintf($sql, $this->table, $this->tbform, (int) $rec_id);
+	                    $sql  .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
+	                        where r.flag_status>0 and r.fbh_id=?';
+	                    $query = sprintf($sql, $this->table, $this->tbform);
 
-                    $query2 = $this->db->query($query);
+	                    $query2 = $this->db->query($query, array((int) $rec_id));
 
                     $row = $query2->row();
                     if ( isset($row->uifmoptvalue)) {
@@ -316,11 +316,11 @@ class model_record extends CI_Model
                     $temp[] = 'r.fbh_id';
                     $temp[] = 'r.created_date';
                     $sql   .= implode(',', $temp) . ' from %1$s r';
-                    $sql   .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
-                        where r.flag_status>0 and r.fbh_id=%3$s';
-                    $query  = sprintf($sql, $this->table, $this->tbform, (int) $rec_id);
+	                    $sql   .= ' join %2$s frm on frm.fmb_id=r.form_fmb_id
+	                        where r.flag_status>0 and r.fbh_id=?';
+	                    $query  = sprintf($sql, $this->table, $this->tbform);
 
-                    $query2 = $this->db->query($query);
+	                    $query2 = $this->db->query($query, array((int) $rec_id));
 
                     $row = $query2->row();
                     if ( isset($row->uifmoptvalue)) {
@@ -349,11 +349,11 @@ class model_record extends CI_Model
                 $tmp_qu .= ' f.fmf_status_qu=1 and';
             }
 
-            $tmp_qu .= ' fm.fmb_id=%s order by f.order_rec asc';
+            $tmp_qu .= ' fm.fmb_id=? order by f.order_rec asc';
 
-            $query = sprintf($tmp_qu, $this->tbformfields, $this->tbformtype, $this->tbform, (int) $id_form);
+            $query = sprintf($tmp_qu, $this->tbformfields, $this->tbformtype, $this->tbform);
 
-            $query2 = $this->db->query($query);
+            $query2 = $this->db->query($query, array((int) $id_form));
             return $query2->result();
         } else {
             return array();
@@ -369,14 +369,13 @@ class model_record extends CI_Model
         join %s t on f.type_fby_id=t.fby_id 
         join %s fm on fm.fmb_id=f.form_fmb_id
         where f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42,43) and
-        fm.fmb_id=%s order by f.order_rec asc',
+	        fm.fmb_id=? order by f.order_rec asc',
                 $this->tbformfields,
                 $this->tbformtype,
-                $this->tbform,
-                (int) $id_field
+                $this->tbform
             );
 
-            $query2 = $this->db->query($query);
+            $query2 = $this->db->query($query, array((int) $id_field));
             return $query2->result();
         } else {
             return array();
@@ -389,13 +388,12 @@ class model_record extends CI_Model
         from %s frec
         join %s f on f.fmb_id=frec.form_fmb_id
         where frec.flag_status>=0
-        and frec.fbh_id=%s',
+	        and frec.fbh_id=?',
             $this->table,
-            $this->tbform,
-            $id_rec
+            $this->tbform
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id_rec));
         return $query2->row();
     }
     public function getAllFieldsForReport($id_form)
@@ -404,12 +402,11 @@ class model_record extends CI_Model
             'select f.fmf_status_qu,f.fmf_uniqueid, coalesce(NULLIF(f.fmf_fieldname,""),CONCAT(t.fby_name,f.fmf_id)) as fieldname , f.order_rec
             from %s f 
             join %s t on f.type_fby_id=t.fby_id 
-            where f.form_fmb_id=%s and f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42,43)',
+            where f.form_fmb_id=? and f.type_fby_id in (6,7,8,9,10,11,12,13,15,16,17,18,21,22,23,24,25,26,28,29,30,39,40,41,42,43)',
             $this->tbformfields,
-            $this->tbformtype,
-            (int) $id_form
+            $this->tbformtype
         );
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id_form));
         return $query2->result();
     }
 
@@ -421,29 +418,28 @@ class model_record extends CI_Model
         join %s t on f.type_fby_id=t.fby_id 
         join %s fm on fm.fmb_id=f.form_fmb_id
         join %s rc on rc.form_fmb_id=fm.fmb_id
-        where rc.fbh_id=%s',
+	        where rc.fbh_id=?',
             $this->tbformfields,
             $this->tbformtype,
             $this->tbform,
-            $this->table,
-            (int) $id_field
+            $this->table
         );
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id_field));
         return $query2->result();
     }
 
     public function getChartDataByIdForm($id_field)
     {
         $query  = 'SELECT 
-                                DATE_FORMAT(r.created_date ,"%Y-%m-%d") as days, COUNT(r.fbh_id) as requests
-                                FROM ' . $this->table . ' r
-                                WHERE r.flag_status>0  
-                                AND DATE_FORMAT(r.created_date,"%e") BETWEEN 1 AND 31
-				AND r.form_fmb_id=' . (int) $id_field . '
-                                GROUP BY DAY(r.created_date)
-                                ORDER BY r.created_date ASC
-                                limit 31';
-        $query2 = $this->db->query($query);
+	                                DATE_FORMAT(r.created_date ,"%Y-%m-%d") as days, COUNT(r.fbh_id) as requests
+	                                FROM ' . $this->table . ' r
+	                                WHERE r.flag_status>0
+	                                AND DATE_FORMAT(r.created_date,"%e") BETWEEN 1 AND 31
+					AND r.form_fmb_id=?
+	                                GROUP BY DAY(r.created_date)
+	                                ORDER BY r.created_date ASC
+	                                limit 31';
+        $query2 = $this->db->query($query, array((int) $id_field));
         return $query2->result();
     }
 
@@ -455,30 +451,48 @@ class model_record extends CI_Model
             c.created_date,c.flag_status,c.fbh_data_user,c.form_fmb_id,c.fbh_data_rec_xml,c.fbh_user_agent,c.fbh_page,c.created_ip,
             c.fbh_referer,c.fbh_params
             from %s c
-            where c.fbh_id=%s
-            ',
-            $this->table,
-            (int) $id
+	            where c.fbh_id=?
+	            ',
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
         return $query2->row();
     }
 
     public function getOptRecordById($field, $id)
     {
+        $allowed_fields = array(
+            'fbh_id',
+            'fbh_data',
+            'fbh_data_rec',
+            'created_date',
+            'flag_status',
+            'fbh_data_user',
+            'form_fmb_id',
+            'fbh_data_rec_xml',
+            'fbh_user_agent',
+            'fbh_page',
+            'created_ip',
+            'fbh_referer',
+            'fbh_params',
+        );
+
+        if ( ! in_array($field, $allowed_fields, true)) {
+            return '';
+        }
+
         $query = sprintf(
             '
             select uf.%s
             from %s uf
-            where uf.fbh_id=%s
+            where uf.fbh_id=?
             ',
             $field,
-            $this->table,
-            (int) $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
 
             $row = $query2->row();
         if ( ! empty($row)) {
@@ -515,14 +529,14 @@ class model_record extends CI_Model
     {
         $query = sprintf(
             "select f.type_fby_id as type,f.fmf_data
-            from wp_uiform_fields f
-            join wp_uiform_fields_type t on f.type_fby_id=t.fby_id 
-            where f.fmf_uniqueid='%s' and f.form_fmb_id=%s ",
-            $ui_field,
-            $idform
+            from %s f
+            join %s t on f.type_fby_id=t.fby_id
+            where f.fmf_uniqueid=? and f.form_fmb_id=? ",
+            $this->tbformfields,
+            $this->tbformtype
         );
-        
-        $query2 = $this->db->query($query);
+
+        $query2 = $this->db->query($query, array($ui_field, (int) $idform));
         $row = $query2->row();
         if (! empty($row)) {
             return $row;
@@ -538,16 +552,14 @@ class model_record extends CI_Model
             join %s t on f.type_fby_id=t.fby_id 
             join %s frm on f.form_fmb_id=frm.fmb_id
 	    join %s frc on frc.form_fmb_id=frm.fmb_id
-            where frc.fbh_id = %s and f.fmf_uniqueid='%s'",
+	            where frc.fbh_id = ? and f.fmf_uniqueid=?",
             $this->tbformfields,
             $this->tbformtype,
             $this->tbform,
-            $this->table,
-            $id_rec,
-            $ui_field
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id_rec, $ui_field));
         return $query2->row();
     }
 

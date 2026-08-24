@@ -1,6 +1,26 @@
 <?php
+/*
+ *---------------------------------------------------------------
+ * LOCAL DEVELOPMENT OVERRIDE
+ *---------------------------------------------------------------
+ *
+ * zgfm-local.php is gitignored and never ships. When absent -- which is the
+ * case for every customer install and every release zip -- this file behaves
+ * exactly as the shipping default: the installer redirect fires, ENVIRONMENT
+ * is production, and the database credentials are blank.
+ *
+ * `npm run dev` writes it; `npm run build` removes it.
+ */
+define( 'ZGFM_BOOTSTRAP', 1 );
+if ( file_exists( __DIR__ . '/zgfm-local.php' ) ) {
+	require __DIR__ . '/zgfm-local.php';
+}
+
+if ( ! defined( 'ZGFM_SKIP_INSTALL_REDIRECT' ) ) {
 header( 'Location: install/' );
 die();
+}
+
 /*
  *---------------------------------------------------------------
  * APPLICATION ENVIRONMENT
@@ -19,7 +39,9 @@ die();
  * NOTE: If you change these, also change the error_reporting() code below
  *
  */
+	if ( ! defined( 'ENVIRONMENT' ) ) {
 	define( 'ENVIRONMENT', 'production' );
+	}
 /*
  *---------------------------------------------------------------
  * ERROR REPORTING

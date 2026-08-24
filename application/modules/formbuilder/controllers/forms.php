@@ -1368,8 +1368,18 @@ class Forms extends BackendController
        
         $data = array();
         $data['form_id']      = $id;
-        $data['formInitHtml'] =  $this->current_mm_form_init->fmb_html;
-        $data['formInit'] =  $this->current_mm_form_init->fmb_id;
+        // A multistep parent that has no initial step yet -- which is every one
+        // of them between the first save and the first step being added --
+        // stores an empty `initial`, so getFormById() hands back null here.
+        // Dereferencing it raised "Attempt to read property fmb_html on null";
+        // ajax_build_multistep captures that warning through ob_get_contents(),
+        // throws it, and answers {status:failed} with no id. The builder reads
+        // that id to fill #uifm_frm_mm_main_id, so every add-step afterwards
+        // posted an empty parent and no step was ever attached. There is simply
+        // no initial markup to render at that point; render none and let the
+        // save complete.
+        $data['formInitHtml'] = ( $this->current_mm_form_init ) ? $this->current_mm_form_init->fmb_html : '';
+        $data['formInit']     = ( $this->current_mm_form_init ) ? $this->current_mm_form_init->fmb_id : 0;
         $data['onsubm']       = $this->current_data_onsubm;
         $data['main']         = $this->current_data_main;
         $data['connections'] = $this->current_data_conn;

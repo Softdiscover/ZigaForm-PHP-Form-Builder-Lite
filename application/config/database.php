@@ -14,14 +14,14 @@
 $active_group  = 'default';
 $active_record = true;
 
-$db['default']['hostname'] = '';
-$db['default']['username'] = '';
-$db['default']['password'] = '';
-$db['default']['database'] = '';
+$db['default']['hostname'] = defined( 'ZGFM_DB_HOST' ) ? ZGFM_DB_HOST : '';
+$db['default']['username'] = defined( 'ZGFM_DB_USER' ) ? ZGFM_DB_USER : '';
+$db['default']['password'] = defined( 'ZGFM_DB_PASS' ) ? ZGFM_DB_PASS : '';
+$db['default']['database'] = defined( 'ZGFM_DB_NAME' ) ? ZGFM_DB_NAME : '';
 $db['default']['dbdriver'] = 'mysqli';
 $db['default']['dbprefix'] = 'fbcf_';
 $db['default']['pconnect'] = true;
-$db['default']['db_debug'] = false;
+$db['default']['db_debug'] = defined( 'ZGFM_DB_DEBUG' ) ? (bool) ZGFM_DB_DEBUG : false;
 $db['default']['cache_on'] = false;
 $db['default']['cachedir'] = '';
 $db['default']['char_set'] = 'utf8';

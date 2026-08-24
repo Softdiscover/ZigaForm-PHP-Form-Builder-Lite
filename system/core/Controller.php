@@ -51,6 +51,7 @@ class CI_Controller {
 	var $upload;
 	var $pagination;
 	var $curl;
+	var $zgfm_security;
 	private static $instance;
 
 	/**

@@ -452,7 +452,7 @@
             &lt;/div&gt;
          &lt;div class=&quot;sfdc-col-sm-8&quot;&gt;
                 &lt;div class=&quot;sfdc-form-group&quot;&gt;
-                    &lt;label &gt;Text font&lt;/label&gt;
+                    &lt;label &gt;Text Font&lt;/label&gt;
                     &lt;div class=&quot;sfdc-input-group uifm-custom-font&quot;&gt;
                                                 
 
@@ -478,7 +478,7 @@
    &lt;div class=&quot;sfdc-row&quot;&gt;
         &lt;div class=&quot;sfdc-col-md-12&quot;&gt;
             &lt;div class=&quot;sfdc-form-group&quot;&gt;
-                    &lt;label &gt;Text shadow&lt;/label&gt;
+                    &lt;label &gt;Text Shadow&lt;/label&gt;
                     &lt;div class=&quot;&quot;&gt;
                         &lt;div class=&quot;sfdc-col-md-3&quot;&gt;
                             &lt;input class=&quot;switch-field&quot;
@@ -509,7 +509,7 @@
                             
                            &lt;div class=&quot;sfdc-row&quot;&gt;
                                 &lt;div class=&quot;sfdc-col-md-3&quot;&gt;
-                                   &lt;label &gt;x&lt;/label&gt;
+                                   &lt;label &gt;horizontal&lt;/label&gt;
                                 &lt;/div&gt;
                                 &lt;div class=&quot;sfdc-col-sm-9&quot;&gt;
                                       &lt;input type=&quot;text&quot;
@@ -526,7 +526,7 @@
                             &lt;div class=&quot;space20&quot;&gt;&lt;/div&gt;
                             &lt;div class=&quot;sfdc-row&quot;&gt;
                                 &lt;div class=&quot;sfdc-col-md-3&quot;&gt;
-                                   &lt;label &gt;y&lt;/label&gt;
+                                   &lt;label &gt;vertical&lt;/label&gt;
                                 &lt;/div&gt;
                                 &lt;div class=&quot;sfdc-col-sm-9&quot;&gt;
                                       &lt;input type=&quot;text&quot;

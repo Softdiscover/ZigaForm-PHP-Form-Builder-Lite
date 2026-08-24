@@ -83,13 +83,12 @@ class model_form_log extends CI_Model
             from %s uf
             where 
             uf.flag_status=1 and
-            uf.log_id=%s  
+            uf.log_id=?
             ',
-            $this->table,
-            $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
 
         return $query2->row();
     }
@@ -101,13 +100,12 @@ class model_form_log extends CI_Model
             from %s uf
             where 
             uf.flag_status=1 and
-            uf.log_frm_parent=%s
+            uf.log_frm_parent=?
             ',
-            $this->table,
-            $id
+            $this->table
         );
         
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
         return $query2->result();
     }
 
@@ -119,14 +117,13 @@ class model_form_log extends CI_Model
             from %s uf
             where 
             uf.flag_status=1 and
-            uf.log_frm_id=%s 
+            uf.log_frm_id=?
             ORDER BY uf.updated_date desc
             ',
-            $this->table,
-            $id
+            $this->table
         );
 
-         $query2 = $this->db->query($query);
+         $query2 = $this->db->query($query, array((int) $id));
         return $query2->result();
     }
 
@@ -136,15 +133,14 @@ class model_form_log extends CI_Model
             '
             select uf.log_id,uf.log_frm_data,uf.log_frm_name,uf.log_frm_html,uf.log_frm_html_backend,uf.log_frm_html_css,uf.log_frm_id,uf.log_frm_hash,uf.flag_status,uf.created_date,uf.updated_date
             from %s uf
-            where uf.log_frm_id=%s
+            where uf.log_frm_id=?
             ORDER BY uf.log_id desc
             LIMIT 1
             ',
-            $this->table,
-            $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
         return $query2->row();
     }
 
@@ -154,15 +150,14 @@ class model_form_log extends CI_Model
             '
             select uf.log_id,uf.log_frm_data,uf.log_frm_name,uf.log_frm_html,uf.log_frm_html_backend,uf.log_frm_html_css,uf.log_frm_id,uf.log_frm_hash,uf.flag_status,uf.created_date,uf.updated_date
             from %s uf
-            where uf.log_frm_id=%s
+            where uf.log_frm_id=?
             ORDER BY uf.log_id asc
             LIMIT 1
             ',
-            $this->table,
-            $id
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
         return $query2->row();
     }
 
@@ -173,13 +168,12 @@ class model_form_log extends CI_Model
             select COUNT(*) AS counted
             from %s c
             where c.flag_status>0 
-            and c.log_frm_id=%s
+            and c.log_frm_id=?
             ORDER BY c.updated_date desc
             ',
-            $this->table,
-            $id
+            $this->table
         );
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $id));
 
         $row = $query2->row();
         if ( isset($row->counted)) {

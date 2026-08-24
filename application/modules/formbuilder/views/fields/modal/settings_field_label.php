@@ -301,7 +301,7 @@ if ( ! defined('BASEPATH')) {
             </div>
          <div class="sfdc-col-sm-8">
                 <div class="sfdc-form-group">
-                    <label ><?php echo __('Text font', 'FRocket_admin'); ?></label>
+                    <label ><?php echo __('Text Font', 'FRocket_admin'); ?></label>
                     <div class="sfdc-input-group uifm-custom-font">
                         <?php
                         $attributes    = array(
@@ -329,7 +329,7 @@ if ( ! defined('BASEPATH')) {
    <div class="sfdc-row">
         <div class="sfdc-col-md-12">
             <div class="sfdc-form-group">
-                    <label ><?php echo __('Text shadow', 'FRocket_admin'); ?></label>
+                    <label ><?php echo __('Text Shadow', 'FRocket_admin'); ?></label>
                     <div class="">
                         <div class="sfdc-col-md-3">
                             <input class="switch-field"
@@ -360,7 +360,7 @@ if ( ! defined('BASEPATH')) {
                             
                            <div class="sfdc-row">
                                 <div class="sfdc-col-md-3">
-                                   <label ><?php echo __('x', 'FRocket_admin'); ?></label>
+                                   <label ><?php echo __('horizontal', 'FRocket_admin'); ?></label>
                                 </div>
                                 <div class="sfdc-col-sm-9">
                                       <input type="text"
@@ -377,7 +377,7 @@ if ( ! defined('BASEPATH')) {
                             <div class="space20"></div>
                             <div class="sfdc-row">
                                 <div class="sfdc-col-md-3">
-                                   <label ><?php echo __('y', 'FRocket_admin'); ?></label>
+                                   <label ><?php echo __('vertical', 'FRocket_admin'); ?></label>
                                 </div>
                                 <div class="sfdc-col-sm-9">
                                       <input type="text"

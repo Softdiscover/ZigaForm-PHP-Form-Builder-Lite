@@ -53,12 +53,11 @@ class model_fields extends CI_Model
         $query = sprintf(
             'select f.fmf_uniqueid,f.order_rec
             from %s f 
-            where f.fmf_status_qu=1 and f.form_fmb_id=%s',
-            $this->table,
-            (int) $form_id
+            where f.fmf_status_qu=1 and f.form_fmb_id=?',
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $form_id));
         return $query2->result();
     }
 
@@ -67,12 +66,11 @@ class model_fields extends CI_Model
         $query = sprintf(
             'select f.fmf_uniqueid,f.order_rec
             from %s f 
-            where f.form_fmb_id=%s',
-            $this->table,
-            (int) $form_id
+            where f.form_fmb_id=?',
+            $this->table
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $form_id));
         return $query2->result();
     }
 
@@ -81,11 +79,10 @@ class model_fields extends CI_Model
         $query  = sprintf(
             'select COUNT(*) as count
             from %s f 
-            where f.fmf_status_qu=1 and f.form_fmb_id=%s',
-            $this->table,
-            (int) $form_id
+            where f.fmf_status_qu=1 and f.form_fmb_id=?',
+            $this->table
         );
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $form_id));
 
         $row = $query2->row();
         if ( intval($row->count) > 0) {
@@ -104,16 +101,14 @@ class model_fields extends CI_Model
             join %s t on f.type_fby_id=t.fby_id 
             join %s frm on f.form_fmb_id=frm.fmb_id
             where
-            frm.fmb_id=%s
-            and f.fmf_uniqueid='%s'",
+            frm.fmb_id=?
+            and f.fmf_uniqueid=?",
             $this->table,
             $this->tbformtype,
-            $this->tbform,
-            (int) $form_id,
-            $uid
+            $this->tbform
         );
 
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $form_id, $uid));
         return $query2->row();
     }
 
@@ -124,15 +119,13 @@ class model_fields extends CI_Model
             select fmf_data
             from %s f
             join %s frm
-            where frm.fmb_id=%s
-            and f.fmf_uniqueid="%s"
+            where frm.fmb_id=?
+            and f.fmf_uniqueid=?
             ',
             $this->table,
-            $this->tbform,
-            (int) $form_id,
-            $uid
+            $this->tbform
         );
-        $query2 = $this->db->query($query);
+        $query2 = $this->db->query($query, array((int) $form_id, $uid));
         return $query2->row();
     }
 }

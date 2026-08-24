@@ -2,6 +2,10 @@
 
 class Database {
 
+	// Server-side message from the last failed schema statement, so a caller
+	// can report why the install stopped instead of guessing.
+	public $last_error = '';
+
 	// Function to the database and tables and fill them with the default data
 	function create_database( $data ) {
 		if ( isset( $data['mysqldbdriver'] ) && intval( $data['mysqldbdriver'] ) === 1 && extension_loaded( 'mysql' ) ) {
@@ -105,8 +109,46 @@ class Database {
 				$query2 = file_get_contents( 'db/structure_mysql8.sql' );
 			}
 			 
-			// Execute a multi query
-			$mysqli->multi_query( $query2 );
+			// Execute a multi query.
+			//
+			// multi_query() returns as soon as the FIRST statement has a result;
+			// the rest of the batch is still queued on the server. Closing the
+			// connection here -- which is what this did -- aborts whatever had
+			// not run yet, and the schema is applied only as far as the server
+			// happened to get. Which statements survive is pure timing, so an
+			// install could report success with tables missing, and the settings
+			// seed near the end of the file was the usual casualty: its table
+			// kept the previous install's row, version included.
+			//
+			// Walking the result set to the end is what makes the batch
+			// complete. Any statement that failed surfaces here too, so the
+			// caller can be told instead of always being handed true.
+			if ( ! $mysqli->multi_query( $query2 ) ) {
+				$error = $mysqli->error;
+				$mysqli->close();
+				$this->last_error = $error;
+				return false;
+			}
+
+			do {
+				$result = $mysqli->store_result();
+				if ( $result instanceof mysqli_result ) {
+					$result->free();
+				}
+				if ( $mysqli->errno ) {
+					$this->last_error = $mysqli->error;
+					$mysqli->close();
+					return false;
+				}
+			} while ( $mysqli->more_results() && $mysqli->next_result() );
+
+			// next_result() returns false both at the end of the batch and on a
+			// failed statement; errno is what tells them apart.
+			if ( $mysqli->errno ) {
+				$this->last_error = $mysqli->error;
+				$mysqli->close();
+				return false;
+			}
 
 			// Close the connection
 			$mysqli->close();
