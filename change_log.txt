@@ -1,4 +1,4 @@
-version 7.7.20
+version 7.7.21
 [fix] - the installer could create only part of the database, leaving tables missing and the version stuck on the previous install
 [fix] - saving a brand new multi-step form no longer reports "Error on saving form"; steps added right after the first save are now attached to it
 -----------------------------------------------------------------------------------------------------------------

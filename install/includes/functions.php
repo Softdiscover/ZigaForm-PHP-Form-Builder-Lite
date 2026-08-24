@@ -93,14 +93,26 @@ $status = true;
 	$cur = dirname(dirname(dirname(__FILE__))).'/';
 	$manifestPath = $cur.'assets/backend/json/manifest.json';
 	
+	if ( ! is_file( $manifestPath ) ) {
+		return array( 'status' => true, 'failed' => array() );
+	}
+	
 	$manifest = json_decode(file_get_contents($manifestPath), true);
+	if ( ! is_array( $manifest ) ) {
+		return array( 'status' => true, 'failed' => array() );
+	}
 	
 	// Function to calculate checksum of a file
 	
 	$failed=[];
 	// Check the integrity of the uploaded files
 	foreach ($manifest as $file => $expectedChecksum) {
-		if(in_array($file, ['assets/backend/json/manifest.json','application/modules/formbuilder/views/forms/verify_pcode.php'
+		// The installer itself rewrites these three from install/config/ (see
+		// core_class.php), so after any completed install their checksums no
+		// longer match the shipped manifest. Re-opening /install/ then reported
+		// a perfectly good upload as tampered with.
+		if(in_array($file, ['assets/backend/json/manifest.json','application/modules/formbuilder/views/forms/verify_pcode.php',
+		'index.php','application/config/config.php','application/config/database.php'
 		])){
 			continue;
 		}
